@@ -54,7 +54,7 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-# collection_dir: src
+collections_dir: src
 
 collections:
   components:

@@ -5,13 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Ekstra Bladet Design System</title>
+    <link
+      href="https://ekstrabladet.dk/assets/base/css/desktop.css"
+      rel="stylesheet"
+    />
+    <link href="/dist/outputs.css" rel="stylesheet" />
   </head>
   <body>
     <header>
       <h1>Ekstra Bladet Design System</h1>
       <h2>{{ page.title }}</h2>
     </header>
-    {{ content }} {% for component in components %} {{ component.title }} {%
-    endfor %}
+    <div class="eb-row">
+      <nav class="pad-l--rl">
+        {% for component in site.components %}
+        <div>
+          <a href="{{ component.permalink }}">{{ component.title }} </a>
+        </div>
+        {% endfor %}
+      </nav>
+      <div>
+        {{ content }}
+      </div>
+    </div>
   </body>
 </html>

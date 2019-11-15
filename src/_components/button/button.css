@@ -1,0 +1,60 @@
+:root {
+  --color--button-default: var(--color--graa3);
+  --fgcolor--button-default: var(--fgcolor--graa3);
+  --color--button-primary: var(--color--bruger);
+  --fgcolor--button-primary: var(--fgcolor--bruger);
+  --color--button-secondary: var(--color--bruger);
+  --fgcolor--button-secondary: var(--fgcolor--bruger);
+}
+
+.btn {
+  border-radius: 20px;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+
+  -webkit-appearance: none;
+}
+
+.btn {
+  background: none;
+  border: 1px solid var(--color--button-default);
+  outline: 0;
+}
+
+.btn:active {
+  outline: 0;
+}
+
+.btn.btn--primary {
+  border-color: var(--color--button-primary);
+}
+
+.btn.btn--primary:hover {
+  background: var(--color--button-primary);
+  color: var(--fgcolor--button-primary);
+}
+
+.btn:hover,
+.btn--solid {
+  background: var(--color--button-default);
+  color: var(--fgcolor--button-default);
+}
+
+.btn--solid:hover {
+  background: none;
+  border: 1px solid var(--color--button-default);
+  color: var(--color--button-default);
+}
+
+.btn--solid.btn--primary {
+  background-color: var(--color--button-primary);
+  border-color: var(--color--button-primary);
+  color: var(--fgcolor--button-primary);
+}
+
+.btn--solid.btn--primary:hover {
+  color: var(--fgcolor--button-primary);
+  border-color: var(--color--button-primary);
+}
