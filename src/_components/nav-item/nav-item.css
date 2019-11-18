@@ -1,0 +1,25 @@
+.nav-item {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+}
+
+.nav-item-hover {
+  color: var(--color--black);
+}
+
+.nav-item:hover .nav-item-hover {
+  color: inherit;
+}
+
+.nav-item .fa {
+  font-size: 1em;
+}
+
+.nav-item .fa:first-child {
+  margin-right: 5px;
+}
+
+.nav-item .fa:last-child {
+  margin-left: 5px;
+}

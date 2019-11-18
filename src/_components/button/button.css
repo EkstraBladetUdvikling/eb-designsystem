@@ -1,60 +1,151 @@
 :root {
-  --color--button-default: var(--color--graa3);
-  --fgcolor--button-default: var(--fgcolor--graa3);
+  --color--button-default: var(--color--bluedark);
+  --fgcolor--button-default: var(--fgcolor--bluedark);
   --color--button-primary: var(--color--bruger);
   --fgcolor--button-primary: var(--fgcolor--bruger);
-  --color--button-secondary: var(--color--bruger);
-  --fgcolor--button-secondary: var(--fgcolor--bruger);
+  --color--button-secondary: var(--color--graa3);
+  --fgcolor--button-secondary: var(--fgcolor--graa3);
+  --color--button-accept: var(--color--green);
+  --fgcolor--button-accept: var(--fgcolor--green);
+  --color--button-cancel: var(--color--red);
+  --fgcolor--button-cancel: var(--fgcolor--red);
 }
 
-.btn {
-  border-radius: 20px;
-
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align: center;
-
-  -webkit-appearance: none;
-}
-
-.btn {
-  background: none;
+.button {
+  background: var(--color--white);
   border: 1px solid var(--color--button-default);
+  color: var(--color--button-default);
+  align-items: center;
+  display: flex;
+  border-radius: 20px;
+  padding: 0 20px;
+  font-size: 14px;
+  height: 36px;
+  line-height: 36px;
+  box-sizing: border-box;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.button:hover {
+  background: var(--color--button-default);
+  border: 1px solid var(--color--button-default);
+  color: var(--fgcolor--button-default);
+}
+
+.button:active,
+.button:focus {
   outline: 0;
 }
 
-.btn:active {
-  outline: 0;
-}
-
-.btn.btn--primary {
+.button.button--primary {
   border-color: var(--color--button-primary);
+  color: var(--color--button-primary);
 }
 
-.btn.btn--primary:hover {
+.button.button--primary:hover {
   background: var(--color--button-primary);
   color: var(--fgcolor--button-primary);
 }
 
-.btn:hover,
-.btn--solid {
+.button.button--secondary {
+  border-color: var(--color--button-secondary);
+  color: var(--color--button-secondary);
+}
+
+.button.button--secondary:hover {
+  background: var(--color--button-secondary);
+  color: var(--fgcolor--button-secondary);
+}
+
+.button.button--accept {
+  border-color: var(--color--button-accept);
+  color: var(--color--button-accept);
+}
+
+.button.button--accept:hover {
+  background: var(--color--button-accept);
+  color: var(--fgcolor--button-accept);
+}
+
+.button.button--cancel {
+  border-color: var(--color--button-cancel);
+  color: var(--color--button-cancel);
+}
+
+.button.button--cancel:hover {
+  background: var(--color--button-cancel);
+  color: var(--fgcolor--button-cancel);
+}
+
+.button:hover,
+.button--solid {
   background: var(--color--button-default);
   color: var(--fgcolor--button-default);
 }
 
-.btn--solid:hover {
+.button--solid:hover {
   background: none;
   border: 1px solid var(--color--button-default);
   color: var(--color--button-default);
 }
 
-.btn--solid.btn--primary {
+.button--solid.button--primary {
   background-color: var(--color--button-primary);
   border-color: var(--color--button-primary);
   color: var(--fgcolor--button-primary);
 }
 
-.btn--solid.btn--primary:hover {
-  color: var(--fgcolor--button-primary);
+.button--solid.button--primary:hover {
+  background: var(--color--white);
   border-color: var(--color--button-primary);
+  color: var(--color--button-primary);
+}
+
+.button--solid.button--secondary {
+  background-color: var(--color--button-secondary);
+  border-color: var(--color--button-secondary);
+  color: var(--fgcolor--button-secondary);
+}
+
+.button--solid.button--secondary:hover {
+  background: var(--color--white);
+  border-color: var(--color--button-secondary);
+  color: var(--color--button-secondary);
+}
+
+.button--solid.button--accept {
+  background-color: var(--color--button-accept);
+  border-color: var(--color--button-accept);
+  color: var(--fgcolor--button-accept);
+}
+
+.button--solid.button--accept:hover {
+  background: var(--color--white);
+  border-color: var(--color--button-accept);
+  color: var(--color--button-accept);
+}
+
+.button--solid.button--cancel {
+  background-color: var(--color--button-cancel);
+  border-color: var(--color--button-cancel);
+  color: var(--fgcolor--button-cancel);
+}
+
+.button--solid.button--cancel:hover {
+  background: var(--color--white);
+  border-color: var(--color--button-cancel);
+  color: var(--color--button-cancel);
+}
+
+.button .fa {
+  font-size: 18px;
+}
+
+.button .fa:first-child {
+  margin-right: 10px;
+}
+
+.button .fa:last-child {
+  margin-left: 10px;
 }

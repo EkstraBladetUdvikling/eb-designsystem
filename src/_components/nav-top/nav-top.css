@@ -1,0 +1,55 @@
+:root {
+  --nav-height: 50px;
+  --nav--color-divider: var(--color--graa5);
+}
+
+.nav-top-stickybackground {
+  height: var(--nav-height);
+}
+
+.nav-top {
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 10px 10px 0 rgba(var(--rgb-color--black), 0.1);
+  box-sizing: border-box;
+  background: var(--color--white);
+  color: var(--fgcolor--white);
+  display: flex;
+  font-size: 16px;
+  height: var(--nav-height);
+  line-height: 16px;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0 10px;
+  position: relative;
+  width: 100%;
+  z-index: 1000000;
+}
+
+.nav-top-left {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav-top-right {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-top .nav-item {
+  border-left: 1px solid var(--nav--color-divider);
+}
+
+.nav-top .nav-item:first-child {
+  border-left: 0;
+}
+
+.nav-top-show_when_fixed {
+  display: none;
+}
+
+.nav-top--fixed .nav-top-show_when_fixed {
+  display: inherit;
+}

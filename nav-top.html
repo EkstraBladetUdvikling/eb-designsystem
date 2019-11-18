@@ -1,0 +1,901 @@
+<div id="fnSticker" class="stickybackground">
+  <div
+    class="oo-line bg-topnav stickyarea stickybackground d-block"
+    id="fnStickymenu"
+  >
+    <div
+      class="oo-line topnav nav topnav-text fnTopnavigation eb-row"
+      id="fnTopnavigation"
+    >
+      <style>
+        .stickyarea {
+          border-radius: 0 0 10px 10px;
+          -webkit-box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+          background: #fff;
+          color: #000;
+          height: 50px;
+          position: relative;
+          z-index: 1000000;
+        }
+        .topnav-text {
+          font-size: 16px;
+          line-height: 16px;
+        }
+        .topnav {
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          font-family: var(--ff-eb);
+          height: 50px;
+          padding: 4px 10px 0;
+          width: auto;
+          z-index: 1000;
+        }
+        .mainnav {
+          overflow: visible;
+        }
+        .nav--right {
+          font-size: 16px;
+        }
+        .nav-item {
+          border-right: 1px solid #ddd;
+          cursor: pointer;
+          padding: 0 10px;
+          margin-top: 0;
+          position: relative;
+          white-space: nowrap;
+        }
+        .nav-item--right,
+        .nav-item:last-child {
+          border-right: 0;
+        }
+        .nav-item--right {
+          border-left: 1px solid #ddd;
+        }
+        .hover-inherit {
+          cursor: pointer;
+        }
+        .activeMenu .hover-inherit,
+        .nav-item:hover .hover-inherit {
+          color: inherit;
+        }
+        .user-item {
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
+          cursor: pointer;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          max-width: 120px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        @media (min-width: 1140px) {
+          .user-item {
+            max-width: 320px;
+          }
+        }
+        .more {
+          color: inherit;
+        }
+        .more,
+        .more span {
+          cursor: pointer;
+        }
+        .small-logo {
+          display: none;
+          line-height: 0;
+          padding: 0 10px 0 0;
+          width: 44px;
+        }
+        .resizenav {
+          height: 36px;
+          overflow: hidden;
+        }
+        #outerHiddenDiv,
+        .plus-masthead {
+          height: 100px;
+        }
+        #outerHiddenDiv {
+          width: 100px;
+          overflow: scroll;
+          visibility: hidden;
+          position: absolute;
+        }
+        #innerHiddenDiv {
+          width: 100%;
+          height: 200px;
+        }
+        .topnav .medielogin-logo {
+          fill: #999;
+          display: -webkit-inline-box;
+          display: -webkit-inline-flex;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          margin-top: 0;
+          -webkit-flex-shrink: 0;
+          -ms-flex-negative: 0;
+          flex-shrink: 0;
+        }
+        .activeMenu .medielogin-logo,
+        .nav-item:hover .medielogin-logo {
+          fill: #4fa8df;
+        }
+        .nav-menu-opener,
+        .subnavline {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+        }
+        .subnavline {
+          background: #000;
+          color: #fff;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          font-weight: 400;
+          height: 50px;
+          min-width: 940px;
+          padding: 0;
+          position: relative;
+          width: 100%;
+        }
+        .submenu--plus {
+          background: rgba(0, 0, 0, 0.75);
+          color: #fff;
+        }
+        .subnav {
+          height: 24px;
+        }
+        .sub-item {
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
+          border-right: 1px solid #e5e5e5;
+          color: #fff;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          margin: 0;
+        }
+        .sub-item--more {
+          border: 0;
+        }
+        .subnavigation-sticker {
+          overflow: visible;
+        }
+        .sub-item-container,
+        .subnavigation-sticker {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
+        }
+        .sub-item-container {
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+        }
+        .home--plus {
+          height: 18px;
+          margin-left: -85px;
+          -webkit-transform: scale(0);
+          transform: scale(0);
+          -webkit-transition: -webkit-transform 0.25s;
+          transition: -webkit-transform 0.25s;
+          transition: transform 0.25s;
+          transition: transform 0.25s, -webkit-transform 0.25s;
+        }
+        .js-stickingAround .home--plus {
+          margin-left: 0;
+          width: 65px;
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+        .ebplus--menu {
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          overflow: hidden;
+        }
+        .ebplus-text--menu {
+          margin-left: -65px;
+          -webkit-transform: scale(1);
+          transform: scale(1);
+          -webkit-transform-origin: left;
+          transform-origin: left;
+          -webkit-transition: -webkit-transform 0.25s;
+          transition: -webkit-transform 0.25s;
+          transition: transform 0.25s;
+          transition: transform 0.25s, -webkit-transform 0.25s;
+        }
+        .ebplus-gfx--menu {
+          height: 12px;
+          width: 12px;
+          fill: #fff;
+          margin-left: 3px;
+        }
+        .js-stickingAround .ebplus-text--menu {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        .menu-overlay-open.menu-overlay--expand {
+          max-height: 100vh;
+        }
+        .menu-overlay--check:checked ~ .nav .nav-item .menu--open,
+        .menu-overlay--check ~ .nav .nav-item .menu--close {
+          display: none;
+        }
+        .menu-overlay--check:checked ~ .nav .nav-item .menu--close,
+        .menu-overlay--check ~ .nav .nav-item .menu--open {
+          display: inline-block;
+        }
+        .menu--overlay {
+          position: fixed;
+          top: 222px;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          background-color: hsla(0, 0%, 100%, 0.97);
+          z-index: 999999;
+          overflow-y: auto;
+        }
+        .body--plus .menu--overlay,
+        .js-activeFixedMenu .menu--overlay {
+          top: 50px;
+        }
+        .fixed-menu--show {
+          display: none;
+        }
+        .js-activeFixedMenu .fixed-menu--show {
+          display: inherit;
+        }
+        .fixed-menu--hide {
+          display: none;
+        }
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+          .js-activeFixedMenu .fixed-menu--hide {
+            display: none;
+          }
+        }
+        .menuHeight {
+          height: 425px;
+          overflow: hidden;
+        }
+        .menu-hover--border span {
+          border-bottom: 1px solid transparent;
+        }
+        .menu-hover--border:hover span {
+          border-bottom-color: #c2c2c2;
+        }
+        .menu-hover--inherit:hover {
+          color: inherit;
+        }
+        .menu-overlay--expand {
+          max-height: 0;
+          height: 100vh;
+          overflow-x: hidden;
+          -webkit-transition: max-height 0.3s;
+          transition: max-height 0.3s;
+        }
+        .menu-overlay--check {
+          position: absolute;
+          left: -9999em;
+          opacity: 0;
+        }
+        .menu-overlay--check:checked ~ .menu-overlay--expand {
+          max-height: 100vh;
+        }
+        .menu-overlay--check:checked ~ .nav-item .menu--open,
+        .menu-overlay--check ~ .nav-item .menu--close {
+          display: none;
+        }
+        .menu-overlay--check:checked ~ .nav-item .menu--close,
+        .menu-overlay--check ~ .nav-item .menu--open {
+          display: inline-block;
+        }
+        .menu--openclose {
+          color: #999;
+          display: block;
+          width: 18px;
+        }
+        .menu--openclose svg.svg-inline--fa {
+          width: 18px !important;
+        }
+        .overflow-y--hidden {
+          overflow-y: hidden;
+        }
+        .subnavline {
+          opacity: 0;
+        }
+        .sub-item-container {
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+        }
+        .calcdone {
+          opacity: 1;
+        }
+        .calcdone .sub-item-container {
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+          flex-direction: row;
+        }
+        .trans--mh {
+          max-height: 0;
+          overflow: hidden;
+          -webkit-transition: max-height 0.25s ease-in;
+          transition: max-height 0.25s ease-in;
+        }
+        .activeMenu .trans--mh,
+        .trans-trigger--mh:hover .trans--mh {
+          max-height: 1200px;
+        }
+        .seethrough {
+          opacity: 0;
+        }
+        .flyout-container {
+          position: absolute;
+          left: 2px;
+          top: 18px;
+          z-index: 999999;
+          display: block;
+          font-size: 16px;
+          line-height: 32px;
+          width: 200px;
+          max-height: 0;
+          overflow: hidden;
+          -webkit-transition: max-height 0.3s;
+          transition: max-height 0.3s;
+        }
+        .activeMenu .flyout-container {
+          max-height: 1200px;
+        }
+        .trans-trigger--mh:hover .flyout-container {
+          padding-top: 5px;
+        }
+        .flyout-container a {
+          color: inherit;
+        }
+        .flyout--right {
+          left: auto;
+          right: 2px;
+        }
+        .flyout-topper {
+          display: none;
+          padding: 10px;
+        }
+        .activeMenu .flyout-topper,
+        .flyout-item {
+          display: block;
+        }
+        .flyout-submenu {
+          top: 35px;
+          right: 0;
+          left: auto;
+          width: auto;
+        }
+        .flyout-submenu .nav-item {
+          display: block;
+          float: none;
+          border: 0;
+          padding: 0 10px;
+        }
+        .flyout-submenu .nav-item:first-of-type {
+          padding-top: 10px;
+        }
+        .flyout-submenu .nav-item:last-of-type {
+          padding-bottom: 10px;
+        }
+        .input {
+          background-image: none;
+          border: 0;
+          border-radius: 0;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          font-size: 18px;
+          padding: 10px;
+          width: 100%;
+          -webkit-appearance: none;
+        }
+        .border--menusearch {
+          border-bottom: 1px solid #c8c8c8;
+        }
+        .input--menusearch {
+          width: 740px;
+          border: 0;
+          font-style: italic;
+          background-color: transparent;
+        }
+        .input--menusearch::-webkit-input-placeholder {
+          color: #000;
+        }
+        .input--menusearch::-moz-placeholder {
+          color: #000;
+        }
+        .input--menusearch:-ms-input-placeholder {
+          color: #000;
+        }
+        .input--menusearch::-ms-input-placeholder {
+          color: #000;
+        }
+        .input--menusearch::placeholder {
+          color: #000;
+        }
+        .input--menusearch:focus {
+          outline: none;
+          border: none;
+        }
+        .nav-item--search {
+          padding-left: 10px;
+          cursor: pointer;
+        }
+        .search-opened,
+        .searchbtn--active .search-closed {
+          display: inline-block;
+          text-indent: -999999em;
+          display: block;
+          height: 0;
+        }
+        .searchbtn--active .search-opened {
+          height: auto;
+          text-indent: 0;
+        }
+        .searchareacontainer {
+          width: 100%;
+          z-index: 201;
+        }
+        .plus-masthead .searchareacontainer {
+          position: absolute;
+        }
+        .searchareacontainer.gluedtotop {
+          top: 50px;
+        }
+        .searchcontainer--ekstra {
+          margin-top: 50px;
+        }
+        .searcharea {
+          background: rgba(0, 0, 0, 0.75);
+          color: #fff;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          height: 150px;
+          margin-bottom: 10px;
+          width: 100%;
+        }
+        .searcharea form {
+          margin: auto;
+        }
+        .searchfield {
+          background: #fff;
+          color: #000;
+          border: 0;
+          font-size: 18px;
+          height: 44px;
+          padding: 0 10px 0 35px;
+          width: 410px;
+        }
+        .searchfield:focus {
+          outline: 0;
+        }
+        .btn--menusearch {
+          border: 1px solid #c8c8c8;
+          color: #bd1118;
+          cursor: pointer;
+          line-height: 35px;
+          font-size: 16px;
+          margin-left: 10px;
+          text-align: center;
+          width: 90px;
+          border-radius: 20px;
+          background-color: transparent;
+        }
+        .btn--menusearch:hover {
+          background-color: #e5e5e5;
+        }
+        .gluedtotop {
+          min-width: 920px;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          z-index: 1900;
+        }
+        .gluedtotop .small-logo {
+          display: block;
+        }
+        .nav-subscriptionmenu {
+          background: #fff;
+          border: 1px solid #32a237;
+          color: #32a237;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          border-radius: 20px;
+          padding: 0 20px;
+          font-size: 14px;
+          height: 36px;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          text-align: center;
+          white-space: nowrap;
+        }
+        .nav-subscriptionmenu:hover {
+          background: #32a237;
+          border: 1px solid #32a237;
+          color: #fff;
+        }
+        .nav-subscriptionmenu--campaign {
+          background: #bd1118;
+          border-color: #bd1118;
+          color: #fff;
+        }
+        .nav-subscriptionmenu--campaign:hover {
+          background: #fff;
+          border-color: #bd1118;
+          color: #bd1118;
+        }
+        .nav-subscriptionmenu--blackfriday {
+          background: #3c3c3c;
+          border-color: #3c3c3c;
+          color: #fff;
+        }
+        .nav-subscriptionmenu--blackfriday:hover {
+          background: #fff;
+          border-color: #3c3c3c;
+          color: #3c3c3c;
+        }
+        .nav-subscriptionmenu .fa,
+        .nav-subscriptionmenu .svg-inline--fa {
+          margin-left: 10px;
+          height: 18px;
+          width: 18px;
+        }
+        .nav-subscriptionmenu--blackfriday,
+        .nav-subscriptionmenu--campaign {
+          display: none;
+        }
+        @media (min-width: 940px) {
+          .nav-subscriptionmenu--blackfriday,
+          .nav-subscriptionmenu--campaign {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+          }
+        }
+      </style>
+      <a href="/" class="pad-m--l oo-left fixed-menu--show">
+        <svg viewBox="0 0 40 35" class="eblogo-40px">
+          <use
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xlink:href="#ekstrabladet"
+          ></use>
+        </svg>
+      </a>
+
+      <input
+        type="checkbox"
+        id="menuOverlayCheck"
+        class="menu-overlay--check"
+        data-menuitem="Foldud"
+      />
+
+      <div class="mainnav nav eb-row">
+        <label
+          for="menuOverlayCheck"
+          class="nav-item nav-menu-opener gaMenuFoldOut"
+        >
+          <span class="menu--openclose">
+            <svg
+              class="svg-inline--fa fa-bars fa-w-14 menu--open"
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="bars"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+              data-fa-i2svg=""
+            >
+              <path
+                fill="currentColor"
+                d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+              ></path></svg
+            ><!-- <i class="fas fa-bars menu--open"></i> -->
+            <svg
+              class="svg-inline--fa fa-times-circle fa-w-16 color--eb menu--close"
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="far"
+              data-icon="times-circle"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              data-fa-i2svg=""
+            >
+              <path
+                fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z"
+              ></path></svg
+            ><!-- <i class="far fa-times-circle color--eb menu--close"></i> -->
+          </span>
+          <span class="pad-s--l">
+            Menu
+          </span>
+        </label>
+
+        <span class="nav-item color--nyheder" id="fn_118_nyheder_parent">
+          <a
+            href="https://dev039.ekstrabladet.dk/nyheder/"
+            class="color--black menu-hover--border menu-hover--inherit gaTopMenu"
+            data-menuitem="Nyheder"
+          >
+            Nyheder</a
+          >
+        </span>
+        <span class="nav-item color--sport" id="fn_142_sport_parent">
+          <a
+            href="https://dev039.ekstrabladet.dk/sport/"
+            class="color--black menu-hover--border menu-hover--inherit gaTopMenu"
+            data-menuitem="Sport"
+          >
+            Sport</a
+          >
+        </span>
+        <span class="nav-item color--flash" id="fn_414_flash_parent">
+          <a
+            href="https://dev039.ekstrabladet.dk/flash/"
+            class="color--black menu-hover--border menu-hover--inherit gaTopMenu"
+            data-menuitem="flash!"
+          >
+            flash!</a
+          >
+        </span>
+        <span class="nav-item color--black" id="fn_68_black_parent">
+          <a
+            href="https://dev039.ekstrabladet.dk/tv/"
+            class="color--black menu-hover--border menu-hover--inherit gaTopMenu"
+            data-menuitem="TV"
+          >
+            TV</a
+          >
+        </span>
+        <span class="nav-item color--black" id="fn_2341_black_parent">
+          <a
+            href="https://dev039.ekstrabladet.dk/plus/"
+            class="color--black menu-hover--border menu-hover--inherit gaTopMenu"
+            data-menuitem="Ekstra Bladet+"
+          >
+            Ekstra Bladet+</a
+          >
+        </span>
+        <span class="nav-item color--sex-samliv" id="fn_572_sex-samliv_parent">
+          <a
+            href="https://dev039.ekstrabladet.dk/side9/"
+            class="color--black menu-hover--border menu-hover--inherit gaTopMenu"
+            data-menuitem="Side 9"
+          >
+            Side 9</a
+          >
+        </span>
+      </div>
+      <!-- lastUnit -->
+
+      <div class="mar-l--auto eb-row fs-showmore">
+        <span class="fnTopMenuClick pad-m--rl color--eb fs-showmore">
+          <a
+            href="/abonnement"
+            class="color--black menu-hover--inherit nav-subscriptionmenu fnTopMenuClick gaTopMenu"
+            id="fn_subscriptionMenu_parent"
+            data-flyoutdir="right"
+            data-menuitem="Abb-knap-menu"
+          >
+            Køb abonnement<span
+              class="flyout-container fnFlyoutContainer flyout--right"
+              id="fn_subscriptionMenu"
+            >
+            </span>
+          </a>
+        </span>
+        <div class="fnTopMenuClick nav-item">
+          <span
+            class="medielogin-logo medielogin-logo--icon v-align--m"
+            style="position: absolute; left: -9999em;"
+          >
+            <svg
+              id="Layer_1"
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 44.2 56.4"
+            >
+              <defs>
+                <linearGradient
+                  id="linear-gradient"
+                  x1="8.35"
+                  y1="371.66"
+                  x2="52.15"
+                  y2="371.66"
+                  gradientTransform="matrix(1, 0, 0, -1, -8.3, 424.31)"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0" stop-color="#2f617f"></stop>
+                  <stop offset="0.47" stop-color="#4488b2"></stop>
+                  <stop offset="0.62" stop-color="#4486af"></stop>
+                  <stop offset="0.79" stop-color="#3e80a6"></stop>
+                  <stop offset="0.97" stop-color="#3a7496"></stop>
+                  <stop offset="1" stop-color="#387193"></stop>
+                </linearGradient>
+                <linearGradient
+                  id="linear-gradient-2"
+                  x1="6.12"
+                  y1="370.08"
+                  x2="25.13"
+                  y2="389.08"
+                  gradientTransform="matrix(1, 0, 0, -1, -8.3, 424.31)"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0" stop-color="#52a8de"></stop>
+                  <stop offset="0.09" stop-color="#4c9bcc"></stop>
+                  <stop offset="0.21" stop-color="#468db8"></stop>
+                  <stop offset="0.32" stop-color="#4080a9"></stop>
+                  <stop offset="0.43" stop-color="#3d7a9f"></stop>
+                  <stop offset="0.53" stop-color="#3c789c"></stop>
+                  <stop offset="0.65" stop-color="#2f617f"></stop>
+                </linearGradient>
+                <radialGradient
+                  id="radial-gradient"
+                  cx="30.33"
+                  cy="402.96"
+                  r="21.65"
+                  gradientTransform="matrix(1, 0, 0, -1, -8.3, 424.31)"
+                  xlink:href="#linear-gradient"
+                ></radialGradient>
+                <linearGradient
+                  id="linear-gradient-3"
+                  x1="37.66"
+                  y1="379.56"
+                  x2="52.31"
+                  y2="379.56"
+                  gradientTransform="matrix(1, 0, 0, -1, -8.3, 424.31)"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0" stop-color="#3c789c"></stop>
+                  <stop offset="0.18" stop-color="#3d7a9f"></stop>
+                  <stop offset="0.39" stop-color="#4080a9"></stop>
+                  <stop offset="0.6" stop-color="#468db8"></stop>
+                  <stop offset="0.83" stop-color="#4c9bcc"></stop>
+                  <stop offset="1" stop-color="#52a8de"></stop>
+                </linearGradient>
+              </defs>
+              <title>medieloginlogo_icon</title>
+              <rect
+                y="48.9"
+                width="43.8"
+                height="7.5"
+                style="fill:url(#linear-gradient)"
+              ></rect>
+              <polygon
+                points="0 56.4 14.7 42.7 14.7 33.1 0 46.7 0 56.4"
+                style="fill:url(#linear-gradient-2)"
+              ></polygon>
+              <path
+                d="M22,0a22,22,0,0,0-7.3,42.7V33A13.12,13.12,0,0,1,8.8,22,13.3,13.3,0,1,1,29.5,33v9.7A22.1,22.1,0,0,0,44.2,22,22.3,22.3,0,0,0,22,0Z"
+                transform="translate(0 0)"
+                style="fill:url(#radial-gradient)"
+              ></path>
+              <polygon
+                points="44 56.4 29.4 42.7 29.4 33.1 44 46.7 44 56.4"
+                style="fill:url(#linear-gradient-3)"
+              ></polygon></svg
+          ></span>
+
+          <span
+            class=" color--bruger logged-out color--bruger"
+            id="fn_user_loggedOut_parent"
+          >
+            <span
+              class="fnTopMenuClick eb-row color--black menu-hover--inherit gaTopMenu"
+              data-menuitem="login-knap-menu"
+            >
+              <span class="medielogin-logo medielogin-logo--icon v-align--m">
+                <svg viewBox="0 0 61 72">
+                  <use xlink:href="#medielogin"></use>
+                </svg>
+              </span>
+              <span class="pad-s--l">Log ind</span>
+
+              <span
+                class="flyout-container fnFlyoutContainer"
+                id="fn_user_loggedOut"
+              >
+                <span
+                  class="flyout-topper bg--bruger"
+                  id="fnFlyfrom_fn_user_loggedOut"
+                >
+                  <a
+                    href="/medielogin/login?returnTo="
+                    title="Log ind"
+                    class="flyout-item fnNavItem"
+                    >Log ind</a
+                  >
+                  <a
+                    href="/medielogin/opret-bruger?returnTo="
+                    title="Opret Medielogin"
+                    class="flyout-item fnNavItem"
+                    >Opret Medielogin</a
+                  >
+                  <a
+                    href="/medielogin/nulstil-kodeord?returnTo="
+                    title="Glemt kodeord"
+                    class="flyout-item fnNavItem"
+                    >Glemt kodeord</a
+                  >
+                  <a
+                    href="https://medielogin.dk/faq?returnTo="
+                    title="Hvad er Medielogin?"
+                    class="flyout-item fnNavItem"
+                    >Hvad er Medielogin?</a
+                  >
+                </span>
+              </span>
+            </span>
+          </span>
+        </div>
+
+        <label
+          for="menuOverlayCheck"
+          class="color--black pad-m--rl nav-item--search eb-row"
+        >
+          <span class="mar-s--r"
+            ><svg
+              class="svg-inline--fa fa-search fa-w-16"
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="search"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              data-fa-i2svg=""
+            >
+              <path
+                fill="currentColor"
+                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+              ></path></svg
+            ><!-- <i class="fa fas fa-search"></i> --></span
+          >
+          <span class="menu--open">Søg</span>
+        </label>
+      </div>
+    </div>
+    <!-- fnTopnavigation -->
+  </div>
+  <!-- fnStickymenu -->
+</div>
