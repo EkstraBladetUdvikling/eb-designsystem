@@ -20,10 +20,15 @@
   line-height: 16px;
   justify-content: space-between;
   flex-direction: row;
-  padding: 0 10px;
+  padding: 0 20px;
   position: relative;
   width: 100%;
   z-index: 1000000;
+}
+
+.nav-top ul,
+.nav-top li {
+  list-style: none;
 }
 
 .nav-top-left {
@@ -40,10 +45,19 @@
 
 .nav-top .nav-item {
   border-left: 1px solid var(--nav--color-divider);
+  padding: 0 10px;
+}
+
+.nav-top .nav-item--brand {
+  padding: 0;
 }
 
 .nav-top .nav-item:first-child {
   border-left: 0;
+}
+
+.nav-top .nav-item:last-child {
+  padding-right: 0;
 }
 
 .nav-top-show_when_fixed {
