@@ -23,7 +23,7 @@
   padding: 0 20px;
   font-size: 14px;
   height: var(--button-height);
-  line-height: var(--button-height);
+  line-height: calc(var(--button-height) - 2px);
   box-sizing: border-box;
   text-align: center;
   white-space: nowrap;
