@@ -9,6 +9,7 @@
   --fgcolor--button-accept: var(--fgcolor--green);
   --color--button-cancel: var(--color--red);
   --fgcolor--button-cancel: var(--fgcolor--red);
+  --button-height: 36px;
 }
 
 .button {
@@ -16,12 +17,13 @@
   border: 1px solid var(--color--button-default);
   color: var(--color--button-default);
   align-items: center;
+  cursor: pointer;
   display: flex;
   border-radius: 20px;
   padding: 0 20px;
   font-size: 14px;
-  height: 36px;
-  line-height: 36px;
+  height: var(--button-height);
+  line-height: var(--button-height);
   box-sizing: border-box;
   text-align: center;
   white-space: nowrap;
@@ -148,4 +150,15 @@
 
 .button .fa:last-child {
   margin-left: 10px;
+}
+
+.button--icon {
+  justify-content: center;
+  min-width: var(--button-height);
+  padding: 0;
+}
+
+.button--icon .fa:first-child,
+.button--icon .fa:last-child {
+  margin: 0;
 }

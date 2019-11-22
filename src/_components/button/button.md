@@ -135,3 +135,27 @@ Det her er en standard knap uden nogen hat
   <i class="fa fal fa-angle-left"></i>
   <span>Button solid icon left</span>
 </button>
+
+
+### Button icon, no text
+
+```html
+<button class="button button--icon">
+  <i class="fa fal fa-times"></i>
+</button>
+````
+
+<button class="button button--icon">
+  <i class="fa fal fa-times"></i>
+</button>
+
+
+```html
+<button class="button button--solid button--icon">
+  <i class="fa fal fa-times"></i>
+</button>
+````
+
+<button class="button button--solid button--icon">
+  <i class="fa fal fa-times"></i>
+</button>
