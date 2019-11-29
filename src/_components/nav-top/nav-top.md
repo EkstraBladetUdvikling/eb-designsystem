@@ -1,6 +1,6 @@
 ---
 layout: component
-permalink: components/nav-top
+# permalink: /eb-designsystem/components/nav-top
 title: Navigation top
 ---
 

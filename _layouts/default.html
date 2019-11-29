@@ -54,7 +54,9 @@
           <h3>Components</h3>
           {% for component in site.components %}
           <div>
-            <a href="{{ component.permalink }}">{{ component.title }} </a>
+            <a href="{{ component.url | relative_url }}"
+              >{{ component.title }}
+            </a>
           </div>
           {% endfor %}
         </nav>

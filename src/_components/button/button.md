@@ -1,6 +1,6 @@
 ---
 layout: component
-permalink: components/button
+# permalink: /eb-designsystem/components/button
 title: Button
 ---
 
