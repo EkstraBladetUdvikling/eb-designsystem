@@ -1,6 +1,6 @@
 ---
 layout: component
-permalink: /components/button
+permalink: components/button
 title: Button
 ---
 
