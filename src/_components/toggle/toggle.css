@@ -1,0 +1,28 @@
+.toggle-input {
+  display: none;
+}
+
+.toggle-container {
+  cursor: pointer;
+}
+
+.toggle {
+  cursor: pointer;
+  display: inline-flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.toggle--icon {
+  width: 20px;
+}
+
+.toggle-input ~ .toggle-off,
+.toggle-input:checked ~ .toggle-on {
+  display: inline-block;
+}
+
+.toggle-input:checked ~ .toggle-off,
+.toggle-input ~ .toggle-on {
+  display: none;
+}
