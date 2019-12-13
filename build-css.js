@@ -30,6 +30,19 @@ const cssnextObject = {
   warnForDuplicates: false
 };
 
+const readFolder = (folderName, filesToFind, array) => {
+  fs.readdirSync(folderName, { withFileTypes: true }).forEach(output => {
+    if (output.isFile()) {
+      if (path.extname(output.name).toLowerCase() === filesToFind) {
+        array.push(`${folderName}/${output.name}`);
+      }
+    } else if (output.isDirectory()) {
+      const dirName = `${folderName}/${output.name}`;
+      readFolder(dirName, filesToFind, array);
+    }
+  });
+};
+
 const runtimeArguments = process.argv.slice(2);
 const buildCSS = async envArg => {
   try {
@@ -41,34 +54,11 @@ const buildCSS = async envArg => {
     /**
      * Find all css files in src folder
      */
-    fs.readdirSync(srcFolder, { withFileTypes }).forEach(output => {
-      if (output.isFile()) {
-        if (path.extname(output.name).toLowerCase() === fileTypeToFind) {
-          cssFilesToRead.push(`${srcFolder}/${output.name}`);
-        }
-      } else if (output.isDirectory()) {
-        console.log("?");
-        const dirName = `${srcFolder}/${output.name}`;
-        fs.readdirSync(dirName, { withFileTypes }).forEach(readContent => {
-          console.log("readContent.isFile", readContent.isFile());
-          if (readContent.isFile()) {
-            console.log("w0r?", readContent);
-            if (
-              path.extname(readContent.name).toLowerCase() === fileTypeToFind
-            ) {
-              console.log("yellllllllo=?");
-              cssFilesToRead.push(`${dirName}/${readContent.name}`);
-            }
-          }
-        });
-      }
-    });
+    readFolder(srcFolder, fileTypeToFind, cssFilesToRead);
 
     const inputFile = "./src/index.css";
     const outFolder = "dist";
-    // runtimeArguments.shift() === "watch" || envArg === "watch"
-    //   ? pkg.devFolder
-    //   : pkg.distFolder;
+
     const outputFile = `${outFolder}/outputs.css`;
     const outputFile2 = `_site/${outFolder}/outputs.css`;
 
@@ -77,7 +67,7 @@ const buildCSS = async envArg => {
     }
 
     const readFileContent = [];
-    console.log(cssFilesToRead);
+
     [...cssFilesToRead, inputFile].forEach(fileName => {
       readFileContent.push(fs.readFileSync(fileName));
     });
