@@ -36,6 +36,16 @@ The top navigation has two default states. Initial state placed relative to elem
               Nav-item (hover)
           </a>
         </li>
+        <li class="nav-item color--flash">
+          <a href="#" class="nav-item-hover">
+              Nav-item (hover)
+          </a>
+        </li>
+        <li class="nav-item color--flash">
+          <a href="#" class="nav-item-hover">
+              Nav-item (hover)
+          </a>
+        </li>
       </ul>
     </div>
     <div class="nav-top-right">

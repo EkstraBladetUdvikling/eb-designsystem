@@ -27,6 +27,7 @@
   box-sizing: border-box;
   text-align: center;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .button:hover {

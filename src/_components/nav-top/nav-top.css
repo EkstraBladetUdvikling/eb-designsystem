@@ -38,6 +38,7 @@
   align-items: center;
   display: flex;
   font-size: var(--fs-medium);
+  padding-right: 10px;
   justify-content: flex-start;
 }
 
@@ -52,6 +53,7 @@
   align-items: center;
   cursor: pointer;
   display: flex;
+  white-space: nowrap;
 }
 
 .nav-item-hover {
