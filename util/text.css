@@ -1,79 +1,31 @@
-/*
- @pagename
- @name
- @description
- @markup
- */
 .fs-italic {
   font-style: italic;
 }
 
-/*
- @pagename
- @name
- @description
- @markup
- */
 .fw-bold {
   font-weight: bold;
 }
 
-/*
- @pagename
- @name
- @description
- @markup
- */
 .fw-normal {
   font-weight: normal;
 }
 
-/*
- @pagename
- @name
- @description
- @markup
- */
 .ta-left {
   text-align: left;
 }
 
-/*
- @pagename
- @name
- @description
- @markup
- */
 .ta-center {
   text-align: center;
 }
 
-/*
- @pagename
- @name
- @description
- @markup
- */
 .ta-right {
   text-align: right;
 }
 
-/*
- @pagename
- @name
- @description
- @markup
- */
 .lh-half.lh-half.lh-half {
-  line-height: 0.5em;
+  line-height: .5em;
 }
 
-/*
- @pagename
- @name
- @description
- @markup
- */
 .lh-normal.lh-normal.lh-normal {
   line-height: 1.5em;
 }
