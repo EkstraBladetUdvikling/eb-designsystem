@@ -1,0 +1,144 @@
+/*
+@pagename
+@name
+@description
+@markup
+*/
+.figure {
+  line-height: 0;
+  margin: 0;
+  position: relative;
+}
+
+.figure-image {
+  height: auto;
+  width: 100%;
+}
+
+.desktop .figure-image--side9 {
+  height: auto;
+  width: var(--grid-standard);
+}
+
+.newon-side9 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.monthlywinner-side9 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.figure-caption {
+  display: block;
+  font-size: var(--fs-caption);
+  line-height: calc(var(--fs-caption) + 2px);
+}
+
+.tv-standalone .figure-caption {
+  padding-bottom: var(--distance-large);
+}
+
+.image-container--landscape {
+  background: var(--color--graa5);
+  color: var(--fgcolor--graa5);
+
+  position: relative;
+
+  display: block;
+  height: 0;
+  padding-top: 56.25%;
+  overflow: hidden;
+  width: 100%;
+}
+
+.image-container-img {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+}
+
+.figure-round {
+  border-radius: 50px;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+  top: -20px;
+  width: 100px;
+}
+
+.smartphone .figure-round {
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.figure-round--bg {
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/**
+* @name Article type indicators
+* @description adds overlay on top of thumbnail images according to the article "media" type. Extends font awesome icons
+*/
+.indicator-overlay {
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  z-index: 1;
+}
+
+.indicator-video {
+  background: url("/assets/base/svg/play-icon.svg") no-repeat;
+  height: 25px;
+  width: 25px;
+}
+
+.indicator-video.is-intext {
+  height: 14px;
+  width: 14px;
+}
+
+.desktop .indicator-video.indicator-medium {
+  height: 40px;
+  width: 40px;
+}
+
+.desktop .indicator-video.indicator-large {
+  height: 60px;
+  width: 60px;
+}
+
+.indicator-video--super {
+  height: 60px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+}
+
+@media (--desktop) {
+  .indicator-video--super {
+    height: 90px;
+    width: 90px;
+  }
+
+  .indicator-video--super:hover {
+    height: 120px;
+    width: 120px;
+  }
+}

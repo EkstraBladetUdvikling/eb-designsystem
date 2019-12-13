@@ -1,0 +1,206 @@
+/**
+* @pagename helpers
+* @name eb-row
+* @description Style for the eb-row
+* @markup
+<span class="eb-row">markup</span>
+*/
+.eb-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.eb-row--wrap {
+  flex-wrap: wrap;
+}
+
+/*
+@pagename helpers
+@name eb-row--itemstretch
+@extends eb-row
+@description
+@markup
+*/
+.eb-row--itemstretch.eb-row--itemstretch {
+  align-items: stretch;
+}
+
+/*
+  @pagename helpers
+  @name eb-row--itemreverse
+  @extends eb-row
+  @description
+  @markup
+*/
+.eb-row--itemreverse {
+  flex-direction: row-reverse;
+}
+
+/*
+@pagename helpers
+@name eb-row--top
+@extends eb-row
+@description
+@markup
+*/
+.eb-row--top {
+  align-items: flex-start;
+}
+
+/*
+@pagename helpers
+@name eb-row--bottom
+@extends eb-row
+@description
+@markup
+*/
+.eb-row--center {
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+@pagename helpers
+@name eb-row--end
+@extends eb-row
+@description
+@markup
+*/
+.eb-row--end {
+  justify-content: flex-end;
+}
+
+/*
+@pagename helpers
+@name eb-row--bottom
+@extends eb-row
+@description
+@markup
+*/
+.eb-row--bottom {
+  align-items: flex-end;
+}
+
+/*
+@pagename helpers
+@name eb-row--bottom
+@extends eb-row
+@description
+@markup
+*/
+.eb-row--between {
+  justify-content: space-between;
+}
+
+.eb-row--around {
+  justify-content: space-around;
+}
+
+/*
+@pagename helpers
+@name eb-row-item
+@description
+@markup
+*/
+.eb-row-item {
+  display: block;
+}
+
+/*
+@pagename helpers
+@name eb-row-item--grow
+@extends eb-row-item
+@description
+@markup
+*/
+.eb-row-item--grow {
+  flex-grow: 1;
+}
+
+/*
+@pagename helpers
+@name eb-row-item--grow
+@extends eb-row-item
+@description
+@markup
+*/
+.eb-row-item--noshrink {
+  flex-shrink: 0;
+}
+
+/*
+@pagename helpers
+@name eb-row-item--top
+@extends eb-row-item
+@description
+@markup
+*/
+.eb-row-item--top {
+  align-self: flex-start;
+}
+
+/*
+@pagename helpers
+@name eb-row-item--bottom
+@extends eb-row-item
+@description
+@markup
+*/
+.eb-row-item--bottom {
+  align-self: flex-end;
+}
+
+/*
+@pagename helpers
+@name eb-row-item--bottom
+@extends eb-row-item
+@description
+@markup
+*/
+.eb-row-item--stretch {
+  align-self: stretch;
+}
+
+/*
+@pagename helpers
+@name eb-row-item--center
+@extends eb-row-item
+@description
+@markup
+*/
+.eb-row-item--center {
+  margin: auto;
+}
+
+/*
+@pagename helpers
+@name eb-column
+@description
+@markup
+*/
+.eb-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+@pagename helpers
+@name eb-column--centered
+@extends eb-column && eb-row
+@description
+@markup
+*/
+.eb-items--centered {
+  justify-content: center;
+}
+
+/*
+@pagename
+@name
+@description
+@markup
+*/
+.columns--2 {
+  column-count: 2;
+}

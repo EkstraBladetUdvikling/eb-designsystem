@@ -1,0 +1,28 @@
+.sh-checkbox {
+  left: -999999em;
+  opacity: 0;
+  position: absolute;
+  text-indent: -999999em;
+  transform: translateX(-999999em);
+  visibility: hidden;
+  z-index: -1;
+}
+
+.sh-element {
+  transform-origin: top left;
+  transform: scale(0, 0);
+  position: absolute;
+}
+
+.sh-checkbox:checked + .sh-element {
+  transform: none;
+  position: static;
+}
+
+.sh-checkbox:checked + .sh-element--fixed {
+  position: fixed;
+}
+
+.sh-checkbox:checked ~ .sh-label--hide {
+  display: none;
+}

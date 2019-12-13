@@ -1,0 +1,52 @@
+/**
+* @pagename helpers
+* @name P-Absolute
+* @description Style for the p-absolute class
+* @markup
+<div class="p-absolute">markup</div>
+*/
+.absolute,
+.p-absolute {
+  position: absolute;
+}
+
+.p-absolute--fill {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.p-right {
+  left: auto;
+  right: 0;
+}
+
+/**
+* @pagename helpers
+* @name P-Relative
+* @description Style for the p-relative class
+* @markup
+<div class="p-relative">markup</div>
+*/
+.relative,
+.p-relative {
+  position: relative;
+}
+
+/**
+* @pagename helpers
+* @name positioning
+* @description Style for the p-relative class
+* @markup
+<div class="p-relative">markup</div>
+*/
+.p-fixed {
+  position: fixed;
+}
+
+.p-fixed--bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

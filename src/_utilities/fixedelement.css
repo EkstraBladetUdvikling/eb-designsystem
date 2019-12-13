@@ -1,0 +1,32 @@
+/**
+  * @block
+  * @name Js-Stickingaround
+  * @description Style for the js-stickingAround class
+  * @markup
+  *   <div class="js-stickingAround">markup</div>
+  */
+
+.js-stickingAround.js-stickingAround.js-stickingAround {
+  position: fixed;
+
+  top: var(--distance-standard);
+  right: 0;
+  left: 0;
+
+  z-index: 999999;
+
+  transform: translateX(0);
+  transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+@media (--desktop) {
+  .js-stickingAround.js-stickingAround.js-stickingAround {
+    top: 0;
+  }
+
+  .searchareacontainer.js-stickingAround.js-stickingAround {
+    top: 50px;
+  }
+}
