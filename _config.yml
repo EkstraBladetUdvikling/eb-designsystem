@@ -59,3 +59,5 @@ collections_dir: src
 collections:
   components:
     output: true
+  utilities:
+    output: true

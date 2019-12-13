@@ -47,12 +47,16 @@ const buildCSS = async envArg => {
           cssFilesToRead.push(`${srcFolder}/${output.name}`);
         }
       } else if (output.isDirectory()) {
+        console.log("?");
         const dirName = `${srcFolder}/${output.name}`;
         fs.readdirSync(dirName, { withFileTypes }).forEach(readContent => {
+          console.log("readContent.isFile", readContent.isFile());
           if (readContent.isFile()) {
+            console.log("w0r?", readContent);
             if (
               path.extname(readContent.name).toLowerCase() === fileTypeToFind
             ) {
+              console.log("yellllllllo=?");
               cssFilesToRead.push(`${dirName}/${readContent.name}`);
             }
           }
@@ -73,6 +77,7 @@ const buildCSS = async envArg => {
     }
 
     const readFileContent = [];
+    console.log(cssFilesToRead);
     [...cssFilesToRead, inputFile].forEach(fileName => {
       readFileContent.push(fs.readFileSync(fileName));
     });
