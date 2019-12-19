@@ -1,6 +1,6 @@
 :root {
-  --nav-height: 50px;
   --nav--color-divider: var(--color--graa5);
+  --nav-height: 50px;
 }
 
 .nav-top-stickybackground {
@@ -8,23 +8,24 @@
 }
 
 .nav-top {
+  position: relative;
+  z-index: 1000000;
+
   align-items: center;
-  border-radius: 0 0 10px 10px;
-  box-shadow: 0 10px 10px 0 rgba(var(--rgb-color--black), 0.1);
-  box-sizing: border-box;
   background: var(--color--white);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
+  box-sizing: border-box;
   color: var(--fgcolor--white);
   display: flex;
-  font-size: 16px;
-  height: var(--nav-height);
-  line-height: 16px;
-  justify-content: space-between;
   flex-direction: row;
+  font-size: 16px;
+  justify-content: space-between;
+  line-height: 16px;
   padding: 0 20px;
-  position: relative;
   width: 100%;
   min-width: 960px;
-  z-index: 1000000;
+  height: var(--nav-height);
 }
 
 .nav-top ul,

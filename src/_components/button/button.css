@@ -1,32 +1,32 @@
 :root {
-  --color--button-default: var(--color--bluedark);
-  --fgcolor--button-default: var(--fgcolor--bluedark);
-  --color--button-primary: var(--color--bruger);
-  --fgcolor--button-primary: var(--fgcolor--bruger);
-  --color--button-secondary: var(--color--graa3);
-  --fgcolor--button-secondary: var(--fgcolor--graa3);
+  --button-height: 44px;
   --color--button-accept: var(--color--green);
-  --fgcolor--button-accept: var(--fgcolor--green);
   --color--button-cancel: var(--color--red);
+  --color--button-default: var(--color--bluedark);
+  --color--button-primary: var(--color--bruger);
+  --color--button-secondary: var(--color--graa3);
+  --fgcolor--button-accept: var(--fgcolor--green);
   --fgcolor--button-cancel: var(--fgcolor--red);
-  --button-height: 36px;
+  --fgcolor--button-default: var(--fgcolor--bluedark);
+  --fgcolor--button-primary: var(--fgcolor--bruger);
+  --fgcolor--button-secondary: var(--fgcolor--graa3);
 }
 
 .button {
+  align-items: center;
   background: var(--color--white);
   border: 1px solid var(--color--button-default);
+  border-radius: 20px;
+  box-sizing: border-box;
   color: var(--color--button-default);
-  align-items: center;
   cursor: pointer;
   display: flex;
-  border-radius: 20px;
-  padding: 0 20px;
   font-size: 14px;
-  height: var(--button-height);
   line-height: calc(var(--button-height) - 2px);
-  box-sizing: border-box;
+  padding: 0 20px;
   text-align: center;
   white-space: nowrap;
+  height: var(--button-height);
 }
 
 .button:hover {
@@ -154,8 +154,8 @@
 
 .button--icon {
   justify-content: center;
-  min-width: var(--button-height);
   padding: 0;
+  min-width: var(--button-height);
 }
 
 .button--icon .fa:first-child,

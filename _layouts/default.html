@@ -39,6 +39,9 @@
     </style>
   </head>
   <body>
+    <a href="#content" class="screen-reader-text">
+      Skip navigation
+    </a>
     <div class="grid-width--xlarge">
       <header class="dsm-header">
         <svg viewBox="0 0 40 35" class="eblogo-40px mar-l--r">
@@ -70,7 +73,7 @@
             {% endfor %}
           </nav>
         </aside>
-        <div class="pad-l size1of1 dsm-content">
+        <div class="pad-l size1of1 dsm-content" id="content">
           {{ content }}
         </div>
       </div>

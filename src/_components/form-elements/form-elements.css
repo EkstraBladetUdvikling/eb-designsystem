@@ -11,19 +11,20 @@
 }
 
 .form-input {
-  border-radius: 5px;
   border: 1px solid;
+  border-radius: 5px;
   box-sizing: border-box;
-  height: 30px;
   line-height: 30px;
   padding: 5px;
+  height: 30px;
 }
 
 .form-input ~ .form-label {
-  font-size: 0.7em;
   position: absolute;
-  left: 5px;
   top: 0;
+  left: 5px;
+
+  font-size: .7em;
   transform: translate(0, -110%);
 }
 

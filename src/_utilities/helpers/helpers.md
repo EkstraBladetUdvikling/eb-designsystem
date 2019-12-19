@@ -47,3 +47,10 @@ title: Helpers
   clear: both;
 }
 ```
+
+```css
+.vertical-center {
+  margin-right: auto;
+  margin-left: auto;
+}
+```

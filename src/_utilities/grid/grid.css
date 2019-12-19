@@ -1,7 +1,7 @@
 :root {
-  --grid-small: 610px;
-  --grid-medium: 730px;
   --grid-large: 910px;
+  --grid-medium: 730px;
+  --grid-small: 610px;
   --grid-xlarge: 930px;
 }
 
