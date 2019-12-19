@@ -5,42 +5,34 @@ title: Helpers
 
 # Helpers
 
+### Hidden
+
+Hidden er bare display: none
 
 ```css
-.hidden {
-  display: none;
-}
+display: none
 ```
 
-```css
-.position-absolute {
-  position: absolute;
-}
-```
+### Position
+
+Findes som absolute, fixed og relative
 
 ```css
-.position-relative {
-  position: relative;
-}
+position-absolute
+position-fixed
+position-relative
 ```
 
-```css
-.position-fixed {
-  position: fixed;
-}
-```
+### Floats
+
+Findes som left og right
 
 ```css
-.float-left {
-  float: left;
-}
+float-left
+float-right
 ```
 
-```css
-.float-right {
-  float: right;
-}
-```
+Clear
 
 ```css
 .clear {
@@ -48,9 +40,18 @@ title: Helpers
 }
 ```
 
-```css
-.vertical-center {
-  margin-right: auto;
-  margin-left: auto;
-}
+### Centrér vertikalt
+
+Centrér element vertikal i sin container. Kræver at containeren har text-align--center
+
+<div class="text-align--center bg--graa1">
+  <div class="width-1of3 text-align--left bg--graa3">Jeg er ikke centreret</div>
+  <div class="width-1of3 vertical-center text-align--left bg--graa3">Jeg er centreret</div>
+</div>
+
+```html
+<div class="text-align--center bg--graa1">
+  <div class="width-1of3 text-align--left bg--graa3">Jeg er ikke centreret</div>
+  <div class="width-1of3 vertical-center text-align--left bg--graa3">Jeg er centreret</div>
+</div>
 ```

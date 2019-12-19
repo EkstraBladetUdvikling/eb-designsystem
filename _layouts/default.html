@@ -17,25 +17,25 @@
     ></script>
     <style>
       .dsm-header {
-        align-items: center;
+              align-items: center;
         display: flex;
         padding: 20px;
-      }
-      .dsm-content h1,
-      .dsm-content h2,
-      .dsm-content h3,
-      .dsm-content h4,
-      .dsm-content h5,
-      .dsm-content h6 {
-        margin-bottom: 20px;
-      }
-      .dsm-content h2,
-      .dsm-content h3,
-      .dsm-content h4,
-      .dsm-content h5,
-      .dsm-content h6 {
-        margin-top: 40px;
-      }
+            }
+            .dsm-content h1,
+            .dsm-content h2,
+            .dsm-content h3,
+            .dsm-content h4,
+            .dsm-content h5,
+            .dsm-content h6 {
+              margin-bottom: 20px;
+            }
+            .dsm-content h2,
+            .dsm-content h3,
+            .dsm-content h4,
+            .dsm-content h5,
+            .dsm-content h6 {
+              margin-top: 40px;
+            }
     </style>
   </head>
   <body>
@@ -56,21 +56,25 @@
         <aside class="pad-l">
           <nav>
             <h3>Utilities</h3>
-            {% for utility in site.utilities %}
-            <div>
-              <a href="{{ utility.url | relative_url }}"
-                >{{ utility.title }}
-              </a>
-            </div>
-            {% endfor %}
+            <ul>
+              {% for utility in site.utilities %}
+              <li>
+                <a href="{{ utility.url | relative_url }}"
+                  >{{ utility.title }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
             <h3>Components</h3>
-            {% for component in site.components %}
-            <div>
-              <a href="{{ component.url | relative_url }}"
-                >{{ component.title }}
-              </a>
-            </div>
-            {% endfor %}
+            <ul>
+              {% for component in site.components %}
+              <li>
+                <a href="{{ component.url | relative_url }}"
+                  >{{ component.title }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
           </nav>
         </aside>
         <div class="pad-l size1of1 dsm-content" id="content">

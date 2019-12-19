@@ -1,52 +1,41 @@
 ---
 layout: component
-title: Grid widths
+title: Grid widths (desktop/tablet)
 ---
 
 ## Grid widths
 
-<div class="grid-width--xlarge text-align--center bg--graa1">
+<div class="grid-width--xlarge text-align--center bg--graa1" style="overflow: hidden">
   <p>grid-width--xlarge: 930px</p>
-  <div class="grid-width--large vertical-center bg--graa3">
+  <p>Page content width - frontpage</p>
+  <div class="grid-width--large vertical-center bg--graa3" style="overflow: hidden">
     <p>grid-width--large: 910px</p>
-    <div class="grid-width--medium vertical-center bg--graa4">
+    <p>Page content width</p>
+    <div class="grid-width--medium vertical-center bg--graa4" style="overflow: hidden">
       <p>grid-width--medium: 730px</p>
-      <div class="grid-width--small vertical-center bg--graa5">
+      <p>Bodytext container width</p>
+      <div class="grid-width--small vertical-center bg--graa5" style="overflow: hidden">
         <p>grid-width--small: 610px</p>
+        <p>Widget width</p>
       </div>
     </div>
   </div>
 </div>
 
-```css
-:root {
-  --grid-small: 610px;
-  --grid-medium: 730px;
-  --grid-large: 910px;
-  --grid-xlarge: 930px;
-}
-```
+CSS class names
 
 ```css
-.grid-width--small {
-  width: var(--grid-small);
-}
+grid-width--small
+grid-width--medium
+grid-width--large
+grid-width--xlarge
 ```
 
-```css
-.grid-width--medium {
-  width: var(--grid-medium);
-}
-```
+CSS variable names
 
 ```css
-.grid-width--large {
-  width: var(--grid-large);
-}
-```
-
-```css
-.grid-width--xlarge {
-  width: var(--grid-xlarge);
-}
+--grid-small: 610px;
+--grid-medium: 730px;
+--grid-large: 910px;
+--grid-xlarge: 930px;
 ```

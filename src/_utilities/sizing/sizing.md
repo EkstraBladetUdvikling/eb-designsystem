@@ -3,88 +3,54 @@ layout: component
 title: Sizing
 ---
 
-# Sizing
+## Sizing
+
+### Højder
+
+Auto
 
 ```css
-.height-auto {
-  height: auto;
-}
+height-auto
+````
+
+Højde i brøkdele
+
+```css
+height-1of1
 ```
 
-```css
-.height-100vh {
-  height: 100vh;
-}
-```
+### Viewport height
+
+Vær opmærksom på at disse opfører sig meget forskelligt på forskellige devices
 
 ```css
-.height-1of1 {
-  height: 100%;
-}
+height-100vh
 ```
 
-```css
-.width-auto {
-  width: auto;
-}
-```
+### Bredder
+
+Bredde i brøkdele
 
 ```css
-.width-100vw {
-  width: 100vw;
-}
+width-1of1
+width-1of2
+width-1of3
+width-1of4
+width-1of5
+width-1of6
+width-2of3
+width-3of4
+width-5of6
 ```
 
-```css
-.width-1of1 {
-  width: 100%;
-}
-```
+Auto
 
 ```css
-.width-3of4 {
-  width: 75%;
-}
+width-auto
 ```
 
-```css
-.width-2of3 {
-  width: 66.666%;
-}
-```
+### Viewport width
 
 ```css
-.width-1of2 {
-  width: 50%;
-}
-```
-
-```css
-.width-1of3 {
-  width: 33.333%;
-}
-```
-
-```css
-.width-1of4 {
-  width: 25%;
-}
-```
-
-```css
-.width-1of5 {
-  width: 20%;
-}
-```
-
-```css
-.width-5of6 {
-  width: 83.333%;
-}
-```
-
-```css
-.width-1of6 {
-  width: 16.666%;
-}
+width-100vw
 ```
