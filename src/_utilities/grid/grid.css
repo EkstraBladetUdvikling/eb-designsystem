@@ -1,0 +1,22 @@
+:root {
+  --grid-large: 910px;
+  --grid-medium: 730px;
+  --grid-small: 610px;
+  --grid-xlarge: 930px;
+}
+
+.grid-width--small {
+  width: var(--grid-small);
+}
+
+.grid-width--medium {
+  width: var(--grid-medium);
+}
+
+.grid-width--large {
+  width: var(--grid-large);
+}
+
+.grid-width--xlarge {
+  width: var(--grid-xlarge);
+}

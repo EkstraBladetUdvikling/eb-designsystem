@@ -10,8 +10,6 @@ The top navigation has two default states. Initial state placed relative to elem
 
 ## Initial state
 
-
-
 <div class="nav-top-stickybackground">
   <nav class="nav-top">
     <div class="nav-top-left">
@@ -51,6 +49,23 @@ The top navigation has two default states. Initial state placed relative to elem
     </div>
   </nav>
 </div>
+
+<nav class="nav-top nav-top--sub">
+  <ul class="nav-top-left">
+    <li class="nav-item color--nyheder">
+      <a href="#">
+          Nav-sub-item (hover)
+      </a>
+    </li>
+    <li class="nav-item color--flash">
+      <a href="#">
+          Nav-sub-item (hover)
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
 
 ## Fixed state
 

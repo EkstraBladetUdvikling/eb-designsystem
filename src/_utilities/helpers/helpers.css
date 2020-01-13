@@ -25,3 +25,8 @@
 .clear {
   clear: both;
 }
+
+.vertical-center {
+  margin-right: auto;
+  margin-left: auto;
+}
