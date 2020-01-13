@@ -26,6 +26,7 @@
   line-height: calc(var(--button-height) - 2px);
   padding: 0 20px;
   text-align: center;
+  text-decoration: none;
   white-space: nowrap;
   height: var(--button-height);
 }

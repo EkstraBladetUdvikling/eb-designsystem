@@ -25,6 +25,11 @@
     postcss-rgb-plz "^2.0.2"
     tslint-config-prettier "^1.18.0"
 
+"@ekstra-bladet/eb-fonts@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@ekstra-bladet/eb-fonts/-/eb-fonts-1.0.6.tgz#bbc5bea2c9da6b12cdda8dc4b1f1e97e41c7f610"
+  integrity sha512-jDI9M9057B8wbsymSg80xXsdMULJnYdx2CgK/XfTPf5+qbwYteVcG7tgBKGk/RTJk0ZAyvRk4Ocr/kpFaIFJ3w==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"

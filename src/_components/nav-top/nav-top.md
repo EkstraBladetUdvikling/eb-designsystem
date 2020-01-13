@@ -13,13 +13,30 @@ The top navigation has two default states. Initial state placed relative to elem
 <div class="nav-top-stickybackground">
   <nav class="nav-top">
     <div class="nav-top-left">
-      <a href="/" class="nav-item nav-item--brand nav-top-show_when_fixed">
+      <a href="/" class="nav-brand nav-brand--left nav-top-show_when_fixed">
         <svg viewBox="0 0 40 35" class="eblogo-40px">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ekstrabladet"></use>
         </svg>
       </a>
-      <ul class="nav-top-left">
-        <li class="nav-item color--nyheder">
+      <ul class="nav-list nav-top-left">
+        <li class="nav-item">
+          <label class="toggle-container">
+            <span class="toggle toggle--icon">
+              <input type="checkbox" hidden class="toggle-input" />
+              <i class="toggle toggle-off fas fa-bars color--graa3"></i>
+              <i class="toggle toggle-on far fa-times-circle color--reddark"></i>
+            </span>
+            <span>
+                Nav-item
+            </span>
+          </label>
+        </li>
+        <li class="nav-item color--flash">
+          <a href="#" class="nav-item-hover">
+              Nav-item (hover)
+          </a>
+        </li>
+        <li class="nav-item color--flash">
           <a href="#" class="nav-item-hover">
               Nav-item (hover)
           </a>
@@ -34,15 +51,18 @@ The top navigation has two default states. Initial state placed relative to elem
     <div class="nav-top-right">
       <a href="#" class="button button--solid button--accept">Button accept</a>
       <a href="#" class="button button--solid button--accept">Button accept</a>
-      <ul class="nav-top-right">
-        <li class="nav-item color--flash">
+      <ul class="nav-list nav-top-right">
+        <li class="nav-item color--bruger">
           <a href="#" class="nav-item-hover">
               Nav-item (hover)
           </a>
         </li>
-        <li class="nav-item color--flash">
+        <li class="nav-item color--bruger">
           <a href="#" class="nav-item-hover">
+            <i class="fa fas fa-search"></i>
+            <span>
               Nav-item (hover)
+            </span>
           </a>
         </li>
         </ul>
@@ -74,16 +94,23 @@ In the fixed state(here shown with fixed disable), we show a logo on the left.
 <div class="nav-top-stickybackground">
   <nav class="nav-top nav-top--fixed">
     <div class="nav-top-left">
-      <a href="/" class="nav-item nav-item--brand nav-top-show_when_fixed">
+      <a href="/" class="nav-brand nav-brand--left nav-top-show_when_fixed">
         <svg viewBox="0 0 40 35" class="eblogo-40px">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ekstrabladet"></use>
         </svg>
       </a>
-      <ul class="nav-top-left">
-        <li class="nav-item color--nyheder">
-          <a href="#" class="nav-item-hover">
-              Nav-item (hover)
-          </a>
+      <ul class="nav-list nav-top-left">
+        <li class="nav-item">
+          <label class="toggle-container">
+            <span class="toggle toggle--icon">
+              <input type="checkbox" hidden class="toggle-input" />
+              <i class="toggle toggle-off fas fa-bars color--graa3"></i>
+              <i class="toggle toggle-on far fa-times-circle color--reddark"></i>
+            </span>
+            <span>
+                Nav-item
+            </span>
+          </label>
         </li>
         <li class="nav-item color--flash">
           <a href="#" class="nav-item-hover">
@@ -93,18 +120,23 @@ In the fixed state(here shown with fixed disable), we show a logo on the left.
       </ul>
     </div>
     <div class="nav-top-right">
-      <div>
-        <a href="#" class="button button--solid button--accept">Button accept</a>
-      </div>
-      <ul>
-      <li>
-      <a href="#" class="nav-item color--flash">
-        <i class="fa fas fa-angle-right nav-item-hover"></i>
-        <span class="nav-item-hover">
-          Nav-item (ikon)
-        </span>
-      </a>
-      </li></ul>
+      <a href="#" class="button button--solid button--accept">Button accept</a>
+      <a href="#" class="button button--solid button--accept">Button accept</a>
+      <ul class="nav-list nav-top-right">
+        <li class="nav-item color--bruger">
+          <a href="#" class="nav-item-hover">
+              Nav-item (hover)
+          </a>
+        </li>
+        <li class="nav-item color--bruger">
+          <a href="#" class="nav-item-hover">
+            <i class="fa fas fa-search"></i>
+            <span>
+              Nav-item (hover)
+            </span>
+          </a>
+        </li>
+        </ul>
     </div>
   </nav>
 </div>

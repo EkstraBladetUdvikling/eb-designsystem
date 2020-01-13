@@ -38,12 +38,15 @@
 .nav-top-left {
   align-items: center;
   display: flex;
+  font-size: var(--fs-medium);
   justify-content: flex-start;
+  padding-right: 10px;
 }
 
 .nav-top-right {
   align-items: center;
   display: flex;
+  font-size: var(--fs-small);
   justify-content: flex-end;
 }
 
@@ -56,13 +59,5 @@
 }
 
 .nav-top .button {
-  margin: 0 5px;
-}
-
-.nav-top .button:first-child {
-  margin-right: 0;
-}
-
-.nav-top .button:last-child {
-  margin-left: 0;
+  margin-right: 10px;
 }
