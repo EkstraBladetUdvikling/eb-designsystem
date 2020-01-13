@@ -1,0 +1,31 @@
+.fs-italic {
+  font-style: italic;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.fw-normal {
+  font-weight: normal;
+}
+
+.ta-left {
+  text-align: left;
+}
+
+.ta-center {
+  text-align: center;
+}
+
+.ta-right {
+  text-align: right;
+}
+
+.lh-half.lh-half.lh-half {
+  line-height: .5em;
+}
+
+.lh-normal.lh-normal.lh-normal {
+  line-height: 1.5em;
+}

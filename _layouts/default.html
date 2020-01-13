@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{{ page.title }} . Ekstra Bladet Design System</title>
-    <link href="/dist/highlight.css" rel="stylesheet" />
-    <link href="/dist/outputs.css" rel="stylesheet" />
+    <link href="{{ 'dist/highlight.css' | relative_url }}" rel="stylesheet" />
+    <link href="{{ 'dist/outputs.css' | relative_url }}" rel="stylesheet" />
     <link
       href="https://ekstrabladet.dk/assets/base/css/desktop.css"
       rel="stylesheet"
@@ -51,6 +51,12 @@
     <div class="eb-row eb-row--top pad-l">
       <aside class="pad-l">
         <nav>
+          <h3>Utilities</h3>
+          {% for utility in site.utilities %}
+          <div>
+            <a href="{{ utility.url | relative_url }}">{{ utility.title }} </a>
+          </div>
+          {% endfor %}
           <h3>Components</h3>
           {% for component in site.components %}
           <div>

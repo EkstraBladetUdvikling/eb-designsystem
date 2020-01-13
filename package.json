@@ -5,6 +5,11 @@
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
   "license": "MIT",
+  "scripts": {
+    "build": "yarn build:css",
+    "build:css": "node build-css.js",
+    "start": "yarn build && bundle exec jekyll serve"
+  },
   "dependencies": {
     "@ekstra-bladet/eb-colors": "^2.3.3",
     "@ekstra-bladet/eb-fonts": "^1.0.6",
@@ -20,10 +25,5 @@
     "postcss-nested": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "postcss-selectorcleanse": "^1.0.6"
-  },
-  "scripts": {
-    "build": "yarn build:css",
-    "build:css": "node build-css.js",
-    "start": "yarn build && jekyll serve"
   }
 }
