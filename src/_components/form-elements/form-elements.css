@@ -1,0 +1,66 @@
+:root {
+  --color--focus: var(--color--blue);
+}
+
+:focus {
+  outline: 5px auto var(--color--focus);
+}
+
+.form-element {
+  position: relative;
+}
+
+.form-input {
+  border: 1px solid;
+  border-radius: 5px;
+  box-sizing: border-box;
+  line-height: 30px;
+  padding: 5px;
+  height: 30px;
+}
+
+.form-input ~ .form-label {
+  position: absolute;
+  top: 0;
+  left: 5px;
+
+  font-size: .7em;
+  transform: translate(0, -110%);
+}
+
+.form-input:placeholder-shown ~ .form-label {
+  opacity: 0;
+}
+
+.form-input:not(:placeholder-shown) ~ .form-label,
+.form-input:focus ~ .form-label {
+  opacity: 1;
+}
+
+/**
+* Icon checkbox
+*/
+.form-checkbox--icon {
+  position: absolute;
+  z-index: -1;
+}
+
+.form-checkbox--icon ~ .form-label {
+  background: var(--color--white);
+  color: var(--fgcolor--white);
+}
+
+.form-checkbox--icon:focus ~ .form-label .form-checkbox-toggle--on,
+.form-checkbox--icon:focus ~ .form-label .form-checkbox-toggle--off {
+  outline: 5px auto var(--color--focus);
+}
+
+.form-checkbox--icon ~ .form-label .form-checkbox-toggle--on,
+.form-checkbox--icon:checked ~ .form-label .form-checkbox-toggle--off {
+  display: none;
+}
+
+.form-checkbox--icon ~ .form-label .form-checkbox-toggle--off,
+.form-checkbox--icon:checked ~ .form-label .form-checkbox-toggle--on {
+  display: inline-block;
+}

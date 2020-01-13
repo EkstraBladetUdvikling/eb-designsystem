@@ -1,1 +1,12 @@
 @import './node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-classes.css';
+
+.dsm-content {
+  position: relative;
+
+  background: var(--color--white);
+  color: var(--fgcolor--white);
+}
+
+.highlight {
+  margin: 10px 0;
+}

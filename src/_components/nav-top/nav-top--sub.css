@@ -1,0 +1,10 @@
+.nav-top.nav-top--sub {
+  background: var(--color--black);
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--fgcolor--black);
+}
+
+.nav-top.nav-top--sub a {
+  color: var(--fgcolor--black);
+}

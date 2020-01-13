@@ -73,6 +73,5 @@
 }
 
 .flex-item--center {
-  margin-right: auto;
-  margin-left: auto;
+  align-self: center;
 }

@@ -70,6 +70,23 @@ The top navigation has two default states. Initial state placed relative to elem
   </nav>
 </div>
 
+<nav class="nav-top nav-top--sub">
+  <ul class="nav-top-left">
+    <li class="nav-item color--nyheder">
+      <a href="#">
+          Nav-sub-item (hover)
+      </a>
+    </li>
+    <li class="nav-item color--flash">
+      <a href="#">
+          Nav-sub-item (hover)
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+
 ## Fixed state
 
 In the fixed state(here shown with fixed disable), we show a logo on the left.
