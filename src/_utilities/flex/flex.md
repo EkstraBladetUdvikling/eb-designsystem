@@ -3,8 +3,6 @@ layout: component
 title: Flex
 ---
 
-## Flex box
-
 ### Single item centered
 
 <div class="flex flex-justify--around bg--graa1 text-align--center">

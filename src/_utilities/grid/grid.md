@@ -3,8 +3,6 @@ layout: component
 title: Grid widths (desktop/tablet)
 ---
 
-## Grid widths
-
 <div class="grid-width--xlarge text-align--center bg--graa1" style="overflow: hidden">
   <p>grid-width--xlarge: 930px</p>
   <p>Page content width - frontpage</p>
@@ -22,7 +20,7 @@ title: Grid widths (desktop/tablet)
   </div>
 </div>
 
-CSS class names
+### CSS class names
 
 ```css
 grid-width--small
@@ -31,7 +29,7 @@ grid-width--large
 grid-width--xlarge
 ```
 
-CSS variable names
+### CSS variable names
 
 ```css
 --grid-small: 610px;
