@@ -47,11 +47,12 @@ const readFolder = (folderName, filesToFind, array) => {
 const runtimeArguments = process.argv.slice(2);
 const buildCSS = async envArg => {
   try {
+    console.log(envArg);
+
     const startTime = new Date().getTime();
     const srcFolder = "./src";
     const cssFilesToRead = [];
     const fileTypeToFind = ".css";
-    const withFileTypes = true;
     /**
      * Find all css files in src folder
      */
@@ -68,39 +69,70 @@ const buildCSS = async envArg => {
     }
 
     const readFileContent = [];
+    const readFileContent2 = [];
 
     [...cssFilesToRead, inputFile].forEach(fileName => {
-      readFileContent.push(fs.readFileSync(fileName));
+      if (fileName !== inputFile) {
+        readFileContent.push(fs.readFileSync(fileName));
+      }
+      readFileContent2.push(fs.readFileSync(fileName));
     });
 
-    const css = readFileContent.join("");
-    await postcss([
-      postcssImport,
-      nested,
-      customProperties(cssnextObject),
-      presetEnv(cssnextObject),
-      discardDuplicates,
-      discardUnused,
-      mergeRules,
-      cssnano
-    ])
-      .process(css, {
-        from: inputFile,
-        to: "dist/app1.css"
-      })
-      .then(result => {
-        try {
-          fs.writeFile(outputFile, result.css, () => {
-            return true;
-          });
-          fs.writeFile(outputFile2, result.css, () => {
-            return true;
-          });
-          console.log(`postcss ${inputFile} -> ${outputFile}`);
-        } catch (err) {
-          throw err;
-        }
-      });
+    if (envArg.indexOf("--prod") !== -1 || envArg.length === 0) {
+      const css = readFileContent.join("");
+      await postcss([
+        postcssImport,
+        nested,
+        customProperties(cssnextObject),
+        presetEnv(cssnextObject),
+        discardDuplicates,
+        discardUnused,
+        mergeRules,
+        cssnano
+      ])
+        .process(css, {
+          from: inputFile,
+          to: "dist/app1.css"
+        })
+        .then(result => {
+          try {
+            fs.writeFile(outputFile, result.css, () => {
+              return true;
+            });
+            console.log(`postcss PRODUCTION ready -> ${outputFile}`);
+          } catch (err) {
+            throw err;
+          }
+        });
+    }
+
+    if (envArg.indexOf("--test") !== -1 || envArg.length === 0) {
+      const css2 = readFileContent2.join("");
+      await postcss([
+        postcssImport,
+        nested,
+        customProperties(cssnextObject),
+        presetEnv(cssnextObject),
+        discardDuplicates,
+        discardUnused,
+        mergeRules,
+        cssnano
+      ])
+        .process(css2, {
+          from: inputFile,
+          to: "dist/app1.css"
+        })
+        .then(result => {
+          try {
+            fs.writeFile(outputFile2, result.css, () => {
+              return true;
+            });
+            console.log(`postcss TEST file ${inputFile} -> ${outputFile2}`);
+          } catch (err) {
+            throw err;
+          }
+        });
+    }
     const endTime = new Date().getTime();
     console.log("it took?", (endTime - startTime) / 1000);
   } catch (err) {
@@ -109,4 +141,4 @@ const buildCSS = async envArg => {
   }
 };
 
-buildCSS();
+buildCSS(runtimeArguments);

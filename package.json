@@ -8,6 +8,8 @@
   "scripts": {
     "build": "yarn build:css",
     "build:css": "node build-css.js",
+    "build:test": "node build-css.js --test",
+    "dist": "yarn build:css --prod",
     "start": "yarn build && bundle exec jekyll serve"
   },
   "dependencies": {
