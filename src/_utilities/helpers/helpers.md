@@ -3,9 +3,7 @@ layout: component
 title: Helpers
 ---
 
-# Helpers
-
-### Hidden
+## Hidden
 
 Hidden er bare display: none
 
@@ -13,7 +11,7 @@ Hidden er bare display: none
 display: none
 ```
 
-### Position
+## Position
 
 Findes som absolute, fixed og relative
 
@@ -23,7 +21,7 @@ position-fixed
 position-relative
 ```
 
-### Floats
+## Floats
 
 Findes som left og right
 
@@ -32,7 +30,7 @@ float-left
 float-right
 ```
 
-Clear
+## Clear
 
 ```css
 .clear {
@@ -40,7 +38,7 @@ Clear
 }
 ```
 
-### Centrér vertikalt
+## Centrér vertikalt
 
 Centrér element vertikal i sin container. Kræver at containeren har text-align--center
 

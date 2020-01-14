@@ -3,17 +3,15 @@ layout: component
 title: Sizing
 ---
 
-## Sizing
+## Højder
 
-### Højder
-
-Auto
+### Auto
 
 ```css
 height-auto
-````
+```
 
-Højde i brøkdele
+### Højde i brøkdele
 
 ```css
 height-1of1
@@ -27,9 +25,15 @@ Vær opmærksom på at disse opfører sig meget forskelligt på forskellige devi
 height-100vh
 ```
 
-### Bredder
+## Bredder
 
-Bredde i brøkdele
+### Auto
+
+```css
+width-auto
+```
+
+### Bredde i brøkdele
 
 ```css
 width-1of1
@@ -41,12 +45,6 @@ width-1of6
 width-2of3
 width-3of4
 width-5of6
-```
-
-Auto
-
-```css
-width-auto
 ```
 
 ### Viewport width

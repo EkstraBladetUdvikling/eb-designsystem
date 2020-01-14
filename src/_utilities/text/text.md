@@ -3,9 +3,7 @@ layout: component
 title: Text
 ---
 
-## Text
-
-### Text alignment
+## Text alignment
 
 Findes som center, left og right
 

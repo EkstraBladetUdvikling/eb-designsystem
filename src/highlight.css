@@ -1,11 +1,13 @@
 /** Syntax highlighting styles */
 .highlight {
   background: #fff;
+  border-radius: 5px;
+  margin: 10px 0;
   padding: 5px 10px;
 }
 
 .highlighter-rouge .highlight {
-  background: #eef;
+  background: #efefef;
 }
 
 .highlight .c {
@@ -14,8 +16,8 @@
 }
 
 .highlight .err {
-  color: #a61717;
   background-color: #e3d2d2;
+  color: #a61717;
 }
 
 .highlight .k {
@@ -43,18 +45,18 @@
 
 .highlight .cs {
   color: #999;
-  font-weight: bold;
   font-style: italic;
+  font-weight: bold;
 }
 
 .highlight .gd {
-  color: #000;
   background-color: #fdd;
+  color: #000;
 }
 
 .highlight .gd .x {
-  color: #000;
   background-color: #faa;
+  color: #000;
 }
 
 .highlight .ge {
@@ -70,13 +72,13 @@
 }
 
 .highlight .gi {
-  color: #000;
   background-color: #dfd;
+  color: #000;
 }
 
 .highlight .gi .x {
-  color: #000;
   background-color: #afa;
+  color: #000;
 }
 
 .highlight .go {

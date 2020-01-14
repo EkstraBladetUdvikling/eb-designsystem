@@ -16,7 +16,7 @@ Klik her og brug derefter tab for at få vist elementet.
 </a>
 
 ```html
-  <a href="#content" class="screen-reader-text">
-    Skip to content
-  </a>
+<a href="#content" class="screen-reader-text">
+  Skip to content
+</a>
 ```
