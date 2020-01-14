@@ -4,6 +4,7 @@
   display: flex;
 }
 
+.nav-item,
 .nav-item-hover {
   color: var(--color--black);
 }
@@ -25,7 +26,6 @@
 }
 
 .nav-top .nav-item {
-  border-left: 1px solid var(--nav--color-divider);
   padding: 0 10px;
 }
 

@@ -39,7 +39,7 @@
 
 .button:active,
 .button:focus {
-  outline: 0;
+  outline: 5px auto var(--color--focus);
 }
 
 .button.button--primary {
@@ -163,4 +163,11 @@
 .button--icon .fa:first-child,
 .button--icon .fa:last-child {
   margin: 0;
+}
+
+.button--link,
+.button--link:hover {
+  background: none;
+  border: 0;
+  color: inherit;
 }

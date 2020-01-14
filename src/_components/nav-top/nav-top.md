@@ -18,8 +18,8 @@ The top navigation has two default states. Initial state placed relative to elem
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ekstrabladet"></use>
         </svg>
       </a>
-      <ul class="nav-list nav-top-left">
-        <li class="nav-item">
+      <div class="nav-list nav-top-left">
+        <span class="nav-item">
           <label class="toggle-container">
             <span class="toggle toggle--icon">
               <input type="checkbox" hidden class="toggle-input" />
@@ -30,62 +30,66 @@ The top navigation has two default states. Initial state placed relative to elem
                 Nav-item
             </span>
           </label>
-        </li>
-        <li class="nav-item color--flash">
+        </span>
+        |
+        <span class="nav-item color--flash">
           <a href="#" class="nav-item-hover">
               Nav-item (hover)
           </a>
-        </li>
-        <li class="nav-item color--flash">
+        </span>
+        |
+        <span class="nav-item color--flash">
           <a href="#" class="nav-item-hover">
               Nav-item (hover)
           </a>
-        </li>
-        <li class="nav-item color--flash">
+        </span>
+        |
+        <span class="nav-item color--flash">
           <a href="#" class="nav-item-hover">
               Nav-item (hover)
           </a>
-        </li>
-      </ul>
+        </span>
+      </div>
     </div>
     <div class="nav-top-right">
       <a href="#" class="button button--solid button--accept">Button accept</a>
       <a href="#" class="button button--solid button--accept">Button accept</a>
-      <ul class="nav-list nav-top-right">
-        <li class="nav-item color--bruger">
+      <div class="nav-list nav-top-right">
+      |
+        <span class="nav-item color--bruger">
           <a href="#" class="nav-item-hover">
               Nav-item (hover)
           </a>
-        </li>
-        <li class="nav-item color--bruger">
+        </span>
+        |
+        <span class="nav-item color--bruger">
           <a href="#" class="nav-item-hover">
             <i class="fa fas fa-search"></i>
             <span>
               Nav-item (hover)
             </span>
           </a>
-        </li>
-        </ul>
+        </span>
+        </div>
     </div>
   </nav>
 </div>
 
 <nav class="nav-top nav-top--sub">
-  <ul class="nav-top-left">
-    <li class="nav-item color--nyheder">
+  <div class="nav-top-left">
+    <span class="nav-item color--nyheder">
       <a href="#">
           Nav-sub-item (hover)
       </a>
-    </li>
-    <li class="nav-item color--flash">
+    </span>
+    |
+    <span class="nav-item color--flash">
       <a href="#">
           Nav-sub-item (hover)
       </a>
-    </li>
-  </ul>
+    </span>
+  </div>
 </nav>
-
-
 
 ## Fixed state
 
@@ -99,8 +103,8 @@ In the fixed state(here shown with fixed disable), we show a logo on the left.
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ekstrabladet"></use>
         </svg>
       </a>
-      <ul class="nav-list nav-top-left">
-        <li class="nav-item">
+      <div class="nav-list nav-top-left">
+        <span class="nav-item">
           <label class="toggle-container">
             <span class="toggle toggle--icon">
               <input type="checkbox" hidden class="toggle-input" />
@@ -111,32 +115,35 @@ In the fixed state(here shown with fixed disable), we show a logo on the left.
                 Nav-item
             </span>
           </label>
-        </li>
-        <li class="nav-item color--flash">
+        </span>
+        |
+        <span class="nav-item color--flash">
           <a href="#" class="nav-item-hover">
               Nav-item (hover)
           </a>
-        </li>
-      </ul>
+        </span>
+      </div>
     </div>
     <div class="nav-top-right">
       <a href="#" class="button button--solid button--accept">Button accept</a>
       <a href="#" class="button button--solid button--accept">Button accept</a>
-      <ul class="nav-list nav-top-right">
-        <li class="nav-item color--bruger">
+      <div class="nav-list nav-top-right">
+      |
+        <span class="nav-item color--bruger">
           <a href="#" class="nav-item-hover">
               Nav-item (hover)
           </a>
-        </li>
-        <li class="nav-item color--bruger">
+        </span>
+        |
+        <span class="nav-item color--bruger">
           <a href="#" class="nav-item-hover">
             <i class="fa fas fa-search"></i>
             <span>
               Nav-item (hover)
             </span>
           </a>
-        </li>
-        </ul>
+        </span>
+        </div>
     </div>
   </nav>
 </div>

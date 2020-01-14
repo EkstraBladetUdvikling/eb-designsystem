@@ -16,7 +16,7 @@
   border-radius: 0 0 10px 10px;
   box-shadow: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
   box-sizing: border-box;
-  color: var(--fgcolor--white);
+  color: var(--nav--color-divider);
   display: flex;
   flex-direction: row;
   font-size: 16px;
