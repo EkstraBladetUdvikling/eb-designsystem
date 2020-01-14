@@ -9,8 +9,19 @@
   color: var(--color--black);
 }
 
-.nav-item:hover .nav-item-hover {
+.nav-item svg,
+.nav-item-hover svg {
+  fill: currentColor;
+}
+
+.nav-item:hover .nav-item-hover,
+.nav-item-hover:hover {
   color: inherit;
+}
+
+.nav-item:hover .nav-item-hover svg,
+.nav-item-hover:hover svg {
+  fill: currentColor;
 }
 
 .nav-item .fa {
@@ -39,4 +50,12 @@
 
 .nav-top .nav-item:last-child {
   padding-right: 0;
+}
+
+.nav-item-icon:first-child {
+  margin-right: 5px;
+}
+
+.nav-item-icon:last-child {
+  margin-left: 5px;
 }

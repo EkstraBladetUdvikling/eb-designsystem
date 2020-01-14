@@ -9,11 +9,13 @@
     "build": "yarn build:css",
     "build:css": "node build-css.js",
     "dist": "yarn build:css",
-    "start": "yarn build && bundle exec jekyll serve"
+    "start": "yarn build && bundle exec jekyll serve",
+    "move_to_eb": "yarn cpx \"./dist/**/*.{css,js}\" \"../ekstrabladet/ekstrabladet-publication/src/main/frontend/css-main/main/css\""
   },
   "dependencies": {
     "@ekstra-bladet/eb-colors": "^2.3.3",
     "@ekstra-bladet/eb-fonts": "^1.0.6",
+    "cpx": "^1.5.0",
     "csscomb": "^4.3.0",
     "cssnano": "^4.1.10",
     "postcss": "^7.0.21",

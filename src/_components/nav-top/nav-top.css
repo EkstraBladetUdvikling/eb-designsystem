@@ -43,11 +43,21 @@
   padding-right: 10px;
 }
 
+.nav-top-left .nav-item,
+.nav-top-left .nav-item-hover {
+  font-size: var(--fs-medium);
+}
+
 .nav-top-right {
   align-items: center;
   display: flex;
   font-size: var(--fs-small);
   justify-content: flex-end;
+}
+
+.nav-top-right .nav-item,
+.nav-top-right .nav-item-hover {
+  font-size: var(--fs-small);
 }
 
 .nav-top-show_when_fixed {
@@ -60,4 +70,9 @@
 
 .nav-top .button {
   margin-right: 10px;
+}
+
+.nav-top .button--link {
+  margin: 0;
+  padding: 0 10px;
 }
