@@ -1,5 +1,3 @@
-# EB Designsystem
-
 ## Table Of Content
 
  * [Getting Started](#getting-started)
