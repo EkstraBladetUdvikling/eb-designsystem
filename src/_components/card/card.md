@@ -111,6 +111,16 @@ title: Card
       <h3 class="card-title">Donec dictum neque et molestie consequat. Cras pharetra tincidunt.</h3>
     </div>
   </a>
+
+  <a href="#" class="card card--small-media card--small-media--reverse mar-l--b">
+    <div class="card-media">
+      <img class="card-media--img" src="https://via.placeholder.com/150x84">
+    </div>
+    <div class="card-content">
+      <small class="card-meta"><span class="color--nyheder">Politik</span> - 11 timer siden</small>
+      <h3 class="card-title">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h3>
+    </div>
+  </a>
 </div>
 
 ```html
@@ -145,6 +155,16 @@ title: Card
     <h3 class="card-title">Donec dictum neque et molestie consequat. Cras pharetra tincidunt.</h3>
   </div>
 </a>
+
+<a href="#" class="card card--small-media card--small-media--reverse mar-l--b">
+    <div class="card-media">
+      <img class="card-media--img" src="https://via.placeholder.com/150x84">
+    </div>
+    <div class="card-content">
+      <small class="card-meta"><span class="color--nyheder">Politik</span> - 11 timer siden</small>
+      <h3 class="card-title">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h3>
+    </div>
+  </a>
 ```
 
 ## Ikke et link card

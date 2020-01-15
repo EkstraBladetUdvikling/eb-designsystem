@@ -63,3 +63,11 @@ a.card:hover {
 .card--small-media .card-title {
   margin: 0;
 }
+
+.card--small-media--reverse {
+  flex-direction: row-reverse;
+}
+
+.card--small-media--reverse .card-media--img {
+  border-radius: 0 10px 10px 0;
+}
