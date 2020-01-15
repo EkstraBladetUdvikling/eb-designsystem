@@ -5,19 +5,19 @@
   color: #000;
 }
 
-.dsm-content h1,
-.dsm-content h2,
-.dsm-content h3,
-.dsm-content h4,
-.dsm-content h5,
-.dsm-content h6 {
+.dsm-content > h1,
+.dsm-content > h2,
+.dsm-content > h3,
+.dsm-content > h4,
+.dsm-content > h5,
+.dsm-content > h6 {
   margin-bottom: 20px;
 }
 
-.dsm-content h2,
-.dsm-content h3,
-.dsm-content h4,
-.dsm-content h5,
-.dsm-content h6 {
+.dsm-content > h2,
+.dsm-content > h3,
+.dsm-content > h4,
+.dsm-content > h5,
+.dsm-content > h6 {
   margin-top: 30px;
 }
