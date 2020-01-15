@@ -1,4 +1,6 @@
 .nav-top.nav-top--sub {
+  z-index: 0;
+
   background: var(--color--black);
   border-radius: 0;
   box-shadow: none;
@@ -7,4 +9,8 @@
 
 .nav-top.nav-top--sub a {
   color: var(--fgcolor--black);
+}
+
+.nav-top--sub :first-child {
+  padding-left: 0;
 }
