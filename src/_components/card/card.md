@@ -157,14 +157,14 @@ title: Card
 </a>
 
 <a href="#" class="card card--small-media card--small-media--reverse mar-l--b">
-    <div class="card-media">
-      <img class="card-media--img" src="https://via.placeholder.com/150x84">
-    </div>
-    <div class="card-content">
-      <small class="card-meta"><span class="color--nyheder">Politik</span> - 11 timer siden</small>
-      <h3 class="card-title">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h3>
-    </div>
-  </a>
+  <div class="card-media">
+    <img class="card-media--img" src="https://via.placeholder.com/150x84">
+  </div>
+  <div class="card-content">
+    <small class="card-meta"><span class="color--nyheder">Politik</span> - 11 timer siden</small>
+    <h3 class="card-title">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h3>
+  </div>
+</a>
 ```
 
 ## Ikke et link card
@@ -193,4 +193,52 @@ Blot erstat `<a>` med `<div>`, det vil samtidig fjerne hover effekten.
     <h2 class="card-title">Nulla facilisi. Nulla mattis felis eget convallis vehicula</h2>
   </div>
 </div>
+```
+
+## Brugs eksempler
+
+<div class="grid-width--large mar-xl--b">
+  <a href="#" class="card card--small-media card--small-media--reverse bg--flash">
+    <div class="card-media">
+      <img class="card-media--img" src="https://via.placeholder.com/455x255">
+    </div>
+    <div class="card-content">
+      <small class="card-meta color--white"><span>Politik</span> - 11 timer siden</small>
+      <h2 class="card-title color--white">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
+    </div>
+  </a>
+</div>
+
+<div class="grid-width--small">
+  <a href="#" class="card card--small-media bg--breaking">
+    <div class="card-media">
+      <img class="card-media--img" src="https://via.placeholder.com/150x84">
+    </div>
+    <div class="card-content">
+      <small class="card-meta "><span>BREAKING NEWS</span></small>
+      <h3 class="card-title">Curabitur vehicula ac urna</h3>
+    </div>
+  </a>
+</div>
+
+```html
+<a href="#" class="card card--small-media card--small-media--reverse bg--flash">
+  <div class="card-media">
+    <img class="card-media--img" src="https://via.placeholder.com/455x255">
+  </div>
+  <div class="card-content">
+    <small class="card-meta color--white"><span>Politik</span> - 11 timer siden</small>
+    <h2 class="card-title color--white">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
+  </div>
+</a>
+
+<a href="#" class="card card--small-media bg--breaking">
+  <div class="card-media">
+    <img class="card-media--img" src="https://via.placeholder.com/150x84">
+  </div>
+  <div class="card-content">
+    <small class="card-meta "><span>BREAKING NEWS</span></small>
+    <h3 class="card-title">Curabitur vehicula ac urna</h3>
+  </div>
+</a>
 ```
