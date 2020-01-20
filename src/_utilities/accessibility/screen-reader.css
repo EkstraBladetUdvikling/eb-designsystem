@@ -1,8 +1,11 @@
 .screen-reader-text {
   position: absolute;
 
+  border: 0;
   clip: rect(0 0 0 0);
+  margin: 0;
   overflow: hidden;
+  padding: 0;
   width: 1px;
   height: 1px;
 }
