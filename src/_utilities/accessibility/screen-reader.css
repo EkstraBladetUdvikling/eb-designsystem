@@ -12,7 +12,7 @@
 .screen-reader-text:focus {
   top: 5px;
   left: 5px;
-  z-index: 100000;
+  z-index: 2147483647;
 
   background-color: var(--color--graa6);
   border-radius: 3px;

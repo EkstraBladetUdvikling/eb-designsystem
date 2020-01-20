@@ -37,6 +37,31 @@
   opacity: 1;
 }
 
+.form-element--icon {
+  position: relative;
+
+  border: 1px solid;
+  border-radius: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.form-input.form-input--icon {
+  border: 0;
+  line-height: normal;
+  padding: 0;
+  height: auto;
+}
+
+.form-element--icon .form-icon:first-child {
+  margin-right: 5px;
+}
+
+.form-element--icon .form-icon:last-child {
+  margin-left: 5px;
+}
+
 /**
 * Icon checkbox
 */
