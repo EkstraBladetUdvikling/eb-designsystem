@@ -41,6 +41,10 @@
   padding: 0 var(--item-distance);
 }
 
+.nav-brand {
+  line-height: 0;
+}
+
 .nav-brand--left {
   margin-right: var(--item-distance);
 }

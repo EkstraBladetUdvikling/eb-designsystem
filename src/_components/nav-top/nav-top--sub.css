@@ -1,16 +1,26 @@
 .nav-top.nav-top--sub {
-  z-index: 0;
+  z-index: 1;
 
   background: var(--color--black);
   border-radius: 0;
   box-shadow: none;
   color: var(--fgcolor--black);
-}
-
-.nav-top.nav-top--sub a {
-  color: var(--fgcolor--black);
+  justify-content: normal;
 }
 
 .nav-top--sub :first-child {
   padding-left: 0;
+}
+
+.nav-top.nav-top--sub a,
+.nav-item--sub {
+  color: var(--fgcolor--black);
+}
+
+.nav-item--sub {
+  border-right: 1px solid currentColor;
+}
+
+.nav-item--sub:last-child {
+  border: 0;
 }
