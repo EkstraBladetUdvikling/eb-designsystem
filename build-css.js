@@ -58,7 +58,7 @@ const buildCSS = async () => {
     const inputFile = "./src/index.css";
     const outFolder = "dist";
 
-    const outputFile = `${outFolder}/outputs.css`;
+    const outputFile = `${outFolder}/eb-designsystem.css`;
 
     if (!fs.existsSync(outFolder)) {
       fs.mkdirSync(outFolder);
@@ -83,7 +83,7 @@ const buildCSS = async () => {
     ])
       .process(css, {
         from: inputFile,
-        to: "dist/app1.css"
+        to: "dist/eb-designsystem.css"
       })
       .then(result => {
         try {
