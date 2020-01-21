@@ -10,6 +10,10 @@
   position: relative;
 }
 
+.form-element + .form-element {
+  margin-top: 25px;
+}
+
 .form-input {
   border: 1px solid;
   border-radius: 5px;
