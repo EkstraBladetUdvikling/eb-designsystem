@@ -39,7 +39,12 @@ a.card:hover {
 
 .card-title {
   color: var(--color--black);
+  font-size: 30px;
   margin: 5px 0 0;
+}
+
+.card-media + .card-content .card-title {
+  font-size: 20px;
 }
 
 /**/
@@ -61,6 +66,7 @@ a.card:hover {
 }
 
 .card--small-media .card-title {
+  font-size: 25px;
   margin: 0;
 }
 
