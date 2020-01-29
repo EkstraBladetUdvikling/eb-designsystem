@@ -8,6 +8,8 @@
 
 .form-element {
   position: relative;
+
+  margin-top: 15px;
 }
 
 .form-element + .form-element {
