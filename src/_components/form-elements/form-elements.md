@@ -40,9 +40,18 @@ title: Form elements
 ### Ikon til højre
 
 <div class="form-element">
-  <input type="checkbox" class="form-checkbox form-checkbox--icon" id="formCheckbox" />
-  <label for="formCheckbox" class="form-label">
-    Input her
+  <input type="checkbox" class="form-checkbox form-checkbox--icon" id="formCheckbox1" />
+  <label for="formCheckbox1" class="form-label">
+    Desktop
+    <i class="far fa-check-square form-checkbox-toggle--on" aria-hidden="true"></i>
+    <i class="far fa-square form-checkbox-toggle--off" aria-hidden="true"></i>
+  </label>
+</div>
+
+<div class="form-element">
+  <input type="checkbox" class="form-checkbox form-checkbox--icon" id="formCheckbox2" />
+  <label for="formCheckbox2" class="form-label">
+    Mobil
     <i class="fas fa-toggle-on form-checkbox-toggle--on" aria-hidden="true"></i>
     <i class="fas fa-toggle-off form-checkbox-toggle--off" aria-hidden="true"></i>
   </label>
@@ -52,7 +61,16 @@ title: Form elements
 <div class="form-element">
   <input type="checkbox" class="form-checkbox form-checkbox--icon" id="formCheckbox" />
   <label for="formCheckbox" class="form-label">
-    Input her
+    Desktop
+    <i class="far fa-check-square form-checkbox-toggle--on" aria-hidden="true"></i>
+    <i class="far fa-square form-checkbox-toggle--off" aria-hidden="true"></i>
+  </label>
+</div>
+
+<div class="form-element">
+  <input type="checkbox" class="form-checkbox form-checkbox--icon" id="formCheckbox" />
+  <label for="formCheckbox" class="form-label">
+    Mobil
     <i class="fas fa-toggle-on form-checkbox-toggle--on" aria-hidden="true"></i>
     <i class="fas fa-toggle-off form-checkbox-toggle--off" aria-hidden="true"></i>
   </label>
@@ -62,11 +80,20 @@ title: Form elements
 ### Ikon til venstre
 
 <div class="form-element">
-  <input type="checkbox" class="form-checkbox form-checkbox--icon" id="formCheckbox" />
-  <label for="formCheckbox" class="form-label">
+  <input type="checkbox" class="form-checkbox form-checkbox--icon" id="formCheckbox3" />
+  <label for="formCheckbox3" class="form-label">
+    <i class="far fa-check-square form-checkbox-toggle--on" aria-hidden="true"></i>
+    <i class="far fa-square form-checkbox-toggle--off" aria-hidden="true"></i>
+    Desktop
+  </label>
+</div>
+
+<div class="form-element">
+  <input type="checkbox" class="form-checkbox form-checkbox--icon" id="formCheckbox4" />
+  <label for="formCheckbox4" class="form-label">
     <i class="fas fa-toggle-on form-checkbox-toggle--on" aria-hidden="true"></i>
     <i class="fas fa-toggle-off form-checkbox-toggle--off" aria-hidden="true"></i>
-    Input her
+    Mobil
   </label>
 </div>
 
@@ -74,9 +101,18 @@ title: Form elements
 <div class="form-element">
   <input type="checkbox" class="form-checkbox form-checkbox--icon" id="formCheckbox" />
   <label for="formCheckbox" class="form-label">
+    <i class="far fa-check-square form-checkbox-toggle--on" aria-hidden="true"></i>
+    <i class="far fa-square form-checkbox-toggle--off" aria-hidden="true"></i>
+    Desktop
+  </label>
+</div>
+
+<div class="form-element">
+  <input type="checkbox" class="form-checkbox form-checkbox--icon" id="formCheckbo4" />
+  <label for="formCheckbox" class="form-label">
     <i class="fas fa-toggle-on form-checkbox-toggle--on" aria-hidden="true"></i>
     <i class="fas fa-toggle-off form-checkbox-toggle--off" aria-hidden="true"></i>
-    Input her
+    Mobil
   </label>
 </div>
 ```
