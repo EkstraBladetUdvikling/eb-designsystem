@@ -1,13 +1,15 @@
 .card {
-  border: 1px solid var(--color--graa7);
-  border-radius: 10px;
+  border-radius: var(--border-radius--small);
+  box-shadow: 0 0 0 1px #efefef; /* DR.Edition 03/02/2020 */
   box-sizing: border-box;
   display: block;
+  overflow: hidden;
   width: 100%;
 }
 
 a.card:hover {
-  box-shadow: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
+  box-shadow: var(--box-shadow--hover);
+  opacity: .8; /* DR.Edition 03/02/2020 */
 }
 
 .card-media {
@@ -15,7 +17,6 @@ a.card:hover {
 }
 
 .card-media--img {
-  border-radius: 10px 10px 0 0;
   display: block;
   width: 100%;
 }
@@ -57,10 +58,6 @@ a.card:hover {
   min-width: max-content;
 }
 
-.card--small-media .card-media--img {
-  border-radius: 10px 0 0 10px;
-}
-
 .card--small-media .card-content {
   padding: 5px 10px 5px 10px;
 }
@@ -71,10 +68,6 @@ a.card:hover {
 
 .card--small-media--reverse {
   flex-direction: row-reverse;
-}
-
-.card--small-media--reverse .card-media--img {
-  border-radius: 0 10px 10px 0;
 }
 
 .card-media + .card--small-media .card-title {

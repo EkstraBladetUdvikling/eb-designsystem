@@ -20,13 +20,13 @@ title: Grid widths (desktop/tablet)
   </div>
 </div>
 
-### CSS class names
+### Examples
 
-```css
-grid-width--small
-grid-width--medium
-grid-width--large
-grid-width--xlarge
+```html
+<div class="grid-width--small">Small grid</div>
+<div class="grid-width--medium">Medium grid</div>
+<div class="grid-width--large">Large grid</div>
+<div class="grid-width--xlarge">Xlarge grid</div>
 ```
 
 ### CSS variable names

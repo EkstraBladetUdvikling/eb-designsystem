@@ -7,8 +7,8 @@ title: Text
 
 Findes som center, left og right
 
-```css
-text-align--center
-text-align--left
-text-align--right
+```html
+<p class="text-align--center">Centreret tekst</p>
+<p class="text-align--left">Venstrestillet tekst</p>
+<p class="text-align--right">Højrestillet tekst</p>
 ```
