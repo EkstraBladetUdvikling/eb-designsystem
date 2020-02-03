@@ -1,6 +1,10 @@
+:root {
+  --card-padding: 20px
+}
+
 .card {
   border-radius: var(--border-radius--small);
-  box-shadow: 0 0 0 1px #efefef; /* DR.Edition 03/02/2020 */
+  box-shadow: 0 0 0 1px var(--color--graa7); /* DR.Edition 03/02/2020 */
   box-sizing: border-box;
   display: block;
   overflow: hidden;
@@ -8,7 +12,7 @@
 }
 
 .card[class*="bg--"] {
-  box-shadow: none;
+  box-shadow: none; /* Remove border when filled */
 }
 
 a.card:hover {
@@ -35,22 +39,21 @@ a.card:hover {
 }
 
 .card-content {
-  padding: 10px;
+  font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+  padding: var(--card-padding) !important;
 }
 
 .card-meta {
   color: var(--color--black);
+  font-weight: 500;
   margin: 0 0 3px;
 }
 
 .card-title {
   color: var(--color--black);
-  font-size: 30px;
+  font-size: 30px !important; /* Remove important when DSM is seperate from base */
+  font-weight: 700;
   margin: 0;
-}
-
-.card-media + .card-content .card-title {
-  font-size: 20px;
 }
 
 /**/
@@ -63,18 +66,16 @@ a.card:hover {
   min-width: max-content;
 }
 
-.card--small-media .card-content {
-  padding: 10px;
-}
-
-.card--small-media .card-title {
-  margin: 0;
-}
-
 .card--small-media--reverse {
   flex-direction: row-reverse;
 }
 
-.card-media + .card--small-media .card-title {
-  font-size: 25px;
+.card--small-media .card-media + .card-content {
+  padding: 0 var(--card-padding) !important;
+}
+
+.card.width-1of2 .card-media + .card-content .card-title,
+.card.width-1of3 .card-media + .card-content .card-title,
+.card--small-media .card-title {
+  font-size: 20px !important; /* Remove important when DSM is seperate from base */
 }
