@@ -11,7 +11,7 @@ title: Card
       <img class="card-media--img" src="https://via.placeholder.com/610x343">
     </div>
     <div class="card-content">
-      <small class="card-meta"><span class="color--sport">Sport</span> - 12 timer siden</small>
+      <p class="card-meta"><small><span class="color--sport">Sport</span> - 12 timer siden</small></p>
       <h2 class="card-title">Nulla facilisi. Nulla mattis felis eget convallis vehicula</h2>
     </div>
   </a>
@@ -27,14 +27,14 @@ title: Card
         </div>
       </div>
       <div class="card-content">
-        <small class="card-meta"><span class="color--nyheder">Politik</span> - 2 timer siden</small>
+        <p class="card-meta"><small><span class="color--nyheder">Politik</span> - 2 timer siden</small></p>
         <h3 class="card-title">Donec sed tincidunt ex, vestibulum congue arcu</h3>
       </div>
     </a>
 
     <a href="#" class="card width-1of2 mar-m--l">
       <div class="card-content">
-        <small class="card-meta"><span class="color--flash">flash!</span> - 8 timer siden</small>
+        <p class="card-meta"><small><span class="color--flash">flash!</span> - 8 timer siden</small></p>
         <h3 class="card-title">Aliquam ultricies felis eget orci commodo fringilla</h3>
       </div>
     </a>
@@ -47,7 +47,7 @@ title: Card
     <img class="card-media--img" src="https://via.placeholder.com/610x343">
   </div>
   <div class="card-content">
-    <small class="card-meta"><span class="color--sport">Sport</span> - 12 timer siden</small>
+    <p class="card-meta"><small><span class="color--sport">Sport</span> - 12 timer siden</small></p>
     <h2 class="card-title">Nulla facilisi. Nulla mattis felis eget convallis vehicula</h2>
   </div>
 </a>
@@ -63,14 +63,14 @@ title: Card
       </div>
     </div>
     <div class="card-content">
-      <small class="card-meta"><span class="color--nyheder">Politik</span> - 2 timer siden</small>
+      <p class="card-meta"><small><span class="color--nyheder">Politik</span> - 2 timer siden</small></p>
       <h3 class="card-title">Donec sed tincidunt ex, vestibulum congue arcu</h3>
     </div>
   </a>
 
   <a href="#" class="card width-1of2 mar-m--l">
     <div class="card-content">
-      <small class="card-meta"><span class="color--flash">flash!</span> - 8 timer siden</small>
+      <p class="card-meta"><small><span class="color--flash">flash!</span> - 8 timer siden</small></p>
       <h3 class="card-title">Aliquam ultricies felis eget orci commodo fringilla</h3>
     </div>
   </a>
@@ -90,7 +90,7 @@ title: Card
       </div>
     </div>
     <div class="card-content">
-      <small class="card-meta"><span class="color--sport">Sport</span> - 6 timer siden</small>
+      <p class="card-meta"><small><span class="color--sport">Sport</span> - 6 timer siden</small></p>
       <h3 class="card-title">Curabitur vehicula ac urna</h3>
     </div>
   </a>
@@ -100,14 +100,14 @@ title: Card
       <img class="card-media--img" src="https://via.placeholder.com/150x84">
     </div>
     <div class="card-content">
-      <small class="card-meta"><span class="color--nyheder">Politik</span> - 11 timer siden</small>
+      <p class="card-meta"><small><span class="color--nyheder">Politik</span> - 11 timer siden</small></p>
       <h3 class="card-title">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h3>
     </div>
   </a>
 
   <a href="#" class="card card--small-media mar-l--b">
     <div class="card-content">
-      <small class="card-meta"><span class="color--flash">flash!</span> - 19 timer siden</small>
+      <p class="card-meta"><small><span class="color--flash">flash!</span> - 19 timer siden</small></p>
       <h3 class="card-title">Donec dictum neque et molestie consequat. Cras pharetra tincidunt.</h3>
     </div>
   </a>
@@ -117,7 +117,7 @@ title: Card
       <img class="card-media--img" src="https://via.placeholder.com/150x84">
     </div>
     <div class="card-content">
-      <small class="card-meta"><span class="color--nyheder">Politik</span> - 11 timer siden</small>
+      <p class="card-meta"><small><span class="color--nyheder">Politik</span> - 11 timer siden</small></p>
       <h3 class="card-title">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h3>
     </div>
   </a>
@@ -134,7 +134,7 @@ title: Card
     </div>
   </div>
   <div class="card-content">
-    <small class="card-meta"><span class="color--sport">Sport</span> - 6 timer siden</small>
+    <p class="card-meta"><small><span class="color--sport">Sport</span> - 6 timer siden</small></p>
     <h3 class="card-title">Curabitur vehicula ac urna</h3>
   </div>
 </a>
@@ -144,14 +144,14 @@ title: Card
     <img class="card-media--img" src="https://via.placeholder.com/150x84">
   </div>
   <div class="card-content">
-    <small class="card-meta"><span class="color--nyheder">Politik</span> - 11 timer siden</small>
+    <p class="card-meta"><small><span class="color--nyheder">Politik</span> - 11 timer siden</small></p>
     <h3 class="card-title">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h3>
   </div>
 </a>
 
 <a href="#" class="card card--small-media mar-l--b">
   <div class="card-content">
-    <small class="card-meta"><span class="color--flash">flash!</span> - 19 timer siden</small>
+    <p class="card-meta"><small><span class="color--flash">flash!</span> - 19 timer siden</small></p>
     <h3 class="card-title">Donec dictum neque et molestie consequat. Cras pharetra tincidunt.</h3>
   </div>
 </a>
@@ -161,7 +161,7 @@ title: Card
     <img class="card-media--img" src="https://via.placeholder.com/150x84">
   </div>
   <div class="card-content">
-    <small class="card-meta"><span class="color--nyheder">Politik</span> - 11 timer siden</small>
+    <p class="card-meta"><small><span class="color--nyheder">Politik</span> - 11 timer siden</small></p>
     <h3 class="card-title">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h3>
   </div>
 </a>
@@ -177,7 +177,7 @@ Blot erstat `<a>` med `<div>`, det vil samtidig fjerne hover effekten.
       <img class="card-media--img" src="https://via.placeholder.com/610x343">
     </div>
     <div class="card-content">
-      <small class="card-meta"><span class="color--sport">Sport</span> - 12 timer siden</small>
+      <p class="card-meta"><small><span class="color--sport">Sport</span> - 12 timer siden</small></p>
       <h2 class="card-title">Nulla facilisi. Nulla mattis felis eget convallis vehicula</h2>
     </div>
   </div>
@@ -189,13 +189,13 @@ Blot erstat `<a>` med `<div>`, det vil samtidig fjerne hover effekten.
     <img class="card-media--img" src="https://via.placeholder.com/610x343">
   </div>
   <div class="card-content">
-    <small class="card-meta"><span class="color--sport">Sport</span> - 12 timer siden</small>
+    <p class="card-meta"><small><span class="color--sport">Sport</span> - 12 timer siden</small></p>
     <h2 class="card-title">Nulla facilisi. Nulla mattis felis eget convallis vehicula</h2>
   </div>
 </div>
 ```
 
-## Brugs eksempler
+## Brugseksempler
 
 <div class="grid-width--large mar-xl--b">
   <a href="#" class="card card--small-media card--small-media--reverse bg--flash">
@@ -203,7 +203,7 @@ Blot erstat `<a>` med `<div>`, det vil samtidig fjerne hover effekten.
       <img class="card-media--img" src="https://via.placeholder.com/455x255">
     </div>
     <div class="card-content">
-      <small class="card-meta color--white"><span>Politik</span> - 11 timer siden</small>
+      <p class="card-meta color--white"><small><span>Politik</span> - 11 timer siden</small></p>
       <h2 class="card-title color--white">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
     </div>
   </a>
@@ -215,7 +215,7 @@ Blot erstat `<a>` med `<div>`, det vil samtidig fjerne hover effekten.
       <img class="card-media--img" src="https://via.placeholder.com/150x84">
     </div>
     <div class="card-content">
-      <small class="card-meta "><span>BREAKING NEWS</span></small>
+      <p class="card-meta"><small><span>BREAKING NEWS</span></small></p>
       <h3 class="card-title">Curabitur vehicula ac urna</h3>
     </div>
   </a>
@@ -227,7 +227,7 @@ Blot erstat `<a>` med `<div>`, det vil samtidig fjerne hover effekten.
     <img class="card-media--img" src="https://via.placeholder.com/455x255">
   </div>
   <div class="card-content">
-    <small class="card-meta color--white"><span>Politik</span> - 11 timer siden</small>
+    <p><small class="card-meta color--white"><span>Politik</span> - 11 timer siden</small></p>
     <h2 class="card-title color--white">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
   </div>
 </a>
@@ -237,7 +237,7 @@ Blot erstat `<a>` med `<div>`, det vil samtidig fjerne hover effekten.
     <img class="card-media--img" src="https://via.placeholder.com/150x84">
   </div>
   <div class="card-content">
-    <small class="card-meta "><span>BREAKING NEWS</span></small>
+    <p><small class="card-meta "><span>BREAKING NEWS</span></small></p>
     <h3 class="card-title">Curabitur vehicula ac urna</h3>
   </div>
 </a>

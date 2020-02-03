@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+.card[class*="bg--"] {
+  box-shadow: none;
+}
+
 a.card:hover {
   box-shadow: var(--box-shadow--hover);
   opacity: .8; /* DR.Edition 03/02/2020 */
@@ -31,17 +35,18 @@ a.card:hover {
 }
 
 .card-content {
-  padding: 5px 10px 10px;
+  padding: 10px;
 }
 
 .card-meta {
   color: var(--color--black);
+  margin: 0 0 3px;
 }
 
 .card-title {
   color: var(--color--black);
   font-size: 30px;
-  margin: 5px 0 0;
+  margin: 0;
 }
 
 .card-media + .card-content .card-title {
@@ -59,7 +64,7 @@ a.card:hover {
 }
 
 .card--small-media .card-content {
-  padding: 5px 10px 5px 10px;
+  padding: 10px;
 }
 
 .card--small-media .card-title {
