@@ -174,7 +174,7 @@ Blot erstat `<a>` med `<div>`, det vil samtidig fjerne hover effekten.
 <div class="grid-width--small">
   <div class="card mar-xl--b">
     <div class="card-media">
-      <img class="card-media--img" src="https://via.placeholder.com/610x343">
+      <img class="card-media--img" src="https://via.placeholder.com/610x343&text=610x343">
     </div>
     <div class="card-content">
       <p class="card-meta"><small><span class="color--sport">Sport</span> - 12 timer siden</small></p>
@@ -227,17 +227,17 @@ Blot erstat `<a>` med `<div>`, det vil samtidig fjerne hover effekten.
     <img class="card-media--img" src="https://via.placeholder.com/455x255&text=455x255">
   </div>
   <div class="card-content">
-    <p><small class="card-meta color--white"><span>Politik</span> - 11 timer siden</small></p>
+    <p class="card-meta color--white"><small><span>Politik</span> - 11 timer siden</small></p>
     <h2 class="card-title color--white">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
   </div>
 </a>
 
 <a href="#" class="card card--small-media bg--breaking">
   <div class="card-media">
-    <img class="card-media--img" src="https://via.placeholder.com/150x84">
+    <img class="card-media--img" src="https://via.placeholder.com/150x84&text=150x84">
   </div>
   <div class="card-content">
-    <p><small class="card-meta "><span>BREAKING NEWS</span></small></p>
+    <p class="card-meta"><small><span>BREAKING NEWS</span></small></p>
     <h3 class="card-title">Curabitur vehicula ac urna</h3>
   </div>
 </a>
