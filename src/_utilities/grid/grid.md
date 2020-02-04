@@ -20,7 +20,7 @@ title: Grid widths (desktop/tablet)
   </div>
 </div>
 
-### Examples
+### Brugseksempler
 
 ```html
 <div class="grid-width--small">Small grid</div>
