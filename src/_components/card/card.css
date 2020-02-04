@@ -1,5 +1,5 @@
 :root {
-  --card-padding: 20px
+  --card-padding: 20px;
 }
 
 .card {
@@ -11,7 +11,7 @@
   width: 100%;
 }
 
-.card[class*="bg--"] {
+.card[class*='bg--'] {
   box-shadow: none; /* Remove border when filled */
 }
 
@@ -40,7 +40,7 @@ a.card:hover {
 
 .card-content {
   font-family: 'Work Sans', Arial, Helvetica, sans-serif;
-  padding: var(--card-padding) !important;
+  padding: var(--card-padding);
 }
 
 .card-meta {
@@ -51,7 +51,7 @@ a.card:hover {
 
 .card-title {
   color: var(--color--black);
-  font-size: 30px !important; /* Remove important when DSM is seperate from base */
+  font-size: 30px;
   font-weight: 700;
   margin: 0;
 }
@@ -71,11 +71,11 @@ a.card:hover {
 }
 
 .card--small-media .card-media + .card-content {
-  padding: 0 var(--card-padding) !important;
+  padding: 0 var(--card-padding);
 }
 
 .card.width-1of2 .card-media + .card-content .card-title,
 .card.width-1of3 .card-media + .card-content .card-title,
 .card--small-media .card-title {
-  font-size: 20px !important; /* Remove important when DSM is seperate from base */
+  font-size: 20px;
 }
