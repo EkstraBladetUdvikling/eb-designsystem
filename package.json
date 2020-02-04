@@ -1,6 +1,6 @@
 {
   "name": "eb-designsystem",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
@@ -8,8 +8,9 @@
   "scripts": {
     "build": "yarn build:css",
     "build:css": "node build-css.js",
+    "build:watch": "onchange 'src/**/*.css' -- yarn build",
     "dist": "yarn build:css",
-    "start": "yarn build && bundle exec jekyll serve",
+    "start": "yarn build:watch & bundle exec jekyll serve --livereload",
     "move_to_eb": "yarn cpx \"./dist/**/*.{css,js}\" \"../ekstrabladet/ekstrabladet-publication/src/main/frontend/css-main/main/css\""
   },
   "dependencies": {
@@ -18,6 +19,7 @@
     "cpx": "^1.5.0",
     "csscomb": "^4.3.0",
     "cssnano": "^4.1.10",
+    "onchange": "^6.1.0",
     "postcss": "^7.0.21",
     "postcss-cli": "^6.1.3",
     "postcss-discard-duplicates": "^4.0.2",

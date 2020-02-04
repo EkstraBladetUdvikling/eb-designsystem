@@ -5,38 +5,37 @@ title: Helpers
 
 ## Hidden
 
-Hidden er bare display: none
+Skjul element.
 
-```css
-display: none
+```html
+<div class="hidden"></div>
 ```
 
 ## Position
 
 Findes som absolute, fixed og relative
 
-```css
-position-absolute
-position-fixed
-position-relative
+```html
+<div class="position-absolute"></div>
+<div class="position-fixed"></div>
+<div class="position-relative"></div>
 ```
 
 ## Floats
 
 Findes som left og right
 
-```css
-float-left
-float-right
+```html
+<div class="float-left"></div>
+<div class="float-right"></div>
 ```
 
 ## Clear
 
-```css
-.clear {
-  clear: both;
-}
+```html
+<div class="clear"></div>
 ```
+
 
 ## Centrér vertikalt
 

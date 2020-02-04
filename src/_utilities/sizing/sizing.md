@@ -7,48 +7,48 @@ title: Sizing
 
 ### Auto
 
-```css
-height-auto
+```html
+<div class="height-auto"></div>
 ```
 
 ### Højde i brøkdele
 
-```css
-height-1of1
+```html
+<div class="height-1of1"></div>
 ```
 
 ### Viewport height
 
 Vær opmærksom på at disse opfører sig meget forskelligt på forskellige devices
 
-```css
-height-100vh
+```html
+<div class="height-100vh"></div>
 ```
 
 ## Bredder
 
 ### Auto
 
-```css
-width-auto
+```html
+<div class="width-auto"></div>
 ```
 
 ### Bredde i brøkdele
 
-```css
-width-1of1
-width-1of2
-width-1of3
-width-1of4
-width-1of5
-width-1of6
-width-2of3
-width-3of4
-width-5of6
+```html
+<div class="width-1of1"></div>
+<div class="width-1of2"></div>
+<div class="width-1of3"></div>
+<div class="width-1of4"></div>
+<div class="width-1of5"></div>
+<div class="width-1of6"></div>
+<div class="width-2of3"></div>
+<div class="width-3of4"></div>
+<div class="width-5of6"></div>
 ```
 
 ### Viewport width
 
-```css
-width-100vw
+```html
+<div class="width-100vw"></div>
 ```

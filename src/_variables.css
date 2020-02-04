@@ -1,0 +1,6 @@
+/* Systemwide variables */
+:root {
+  --border-radius--small: 5px;
+  --box-shadow--hover: 0 0 10px 5px #c8c8c8; /* DR.Edition 03/02/2020 */
+  --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
+}
