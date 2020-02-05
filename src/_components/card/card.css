@@ -45,13 +45,11 @@ a.card:focus {
 }
 
 .card-meta {
-  color: var(--color--black);
   font-weight: 500;
   margin: 0 0 3px;
 }
 
 .card-title {
-  color: var(--color--black);
   font-size: 30px;
   font-weight: 700;
   margin: 0;
