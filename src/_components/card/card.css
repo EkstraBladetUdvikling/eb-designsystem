@@ -14,9 +14,11 @@
   box-shadow: none; /* Remove border when filled */
 }
 
-a.card:hover {
+a.card:hover,
+a.card:focus {
   box-shadow: var(--box-shadow--hover);
   opacity: .8; /* DR.Edition 03/02/2020 */
+  outline: none;
 }
 
 .card-media {
