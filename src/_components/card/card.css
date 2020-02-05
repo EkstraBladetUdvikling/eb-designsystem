@@ -8,7 +8,6 @@
   box-sizing: border-box;
   display: block;
   overflow: hidden;
-  width: 100%;
 }
 
 .card[class*='bg--'] {
