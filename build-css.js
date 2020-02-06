@@ -4,16 +4,11 @@ const path = require("path");
 // const pkg = require("../package.json");
 
 const postcss = require("postcss");
-const postcssImport = require("postcss-import")({
-  skipDuplicates: true
-});
 const discardDuplicates = require("postcss-discard-duplicates")();
 const discardUnused = require("postcss-discard-unused")();
-const nested = require("postcss-nested")();
 const mergeRules = require("postcss-merge-rules")();
 const cssnano = require("cssnano")();
 const presetEnv = require("postcss-preset-env");
-const customProperties = require("postcss-custom-properties");
 
 const cssnextObject = {
   browsers: "last 2 versions, ios >= 6, ie > 10",
@@ -25,7 +20,7 @@ const cssnextObject = {
     "./node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-css-vars.css",
     "./node_modules/@ekstra-bladet/eb-fonts/dist/eb-fontvars-desktop.css",
     "./src/_variables.css"
-  ],
+  ], // Use this to import files instead of @import
   preserve: false,
   stage: 0,
   warnForDuplicates: false
@@ -54,10 +49,7 @@ const buildCSS = async () => {
      * Find all css files in src folder
      */
     readFolder(srcFolder, fileTypeToFind, cssFilesToRead);
-
-    const inputFile = "./src/index.css";
     const outFolder = "dist";
-
     const outputFile = `${outFolder}/eb-designsystem.css`;
 
     if (!fs.existsSync(outFolder)) {
@@ -72,9 +64,6 @@ const buildCSS = async () => {
 
     const css = readFileContent.join("");
     await postcss([
-      postcssImport,
-      nested,
-      customProperties(cssnextObject),
       presetEnv(cssnextObject),
       discardDuplicates,
       discardUnused,
@@ -82,8 +71,7 @@ const buildCSS = async () => {
       cssnano
     ])
       .process(css, {
-        from: inputFile,
-        to: "dist/eb-designsystem.css"
+        from: "undefined"
       })
       .then(result => {
         try {
