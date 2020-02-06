@@ -8,16 +8,17 @@
   box-sizing: border-box;
   display: block;
   overflow: hidden;
-  width: 100%;
 }
 
 .card[class*='bg--'] {
   box-shadow: none; /* Remove border when filled */
 }
 
-a.card:hover {
+a.card:hover,
+a.card:focus {
   box-shadow: var(--box-shadow--hover);
   opacity: .8; /* DR.Edition 03/02/2020 */
+  outline: none;
 }
 
 .card-media {
@@ -44,13 +45,11 @@ a.card:hover {
 }
 
 .card-meta {
-  color: var(--color--black);
   font-weight: 500;
   margin: 0 0 3px;
 }
 
 .card-title {
-  color: var(--color--black);
   font-size: 30px;
   font-weight: 700;
   margin: 0;
