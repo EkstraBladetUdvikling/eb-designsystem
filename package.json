@@ -6,7 +6,7 @@
   "author": "tegner <jesper.h.tegner@jppol.dk>",
   "license": "MIT",
   "scripts": {
-    "build": "yarn build:css",
+    "build": "yarn build:css && yarn build:preview",
     "build:css": "node build-css.js",
     "build:preview": "postcss preview/css/_index.css -o preview/css/main.css --no-map -u postcss-import",
     "build:watch": "onchange 'src/**/*.css' -- yarn build & onchange 'preview/**/{_*.css,html}' -- yarn build:preview",
