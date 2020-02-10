@@ -1,34 +1,37 @@
 {
   "name": "eb-designsystem",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
   "license": "MIT",
   "scripts": {
-    "build": "yarn build:css",
+    "build": "yarn build:css && yarn build:preview",
     "build:css": "node build-css.js",
-    "build:watch": "onchange 'src/**/*.css' -- yarn build",
+    "build:preview": "postcss preview/css/_index.css -o preview/css/main.css --no-map -u postcss-import",
+    "build:watch": "onchange 'src/**/*.css' -- yarn build & onchange 'preview/**/{_*.css,html}' -- yarn build:preview",
     "dist": "yarn build:css",
-    "start": "yarn build:watch & bundle exec jekyll serve --livereload",
-    "move_to_eb": "yarn cpx \"./dist/**/*.{css,js}\" \"../ekstrabladet/ekstrabladet-publication/src/main/frontend/css-main/main/css\""
+    "move_to_eb": "yarn cpx \"./dist/**/*.{css,js}\" \"../ekstrabladet/ekstrabladet-publication/src/main/frontend/css-main/main/css\"",
+    "start": "yarn build:preview && yarn build:watch & bundle exec jekyll serve --livereload"
   },
   "dependencies": {
     "@ekstra-bladet/eb-colors": "^2.3.3",
     "@ekstra-bladet/eb-fonts": "^1.0.6",
-    "cpx": "^1.5.0",
     "csscomb": "^4.3.0",
     "cssnano": "^4.1.10",
-    "onchange": "^6.1.0",
     "postcss": "^7.0.21",
     "postcss-cli": "^6.1.3",
     "postcss-discard-duplicates": "^4.0.2",
     "postcss-discard-unused": "^4.0.1",
-    "postcss-import": "^12.0.1",
     "postcss-load-config": "^2.1.0",
     "postcss-merge-rules": "^4.0.3",
-    "postcss-nested": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "postcss-selectorcleanse": "^1.0.6"
+  },
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "normalize.css": "^8.0.1",
+    "onchange": "^6.1.0",
+    "postcss-import": "^12.0.1"
   }
 }

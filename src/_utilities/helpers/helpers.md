@@ -52,3 +52,5 @@ Centrér element vertikal i sin container. Kræver at containeren har text-align
   <div class="width-1of3 vertical-center text-align--left bg--graa3">Jeg er centreret</div>
 </div>
 ```
+
+## Margin + padding - boxmodel illustration

@@ -1,0 +1,63 @@
+/* Dependencies for preview start - should be integrated in design-system in the long run */
+@import "https://fonts.googleapis.com/css?family=Work+Sans:500,700&display=swap"; /* todo - add to eb-fonts */
+@import "normalize.css";
+@import "@ekstra-bladet/eb-colors/dist/eb-colors-classes.css";
+@import "@ekstra-bladet/eb-fonts/dist/eb-fonts-desktop.css";
+@import "_highlight";
+
+html,
+body {
+  margin: 0;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #bd1118;
+  text-decoration: none;
+}
+
+div,
+section {
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  line-height: normal;
+  margin: 0;
+}
+
+.eb-logo {
+  width: 40px;
+}
+
+/* Dependencies - stop */
+
+.nav-vertical ul li {
+  list-style: none;
+}
+
+.dsm-content {
+  position: relative;
+
+  background: white;
+  color: black;
+}
+
+.dsm-content > h1,
+.dsm-content > h2,
+.dsm-content > h3,
+.dsm-content > h4,
+.dsm-content > h5,
+.dsm-content > h6 {
+  margin-bottom: 20px;
+}
+
+.dsm-content > h2,
+.dsm-content > h3,
+.dsm-content > h4,
+.dsm-content > h5,
+.dsm-content > h6 {
+  margin-top: 30px;
+}

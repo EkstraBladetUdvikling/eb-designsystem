@@ -6,7 +6,7 @@ title: Card
 ## Default card
 
 <div class="grid-width--small">
-  <a href="#" class="card mar-m--b">
+  <a href="#" class="card margin-m--b">
     <div class="card-media">
       <img class="card-media--img" src="https://via.placeholder.com/610x343&text=610x343">
     </div>
@@ -32,7 +32,7 @@ title: Card
       </div>
     </a>
 
-    <a href="#" class="card width-1of2 mar-m--l">
+    <a href="#" class="card width-1of2 margin-m--l">
       <div class="card-content">
         <p class="card-meta color--graa3"><small><span class="color--flash">flash!</span> - 8 timer siden</small></p>
         <h3 class="card-title color--black">Aliquam ultricies felis eget orci commodo fringilla</h3>
@@ -42,7 +42,7 @@ title: Card
 </div>
 
 ```html
-<a href="#" class="card mar-m--b">
+<a href="#" class="card margin-m--b">
   <div class="card-media">
     <img class="card-media--img" src="https://via.placeholder.com/610x343&text=610x343">
   </div>
@@ -68,7 +68,7 @@ title: Card
     </div>
   </a>
 
-  <a href="#" class="card width-1of2 mar-m--l">
+  <a href="#" class="card width-1of2 margin-m--l">
     <div class="card-content">
       <p class="card-meta color--graa3"><small><span class="color--flash">flash!</span> - 8 timer siden</small></p>
       <h3 class="card-title color--black">Aliquam ultricies felis eget orci commodo fringilla</h3>
@@ -80,7 +80,7 @@ title: Card
 ## Small media card
 
 <div class="grid-width--small">
-  <a href="#" class="card card--small-media mar-l--b">
+  <a href="#" class="card card--small-media margin-l--b">
     <div class="card-media">
       <img class="card-media--img" src="https://via.placeholder.com/200x112&text=200x112">
       <div class="card-media--icon">
@@ -95,7 +95,7 @@ title: Card
     </div>
   </a>
 
-  <a href="#" class="card card--small-media mar-l--b">
+  <a href="#" class="card card--small-media margin-l--b">
     <div class="card-media">
       <img class="card-media--img" src="https://via.placeholder.com/200x112&text=200x112">
     </div>
@@ -105,14 +105,14 @@ title: Card
     </div>
   </a>
 
-  <a href="#" class="card card--small-media mar-l--b">
+  <a href="#" class="card card--small-media margin-l--b">
     <div class="card-content">
       <p class="card-meta color--graa3"><small><span class="color--flash">flash!</span> - 19 timer siden</small></p>
       <h3 class="card-title color--black">Donec dictum neque et molestie consequat. Cras pharetra tincidunt.</h3>
     </div>
   </a>
 
-  <a href="#" class="card card--small-media card--small-media--reverse mar-l--b">
+  <a href="#" class="card card--small-media card--small-media--reverse margin-l--b">
     <div class="card-media">
       <img class="card-media--img" src="https://via.placeholder.com/200x112&text=200x112">
     </div>
@@ -124,7 +124,7 @@ title: Card
 </div>
 
 ```html
-<a href="#" class="card card--small-media mar-l--b">
+<a href="#" class="card card--small-media margin-l--b">
   <div class="card-media">
     <img class="card-media--img" src="https://via.placeholder.com/200x112&text=200x112">
     <div class="card-media--icon">
@@ -139,7 +139,7 @@ title: Card
   </div>
 </a>
 
-<a href="#" class="card card--small-media mar-l--b">
+<a href="#" class="card card--small-media margin-l--b">
   <div class="card-media">
     <img class="card-media--img" src="https://via.placeholder.com/200x112&text=200x112">
   </div>
@@ -149,14 +149,14 @@ title: Card
   </div>
 </a>
 
-<a href="#" class="card card--small-media mar-l--b">
+<a href="#" class="card card--small-media margin-l--b">
   <div class="card-content">
     <p class="card-meta color--graa3"><small><span class="color--flash">flash!</span> - 19 timer siden</small></p>
     <h3 class="card-title color--black">Donec dictum neque et molestie consequat. Cras pharetra tincidunt.</h3>
   </div>
 </a>
 
-<a href="#" class="card card--small-media card--small-media--reverse mar-l--b">
+<a href="#" class="card card--small-media card--small-media--reverse margin-l--b">
   <div class="card-media">
     <img class="card-media--img" src="https://via.placeholder.com/200x112&text=200x112">
   </div>
@@ -172,7 +172,7 @@ title: Card
 Blot erstat `<a>` med `<div>`, det vil samtidig fjerne hover effekten.
 
 <div class="grid-width--small">
-  <div class="card mar-xl--b">
+  <div class="card margin-xl--b">
     <div class="card-media">
       <img class="card-media--img" src="https://via.placeholder.com/610x343&text=610x343">
     </div>
@@ -184,7 +184,7 @@ Blot erstat `<a>` med `<div>`, det vil samtidig fjerne hover effekten.
 </div>
 
 ```html
-<div class="card mar-xl--b">
+<div class="card margin-xl--b">
   <div class="card-media">
     <img class="card-media--img" src="https://via.placeholder.com/610x343&text=610x343">
   </div>
@@ -197,7 +197,7 @@ Blot erstat `<a>` med `<div>`, det vil samtidig fjerne hover effekten.
 
 ## Brugseksempler
 
-<div class="grid-width--large mar-xl--b">
+<div class="grid-width--large margin-xl--b">
   <a href="#" class="card card--small-media card--small-media--reverse bg--flash">
     <div class="card-media">
       <img class="card-media--img" src="https://via.placeholder.com/455x255&text=455x255">
