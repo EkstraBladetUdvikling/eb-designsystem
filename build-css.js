@@ -89,14 +89,18 @@ const buildCSS = async args => {
       .toString()
       .trim();
 
-    console.log("rev", rev, "branch", branch);
-    let version = `${pkg.name} version ${pkg.version} built by ${
+    const date = new Date();
+    const dateString = `${date.getDay()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+    console.log("date", date.toLocaleTimeString());
+    let version = `${pkg.name} version ${
+      pkg.version
+    } built on ${dateString} by ${
       require("os").userInfo().username
     } on branch "${branch}" at revision "${rev}"`;
     if (tempversionBuild !== "") {
       version = `${version} | TEMP VERSION: ${tempversionBuild}`;
     }
-
+    console.log("version", version);
     await postcss([
       presetEnv(cssnextObject),
       discardDuplicates,
