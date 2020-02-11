@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-// const pkg = require("../package.json");
+const pkg = require("./package.json");
 
 const postcss = require("postcss");
 const discardDuplicates = require("postcss-discard-duplicates")();
@@ -9,6 +9,9 @@ const discardUnused = require("postcss-discard-unused")();
 const mergeRules = require("postcss-merge-rules")();
 const cssnano = require("cssnano")();
 const presetEnv = require("postcss-preset-env");
+const runtimeArguments = process.argv.slice(2);
+
+const TEMPVERSION = "./.tempversion";
 
 const cssnextObject = {
   browsers: "last 2 versions, ios >= 6, ie > 10",
@@ -39,8 +42,9 @@ const readFolder = (folderName, filesToFind, array, lvl = 0) => {
   });
 };
 
-const buildCSS = async () => {
+const buildCSS = async args => {
   try {
+    const WATCHING = args[0] ? args[0].indexOf("watcher") !== -1 : "";
     const startTime = new Date().getTime();
     const srcFolder = "./src";
     const cssFilesToRead = [];
@@ -61,8 +65,27 @@ const buildCSS = async () => {
     cssFilesToRead.forEach(fileName => {
       readFileContent.push(fs.readFileSync(fileName));
     });
-
     const css = readFileContent.join("");
+    let tempversionBuild = "";
+    if (WATCHING) {
+      if (fs.existsSync(TEMPVERSION)) {
+        const readVersion = parseInt(
+          fs.readFileSync(TEMPVERSION).toString(),
+          10
+        );
+        tempversionBuild = readVersion + 1;
+      } else {
+        tempversionBuild = 0;
+      }
+    }
+
+    const version =
+      tempversionBuild !== ""
+        ? `${pkg.version} | TEMP VERSION: ${tempversionBuild} by: ${
+            require("os").userInfo().username
+          }`
+        : pkg.version;
+
     await postcss([
       presetEnv(cssnextObject),
       discardDuplicates,
@@ -75,9 +98,20 @@ const buildCSS = async () => {
       })
       .then(result => {
         try {
-          fs.writeFile(outputFile, result.css, () => {
-            return true;
-          });
+          const resultCss = result.css;
+          fs.writeFile(
+            outputFile,
+            `/** ${pkg.name} version: ${version} */${resultCss}`,
+            () => {
+              return true;
+            }
+          );
+          if (WATCHING) {
+            console.log(" ... write tempversionBuild", tempversionBuild);
+            fs.writeFile(TEMPVERSION, tempversionBuild, () => {
+              return true;
+            });
+          }
           console.log(`postcss PRODUCTION ready -> ${outputFile}`);
         } catch (err) {
           throw err;
@@ -92,4 +126,4 @@ const buildCSS = async () => {
   }
 };
 
-buildCSS();
+buildCSS(runtimeArguments);
