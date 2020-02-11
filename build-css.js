@@ -94,11 +94,7 @@ const buildCSS = async args => {
       "da"
     )} ${date.toLocaleTimeString("da")}`;
 
-    let version = `${pkg.name} version ${
-      pkg.version
-    } built on ${dateString} by ${
-      require("os").userInfo().username
-    } on branch "${branch}" at revision "${rev}"`;
+    let version = `${pkg.name} version ${pkg.version} built on ${dateString} on branch "${branch}" at revision "${rev}"`;
     if (tempversionBuild !== "") {
       version = `${version} | TEMP VERSION: ${tempversionBuild}`;
     }
