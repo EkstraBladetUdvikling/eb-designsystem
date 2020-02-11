@@ -8,19 +8,19 @@ title: Card
 <div class="grid-width--small">
   <a href="#" class="card margin-m--b">
     <div class="card-media">
-      <img class="card-media--img" src="https://via.placeholder.com/610x343&text=610x343">
+      <img class="card-image" src="https://via.placeholder.com/610x343&text=610x343">
     </div>
     <div class="card-content">
       <p class="card-meta color--graa3"><small><span class="color--sport">Sport</span> - 12 timer siden</small></p>
-      <h2 class="card-title color--black">Nulla facilisi. Nulla mattis felis eget convallis vehicula</h2>
+      <h2 class="card-title">Nulla facilisi. Nulla mattis felis eget convallis vehicula</h2>
     </div>
   </a>
 
   <div class="flex flex-justify--between">
     <a href="#" class="card width-1of2">
       <div class="card-media">
-        <img class="card-media--img" src="https://via.placeholder.com/300x168&text=300x168">
-        <div class="card-media--icon">
+        <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168">
+        <div class="card-icon">
           <svg viewBox="0 0 40 35">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#play-icon"></use>
           </svg>
@@ -28,14 +28,14 @@ title: Card
       </div>
       <div class="card-content">
         <p class="card-meta color--graa3"><small><span class="color--nyheder">Politik</span> - 2 timer siden</small></p>
-        <h3 class="card-title color--black">Donec sed tincidunt ex, vestibulum congue arcu</h3>
+        <h3 class="card-title">Donec sed tincidunt ex, vestibulum congue arcu</h3>
       </div>
     </a>
 
     <a href="#" class="card width-1of2 margin-m--l">
       <div class="card-content">
         <p class="card-meta color--graa3"><small><span class="color--flash">flash!</span> - 8 timer siden</small></p>
-        <h3 class="card-title color--black">Aliquam ultricies felis eget orci commodo fringilla</h3>
+        <h3 class="card-title">Aliquam ultricies felis eget orci commodo fringilla</h3>
       </div>
     </a>
   </div>
@@ -44,19 +44,19 @@ title: Card
 ```html
 <a href="#" class="card margin-m--b">
   <div class="card-media">
-    <img class="card-media--img" src="https://via.placeholder.com/610x343&text=610x343">
+    <img class="card-image" src="https://via.placeholder.com/610x343&text=610x343">
   </div>
   <div class="card-content">
     <p class="card-meta color--graa3"><small><span class="color--sport">Sport</span> - 12 timer siden</small></p>
-    <h2 class="card-title color--black">Nulla facilisi. Nulla mattis felis eget convallis vehicula</h2>
+    <h2 class="card-title">Nulla facilisi. Nulla mattis felis eget convallis vehicula</h2>
   </div>
 </a>
 
 <div class="flex flex-justify--between">
   <a href="#" class="card width-1of2">
     <div class="card-media">
-      <img class="card-media--img" src="https://via.placeholder.com/300x168&text=300x168">
-      <div class="card-media--icon">
+      <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168">
+      <div class="card-icon">
         <svg viewBox="0 0 40 35">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#play-icon"></use>
         </svg>
@@ -64,14 +64,14 @@ title: Card
     </div>
     <div class="card-content">
       <p class="card-meta color--graa3"><small><span class="color--nyheder">Politik</span> - 2 timer siden</small></p>
-      <h3 class="card-title color--black">Donec sed tincidunt ex, vestibulum congue arcu</h3>
+      <h3 class="card-title">Donec sed tincidunt ex, vestibulum congue arcu</h3>
     </div>
   </a>
 
   <a href="#" class="card width-1of2 margin-m--l">
     <div class="card-content">
       <p class="card-meta color--graa3"><small><span class="color--flash">flash!</span> - 8 timer siden</small></p>
-      <h3 class="card-title color--black">Aliquam ultricies felis eget orci commodo fringilla</h3>
+      <h3 class="card-title">Aliquam ultricies felis eget orci commodo fringilla</h3>
     </div>
   </a>
 </div>
@@ -82,8 +82,8 @@ title: Card
 <div class="grid-width--small">
   <a href="#" class="card card--small-media margin-l--b">
     <div class="card-media">
-      <img class="card-media--img" src="https://via.placeholder.com/200x112&text=200x112">
-      <div class="card-media--icon">
+      <img class="card-image" src="https://via.placeholder.com/200x112&text=200x112">
+      <div class="card-icon">
         <svg viewBox="0 0 40 35">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#play-icon"></use>
         </svg>
@@ -91,34 +91,34 @@ title: Card
     </div>
     <div class="card-content">
       <p class="card-meta color--graa3"><small><span class="color--sport">Sport</span> - 6 timer siden</small></p>
-      <h3 class="card-title color--black">Curabitur vehicula ac urna</h3>
+      <h3 class="card-title">Curabitur vehicula ac urna</h3>
     </div>
   </a>
 
   <a href="#" class="card card--small-media margin-l--b">
     <div class="card-media">
-      <img class="card-media--img" src="https://via.placeholder.com/200x112&text=200x112">
+      <img class="card-image" src="https://via.placeholder.com/200x112&text=200x112">
     </div>
     <div class="card-content">
       <p class="card-meta color--graa3"><small><span class="color--nyheder">Politik</span> - 11 timer siden</small></p>
-      <h3 class="card-title color--black">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel. Nam cursus sed nibh quis porttitor.</h3>
+      <h3 class="card-title">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel. Nam cursus sed nibh quis porttitor.</h3>
     </div>
   </a>
 
   <a href="#" class="card card--small-media margin-l--b">
     <div class="card-content">
       <p class="card-meta color--graa3"><small><span class="color--flash">flash!</span> - 19 timer siden</small></p>
-      <h3 class="card-title color--black">Donec dictum neque et molestie consequat. Cras pharetra tincidunt.</h3>
+      <h3 class="card-title">Donec dictum neque et molestie consequat. Cras pharetra tincidunt.</h3>
     </div>
   </a>
 
   <a href="#" class="card card--small-media card--small-media--reverse margin-l--b">
     <div class="card-media">
-      <img class="card-media--img" src="https://via.placeholder.com/200x112&text=200x112">
+      <img class="card-image" src="https://via.placeholder.com/200x112&text=200x112">
     </div>
     <div class="card-content">
       <p class="card-meta color--graa3"><small><span class="color--nyheder">Politik</span> - 11 timer siden</small></p>
-      <h3 class="card-title color--black">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h3>
+      <h3 class="card-title">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h3>
     </div>
   </a>
 </div>
@@ -126,8 +126,8 @@ title: Card
 ```html
 <a href="#" class="card card--small-media margin-l--b">
   <div class="card-media">
-    <img class="card-media--img" src="https://via.placeholder.com/200x112&text=200x112">
-    <div class="card-media--icon">
+    <img class="card-image" src="https://via.placeholder.com/200x112&text=200x112">
+    <div class="card-icon">
       <svg viewBox="0 0 40 35">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#play-icon"></use>
       </svg>
@@ -135,34 +135,34 @@ title: Card
   </div>
   <div class="card-content">
     <p class="card-meta color--graa3"><small><span class="color--sport">Sport</span> - 6 timer siden</small></p>
-    <h3 class="card-title color--black">Curabitur vehicula ac urna</h3>
+    <h3 class="card-title">Curabitur vehicula ac urna</h3>
   </div>
 </a>
 
 <a href="#" class="card card--small-media margin-l--b">
   <div class="card-media">
-    <img class="card-media--img" src="https://via.placeholder.com/200x112&text=200x112">
+    <img class="card-image" src="https://via.placeholder.com/200x112&text=200x112">
   </div>
   <div class="card-content">
     <p class="card-meta color--graa3"><small><span class="color--nyheder">Politik</span> - 11 timer siden</small></p>
-    <h3 class="card-title color--black">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel. Nam cursus sed nibh quis porttitor.</h3>
+    <h3 class="card-title">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel. Nam cursus sed nibh quis porttitor.</h3>
   </div>
 </a>
 
 <a href="#" class="card card--small-media margin-l--b">
   <div class="card-content">
     <p class="card-meta color--graa3"><small><span class="color--flash">flash!</span> - 19 timer siden</small></p>
-    <h3 class="card-title color--black">Donec dictum neque et molestie consequat. Cras pharetra tincidunt.</h3>
+    <h3 class="card-title">Donec dictum neque et molestie consequat. Cras pharetra tincidunt.</h3>
   </div>
 </a>
 
 <a href="#" class="card card--small-media card--small-media--reverse margin-l--b">
   <div class="card-media">
-    <img class="card-media--img" src="https://via.placeholder.com/200x112&text=200x112">
+    <img class="card-image" src="https://via.placeholder.com/200x112&text=200x112">
   </div>
   <div class="card-content">
     <p class="card-meta color--graa3"><small><span class="color--nyheder">Politik</span> - 11 timer siden</small></p>
-    <h3 class="card-title color--black">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h3>
+    <h3 class="card-title">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h3>
   </div>
 </a>
 ```
@@ -174,11 +174,11 @@ Blot erstat `<a>` med `<div>`, det vil samtidig fjerne hover effekten.
 <div class="grid-width--small">
   <div class="card margin-xl--b">
     <div class="card-media">
-      <img class="card-media--img" src="https://via.placeholder.com/610x343&text=610x343">
+      <img class="card-image" src="https://via.placeholder.com/610x343&text=610x343">
     </div>
     <div class="card-content">
       <p class="card-meta color--graa3"><small><span class="color--sport">Sport</span> - 12 timer siden</small></p>
-      <h2 class="card-title color--black">Nulla facilisi. Nulla mattis felis eget convallis vehicula</h2>
+      <h2 class="card-title">Nulla facilisi. Nulla mattis felis eget convallis vehicula</h2>
     </div>
   </div>
 </div>
@@ -186,59 +186,134 @@ Blot erstat `<a>` med `<div>`, det vil samtidig fjerne hover effekten.
 ```html
 <div class="card margin-xl--b">
   <div class="card-media">
-    <img class="card-media--img" src="https://via.placeholder.com/610x343&text=610x343">
+    <img class="card-image" src="https://via.placeholder.com/610x343&text=610x343">
   </div>
   <div class="card-content">
     <p class="card-meta color--graa3"><small><span class="color--sport">Sport</span> - 12 timer siden</small></p>
-    <h2 class="card-title color--black">Nulla facilisi. Nulla mattis felis eget convallis vehicula</h2>
+    <h2 class="card-title">Nulla facilisi. Nulla mattis felis eget convallis vehicula</h2>
   </div>
 </div>
 ```
+
+## Header og footer
+
+Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet: `<xxx class="card-header">` eller `<xxx class="card-footer">`.
+
+<div class="grid-width--small">
+  <div class="card margin-xl--b">
+    <div class="card-header"><b>Header her</b></div>
+    <div class="card-media">
+      <img class="card-image" src="https://via.placeholder.com/610x343&text=610x343">
+    </div>
+    <div class="card-content">
+      <h2 class="card-title">Nulla facilisi. Nulla mattis felis eget convallis vehicula</h2>
+    </div>
+    <div class="card-footer flex flex-justify--between">
+      <p class="card-meta color--graa3"><small><i class="far fa-clock"></i> 12 timer siden</small></p>
+      <p class="card-meta color--graa3"><small>Af: John Doe</small></p>
+    </div>
+  </div>
+</div>
+
 
 ## Brugseksempler
 
 <div class="grid-width--large margin-xl--b">
   <a href="#" class="card card--small-media card--small-media--reverse bg--flash">
+    <div class="card-header bg--rose">
+      <p class="card-meta"><small><span>Politik</span> - 11 timer siden</small></p>
+    </div>
     <div class="card-media">
-      <img class="card-media--img" src="https://via.placeholder.com/455x255&text=455x255">
+      <img class="card-image" src="https://via.placeholder.com/455x255&text=455x255">
     </div>
     <div class="card-content">
-      <p class="card-meta color--graa3 color--white"><small><span>Politik</span> - 11 timer siden</small></p>
-      <h2 class="card-title color--black color--white">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
+      <p class="card-meta"><small><span>Politik</span> - 11 timer siden</small></p>
+      <h2 class="card-title">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
+    </div>
+    <div class="card-footer flex flex-justify--around bg--graa7">
+      <button class="button button--solid button--accept">
+        <span>Vælg</span>
+      </button>
     </div>
   </a>
 </div>
 
-<div class="grid-width--small">
+<div class="grid-width--small margin-xl--b">
   <a href="#" class="card card--small-media bg--breaking">
     <div class="card-media">
-      <img class="card-media--img" src="https://via.placeholder.com/150x84&text=150x84">
+      <img class="card-image" src="https://via.placeholder.com/150x84&text=150x84">
     </div>
     <div class="card-content">
-      <p class="card-meta color--graa3"><small><span>BREAKING NEWS</span></small></p>
-      <h3 class="card-title color--black">Curabitur vehicula ac urna</h3>
+      <p class="card-meta"><small><span>BREAKING NEWS</span></small></p>
+      <h3 class="card-title">Curabitur vehicula ac urna</h3>
     </div>
   </a>
+</div>
+
+<div class="grid-width--large">
+  <div class="flex flex-justify--between">
+      <a href="#" class="card width-1of3 bg--rose">
+        <div class="card-media">
+          <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168">
+        </div>
+        <div class="card-content">
+          <div class="card-meta flex flex-justify--between">
+              <div class="card-icon bg--white" style="width: 65px;
+    padding: 2px 6px; border-radius: 5px;">
+                <img class="card-image" src="https://side6.dk/assets/images/side6_FS.png">
+              </div>
+              <i class="card-icon fa fal fa-external-link-alt"></i>
+          </div>
+          <h3 class="card-title card-title--large">Donec sed tincidunt ex, vestibulum congue arcu</h3>
+        </div>
+      </a>
+
+      <a href="#" class="card width-1of3 flex-item--start margin-m--l">
+        <div class="card-media">
+          <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168">
+        </div>
+        <div class="card-content text-align--center">
+          <h3 class="card-title">Donec sed tincidunt ex, vestibulum congue arcu</h3>
+          <p class="card-meta color--graa3 margin-m--t"><small><i class="far fa-clock"></i> 12 timer siden</small></p>
+        </div>
+      </a>
+
+      <a href="#" class="card width-1of3 margin-m--l">
+        <div class="card-header text-align--center">
+            <b>Avisen</b>
+        </div>
+        <div class="card-content">
+           <p class="margin-none margin-l--b">Cras sed viverra tortor. Sed dictum lacus nec velit ultricies viverra sed tincidunt mi. Nulla mi velit, dictum sed tempor vitae, mattis a felis.</p>
+          <p class="card-meta color--graa2 text-align--center">Buy for only:</p>
+          <h3 class="card-title text-align--center">120<small>,-</small></h3>
+        </div>
+        <div class="card-footer flex flex-justify--around bg--graa7">
+          <button class="button button--solid button--accept">
+            <span>Vælg</span>
+          </button>
+        </div>
+      </a>
+  </div>
 </div>
 
 ```html
-<a href="#" class="card card--small-media card--small-media--reverse bg--flash">
-  <div class="card-media">
-    <img class="card-media--img" src="https://via.placeholder.com/455x255&text=455x255">
-  </div>
-  <div class="card-content">
-    <p class="card-meta color--graa3 color--white"><small><span>Politik</span> - 11 timer siden</small></p>
-    <h2 class="card-title color--black color--white">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
-  </div>
-</a>
+  <a href="#" class="card card--small-media card--small-media--reverse bg--flash">
+    <div class="card-media">
+      <img class="card-image" src="https://via.placeholder.com/455x255&text=455x255">
+    </div>
+    <div class="card-content">
+      <p class="card-meta"><small><span>Politik</span> - 11 timer siden</small></p>
+      <h2 class="card-title">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
+    </div>
+  </a>
 
 <a href="#" class="card card--small-media bg--breaking">
   <div class="card-media">
-    <img class="card-media--img" src="https://via.placeholder.com/150x84&text=150x84">
+    <img class="card-image" src="https://via.placeholder.com/150x84&text=150x84">
   </div>
   <div class="card-content">
-    <p class="card-meta color--graa3"><small><span>BREAKING NEWS</span></small></p>
-    <h3 class="card-title color--black">Curabitur vehicula ac urna</h3>
+    <p class="card-meta"><small><span>BREAKING NEWS</span></small></p>
+    <h3 class="card-title">Curabitur vehicula ac urna</h3>
   </div>
 </a>
 ```

@@ -1,6 +1,6 @@
 
 @import "https://fonts.googleapis.com/css?family=Work+Sans:500,700&display=swap";
-/* Dependencies */
+/* Dependencies for preview start - should be integrated in design-system in the long run */
 /* todo - add to eb-fonts */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -977,6 +977,7 @@ h2 {
 .eb-logo {
   width: 40px;
 }
+/* Dependencies - stop */
 .nav-vertical ul li {
   list-style: none;
 }
