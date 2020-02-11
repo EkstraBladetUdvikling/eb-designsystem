@@ -78,13 +78,24 @@ const buildCSS = async args => {
         tempversionBuild = 0;
       }
     }
+    const branchInfo = fs
+      .readFileSync(".git/HEAD")
+      .toString()
+      .trim()
+      .split("/");
+    const branch = branchInfo[branchInfo.length - 1];
+    let rev = require("child_process")
+      .execSync("git rev-parse HEAD")
+      .toString()
+      .trim();
 
-    const version =
-      tempversionBuild !== ""
-        ? `${pkg.version} | TEMP VERSION: ${tempversionBuild} by: ${
-            require("os").userInfo().username
-          }`
-        : pkg.version;
+    console.log("rev", rev, "branch", branch);
+    let version = `${pkg.name} version ${pkg.version} built by ${
+      require("os").userInfo().username
+    } on branch "${branch}" at revision "${rev}"`;
+    if (tempversionBuild !== "") {
+      version = `${version} | TEMP VERSION: ${tempversionBuild}`;
+    }
 
     await postcss([
       presetEnv(cssnextObject),
@@ -99,13 +110,9 @@ const buildCSS = async args => {
       .then(result => {
         try {
           const resultCss = result.css;
-          fs.writeFile(
-            outputFile,
-            `/** ${pkg.name} version: ${version} */${resultCss}`,
-            () => {
-              return true;
-            }
-          );
+          fs.writeFile(outputFile, `/** ${version} */${resultCss}`, () => {
+            return true;
+          });
           if (WATCHING) {
             console.log(" ... write tempversionBuild", tempversionBuild);
             fs.writeFile(TEMPVERSION, tempversionBuild, () => {
