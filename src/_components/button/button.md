@@ -146,3 +146,13 @@ Det her er en standard knap uden nogen hat
   <i class="fa fal fa-times"></i>
 </button>
 ````
+
+<button class="button button--link button--icon">
+  Button--link
+</button>
+
+```html
+<button class="button button--link button--icon">
+  Button--link
+</button>
+````
