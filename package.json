@@ -1,13 +1,10 @@
 {
   "name": "eb-designsystem",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "main": "index.js",
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
   "license": "MIT",
-  "bin": {
-    "buildcss": "bin/buildcss"
-  },
   "scripts": {
     "build": "yarn build:css && yarn build:preview",
     "build:css": "node build-css.js",
