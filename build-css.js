@@ -90,8 +90,10 @@ const buildCSS = async args => {
       .trim();
 
     const date = new Date();
-    const dateString = `${date.getDay()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-    console.log("date", date.toLocaleTimeString());
+    const dateString = `${date.toLocaleDateString(
+      "da"
+    )} ${date.toLocaleTimeString("da")}`;
+
     let version = `${pkg.name} version ${
       pkg.version
     } built on ${dateString} by ${
@@ -100,7 +102,7 @@ const buildCSS = async args => {
     if (tempversionBuild !== "") {
       version = `${version} | TEMP VERSION: ${tempversionBuild}`;
     }
-    console.log("version", version);
+
     await postcss([
       presetEnv(cssnextObject),
       discardDuplicates,
@@ -117,6 +119,7 @@ const buildCSS = async args => {
           fs.writeFile(outputFile, `/** ${version} */${resultCss}`, () => {
             return true;
           });
+          console.log(version);
           if (WATCHING) {
             console.log(" ... write tempversionBuild", tempversionBuild);
             fs.writeFile(TEMPVERSION, tempversionBuild, () => {
