@@ -1,7 +1,7 @@
 /* Systemwide variables - default + desktop */
 :root {
   --border-radius--small: 5px;
-  --box-shadow--hover: 0 0 10px 5px #c8c8c8; /* DR.Edition 03/02/2020 */
+  --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), .22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
   --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
   /* distance - desktop */
   --distance-large: 20px;
