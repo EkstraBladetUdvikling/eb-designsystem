@@ -52,29 +52,27 @@ title: Card
   </div>
 </a>
 
-<div class="flex flex-justify--between">
-  <a href="#" class="card width-1of2">
-    <div class="card-media">
-      <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168">
-      <div class="card-icon">
-        <svg viewBox="0 0 40 35">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#play-icon"></use>
-        </svg>
-      </div>
+<a href="#" class="card width-1of2">
+  <div class="card-media">
+    <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168">
+    <div class="card-icon">
+      <svg viewBox="0 0 40 35">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#play-icon"></use>
+      </svg>
     </div>
-    <div class="card-content">
-      <p class="card-meta color--graa3"><small><span class="color--nyheder">Politik</span> - 2 timer siden</small></p>
-      <h3 class="card-title">Donec sed tincidunt ex, vestibulum congue arcu</h3>
-    </div>
-  </a>
+  </div>
+  <div class="card-content">
+    <p class="card-meta color--graa3"><small><span class="color--nyheder">Politik</span> - 2 timer siden</small></p>
+    <h3 class="card-title">Donec sed tincidunt ex, vestibulum congue arcu</h3>
+  </div>
+</a>
 
-  <a href="#" class="card width-1of2 margin-m--l">
-    <div class="card-content">
-      <p class="card-meta color--graa3"><small><span class="color--flash">flash!</span> - 8 timer siden</small></p>
-      <h3 class="card-title">Aliquam ultricies felis eget orci commodo fringilla</h3>
-    </div>
-  </a>
-</div>
+<a href="#" class="card width-1of2 margin-m--l">
+  <div class="card-content">
+    <p class="card-meta color--graa3"><small><span class="color--flash">flash!</span> - 8 timer siden</small></p>
+    <h3 class="card-title">Aliquam ultricies felis eget orci commodo fringilla</h3>
+  </div>
+</a>
 ```
 
 ## Small media card
@@ -297,15 +295,23 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
 </div>
 
 ```html
-  <a href="#" class="card card--small-media card--small-media--reverse bg--flash">
-    <div class="card-media">
-      <img class="card-image" src="https://via.placeholder.com/455x255&text=455x255">
-    </div>
-    <div class="card-content">
-      <p class="card-meta"><small><span>Politik</span> - 11 timer siden</small></p>
-      <h2 class="card-title">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
-    </div>
-  </a>
+<a href="#" class="card card--small-media card--small-media--reverse bg--flash">
+  <div class="card-header bg--rose">
+    <p class="card-meta"><small><span>Politik</span> - 11 timer siden</small></p>
+  </div>
+  <div class="card-media">
+    <img class="card-image" src="https://via.placeholder.com/455x255&text=455x255">
+  </div>
+  <div class="card-content">
+    <p class="card-meta"><small><span>Politik</span> - 11 timer siden</small></p>
+    <h2 class="card-title">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
+  </div>
+  <div class="card-footer flex flex-justify--around bg--graa7">
+    <button class="button button--solid button--accept">
+      <span>Vælg</span>
+    </button>
+  </div>
+</a>
 
 <a href="#" class="card card--small-media bg--breaking">
   <div class="card-media">
@@ -316,4 +322,46 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
     <h3 class="card-title">Curabitur vehicula ac urna</h3>
   </div>
 </a>
+
+<a href="#" class="card width-1of3 bg--rose">
+    <div class="card-media">
+      <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168">
+    </div>
+    <div class="card-content">
+      <div class="card-meta flex flex-justify--between">
+          <div class="card-icon bg--white" style="width: 65px;
+padding: 2px 6px; border-radius: 5px;">
+            <img class="card-image" src="https://side6.dk/assets/images/side6_FS.png">
+          </div>
+          <i class="card-icon fa fal fa-external-link-alt"></i>
+      </div>
+      <h3 class="card-title card-title--large">Donec sed tincidunt ex, vestibulum congue arcu</h3>
+    </div>
+  </a>
+
+  <a href="#" class="card width-1of3 flex-item--start margin-m--l">
+    <div class="card-media">
+      <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168">
+    </div>
+    <div class="card-content text-align--center">
+      <h3 class="card-title">Donec sed tincidunt ex, vestibulum congue arcu</h3>
+      <p class="card-meta color--graa3 margin-m--t"><small><i class="far fa-clock"></i> 12 timer siden</small></p>
+    </div>
+  </a>
+
+  <a href="#" class="card width-1of3 margin-m--l">
+    <div class="card-header text-align--center">
+        <b>Avisen</b>
+    </div>
+    <div class="card-content">
+        <p class="margin-none margin-l--b">Cras sed viverra tortor. Sed dictum lacus nec velit ultricies viverra sed tincidunt mi. Nulla mi velit, dictum sed tempor vitae, mattis a felis.</p>
+      <p class="card-meta color--graa2 text-align--center">Buy for only:</p>
+      <h3 class="card-title text-align--center">120<small>,-</small></h3>
+    </div>
+    <div class="card-footer flex flex-justify--around bg--graa7">
+      <button class="button button--solid button--accept">
+        <span>Vælg</span>
+      </button>
+    </div>
+  </a>
 ```

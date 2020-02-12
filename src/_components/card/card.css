@@ -67,6 +67,7 @@ a.card:focus {
 .card-footer {
   align-self: flex-end;
 }
+
 .card-footer:not([class*="bg--"]) {
   border-top: 1px solid var(--card-border-color);
 }
