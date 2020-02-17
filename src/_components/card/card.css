@@ -1,5 +1,8 @@
 :root {
   --card-border-color: var(--color--graa7);
+  --card-fs-icon: 18px;
+  --card-fs-title: 30px;
+  --card-fs-title--shrunk: 20px;
   --card-padding: 10px;
 }
 
@@ -89,12 +92,12 @@ a.card:focus {
 }
 
 .card-meta .card-icon[class*="fa-"] {
-  font-size: 18px;
+  font-size: var(--card-fs-icon);
   padding-top: 2px;
 }
 
 .card-title {
-  font-size: 30px;
+  font-size: var(--card-fs-title);
   font-weight: 700;
   margin: 0;
 }
@@ -129,5 +132,5 @@ a.card:focus {
   + .card-content
   .card-title:not(.card-title--large),
 .card--small-media .card-title:not(.card-title--large) {
-  font-size: 20px;
+  font-size: var(--card-fs-title--shrunk);
 }

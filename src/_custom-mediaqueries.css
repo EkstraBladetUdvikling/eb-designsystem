@@ -1,0 +1,51 @@
+/*
+---
+title:   Custom media queries
+section: variables
+---
+
+To ensure consistent usage of media queries thoughout the code base, the
+custom media queries is the only allowed media queries
+
+```example:css
+@media (--smartphone) {
+  .selector {
+    width:320px;
+  }
+}
+@media (--desktop) {
+  .selector {
+    width:960px;
+  }
+}
+```
+*/
+@custom-media --smartphone (width <= 767px);
+
+/*
+* custom media query for desktop
+*/
+@custom-media --desktop (width >= 767px);
+@custom-media --widedesktop (width >= 940px);
+@custom-media --xtrawidedesktop (width >= 1140px);
+
+/*
+* media-query for ipad
+*/
+@custom-media --tablet only screen and (min-width: 768px) and (max-width: 1024px);
+
+/*
+* Landscape media-query for ipad
+*/
+@custom-media --landscape only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape);
+
+/*
+* Portrait media-query for ipad
+*/
+@custom-media --portrait only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait);
+
+/*
+* ie11 and above media query for
+*/
+@custom-media --ie only screen and (-ms-high-contrast: active),
+  (-ms-high-contrast: none);
