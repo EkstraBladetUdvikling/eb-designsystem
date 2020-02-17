@@ -22,15 +22,17 @@ const cssnextObject = {
     "./node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-vars-rgb.css",
     "./node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-css-vars.css",
     "./node_modules/@ekstra-bladet/eb-fonts/dist/eb-fontvars-desktop.css",
-    "./src/_variables.css"
+    "./src/_variables.css",
+    "./src/_custom-mediaqueries.css"
   ],
   preserve: false,
   stage: 0,
   warnForDuplicates: false
 };
 
-const readFolder = (folderName, filesToFind, array, lvl = 0) => {
+const readFolder = (folderName, filesToFind, array, lvl = -1) => {
   fs.readdirSync(folderName, { withFileTypes: true }).forEach(output => {
+    console.log("output.isFile()", output.isFile(), output.name);
     if (output.isFile() && lvl !== 0) {
       if (path.extname(output.name).toLowerCase() === filesToFind) {
         array.push(`${folderName}/${output.name}`);
@@ -100,11 +102,11 @@ const buildCSS = async args => {
     }
 
     await postcss([
-      presetEnv(cssnextObject),
+      // presetEnv(cssnextObject),
       discardDuplicates,
       discardUnused,
-      mergeRules,
-      cssnano
+      mergeRules
+      // cssnano
     ])
       .process(css, {
         from: "undefined"

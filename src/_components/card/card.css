@@ -1,6 +1,12 @@
 :root {
   --card-border-color: var(--color--graa7);
-  --card-padding: 20px;
+  --card-padding: 10px;
+}
+
+@media (--desktop) {
+  :root {
+    --card-padding: 20px;
+  }
 }
 
 .card {
