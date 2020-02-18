@@ -32,7 +32,6 @@ const cssnextObject = {
 
 const readFolder = (folderName, filesToFind, array, lvl = 0) => {
   fs.readdirSync(folderName, { withFileTypes: true }).forEach(output => {
-    console.log("output.isFile()", output.isFile(), output.name);
     if (output.isFile() && lvl !== 0) {
       if (path.extname(output.name).toLowerCase() === filesToFind) {
         array.push(`${folderName}/${output.name}`);
@@ -49,13 +48,7 @@ const buildCSS = async args => {
     const WATCHING = args[0] ? args[0].indexOf("watcher") !== -1 : "";
     const startTime = new Date().getTime();
     const srcFolder = "./src";
-    const cssFilesToRead = [
-      "./node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-vars-rgb.css",
-      "./node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-css-vars.css",
-      "./node_modules/@ekstra-bladet/eb-fonts/dist/eb-fontvars-desktop.css",
-      "./src/_variables.css",
-      "./src/_custom-mediaqueries.css"
-    ];
+    const cssFilesToRead = [];
     const fileTypeToFind = ".css";
     /**
      * Find all css files in src folder
