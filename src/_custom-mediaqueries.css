@@ -20,14 +20,14 @@ custom media queries is the only allowed media queries
 }
 ```
 */
-@custom-media --smartphone (width <= 767px);
+@custom-media --smartphone (max-width: 767px);
 
 /*
 * custom media query for desktop
 */
-@custom-media --desktop (width >= 767px);
-@custom-media --widedesktop (width >= 940px);
-@custom-media --xtrawidedesktop (width >= 1140px);
+@custom-media --desktop (min-width  767px);
+@custom-media --widedesktop (min-width: 940px);
+@custom-media --xtrawidedesktop (min-width: 1140px);
 
 /*
 * media-query for ipad

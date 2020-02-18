@@ -1,4 +1,244 @@
-/** eb-designsystem version 0.0.3 built on 17.2.2020 17.25.30 on branch "smartphone" at revision "9a1ace523b1e886815f419ec47e8d58e1d2a1a3b" */:root {
+/** eb-designsystem version 0.0.3 built on 17.2.2020 18.01.42 on branch "smartphone" at revision "f3f523861de6cb6a5c6117224e89b4791dada37e" | TEMP VERSION: 12 */:root {
+  --rgb-color--bordeaux: 138, 12, 54;
+  --rgb-fgcolor--bordeaux: 255, 255, 255;
+  --rgb-color--reddark: 153, 0, 0;
+  --rgb-fgcolor--reddark: 255, 255, 255;
+  --rgb-color--red: 189, 17, 24;
+  --rgb-fgcolor--red: 255, 255, 255;
+  --rgb-color--rose: 220, 112, 149;
+  --rgb-fgcolor--rose: 255, 255, 255;
+  --rgb-color--orangedark: 227, 129, 33;
+  --rgb-fgcolor--orangedark: 255, 255, 255;
+  --rgb-color--orange: 229, 173, 2;
+  --rgb-fgcolor--orange: 255, 255, 255;
+  --rgb-color--yellow: 250, 229, 0;
+  --rgb-fgcolor--yellow: 255, 255, 255;
+  --rgb-color--yellowlight: 255, 255, 0;
+  --rgb-fgcolor--yellowlight: 0, 0, 0;
+  --rgb-color--sand: 206, 196, 166;
+  --rgb-fgcolor--sand: 255, 255, 255;
+  --rgb-color--greendark: 47, 120, 32;
+  --rgb-fgcolor--greendark: 255, 255, 255;
+  --rgb-color--green: 50, 162, 55;
+  --rgb-fgcolor--green: 255, 255, 255;
+  --rgb-color--greenlight: 147, 185, 35;
+  --rgb-fgcolor--greenlight: 255, 255, 255;
+  --rgb-color--lime: 203, 254, 51;
+  --rgb-fgcolor--lime: 0, 0, 0;
+  --rgb-color--purpledark: 101, 1, 136;
+  --rgb-fgcolor--purpledark: 255, 255, 255;
+  --rgb-color--bluedark: 18, 80, 123;
+  --rgb-fgcolor--bluedark: 255, 255, 255;
+  --rgb-color--blue: 49, 118, 155;
+  --rgb-fgcolor--blue: 255, 255, 255;
+  --rgb-color--bluelight: 79, 168, 223;
+  --rgb-fgcolor--bluelight: 255, 255, 255;
+  --rgb-color--sea: 132, 168, 196;
+  --rgb-fgcolor--sea: 255, 255, 255;
+  --rgb-color--black: 0, 0, 0;
+  --rgb-fgcolor--black: 255, 255, 255;
+  --rgb-color--graa1: 60, 60, 60;
+  --rgb-fgcolor--graa1: 255, 255, 255;
+  --rgb-color--graa2: 72, 72, 72;
+  --rgb-fgcolor--graa2: 255, 255, 255;
+  --rgb-color--graa3: 153, 153, 153;
+  --rgb-fgcolor--graa3: 255, 255, 255;
+  --rgb-color--graa4: 200, 200, 200;
+  --rgb-fgcolor--graa4: 0, 0, 0;
+  --rgb-color--graa5: 221, 221, 221;
+  --rgb-fgcolor--graa5: 0, 0, 0;
+  --rgb-color--graa6: 229, 229, 229;
+  --rgb-fgcolor--graa6: 0, 0, 0;
+  --rgb-color--graa7: 239, 239, 239;
+  --rgb-fgcolor--graa7: 0, 0, 0;
+  --rgb-color--white: 255, 255, 255;
+  --rgb-fgcolor--white: 0, 0, 0;
+  --rgb-color--pastel-red: 219, 80, 64;
+  --rgb-fgcolor--pastel-red: 255, 255, 255;
+  --rgb-color--pastel-darkred: 149, 72, 57;
+  --rgb-fgcolor--pastel-darkred: 255, 255, 255;
+  --rgb-color--pastel-lightred: 214, 126, 155;
+  --rgb-fgcolor--pastel-lightred: 255, 255, 255;
+  --rgb-color--pastel-green: 159, 194, 156;
+  --rgb-fgcolor--pastel-green: 255, 255, 255;
+  --rgb-color--pastel-darkgreen: 145, 163, 79;
+  --rgb-fgcolor--pastel-darkgreen: 255, 255, 255;
+  --rgb-color--pastel-yellow: 212, 197, 100;
+  --rgb-fgcolor--pastel-yellow: 255, 255, 255;
+  --rgb-color--eb: 189, 17, 24;
+  --rgb-fgcolor--eb: 255, 255, 255;
+  --rgb-color--eb2: 153, 0, 0;
+  --rgb-fgcolor--eb2: 255, 255, 255;
+  --rgb-color--breaking: 255, 255, 0;
+  --rgb-fgcolor--breaking: 0, 0, 0;
+  --rgb-color--bruger: 79, 168, 223;
+  --rgb-fgcolor--bruger: 255, 255, 255;
+  --rgb-color--live: 0, 0, 0;
+  --rgb-fgcolor--live: 255, 255, 255;
+  --rgb-color--native: 206, 196, 166;
+  --rgb-fgcolor--native: 255, 255, 255;
+  --rgb-color--native2: 132, 168, 196;
+  --rgb-fgcolor--native2: 255, 255, 255;
+  --rgb-color--facebook: 49, 118, 155;
+  --rgb-fgcolor--facebook: 255, 255, 255;
+  --rgb-color--twitter: 79, 168, 223;
+  --rgb-fgcolor--twitter: 255, 255, 255;
+  --rgb-color--ekstra: 189, 17, 24;
+  --rgb-fgcolor--ekstra: 255, 255, 255;
+  --rgb-color--filmmagasinet: 101, 1, 136;
+  --rgb-fgcolor--filmmagasinet: 255, 255, 255;
+  --rgb-color--flash: 229, 173, 2;
+  --rgb-fgcolor--flash: 255, 255, 255;
+  --rgb-color--forbrug: 49, 118, 155;
+  --rgb-fgcolor--forbrug: 255, 255, 255;
+  --rgb-color--livescore: 50, 162, 55;
+  --rgb-fgcolor--livescore: 255, 255, 255;
+  --rgb-color--livescore2: 203, 254, 51;
+  --rgb-fgcolor--livescore2: 0, 0, 0;
+  --rgb-color--nationen: 227, 129, 33;
+  --rgb-fgcolor--nationen: 255, 255, 255;
+  --rgb-color--nationen2: 229, 173, 2;
+  --rgb-fgcolor--nationen2: 255, 255, 255;
+  --rgb-color--nyheder: 18, 80, 123;
+  --rgb-fgcolor--nyheder: 255, 255, 255;
+  --rgb-color--nyheder2: 0, 0, 0;
+  --rgb-fgcolor--nyheder2: 255, 255, 255;
+  --rgb-color--sex-samliv: 138, 12, 54;
+  --rgb-fgcolor--sex-samliv: 255, 255, 255;
+  --rgb-color--sex-samliv2: 220, 112, 149;
+  --rgb-fgcolor--sex-samliv2: 255, 255, 255;
+  --rgb-color--skolefodbold: 147, 185, 35;
+  --rgb-fgcolor--skolefodbold: 255, 255, 255;
+  --rgb-color--sport: 50, 162, 55;
+  --rgb-fgcolor--sport: 255, 255, 255;
+  --rgb-color--tv: 189, 17, 24;
+  --rgb-fgcolor--tv: 255, 255, 255;
+  --color--bordeaux: #8a0c36;
+  --fgcolor--bordeaux: #fff;
+  --color--reddark: #900;
+  --fgcolor--reddark: #fff;
+  --color--red: #bd1118;
+  --fgcolor--red: #fff;
+  --color--rose: #dc7095;
+  --fgcolor--rose: #fff;
+  --color--orangedark: #e38121;
+  --fgcolor--orangedark: #fff;
+  --color--orange: #e5ad02;
+  --fgcolor--orange: #fff;
+  --color--yellow: #fae500;
+  --fgcolor--yellow: #fff;
+  --color--yellowlight: #ff0;
+  --fgcolor--yellowlight: #000;
+  --color--sand: #cec4a6;
+  --fgcolor--sand: #fff;
+  --color--greendark: #2f7820;
+  --fgcolor--greendark: #fff;
+  --color--green: #32a237;
+  --fgcolor--green: #fff;
+  --color--greenlight: #93b923;
+  --fgcolor--greenlight: #fff;
+  --color--lime: #cbfe33;
+  --fgcolor--lime: #000;
+  --color--purpledark: #650188;
+  --fgcolor--purpledark: #fff;
+  --color--bluedark: #12507b;
+  --fgcolor--bluedark: #fff;
+  --color--blue: #31769b;
+  --fgcolor--blue: #fff;
+  --color--bluelight: #4fa8df;
+  --fgcolor--bluelight: #fff;
+  --color--sea: #84a8c4;
+  --fgcolor--sea: #fff;
+  --color--black: #000;
+  --fgcolor--black: #fff;
+  --color--graa1: #3c3c3c;
+  --fgcolor--graa1: #fff;
+  --color--graa2: #484848;
+  --fgcolor--graa2: #fff;
+  --color--graa3: #999;
+  --fgcolor--graa3: #fff;
+  --color--graa4: #c8c8c8;
+  --fgcolor--graa4: #000;
+  --color--graa5: #ddd;
+  --fgcolor--graa5: #000;
+  --color--graa6: #e5e5e5;
+  --fgcolor--graa6: #000;
+  --color--graa7: #efefef;
+  --fgcolor--graa7: #000;
+  --color--white: #fff;
+  --fgcolor--white: #000;
+  --color--pastel-red: #db5040;
+  --fgcolor--pastel-red: #fff;
+  --color--pastel-darkred: #954839;
+  --fgcolor--pastel-darkred: #fff;
+  --color--pastel-lightred: #d67e9b;
+  --fgcolor--pastel-lightred: #fff;
+  --color--pastel-green: #9fc29c;
+  --fgcolor--pastel-green: #fff;
+  --color--pastel-darkgreen: #91a34f;
+  --fgcolor--pastel-darkgreen: #fff;
+  --color--pastel-yellow: #d4c564;
+  --fgcolor--pastel-yellow: #fff;
+  --color--eb: #bd1118;
+  --fgcolor--eb: #fff;
+  --color--eb2: #900;
+  --fgcolor--eb2: #fff;
+  --color--breaking: #ff0;
+  --fgcolor--breaking: #000;
+  --color--bruger: #4fa8df;
+  --fgcolor--bruger: #fff;
+  --color--live: #000;
+  --fgcolor--live: #fff;
+  --color--native: #cec4a6;
+  --fgcolor--native: #fff;
+  --color--native2: #84a8c4;
+  --fgcolor--native2: #fff;
+  --color--facebook: #31769b;
+  --fgcolor--facebook: #fff;
+  --color--twitter: #4fa8df;
+  --fgcolor--twitter: #fff;
+  --color--ekstra: #bd1118;
+  --fgcolor--ekstra: #fff;
+  --color--filmmagasinet: #650188;
+  --fgcolor--filmmagasinet: #fff;
+  --color--flash: #e5ad02;
+  --fgcolor--flash: #fff;
+  --color--forbrug: #31769b;
+  --fgcolor--forbrug: #fff;
+  --color--livescore: #32a237;
+  --fgcolor--livescore: #fff;
+  --color--livescore2: #cbfe33;
+  --fgcolor--livescore2: #000;
+  --color--nationen: #e38121;
+  --fgcolor--nationen: #fff;
+  --color--nationen2: #e5ad02;
+  --fgcolor--nationen2: #fff;
+  --color--nyheder: #12507b;
+  --fgcolor--nyheder: #fff;
+  --color--nyheder2: #000;
+  --fgcolor--nyheder2: #fff;
+  --color--sex-samliv: #8a0c36;
+  --fgcolor--sex-samliv: #fff;
+  --color--sex-samliv2: #dc7095;
+  --fgcolor--sex-samliv2: #fff;
+  --color--skolefodbold: #93b923;
+  --fgcolor--skolefodbold: #fff;
+  --color--sport: #32a237;
+  --fgcolor--sport: #fff;
+  --color--tv: #bd1118;
+  --fgcolor--tv: #fff;
+}
+html,button,input,select,textarea{font-family:Arial,sans-serif}:root{--fs-xxsmall: 10px;--fs-xsmall: 12px;--fs-small: 14px;--fs-medium: 16px;--fs-large: 18px;--fs-xlarge: 20px;--fs-xxlarge: 30px;--fs-xxxlarge: 50px;--fs-ads: 10px;--fs-timestamp: 12px;--fs-caption: 14px;--fs-showmore: 16px;--fs-bodytext: 18px;--fs-subtitle: 20px;--fs-quote: 30px;--fs-title: 50px;
+  --border-radius--small: 5px;
+  --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), .22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
+  --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
+  /* distance - desktop */
+  --distance-large: 20px;
+  --distance-medium: 10px;
+  --distance-small: 5px;
+  --distance-standard: 10px;
+  --distance-xlarge: 30px;
+  --distance-xxlarge: 50px;
   --button-border-radius: var(--button-height);
   --button-height: 36px;
   --color--button-accept: var(--color--green);
@@ -10,8 +250,85 @@
   --fgcolor--button-cancel: var(--fgcolor--red);
   --fgcolor--button-default: var(--fgcolor--bluedark);
   --fgcolor--button-primary: var(--fgcolor--bruger);
-  --fgcolor--button-secondary: var(--fgcolor--graa3);
+  --fgcolor--button-secondary: var(--fgcolor--graa3)}
+/* Systemwide variables - default + desktop */
+
+/*
+To-do: implement mediaqueries in build
+
+@media (--smartphone) {
+  :root {
+    --distance-small: 5px;
+    --distance-medium: 10px;
+    --distance-standard: 10px;
+    --distance-large: 15px;
+    --distance-xlarge: 20px;
+    --distance-xxlarge: 30px;
+  }
 }
+
+@media (--tablet) {
+  :root {
+    --distance-small: 5px;
+    --distance-medium: 10px;
+    --distance-standard: 10px;
+    --distance-large: 20px;
+    --distance-xlarge: 30px;
+    --distance-xxlarge: 50px;
+  }
+}
+*/
+/*
+---
+title:   Custom media queries
+section: variables
+---
+
+To ensure consistent usage of media queries thoughout the code base, the
+custom media queries is the only allowed media queries
+
+```example:css
+@media (--smartphone) {
+  .selector {
+    width:320px;
+  }
+}
+@media (--desktop) {
+  .selector {
+    width:960px;
+  }
+}
+```
+*/
+@custom-media --smartphone (max-width: 767px);
+
+/*
+* custom media query for desktop
+*/
+@custom-media --desktop (min-width  767px);
+@custom-media --widedesktop (min-width: 940px);
+@custom-media --xtrawidedesktop (min-width: 1140px);
+
+/*
+* media-query for ipad
+*/
+@custom-media --tablet only screen and (min-width: 768px) and (max-width: 1024px);
+
+/*
+* Landscape media-query for ipad
+*/
+@custom-media --landscape only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape);
+
+/*
+* Portrait media-query for ipad
+*/
+@custom-media --portrait only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait);
+
+/*
+* ie11 and above media query for
+*/
+@custom-media --ie only screen and (-ms-high-contrast: active),
+  (-ms-high-contrast: none);
 
 .button {
   align-items: center;
@@ -173,6 +490,9 @@
 }
 :root {
   --card-border-color: var(--color--graa7);
+  --card-fs-icon: 18px;
+  --card-fs-title: 30px;
+  --card-fs-title--shrunk: 20px;
   --card-padding: 10px;
 }
 
@@ -262,12 +582,12 @@ a.card:focus {
 }
 
 .card-meta .card-icon[class*="fa-"] {
-  font-size: 18px;
+  font-size: var(--card-fs-icon);
   padding-top: 2px;
 }
 
 .card-title {
-  font-size: 30px;
+  font-size: var(--card-fs-title);
   font-weight: 700;
   margin: 0;
 }
@@ -302,7 +622,7 @@ a.card:focus {
   + .card-content
   .card-title:not(.card-title--large),
 .card--small-media .card-title:not(.card-title--large) {
-  font-size: 20px;
+  font-size: var(--card-fs-title--shrunk);
 }
 :root {
   --color--focus: var(--color--blue);
@@ -636,57 +956,6 @@ a.card:focus {
 .toggle-input ~ .toggle-on {
   display: none;
 }
-/*
----
-title:   Custom media queries
-section: variables
----
-
-To ensure consistent usage of media queries thoughout the code base, the
-custom media queries is the only allowed media queries
-
-```example:css
-@media (--smartphone) {
-  .selector {
-    width:320px;
-  }
-}
-@media (--desktop) {
-  .selector {
-    width:960px;
-  }
-}
-```
-*/
-@custom-media --smartphone (width <= 767px);
-
-/*
-* custom media query for desktop
-*/
-@custom-media --desktop (width >= 767px);
-@custom-media --widedesktop (width >= 940px);
-@custom-media --xtrawidedesktop (width >= 1140px);
-
-/*
-* media-query for ipad
-*/
-@custom-media --tablet only screen and (min-width: 768px) and (max-width: 1024px);
-
-/*
-* Landscape media-query for ipad
-*/
-@custom-media --landscape only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape);
-
-/*
-* Portrait media-query for ipad
-*/
-@custom-media --portrait only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait);
-
-/*
-* ie11 and above media query for
-*/
-@custom-media --ie only screen and (-ms-high-contrast: active),
-  (-ms-high-contrast: none);
 .screen-reader-text {
   position: absolute;
 
@@ -796,27 +1065,38 @@ custom media queries is the only allowed media queries
 .flex-item--center {
   align-self: center;
 }
-:root {
-  --grid-large: 910px;
+
+  :root {
+    --grid-large: 100%;
+  --grid-medium: 100%;
+  --grid-small: 85%;
+  --grid-xlarge: 100%;
+  }
+
+@media (--desktop) {
+  :root {
+    --grid-large: 910px;
   --grid-medium: 730px;
   --grid-small: 610px;
   --grid-xlarge: 930px;
-}
+  }
 
-.grid-width--small {
-  width: var(--grid-small);
-}
+  .grid-width--small {
+    width: var(--grid-small);
+  }
 
-.grid-width--medium {
-  width: var(--grid-medium);
-}
+  .grid-width--medium {
+    width: var(--grid-medium);
+  }
 
-.grid-width--large {
-  width: var(--grid-large);
-}
+  .grid-width--large {
+    width: var(--grid-large);
+  }
 
-.grid-width--xlarge {
-  width: var(--grid-xlarge);
+  .grid-width--xlarge {
+    width: var(--grid-xlarge);
+  }
+
 }
 .hidden {
   display: none;
@@ -1030,8 +1310,6 @@ custom media queries is the only allowed media queries
 .margin-r---auto {
   margin-right: auto;
 }
-
-
 /* padding */
 
 .padding-none {
@@ -1269,42 +1547,3 @@ custom media queries is the only allowed media queries
 .text-align--right {
   text-align: right;
 }
-/* Systemwide variables - default + desktop */
-:root {
-  --border-radius--small: 5px;
-  --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), .22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
-  --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
-  /* distance - desktop */
-  --distance-large: 20px;
-  --distance-medium: 10px;
-  --distance-small: 5px;
-  --distance-standard: 10px;
-  --distance-xlarge: 30px;
-  --distance-xxlarge: 50px;
-}
-
-/*
-To-do: implement mediaqueries in build
-
-@media (--smartphone) {
-  :root {
-    --distance-small: 5px;
-    --distance-medium: 10px;
-    --distance-standard: 10px;
-    --distance-large: 15px;
-    --distance-xlarge: 20px;
-    --distance-xxlarge: 30px;
-  }
-}
-
-@media (--tablet) {
-  :root {
-    --distance-small: 5px;
-    --distance-medium: 10px;
-    --distance-standard: 10px;
-    --distance-large: 20px;
-    --distance-xlarge: 30px;
-    --distance-xxlarge: 50px;
-  }
-}
-*/
