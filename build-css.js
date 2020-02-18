@@ -68,7 +68,7 @@ const buildCSS = async args => {
      */
     readFolder(srcFolder, fileTypeToFind, cssFilesToRead);
     const outFolder = "dist";
-    const outputFile = `${outFolder}/eb-designsystem.css`;
+    const outputFile = `${outFolder}/eb-designsystem--nonie.css`;
 
     if (!fs.existsSync(outFolder)) {
       fs.mkdirSync(outFolder);
