@@ -1,33 +1,32 @@
+:root {
+  --grid-large: 910px;
+  --grid-medium: 730px;
+  --grid-small: 610px;
+  --grid-xlarge: 930px;
+}
 
+.grid-width--small {
+  width: var(--grid-small);
+}
+
+.grid-width--medium {
+  width: var(--grid-medium);
+}
+
+.grid-width--large {
+  width: var(--grid-large);
+}
+
+.grid-width--xlarge {
+  width: var(--grid-xlarge);
+}
+
+@media (--smartphone) {
   :root {
     --grid-large: 100%;
   --grid-medium: 100%;
   --grid-small: 85%;
   --grid-xlarge: 100%;
-  }
-
-@media (--desktop) {
-  :root {
-    --grid-large: 910px;
-  --grid-medium: 730px;
-  --grid-small: 610px;
-  --grid-xlarge: 930px;
-  }
-
-  .grid-width--small {
-    width: var(--grid-small);
-  }
-
-  .grid-width--medium {
-    width: var(--grid-medium);
-  }
-
-  .grid-width--large {
-    width: var(--grid-large);
-  }
-
-  .grid-width--xlarge {
-    width: var(--grid-xlarge);
   }
 
 }

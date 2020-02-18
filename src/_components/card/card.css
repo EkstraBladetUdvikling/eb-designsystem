@@ -3,12 +3,12 @@
   --card-fs-icon: 18px;
   --card-fs-title: 30px;
   --card-fs-title--shrunk: 20px;
-  --card-padding: 10px;
+  --card-padding: 20px;
 }
 
-@media (--desktop) {
+@media (--smartphone) {
   :root {
-    --card-padding: 20px;
+    --card-padding: 10px;
   }
 }
 

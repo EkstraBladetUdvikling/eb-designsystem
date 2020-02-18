@@ -1,4 +1,4 @@
-/** eb-designsystem version 0.0.3 built on 18.2.2020 08.55.28 on branch "smartphone" at revision "dddc2bcac6982d55e0306ba5e3bb1b686634487b" */
+/** eb-designsystem version 0.0.3 built on 18.2.2020 09.11.38 on branch "smartphone" at revision "880cce0f00b011ac4f6290ef47230481fabd3b7c" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -485,12 +485,12 @@ custom media queries is the only allowed media queries
   --card-fs-icon: 18px;
   --card-fs-title: 30px;
   --card-fs-title--shrunk: 20px;
-  --card-padding: 10px;
+  --card-padding: 20px;
 }
 
-@media (min-width: 767px) {
+@media (max-width: 767px) {
   :root {
-    --card-padding: 20px;
+    --card-padding: 10px;
   }
 }
 
@@ -1057,36 +1057,35 @@ a.card:focus {
 .flex-item--center {
   align-self: center;
 }
+:root {
+  --grid-large: 910px;
+  --grid-medium: 730px;
+  --grid-small: 610px;
+  --grid-xlarge: 930px;
+}
 
+.grid-width--small {
+  width: var(--grid-small);
+}
+
+.grid-width--medium {
+  width: var(--grid-medium);
+}
+
+.grid-width--large {
+  width: var(--grid-large);
+}
+
+.grid-width--xlarge {
+  width: var(--grid-xlarge);
+}
+
+@media (max-width: 767px) {
   :root {
     --grid-large: 100%;
   --grid-medium: 100%;
   --grid-small: 85%;
   --grid-xlarge: 100%;
-  }
-
-@media (min-width: 767px) {
-  :root {
-    --grid-large: 910px;
-  --grid-medium: 730px;
-  --grid-small: 610px;
-  --grid-xlarge: 930px;
-  }
-
-  .grid-width--small {
-    width: var(--grid-small);
-  }
-
-  .grid-width--medium {
-    width: var(--grid-medium);
-  }
-
-  .grid-width--large {
-    width: var(--grid-large);
-  }
-
-  .grid-width--xlarge {
-    width: var(--grid-xlarge);
   }
 
 }
