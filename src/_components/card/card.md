@@ -19,7 +19,7 @@ title: Card
   <div class="flex flex-justify--between">
     <a href="#" class="card width-1of2">
       <div class="card-media">
-        <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168">
+        <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-icon">
           <svg viewBox="0 0 40 35">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#play-icon"></use>
@@ -44,7 +44,7 @@ title: Card
 ```html
 <a href="#" class="card margin-m--b">
   <div class="card-media">
-    <img class="card-image" src="https://via.placeholder.com/610x343&text=610x343">
+    <img class="card-image" src="https://via.placeholder.com/610x343&text=610x343" height="343" width="610">
   </div>
   <div class="card-content">
     <p class="card-meta color--graa3"><small><span class="color--sport">Sport</span> - 12 timer siden</small></p>
@@ -54,7 +54,7 @@ title: Card
 
 <a href="#" class="card width-1of2">
   <div class="card-media">
-    <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168">
+    <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
     <div class="card-icon">
       <svg viewBox="0 0 40 35">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#play-icon"></use>
@@ -80,7 +80,7 @@ title: Card
 <div class="grid-width--small">
   <a href="#" class="card card--small-media margin-l--b">
     <div class="card-media">
-      <img class="card-image" src="https://via.placeholder.com/200x112&text=200x112">
+      <img class="card-image" src="https://via.placeholder.com/200x112&text=200x112" height="112" width="200">
       <div class="card-icon">
         <svg viewBox="0 0 40 35">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#play-icon"></use>
@@ -95,7 +95,7 @@ title: Card
 
   <a href="#" class="card card--small-media margin-l--b">
     <div class="card-media">
-      <img class="card-image" src="https://via.placeholder.com/200x112&text=200x112">
+      <img class="card-image" src="https://via.placeholder.com/200x112&text=200x112" height="112" width="200">
     </div>
     <div class="card-content">
       <p class="card-meta color--graa3"><small><span class="color--nyheder">Politik</span> - 11 timer siden</small></p>
@@ -112,7 +112,7 @@ title: Card
 
   <a href="#" class="card card--small-media card--small-media--reverse margin-l--b">
     <div class="card-media">
-      <img class="card-image" src="https://via.placeholder.com/200x112&text=200x112">
+      <img class="card-image" src="https://via.placeholder.com/200x112&text=200x112" height="112" width="200">
     </div>
     <div class="card-content">
       <p class="card-meta color--graa3"><small><span class="color--nyheder">Politik</span> - 11 timer siden</small></p>
@@ -124,7 +124,7 @@ title: Card
 ```html
 <a href="#" class="card card--small-media margin-l--b">
   <div class="card-media">
-    <img class="card-image" src="https://via.placeholder.com/200x112&text=200x112">
+    <img class="card-image" src="https://via.placeholder.com/200x112&text=200x112" height="112" width="200">
     <div class="card-icon">
       <svg viewBox="0 0 40 35">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#play-icon"></use>
@@ -139,7 +139,7 @@ title: Card
 
 <a href="#" class="card card--small-media margin-l--b">
   <div class="card-media">
-    <img class="card-image" src="https://via.placeholder.com/200x112&text=200x112">
+    <img class="card-image" src="https://via.placeholder.com/200x112&text=200x112" height="112" width="200">
   </div>
   <div class="card-content">
     <p class="card-meta color--graa3"><small><span class="color--nyheder">Politik</span> - 11 timer siden</small></p>
@@ -156,7 +156,7 @@ title: Card
 
 <a href="#" class="card card--small-media card--small-media--reverse margin-l--b">
   <div class="card-media">
-    <img class="card-image" src="https://via.placeholder.com/200x112&text=200x112">
+    <img class="card-image" src="https://via.placeholder.com/200x112&text=200x112" height="112" width="200">
   </div>
   <div class="card-content">
     <p class="card-meta color--graa3"><small><span class="color--nyheder">Politik</span> - 11 timer siden</small></p>
@@ -172,7 +172,7 @@ Blot erstat `<a>` med `<div>`, det vil samtidig fjerne hover effekten.
 <div class="grid-width--small">
   <div class="card margin-xl--b">
     <div class="card-media">
-      <img class="card-image" src="https://via.placeholder.com/610x343&text=610x343">
+      <img class="card-image" src="https://via.placeholder.com/610x343&text=610x343" height="343" width="610">
     </div>
     <div class="card-content">
       <p class="card-meta color--graa3"><small><span class="color--sport">Sport</span> - 12 timer siden</small></p>
@@ -184,7 +184,7 @@ Blot erstat `<a>` med `<div>`, det vil samtidig fjerne hover effekten.
 ```html
 <div class="card margin-xl--b">
   <div class="card-media">
-    <img class="card-image" src="https://via.placeholder.com/610x343&text=610x343">
+    <img class="card-image" src="https://via.placeholder.com/610x343&text=610x343" height="343" width="610">
   </div>
   <div class="card-content">
     <p class="card-meta color--graa3"><small><span class="color--sport">Sport</span> - 12 timer siden</small></p>
@@ -201,7 +201,7 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
   <div class="card margin-xl--b">
     <div class="card-header"><b>Header her</b></div>
     <div class="card-media">
-      <img class="card-image" src="https://via.placeholder.com/610x343&text=610x343">
+      <img class="card-image" src="https://via.placeholder.com/610x343&text=610x343" height="343" width="610">
     </div>
     <div class="card-content">
       <h2 class="card-title">Nulla facilisi. Nulla mattis felis eget convallis vehicula</h2>
@@ -222,7 +222,7 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
       <p class="card-meta"><small><span>Politik</span> - 11 timer siden</small></p>
     </div>
     <div class="card-media">
-      <img class="card-image" src="https://via.placeholder.com/455x255&text=455x255">
+      <img class="card-image" src="https://via.placeholder.com/455x255&text=455x255" height="255" width="455">
     </div>
     <div class="card-content">
       <p class="card-meta"><small><span>Politik</span> - 11 timer siden</small></p>
@@ -239,7 +239,7 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
 <div class="grid-width--small margin-xl--b">
   <a href="#" class="card card--small-media bg--breaking">
     <div class="card-media">
-      <img class="card-image" src="https://via.placeholder.com/150x84&text=150x84">
+      <img class="card-image" src="https://via.placeholder.com/150x84&text=150x84" height="84" width="150">
     </div>
     <div class="card-content">
       <p class="card-meta"><small><span>BREAKING NEWS</span></small></p>
@@ -252,7 +252,7 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
   <div class="flex flex-justify--between">
       <a href="#" class="card width-1of3 bg--rose">
         <div class="card-media">
-          <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168">
+          <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         </div>
         <div class="card-content">
           <div class="card-meta flex flex-justify--between">
@@ -268,7 +268,7 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
 
       <a href="#" class="card width-1of3 flex-item--start margin-m--l">
         <div class="card-media">
-          <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168">
+          <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         </div>
         <div class="card-content text-align--center">
           <h3 class="card-title">Donec sed tincidunt ex, vestibulum congue arcu</h3>
@@ -300,7 +300,7 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
     <p class="card-meta"><small><span>Politik</span> - 11 timer siden</small></p>
   </div>
   <div class="card-media">
-    <img class="card-image" src="https://via.placeholder.com/455x255&text=455x255">
+    <img class="card-image" src="https://via.placeholder.com/455x255&text=455x255" height="255" width="455">
   </div>
   <div class="card-content">
     <p class="card-meta"><small><span>Politik</span> - 11 timer siden</small></p>
@@ -315,7 +315,7 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
 
 <a href="#" class="card card--small-media bg--breaking">
   <div class="card-media">
-    <img class="card-image" src="https://via.placeholder.com/150x84&text=150x84">
+    <img class="card-image" src="https://via.placeholder.com/150x84&text=150x84" height="84" width="150">
   </div>
   <div class="card-content">
     <p class="card-meta"><small><span>BREAKING NEWS</span></small></p>
@@ -325,7 +325,7 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
 
 <a href="#" class="card width-1of3 bg--rose">
     <div class="card-media">
-      <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168">
+      <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
     </div>
     <div class="card-content">
       <div class="card-meta flex flex-justify--between">
@@ -341,7 +341,7 @@ padding: 2px 6px; border-radius: 5px;">
 
   <a href="#" class="card width-1of3 flex-item--start margin-m--l">
     <div class="card-media">
-      <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168">
+      <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
     </div>
     <div class="card-content text-align--center">
       <h3 class="card-title">Donec sed tincidunt ex, vestibulum congue arcu</h3>

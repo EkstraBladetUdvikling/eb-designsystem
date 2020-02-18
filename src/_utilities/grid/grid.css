@@ -5,6 +5,15 @@
   --grid-xlarge: 930px;
 }
 
+@media (--smartphone) {
+  :root {
+    --grid-large: 100%;
+  --grid-medium: 100%;
+  --grid-small: 100;
+  --grid-xlarge: 100%;
+  }
+}
+
 .grid-width--small {
   width: var(--grid-small);
 }
@@ -19,14 +28,4 @@
 
 .grid-width--xlarge {
   width: var(--grid-xlarge);
-}
-
-@media (--smartphone) {
-  :root {
-    --grid-large: 100%;
-  --grid-medium: 100%;
-  --grid-small: 85%;
-  --grid-xlarge: 100%;
-  }
-
 }

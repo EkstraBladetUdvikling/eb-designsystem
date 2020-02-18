@@ -12,28 +12,13 @@
   --distance-xxlarge: 50px;
 }
 
-/*
-To-do: implement mediaqueries in build
-
 @media (--smartphone) {
   :root {
-    --distance-small: 5px;
-    --distance-medium: 10px;
-    --distance-standard: 10px;
-    --distance-large: 15px;
-    --distance-xlarge: 20px;
-    --distance-xxlarge: 30px;
+  --distance-large: 15px;
+  --distance-medium: 10px;
+  --distance-small: 5px;
+  --distance-standard: 10px;
+  --distance-xlarge: 20px;
+  --distance-xxlarge: 30px;
   }
 }
-
-@media (--tablet) {
-  :root {
-    --distance-small: 5px;
-    --distance-medium: 10px;
-    --distance-standard: 10px;
-    --distance-large: 20px;
-    --distance-xlarge: 30px;
-    --distance-xxlarge: 50px;
-  }
-}
-*/

@@ -1,4 +1,4 @@
-/** eb-designsystem--nonie.css version 0.1.0 built on 18.2.2020 10.12.53 on branch "smartphone" at revision "9235f16d46fd7b8df013534e75d8a50b7864dc6c" */
+/** eb-designsystem--nonie.css version 0.1.0 built on 18.2.2020 19.56.18 on branch "smartphone" at revision "71ab95686988b62a3d3f9f56f362abe322b87772" | TEMP VERSION: 20 */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -239,46 +239,19 @@ html,button,input,select,textarea{font-family:Arial,sans-serif}:root{--fs-xxsmal
   --distance-small: 5px;
   --distance-standard: 10px;
   --distance-xlarge: 30px;
-  --distance-xxlarge: 50px;
-  --button-border-radius: var(--button-height);
-  --button-height: 36px;
-  --color--button-accept: var(--color--green);
-  --color--button-cancel: var(--color--red);
-  --color--button-default: var(--color--bluedark);
-  --color--button-primary: var(--color--bruger);
-  --color--button-secondary: var(--color--graa3);
-  --fgcolor--button-accept: var(--fgcolor--green);
-  --fgcolor--button-cancel: var(--fgcolor--red);
-  --fgcolor--button-default: var(--fgcolor--bluedark);
-  --fgcolor--button-primary: var(--fgcolor--bruger);
-  --fgcolor--button-secondary: var(--fgcolor--graa3)}
+  --distance-xxlarge: 50px}
 /* Systemwide variables - default + desktop */
 
-/*
-To-do: implement mediaqueries in build
-
-@media (--smartphone) {
+@media (max-width: 767px) {
   :root {
-    --distance-small: 5px;
-    --distance-medium: 10px;
-    --distance-standard: 10px;
-    --distance-large: 15px;
-    --distance-xlarge: 20px;
-    --distance-xxlarge: 30px;
+  --distance-large: 15px;
+  --distance-medium: 10px;
+  --distance-small: 5px;
+  --distance-standard: 10px;
+  --distance-xlarge: 20px;
+  --distance-xxlarge: 30px;
   }
 }
-
-@media (--tablet) {
-  :root {
-    --distance-small: 5px;
-    --distance-medium: 10px;
-    --distance-standard: 10px;
-    --distance-large: 20px;
-    --distance-xlarge: 30px;
-    --distance-xxlarge: 50px;
-  }
-}
-*/
 /*
 ---
 title:   Custom media queries
@@ -321,6 +294,20 @@ custom media queries is the only allowed media queries
 /*
 * ie11 and above media query for
 */
+:root {
+  --button-border-radius: var(--button-height);
+  --button-height: 36px;
+  --color--button-accept: var(--color--green);
+  --color--button-cancel: var(--color--red);
+  --color--button-default: var(--color--bluedark);
+  --color--button-primary: var(--color--bruger);
+  --color--button-secondary: var(--color--graa3);
+  --fgcolor--button-accept: var(--fgcolor--green);
+  --fgcolor--button-cancel: var(--fgcolor--red);
+  --fgcolor--button-default: var(--fgcolor--bluedark);
+  --fgcolor--button-primary: var(--fgcolor--bruger);
+  --fgcolor--button-secondary: var(--fgcolor--graa3);
+}
 
 .button {
   align-items: center;
@@ -490,7 +477,9 @@ custom media queries is the only allowed media queries
 
 @media (max-width: 767px) {
   :root {
-    --card-padding: 10px;
+  --card-fs-title: 20px;
+  --card-fs-title--shrunk: 16px;
+  --card-padding: 10px;
   }
 }
 
@@ -528,6 +517,7 @@ a.card:focus {
 .card-image {
   display: block;
   width: 100%;
+  height: auto;
 }
 
 .card-media .card-icon {
@@ -1084,7 +1074,7 @@ a.card:focus {
   :root {
     --grid-large: 100%;
   --grid-medium: 100%;
-  --grid-small: 85%;
+  --grid-small: 100;
   --grid-xlarge: 100%;
   }
 
