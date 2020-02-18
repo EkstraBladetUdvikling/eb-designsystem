@@ -104,8 +104,8 @@ const buildCSS = async args => {
       presetEnv(cssnextObject),
       discardDuplicates,
       discardUnused,
-      mergeRules,
-      cssnano
+      mergeRules
+      // cssnano
     ])
       .process(css, {
         from: "undefined"
