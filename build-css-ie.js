@@ -8,7 +8,6 @@ const discardDuplicates = require("postcss-discard-duplicates")();
 const discardUnused = require("postcss-discard-unused")();
 const mergeRules = require("postcss-merge-rules")();
 const cssnano = require("cssnano")();
-const postcssCustomMedia = require("postcss-custom-media");
 const presetEnv = require("postcss-preset-env");
 const runtimeArguments = process.argv.slice(2);
 
@@ -20,10 +19,10 @@ const cssnextObject = {
     "nesting-rules": true
   },
   importFrom: [
-    // "./node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-vars-rgb.css",
-    // "./node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-css-vars.css",
-    // "./node_modules/@ekstra-bladet/eb-fonts/dist/eb-fontvars-desktop.css",
-    // "./src/_variables.css",
+    "./node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-vars-rgb.css",
+    "./node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-css-vars.css",
+    "./node_modules/@ekstra-bladet/eb-fonts/dist/eb-fontvars-desktop.css",
+    "./src/_variables.css",
     "./src/_custom-mediaqueries.css"
   ],
   preserve: false,
@@ -31,14 +30,9 @@ const cssnextObject = {
   warnForDuplicates: false
 };
 
-const customMediaOptions = {
-  importFrom: ["./src/_custom-mediaqueries.css"],
-  preserve: false
-};
-
 const readFolder = (folderName, filesToFind, array, lvl = 0) => {
   fs.readdirSync(folderName, { withFileTypes: true }).forEach(output => {
-    // console.log("output.isFile()", output.isFile(), output.name);
+    console.log("output.isFile()", output.isFile(), output.name);
     if (output.isFile() && lvl !== 0) {
       if (path.extname(output.name).toLowerCase() === filesToFind) {
         array.push(`${folderName}/${output.name}`);
@@ -68,7 +62,7 @@ const buildCSS = async args => {
      */
     readFolder(srcFolder, fileTypeToFind, cssFilesToRead);
     const outFolder = "dist";
-    const outputFile = `${outFolder}/eb-designsystem.css`;
+    const outputFile = `${outFolder}/eb-designsystem--ie.css`;
 
     if (!fs.existsSync(outFolder)) {
       fs.mkdirSync(outFolder);
@@ -114,7 +108,7 @@ const buildCSS = async args => {
     }
 
     await postcss([
-      postcssCustomMedia(customMediaOptions),
+      presetEnv(cssnextObject),
       discardDuplicates,
       discardUnused,
       mergeRules
@@ -126,7 +120,7 @@ const buildCSS = async args => {
       .then(result => {
         try {
           const resultCss = result.css;
-          fs.writeFile(outputFile, `/** ${version} */\n${resultCss}`, () => {
+          fs.writeFile(outputFile, `/** ${version} */${resultCss}`, () => {
             return true;
           });
           console.log(version);

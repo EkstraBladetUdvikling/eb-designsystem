@@ -1,4 +1,5 @@
-/** eb-designsystem version 0.0.3 built on 17.2.2020 18.01.42 on branch "smartphone" at revision "f3f523861de6cb6a5c6117224e89b4791dada37e" | TEMP VERSION: 12 */:root {
+/** eb-designsystem version 0.0.3 built on 18.2.2020 08.50.19 on branch "smartphone" at revision "71bee7ffe6718fe5e022bf4ff3ee5d3b8bff816a" | TEMP VERSION: 13 */
+:root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
   --rgb-color--reddark: 153, 0, 0;
@@ -300,35 +301,26 @@ custom media queries is the only allowed media queries
 }
 ```
 */
-@custom-media --smartphone (max-width: 767px);
 
 /*
 * custom media query for desktop
 */
-@custom-media --desktop (min-width  767px);
-@custom-media --widedesktop (min-width: 940px);
-@custom-media --xtrawidedesktop (min-width: 1140px);
 
 /*
 * media-query for ipad
 */
-@custom-media --tablet only screen and (min-width: 768px) and (max-width: 1024px);
 
 /*
 * Landscape media-query for ipad
 */
-@custom-media --landscape only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape);
 
 /*
 * Portrait media-query for ipad
 */
-@custom-media --portrait only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait);
 
 /*
 * ie11 and above media query for
 */
-@custom-media --ie only screen and (-ms-high-contrast: active),
-  (-ms-high-contrast: none);
 
 .button {
   align-items: center;
@@ -496,7 +488,7 @@ custom media queries is the only allowed media queries
   --card-padding: 10px;
 }
 
-@media (--desktop) {
+@media (min-width: 767px) {
   :root {
     --card-padding: 20px;
   }
@@ -1073,7 +1065,7 @@ a.card:focus {
   --grid-xlarge: 100%;
   }
 
-@media (--desktop) {
+@media (min-width: 767px) {
   :root {
     --grid-large: 910px;
   --grid-medium: 730px;
