@@ -103,8 +103,8 @@ const buildCSS = async args => {
       presetEnv(cssnextObject),
       discardDuplicates,
       discardUnused,
-      mergeRules,
-      cssnano
+      mergeRules
+      // cssnano
     ])
       .process(css, {
         from: "undefined"
@@ -112,7 +112,7 @@ const buildCSS = async args => {
       .then(result => {
         try {
           const resultCss = result.css;
-          fs.writeFile(outputFile, `/** ${version} */${resultCss}`, () => {
+          fs.writeFile(outputFile, `/** ${version} */\n${resultCss}`, () => {
             return true;
           });
           console.log(version);
