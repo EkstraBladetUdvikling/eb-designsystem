@@ -1,4 +1,4 @@
-/** eb-designsystem--ie.css version 0.1.0 built on 18.2.2020 10.24.17 on branch "smartphone" at revision "9235f16d46fd7b8df013534e75d8a50b7864dc6c" */
+/** eb-designsystem--ie.css version 0.1.0 built on 19.2.2020 08.47.28 on branch "smartphone" at revision "40c1f2659d4f12d63d1ca0247f930ee40eb4d134" */
 .button {
   align-items: center;
   background: #fff;
@@ -160,7 +160,9 @@
 
 @media (max-width: 767px) {
   :root {
-    --card-padding: 10px;
+  --card-fs-title: 20px;
+  --card-fs-title--shrunk: 16px;
+  --card-padding: 10px;
   }
 }
 
@@ -198,6 +200,7 @@ a.card:focus {
 .card-image {
   display: block;
   width: 100%;
+  height: auto;
 }
 
 .card-media .card-icon {
@@ -275,14 +278,10 @@ a.card:focus {
 }
 
 /* Shrink font-size on small cards with media, if not explicitly set to large */
-.card.width-1of2
-  .card-media
-  + .card-content
-  .card-title:not(.card-title--large),
-.card.width-1of3
-  .card-media
-  + .card-content
-  .card-title:not(.card-title--large),
+.width-1of2 > .card .card-media + .card-content .card-title:not(.card-title--large),
+.width-1of3 > .card .card-media + .card-content .card-title:not(.card-title--large),
+.card.width-1of2 .card-media + .card-content .card-title:not(.card-title--large),
+.card.width-1of3 .card-media + .card-content .card-title:not(.card-title--large),
 .card--small-media .card-title:not(.card-title--large) {
   font-size: 20px;
 }
@@ -719,6 +718,15 @@ a.card:focus {
   align-self: center;
 }
 
+@media (max-width: 767px) {
+  :root {
+    --grid-large: 100%;
+  --grid-medium: 100%;
+  --grid-small: 100;
+  --grid-xlarge: 100%;
+  }
+}
+
 .grid-width--small {
   width: 610px;
 }
@@ -733,16 +741,6 @@ a.card:focus {
 
 .grid-width--xlarge {
   width: 930px;
-}
-
-@media (max-width: 767px) {
-  :root {
-    --grid-large: 100%;
-  --grid-medium: 100%;
-  --grid-small: 85%;
-  --grid-xlarge: 100%;
-  }
-
 }
 .hidden {
   display: none;

@@ -1,4 +1,4 @@
-/** eb-designsystem--nonie.css version 0.1.0 built on 18.2.2020 19.56.18 on branch "smartphone" at revision "71ab95686988b62a3d3f9f56f362abe322b87772" | TEMP VERSION: 20 */
+/** eb-designsystem--nonie.css version 0.1.0 built on 19.2.2020 08.47.26 on branch "smartphone" at revision "40c1f2659d4f12d63d1ca0247f930ee40eb4d134" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -595,14 +595,10 @@ a.card:focus {
 }
 
 /* Shrink font-size on small cards with media, if not explicitly set to large */
-.card.width-1of2
-  .card-media
-  + .card-content
-  .card-title:not(.card-title--large),
-.card.width-1of3
-  .card-media
-  + .card-content
-  .card-title:not(.card-title--large),
+.width-1of2 > .card .card-media + .card-content .card-title:not(.card-title--large),
+.width-1of3 > .card .card-media + .card-content .card-title:not(.card-title--large),
+.card.width-1of2 .card-media + .card-content .card-title:not(.card-title--large),
+.card.width-1of3 .card-media + .card-content .card-title:not(.card-title--large),
 .card--small-media .card-title:not(.card-title--large) {
   font-size: var(--card-fs-title--shrunk);
 }
@@ -1054,6 +1050,15 @@ a.card:focus {
   --grid-xlarge: 930px;
 }
 
+@media (max-width: 767px) {
+  :root {
+    --grid-large: 100%;
+  --grid-medium: 100%;
+  --grid-small: 100;
+  --grid-xlarge: 100%;
+  }
+}
+
 .grid-width--small {
   width: var(--grid-small);
 }
@@ -1068,16 +1073,6 @@ a.card:focus {
 
 .grid-width--xlarge {
   width: var(--grid-xlarge);
-}
-
-@media (max-width: 767px) {
-  :root {
-    --grid-large: 100%;
-  --grid-medium: 100%;
-  --grid-small: 100;
-  --grid-xlarge: 100%;
-  }
-
 }
 .hidden {
   display: none;
