@@ -114,14 +114,10 @@ a.card:focus {
 }
 
 /* Shrink font-size on small cards with media, if not explicitly set to large */
-.card.width-1of2
-  .card-media
-  + .card-content
-  .card-title:not(.card-title--large),
-.card.width-1of3
-  .card-media
-  + .card-content
-  .card-title:not(.card-title--large),
+.width-1of2 > .card .card-media + .card-content .card-title:not(.card-title--large),
+.width-1of3 > .card .card-media + .card-content .card-title:not(.card-title--large),
+.card.width-1of2 .card-media + .card-content .card-title:not(.card-title--large),
+.card.width-1of3 .card-media + .card-content .card-title:not(.card-title--large),
 .card--small-media .card-title:not(.card-title--large) {
   font-size: 20px;
 }
