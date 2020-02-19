@@ -2,14 +2,14 @@
   --card-border-color: var(--color--graa7);
   --card-fs-icon: 18px;
   --card-fs-title: 30px;
-  --card-fs-title--shrunk: 20px;
+  --card-fs-title--small: 20px;
   --card-padding: 20px;
 }
 
 @media (--smartphone) {
   :root {
   --card-fs-title: 20px;
-  --card-fs-title--shrunk: 16px;
+  --card-fs-title--small: 16px;
   --card-padding: 10px;
   }
 }
@@ -99,7 +99,7 @@ a.card:focus {
   padding-top: 2px;
 }
 
-.card-title {
+.card-title:not([class*="fs-"]) {
   font-size: var(--card-fs-title);
   font-weight: 700;
   margin: 0;
@@ -126,10 +126,11 @@ a.card:focus {
 }
 
 /* Shrink font-size on small cards with media, if not explicitly set to large */
-.width-1of2 > .card .card-media + .card-content .card-title:not(.card-title--large),
-.width-1of3 > .card .card-media + .card-content .card-title:not(.card-title--large),
-.card.width-1of2 .card-media + .card-content .card-title:not(.card-title--large),
-.card.width-1of3 .card-media + .card-content .card-title:not(.card-title--large),
-.card--small-media .card-title:not(.card-title--large) {
-  font-size: var(--card-fs-title--shrunk);
+.width-1of2 > .card .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
+.width-1of3 > .card .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
+.card.width-1of2 .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
+.card.width-1of3 .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
+.card--small-media .card-title:not(.card-title--large):not([class*="fs-"]),
+.card-title--small:not([class*="fs-"]) {
+  font-size: var(--card-fs-title--small);
 }
