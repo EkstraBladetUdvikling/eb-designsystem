@@ -1,32 +1,41 @@
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
-const pkg = require("./package.json");
+const pkg = require('./package.json');
 
-const postcss = require("postcss");
-const discardDuplicates = require("postcss-discard-duplicates")();
-const discardUnused = require("postcss-discard-unused")();
-const mergeRules = require("postcss-merge-rules")();
-const cssnano = require("cssnano")();
-const presetEnv = require("postcss-preset-env");
+const postcss = require('postcss');
+const discardDuplicates = require('postcss-discard-duplicates')();
+const discardUnused = require('postcss-discard-unused')();
+const mergeRules = require('postcss-merge-rules')();
+const cssnano = require('cssnano')();
+const postcssCustomMedia = require('postcss-custom-media');
+const presetEnv = require('postcss-preset-env');
 const runtimeArguments = process.argv.slice(2);
 
-const TEMPVERSION = "./.tempversion";
+const TEMPVERSION = './.tempversion';
+
+const importFrom = [
+  './node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-vars-rgb.css',
+  './node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-css-vars.css',
+  './node_modules/@ekstra-bladet/eb-fonts/dist/eb-fontvars-desktop.css',
+  './src/_variables.css',
+  './src/_custom-mediaqueries.css'
+];
 
 const cssnextObject = {
-  browsers: "last 2 versions, ios >= 6, ie > 10",
+  browsers: 'ie 11',
   features: {
-    "nesting-rules": true
+    'nesting-rules': true
   },
-  importFrom: [
-    "./node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-vars-rgb.css",
-    "./node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-css-vars.css",
-    "./node_modules/@ekstra-bladet/eb-fonts/dist/eb-fontvars-desktop.css",
-    "./src/_variables.css"
-  ],
+  importFrom,
   preserve: false,
   stage: 0,
   warnForDuplicates: false
+};
+
+const customMediaOptions = {
+  importFrom: ['./src/_custom-mediaqueries.css'],
+  preserve: false
 };
 
 const readFolder = (folderName, filesToFind, array, lvl = 0) => {
@@ -42,19 +51,40 @@ const readFolder = (folderName, filesToFind, array, lvl = 0) => {
   });
 };
 
+const getOptions = args => {
+  const options = {
+    build: '',
+    watching: false
+  };
+  args.forEach(arg => {
+    if (arg.indexOf('watcher') !== -1) {
+      options.watching = true;
+    }
+    if (arg.indexOf('--ie') !== -1 || arg.indexOf('--nonie') !== -1) {
+      options.build = arg;
+    }
+  });
+  return options;
+};
+
 const buildCSS = async args => {
   try {
-    const WATCHING = args[0] ? args[0].indexOf("watcher") !== -1 : "";
     const startTime = new Date().getTime();
-    const srcFolder = "./src";
-    const cssFilesToRead = [];
-    const fileTypeToFind = ".css";
+
+    const options = getOptions(args);
+    const srcFolder = './src';
+    const cssFilesToRead = options.build === 'ie' ? [] : importFrom;
+    const postcssPlugins =
+      options.build === 'ie' ? [presetEnv(cssnextObject)] : [postcssCustomMedia(customMediaOptions)];
+    const fileTypeToFind = '.css';
+
     /**
      * Find all css files in src folder
      */
     readFolder(srcFolder, fileTypeToFind, cssFilesToRead);
-    const outFolder = "dist";
-    const outputFile = `${outFolder}/eb-designsystem.css`;
+    const outFolder = 'dist';
+    const outputFileName = `eb-designsystem${options.build}.css`;
+    const outputFile = `${outFolder}/${outputFileName}`;
 
     if (!fs.existsSync(outFolder)) {
       fs.mkdirSync(outFolder);
@@ -65,49 +95,44 @@ const buildCSS = async args => {
     cssFilesToRead.forEach(fileName => {
       readFileContent.push(fs.readFileSync(fileName));
     });
-    const css = readFileContent.join("");
-    let tempversionBuild = "";
-    if (WATCHING) {
+    const css = readFileContent.join('');
+    let tempversionBuild = '';
+    if (options.watching) {
       if (fs.existsSync(TEMPVERSION)) {
-        const readVersion = parseInt(
-          fs.readFileSync(TEMPVERSION).toString(),
-          10
-        );
+        const readVersion = parseInt(fs.readFileSync(TEMPVERSION).toString(), 10);
         tempversionBuild = readVersion + 1;
       } else {
         tempversionBuild = 0;
       }
     }
     const branchInfo = fs
-      .readFileSync(".git/HEAD")
+      .readFileSync('.git/HEAD')
       .toString()
       .trim()
-      .split("/");
+      .split('/');
     const branch = branchInfo[branchInfo.length - 1];
-    let rev = require("child_process")
-      .execSync("git rev-parse HEAD")
+    let rev = require('child_process')
+      .execSync('git rev-parse HEAD')
       .toString()
       .trim();
 
     const date = new Date();
-    const dateString = `${date.toLocaleDateString(
-      "da"
-    )} ${date.toLocaleTimeString("da")}`;
+    const dateString = `${date.toLocaleDateString('da')} ${date.toLocaleTimeString('da')}`;
 
-    let version = `${pkg.name} version ${pkg.version} built on ${dateString} on branch "${branch}" at revision "${rev}"`;
-    if (tempversionBuild !== "") {
+    let version = `${outputFileName} version ${pkg.version} built on ${dateString} on branch "${branch}" at revision "${rev}"`;
+    if (tempversionBuild !== '') {
       version = `${version} | TEMP VERSION: ${tempversionBuild}`;
     }
 
     await postcss([
-      presetEnv(cssnextObject),
+      ...postcssPlugins,
       discardDuplicates,
       discardUnused,
       mergeRules
       // cssnano
     ])
       .process(css, {
-        from: "undefined"
+        from: 'undefined'
       })
       .then(result => {
         try {
@@ -116,8 +141,8 @@ const buildCSS = async args => {
             return true;
           });
           console.log(version);
-          if (WATCHING) {
-            console.log(" ... write tempversionBuild", tempversionBuild);
+          if (options.watching) {
+            console.log(' ... write tempversionBuild', tempversionBuild);
             fs.writeFile(TEMPVERSION, tempversionBuild, () => {
               return true;
             });
@@ -129,9 +154,9 @@ const buildCSS = async args => {
       });
 
     const endTime = new Date().getTime();
-    console.log("it took?", (endTime - startTime) / 1000);
+    console.log('it took?', (endTime - startTime) / 1000);
   } catch (err) {
-    console.error("ERROR: build css", err);
+    console.error('ERROR: build css', err);
     process.exit(1);
   }
 };
