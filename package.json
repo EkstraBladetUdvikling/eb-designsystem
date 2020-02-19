@@ -7,13 +7,14 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn build:css && yarn build:preview",
-    "build:css": "yarn build:nonie && yarn build:ie",
-    "build:nonie": "node build-css.js --build=nonie",
-    "build:ie": "node build-css.js --build=ie",
+    "build:css": "node build-css.js",
+    "build:nonie": "node build-css.js --nonie",
+    "build:ie": "node build-css.js --ie",
     "build:preview": "postcss preview/css/_index.css -o preview/css/main.css --no-map -u postcss-import",
     "build:watch": "onchange 'src/**/*.css' -- yarn build:watcher & onchange 'preview/**/{_*.css,html}' -- yarn build:preview",
     "build:watcher": "yarn build:nonie --watcher",
     "dist": "yarn build:css",
+    "dist:move": "yarn dist && yarn move_to_eb",
     "move_to_eb": "yarn cpx \"./dist/**/*.{css,js}\" \"../ekstrabladet/ekstrabladet-publication/src/main/frontend/css-main/main/css\"",
     "start": "yarn build:preview && yarn build:watch & bundle exec jekyll serve --livereload"
   },

@@ -53,15 +53,15 @@ const readFolder = (folderName, filesToFind, array, lvl = 0) => {
 
 const getOptions = args => {
   const options = {
-    build: 'nonie',
+    build: '',
     watching: false
   };
   args.forEach(arg => {
     if (arg.indexOf('watcher') !== -1) {
       options.watching = true;
     }
-    if (arg.indexOf('build=ie') !== -1) {
-      options.build = 'ie';
+    if (arg.indexOf('--ie') !== -1 || arg.indexOf('--nonie') !== -1) {
+      options.build = arg;
     }
   });
   return options;
@@ -77,13 +77,13 @@ const buildCSS = async args => {
     const postcssPlugins =
       options.build === 'ie' ? [presetEnv(cssnextObject)] : [postcssCustomMedia(customMediaOptions)];
     const fileTypeToFind = '.css';
-    console.log(cssnextObject.browsers);
+
     /**
      * Find all css files in src folder
      */
     readFolder(srcFolder, fileTypeToFind, cssFilesToRead);
     const outFolder = 'dist';
-    const outputFileName = `eb-designsystem--${options.build}.css`;
+    const outputFileName = `eb-designsystem${options.build}.css`;
     const outputFile = `${outFolder}/${outputFileName}`;
 
     if (!fs.existsSync(outFolder)) {
