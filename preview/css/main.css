@@ -1002,9 +1002,6 @@ h2 {
 .dsm-content > h6 {
   margin-top: 30px;
 }
-/* .dsm-nav-top-desktop {
-  display: none;
-} */
 .dsm-content .language-html {
   display: none;
 }
@@ -1023,9 +1020,6 @@ h2 {
   }
 }
 @media (min-width: 767px) {
-  /* .dsm-nav-top-desktop {
-    display: flex;
-  } */
   .dsm-main-content {
     display: flex;
   }
