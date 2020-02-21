@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.0 built on 19.2.2020 13.33.17 on branch "smartphone" at revision "ff73216e93c2ff6d9e4d56b7806778e2e27b100a" */
+/** eb-designsystem.css version 0.1.0 built on 21.2.2020 14.33.03 on branch "master" at revision "aeb395e17595b3687f1287f8ef3626e5f4e179df" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -471,14 +471,14 @@ custom media queries is the only allowed media queries
   --card-border-color: var(--color--graa7);
   --card-fs-icon: 18px;
   --card-fs-title: 30px;
-  --card-fs-title--shrunk: 20px;
+  --card-fs-title--small: 20px;
   --card-padding: 20px;
 }
 
 @media (max-width: 767px) {
   :root {
-  --card-fs-title: 20px;
-  --card-fs-title--shrunk: 16px;
+    --card-fs-title: 20px;
+  --card-fs-title--small: 16px;
   --card-padding: 10px;
   }
 }
@@ -512,6 +512,8 @@ a.card:focus {
 
 .card-media {
   position: relative;
+
+  min-height: 1px; /* IE11 fix */
 }
 
 .card-image {
@@ -532,7 +534,7 @@ a.card:focus {
 .card-content {
   padding: var(--card-padding);
 
-  flex: 1 0 0;
+  flex: 1 0 auto;
 }
 
 .card-header,
@@ -568,7 +570,7 @@ a.card:focus {
   padding-top: 2px;
 }
 
-.card-title {
+.card-title:not([class*="fs-"]) {
   font-size: var(--card-fs-title);
   font-weight: 700;
   margin: 0;
@@ -580,6 +582,10 @@ a.card:focus {
   flex-direction: row;
 
   flex-wrap: wrap;
+}
+
+.card--small-media .card-content {
+  flex-basis: 0;
 }
 
 .card--small-media .card-media {
@@ -595,12 +601,13 @@ a.card:focus {
 }
 
 /* Shrink font-size on small cards with media, if not explicitly set to large */
-.width-1of2 > .card .card-media + .card-content .card-title:not(.card-title--large),
-.width-1of3 > .card .card-media + .card-content .card-title:not(.card-title--large),
-.card.width-1of2 .card-media + .card-content .card-title:not(.card-title--large),
-.card.width-1of3 .card-media + .card-content .card-title:not(.card-title--large),
-.card--small-media .card-title:not(.card-title--large) {
-  font-size: var(--card-fs-title--shrunk);
+.width-1of2 > .card .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
+.width-1of3 > .card .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
+.card.width-1of2 .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
+.card.width-1of3 .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
+.card--small-media .card-title:not(.card-title--large):not([class*="fs-"]),
+.card-title--small:not([class*="fs-"]) {
+  font-size: var(--card-fs-title--small);
 }
 :root {
   --color--focus: var(--color--blue);
