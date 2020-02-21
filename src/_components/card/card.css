@@ -8,7 +8,7 @@
 
 @media (--smartphone) {
   :root {
-  --card-fs-title: 20px;
+    --card-fs-title: 20px;
   --card-fs-title--small: 16px;
   --card-padding: 10px;
   }
@@ -43,6 +43,8 @@ a.card:focus {
 
 .card-media {
   position: relative;
+
+  min-height: 1px; /* IE11 fix */
 }
 
 .card-image {
@@ -63,7 +65,7 @@ a.card:focus {
 .card-content {
   padding: var(--card-padding);
 
-  flex: 1 0 0;
+  flex: 1 0 auto;
 }
 
 .card-header,
@@ -111,6 +113,10 @@ a.card:focus {
   flex-direction: row;
 
   flex-wrap: wrap;
+}
+
+.card--small-media .card-content {
+  flex-basis: 0;
 }
 
 .card--small-media .card-media {
