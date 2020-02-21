@@ -115,6 +115,8 @@ a.card:focus {
   flex-wrap: wrap;
 }
 
+.card--small-media .card-content {
+  flex-basis: 0;
 }
 
 .card--small-media .card-media {
