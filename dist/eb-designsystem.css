@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.0 built on 3.3.2020 08.06.18 on branch "eb-fonts" at revision "59153d31c31b75c6e0d00678a2ebfd81eb63ffb9" */
+/** eb-designsystem.css version 0.1.0 built on 3.3.2020 09.30.28 on branch "eb-fonts" at revision "e1fd6c44020109ff9e9a5d2cc080a882ba393ed8" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -539,6 +539,7 @@ a.card:focus {
 
 .card-header,
 .card-footer {
+  box-sizing: border-box;
   margin: 0;
   padding: calc(var(--card-padding) / 2) var(--card-padding);
   width: 100%;
