@@ -89,7 +89,7 @@ const buildCSS = async args => {
     if (!fs.existsSync(outFolder)) {
       fs.mkdirSync(outFolder);
     }
-    console.log('cssFilesToRead', cssFilesToRead);
+
     const readFileContent = [];
 
     cssFilesToRead.forEach(fileName => {

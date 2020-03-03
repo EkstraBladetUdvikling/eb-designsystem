@@ -16,7 +16,7 @@
     "dist": "yarn build:css",
     "dist:move": "yarn dist && yarn move_to_eb",
     "move_to_eb": "yarn cpx \"./dist/**/*.{css,js}\" \"../ekstrabladet/ekstrabladet-publication/src/main/frontend/css-main/main/css\"",
-    "start": "yarn build:preview && yarn build:watch & bundle exec jekyll serve --livereload"
+    "start": "yarn build && yarn build:preview && yarn build:watch & bundle exec jekyll serve --livereload"
   },
   "dependencies": {
     "@ekstra-bladet/eb-colors": "^2.3.3",
