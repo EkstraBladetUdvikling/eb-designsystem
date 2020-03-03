@@ -10,6 +10,8 @@
   --distance-standard: 10px;
   --distance-xlarge: 30px;
   --distance-xxlarge: 50px;
+  --fontfamily--primary: "Work Sans", var(--fontfamily--seconday);
+  --fontfamily--seconday: Arial, Helvetica, sans-serif;
 }
 
 @media (--smartphone) {

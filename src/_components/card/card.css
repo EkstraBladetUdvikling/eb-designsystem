@@ -68,6 +68,7 @@ a.card:focus {
 
 .card-header,
 .card-footer {
+  margin: 0;
   padding: calc(var(--card-padding) / 2) var(--card-padding);
   width: 100%;
 }

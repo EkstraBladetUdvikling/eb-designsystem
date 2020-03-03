@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.0 built on 19.2.2020 13.33.17 on branch "smartphone" at revision "ff73216e93c2ff6d9e4d56b7806778e2e27b100a" */
+/** eb-designsystem.css version 0.1.0 built on 3.3.2020 08.03.21 on branch "eb-fonts" at revision "3eb0f23e73b56159ee8c7347c9cd2a81340b5553" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -239,7 +239,9 @@ html,button,input,select,textarea{font-family:Arial,sans-serif}:root{--fs-xxsmal
   --distance-small: 5px;
   --distance-standard: 10px;
   --distance-xlarge: 30px;
-  --distance-xxlarge: 50px}
+  --distance-xxlarge: 50px;
+  --fontfamily--primary: "Work Sans", var(--fontfamily--seconday);
+  --fontfamily--seconday: Arial, Helvetica, sans-serif}
 /* Systemwide variables - default + desktop */
 
 @media (max-width: 767px) {
@@ -471,14 +473,14 @@ custom media queries is the only allowed media queries
   --card-border-color: var(--color--graa7);
   --card-fs-icon: 18px;
   --card-fs-title: 30px;
-  --card-fs-title--shrunk: 20px;
+  --card-fs-title--small: 20px;
   --card-padding: 20px;
 }
 
 @media (max-width: 767px) {
   :root {
   --card-fs-title: 20px;
-  --card-fs-title--shrunk: 16px;
+  --card-fs-title--small: 16px;
   --card-padding: 10px;
   }
 }
@@ -537,6 +539,7 @@ a.card:focus {
 
 .card-header,
 .card-footer {
+  margin: 0;
   padding: calc(var(--card-padding) / 2) var(--card-padding);
   width: 100%;
 }
@@ -568,7 +571,7 @@ a.card:focus {
   padding-top: 2px;
 }
 
-.card-title {
+.card-title:not([class*="fs-"]) {
   font-size: var(--card-fs-title);
   font-weight: 700;
   margin: 0;
@@ -595,12 +598,13 @@ a.card:focus {
 }
 
 /* Shrink font-size on small cards with media, if not explicitly set to large */
-.width-1of2 > .card .card-media + .card-content .card-title:not(.card-title--large),
-.width-1of3 > .card .card-media + .card-content .card-title:not(.card-title--large),
-.card.width-1of2 .card-media + .card-content .card-title:not(.card-title--large),
-.card.width-1of3 .card-media + .card-content .card-title:not(.card-title--large),
-.card--small-media .card-title:not(.card-title--large) {
-  font-size: var(--card-fs-title--shrunk);
+.width-1of2 > .card .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
+.width-1of3 > .card .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
+.card.width-1of2 .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
+.card.width-1of3 .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
+.card--small-media .card-title:not(.card-title--large):not([class*="fs-"]),
+.card-title--small:not([class*="fs-"]) {
+  font-size: var(--card-fs-title--small);
 }
 :root {
   --color--focus: var(--color--blue);
@@ -1042,6 +1046,13 @@ a.card:focus {
 
 .flex-item--center {
   align-self: center;
+}
+.ff-primary {
+  font-family: var(--fontfamily--primary);
+}
+
+.ff-secondary {
+  font-family: var(--fontfamily--secondary);
 }
 :root {
   --grid-large: 910px;
