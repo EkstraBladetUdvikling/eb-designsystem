@@ -58,7 +58,7 @@ const getOptions = args => {
   };
   args.forEach(arg => {
     if (arg.indexOf('watcher') !== -1) {
-      options.watching = true;
+      options.build = 'watch'; // options.watching = true;
     }
     if (arg.indexOf('--ie') !== -1 || arg.indexOf('--nonie') !== -1) {
       options.build = arg;
@@ -74,8 +74,18 @@ const buildCSS = async args => {
     const options = getOptions(args);
     const srcFolder = './src';
     const cssFilesToRead = options.build === 'ie' ? [] : importFrom;
-    const postcssPlugins =
-      options.build === 'ie' ? [presetEnv(cssnextObject)] : [postcssCustomMedia(customMediaOptions)];
+    const postcssPlugins = [];
+
+    switch (options.build) {
+      case 'ie':
+        postcssPlugins.push(presetEnv(cssnextObject));
+        break;
+      case 'watch':
+        postcssPlugins.push(postcssCustomMedia(customMediaOptions));
+        break;
+      default:
+        break;
+    }
     const fileTypeToFind = '.css';
 
     /**
@@ -141,17 +151,32 @@ const buildCSS = async args => {
             return true;
           });
           console.log(version);
-          if (options.watching) {
-            console.log(' ... write tempversionBuild', tempversionBuild);
-            fs.writeFile(TEMPVERSION, tempversionBuild, () => {
-              return true;
-            });
-          }
+
           console.log(`postcss PRODUCTION ready -> ${outputFile}`);
         } catch (err) {
           throw err;
         }
       });
+    // if (options.watching) {
+    //   await postcss([
+    //     ...postcssPlugins,
+    //     discardDuplicates,
+    //     discardUnused,
+    //     mergeRules
+    //     // cssnano
+    //   ])
+    //     .process(css, {
+    //       from: 'undefined'
+    //     })
+    //     .then(result => {
+    //       const resultCss = result.css;
+
+    //       console.log(' ... write tempversionBuild', tempversionBuild);
+    //       fs.writeFile(TEMPVERSION, tempversionBuild, () => {
+    //         return true;
+    //       });
+    //     });
+    // }
 
     const endTime = new Date().getTime();
     console.log('it took?', (endTime - startTime) / 1000);

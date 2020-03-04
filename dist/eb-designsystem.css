@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.0 built on 28.2.2020 10.12.57 on branch "master" at revision "0cfeb84ebfb5caaf8234ea93cb76398215602648" */
+/** eb-designsystem.css version 0.1.0 built on 4.3.2020 09.47.55 on branch "master" at revision "9fcb6fbe314b1015fff687857da28f2bfa805409" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -242,7 +242,7 @@ html,button,input,select,textarea{font-family:Arial,sans-serif}:root{--fs-xxsmal
   --distance-xxlarge: 50px}
 /* Systemwide variables - default + desktop */
 
-@media (max-width: 767px) {
+@media (--smartphone) {
   :root {
   --distance-large: 15px;
   --distance-medium: 10px;
@@ -274,26 +274,35 @@ custom media queries is the only allowed media queries
 }
 ```
 */
+@custom-media --smartphone (max-width: 767px);
 
 /*
 * custom media query for desktop
 */
+@custom-media --desktop (min-width: 767px);
+@custom-media --widedesktop (min-width: 940px);
+@custom-media --xtrawidedesktop (min-width: 1140px);
 
 /*
 * media-query for ipad
 */
+@custom-media --tablet only screen and (min-width: 768px) and (max-width: 1024px);
 
 /*
 * Landscape media-query for ipad
 */
+@custom-media --landscape only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape);
 
 /*
 * Portrait media-query for ipad
 */
+@custom-media --portrait only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait);
 
 /*
 * ie11 and above media query for
 */
+@custom-media --ie only screen and (-ms-high-contrast: active),
+  (-ms-high-contrast: none);
 :root {
   --button-border-radius: var(--button-height);
   --button-height: 36px;
@@ -475,7 +484,7 @@ custom media queries is the only allowed media queries
   --card-padding: 20px;
 }
 
-@media (max-width: 767px) {
+@media (--smartphone) {
   :root {
     --card-fs-title: 20px;
   --card-fs-title--small: 16px;
@@ -1057,7 +1066,7 @@ a.card:focus {
   --grid-xlarge: 930px;
 }
 
-@media (max-width: 767px) {
+@media (--smartphone) {
   :root {
     --grid-large: 100%;
   --grid-medium: 100%;
