@@ -12,11 +12,11 @@
     "build:ie": "node build-css.js --ie",
     "build:preview": "postcss preview/css/_index.css -o preview/css/main.css --no-map -u postcss-import",
     "build:watch": "onchange 'src/**/*.css' -- yarn build:watcher & onchange 'preview/**/{_*.css,html}' -- yarn build:preview",
-    "build:watcher": "yarn build --watcher",
+    "build:watcher": "yarn build:css --watcher && yarn build:preview",
     "dist": "yarn build:css",
     "dist:move": "yarn dist && yarn move_to_eb",
     "move_to_eb": "yarn cpx \"./dist/**/*.{css,js}\" \"../ekstrabladet/ekstrabladet-publication/src/main/frontend/css-main/main/css\"",
-    "start": "yarn build && yarn build:preview && yarn build:watch & bundle exec jekyll serve --livereload"
+    "start": "yarn build:watcher && yarn build:preview && yarn build:watch & bundle exec jekyll serve --livereload"
   },
   "dependencies": {
     "@ekstra-bladet/eb-colors": "^2.3.3",

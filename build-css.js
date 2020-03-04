@@ -57,12 +57,13 @@ const getOptions = args => {
     watching: false
   };
   args.forEach(arg => {
-    if (arg.indexOf('watcher') !== -1) {
-      options.build = 'watch'; // options.watching = true;
-    }
-    if (arg.indexOf('--ie') !== -1 || arg.indexOf('--nonie') !== -1) {
+    console.log('args', arg);
+
+    if (arg.indexOf('--ie') !== -1 || arg.indexOf('--nonie') !== -1 || arg.indexOf('--watcher') !== -1) {
       options.build = arg;
     }
+
+    console.log('budils?', options.build);
   });
   return options;
 };
@@ -75,7 +76,7 @@ const buildCSS = async args => {
     const srcFolder = './src';
     const cssFilesToRead = options.build === 'ie' ? [] : importFrom;
     const postcssPlugins = [];
-
+    console.log('options', options.build);
     switch (options.build) {
       case 'ie':
         postcssPlugins.push(presetEnv(cssnextObject));
