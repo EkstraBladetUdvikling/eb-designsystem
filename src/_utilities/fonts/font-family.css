@@ -1,0 +1,7 @@
+.ff-primary {
+  font-family: var(--fontfamily--primary);
+}
+
+.ff-secondary {
+  font-family: var(--fontfamily--secondary);
+}
