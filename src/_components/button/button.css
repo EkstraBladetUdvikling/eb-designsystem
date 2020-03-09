@@ -31,7 +31,11 @@
   height: var(--button-height);
 }
 
-.button:hover {
+.button:disabled {
+  opacity: .7;
+}
+
+.button:hover:not(:disabled) {
   background: var(--color--button-default);
   border: 1px solid var(--color--button-default);
   color: var(--fgcolor--button-default);
@@ -47,7 +51,7 @@
   color: var(--color--button-primary);
 }
 
-.button.button--primary:hover {
+.button.button--primary:hover:not([disabled]) {
   background: var(--color--button-primary);
   color: var(--fgcolor--button-primary);
 }
@@ -57,7 +61,7 @@
   color: var(--color--button-secondary);
 }
 
-.button.button--secondary:hover {
+.button.button--secondary:hover:not([disabled]) {
   background: var(--color--button-secondary);
   color: var(--fgcolor--button-secondary);
 }
@@ -67,7 +71,7 @@
   color: var(--color--button-accept);
 }
 
-.button.button--accept:hover {
+.button.button--accept:hover:not([disabled]) {
   background: var(--color--button-accept);
   color: var(--fgcolor--button-accept);
 }
@@ -77,18 +81,18 @@
   color: var(--color--button-cancel);
 }
 
-.button.button--cancel:hover {
+.button.button--cancel:hover:not([disabled]) {
   background: var(--color--button-cancel);
   color: var(--fgcolor--button-cancel);
 }
 
-.button:hover,
+.button:hover:not([disabled]),
 .button--solid {
   background: var(--color--button-default);
   color: var(--fgcolor--button-default);
 }
 
-.button--solid:hover {
+.button--solid:hover:not([disabled]) {
   background: none;
   border: 1px solid var(--color--button-default);
   color: var(--color--button-default);
@@ -100,7 +104,7 @@
   color: var(--fgcolor--button-primary);
 }
 
-.button--solid.button--primary:hover {
+.button--solid.button--primary:hover:not([disabled]) {
   background: var(--color--white);
   border-color: var(--color--button-primary);
   color: var(--color--button-primary);
@@ -112,7 +116,7 @@
   color: var(--fgcolor--button-secondary);
 }
 
-.button--solid.button--secondary:hover {
+.button--solid.button--secondary:hover:not([disabled]) {
   background: var(--color--white);
   border-color: var(--color--button-secondary);
   color: var(--color--button-secondary);
@@ -124,7 +128,7 @@
   color: var(--fgcolor--button-accept);
 }
 
-.button--solid.button--accept:hover {
+.button--solid.button--accept:hover:not([disabled]) {
   background: var(--color--white);
   border-color: var(--color--button-accept);
   color: var(--color--button-accept);
@@ -136,7 +140,7 @@
   color: var(--fgcolor--button-cancel);
 }
 
-.button--solid.button--cancel:hover {
+.button--solid.button--cancel:hover:not([disabled]) {
   background: var(--color--white);
   border-color: var(--color--button-cancel);
   color: var(--color--button-cancel);
@@ -166,7 +170,7 @@
 }
 
 .button--link,
-.button--link:hover {
+.button--link:hover:not([disabled]) {
   background: none;
   border: 0;
   color: inherit;
