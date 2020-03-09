@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.0 built on 9.3.2020 12.33.41 on branch "queries" at revision "d258912e985ea746e3932a868ec75712343dfc38" */
+/** eb-designsystem.css version 0.1.0 built on 9.3.2020 14.08.24 on branch "queries" at revision "5f93961b0206f3d448e01bbfdc808bb0d8122d31" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -339,6 +339,7 @@ custom media queries is the only allowed media queries
 }
 
 .button:disabled {
+  cursor: default;
   opacity: .7;
 }
 
@@ -641,7 +642,7 @@ a.card:focus {
   margin-top: 15px;
 }
 
-.form-element + .form-element {
+.form-group .form-element + .form-element {
   margin-top: 25px;
 }
 

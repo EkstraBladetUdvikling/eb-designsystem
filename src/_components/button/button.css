@@ -32,6 +32,7 @@
 }
 
 .button:disabled {
+  cursor: default;
   opacity: .7;
 }
 

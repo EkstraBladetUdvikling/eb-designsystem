@@ -13,6 +13,12 @@ Det her er en standard knap uden nogen hat
 <button class="button">Button</button>
 ```
 
+<button class="button" disabled>Button disabled</button>
+
+```html
+<button class="button" disabled>Button disabled</button>
+```
+
 ### Button color options
 
 <button class="button button--primary">Button primary</button>
@@ -47,6 +53,12 @@ Det her er en standard knap uden nogen hat
 
 ```html
 <button class="button button--solid">Button Solid</button>
+```
+
+<button class="button button--solid" disabled>Button Solid disabled</button>
+
+```html
+<button class="button button--solid" disabled>Button Solid disabled</button>
 ```
 
 ### Button Solid color options
