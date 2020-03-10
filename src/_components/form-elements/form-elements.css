@@ -13,7 +13,7 @@
   margin-top: 15px;
 }
 
-.form-element + .form-element {
+.form-group .form-element + .form-element {
   margin-top: 25px;
 }
 

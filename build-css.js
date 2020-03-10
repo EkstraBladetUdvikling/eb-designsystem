@@ -57,10 +57,7 @@ const getOptions = args => {
     watching: false
   };
   args.forEach(arg => {
-    if (arg.indexOf('watcher') !== -1) {
-      options.watching = true;
-    }
-    if (arg.indexOf('--ie') !== -1 || arg.indexOf('--nonie') !== -1) {
+    if (arg.indexOf('--ie') !== -1 || arg.indexOf('--nonie') !== -1 || arg.indexOf('--watcher') !== -1) {
       options.build = arg;
     }
   });
@@ -74,8 +71,18 @@ const buildCSS = async args => {
     const options = getOptions(args);
     const srcFolder = './src';
     const cssFilesToRead = options.build === 'ie' ? [] : importFrom;
-    const postcssPlugins =
-      options.build === 'ie' ? [presetEnv(cssnextObject)] : [postcssCustomMedia(customMediaOptions)];
+    const postcssPlugins = [];
+
+    switch (options.build) {
+      case 'ie':
+        postcssPlugins.push(presetEnv(cssnextObject));
+        break;
+      case 'watch':
+        postcssPlugins.push(postcssCustomMedia(customMediaOptions));
+        break;
+      default:
+        break;
+    }
     const fileTypeToFind = '.css';
 
     /**
@@ -141,12 +148,7 @@ const buildCSS = async args => {
             return true;
           });
           console.log(version);
-          if (options.watching) {
-            console.log(' ... write tempversionBuild', tempversionBuild);
-            fs.writeFile(TEMPVERSION, tempversionBuild, () => {
-              return true;
-            });
-          }
+
           console.log(`postcss PRODUCTION ready -> ${outputFile}`);
         } catch (err) {
           throw err;
