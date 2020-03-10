@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.0 built on 10.3.2020 11.14.12 on branch "button-focus" at revision "915ad25112348c0d4d825a231a140c1c0a29a730" */
+/** eb-designsystem.css version 0.1.0 built on 10.3.2020 11.21.07 on branch "button-focus" at revision "7f2b3c3222814127ac66f379941582de4547c43a" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -334,6 +334,7 @@ custom media queries is the only allowed media queries
   background: var(--color--button-default);
   border: 1px solid var(--color--button-default);
   color: var(--fgcolor--button-default);
+  outline: none;
 }
 
 .button:active,
@@ -350,6 +351,7 @@ custom media queries is the only allowed media queries
 .button.button--primary:focus {
   background: var(--color--button-primary);
   color: var(--fgcolor--button-primary);
+  outline: none;
 }
 
 .button.button--secondary {
@@ -361,6 +363,7 @@ custom media queries is the only allowed media queries
 .button.button--secondary:focus {
   background: var(--color--button-secondary);
   color: var(--fgcolor--button-secondary);
+  outline: none;
 }
 
 .button.button--accept {
@@ -372,6 +375,7 @@ custom media queries is the only allowed media queries
 .button.button--accept:focus {
   background: var(--color--button-accept);
   color: var(--fgcolor--button-accept);
+  outline: none;
 }
 
 .button.button--cancel {
@@ -383,6 +387,7 @@ custom media queries is the only allowed media queries
 .button.button--cancel:focus {
   background: var(--color--button-cancel);
   color: var(--fgcolor--button-cancel);
+  outline: none;
 }
 
 .button:hover,
@@ -390,6 +395,7 @@ custom media queries is the only allowed media queries
 .button--solid {
   background: var(--color--button-default);
   color: var(--fgcolor--button-default);
+  outline: none;
 }
 
 .button--solid:hover,
@@ -397,6 +403,7 @@ custom media queries is the only allowed media queries
   background: none;
   border: 1px solid var(--color--button-default);
   color: var(--color--button-default);
+  outline: none;
 }
 
 .button--solid.button--primary {
@@ -410,6 +417,7 @@ custom media queries is the only allowed media queries
   background: var(--color--white);
   border-color: var(--color--button-primary);
   color: var(--color--button-primary);
+  outline: none;
 }
 
 .button--solid.button--secondary {
@@ -423,6 +431,7 @@ custom media queries is the only allowed media queries
   background: var(--color--white);
   border-color: var(--color--button-secondary);
   color: var(--color--button-secondary);
+  outline: none;
 }
 
 .button--solid.button--accept {
@@ -436,6 +445,7 @@ custom media queries is the only allowed media queries
   background: var(--color--white);
   border-color: var(--color--button-accept);
   color: var(--color--button-accept);
+  outline: none;
 }
 
 .button--solid.button--cancel {
@@ -449,6 +459,7 @@ custom media queries is the only allowed media queries
   background: var(--color--white);
   border-color: var(--color--button-cancel);
   color: var(--color--button-cancel);
+  outline: none;
 }
 
 .button .fa {
@@ -480,6 +491,7 @@ custom media queries is the only allowed media queries
   background: none;
   border: 0;
   color: inherit;
+  outline: none;
 }
 :root {
   --card-border-color: var(--color--graa7);
