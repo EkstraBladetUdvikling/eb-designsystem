@@ -36,6 +36,7 @@
   background: var(--color--button-default);
   border: 1px solid var(--color--button-default);
   color: var(--fgcolor--button-default);
+  outline: none;
 }
 
 .button:active,
@@ -52,6 +53,7 @@
 .button.button--primary:focus {
   background: var(--color--button-primary);
   color: var(--fgcolor--button-primary);
+  outline: none;
 }
 
 .button.button--secondary {
@@ -63,6 +65,7 @@
 .button.button--secondary:focus {
   background: var(--color--button-secondary);
   color: var(--fgcolor--button-secondary);
+  outline: none;
 }
 
 .button.button--accept {
@@ -74,6 +77,7 @@
 .button.button--accept:focus {
   background: var(--color--button-accept);
   color: var(--fgcolor--button-accept);
+  outline: none;
 }
 
 .button.button--cancel {
@@ -85,6 +89,7 @@
 .button.button--cancel:focus {
   background: var(--color--button-cancel);
   color: var(--fgcolor--button-cancel);
+  outline: none;
 }
 
 .button:hover,
@@ -92,6 +97,7 @@
 .button--solid {
   background: var(--color--button-default);
   color: var(--fgcolor--button-default);
+  outline: none;
 }
 
 .button--solid:hover,
@@ -99,6 +105,7 @@
   background: none;
   border: 1px solid var(--color--button-default);
   color: var(--color--button-default);
+  outline: none;
 }
 
 .button--solid.button--primary {
@@ -112,6 +119,7 @@
   background: var(--color--white);
   border-color: var(--color--button-primary);
   color: var(--color--button-primary);
+  outline: none;
 }
 
 .button--solid.button--secondary {
@@ -125,6 +133,7 @@
   background: var(--color--white);
   border-color: var(--color--button-secondary);
   color: var(--color--button-secondary);
+  outline: none;
 }
 
 .button--solid.button--accept {
@@ -138,6 +147,7 @@
   background: var(--color--white);
   border-color: var(--color--button-accept);
   color: var(--color--button-accept);
+  outline: none;
 }
 
 .button--solid.button--cancel {
@@ -151,6 +161,7 @@
   background: var(--color--white);
   border-color: var(--color--button-cancel);
   color: var(--color--button-cancel);
+  outline: none;
 }
 
 .button .fa {
@@ -182,4 +193,5 @@
   background: none;
   border: 0;
   color: inherit;
+  outline: none;
 }
