@@ -1,0 +1,51 @@
+/**
+* Base font-size in browsers is 16px
+*/
+:root {
+  --fs-rem-large: 1.125rem; /* 18px */
+  --fs-rem-medium: 1rem; /* 16px */
+  --fs-rem-small: .875rem; /* 14px */
+  --fs-rem-xlarge: 1.25rem; /* 20px */
+  --fs-rem-xsmall: .75rem; /* 12px */
+  --fs-rem-xxlarge: 1.875rem; /* 30px */
+  --fs-rem-xxsmall: .625rem; /* 10px */
+  --fs-rem-xxxlarge: 2.25rem; /* 36px */
+  --fs-rem-xxxxlarge: 3.125rem; /* 50px */
+}
+
+
+.fontsize-xxsmall {
+  font-size: var(--fs-rem-xxsmall);
+}
+
+.fontsize-xsmall {
+  font-size: var(--fs-rem-xsmall);
+}
+
+.fontsize-small {
+  font-size: var(--fs-rem-small);
+}
+
+.fontsize-medium {
+  font-size: var(--fs-rem-medium);
+}
+
+.fontsize-large {
+  font-size: var(--fs-rem-large);
+}
+
+.fontsize-xlarge {
+  font-size: var(--fs-rem-xlarge);
+}
+
+.fontsize-xxlarge {
+  font-size: var(--fs-rem-xxlarge);
+}
+
+.fontsize-xxxlarge {
+  font-size: var(--fs-rem-xxxlarge);
+}
+
+.fontsize-xxxxlarge {
+  font-size: var(--fs-rem-xxxxlarge);
+}
