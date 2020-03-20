@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.2 built on 10.3.2020 11.24.59 on branch "queries" at revision "2c8f39d435bae3695ece05f152f7b6c2518e3114" */
+/** eb-designsystem.css version 0.1.2 built on 20.3.2020 14.06.32 on branch "fonts" at revision "a2d6908c46d64e3308afe7fbaee75134152d010a" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -363,7 +363,7 @@ custom media queries is the only allowed media queries
 }
 
 .button.button--primary:hover,
-.button.button--primary:hover:not([disabled]),
+.button.button--primary:hover:not(:disabled),
 .button.button--primary:focus {
   background: var(--color--button-primary);
   color: var(--fgcolor--button-primary);
@@ -376,7 +376,7 @@ custom media queries is the only allowed media queries
 }
 
 .button.button--secondary:hover,
-.button.button--secondary:hover:not([disabled]),
+.button.button--secondary:hover:not(:disabled),
 .button.button--secondary:focus {
   background: var(--color--button-secondary);
   color: var(--fgcolor--button-secondary);
@@ -389,7 +389,7 @@ custom media queries is the only allowed media queries
 }
 
 .button.button--accept:hover,
-.button.button--accept:hover:not([disabled]),
+.button.button--accept:hover:not(:disabled),
 .button.button--accept:focus {
   background: var(--color--button-accept);
   color: var(--fgcolor--button-accept);
@@ -402,14 +402,14 @@ custom media queries is the only allowed media queries
 }
 
 .button.button--cancel:hover,
-.button.button--cancel:hover:not([disabled]),
+.button.button--cancel:hover:not(:disabled),
 .button.button--cancel:focus {
   background: var(--color--button-cancel);
   color: var(--fgcolor--button-cancel);
   outline: none;
 }
 
-.button:hover:not([disabled]),
+.button:hover:not(:disabled),
 .button:hover,
 .button:focus,
 .button--solid {
@@ -419,7 +419,7 @@ custom media queries is the only allowed media queries
 }
 
 .button--solid:hover,
-.button--solid:hover:not([disabled]),
+.button--solid:hover:not(:disabled),
 .button--solid:focus {
   background: none;
   border: 1px solid var(--color--button-default);
@@ -434,7 +434,7 @@ custom media queries is the only allowed media queries
 }
 
 .button--solid.button--primary:hover,
-.button--solid.button--primary:hover:not([disabled]),
+.button--solid.button--primary:hover:not(:disabled),
 .button--solid.button--primary:focus {
   background: var(--color--white);
   border-color: var(--color--button-primary);
@@ -449,7 +449,7 @@ custom media queries is the only allowed media queries
 }
 
 .button--solid.button--secondary:hover,
-.button--solid.button--secondary:hover:not([disabled]),
+.button--solid.button--secondary:hover:not(:disabled),
 .button--solid.button--secondary:focus {
   background: var(--color--white);
   border-color: var(--color--button-secondary);
@@ -464,7 +464,7 @@ custom media queries is the only allowed media queries
 }
 
 .button--solid.button--accept:hover,
-.button--solid.button--accept:hover:not([disabled]),
+.button--solid.button--accept:hover:not(:disabled),
 .button--solid.button--accept:focus {
   background: var(--color--white);
   border-color: var(--color--button-accept);
@@ -479,7 +479,7 @@ custom media queries is the only allowed media queries
 }
 
 .button--solid.button--cancel:hover,
-.button--solid.button--cancel:hover:not([disabled]),
+.button--solid.button--cancel:hover:not(:disabled),
 .button--solid.button--cancel:focus {
   background: var(--color--white);
   border-color: var(--color--button-cancel);
@@ -512,7 +512,7 @@ custom media queries is the only allowed media queries
 
 .button--link,
 .button--link:hover,
-.button--link:hover:not([disabled]),
+.button--link:hover:not(:disabled),
 .button--link:focus {
   background: none;
   border: 0;
@@ -1110,6 +1110,56 @@ a.card:focus {
 
 .ff-secondary {
   font-family: var(--fontfamily--secondary);
+}
+/**
+* Base font-size in browsers is 16px
+*/
+:root {
+  --fs-rem-large: 1.125rem; /* 18px */
+  --fs-rem-medium: 1rem; /* 16px */
+  --fs-rem-small: .875rem; /* 14px */
+  --fs-rem-xlarge: 1.25rem; /* 20px */
+  --fs-rem-xsmall: .75rem; /* 12px */
+  --fs-rem-xxlarge: 1.875rem; /* 30px */
+  --fs-rem-xxsmall: .625rem; /* 10px */
+  --fs-rem-xxxlarge: 2.25rem; /* 36px */
+  --fs-rem-xxxxlarge: 3.125rem; /* 50px */
+}
+
+.fontsize-xxsmall {
+  font-size: var(--fs-rem-xxsmall);
+}
+
+.fontsize-xsmall {
+  font-size: var(--fs-rem-xsmall);
+}
+
+.fontsize-small {
+  font-size: var(--fs-rem-small);
+}
+
+.fontsize-medium {
+  font-size: var(--fs-rem-medium);
+}
+
+.fontsize-large {
+  font-size: var(--fs-rem-large);
+}
+
+.fontsize-xlarge {
+  font-size: var(--fs-rem-xlarge);
+}
+
+.fontsize-xxlarge {
+  font-size: var(--fs-rem-xxlarge);
+}
+
+.fontsize-xxxlarge {
+  font-size: var(--fs-rem-xxxlarge);
+}
+
+.fontsize-xxxxlarge {
+  font-size: var(--fs-rem-xxxxlarge);
 }
 :root {
   --grid-large: 910px;
