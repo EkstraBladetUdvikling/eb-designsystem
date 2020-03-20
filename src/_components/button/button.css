@@ -56,7 +56,7 @@
 }
 
 .button.button--primary:hover,
-.button.button--primary:hover:not([disabled]),
+.button.button--primary:hover:not(:disabled),
 .button.button--primary:focus {
   background: var(--color--button-primary);
   color: var(--fgcolor--button-primary);
@@ -69,7 +69,7 @@
 }
 
 .button.button--secondary:hover,
-.button.button--secondary:hover:not([disabled]),
+.button.button--secondary:hover:not(:disabled),
 .button.button--secondary:focus {
   background: var(--color--button-secondary);
   color: var(--fgcolor--button-secondary);
@@ -82,7 +82,7 @@
 }
 
 .button.button--accept:hover,
-.button.button--accept:hover:not([disabled]),
+.button.button--accept:hover:not(:disabled),
 .button.button--accept:focus {
   background: var(--color--button-accept);
   color: var(--fgcolor--button-accept);
@@ -95,14 +95,14 @@
 }
 
 .button.button--cancel:hover,
-.button.button--cancel:hover:not([disabled]),
+.button.button--cancel:hover:not(:disabled),
 .button.button--cancel:focus {
   background: var(--color--button-cancel);
   color: var(--fgcolor--button-cancel);
   outline: none;
 }
 
-.button:hover:not([disabled]),
+.button:hover:not(:disabled),
 .button:hover,
 .button:focus,
 .button--solid {
@@ -112,7 +112,7 @@
 }
 
 .button--solid:hover,
-.button--solid:hover:not([disabled]),
+.button--solid:hover:not(:disabled),
 .button--solid:focus {
   background: none;
   border: 1px solid var(--color--button-default);
@@ -127,7 +127,7 @@
 }
 
 .button--solid.button--primary:hover,
-.button--solid.button--primary:hover:not([disabled]),
+.button--solid.button--primary:hover:not(:disabled),
 .button--solid.button--primary:focus {
   background: var(--color--white);
   border-color: var(--color--button-primary);
@@ -142,7 +142,7 @@
 }
 
 .button--solid.button--secondary:hover,
-.button--solid.button--secondary:hover:not([disabled]),
+.button--solid.button--secondary:hover:not(:disabled),
 .button--solid.button--secondary:focus {
   background: var(--color--white);
   border-color: var(--color--button-secondary);
@@ -157,7 +157,7 @@
 }
 
 .button--solid.button--accept:hover,
-.button--solid.button--accept:hover:not([disabled]),
+.button--solid.button--accept:hover:not(:disabled),
 .button--solid.button--accept:focus {
   background: var(--color--white);
   border-color: var(--color--button-accept);
@@ -172,7 +172,7 @@
 }
 
 .button--solid.button--cancel:hover,
-.button--solid.button--cancel:hover:not([disabled]),
+.button--solid.button--cancel:hover:not(:disabled),
 .button--solid.button--cancel:focus {
   background: var(--color--white);
   border-color: var(--color--button-cancel);
@@ -205,7 +205,7 @@
 
 .button--link,
 .button--link:hover,
-.button--link:hover:not([disabled]),
+.button--link:hover:not(:disabled),
 .button--link:focus {
   background: none;
   border: 0;

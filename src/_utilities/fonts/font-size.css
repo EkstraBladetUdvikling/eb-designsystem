@@ -13,7 +13,6 @@
   --fs-rem-xxxxlarge: 3.125rem; /* 50px */
 }
 
-
 .fontsize-xxsmall {
   font-size: var(--fs-rem-xxsmall);
 }
