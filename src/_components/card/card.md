@@ -256,11 +256,10 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
         </div>
         <div class="card-content">
           <div class="card-meta flex flex-justify--between">
-              <div class="card-icon bg--white" style="width: 65px;
-    padding: 2px 6px; border-radius: 5px;">
-                <img class="card-image" src="https://side6.dk/assets/images/side6_FS.png">
-              </div>
-              <i class="card-icon fa fal fa-external-link-alt"></i>
+            <div class="card-badge bg--white">
+              <img class="card-image" src="https://side6.dk/assets/images/side6_FS.png" style="width:65px;">
+            </div>
+            <i class="card-icon fa fal fa-external-link-alt"></i>
           </div>
           <h3 class="card-title card-title--large">Donec sed tincidunt ex, vestibulum congue arcu</h3>
         </div>
@@ -329,9 +328,8 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
     </div>
     <div class="card-content">
       <div class="card-meta flex flex-justify--between">
-          <div class="card-icon bg--white" style="width: 65px;
-padding: 2px 6px; border-radius: 5px;">
-            <img class="card-image" src="https://side6.dk/assets/images/side6_FS.png">
+          <div class="card-badge bg--white">
+            <img class="card-image" src="https://side6.dk/assets/images/side6_FS.png" style="width:65px;">
           </div>
           <i class="card-icon fa fal fa-external-link-alt"></i>
       </div>

@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.2 built on 23.3.2020 17.18.55 on branch "fonts" at revision "b63e8494be06f28043024a8307c33b4fe0bfbbfb" */
+/** eb-designsystem.css version 0.1.2 built on 3.4.2020 10.53.17 on branch "badge" at revision "ca91f34bc5ec5e41edf14f286019777046675d86" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -622,6 +622,12 @@ a.card:focus {
 .card-meta .card-icon[class*="fa-"] {
   font-size: var(--card-fs-icon);
   padding-top: 2px;
+}
+
+.card-meta .card-badge {
+  border-radius: 5px;
+  padding: 3px 5px;
+  text-transform: uppercase;
 }
 
 .card-title:not([class*="fs-"]) {

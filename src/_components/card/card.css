@@ -103,6 +103,12 @@ a.card:focus {
   padding-top: 2px;
 }
 
+.card-meta .card-badge {
+  border-radius: 5px;
+  padding: 3px 5px;
+  text-transform: uppercase;
+}
+
 .card-title:not([class*="fs-"]) {
   font-size: var(--card-fs-title);
   font-weight: 700;

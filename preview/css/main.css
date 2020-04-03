@@ -720,6 +720,7 @@ html,button,input,select,textarea{font-family:Arial,sans-serif}
 .fs-xxlarge{font-size:30px}
 :root{--fs-xxxlarge: 50px}
 .fs-xxxlarge{font-size:50px}
+body{font-size:16px}
 h1{font-size:50px}
 h2{font-size:30px}
 h3{font-size:20px}
