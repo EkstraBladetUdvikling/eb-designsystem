@@ -26,6 +26,7 @@
     "postcss": "^7.0.27",
     "postcss-cli": "^7.1.0",
     "postcss-custom-media": "^7.0.8",
+    "postcss-custom-properties": "^9.1.1",
     "postcss-discard-duplicates": "^4.0.2",
     "postcss-discard-unused": "^4.0.1",
     "postcss-load-config": "^2.1.0",
