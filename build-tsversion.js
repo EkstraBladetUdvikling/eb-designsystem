@@ -40,20 +40,11 @@ const getOptions = (args) => {
   return options;
 };
 
-const templateSnippet = {
-  prefix: 'ds-',
-  body: ['fontsize-xxsmall'],
-  description: 'fontsize xxsmall',
-};
-
 const convertSelector = (selector) => {
   const splitSelector = selector.split('.');
   const noDot = splitSelector[splitSelector.length - 1].split(':')[0];
   const sel = noDot.indexOf('-') !== -1 ? noDot.replace(/--/g, '-').replace(/-/g, ' ') : noDot;
   let hasDependency = null;
-  if (noDot.indexOf('--solid') !== -1) {
-    console.log(sel, noDot, 'this has dependecy to', splitSelector[1]);
-  }
   if (noDot.indexOf('--') !== -1) {
     hasDependency = noDot === splitSelector[1] ? noDot.split('--')[0] : splitSelector[1];
   }
@@ -61,15 +52,24 @@ const convertSelector = (selector) => {
   if (splitSelector.length > 2) {
     isExtending = splitSelector[1];
   }
-  return { hasDependency, isExtending, noDot, snippetKey: `designsystem ${sel}` };
+
+  const snippetKeyHTMLClass = hasDependency ? hasDependency : isExtending ? isExtending : noDot;
+  const snippetKeyHTML = `designsystem ${snippetKeyHTMLClass} HTML`;
+  const snippetKey = `designsystem ${sel}`;
+  // console.log('sni', snippetKeyHTML);
+  return { hasDependency, isExtending, noDot, snippetKey, snippetKeyHTML };
 };
 
 const snippetDocument = {};
-const dependecyMap = {};
+const snippetDocumentHTML = {};
+
+const COMMENTTEMPLATE = 'template:';
+const COMMENTDESCRIPTION = 'description:';
+const DEPENDENCYPREFIX = `This can be extended with:`;
+
 const tsVersionCreator = postcss.plugin('tsVersionCreator', () => {
   return (root, _result) => {
     root.walkRules((rule) => {
-      console.log('------------');
       const selectors = rule.selector.split(',');
       selectors.forEach((sel) => {
         const curSel = sel.trim();
@@ -83,10 +83,10 @@ const tsVersionCreator = postcss.plugin('tsVersionCreator', () => {
 
             snippetDocument[snippetKey].description = descrip;
           } else {
-            const { hasDependency, isExtending, noDot, snippetKey } = convertSelector(curSel);
+            const { hasDependency, isExtending, noDot, snippetKey, snippetKeyHTML } = convertSelector(curSel);
 
             snippetDocument[snippetKey] = snippetDocument[snippetKey] || {};
-            snippetDocument[snippetKey].prefix = `${templateSnippet.prefix}${noDot}`;
+            snippetDocument[snippetKey].prefix = `ds-${noDot}`;
             snippetDocument[snippetKey].body = [noDot];
             let prefix = '';
             if (hasDependency) {
@@ -104,6 +104,44 @@ const tsVersionCreator = postcss.plugin('tsVersionCreator', () => {
               : `${prefix}{\n ${desc.join('')} }`;
 
             snippetDocument[snippetKey].description = descrip;
+
+            rule.walkComments((comment) => {
+              const specialComments = comment.text.split('@');
+              const template = specialComments.find((specialComment) => specialComment.indexOf(COMMENTTEMPLATE) === 0);
+              if (template) {
+                snippetDocumentHTML[snippetKeyHTML] = snippetDocumentHTML[snippetKeyHTML] || {};
+
+                snippetDocumentHTML[snippetKeyHTML] = {
+                  prefix: `<ds-${noDot} />`,
+                  body: [template.split(COMMENTTEMPLATE)[1].trim()],
+                };
+              }
+              const description = specialComments.find(
+                (specialComment) => specialComment.indexOf(COMMENTDESCRIPTION) === 0
+              );
+              if (description) {
+                const cleanDescription = description.split(COMMENTDESCRIPTION)[1].trim();
+                if (snippetDocumentHTML[snippetKeyHTML]) {
+                  snippetDocumentHTML[snippetKeyHTML].description = `${cleanDescription}`;
+                }
+                snippetDocument[
+                  snippetKey
+                ].description = `${cleanDescription}\n ${snippetDocument[snippetKey].description}`;
+              }
+            });
+            if (hasDependency && snippetDocumentHTML[snippetKeyHTML]) {
+              const currentDescript = snippetDocumentHTML[snippetKeyHTML].description;
+
+              if (!currentDescript) {
+                snippetDocumentHTML[snippetKeyHTML].description = `.${noDot}`;
+              } else if (currentDescript.indexOf(DEPENDENCYPREFIX) !== -1) {
+                snippetDocumentHTML[snippetKeyHTML].description = `${currentDescript}\n .${noDot}`;
+              } else {
+                snippetDocumentHTML[
+                  snippetKeyHTML
+                ].description = `${currentDescript}\n ${DEPENDENCYPREFIX}\n .${noDot}`;
+              }
+            }
           }
         }
       });
@@ -133,8 +171,8 @@ const buildCSS = async (args) => {
 
     const readFileContent = [];
 
-    cssFilesToRead.length = 0;
-    cssFilesToRead.push('./src/_components/button/button.css');
+    // cssFilesToRead.length = 0;
+    // cssFilesToRead.push('./src/_components/button/button.css', './src/_components/form-elements/form-elements.css');
 
     cssFilesToRead.forEach((fileName) => {
       readFileContent.push(fs.readFileSync(fileName));
@@ -148,9 +186,17 @@ const buildCSS = async (args) => {
       .then((_result) => {
         try {
           fs.writeFile(`./${outFolder}/eb-designsystem-snippets.json`, JSON.stringify(snippetDocument, null, 2), () => {
-            console.log(`snipper file created`);
+            console.log(`CSS Class snippet file created`);
             return true;
           });
+          fs.writeFile(
+            `./${outFolder}/eb-designsystem-snippets-html.json`,
+            JSON.stringify(snippetDocumentHTML, null, 2),
+            () => {
+              console.log(`HTML snippet file created`);
+              return true;
+            }
+          );
         } catch (err) {
           throw err;
         }

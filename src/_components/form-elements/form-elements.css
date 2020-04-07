@@ -18,6 +18,14 @@
 }
 
 .form-input {
+  /**
+  @description Form input, dependent on the surrounding form-element
+  @template:
+  <div class="form-element">
+    <input type="text" class="form-input form-input--text" id="formInput" placeholder="$1" />
+    <label for="formInput" class="form-label">$1</label>
+  </div>
+  */
   border: 1px solid;
   border-radius: var(--form-border-radius);
   box-sizing: border-box;
