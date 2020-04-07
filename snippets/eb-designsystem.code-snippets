@@ -447,63 +447,63 @@
     "body": [
       "fontsize-xxsmall"
     ],
-    "description": "{\n font-size: .625rem;\n }"
+    "description": "Matches 10px\n {\n font-size: .625rem;\n }"
   },
   "designsystem fontsize xsmall": {
     "prefix": "ds-fontsize-xsmall",
     "body": [
       "fontsize-xsmall"
     ],
-    "description": "{\n font-size: .75rem;\n }"
+    "description": "Matches 12px\n {\n font-size: .75rem;\n }"
   },
   "designsystem fontsize small": {
     "prefix": "ds-fontsize-small",
     "body": [
       "fontsize-small"
     ],
-    "description": "{\n font-size: .875rem;\n }"
+    "description": "Matches 14px\n {\n font-size: .875rem;\n }"
   },
   "designsystem fontsize medium": {
     "prefix": "ds-fontsize-medium",
     "body": [
       "fontsize-medium"
     ],
-    "description": "{\n font-size: 1rem;\n }"
+    "description": "Matches 16px\n {\n font-size: 1rem;\n }"
   },
   "designsystem fontsize large": {
     "prefix": "ds-fontsize-large",
     "body": [
       "fontsize-large"
     ],
-    "description": "{\n font-size: 1.125rem;\n }"
+    "description": "Matches 18px\n {\n font-size: 1.125rem;\n }"
   },
   "designsystem fontsize xlarge": {
     "prefix": "ds-fontsize-xlarge",
     "body": [
       "fontsize-xlarge"
     ],
-    "description": "{\n font-size: 1.25rem;\n }"
+    "description": "Matches 20px\n {\n font-size: 1.25rem;\n }"
   },
   "designsystem fontsize xxlarge": {
     "prefix": "ds-fontsize-xxlarge",
     "body": [
       "fontsize-xxlarge"
     ],
-    "description": "{\n font-size: 1.875rem;\n }"
+    "description": "Matches 30px\n {\n font-size: 1.875rem;\n }"
   },
   "designsystem fontsize xxxlarge": {
     "prefix": "ds-fontsize-xxxlarge",
     "body": [
       "fontsize-xxxlarge"
     ],
-    "description": "{\n font-size: 2.25rem;\n }"
+    "description": "Matches 36px\n {\n font-size: 2.25rem;\n }"
   },
   "designsystem fontsize xxxxlarge": {
     "prefix": "ds-fontsize-xxxxlarge",
     "body": [
       "fontsize-xxxxlarge"
     ],
-    "description": "{\n font-size: 3.125rem;\n }"
+    "description": "Matches 50px\n {\n font-size: 3.125rem;\n }"
   },
   "designsystem grid width small": {
     "prefix": "ds-grid-width--small",
