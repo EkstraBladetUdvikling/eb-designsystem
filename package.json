@@ -1,6 +1,6 @@
 {
   "name": "eb-designsystem",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "index.js",
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
@@ -16,9 +16,8 @@
     "build:watcher": "yarn build:css --watcher && yarn build:preview",
     "dist": "yarn build:css",
     "dist:move": "yarn dist && yarn move_to_eb",
-    "install-css": "yarn cpx \"./snippets/eb-designsystem.code-snippets\" \"../ekstrabladet/ekstrabladet-publication/src/main/.vscode\"",
-    "install-html": "yarn cpx \"./snippets/eb-designsystem-html.code-snippets\" \"../ekstrabladet/ekstrabladet-publication/src/main/.vscode\"",
-    "install-snippets": "yarn install-css && yarn install-html",
+    "installsnippets": "node install-snippets",
+    "installsnippets:eb": "node install-snippets ../ekstrabladet/ekstrabladet-publication/src/main/.vscode",
     "move_to_eb": "yarn cpx \"./dist/eb-designsystem.css\" \"../ekstrabladet/ekstrabladet-publication/src/main/frontend/css-main/main/css\"",
     "start": "yarn build:watcher && yarn build:preview && yarn build:watch & bundle exec jekyll serve --livereload"
   },
