@@ -1,4 +1,11 @@
 .screen-reader-text {
+  /**
+    @description: Accessibility element; This element is hidden, and will only be shown on interaction
+    @template:
+    <a href="$2" class="screen-reader-text">
+      $1
+    </a>
+  */
   position: absolute;
 
   border: 0;
