@@ -11,6 +11,7 @@
     "build:nonie": "node build-css.js --nonie",
     "build:ie": "node build-css.js --ie",
     "build:preview": "postcss preview/css/_index.css -o preview/css/main.css --no-map -u postcss-import",
+    "build:snippets": "node build-tsversion",
     "build:watch": "onchange 'src/**/*.css' -- yarn build:watcher & onchange 'preview/**/{_*.css,html}' -- yarn build:preview",
     "build:watcher": "yarn build:css --watcher && yarn build:preview",
     "dist": "yarn build:css",

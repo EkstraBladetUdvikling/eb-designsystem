@@ -56,7 +56,7 @@ const convertSelector = (selector) => {
   const snippetKeyHTMLClass = hasDependency ? hasDependency : isExtending ? isExtending : noDot;
   const snippetKeyHTML = `designsystem ${snippetKeyHTMLClass} HTML`;
   const snippetKey = `designsystem ${sel}`;
-  // console.log('sni', snippetKeyHTML);
+
   return { hasDependency, isExtending, noDot, snippetKey, snippetKeyHTML };
 };
 
@@ -158,7 +158,7 @@ const buildCSS = async (args) => {
     const cssFilesToRead = options.build === 'ie' ? [] : importFrom;
 
     const fileTypeToFind = '.css';
-    console.log('options.build', options.build);
+
     /**
      * Find all css files in src folder
      */
@@ -170,12 +170,11 @@ const buildCSS = async (args) => {
     }
 
     const readFileContent = [];
-
     cssFilesToRead.forEach((fileName) => {
       readFileContent.push(fs.readFileSync(fileName));
     });
-    const css = readFileContent.join('');
 
+    const css = readFileContent.join('');
     await postcss([customProperties(cssnextObject), tsVersionCreator])
       .process(css, {
         from: 'undefined',
