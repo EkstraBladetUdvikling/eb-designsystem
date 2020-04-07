@@ -34,6 +34,19 @@ yarn install
 
 ## Snippets
 
+There is two VS Code snippet files outputtet from this project.
+
+- eb-designsystem.code-snippets
+- - Contains snippets for all css classes, outputs the class to be used on an HTML element
+- eb-designsystem-html.code-snippets
+- - Contains HTML snippets for chosen components, outputs the HTML for correct usage
+
+To generate an updated version of snippets run
+
+```yarn
+yarn build:snippets
+```
+
 ### Installing snippets
 
 To use generated Visual Studio Code snippets for a project, make sure the Visual Studio Code configuration directory is present (%PROJECTROOT%/.vscode).

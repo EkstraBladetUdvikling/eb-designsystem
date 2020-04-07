@@ -6,7 +6,7 @@
   "author": "tegner <jesper.h.tegner@jppol.dk>",
   "license": "MIT",
   "scripts": {
-    "build": "yarn build:css && yarn build:preview",
+    "build": "yarn build:css && yarn build:preview && yarn build:snippets",
     "build:css": "node build-css.js",
     "build:nonie": "node build-css.js --nonie",
     "build:ie": "node build-css.js --ie",
