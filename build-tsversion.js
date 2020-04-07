@@ -171,9 +171,6 @@ const buildCSS = async (args) => {
 
     const readFileContent = [];
 
-    // cssFilesToRead.length = 0;
-    // cssFilesToRead.push('./src/_components/button/button.css', './src/_components/form-elements/form-elements.css');
-
     cssFilesToRead.forEach((fileName) => {
       readFileContent.push(fs.readFileSync(fileName));
     });
@@ -185,12 +182,12 @@ const buildCSS = async (args) => {
       })
       .then((_result) => {
         try {
-          fs.writeFile(`./${outFolder}/eb-designsystem-snippets.json`, JSON.stringify(snippetDocument, null, 2), () => {
+          fs.writeFile(`./${outFolder}/eb-designsystem.code-snippets`, JSON.stringify(snippetDocument, null, 2), () => {
             console.log(`CSS Class snippet file created`);
             return true;
           });
           fs.writeFile(
-            `./${outFolder}/eb-designsystem-snippets-html.json`,
+            `./${outFolder}/eb-designsystem-html.code-snippets`,
             JSON.stringify(snippetDocumentHTML, null, 2),
             () => {
               console.log(`HTML snippet file created`);

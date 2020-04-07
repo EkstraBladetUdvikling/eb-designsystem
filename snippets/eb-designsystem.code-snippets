@@ -139,7 +139,7 @@
     "body": [
       "form-input"
     ],
-    "description": "{\n border: 1px solid;\nborder-radius: 5px;\nbox-sizing: border-box;\nline-height: 30px;\npadding: 5px;\nheight: 30px;\n }"
+    "description": "Form input, dependent on the surrounding form-element\n {\n border: 1px solid;\nborder-radius: 5px;\nbox-sizing: border-box;\nline-height: 30px;\npadding: 5px;\nheight: 30px;\n }"
   },
   "designsystem form element icon": {
     "prefix": "ds-form-element--icon",
@@ -293,7 +293,7 @@
     "body": [
       "screen-reader-text"
     ],
-    "description": "{\n position: absolute;\nborder: 0;\nclip: rect(0 0 0 0);\nmargin: 0;\noverflow: hidden;\npadding: 0;\nwidth: 1px;\nheight: 1px;\n }\n Has pseudo styling :hover\n Has pseudo styling :active\n Has pseudo styling :focus"
+    "description": "Accessibility element; This element is hidden, and will only be shown on interaction\n {\n position: absolute;\nborder: 0;\nclip: rect(0 0 0 0);\nmargin: 0;\noverflow: hidden;\npadding: 0;\nwidth: 1px;\nheight: 1px;\n }\n Has pseudo styling :hover\n Has pseudo styling :active\n Has pseudo styling :focus"
   },
   "designsystem flex": {
     "prefix": "ds-flex",

@@ -11,6 +11,13 @@
     "body": [
       "<div class=\"form-element\">\n    <input type=\"text\" class=\"form-input form-input--text\" id=\"formInput\" placeholder=\"$1\" />\n    <label for=\"formInput\" class=\"form-label\">$1</label>\n  </div>"
     ],
-    "description": ".form-input--icon"
+    "description": "Form input, dependent on the surrounding form-element\n This can be extended with:\n .form-input--icon"
+  },
+  "designsystem screen-reader-text HTML": {
+    "prefix": "<ds-screen-reader-text />",
+    "body": [
+      "<a href=\"$2\" class=\"screen-reader-text\">\n      $1\n    </a>"
+    ],
+    "description": "Accessibility element; This element is hidden, and will only be shown on interaction"
   }
 }

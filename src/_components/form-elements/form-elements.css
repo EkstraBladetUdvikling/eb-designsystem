@@ -19,7 +19,7 @@
 
 .form-input {
   /**
-  @description Form input, dependent on the surrounding form-element
+  @description: Form input, dependent on the surrounding form-element
   @template:
   <div class="form-element">
     <input type="text" class="form-input form-input--text" id="formInput" placeholder="$1" />
