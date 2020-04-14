@@ -13,6 +13,7 @@ if (!runtimeArguments) {
 }
 
 if (runtimeArguments.indexOf('.vscode') === -1) {
+  console.log(`WARNING - The destionationfolder didn't have .vscode folder, it should be placed in the correct folder`);
 }
 
 const destinationfolder = runtimeArguments.indexOf('.vscode') === -1 ? `${runtimeArguments}/.vscode` : runtimeArguments;

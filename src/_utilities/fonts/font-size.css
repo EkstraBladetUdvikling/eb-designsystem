@@ -14,37 +14,48 @@
 }
 
 .fontsize-xxsmall {
+  /**
+  @description: Matches 10px
+  */
   font-size: var(--fs-rem-xxsmall);
 }
 
 .fontsize-xsmall {
+  /** @description: Matches 12px */
   font-size: var(--fs-rem-xsmall);
 }
 
 .fontsize-small {
+  /** @description: Matches 14px */
   font-size: var(--fs-rem-small);
 }
 
 .fontsize-medium {
+  /** @description: Matches 16px */
   font-size: var(--fs-rem-medium);
 }
 
 .fontsize-large {
+  /** @description: Matches 18px */
   font-size: var(--fs-rem-large);
 }
 
 .fontsize-xlarge {
+  /** @description: Matches 20px */
   font-size: var(--fs-rem-xlarge);
 }
 
 .fontsize-xxlarge {
+  /** @description: Matches 30px */
   font-size: var(--fs-rem-xxlarge);
 }
 
 .fontsize-xxxlarge {
+  /** @description: Matches 36px */
   font-size: var(--fs-rem-xxxlarge);
 }
 
 .fontsize-xxxxlarge {
+  /** @description: Matches 50px */
   font-size: var(--fs-rem-xxxxlarge);
 }
