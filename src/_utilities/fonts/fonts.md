@@ -55,16 +55,18 @@ Font-size er sat i rem for at understøtte brugerens font-size valg i browseren.
 
 rem værdien er udregnet i forhold til en basis font-size på 16px, hvilket er browser-standarden
 
+Der er både en _larger_ og en _smaller_ mulighed, der begge er relative til parent fontsize
+
 <div>
-  <p class="fontsize-xxsmall">fontsize-xxsmall = .625rem ~ 10px;</p>
-  <p class="fontsize-xsmall">fontsize-xsmall = .75rem ~ 12px;</p>
-  <p class="fontsize-small">fontsize-small = .875rem ~ 14px;</p>
-  <p class="fontsize-medium">fontsize-medium = 1rem ~ 16px;</p>
-  <p class="fontsize-large">fontsize-large = 1.125rem ~ 18px;</p>
-  <p class="fontsize-xlarge">fontsize-xlarge = 1.25rem ~ 20px;</p>
-  <p class="fontsize-xxlarge">fontsize-xxlarge = 1.875rem ~ 30px;</p>
-  <p class="fontsize-xxxlarge">fontsize-xxxlarge = 2.25rem ~ 36px;</p>
-  <p class="fontsize-xxxxlarge">fontsize-xxxxlarge = 3.125rem ~ 50px;</p>
+  <div class="fontsize-xxsmall padding-m--tb">fontsize-xxsmall = .625rem ~ 10px;<div class="fontsize-smaller">fontsize-smaller</div><div class="fontsize-larger">fontsize-larger</div></div>
+  <div class="fontsize-xsmall padding-m--tb">fontsize-xsmall = .75rem ~ 12px;<div class="fontsize-smaller">fontsize-smaller</div><div class="fontsize-larger">fontsize-larger</div></div>
+  <div class="fontsize-small padding-m--tb">fontsize-small = .875rem ~ 14px;<div class="fontsize-smaller">fontsize-smaller</div><div class="fontsize-larger">fontsize-larger</div></div>
+  <div class="fontsize-medium padding-m--tb">fontsize-medium = 1rem ~ 16px;<div class="fontsize-smaller">fontsize-smaller</div><div class="fontsize-larger">fontsize-larger</div></div>
+  <div class="fontsize-large padding-m--tb">fontsize-large = 1.125rem ~ 18px;<div class="fontsize-smaller">fontsize-smaller</div><div class="fontsize-larger">fontsize-larger</div></div>
+  <div class="fontsize-xlarge padding-m--tb">fontsize-xlarge = 1.25rem ~ 20px;<div class="fontsize-smaller">fontsize-smaller</div><div class="fontsize-larger">fontsize-larger</div></div>
+  <div class="fontsize-xxlarge padding-m--tb">fontsize-xxlarge = 1.875rem ~ 30px;<div class="fontsize-smaller">fontsize-smaller</div><div class="fontsize-larger">fontsize-larger</div></div>
+  <div class="fontsize-xxxlarge padding-m--tb">fontsize-xxxlarge = 2.25rem ~ 36px;<div class="fontsize-smaller">fontsize-smaller</div><div class="fontsize-larger">fontsize-larger</div></div>
+  <div class="fontsize-xxxxlarge padding-m--tb">fontsize-xxxxlarge = 3.125rem ~ 50px;<div class="fontsize-smaller">fontsize-smaller</div><div class="fontsize-larger">fontsize-larger</div></div>
 </div>
 
 ## Font-weight
