@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.3 built on 7.4.2020 15.35.33 on branch "master" at revision "6459151f5e3b5130d438e740d01e6ceb7bef91e5" */
+/** eb-designsystem.css version 0.1.4 built on 17.4.2020 08.22.33 on branch "fontweight" at revision "e9bf3894251e6f8622fb2427dabc38d2db0e30b2" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -1197,6 +1197,25 @@ a.card:focus {
 .fontsize-xxxxlarge {
   /** @description: Matches 50px */
   font-size: var(--fs-rem-xxxxlarge);
+}
+
+.fontsize-smaller {
+  font-size: 80%;
+}
+
+.fontsize-larger {
+  font-size: 120%;
+}
+.fontweight-normal {
+  font-weight: normal;
+}
+
+.fontweight-bold {
+  font-weight: bold;
+}
+
+.fontweight-bolder {
+  font-weight: bolder;
 }
 :root {
   --grid-large: 910px;

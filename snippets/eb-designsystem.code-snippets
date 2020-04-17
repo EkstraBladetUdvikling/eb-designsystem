@@ -505,6 +505,41 @@
     ],
     "description": "Matches 50px\n {\n font-size: 3.125rem;\n }"
   },
+  "designsystem fontsize smaller": {
+    "prefix": "ds-fontsize-smaller",
+    "body": [
+      "fontsize-smaller"
+    ],
+    "description": "{\n font-size: 80%;\n }"
+  },
+  "designsystem fontsize larger": {
+    "prefix": "ds-fontsize-larger",
+    "body": [
+      "fontsize-larger"
+    ],
+    "description": "{\n font-size: 120%;\n }"
+  },
+  "designsystem fontweight normal": {
+    "prefix": "ds-fontweight-normal",
+    "body": [
+      "fontweight-normal"
+    ],
+    "description": "{\n font-weight: normal;\n }"
+  },
+  "designsystem fontweight bold": {
+    "prefix": "ds-fontweight-bold",
+    "body": [
+      "fontweight-bold"
+    ],
+    "description": "{\n font-weight: bold;\n }"
+  },
+  "designsystem fontweight bolder": {
+    "prefix": "ds-fontweight-bolder",
+    "body": [
+      "fontweight-bolder"
+    ],
+    "description": "{\n font-weight: bolder;\n }"
+  },
   "designsystem grid width small": {
     "prefix": "ds-grid-width--small",
     "body": [

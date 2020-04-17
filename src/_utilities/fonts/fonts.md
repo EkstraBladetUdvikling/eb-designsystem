@@ -17,6 +17,7 @@ title: Fonts
     Ææ Øø Åå
 
     1234567890
+
   </p>
 </div>
 
@@ -38,6 +39,7 @@ title: Fonts
     Ææ Øø Åå
 
     1234567890
+
   </p>
 </div>
 
@@ -63,4 +65,12 @@ rem værdien er udregnet i forhold til en basis font-size på 16px, hvilket er b
   <p class="fontsize-xxlarge">fontsize-xxlarge = 1.875rem ~ 30px;</p>
   <p class="fontsize-xxxlarge">fontsize-xxxlarge = 2.25rem ~ 36px;</p>
   <p class="fontsize-xxxxlarge">fontsize-xxxxlarge = 3.125rem ~ 50px;</p>
+</div>
+
+## Font-weight
+
+<div>
+  <p class="fontweight-normal">fontweight-normal</p>
+  <p class="fontweight-bold">fontweight-bold</p>
+  <p class="fontweight-bolder">fontweight-bolder</p>
 </div>
