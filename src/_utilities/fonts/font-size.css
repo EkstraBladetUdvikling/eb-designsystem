@@ -59,3 +59,11 @@
   /** @description: Matches 50px */
   font-size: var(--fs-rem-xxxxlarge);
 }
+
+.fontsize-smaller {
+  font-size: 80%;
+}
+
+.fontsize-larger {
+  font-size: 120%;
+}

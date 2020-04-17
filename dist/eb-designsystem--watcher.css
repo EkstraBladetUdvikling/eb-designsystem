@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.1.2 built on 3.4.2020 10.51.31 on branch "badge" at revision "ca91f34bc5ec5e41edf14f286019777046675d86" */
+/** eb-designsystem--watcher.css version 0.1.4 built on 17.4.2020 08.29.42 on branch "fontweight" at revision "c86f87c3ad8b73c2d5040ee3de1366bfc7422fb1" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -321,6 +321,11 @@ custom media queries is the only allowed media queries
 }
 
 .button {
+  /**
+    @description: Standard button design
+    @template:
+    <button class="button">$1</button>
+  */
   align-items: center;
   background: var(--color--white);
   border: 1px solid var(--color--button-default);
@@ -689,6 +694,14 @@ a.card:focus {
 }
 
 .form-input {
+  /**
+  @description: Form input, dependent on the surrounding form-element
+  @template:
+  <div class="form-element">
+    <input type="text" class="form-input form-input--text" id="formInput" placeholder="$1" />
+    <label for="formInput" class="form-label">$1</label>
+  </div>
+  */
   border: 1px solid;
   border-radius: var(--form-border-radius);
   box-sizing: border-box;
@@ -1002,6 +1015,13 @@ a.card:focus {
   display: none;
 }
 .screen-reader-text {
+  /**
+    @description: Accessibility element; This element is hidden, and will only be shown on interaction
+    @template:
+    <a href="$2" class="screen-reader-text">
+      $1
+    </a>
+  */
   position: absolute;
 
   border: 0;
@@ -1133,39 +1153,69 @@ a.card:focus {
 }
 
 .fontsize-xxsmall {
+  /**
+  @description: Matches 10px
+  */
   font-size: var(--fs-rem-xxsmall);
 }
 
 .fontsize-xsmall {
+  /** @description: Matches 12px */
   font-size: var(--fs-rem-xsmall);
 }
 
 .fontsize-small {
+  /** @description: Matches 14px */
   font-size: var(--fs-rem-small);
 }
 
 .fontsize-medium {
+  /** @description: Matches 16px */
   font-size: var(--fs-rem-medium);
 }
 
 .fontsize-large {
+  /** @description: Matches 18px */
   font-size: var(--fs-rem-large);
 }
 
 .fontsize-xlarge {
+  /** @description: Matches 20px */
   font-size: var(--fs-rem-xlarge);
 }
 
 .fontsize-xxlarge {
+  /** @description: Matches 30px */
   font-size: var(--fs-rem-xxlarge);
 }
 
 .fontsize-xxxlarge {
+  /** @description: Matches 36px */
   font-size: var(--fs-rem-xxxlarge);
 }
 
 .fontsize-xxxxlarge {
+  /** @description: Matches 50px */
   font-size: var(--fs-rem-xxxxlarge);
+}
+
+.fontsize-smaller {
+  font-size: 80%;
+}
+
+.fontsize-larger {
+  font-size: 120%;
+}
+.fontweight-normal {
+  font-weight: normal;
+}
+
+.fontweight-bold {
+  font-weight: bold;
+}
+
+.fontweight-bolder {
+  font-weight: bolder;
 }
 :root {
   --grid-large: 910px;
