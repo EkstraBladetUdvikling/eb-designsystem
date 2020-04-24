@@ -102,7 +102,6 @@ Her de klasser som findes i systemet men ikke er med i overstående eksempler.
 <div class="flex flex-align--end">align-items er flex-end</div>
 <div class="flex flex-justify--end">justify-content er flex-end</div>
 <div class="flex flex-justify--center">justify-content er center</div>
-
 ```
 
 ### Wrap
