@@ -54,3 +54,30 @@ Centrér element vertikal i sin container. Kræver at containeren har text-align
 ```
 
 ## Margin + padding - boxmodel illustration
+
+For både **margin** og **padding** klassen har vi fem størrelser *(s, m, l, xl og xxl)* og så *none* som sættes på med bindesteg.
+
+```html
+<div class="margin-none padding-none"></div>
+<div class="margin-s padding-s"></div>
+<div class="margin-m padding-m"></div>
+<div class="margin-l padding-l"></div>
+<div class="margin-xl padding-xl"></div>
+<div class="margin-none padding-xxl"></div>
+```
+
+Overstående vil give henholdsvis **margin** og **padding** hele vejen rundt. Ønskes der derimod kun at have **margin** og **padding** i en retning tilføjes dette med double bindestreg.
+
+```html
+<div class="margin-l--t padding-l--t"></div>
+<div class="margin-l--r padding-l--r"></div>
+<div class="margin-l--b padding-l--b"></div>
+<div class="margin-l--l padding-l--l"></div>
+```
+
+Vi har også to samle klasser for *top-bottom* og *right-left*.
+
+```html
+<div class="margin-l--tb padding-l--tb"></div>
+<div class="margin-l--rl padding-l--rl"></div>
+```
