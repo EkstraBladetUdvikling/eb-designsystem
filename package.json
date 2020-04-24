@@ -24,8 +24,8 @@
     "start": "yarn build:watcher && yarn build:preview && yarn build:watch & bundle exec jekyll serve --livereload"
   },
   "dependencies": {
-    "@ekstra-bladet/eb-colors": "^2.3.3",
-    "@ekstra-bladet/eb-fonts": "^1.1.0",
+    "@ekstra-bladet/eb-colors": "^2.3.5",
+    "@ekstra-bladet/eb-fonts": "^1.1.1",
     "csscomb": "^4.3.0",
     "cssnano": "^4.1.10",
     "postcss": "^7.0.27",
@@ -42,7 +42,7 @@
   "devDependencies": {
     "cpx": "^1.5.0",
     "normalize.css": "^8.0.1",
-    "onchange": "^6.1.0",
+    "onchange": "^6.1.1",
     "postcss-import": "^12.0.1"
   }
 }
