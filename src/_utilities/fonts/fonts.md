@@ -17,7 +17,6 @@ title: Fonts
     Ææ Øø Åå
 
     1234567890
-
   </p>
 </div>
 
@@ -39,7 +38,6 @@ title: Fonts
     Ææ Øø Åå
 
     1234567890
-
   </p>
 </div>
 
@@ -69,6 +67,54 @@ Der er både en _larger_ og en _smaller_ mulighed, der begge er relative til par
   <div class="fontsize-xxxxlarge padding-m--tb">fontsize-xxxxlarge = 3.125rem ~ 50px;<div class="fontsize-smaller">fontsize-smaller</div><div class="fontsize-larger">fontsize-larger</div></div>
 </div>
 
+```html
+<div class="fontsize-xxsmall">
+  fontsize-xxsmall = .625rem ~ 10px;
+  <div class="fontsize-smaller">fontsize-smaller</div>
+  <div class="fontsize-larger">fontsize-larger</div>
+</div>
+<div class="fontsize-xsmall">
+  fontsize-xsmall = .75rem ~ 12px;
+  <div class="fontsize-smaller">fontsize-smaller</div>
+  <div class="fontsize-larger">fontsize-larger</div>
+</div>
+<div class="fontsize-small">
+  fontsize-small = .875rem ~ 14px;
+  <div class="fontsize-smaller">fontsize-smaller</div>
+  <div class="fontsize-larger">fontsize-larger</div>
+</div>
+<div class="fontsize-medium">
+  fontsize-medium = 1rem ~ 16px;
+  <div class="fontsize-smaller">fontsize-smaller</div>
+  <div class="fontsize-larger">fontsize-larger</div>
+</div>
+<div class="fontsize-large">
+  fontsize-large = 1.125rem ~18px;
+  <div class="fontsize-smaller">fontsize-smaller</div>
+  <div class="fontsize-larger">fontsize-larger</div>
+  </div>
+<div class="fontsize-xlarge">
+  fontsize-xlarge = 1.25rem ~20px;
+  <div class="fontsize-smaller">fontsize-smaller</div>
+  <div class="fontsize-larger">fontsize-larger</div>
+  </div>
+<div class="fontsize-xxlarge">
+  fontsize-xxlarge = 1.875rem ~30px;
+  <div class="fontsize-smaller">fontsize-smaller</div>
+  <div class="fontsize-larger">fontsize-larger</div>
+  </div>
+<div class="fontsize-xxxlarge">
+  fontsize-xxxlarge = 2.25rem ~36px;
+  <div class="fontsize-smaller">fontsize-smaller</div>
+  <div class="fontsize-larger">fontsize-larger</div>
+  </div>
+<div class="fontsize-xxxxlarge">
+  fontsize-xxxxlarge = 3.125rem ~50px;
+  <div class="fontsize-smaller">fontsize-smaller</div>
+  <div class="fontsize-larger">fontsize-larger</div>
+  </div>
+```
+
 ## Font-weight
 
 <div>
@@ -76,3 +122,9 @@ Der er både en _larger_ og en _smaller_ mulighed, der begge er relative til par
   <p class="fontweight-bold">fontweight-bold</p>
   <p class="fontweight-bolder">fontweight-bolder</p>
 </div>
+
+```html
+<p class="fontweight-normal">fontweight-normal</p>
+<p class="fontweight-bold">fontweight-bold</p>
+<p class="fontweight-bolder">fontweight-bolder</p>
+```
