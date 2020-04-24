@@ -85,14 +85,14 @@ Height of the parent element is set to illustrate how the indivual items can be 
 
 Her de klasser som findes i systemet men ikek er med i overstående eksempler.
 
-**Flex directions**
+### Flex directions
 
 ```html
 <div class="flex-column"></div>
 <div class="flex flex-row--reverse"></div>
 ```
 
-**Align-items og fustify-content**
+### Align-items og fustify-content
 
 ```html
 <div class="flex flex--center">align-items og justify-content er lig center</div>
@@ -105,13 +105,13 @@ Her de klasser som findes i systemet men ikek er med i overstående eksempler.
 
 ```
 
-**Wrap**
+### Wrap
 
 ```html
 <div class="flex flex-wrap--wrap"></div>
 ```
 
-**Sizing**
+### Sizing
 
 ```html
 <div class="flex">
