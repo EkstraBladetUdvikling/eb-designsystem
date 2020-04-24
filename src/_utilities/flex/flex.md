@@ -83,7 +83,7 @@ Height of the parent element is set to illustrate how the indivual items can be 
 
 ## Yderligere klasser
 
-Her de klasser som findes i systemet men ikek er med i overstående eksempler.
+Her de klasser som findes i systemet men ikke er med i overstående eksempler.
 
 ### Flex directions
 
