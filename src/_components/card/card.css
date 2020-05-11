@@ -90,7 +90,7 @@ a.card:focus {
 
 .card-meta {
   font-weight: 500;
-  margin: 0;
+  margin: 0 0 1px;
 }
 
 .card-meta .card-icon {

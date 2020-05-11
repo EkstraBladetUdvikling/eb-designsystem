@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.4 built on 11.5.2020 10.26.38 on branch "removed_margin_from_card_meta" at revision "6cb63af6b3b6891b3e2c345e54c409ffa5055ae5" */
+/** eb-designsystem.css version 0.1.4 built on 11.5.2020 12.46.50 on branch "removed_margin_from_card_meta" at revision "066012324563ec43a0fae97835738b5ff9cdd101" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -616,7 +616,7 @@ a.card:focus {
 
 .card-meta {
   font-weight: 500;
-  margin: 0;
+  margin: 0 0 1px;
 }
 
 .card-meta .card-icon {
