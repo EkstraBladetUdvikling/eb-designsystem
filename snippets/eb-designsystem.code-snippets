@@ -105,7 +105,7 @@
     "body": [
       "card-meta"
     ],
-    "description": "{\n font-weight: 500;\nmargin: 0 0 3px;\n }"
+    "description": "{\n font-weight: 500;\nmargin: 0 0 1px;\n }"
   },
   "designsystem card title": {
     "description": "Has pseudo styling :not([class*=\"fs-\"])"
