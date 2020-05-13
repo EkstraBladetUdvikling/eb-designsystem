@@ -255,7 +255,7 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
           <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         </div>
         <div class="card-content">
-          <div class="card-meta flex flex-align--center  flex-justify--between fs-large">
+          <div class="card-meta flex flex-align--center flex-justify--between fs-large">
             <div class="card-badge bg--white">
               <img class="card-image" src="https://side6.dk/assets/images/side6_FS.png" style="width:65px;">
             </div>
