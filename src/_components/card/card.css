@@ -93,16 +93,6 @@ a.card:focus {
   margin: 0 0 1px;
 }
 
-.card-meta .card-icon {
-  box-sizing: border-box;
-  height: 25px;
-}
-
-.card-meta .card-icon[class*="fa-"] {
-  font-size: var(--card-fs-icon);
-  padding-top: 2px;
-}
-
 .card-meta .card-badge {
   border-radius: 5px;
   padding: 3px 5px;
