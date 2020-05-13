@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.4 built on 11.5.2020 12.46.50 on branch "removed_margin_from_card_meta" at revision "066012324563ec43a0fae97835738b5ff9cdd101" */
+/** eb-designsystem.css version 0.1.4 built on 13.5.2020 11.44.12 on branch "removed_card_item" at revision "9ce7cdadb92df3e3ee4a37cd6b207ba1b5cd3d8d" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -526,7 +526,6 @@ custom media queries is the only allowed media queries
 }
 :root {
   --card-border-color: var(--color--graa7);
-  --card-fs-icon: 18px;
   --card-fs-title: 30px;
   --card-fs-title--small: 20px;
   --card-padding: 20px;
@@ -617,16 +616,6 @@ a.card:focus {
 .card-meta {
   font-weight: 500;
   margin: 0 0 1px;
-}
-
-.card-meta .card-icon {
-  box-sizing: border-box;
-  height: 25px;
-}
-
-.card-meta .card-icon[class*="fa-"] {
-  font-size: var(--card-fs-icon);
-  padding-top: 2px;
 }
 
 .card-meta .card-badge {

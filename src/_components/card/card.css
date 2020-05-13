@@ -1,6 +1,5 @@
 :root {
   --card-border-color: var(--color--graa7);
-  --card-fs-icon: 18px;
   --card-fs-title: 30px;
   --card-fs-title--small: 20px;
   --card-padding: 20px;
@@ -91,16 +90,6 @@ a.card:focus {
 .card-meta {
   font-weight: 500;
   margin: 0 0 1px;
-}
-
-.card-meta .card-icon {
-  box-sizing: border-box;
-  height: 25px;
-}
-
-.card-meta .card-icon[class*="fa-"] {
-  font-size: var(--card-fs-icon);
-  padding-top: 2px;
 }
 
 .card-meta .card-badge {
