@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.4 built on 13.5.2020 11.39.29 on branch "removed_card_item" at revision "8ca6b85710423a4769f9e943c1146898e3c1ed32" */
+/** eb-designsystem.css version 0.1.4 built on 13.5.2020 11.44.12 on branch "removed_card_item" at revision "9ce7cdadb92df3e3ee4a37cd6b207ba1b5cd3d8d" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -526,7 +526,6 @@ custom media queries is the only allowed media queries
 }
 :root {
   --card-border-color: var(--color--graa7);
-  --card-fs-icon: 18px;
   --card-fs-title: 30px;
   --card-fs-title--small: 20px;
   --card-padding: 20px;
