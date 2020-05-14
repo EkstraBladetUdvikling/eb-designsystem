@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.1.4 built on 17.4.2020 08.29.42 on branch "fontweight" at revision "c86f87c3ad8b73c2d5040ee3de1366bfc7422fb1" */
+/** eb-designsystem--watcher.css version 0.1.4 built on 14.5.2020 10.31.01 on branch "master" at revision "d2b85d54beb6c0750c9cde378436cc9fc070b646" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -346,10 +346,11 @@ custom media queries is the only allowed media queries
 .button:disabled {
   cursor: default;
   opacity: .7;
+
+  pointer-events: none;
 }
 
 .button:hover,
-.button:hover:not(:disabled),
 .button:focus {
   background: var(--color--button-default);
   border: 1px solid var(--color--button-default);
@@ -368,7 +369,6 @@ custom media queries is the only allowed media queries
 }
 
 .button.button--primary:hover,
-.button.button--primary:hover:not(:disabled),
 .button.button--primary:focus {
   background: var(--color--button-primary);
   color: var(--fgcolor--button-primary);
@@ -381,7 +381,6 @@ custom media queries is the only allowed media queries
 }
 
 .button.button--secondary:hover,
-.button.button--secondary:hover:not(:disabled),
 .button.button--secondary:focus {
   background: var(--color--button-secondary);
   color: var(--fgcolor--button-secondary);
@@ -394,7 +393,6 @@ custom media queries is the only allowed media queries
 }
 
 .button.button--accept:hover,
-.button.button--accept:hover:not(:disabled),
 .button.button--accept:focus {
   background: var(--color--button-accept);
   color: var(--fgcolor--button-accept);
@@ -407,14 +405,12 @@ custom media queries is the only allowed media queries
 }
 
 .button.button--cancel:hover,
-.button.button--cancel:hover:not(:disabled),
 .button.button--cancel:focus {
   background: var(--color--button-cancel);
   color: var(--fgcolor--button-cancel);
   outline: none;
 }
 
-.button:hover:not(:disabled),
 .button:hover,
 .button:focus,
 .button--solid {
@@ -424,7 +420,6 @@ custom media queries is the only allowed media queries
 }
 
 .button--solid:hover,
-.button--solid:hover:not(:disabled),
 .button--solid:focus {
   background: none;
   border: 1px solid var(--color--button-default);
@@ -439,7 +434,6 @@ custom media queries is the only allowed media queries
 }
 
 .button--solid.button--primary:hover,
-.button--solid.button--primary:hover:not(:disabled),
 .button--solid.button--primary:focus {
   background: var(--color--white);
   border-color: var(--color--button-primary);
@@ -454,7 +448,6 @@ custom media queries is the only allowed media queries
 }
 
 .button--solid.button--secondary:hover,
-.button--solid.button--secondary:hover:not(:disabled),
 .button--solid.button--secondary:focus {
   background: var(--color--white);
   border-color: var(--color--button-secondary);
@@ -469,7 +462,6 @@ custom media queries is the only allowed media queries
 }
 
 .button--solid.button--accept:hover,
-.button--solid.button--accept:hover:not(:disabled),
 .button--solid.button--accept:focus {
   background: var(--color--white);
   border-color: var(--color--button-accept);
@@ -484,7 +476,6 @@ custom media queries is the only allowed media queries
 }
 
 .button--solid.button--cancel:hover,
-.button--solid.button--cancel:hover:not(:disabled),
 .button--solid.button--cancel:focus {
   background: var(--color--white);
   border-color: var(--color--button-cancel);
@@ -526,7 +517,6 @@ custom media queries is the only allowed media queries
 }
 :root {
   --card-border-color: var(--color--graa7);
-  --card-fs-icon: 18px;
   --card-fs-title: 30px;
   --card-fs-title--small: 20px;
   --card-padding: 20px;
@@ -616,17 +606,7 @@ a.card:focus {
 
 .card-meta {
   font-weight: 500;
-  margin: 0 0 3px;
-}
-
-.card-meta .card-icon {
-  box-sizing: border-box;
-  height: 25px;
-}
-
-.card-meta .card-icon[class*="fa-"] {
-  font-size: var(--card-fs-icon);
-  padding-top: 2px;
+  margin: 0 0 1px;
 }
 
 .card-meta .card-badge {
