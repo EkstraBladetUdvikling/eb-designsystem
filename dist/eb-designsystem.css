@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.4 built on 14.5.2020 10.32.39 on branch "master" at revision "d2b85d54beb6c0750c9cde378436cc9fc070b646" */
+/** eb-designsystem.css version 0.1.4 built on 19.5.2020 14.56.58 on branch "badge" at revision "5c0cba8aeee85668eb341dcebcf27b0d328ab7c0" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -233,6 +233,11 @@ html,button,input,select,textarea{font-family:Arial,sans-serif}:root{--fs-xxsmal
   --border-radius--small: 5px;
   --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), .22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
   --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
+  --color--accept: var(--color--green);
+  --color--cancel: var(--color--red);
+  --color--default: var(--color--bluedark);
+  --color--primary: var(--color--bruger);
+  --color--secondary: var(--color--graa3);
   /* distance - desktop */
   --distance-large: 20px;
   --distance-medium: 10px;
@@ -240,13 +245,18 @@ html,button,input,select,textarea{font-family:Arial,sans-serif}:root{--fs-xxsmal
   --distance-standard: 10px;
   --distance-xlarge: 30px;
   --distance-xxlarge: 50px;
+  --fgcolor--accept: var(--fgcolor--green);
+  --fgcolor--cancel: var(--fgcolor--red);
+  --fgcolor--default: var(--fgcolor--bluedark);
+  --fgcolor--primary: var(--fgcolor--bruger);
+  --fgcolor--secondary: var(--fgcolor--graa3);
   --fontfamily--primary: "Work Sans", var(--fontfamily--seconday);
   --fontfamily--seconday: Arial, Helvetica, sans-serif}
 /* Systemwide variables - default + desktop */
 
 @media (--smartphone) {
   :root {
-  --distance-large: 15px;
+    --distance-large: 15px;
   --distance-medium: 10px;
   --distance-small: 5px;
   --distance-standard: 10px;
@@ -305,19 +315,44 @@ custom media queries is the only allowed media queries
 */
 @custom-media --ie only screen and (-ms-high-contrast: active),
   (-ms-high-contrast: none);
+.badge {
+  border-radius: var(--border-radius--small);
+  padding: 4px 6px;
+}
+
+.badge:not([class*="bg--"]) {
+  background: var(--color--white);
+  box-shadow: 0 0 0 1px var(--card-border-color);
+  color: var(--color--black);
+}
+
+a.badge:hover,
+a.badge:focus {
+  box-shadow: var(--box-shadow--hover);
+}
+
+.badge.badge--primary {
+  background-color: var(--color--primary);
+  color: var(--fgcolor--primary);
+}
+
+.badge.badge--secondary {
+  background-color: var(--color--secondary);
+  color: var(--fgcolor--secondary);
+}
+
+.badge.badge--success {
+  background-color: var(--color--accept);
+  color: var(--fgcolor--accept);
+}
+
+.badge.badge--danger {
+  background-color: var(--color--cancel);
+  color: var(--fgcolor--cancel);
+}
 :root {
   --button-border-radius: var(--button-height);
   --button-height: 36px;
-  --color--button-accept: var(--color--green);
-  --color--button-cancel: var(--color--red);
-  --color--button-default: var(--color--bluedark);
-  --color--button-primary: var(--color--bruger);
-  --color--button-secondary: var(--color--graa3);
-  --fgcolor--button-accept: var(--fgcolor--green);
-  --fgcolor--button-cancel: var(--fgcolor--red);
-  --fgcolor--button-default: var(--fgcolor--bluedark);
-  --fgcolor--button-primary: var(--fgcolor--bruger);
-  --fgcolor--button-secondary: var(--fgcolor--graa3);
 }
 
 .button {
@@ -328,14 +363,13 @@ custom media queries is the only allowed media queries
   */
   align-items: center;
   background: var(--color--white);
-  border: 1px solid var(--color--button-default);
+  border: 1px solid var(--color--default);
   border-radius: var(--button-border-radius);
   box-sizing: border-box;
-  color: var(--color--button-default);
+  color: var(--color--default);
   cursor: pointer;
   display: flex;
   font-size: 14px;
-  line-height: calc(var(--button-height) - 2px);
   padding: 0 20px;
   text-align: center;
   text-decoration: none;
@@ -352,9 +386,9 @@ custom media queries is the only allowed media queries
 
 .button:hover,
 .button:focus {
-  background: var(--color--button-default);
-  border: 1px solid var(--color--button-default);
-  color: var(--fgcolor--button-default);
+  background: var(--color--default);
+  border: 1px solid var(--color--default);
+  color: var(--fgcolor--default);
   outline: none;
 }
 
@@ -364,122 +398,122 @@ custom media queries is the only allowed media queries
 }
 
 .button.button--primary {
-  border-color: var(--color--button-primary);
-  color: var(--color--button-primary);
+  border-color: var(--color--primary);
+  color: var(--color--primary);
 }
 
 .button.button--primary:hover,
 .button.button--primary:focus {
-  background: var(--color--button-primary);
-  color: var(--fgcolor--button-primary);
+  background: var(--color--primary);
+  color: var(--fgcolor--primary);
   outline: none;
 }
 
 .button.button--secondary {
-  border-color: var(--color--button-secondary);
-  color: var(--color--button-secondary);
+  border-color: var(--color--secondary);
+  color: var(--color--secondary);
 }
 
 .button.button--secondary:hover,
 .button.button--secondary:focus {
-  background: var(--color--button-secondary);
-  color: var(--fgcolor--button-secondary);
+  background: var(--color--secondary);
+  color: var(--fgcolor--secondary);
   outline: none;
 }
 
 .button.button--accept {
-  border-color: var(--color--button-accept);
-  color: var(--color--button-accept);
+  border-color: var(--color--accept);
+  color: var(--color--accept);
 }
 
 .button.button--accept:hover,
 .button.button--accept:focus {
-  background: var(--color--button-accept);
-  color: var(--fgcolor--button-accept);
+  background: var(--color--accept);
+  color: var(--fgcolor--accept);
   outline: none;
 }
 
 .button.button--cancel {
-  border-color: var(--color--button-cancel);
-  color: var(--color--button-cancel);
+  border-color: var(--color--cancel);
+  color: var(--color--cancel);
 }
 
 .button.button--cancel:hover,
 .button.button--cancel:focus {
-  background: var(--color--button-cancel);
-  color: var(--fgcolor--button-cancel);
+  background: var(--color--cancel);
+  color: var(--fgcolor--cancel);
   outline: none;
 }
 
 .button:hover,
 .button:focus,
 .button--solid {
-  background: var(--color--button-default);
-  color: var(--fgcolor--button-default);
+  background: var(--color--default);
+  color: var(--fgcolor--default);
   outline: none;
 }
 
 .button--solid:hover,
 .button--solid:focus {
   background: none;
-  border: 1px solid var(--color--button-default);
-  color: var(--color--button-default);
+  border: 1px solid var(--color--default);
+  color: var(--color--default);
   outline: none;
 }
 
 .button--solid.button--primary {
-  background-color: var(--color--button-primary);
-  border-color: var(--color--button-primary);
-  color: var(--fgcolor--button-primary);
+  background-color: var(--color--primary);
+  border-color: var(--color--primary);
+  color: var(--fgcolor--primary);
 }
 
 .button--solid.button--primary:hover,
 .button--solid.button--primary:focus {
   background: var(--color--white);
-  border-color: var(--color--button-primary);
-  color: var(--color--button-primary);
+  border-color: var(--color--primary);
+  color: var(--color--primary);
   outline: none;
 }
 
 .button--solid.button--secondary {
-  background-color: var(--color--button-secondary);
-  border-color: var(--color--button-secondary);
-  color: var(--fgcolor--button-secondary);
+  background-color: var(--color--secondary);
+  border-color: var(--color--secondary);
+  color: var(--fgcolor--secondary);
 }
 
 .button--solid.button--secondary:hover,
 .button--solid.button--secondary:focus {
   background: var(--color--white);
-  border-color: var(--color--button-secondary);
-  color: var(--color--button-secondary);
+  border-color: var(--color--secondary);
+  color: var(--color--secondary);
   outline: none;
 }
 
 .button--solid.button--accept {
-  background-color: var(--color--button-accept);
-  border-color: var(--color--button-accept);
-  color: var(--fgcolor--button-accept);
+  background-color: var(--color--accept);
+  border-color: var(--color--accept);
+  color: var(--fgcolor--accept);
 }
 
 .button--solid.button--accept:hover,
 .button--solid.button--accept:focus {
   background: var(--color--white);
-  border-color: var(--color--button-accept);
-  color: var(--color--button-accept);
+  border-color: var(--color--accept);
+  color: var(--color--accept);
   outline: none;
 }
 
 .button--solid.button--cancel {
-  background-color: var(--color--button-cancel);
-  border-color: var(--color--button-cancel);
-  color: var(--fgcolor--button-cancel);
+  background-color: var(--color--cancel);
+  border-color: var(--color--cancel);
+  color: var(--fgcolor--cancel);
 }
 
 .button--solid.button--cancel:hover,
 .button--solid.button--cancel:focus {
   background: var(--color--white);
-  border-color: var(--color--button-cancel);
-  color: var(--color--button-cancel);
+  border-color: var(--color--cancel);
+  color: var(--color--cancel);
   outline: none;
 }
 
@@ -487,10 +521,12 @@ custom media queries is the only allowed media queries
   font-size: 18px;
 }
 
+.button .badge:first-child,
 .button .fa:first-child {
   margin-right: 10px;
 }
 
+.button .badge:last-child,
 .button .fa:last-child {
   margin-left: 10px;
 }
@@ -536,7 +572,7 @@ custom media queries is the only allowed media queries
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+  font-family: var(--fontfamily--primary);
   overflow: hidden;
 }
 
@@ -609,6 +645,7 @@ a.card:focus {
   margin: 0 0 1px;
 }
 
+/* Legacy - remove when not used in Escenic */
 .card-meta .card-badge {
   border-radius: 5px;
   padding: 3px 5px;

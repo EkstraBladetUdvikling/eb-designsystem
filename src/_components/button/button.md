@@ -167,4 +167,28 @@ Det her er en standard knap uden nogen hat
 <button class="button button--link button--icon">
   Button--link
 </button>
-````
+```
+
+## Button with badge
+
+<button class="button">
+  <span class="badge bg--graa4">2</span>
+  <span>Badge button left</span>
+</button>
+
+<button class="button">
+  <span>Badge button right</span>
+  <span class="badge bg--graa4">2</span>
+</button>
+
+```html
+<button class="button">
+  <span class="badge bg--graa4">2</span>
+  <span>Badge button left</span>
+</button>
+
+<button class="button">
+  <span>Badge button right</span>
+  <span class="badge bg--graa4">2</span>
+</button>
+```
