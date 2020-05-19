@@ -28,7 +28,7 @@ Prædefinerede farver:
 
 Som links / aktive tags:
 
-<a href="#" class="badge bg--bluedark">Bandekriminialitet</a> <a href="#" class="badge bg--green">Sport</a> <a href="#" class="badge bg--greendark">Nicklas Bendtner</a>
+<a href="#" class="badge bg--bluedark">Bandekriminalitet</a> <a href="#" class="badge bg--green">Sport</a> <a href="#" class="badge bg--greendark">Nicklas Bendtner</a>
 
 ```html
 <a href="#" class="badge bg--bluedark">Bandekriminialitet</a>

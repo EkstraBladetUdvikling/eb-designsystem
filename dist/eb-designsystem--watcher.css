@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.1.4 built on 19.5.2020 13.36.39 on branch "badge" at revision "770ae7d58a1a54c1d9e62a0ee2d81a404a7bf197" */
+/** eb-designsystem--watcher.css version 0.1.4 built on 19.5.2020 14.56.52 on branch "badge" at revision "5c0cba8aeee85668eb341dcebcf27b0d328ab7c0" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -317,8 +317,7 @@ custom media queries is the only allowed media queries
   (-ms-high-contrast: none);
 .badge {
   border-radius: var(--border-radius--small);
-  font-family: var(--fontfamily--primary);
-  padding: 3px 5px;
+  padding: 4px 6px;
 }
 
 .badge:not([class*="bg--"]) {
