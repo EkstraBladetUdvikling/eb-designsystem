@@ -208,7 +208,7 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
     </div>
     <div class="card-footer flex flex-justify--between">
       <p class="card-meta color--graa3"><small><i class="far fa-clock"></i> 12 timer siden</small></p>
-      <p class="card-meta color--graa3"><small>Af: John Doe</small></p>
+      <p class="card-meta color--graa3"><small><span class="badge bg--native">Native</span> <span class="badge bg--green">Sport</span> </small></p>
     </div>
   </div>
 </div>
@@ -256,7 +256,7 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
         </div>
         <div class="card-content">
           <div class="card-meta flex flex-align--center flex-justify--between fs-large">
-            <div class="card-badge bg--white">
+            <div class="badge bg--white">
               <img class="card-image" src="https://side6.dk/assets/images/side6_FS.png" style="width:65px;">
             </div>
             <i class="fa fal fa-external-link-alt"></i>
@@ -328,7 +328,7 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
     </div>
     <div class="card-content">
       <div class="card-meta flex flex-align--center flex-justify--between fs-large ">
-          <div class="card-badge bg--white">
+          <div class="badge bg--white">
             <img class="card-image" src="https://side6.dk/assets/images/side6_FS.png" style="width:65px;">
           </div>
           <i class="fa fal fa-external-link-alt"></i>

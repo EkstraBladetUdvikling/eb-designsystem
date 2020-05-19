@@ -3,6 +3,11 @@
   --border-radius--small: 5px;
   --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), .22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
   --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
+  --color--accept: var(--color--green);
+  --color--cancel: var(--color--red);
+  --color--default: var(--color--bluedark);
+  --color--primary: var(--color--bruger);
+  --color--secondary: var(--color--graa3);
   /* distance - desktop */
   --distance-large: 20px;
   --distance-medium: 10px;
@@ -10,13 +15,18 @@
   --distance-standard: 10px;
   --distance-xlarge: 30px;
   --distance-xxlarge: 50px;
+  --fgcolor--accept: var(--fgcolor--green);
+  --fgcolor--cancel: var(--fgcolor--red);
+  --fgcolor--default: var(--fgcolor--bluedark);
+  --fgcolor--primary: var(--fgcolor--bruger);
+  --fgcolor--secondary: var(--fgcolor--graa3);
   --fontfamily--primary: "Work Sans", var(--fontfamily--seconday);
   --fontfamily--seconday: Arial, Helvetica, sans-serif;
 }
 
 @media (--smartphone) {
   :root {
-  --distance-large: 15px;
+    --distance-large: 15px;
   --distance-medium: 10px;
   --distance-small: 5px;
   --distance-standard: 10px;

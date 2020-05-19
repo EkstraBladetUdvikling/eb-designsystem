@@ -1,0 +1,36 @@
+.badge {
+  border-radius: var(--border-radius--small);
+  font-family: var(--fontfamily--primary);
+  padding: 3px 5px;
+}
+
+.badge:not([class*="bg--"]) {
+  background: var(--color--white);
+  box-shadow: 0 0 0 1px var(--card-border-color);
+  color: var(--color--black);
+}
+
+a.badge:hover,
+a.badge:focus {
+  box-shadow: var(--box-shadow--hover);
+}
+
+.badge.badge--primary {
+  background-color: var(--color--primary);
+  color: var(--fgcolor--primary);
+}
+
+.badge.badge--secondary {
+  background-color: var(--color--secondary);
+  color: var(--fgcolor--secondary);
+}
+
+.badge.badge--success {
+  background-color: var(--color--accept);
+  color: var(--fgcolor--accept);
+}
+
+.badge.badge--danger {
+  background-color: var(--color--cancel);
+  color: var(--fgcolor--cancel);
+}
