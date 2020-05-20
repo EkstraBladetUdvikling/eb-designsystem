@@ -4,7 +4,7 @@
     "body": [
       "badge"
     ],
-    "description": "{\n border-radius: 5px;\nfont-family: \"Work Sans\"\n,\nArial\n,\nHelvetica\n,\nsans-serif;\npadding: 3px 5px;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "{\n border-radius: 5px;\npadding: 4px 6px;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem badge primary": {
     "prefix": "ds-badge--primary",

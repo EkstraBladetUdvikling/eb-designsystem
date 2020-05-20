@@ -7,7 +7,6 @@ const postcss = require('postcss');
 const discardDuplicates = require('postcss-discard-duplicates')();
 const discardUnused = require('postcss-discard-unused')();
 const mergeRules = require('postcss-merge-rules')();
-const cssnano = require('cssnano')();
 const postcssCustomMedia = require('postcss-custom-media');
 const presetEnv = require('postcss-preset-env');
 const runtimeArguments = process.argv.slice(2);
@@ -136,7 +135,6 @@ const buildCSS = async args => {
       discardDuplicates,
       discardUnused,
       mergeRules
-      // cssnano
     ])
       .process(css, {
         from: 'undefined'
