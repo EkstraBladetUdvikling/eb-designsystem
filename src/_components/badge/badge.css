@@ -1,6 +1,7 @@
 .badge {
   border-radius: var(--border-radius--small);
   padding: 5px 7px;
+  white-space: nowrap;
 }
 
 .badge:not([class*="bg--"]):not([class*="badge--"]) {
@@ -32,4 +33,13 @@ a.badge:hover {
 .badge.badge--danger {
   background-color: var(--color--cancel);
   color: var(--fgcolor--cancel);
+}
+
+/* Ensure margin when placed in flexbox */
+.flex > .badge {
+  margin-right: 3px;
+}
+
+.flex-wrap--wrap > .badge {
+  margin-bottom: 3px;
 }

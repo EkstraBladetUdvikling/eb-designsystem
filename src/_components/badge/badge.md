@@ -47,3 +47,29 @@ Andre farver og variationer:
 <span class="badge bg--greendark fontsize-xxsmall">Greendark xxsmall</span>
 <span class="badge">Badge with icon <i class="fa fal fa-trash"></i></span>
 ```
+
+Liste med tags:
+<div class="width-1of2 flex flex-wrap--wrap bg--graa7 padding-s" style="resize: horizontal; overflow: auto">
+  <a href="#" class="badge">Lorem</a>
+  <a href="#" class="badge">ipsum dolor sit</a>
+  <a href="#" class="badge">amet</a>
+  <a href="#" class="badge"> consectetur</a>
+  <a href="#" class="badge">adipiscing</a>
+  <a href="#" class="badge">elit</a>
+  <a href="#" class="badge">sed do</a>
+  <a href="#" class="badge">eiusmod tempor incididunt ut labore</a>
+  <a href="#" class="badge">et dolore magna</a>
+  <a href="#" class="badge">aliqua</a>
+  <a href="#" class="badge">Ut enim ad minim</a>
+  <a href="#" class="badge">veniam</a>
+  <a href="#" class="badge">quis</a>
+  <a href="#" class="badge">nostrud</a>
+  <a href="#" class="badge">exercitation</a>
+</div>
+
+```html
+<div class="flex flex-wrap--wrap">
+  <a href="#" class="badge">Lorem</a>
+  ...
+</div>
+```
