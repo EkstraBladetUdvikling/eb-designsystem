@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.1.4 built on 20.5.2020 14.27.00 on branch "postcss_on_watcher_css" at revision "59caf43d3e71a1cddd581b2605d23cfbfd8b7fe5" */
+/** eb-designsystem--watcher.css version 0.1.4 built on 22.5.2020 10.22.28 on branch "badge_version_two" at revision "2c8e24b65f584b58da7680c3b918d19286bf1261" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -318,22 +318,21 @@ custom media queries is the only allowed media queries
 .badge {
   border-radius: 5px;
   border-radius: var(--border-radius--small);
-  padding: 4px 6px;
+  padding: 5px 7px;
 }
 
-.badge:not([class*="bg--"]) {
-  background: #fff;
-  background: var(--color--white);
-  box-shadow: 0 0 0 1px #efefef;
-  box-shadow: 0 0 0 1px var(--card-border-color);
+.badge:not([class*="bg--"]):not([class*="badge--"]) {
+  background-color: #fff;
+  background-color: var(--color--white);
+  border: 1px solid #efefef;
+  border: 1px solid var(--card-border-color);
   color: #000;
-  color: var(--color--black);
+  color: var(--fgcolor--white);
 }
 
-a.badge:hover,
-a.badge:focus {
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, .22);
-  box-shadow: var(--box-shadow--hover);
+a.badge:focus,
+a.badge:hover {
+  opacity: .8; /* DR.Edition 03/02/2020 */
 }
 
 .badge.badge--primary {
@@ -1923,4 +1922,12 @@ a.card:focus {
 
 .text-align--right {
   text-align: right;
+}
+
+.text-transform--lowercase {
+  text-transform: lowercase;
+}
+
+.text-transform--uppercase {
+  text-transform: uppercase;
 }

@@ -9,3 +9,11 @@
 .text-align--right {
   text-align: right;
 }
+
+.text-transform--lowercase {
+  text-transform: lowercase;
+}
+
+.text-transform--uppercase {
+  text-transform: uppercase;
+}

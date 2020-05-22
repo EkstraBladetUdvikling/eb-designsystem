@@ -39,9 +39,11 @@ Som links / aktive tags:
 
 Andre farver og variationer:
 
-<span class="badge bg--native">Native</span> <span class="badge bg--greendark fontsize-xxsmall">Greendark xxsmall</span>
+<span class="badge text-transform--uppercase"><small>Small text</small></span> <span class="badge bg--native">Native</span> <span class="badge bg--greendark fontsize-xxsmall">Greendark xxsmall</span> <span class="badge">Badge with icon <i class="fa fal fa-trash"></i></span>
 
 ```html
+<span class="badge text-transform--uppercase"><small>Small text uppercase</small></span>
 <span class="badge bg--native">Native</span>
 <span class="badge bg--greendark fontsize-xxsmall">Greendark xxsmall</span>
+<span class="badge">Badge with icon <i class="fa fal fa-trash"></i></span>
 ```
