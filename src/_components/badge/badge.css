@@ -9,6 +9,11 @@
   color: var(--fgcolor--white);
 }
 
+a.badge:focus,
+a.badge:hover {
+  opacity: .8; /* DR.Edition 03/02/2020 */
+}
+
 .badge.badge--primary {
   background-color: var(--color--primary);
   color: var(--fgcolor--primary);

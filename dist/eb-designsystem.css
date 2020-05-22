@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.4 built on 22.5.2020 09.54.31 on branch "badge_version_two" at revision "69ed3ae9b2591181bdfca007bac737f50b4e5ee6" */
+/** eb-designsystem.css version 0.1.4 built on 22.5.2020 10.22.26 on branch "badge_version_two" at revision "2c8e24b65f584b58da7680c3b918d19286bf1261" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -324,6 +324,11 @@ custom media queries is the only allowed media queries
   background-color: var(--color--white);
   border: 1px solid var(--card-border-color);
   color: var(--fgcolor--white);
+}
+
+a.badge:focus,
+a.badge:hover {
+  opacity: .8; /* DR.Edition 03/02/2020 */
 }
 
 .badge.badge--primary {
