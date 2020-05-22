@@ -34,12 +34,3 @@ a.badge:hover {
   background-color: var(--color--cancel);
   color: var(--fgcolor--cancel);
 }
-
-/* Ensure margin when placed in flexbox */
-.flex > .badge {
-  margin-right: 3px;
-}
-
-.flex-wrap--wrap > .badge {
-  margin-bottom: 3px;
-}

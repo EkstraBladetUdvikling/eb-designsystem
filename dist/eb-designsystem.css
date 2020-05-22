@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.4 built on 22.5.2020 14.08.35 on branch "badge_version_two" at revision "e0ed9dbdc6a5d1c57d9f8ac224d9ba2fb76ac72c" */
+/** eb-designsystem.css version 0.1.4 built on 22.5.2020 14.37.00 on branch "badge_version_two" at revision "f8319b8fbe3925b617302d04053e82b8644a3773" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -351,15 +351,6 @@ a.badge:hover {
   background-color: var(--color--cancel);
   color: var(--fgcolor--cancel);
 }
-
-/* Ensure margin when placed in flexbox */
-.flex > .badge {
-  margin-right: 3px;
-}
-
-.flex-wrap--wrap > .badge {
-  margin-bottom: 3px;
-}
 :root {
   --button-border-radius: var(--button-height);
   --button-height: 36px;
@@ -662,7 +653,7 @@ a.card:focus {
   text-transform: uppercase;
 }
 
-.card-title:not([class*="fs-"]) {
+.card-title:not([class*="fs-"]):not([class*="fontsize-"]) {
   font-size: var(--card-fs-title);
   font-weight: 700;
   margin: 0;
@@ -693,12 +684,12 @@ a.card:focus {
 }
 
 /* Shrink font-size on small cards with media, if not explicitly set to large */
-.width-1of2 > .card .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
-.width-1of3 > .card .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
-.card.width-1of2 .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
-.card.width-1of3 .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
-.card--small-media .card-title:not(.card-title--large):not([class*="fs-"]),
-.card-title--small:not([class*="fs-"]) {
+.width-1of2 > .card .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
+.width-1of3 > .card .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
+.card.width-1of2 .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
+.card.width-1of3 .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
+.card--small-media .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
+.card-title--small:not([class*="fs-"]):not([class*="fontsize-"]) {
   font-size: var(--card-fs-title--small);
 }
 :root {

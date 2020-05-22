@@ -50,26 +50,26 @@ Andre farver og variationer:
 
 Liste med tags:
 <div class="width-1of2 flex flex-wrap--wrap bg--graa7 padding-s" style="resize: horizontal; overflow: auto">
-  <a href="#" class="badge">Lorem</a>
-  <a href="#" class="badge">ipsum dolor sit</a>
-  <a href="#" class="badge">amet</a>
-  <a href="#" class="badge"> consectetur</a>
-  <a href="#" class="badge">adipiscing</a>
-  <a href="#" class="badge">elit</a>
-  <a href="#" class="badge">sed do</a>
-  <a href="#" class="badge">eiusmod tempor incididunt ut labore</a>
-  <a href="#" class="badge">et dolore magna</a>
-  <a href="#" class="badge">aliqua</a>
-  <a href="#" class="badge">Ut enim ad minim</a>
-  <a href="#" class="badge">veniam</a>
-  <a href="#" class="badge">quis</a>
-  <a href="#" class="badge">nostrud</a>
-  <a href="#" class="badge">exercitation</a>
+  <a href="#" class="badge margin-s--r margin-s--b">Lorem</a>
+  <a href="#" class="badge margin-s--r margin-s--b">ipsum dolor sit</a>
+  <a href="#" class="badge margin-s--r margin-s--b">amet</a>
+  <a href="#" class="badge margin-s--r margin-s--b"> consectetur</a>
+  <a href="#" class="badge margin-s--r margin-s--b">adipiscing</a>
+  <a href="#" class="badge margin-s--r margin-s--b">elit</a>
+  <a href="#" class="badge margin-s--r margin-s--b">sed do</a>
+  <a href="#" class="badge margin-s--r margin-s--b">eiusmod tempor incididunt ut labore</a>
+  <a href="#" class="badge margin-s--r margin-s--b">et dolore magna</a>
+  <a href="#" class="badge margin-s--r margin-s--b">aliqua</a>
+  <a href="#" class="badge margin-s--r margin-s--b">Ut enim ad minim</a>
+  <a href="#" class="badge margin-s--r margin-s--b">veniam</a>
+  <a href="#" class="badge margin-s--r margin-s--b">quis</a>
+  <a href="#" class="badge margin-s--r margin-s--b">nostrud</a>
+  <a href="#" class="badge margin-s--r margin-s--b">exercitation</a>
 </div>
 
 ```html
 <div class="flex flex-wrap--wrap">
-  <a href="#" class="badge">Lorem</a>
+  <a href="#" class="badge margin-s--r margin-s--b">Lorem</a>
   ...
 </div>
 ```

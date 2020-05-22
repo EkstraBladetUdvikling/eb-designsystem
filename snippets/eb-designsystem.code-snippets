@@ -143,7 +143,7 @@
     "description": "{\n font-weight: 500;\nmargin: 0 0 1px;\n }"
   },
   "designsystem card title": {
-    "description": "Has pseudo styling :not([class*=\"fs-\"])"
+    "description": "Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])"
   },
   "designsystem card small media": {
     "prefix": "ds-card--small-media",
@@ -160,7 +160,7 @@
     "description": "NB! This should only be used with card\n{\n flex-direction: row-reverse;\n }"
   },
   "designsystem card title small": {
-    "description": "Has pseudo styling :not([class*=\"fs-\"])"
+    "description": "Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])"
   },
   "designsystem form element": {
     "prefix": "ds-form-element",
