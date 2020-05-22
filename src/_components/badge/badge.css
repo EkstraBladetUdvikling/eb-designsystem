@@ -1,6 +1,7 @@
 .badge {
   border-radius: var(--border-radius--small);
   padding: 5px 7px;
+  white-space: nowrap;
 }
 
 .badge:not([class*="bg--"]):not([class*="badge--"]) {

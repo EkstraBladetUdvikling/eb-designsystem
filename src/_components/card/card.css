@@ -99,7 +99,7 @@ a.card:focus {
   text-transform: uppercase;
 }
 
-.card-title:not([class*="fs-"]) {
+.card-title:not([class*="fs-"]):not([class*="fontsize-"]) {
   font-size: var(--card-fs-title);
   font-weight: 700;
   margin: 0;
@@ -130,11 +130,11 @@ a.card:focus {
 }
 
 /* Shrink font-size on small cards with media, if not explicitly set to large */
-.width-1of2 > .card .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
-.width-1of3 > .card .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
-.card.width-1of2 .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
-.card.width-1of3 .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]),
-.card--small-media .card-title:not(.card-title--large):not([class*="fs-"]),
-.card-title--small:not([class*="fs-"]) {
+.width-1of2 > .card .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
+.width-1of3 > .card .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
+.card.width-1of2 .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
+.card.width-1of3 .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
+.card--small-media .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
+.card-title--small:not([class*="fs-"]):not([class*="fontsize-"]) {
   font-size: var(--card-fs-title--small);
 }

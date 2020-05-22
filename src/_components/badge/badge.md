@@ -47,3 +47,29 @@ Andre farver og variationer:
 <span class="badge bg--greendark fontsize-xxsmall">Greendark xxsmall</span>
 <span class="badge">Badge with icon <i class="fa fal fa-trash"></i></span>
 ```
+
+Liste med tags:
+<div class="width-1of2 flex flex-wrap--wrap bg--graa7 padding-s" style="resize: horizontal; overflow: auto">
+  <a href="#" class="badge margin-s--r margin-s--b">Lorem</a>
+  <a href="#" class="badge margin-s--r margin-s--b">ipsum dolor sit</a>
+  <a href="#" class="badge margin-s--r margin-s--b">amet</a>
+  <a href="#" class="badge margin-s--r margin-s--b"> consectetur</a>
+  <a href="#" class="badge margin-s--r margin-s--b">adipiscing</a>
+  <a href="#" class="badge margin-s--r margin-s--b">elit</a>
+  <a href="#" class="badge margin-s--r margin-s--b">sed do</a>
+  <a href="#" class="badge margin-s--r margin-s--b">eiusmod tempor incididunt ut labore</a>
+  <a href="#" class="badge margin-s--r margin-s--b">et dolore magna</a>
+  <a href="#" class="badge margin-s--r margin-s--b">aliqua</a>
+  <a href="#" class="badge margin-s--r margin-s--b">Ut enim ad minim</a>
+  <a href="#" class="badge margin-s--r margin-s--b">veniam</a>
+  <a href="#" class="badge margin-s--r margin-s--b">quis</a>
+  <a href="#" class="badge margin-s--r margin-s--b">nostrud</a>
+  <a href="#" class="badge margin-s--r margin-s--b">exercitation</a>
+</div>
+
+```html
+<div class="flex flex-wrap--wrap">
+  <a href="#" class="badge margin-s--r margin-s--b">Lorem</a>
+  ...
+</div>
+```
