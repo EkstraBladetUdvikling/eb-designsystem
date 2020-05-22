@@ -4,7 +4,7 @@
     "body": [
       "badge"
     ],
-    "description": "{\n border-radius: 5px;\npadding: 4px 6px;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "{\n border-radius: 5px;\npadding: 5px 7px;\n }\n Has pseudo styling :not([class*=\"bg--\"]):not([class*=\"badge--\"])"
   },
   "designsystem badge primary": {
     "prefix": "ds-badge--primary",
@@ -1358,5 +1358,19 @@
       "text-align--right"
     ],
     "description": "NB! This should only be used with text-align\n{\n text-align: right;\n }"
+  },
+  "designsystem text transform lowercase": {
+    "prefix": "ds-text-transform--lowercase",
+    "body": [
+      "text-transform--lowercase"
+    ],
+    "description": "NB! This should only be used with text-transform\n{\n text-transform: lowercase;\n }"
+  },
+  "designsystem text transform uppercase": {
+    "prefix": "ds-text-transform--uppercase",
+    "body": [
+      "text-transform--uppercase"
+    ],
+    "description": "NB! This should only be used with text-transform\n{\n text-transform: uppercase;\n }"
   }
 }
