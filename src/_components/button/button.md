@@ -87,6 +87,12 @@ Det her er en standard knap uden nogen hat
 <button class="button button--solid button--cancel">Button cancel</button>
 ```
 
+<button class="button button--solid bg--rose">Button rose</button>
+
+```html
+<button class="button button--solid bg--rose">Button rose</button>
+```
+
 ## Button with icon
 
 <button class="button">
