@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.4 built on 26.5.2020 15.55.44 on branch "button_version_two" at revision "715717b54cbd0865219a1c78e37cc8fcd4198473" */
+/** eb-designsystem.css version 0.1.4 built on 26.5.2020 15.57.54 on branch "button_version_two" at revision "2290ac4e59df8fc50bfabb7cd2f805db4188e463" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -384,10 +384,12 @@ a.badge:hover {
 
 /* Custom button */
 .button[class*="bg--"] {
-  border: 1px solid var(--color--graa4);
+  border: 1px solid var(--color--graa5);
 }
 
-.button[class*="bg--"]:hover {
+.button[class*="bg--"]:active,
+.button[class*="bg--"]:hover,
+.button[class*="bg--"]:focus {
   background: white;
 }
 

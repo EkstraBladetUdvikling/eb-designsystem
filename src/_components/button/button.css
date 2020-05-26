@@ -31,10 +31,12 @@
 
 /* Custom button */
 .button[class*="bg--"] {
-  border: 1px solid var(--color--graa4);
+  border: 1px solid var(--color--graa5);
 }
 
-.button[class*="bg--"]:hover {
+.button[class*="bg--"]:active,
+.button[class*="bg--"]:hover,
+.button[class*="bg--"]:focus {
   background: white;
 }
 
