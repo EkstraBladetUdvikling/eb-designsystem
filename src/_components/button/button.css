@@ -31,7 +31,11 @@
 
 /* Custom button */
 .button[class*="bg--"] {
-  border: none;
+  border: 1px solid var(--color--graa4);
+}
+
+.button[class*="bg--"]:hover {
+  background: white;
 }
 
 .button:disabled {
@@ -41,9 +45,9 @@
   pointer-events: none;
 }
 
-.button:active,
-.button:hover,
-.button:focus,
+.button:not([class*="bg--"]):active,
+.button:not([class*="bg--"]):hover,
+.button:not([class*="bg--"]):focus,
 .button--solid:not([class*="bg--"]) {
   background: var(--color--default);
   border: 1px solid var(--color--default);
@@ -58,9 +62,9 @@
   color: var(--color--default);
 }
 
-.button.button--solid:active,
-.button.button--solid:hover,
-.button.button--solid:focus {
+.button.button--solid:not([class*="bg--"]):active,
+.button.button--solid:not([class*="bg--"]):hover,
+.button.button--solid:not([class*="bg--"]):focus {
   background: var(--color--white);
 }
 
@@ -157,10 +161,10 @@
   margin: 0;
 }
 
-.button--link,
-.button--link:hover,
-.button--link:hover:not(:disabled),
-.button--link:focus {
+.button.button--link,
+.button.button--link:active,
+.button.button--link:hover,
+.button.button--link:focus {
   background: none;
   border: 0;
   color: inherit;
