@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.4 built on 26.5.2020 15.57.54 on branch "button_version_two" at revision "2290ac4e59df8fc50bfabb7cd2f805db4188e463" */
+/** eb-designsystem.css version 0.1.4 built on 27.5.2020 15.56.15 on branch "button_version_two" at revision "90832bb14e15f809da128cc52f8db939eade293b" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -382,15 +382,18 @@ a.badge:hover {
   color: var(--color--default);
 }
 
-/* Custom button */
+/* Custom button - temp solution */
 .button[class*="bg--"] {
   border: 1px solid var(--color--graa5);
 }
 
+/* On hover */
 .button[class*="bg--"]:active,
 .button[class*="bg--"]:hover,
 .button[class*="bg--"]:focus {
-  background: white;
+  background: var(--color--white);
+  border-color: var(--color--graa5);
+  color: var(--color--black);
 }
 
 .button:disabled {
@@ -400,9 +403,9 @@ a.badge:hover {
   pointer-events: none;
 }
 
-.button:not([class*="bg--"]):active,
-.button:not([class*="bg--"]):hover,
-.button:not([class*="bg--"]):focus,
+.button:active,
+.button:hover,
+.button:focus,
 .button--solid:not([class*="bg--"]) {
   background: var(--color--default);
   border: 1px solid var(--color--default);
@@ -415,11 +418,6 @@ a.badge:hover {
 .button--solid:not([class*="bg--"]):hover,
 .button--solid:not([class*="bg--"]):focus {
   color: var(--color--default);
-}
-
-.button.button--solid:not([class*="bg--"]):active,
-.button.button--solid:not([class*="bg--"]):hover,
-.button.button--solid:not([class*="bg--"]):focus {
   background: var(--color--white);
 }
 
@@ -442,9 +440,9 @@ a.badge:hover {
 
 /* Secondary button */
 .button.button--secondary,
-.button.button--solid.button--secondary:active,
-.button.button--solid.button--secondary:hover,
-.button.button--solid.button--secondary:focus {
+.button--solid.button--secondary:active,
+.button--solid.button--secondary:hover,
+.button--solid.button--secondary:focus {
   border-color: var(--color--secondary);
   color: var(--color--secondary);
 }
@@ -516,10 +514,10 @@ a.badge:hover {
   margin: 0;
 }
 
-.button.button--link,
-.button.button--link:active,
-.button.button--link:hover,
-.button.button--link:focus {
+.button--link,
+.button--link:active,
+.button--link:hover,
+.button--link:focus {
   background: none;
   border: 0;
   color: inherit;
