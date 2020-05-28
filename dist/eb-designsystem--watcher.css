@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.1.4 built on 27.5.2020 15.56.07 on branch "button_version_two" at revision "90832bb14e15f809da128cc52f8db939eade293b" */
+/** eb-designsystem--watcher.css version 0.1.4 built on 28.5.2020 10.54.44 on branch "button_version_two" at revision "d4c6951762c08de699ec0666f5771213e63bad01" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -514,10 +514,10 @@ a.badge:hover {
   margin: 0;
 }
 
-.button--link,
-.button--link:active,
-.button--link:hover,
-.button--link:focus {
+.button.button--link,
+.button.button--link:active,
+.button.button--link:hover,
+.button.button--link:focus {
   background: none;
   border: 0;
   color: inherit;
