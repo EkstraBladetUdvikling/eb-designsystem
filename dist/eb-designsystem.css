@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.4 built on 28.5.2020 13.45.45 on branch "button_version_two" at revision "fa828c806432af18a1e569aed3fb278de851303f" */
+/** eb-designsystem.css version 0.1.4 built on 29.5.2020 11.19.15 on branch "button_version_two" at revision "a40d57d5aeaaec722b2f932c499929afa7afb5ce" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -561,7 +561,6 @@ a.badge:hover {
 a.card:hover,
 a.card:focus {
   box-shadow: var(--box-shadow--hover);
-  opacity: .8; /* DR.Edition 03/02/2020 */
   outline: none;
 }
 
