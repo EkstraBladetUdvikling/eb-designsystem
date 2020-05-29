@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.1.4 built on 28.5.2020 10.54.44 on branch "button_version_two" at revision "d4c6951762c08de699ec0666f5771213e63bad01" */
+/** eb-designsystem--watcher.css version 0.1.4 built on 29.5.2020 11.17.42 on branch "button_version_two" at revision "a40d57d5aeaaec722b2f932c499929afa7afb5ce" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -384,7 +384,7 @@ a.badge:hover {
 
 /* Custom button - temp solution */
 .button[class*="bg--"] {
-  border: 1px solid var(--color--graa5);
+  border: 1px solid transparent;
 }
 
 /* On hover */
@@ -392,7 +392,7 @@ a.badge:hover {
 .button[class*="bg--"]:hover,
 .button[class*="bg--"]:focus {
   background: var(--color--white);
-  border-color: var(--color--graa5);
+  border: 1px solid var(--color--graa5);
   color: var(--color--black);
 }
 
@@ -561,7 +561,6 @@ a.badge:hover {
 a.card:hover,
 a.card:focus {
   box-shadow: var(--box-shadow--hover);
-  opacity: .8; /* DR.Edition 03/02/2020 */
   outline: none;
 }
 
