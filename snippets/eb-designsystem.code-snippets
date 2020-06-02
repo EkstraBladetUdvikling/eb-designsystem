@@ -39,42 +39,41 @@
     "body": [
       "button"
     ],
-    "description": "Standard button design\n {\n align-items: center;\nbackground: var(--color--white);\nborder: 1px solid var(--color--bluedark);\nborder-radius: 36px;\nbox-sizing: border-box;\ncolor: var(--color--bluedark);\ncursor: pointer;\ndisplay: flex;\nfont-size: 14px;\npadding: 0 20px;\ntext-align: center;\ntext-decoration: none;\nwhite-space: nowrap;\nheight: 36px;\n }\n Has pseudo styling :disabled\n Has pseudo styling :hover\n Has pseudo styling :focus\n Has pseudo styling :active\n Has pseudo styling :focus\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "Standard button design\n {\n align-items: center;\nborder-radius: 36px;\nbox-sizing: border-box;\ncursor: pointer;\ndisplay: flex;\nfont-size: 14px;\npadding: 0 20px;\ntext-align: center;\ntext-decoration: none;\nwhite-space: nowrap;\nheight: 36px;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :disabled\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
+  },
+  "designsystem button[class*=\"bg \"]": {
+    "description": "Has pseudo styling ]\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
+  },
+  "designsystem button solid": {
+    "description": "Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :not([class*=\"bg--\"]):active\n Has pseudo styling :not([class*=\"bg--\"]):hover\n Has pseudo styling :not([class*=\"bg--\"]):focus\n Has pseudo styling :not([class*=\"bg--\"]):active\n Has pseudo styling :not([class*=\"bg--\"]):hover\n Has pseudo styling :not([class*=\"bg--\"]):focus"
   },
   "designsystem button primary": {
     "prefix": "ds-button--primary",
     "body": [
       "button--primary"
     ],
-    "description": "NB! This should only be used with button\nThis extends button with: {\n border-color: var(--color--bruger);\ncolor: var(--color--bruger);\n }\n Has pseudo styling :hover\n Has pseudo styling :focus\n NB! This should only be used with button--solid\nThis extends button--solid with: {\n background-color: var(--color--bruger);\nborder-color: var(--color--bruger);\ncolor: var(--fgcolor--bruger);\n }\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n border-color: var(--color--bruger);\ncolor: var(--color--bruger);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus\n NB! This should only be used with button--solid\nThis extends button--solid with: {\n background: var(--color--bruger);\ncolor: var(--fgcolor--bruger);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem button secondary": {
     "prefix": "ds-button--secondary",
     "body": [
       "button--secondary"
     ],
-    "description": "NB! This should only be used with button\nThis extends button with: {\n border-color: var(--color--graa3);\ncolor: var(--color--graa3);\n }\n Has pseudo styling :hover\n Has pseudo styling :focus\n NB! This should only be used with button--solid\nThis extends button--solid with: {\n background-color: var(--color--graa3);\nborder-color: var(--color--graa3);\ncolor: var(--fgcolor--graa3);\n }\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n border-color: var(--color--graa3);\ncolor: var(--color--graa3);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus\n NB! This should only be used with button--solid\nThis extends button--solid with: {\n background: var(--color--graa3);\ncolor: var(--fgcolor--graa3);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem button accept": {
     "prefix": "ds-button--accept",
     "body": [
       "button--accept"
     ],
-    "description": "NB! This should only be used with button\nThis extends button with: {\n border-color: var(--color--green);\ncolor: var(--color--green);\n }\n Has pseudo styling :hover\n Has pseudo styling :focus\n NB! This should only be used with button--solid\nThis extends button--solid with: {\n background-color: var(--color--green);\nborder-color: var(--color--green);\ncolor: var(--fgcolor--green);\n }\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n border-color: var(--color--green);\ncolor: var(--color--green);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus\n NB! This should only be used with button--solid\nThis extends button--solid with: {\n background: var(--color--green);\ncolor: var(--fgcolor--green);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem button cancel": {
     "prefix": "ds-button--cancel",
     "body": [
       "button--cancel"
     ],
-    "description": "NB! This should only be used with button\nThis extends button with: {\n border-color: var(--color--red);\ncolor: var(--color--red);\n }\n Has pseudo styling :hover\n Has pseudo styling :focus\n NB! This should only be used with button--solid\nThis extends button--solid with: {\n background-color: var(--color--red);\nborder-color: var(--color--red);\ncolor: var(--fgcolor--red);\n }\n Has pseudo styling :hover\n Has pseudo styling :focus"
-  },
-  "designsystem button solid": {
-    "prefix": "ds-button--solid",
-    "body": [
-      "button--solid"
-    ],
-    "description": "NB! This should only be used with button\n{\n background: var(--color--bluedark);\ncolor: var(--fgcolor--bluedark);\noutline: none;\n }\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n border-color: var(--color--red);\ncolor: var(--color--red);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus\n NB! This should only be used with button--solid\nThis extends button--solid with: {\n background: var(--color--red);\ncolor: var(--fgcolor--red);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem button icon": {
     "prefix": "ds-button--icon",
@@ -88,7 +87,7 @@
     "body": [
       "button--link"
     ],
-    "description": "NB! This should only be used with button\n{\n background: none;\nborder: 0;\ncolor: inherit;\noutline: none;\n }\n Has pseudo styling :hover\n Has pseudo styling :hover:not(:disabled)\n Has pseudo styling :focus"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n background: none;\nborder: 0;\ncolor: inherit;\noutline: none;\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem card": {
     "prefix": "ds-card",
@@ -475,7 +474,7 @@
     "body": [
       "ff-secondary"
     ],
-    "description": "{\n font-family: var(--fontfamily--secondary);\n }"
+    "description": "{\n font-family: Arial\n,\nHelvetica\n,\nsans-serif;\n }"
   },
   "designsystem fontsize xxsmall": {
     "prefix": "ds-fontsize-xxsmall",
