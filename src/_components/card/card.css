@@ -137,3 +137,13 @@ a.card:focus {
 .card-title--small:not([class*="fs-"]):not([class*="fontsize-"]) {
   font-size: var(--card-fs-title--small);
 }
+
+@media (--ie) {
+  .card-media .card-icon svg {
+    max-height: 40px;
+  }
+
+  .card-media .card-icon img {
+    width: 100%;
+  }
+}

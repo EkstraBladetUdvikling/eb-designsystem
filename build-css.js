@@ -18,27 +18,27 @@ const importFrom = [
   './node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-css-vars.css',
   './node_modules/@ekstra-bladet/eb-fonts/dist/eb-fontvars-desktop.css',
   './src/_variables.css',
-  './src/_custom-mediaqueries.css'
+  './src/_custom-mediaqueries.css',
 ];
 
 const cssnextObject = {
   browsers: 'ie 11',
   features: {
-    'nesting-rules': true
+    'nesting-rules': true,
   },
   importFrom,
   preserve: false,
   stage: 0,
-  warnForDuplicates: false
+  warnForDuplicates: false,
 };
 
 const customMediaOptions = {
   importFrom: ['./src/_custom-mediaqueries.css'],
-  preserve: false
+  preserve: false,
 };
 
 const readFolder = (folderName, filesToFind, array, lvl = 0) => {
-  fs.readdirSync(folderName, { withFileTypes: true }).forEach(output => {
+  fs.readdirSync(folderName, { withFileTypes: true }).forEach((output) => {
     if (output.isFile() && lvl !== 0) {
       if (path.extname(output.name).toLowerCase() === filesToFind) {
         array.push(`${folderName}/${output.name}`);
@@ -50,12 +50,12 @@ const readFolder = (folderName, filesToFind, array, lvl = 0) => {
   });
 };
 
-const getOptions = args => {
+const getOptions = (args) => {
   const options = {
     build: '',
-    watching: false
+    watching: false,
   };
-  args.forEach(arg => {
+  args.forEach((arg) => {
     if (arg.indexOf('--ie') !== -1 || arg.indexOf('--nonie') !== -1 || arg.indexOf('--watcher') !== -1) {
       options.build = arg;
     }
@@ -63,20 +63,20 @@ const getOptions = args => {
   return options;
 };
 
-const buildCSS = async args => {
+const buildCSS = async (args) => {
   try {
     const startTime = new Date().getTime();
 
     const options = getOptions(args);
     const srcFolder = './src';
-    const cssFilesToRead = options.build === 'ie' ? [] : importFrom;
+    const cssFilesToRead = options.build === '--ie' ? [] : importFrom;
     const postcssPlugins = [];
 
     switch (options.build) {
-      case 'ie':
+      case '--ie':
         postcssPlugins.push(presetEnv(cssnextObject));
         break;
-      case 'watch':
+      case '--watcher':
         postcssPlugins.push(postcssCustomMedia(customMediaOptions));
         break;
       default:
@@ -98,7 +98,7 @@ const buildCSS = async args => {
 
     const readFileContent = [];
 
-    cssFilesToRead.forEach(fileName => {
+    cssFilesToRead.forEach((fileName) => {
       readFileContent.push(fs.readFileSync(fileName));
     });
     const css = readFileContent.join('');
@@ -111,16 +111,9 @@ const buildCSS = async args => {
         tempversionBuild = 0;
       }
     }
-    const branchInfo = fs
-      .readFileSync('.git/HEAD')
-      .toString()
-      .trim()
-      .split('/');
+    const branchInfo = fs.readFileSync('.git/HEAD').toString().trim().split('/');
     const branch = branchInfo[branchInfo.length - 1];
-    let rev = require('child_process')
-      .execSync('git rev-parse HEAD')
-      .toString()
-      .trim();
+    let rev = require('child_process').execSync('git rev-parse HEAD').toString().trim();
 
     const date = new Date();
     const dateString = `${date.toLocaleDateString('da')} ${date.toLocaleTimeString('da')}`;
@@ -130,16 +123,11 @@ const buildCSS = async args => {
       version = `${version} | TEMP VERSION: ${tempversionBuild}`;
     }
 
-    await postcss([
-      ...postcssPlugins,
-      discardDuplicates,
-      discardUnused,
-      mergeRules
-    ])
+    await postcss([...postcssPlugins, discardDuplicates, discardUnused, mergeRules])
       .process(css, {
-        from: 'undefined'
+        from: 'undefined',
       })
-      .then(result => {
+      .then((result) => {
         try {
           const resultCss = result.css;
           fs.writeFile(outputFile, `/** ${version} */\n${resultCss}`, () => {
