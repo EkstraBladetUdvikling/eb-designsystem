@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.4 built on 29.5.2020 11.19.15 on branch "button_version_two" at revision "a40d57d5aeaaec722b2f932c499929afa7afb5ce" */
+/** eb-designsystem.css version 0.1.4 built on 2.6.2020 15.56.43 on branch "fontfamily-typo-fix" at revision "84dd7378b2430bd327da448e89eaf120f9dc056c" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -250,8 +250,8 @@ html,button,input,select,textarea{font-family:Arial,sans-serif}:root{--fs-xxsmal
   --fgcolor--default: var(--fgcolor--bluedark);
   --fgcolor--primary: var(--fgcolor--bruger);
   --fgcolor--secondary: var(--fgcolor--graa3);
-  --fontfamily--primary: "Work Sans", var(--fontfamily--seconday);
-  --fontfamily--seconday: Arial, Helvetica, sans-serif}
+  --fontfamily--primary: "Work Sans", var(--fontfamily--secondary);
+  --fontfamily--secondary: Arial, Helvetica, sans-serif}
 /* Systemwide variables - default + desktop */
 
 @media (--smartphone) {
