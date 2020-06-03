@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.4 built on 2.6.2020 15.56.43 on branch "fontfamily-typo-fix" at revision "84dd7378b2430bd327da448e89eaf120f9dc056c" */
+/** eb-designsystem.css version 0.1.4 built on 3.6.2020 11.00.33 on branch "IE11_icon_placement_fix" at revision "c08dafab575f9d935aceebb46172d6b6f4a7bba1" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -661,6 +661,16 @@ a.card:focus {
 .card--small-media .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
 .card-title--small:not([class*="fs-"]):not([class*="fontsize-"]) {
   font-size: var(--card-fs-title--small);
+}
+
+@media (--ie) {
+  .card-media .card-icon svg {
+    max-height: 40px;
+  }
+
+  .card-media .card-icon img {
+    width: 100%;
+  }
 }
 :root {
   --color--focus: var(--color--blue);

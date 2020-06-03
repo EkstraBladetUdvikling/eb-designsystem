@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.1.4 built on 2.6.2020 15.56.45 on branch "fontfamily-typo-fix" at revision "84dd7378b2430bd327da448e89eaf120f9dc056c" */
+/** eb-designsystem--watcher.css version 0.1.4 built on 3.6.2020 11.00.35 on branch "IE11_icon_placement_fix" at revision "c08dafab575f9d935aceebb46172d6b6f4a7bba1" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -254,7 +254,7 @@ html,button,input,select,textarea{font-family:Arial,sans-serif}:root{--fs-xxsmal
   --fontfamily--secondary: Arial, Helvetica, sans-serif}
 /* Systemwide variables - default + desktop */
 
-@media (--smartphone) {
+@media (max-width: 767px) {
   :root {
     --distance-large: 15px;
   --distance-medium: 10px;
@@ -286,35 +286,26 @@ custom media queries is the only allowed media queries
 }
 ```
 */
-@custom-media --smartphone (max-width: 767px);
 
 /*
 * custom media query for desktop
 */
-@custom-media --desktop (min-width: 767px);
-@custom-media --widedesktop (min-width: 940px);
-@custom-media --xtrawidedesktop (min-width: 1140px);
 
 /*
 * media-query for ipad
 */
-@custom-media --tablet only screen and (min-width: 768px) and (max-width: 1024px);
 
 /*
 * Landscape media-query for ipad
 */
-@custom-media --landscape only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape);
 
 /*
 * Portrait media-query for ipad
 */
-@custom-media --portrait only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait);
 
 /*
 * ie11 and above media query for
 */
-@custom-media --ie only screen and (-ms-high-contrast: active),
-  (-ms-high-contrast: none);
 .badge {
   border-radius: 5px;
   border-radius: var(--border-radius--small);
@@ -572,7 +563,7 @@ a.badge:hover {
   --card-padding: 20px;
 }
 
-@media (--smartphone) {
+@media (max-width: 767px) {
   :root {
     --card-fs-title: 20px;
   --card-fs-title--small: 16px;
@@ -718,6 +709,16 @@ a.card:focus {
 .card-title--small:not([class*="fs-"]):not([class*="fontsize-"]) {
   font-size: 20px;
   font-size: var(--card-fs-title--small);
+}
+
+@media only screen and (-ms-high-contrast: active),(-ms-high-contrast: none) {
+  .card-media .card-icon svg {
+    max-height: 40px;
+  }
+
+  .card-media .card-icon img {
+    width: 100%;
+  }
 }
 :root {
   --color--focus: var(--color--blue);
@@ -1304,7 +1305,7 @@ a.card:focus {
   --grid-xlarge: 930px;
 }
 
-@media (--smartphone) {
+@media (max-width: 767px) {
   :root {
     --grid-large: 100%;
   --grid-medium: 100%;
