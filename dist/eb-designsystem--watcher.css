@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.1.4 built on 10.12.2020 11.01.37 on branch "added-spacing-font-awesome-buttons" at revision "698177d27e2ef5ea3fa3362728373f5fcd9a3a13" */
+/** eb-designsystem--watcher.css version 0.1.4 built on 10.12.2020 20.29.13 on branch "added-spacing-font-awesome-buttons" at revision "87a288c1353e21c2470d92d92f634db324d44bc8" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -327,6 +327,10 @@ a.badge:hover {
   opacity: .8; /* DR.Edition 03/02/2020 */
 }
 
+.badge.badge--small {
+  padding: 2px 3px;
+}
+
 .badge.badge--primary {
   background-color: #4fa8df;
   background-color: var(--color--primary);
@@ -521,26 +525,17 @@ a.badge:hover {
   color: var(--fgcolor--cancel);
 }
 
-.button .fa,
-.button .fal,
-.button .far,
-.button .fas {
+.button .icon {
   font-size: 18px;
 }
 
 .button .badge:first-child,
-.button .fa:first-child,
-.button .fal:first-child,
-.button .far:first-child,
-.button .fas:first-child {
+.button .icon:first-child {
   margin-right: 10px;
 }
 
 .button .badge:last-child,
-.button .fa:last-child,
-.button .fal:last-child,
-.button .far:last-child,
-.button .fas:last-child {
+.button .icon:last-child {
   margin-left: 10px;
 }
 
@@ -551,10 +546,7 @@ a.badge:hover {
   min-width: var(--button-height);
 }
 
-.button--icon .fa,
-.button--icon .fal,
-.button--icon .far,
-.button--icon .fas {
+.button--icon .icon {
   margin: 0;
 }
 
