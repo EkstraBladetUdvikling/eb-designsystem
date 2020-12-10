@@ -141,17 +141,26 @@
   color: var(--fgcolor--cancel);
 }
 
-.button .fa {
+.button .fa,
+.button .fal,
+.button .far,
+.button .fas {
   font-size: 18px;
 }
 
 .button .badge:first-child,
-.button .fa:first-child {
+.button .fa:first-child,
+.button .fal:first-child,
+.button .far:first-child,
+.button .fas:first-child {
   margin-right: 10px;
 }
 
 .button .badge:last-child,
-.button .fa:last-child {
+.button .fa:last-child,
+.button .fal:last-child,
+.button .far:last-child,
+.button .fas:last-child {
   margin-left: 10px;
 }
 
@@ -161,8 +170,10 @@
   min-width: var(--button-height);
 }
 
-.button--icon .fa:first-child,
-.button--icon .fa:last-child {
+.button--icon .fa,
+.button--icon .fal,
+.button--icon .far,
+.button--icon .fas {
   margin: 0;
 }
 
