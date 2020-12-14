@@ -329,6 +329,13 @@
     ],
     "description": "Accessibility element; This element is hidden, and will only be shown on interaction\n {\n position: absolute;\nborder: 0;\nclip: rect(0 0 0 0);\nmargin: 0;\noverflow: hidden;\npadding: 0;\nwidth: 1px;\nheight: 1px;\n }\n Has pseudo styling :hover\n Has pseudo styling :active\n Has pseudo styling :focus"
   },
+  "designsystem animation fogwave": {
+    "prefix": "ds-animation-fogwave",
+    "body": [
+      "animation-fogwave"
+    ],
+    "description": "{\n position: relative;\n }\n Has pseudo styling :before\n Has pseudo styling :before"
+  },
   "designsystem flex": {
     "prefix": "ds-flex",
     "body": [
