@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.4 built on 10.12.2020 11.01.35 on branch "added-spacing-font-awesome-buttons" at revision "698177d27e2ef5ea3fa3362728373f5fcd9a3a13" */
+/** eb-designsystem.css version 0.1.4 built on 14.12.2020 14.21.13 on branch "animations" at revision "2f24e7ec79bcc2c2d7ace13ebdc9915b5e72dae1" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -1062,6 +1062,48 @@ a.card:focus {
   text-decoration: none;
   width: auto;
   height: auto;
+}
+/* animation-fogwave */
+
+.animation-fogwave {
+  position: relative;
+}
+
+.animation-fogwave:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  animation-duration: 2.0s;
+  animation-iteration-count: infinite;
+  animation-name: fogwave;
+  animation-timing-function: linear;
+  background: linear-gradient(to right, transparent 3%,rgba(255, 255, 255, .7) 25%, transparent 40%);
+  background-size: 1000px 100%;
+  content: "";
+  width: 100%;
+  height: 100%;
+
+  animation-fill-mode: forwards;
+  user-select: none;
+}
+
+@keyframes fogwave {
+  0% {
+    background-position: -1000px;
+  }
+  100% {
+    background-position: 1000px;
+  }
+}
+
+/* Disable animations when preferes reduced motion */
+
+@media (prefers-reduced-motion) {
+  .animation-fogwave:before {
+    animation-name: none;
+  }
 }
 
 .flex,.flex-column {
