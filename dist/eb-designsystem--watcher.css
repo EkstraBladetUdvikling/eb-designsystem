@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.1.4 built on 10.12.2020 20.29.13 on branch "added-spacing-font-awesome-buttons" at revision "87a288c1353e21c2470d92d92f634db324d44bc8" */
+/** eb-designsystem--watcher.css version 0.1.4 built on 15.12.2020 09.21.51 on branch "added-spacing-font-awesome-buttons" at revision "4ec0754a8470480b060dea2cfee63512ac926119" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -1126,6 +1126,68 @@ a.card:focus {
   text-decoration: none;
   width: auto;
   height: auto;
+}
+/* animation-fogwave */
+
+.animation-fogwave {
+  position: relative;
+}
+
+.animation-fogwave:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  -webkit-animation-duration: 2.0s;
+
+          animation-duration: 2.0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: fogwave;
+          animation-name: fogwave;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  background: linear-gradient(to right, transparent 3%,rgba(255, 255, 255, .7) 25%, transparent 40%);
+  background-size: 1000px 100%;
+  content: "";
+  width: 100%;
+  height: 100%;
+
+  -webkit-animation-fill-mode: forwards;
+
+          animation-fill-mode: forwards;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+@-webkit-keyframes fogwave {
+  0% {
+    background-position: -1000px;
+  }
+  100% {
+    background-position: 1000px;
+  }
+}
+
+@keyframes fogwave {
+  0% {
+    background-position: -1000px;
+  }
+  100% {
+    background-position: 1000px;
+  }
+}
+
+/* Disable animations when preferes reduced motion */
+
+@media (prefers-reduced-motion) {
+  .animation-fogwave:before {
+    -webkit-animation-name: none;
+            animation-name: none;
+  }
 }
 
 .flex,.flex-column {
