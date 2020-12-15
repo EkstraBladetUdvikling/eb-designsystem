@@ -97,48 +97,48 @@ Det her er en standard knap uden nogen hat
 
 <button class="button">
   <span>Button icon right</span>
-  <i class="far fa-angle-right"></i>
+  <i class="icon far fa-angle-right"></i>
 </button>
 
 ```html
 <button class="button">
   <span>Button icon right</span>
-  <i class="far fa-angle-right"></i>
+  <i class="icon far fa-angle-right"></i>
 </button>
 ```
 
 <button class="button">
-  <i class="far fa-angle-left"></i>
+  <i class="icon far fa-angle-left"></i>
   <span>Button icon left</span>
 </button>
 
 ```html
 <button class="button">
-  <i class="far fa-angle-left"></i>
+  <i class="icon far fa-angle-left"></i>
   <span>Button icon left</span>
 </button>
 ```
 
 <button class="button button--solid">
   <span>Button solid icon right</span>
-  <i class="fal fa-angle-right"></i>
+  <i class="icon fal fa-angle-right"></i>
 </button>
 
 ```html
 <button class="button button--solid">
   <span>Button solid icon right</span>
-  <i class="fal fa-angle-right"></i>
+  <i class="icon fal fa-angle-right"></i>
 </button>
 ```
 
 <button class="button button--solid">
-  <i class="fal fa-angle-left"></i>
+  <i class="icon fal fa-angle-left"></i>
   <span>Button solid icon left</span>
 </button>
 
 ```html
 <button class="button button--solid">
-  <i class="fal fa-angle-left"></i>
+  <i class="icon fal fa-angle-left"></i>
   <span>Button solid icon left</span>
 </button>
 ```
@@ -146,22 +146,22 @@ Det her er en standard knap uden nogen hat
 ### Button icon, no text
 
 <button class="button button--icon">
-  <i class="far fa-times"></i>
+  <i class="icon far fa-times"></i>
 </button>
 
 ```html
 <button class="button button--icon">
-  <i class="far fa-times"></i>
+  <i class="icon far fa-times"></i>
 </button>
 ````
 
 <button class="button button--solid button--icon">
-  <i class="fal fa-times"></i>
+  <i class="icon fal fa-times"></i>
 </button>
 
 ```html
 <button class="button button--solid button--icon">
-  <i class="fal fa-times"></i>
+  <i class="icon fal fa-times"></i>
 </button>
 ````
 

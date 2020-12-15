@@ -6,6 +6,13 @@
     ],
     "description": "{\n border-radius: 5px;\npadding: 5px 7px;\nwhite-space: nowrap;\n }\n Has pseudo styling :not([class*=\"bg--\"]):not([class*=\"badge--\"])\n Has pseudo styling :focus\n Has pseudo styling :hover"
   },
+  "designsystem badge small": {
+    "prefix": "ds-badge--small",
+    "body": [
+      "badge--small"
+    ],
+    "description": "NB! This should only be used with badge\nThis extends badge with: {\n padding: 2px 3px;\n }"
+  },
   "designsystem badge primary": {
     "prefix": "ds-badge--primary",
     "body": [
