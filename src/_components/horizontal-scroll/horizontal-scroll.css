@@ -1,0 +1,37 @@
+.horizontal-scroll--nav {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  z-index: 100;
+
+  opacity: 0;
+  transform: translateY(-50%);
+
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
+.horizontal-scroll--nav-next {
+  right: 5px;
+  left: auto;
+}
+.horizontal-scroll--container:hover .horizontal-scroll--nav {
+  opacity: 1;
+}
+
+.horizontal-scroll--scroll-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* IE/Edge hack to hide scrollbar */
+  -ms-scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox hack to hide scrollbar */
+}
+.horizontal-scroll--scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome on Windows hack to hide scrollbar */
+}
+.horizontal-scroll--scroll-item {
+  height: 84px;
+
+  scroll-snap-align: start;
+}
