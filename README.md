@@ -20,7 +20,7 @@ This will likely get you version 3 or higher of ruby, which is incompatible with
 To remedy this follow this guide to enable running multiple ruby versions
 * [Install rbenv](https://github.com/rbenv/rbenv#installation)
 
-The install ruby version 2.7.2
+Then install ruby version 2.7.2
 
 ```shell
 $ rbenv install 2.7.2
