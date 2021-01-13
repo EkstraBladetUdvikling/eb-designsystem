@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.4 built on 15.12.2020 09.21.49 on branch "added-spacing-font-awesome-buttons" at revision "4ec0754a8470480b060dea2cfee63512ac926119" */
+/** eb-designsystem.css version 0.1.6 built on 13.1.2021 12.49.05 on branch "horizontal-scroll" at revision "0f66cace045e5954c4a4077088defd380c5f57d8" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -681,7 +681,7 @@ a.card:focus {
 }
 
 :focus {
-  outline: 5px auto var(--color--focus);
+  outline: 1px auto var(--color--focus);
 }
 
 .form-element {
@@ -780,6 +780,37 @@ a.card:focus {
 .form-checkbox--icon ~ .form-label .form-checkbox-toggle--off,
 .form-checkbox--icon:checked ~ .form-label .form-checkbox-toggle--on {
   display: inline-block;
+}
+.horizontal-scroll--nav {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  z-index: 100;
+
+  opacity: 0;
+  transform: translateY(-50%);
+}
+.horizontal-scroll--nav-next {
+  right: 5px;
+  left: auto;
+}
+.horizontal-scroll--container:hover .horizontal-scroll--nav {
+  opacity: 1;
+}
+.horizontal-scroll--scroll-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox hack to hide scrollbar */
+}
+.horizontal-scroll--scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome on Windows hack to hide scrollbar */
+}
+.horizontal-scroll--scroll-item {
+  height: 84px;
+
+  scroll-snap-align: start;
 }
 .nav-item {
   align-items: center;
