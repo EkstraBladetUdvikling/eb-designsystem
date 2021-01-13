@@ -80,6 +80,8 @@ yarn install
 2.  Submit a Pull Request on github and get it approved by someone else in the frontend team
 3.  Merge your branch into master :rocket:
 
+4.  run `yarn dist:move` to move code to ekstrabladet project
+
 ## Snippets
 
 There is two VS Code snippet files outputtet from this project.

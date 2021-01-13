@@ -1,6 +1,6 @@
 {
   "name": "eb-designsystem",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "main": "index.js",
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
