@@ -50,6 +50,8 @@ description: The horizontal-scroll creates a carosel of items i.e cards that can
   </div>
 </div>
 
+
+
 <span style="color:#12507b;font-weight: bolder">HTML</span> - Cards with a static min-width (as showed in the example)
 ```html
 <div class="grid-width--large horizontal-scroll--container position-relative">
@@ -75,8 +77,10 @@ description: The horizontal-scroll creates a carosel of items i.e cards that can
 </div>
 ```
 
-<span style="color:#12507b;font-weight: bolder">JavaScript</span> - Functions to make the horizontial-scroll work
-```html
+
+
+<span style="color:#12507b;font-weight: bolder">TypeScript</span> - Functions to make the horizontial-scroll work
+```javascript
 /* Horizontial Scroll elements */
 const scrollItemContainer = document.getElementById('example-scroll-container') as HTMLDivElement;
 const prevScrollBtn = document.getElementById('prev-scroll-btn');

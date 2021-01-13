@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.1.5 built on 13.1.2021 09.41.03 on branch "horizontal-scroll" at revision "d004f710bd47ddbc387275ad17baed6192c706c0" */
+/** eb-designsystem--watcher.css version 0.1.5 built on 13.1.2021 12.03.24 on branch "horizontal-scroll" at revision "0f66cace045e5954c4a4077088defd380c5f57d8" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -780,9 +780,6 @@ a.card:focus {
 
   opacity: 0;
   transform: translateY(-50%);
-
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
 }
 .horizontal-scroll--nav-next {
   right: 5px;
@@ -791,13 +788,10 @@ a.card:focus {
 .horizontal-scroll--container:hover .horizontal-scroll--nav {
   opacity: 1;
 }
-
 .horizontal-scroll--scroll-container {
   overflow-x: scroll;
   overflow-y: hidden;
 
-  -ms-overflow-style: -ms-autohiding-scrollbar; /* IE/Edge hack to hide scrollbar */
-  -ms-scroll-snap-type: x mandatory;
   scroll-snap-type: x mandatory;
   scrollbar-width: none; /* Firefox hack to hide scrollbar */
 }
