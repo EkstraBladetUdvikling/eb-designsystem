@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.8 built on 18.1.2021 10.13.58 on branch "corrections" at revision "19383e2cd3267580dc89f45a7a451f75a9f115ac" */
+/** eb-designsystem.css version 0.1.8 built on 21.1.2021 15.33.13 on branch "master" at revision "a8597b4bb41189da51ebf5f7563ef932eb8491bc" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -543,7 +543,7 @@ a.badge:hover {
 
 .card {
   border-radius: var(--border-radius--small);
-  box-shadow: 0 0 0 1px var(--card-border-color); /* DR.Edition 03/02/2020 */
+  box-shadow: inset 0 0 0 1px var(--card-border-color); /* DR.Edition 03/02/2020 */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

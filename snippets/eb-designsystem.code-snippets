@@ -101,7 +101,7 @@
     "body": [
       "card"
     ],
-    "description": "{\n border-radius: 5px;\nbox-shadow: 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\"\n,\nArial\n,\nHelvetica\n,\nsans-serif;\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "{\n border-radius: 5px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\"\n,\nArial\n,\nHelvetica\n,\nsans-serif;\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem card[class*=\"bg \"]": {
     "description": "Has pseudo styling ]"
@@ -203,96 +203,33 @@
     ],
     "description": "NB! This should only be used with form-checkbox\n{\n position: absolute;\nz-index: -1;\n }"
   },
-  "designsystem nav item": {
-    "prefix": "ds-nav-item",
+  "designsystem horizontal scroll nav": {
+    "prefix": "ds-horizontal-scroll--nav",
     "body": [
-      "nav-item"
+      "horizontal-scroll--nav"
     ],
-    "description": "{\n align-items: center;\ncursor: pointer;\ndisplay: flex;\nwhite-space: nowrap;\n }\n {\n color: var(--color--black);\n }"
+    "description": "NB! This should only be used with horizontal-scroll\n{\n position: absolute;\ntop: 50%;\nleft: 5px;\nz-index: 100;\nopacity: 0;\ntransform: translateY(-50%);\n }"
   },
-  "designsystem nav item hover": {
-    "prefix": "ds-nav-item-hover",
+  "designsystem horizontal scroll nav next": {
+    "prefix": "ds-horizontal-scroll--nav-next",
     "body": [
-      "nav-item-hover"
+      "horizontal-scroll--nav-next"
     ],
-    "description": "{\n color: var(--color--black);\n }\n Has pseudo styling :hover"
+    "description": "NB! This should only be used with horizontal-scroll\n{\n right: 5px;\nleft: auto;\n }"
   },
-  "designsystem nav brand": {
-    "prefix": "ds-nav-brand",
+  "designsystem horizontal scroll scroll container": {
+    "prefix": "ds-horizontal-scroll--scroll-container",
     "body": [
-      "nav-brand"
+      "horizontal-scroll--scroll-container"
     ],
-    "description": "{\n line-height: 0;\n }"
+    "description": "NB! This should only be used with horizontal-scroll\n{\n overflow-x: scroll;\noverflow-y: hidden;\nscroll-snap-type: x mandatory;\nscrollbar-width: none;\n }\n Has pseudo styling ::-webkit-scrollbar"
   },
-  "designsystem nav brand left": {
-    "prefix": "ds-nav-brand--left",
+  "designsystem horizontal scroll scroll item": {
+    "prefix": "ds-horizontal-scroll--scroll-item",
     "body": [
-      "nav-brand--left"
+      "horizontal-scroll--scroll-item"
     ],
-    "description": "NB! This should only be used with nav-brand\n{\n margin-right: 10px;\n }"
-  },
-  "designsystem nav item icon": {
-    "prefix": "ds-nav-item-icon",
-    "body": [
-      "nav-item-icon"
-    ],
-    "description": "{\n flex-shrink: 0;\n }\n Has pseudo styling :first-child\n Has pseudo styling :last-child"
-  },
-  "designsystem nav item user": {
-    "prefix": "ds-nav-item--user",
-    "body": [
-      "nav-item--user"
-    ],
-    "description": "NB! This should only be used with nav-item\n{\n max-width: 100px;\n }\n NB! This should only be used with nav-item\n{\n max-width: 150px;\n }\n NB! This should only be used with nav-item\n{\n max-width: 200px;\n }\n NB! This should only be used with nav-item\n{\n max-width: 300px;\n }"
-  },
-  "designsystem nav top sub": {
-    "prefix": "ds-nav-top--sub",
-    "body": [
-      "nav-top--sub"
-    ],
-    "description": "NB! This should only be used with nav-top\nThis extends nav-top with: {\n z-index: 1;\nbackground: var(--color--black);\nborder-radius: 0;\nbox-shadow: none;\ncolor: var(--fgcolor--black);\njustify-content: normal;\n }"
-  },
-  "designsystem nav item sub": {
-    "prefix": "ds-nav-item--sub",
-    "body": [
-      "nav-item--sub"
-    ],
-    "description": "NB! This should only be used with nav-item\n{\n color: var(--fgcolor--black);\n }\n NB! This should only be used with nav-item\n{\n border-right: 1px solid currentColor;\n }\n Has pseudo styling :last-child"
-  },
-  "designsystem nav top stickybackground": {
-    "prefix": "ds-nav-top-stickybackground",
-    "body": [
-      "nav-top-stickybackground"
-    ],
-    "description": "{\n height: 50px;\n }"
-  },
-  "designsystem nav top": {
-    "prefix": "ds-nav-top",
-    "body": [
-      "nav-top"
-    ],
-    "description": "{\n position: relative;\nz-index: 1000000;\nalign-items: center;\nbackground: var(--color--white);\nborder-radius: 0 0 10px 10px;\nbox-shadow: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);\nbox-sizing: border-box;\ncolor: var(--color--graa5);\ndisplay: flex;\nflex-direction: row;\nfont-size: 16px;\njustify-content: space-between;\nline-height: 16px;\npadding: 0 20px;\nwidth: 100%;\nmin-width: 960px;\nheight: 50px;\n }"
-  },
-  "designsystem nav top left": {
-    "prefix": "ds-nav-top-left",
-    "body": [
-      "nav-top-left"
-    ],
-    "description": "{\n align-items: center;\ndisplay: flex;\nfont-size: var(--fs-medium);\njustify-content: flex-start;\npadding-right: 10px;\n }"
-  },
-  "designsystem nav top right": {
-    "prefix": "ds-nav-top-right",
-    "body": [
-      "nav-top-right"
-    ],
-    "description": "{\n align-items: center;\ndisplay: flex;\nfont-size: var(--fs-small);\njustify-content: flex-end;\n }"
-  },
-  "designsystem nav top show_when_fixed": {
-    "prefix": "ds-nav-top-show_when_fixed",
-    "body": [
-      "nav-top-show_when_fixed"
-    ],
-    "description": "{\n display: none;\n }"
+    "description": "NB! This should only be used with horizontal-scroll\n{\n height: 84px;\nscroll-snap-align: start;\n }"
   },
   "designsystem toggle input": {
     "prefix": "ds-toggle-input",
