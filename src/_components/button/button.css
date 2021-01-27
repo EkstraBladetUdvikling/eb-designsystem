@@ -178,6 +178,7 @@
 
 .button.button--big {
   font-size: 20px;
+  font-weight: bold;
   padding: 0 40px;
   height: var(--button-height--big);
 }

@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.9 built on 27.1.2021 11.17.08 on branch "card-v2" at revision "6ee4a4ac539f3dcd49ef136a0d08d04722d49ff0" */
+/** eb-designsystem.css version 0.1.9 built on 27.1.2021 13.58.13 on branch "KAM" at revision "5722b8c66ff673d12aa1435307a84cbc071b57b0" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -530,6 +530,7 @@ a.badge:hover {
 
 .button.button--big {
   font-size: 20px;
+  font-weight: bold;
   padding: 0 40px;
   height: var(--button-height--big);
 }
