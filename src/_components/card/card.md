@@ -363,3 +363,106 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
     </div>
   </a>
 ```
+## Card modes
+
+Et card-mode giver cardet mulighed for at blive anvendt som **lightmode** eller **darkmode**.
+
+OBS: Det er stadig muligt at give cardet en bg--farve.
+
+<span style="color:#12507b;font-weight: bolder">Lightmode</span>
+
+<div class="flex grid-width--small">
+    <a href="#" class="card card-mode card-lightmode width-1of2 margin-s--r">
+      <div class="card-media">
+        <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
+        <div class="card-icon">
+          <i class="far fa-play-circle"></i>
+        </div>
+        <div class="card-border bg--breaking"></div>
+      </div>
+      <div class="card-content">
+        <p class="card-meta fontsize-small margin-s--b"><small>Politik - 2 timer siden</small></p>
+        <h2 class="fontsize-medium">Curabitur vehicula ac urna</h2>
+        <div class="card-icon-plus">
+          <svg viewBox="0 0 100 100">
+            <use xlink:href="#ebplus_sort"></use>
+          </svg>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="card card-mode card-lightmode width-1of2 margin-s--r">
+      <div class="card-media">
+        <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
+        <div class="card-icon">
+          <i class="far fa-headphones-alt"></i>
+        </div>
+        <div class="card-border bg--nyheder"></div>
+      </div>
+      <div class="card-content">
+        <h2 class="fontsize-medium">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
+      </div>
+    </a>
+    <a href="#" class="card card-mode card-lightmode width-1of2 margin-s--r">
+      <div class="card-media">
+        <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
+        <div class="card-border bg--sport"></div>
+      </div>
+      <div class="card-content">
+        <h2 class="fontsize-medium">Donec sed tincidunt ex, vestibulum congue arcu</h2>
+        <div class="card-icon-plus">
+          <svg viewBox="0 0 100 100">
+            <use xlink:href="#ebplus_sort"></use>
+          </svg>
+        </div>
+      </div>
+    </a>
+</div>
+
+<span style="color:#12507b;font-weight: bolder">Darkmode</span>
+
+<div class="flex grid-width--small">
+    <a href="#" class="card card-mode card-darkmode width-1of2 margin-s--r">
+      <div class="card-media">
+        <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
+        <div class="card-icon">
+          <i class="far fa-play-circle"></i>
+        </div>
+        <div class="card-border bg--breaking"></div>
+      </div>
+      <div class="card-content">
+        <p class="card-meta fontsize-small margin-s--b"><small>Politik - 2 timer siden</small></p>
+        <h2 class="fontsize-medium">Curabitur vehicula ac urna</h2>
+        <div class="card-icon-plus">
+          <svg viewBox="0 0 100 100">
+            <use xlink:href="#ebplus_sort"></use>
+          </svg>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="card card-mode card-darkmode width-1of2 margin-s--r">
+      <div class="card-media">
+        <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
+        <div class="card-icon">
+          <i class="far fa-headphones-alt"></i>
+        </div>
+        <div class="card-border bg--nyheder"></div>
+      </div>
+      <div class="card-content">
+        <h2 class="fontsize-medium">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
+      </div>
+    </a>
+    <a href="#" class="card card-mode card-darkmode width-1of2 margin-s--r">
+      <div class="card-media">
+        <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
+        <div class="card-border bg--sport"></div>
+      </div>
+      <div class="card-content">
+        <h2 class="fontsize-medium">Donec sed tincidunt ex, vestibulum congue arcu</h2>
+        <div class="card-icon-plus">
+          <svg viewBox="0 0 100 100">
+            <use xlink:href="#ebplus_sort"></use>
+          </svg>
+        </div>
+      </div>
+    </a>
+</div>

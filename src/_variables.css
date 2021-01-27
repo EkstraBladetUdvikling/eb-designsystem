@@ -1,8 +1,8 @@
 /* Systemwide variables - default + desktop */
 :root {
   --border-radius--small: 5px;
-  --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), .22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
-  --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
+  --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), 0.22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
+  --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), 0.1);
   --color--accept: var(--color--green);
   --color--cancel: var(--color--red);
   --color--default: var(--color--bluedark);
@@ -27,10 +27,10 @@
 @media (--smartphone) {
   :root {
     --distance-large: 15px;
-  --distance-medium: 10px;
-  --distance-small: 5px;
-  --distance-standard: 10px;
-  --distance-xlarge: 20px;
-  --distance-xxlarge: 30px;
+    --distance-medium: 10px;
+    --distance-small: 5px;
+    --distance-standard: 10px;
+    --distance-xlarge: 20px;
+    --distance-xxlarge: 30px;
   }
 }
