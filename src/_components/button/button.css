@@ -1,6 +1,7 @@
 :root {
   --button-border-radius: var(--button-height);
   --button-height: 36px;
+  --button-height--big: 50px;
 }
 
 .button {
@@ -173,4 +174,10 @@
   border: 0;
   color: inherit;
   outline: none;
+}
+
+.button.button--big {
+  font-size: 20px;
+  padding: 0 40px;
+  height: var(--button-height--big);
 }

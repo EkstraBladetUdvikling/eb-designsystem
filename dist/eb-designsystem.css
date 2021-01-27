@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.8 built on 27.1.2021 10.21.41 on branch "card-v2" at revision "9dbc51eed785cf3afa7727aba236ac24c075d8f4" */
+/** eb-designsystem.css version 0.1.9 built on 27.1.2021 10.48.13 on branch "card-v2" at revision "b2df61e073696dbee4b087f59fbe84bff3bef751" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -358,6 +358,7 @@ a.badge:hover {
 :root {
   --button-border-radius: var(--button-height);
   --button-height: 36px;
+  --button-height--big: 50px;
 }
 
 .button {
@@ -526,6 +527,12 @@ a.badge:hover {
   color: inherit;
   outline: none;
 }
+
+.button.button--big {
+  font-size: 20px;
+  padding: 0 40px;
+  height: var(--button-height--big);
+}
 :root {
   --card-border-color: var(--color--graa7);
   --card-fs-title: 30px;
@@ -678,7 +685,7 @@ a.card:focus {
   left: calc(50% - 20px);
 }
 .card-mode .card-media .card-icon i {
-  color: white;
+  color: var(--color--white);
   font-size: 40px;
   width: 40px;
   height: 40px;
@@ -695,29 +702,29 @@ a.card:focus {
   width: 15px;
   height: 15px;
 
-  fill: white;
+  fill: var(--color--white);
 }
 /* card-mode: lightmode */
-.card-lightmode:not([class*="bg--"]) {
+.card--lightmode:not([class*="bg--"]) {
   background: var(--color--white);
   color: var(--color--black);
 }
-.card-lightmode .card-content .card-icon-plus svg {
+.card--lightmode .card-content .card-icon-plus svg {
   width: 15px;
   height: 15px;
 
-  fill: black;
+  fill: var(--color--black);
 }
 /* card-mode: darkmode */
-.card-darkmode:not([class*="bg--"]) {
+.card--darkmode:not([class*="bg--"]) {
   background: var(--color--black);
   color: var(--color--white);
 }
-.card-darkmode .card-content .card-icon-plus svg {
+.card--darkmode .card-content .card-icon-plus svg {
   width: 15px;
   height: 15px;
 
-  fill: white;
+  fill: var(--color--white);
 }
 
 /* Shrink font-size on small cards with media, if not explicitly set to large */
