@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.9 built on 27.1.2021 10.48.13 on branch "card-v2" at revision "b2df61e073696dbee4b087f59fbe84bff3bef751" */
+/** eb-designsystem.css version 0.1.9 built on 27.1.2021 11.17.08 on branch "card-v2" at revision "6ee4a4ac539f3dcd49ef136a0d08d04722d49ff0" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -663,9 +663,29 @@ a.card:focus {
   padding: 0 var(--card-padding);
 }
 
-/* Card-modes (standard: lightmode) */
+/* Card-modes (mutation of .card - new design) */
 .card-mode {
   border-radius: 15px;
+  box-shadow: inset 0 0 0 1px var(--card-border-color); /* DR.Edition 03/02/2020 */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--fontfamily--primary);
+  overflow: hidden;
+}
+.card-mode[class*="bg--"] {
+  box-shadow: none; /* Remove border when filled */
+}
+
+.card-mode:not([class*="bg--"]) {
+  background: var(--color--white);
+  color: var(--color--black);
+}
+
+a.card-mode:hover,
+a.card-mode:focus {
+  box-shadow: var(--box-shadow--hover);
+  outline: none;
 }
 .card-mode .card-media {
   padding: 7px;
