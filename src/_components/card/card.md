@@ -367,12 +367,12 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
 
 Et card-mode giver cardet mulighed for at blive anvendt som **lightmode** eller **darkmode**.
 
-OBS: Det er stadig muligt at give cardet en bg--farve.
+OBS: Det er stadig muligt at give card-mode en bg--farve.
 
 <span style="color:#12507b;font-weight: bolder">Lightmode</span>
 
 <div class="flex grid-width--small">
-    <a href="#" class="card card-mode card--lightmode width-1of2 margin-s--r">
+    <a href="#" class="card-mode card--lightmode width-1of2 margin-s--r">
       <div class="card-media">
         <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-icon">
@@ -390,7 +390,7 @@ OBS: Det er stadig muligt at give cardet en bg--farve.
         </div>
       </div>
     </a>
-    <a href="#" class="card card-mode card--lightmode width-1of2 margin-s--r">
+    <a href="#" class="card-mode card--lightmode width-1of2 margin-s--r">
       <div class="card-media">
         <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-icon">
@@ -402,7 +402,7 @@ OBS: Det er stadig muligt at give cardet en bg--farve.
         <h2 class="fontsize-medium">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
       </div>
     </a>
-    <a href="#" class="card card-mode card--lightmode width-1of2 margin-s--r">
+    <a href="#" class="card-mode card--lightmode width-1of2 margin-s--r">
       <div class="card-media">
         <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-border bg--sport"></div>
@@ -421,7 +421,7 @@ OBS: Det er stadig muligt at give cardet en bg--farve.
 <span style="color:#12507b;font-weight: bolder">Darkmode</span>
 
 <div class="flex grid-width--small">
-    <a href="#" class="card card-mode card--darkmode width-1of2 margin-s--r">
+    <a href="#" class="card-mode card--darkmode width-1of2 margin-s--r">
       <div class="card-media">
         <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-icon">
@@ -439,7 +439,7 @@ OBS: Det er stadig muligt at give cardet en bg--farve.
         </div>
       </div>
     </a>
-    <a href="#" class="card card-mode card--darkmode width-1of2 margin-s--r">
+    <a href="#" class="card-mode card--darkmode width-1of2 margin-s--r">
       <div class="card-media">
         <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-icon">
@@ -451,7 +451,7 @@ OBS: Det er stadig muligt at give cardet en bg--farve.
         <h2 class="fontsize-medium">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
       </div>
     </a>
-    <a href="#" class="card card-mode card--darkmode width-1of2 margin-s--r">
+    <a href="#" class="card-mode card--darkmode width-1of2 margin-s--r">
       <div class="card-media">
         <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-border bg--sport"></div>
