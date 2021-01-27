@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.1.8 built on 27.1.2021 10.14.38 on branch "card-v2" at revision "6db242bc273c4ba8813e604c50476159686ec7d1" */
+/** eb-designsystem--watcher.css version 0.1.8 built on 27.1.2021 10.31.38 on branch "card-v2" at revision "9dbc51eed785cf3afa7727aba236ac24c075d8f4" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -669,7 +669,7 @@ a.card:focus {
   left: calc(50% - 20px);
 }
 .card-mode .card-media .card-icon i {
-  color: white;
+  color: var(--color--white);
   font-size: 40px;
   width: 40px;
   height: 40px;
@@ -686,29 +686,29 @@ a.card:focus {
   width: 15px;
   height: 15px;
 
-  fill: white;
+  fill: var(--color--white);
 }
 /* card-mode: lightmode */
-.card-lightmode:not([class*="bg--"]) {
+.card--lightmode:not([class*="bg--"]) {
   background: var(--color--white);
   color: var(--color--black);
 }
-.card-lightmode .card-content .card-icon-plus svg {
+.card--lightmode .card-content .card-icon-plus svg {
   width: 15px;
   height: 15px;
 
-  fill: black;
+  fill: var(--color--black);
 }
 /* card-mode: darkmode */
-.card-darkmode:not([class*="bg--"]) {
+.card--darkmode:not([class*="bg--"]) {
   background: var(--color--black);
   color: var(--color--white);
 }
-.card-darkmode .card-content .card-icon-plus svg {
+.card--darkmode .card-content .card-icon-plus svg {
   width: 15px;
   height: 15px;
 
-  fill: white;
+  fill: var(--color--white);
 }
 
 /* Shrink font-size on small cards with media, if not explicitly set to large */

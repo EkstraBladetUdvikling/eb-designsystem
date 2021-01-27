@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.8 built on 21.1.2021 15.33.13 on branch "master" at revision "a8597b4bb41189da51ebf5f7563ef932eb8491bc" */
+/** eb-designsystem.css version 0.1.8 built on 27.1.2021 10.21.41 on branch "card-v2" at revision "9dbc51eed785cf3afa7727aba236ac24c075d8f4" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -231,8 +231,8 @@
 }
 html,button,input,select,textarea{font-family:Arial,sans-serif}:root{--fs-xxsmall: 10px;--fs-xsmall: 12px;--fs-small: 14px;--fs-medium: 16px;--fs-large: 18px;--fs-xlarge: 20px;--fs-xxlarge: 30px;--fs-xxxlarge: 50px;--fs-ads: 10px;--fs-timestamp: 12px;--fs-caption: 14px;--fs-showmore: 16px;--fs-bodytext: 18px;--fs-subtitle: 20px;--fs-quote: 30px;--fs-title: 50px;
   --border-radius--small: 5px;
-  --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), .22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
-  --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
+  --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), 0.22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
+  --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), 0.1);
   --color--accept: var(--color--green);
   --color--cancel: var(--color--red);
   --color--default: var(--color--bluedark);
@@ -257,11 +257,11 @@ html,button,input,select,textarea{font-family:Arial,sans-serif}:root{--fs-xxsmal
 @media (--smartphone) {
   :root {
     --distance-large: 15px;
-  --distance-medium: 10px;
-  --distance-small: 5px;
-  --distance-standard: 10px;
-  --distance-xlarge: 20px;
-  --distance-xxlarge: 30px;
+    --distance-medium: 10px;
+    --distance-small: 5px;
+    --distance-standard: 10px;
+    --distance-xlarge: 20px;
+    --distance-xxlarge: 30px;
   }
 }
 /*
@@ -656,11 +656,89 @@ a.card:focus {
   padding: 0 var(--card-padding);
 }
 
+/* Card-modes (standard: lightmode) */
+.card-mode {
+  border-radius: 15px;
+}
+.card-mode .card-media {
+  padding: 7px;
+  padding-bottom: 0;
+}
+.card-mode .card-media .card-image {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.card-mode .card-media .card-border {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 5px;
+}
+.card-mode .card-media .card-icon {
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+}
+.card-mode .card-media .card-icon i {
+  color: white;
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+}
+.card-mode .card-content {
+  position: relative;
+}
+.card-icon-plus {
+  position: absolute;
+  right: 8px;
+  bottom: 4px;
+}
+.card-icon-plus svg {
+  width: 15px;
+  height: 15px;
+
+  fill: white;
+}
+/* card-mode: lightmode */
+.card-lightmode:not([class*="bg--"]) {
+  background: var(--color--white);
+  color: var(--color--black);
+}
+.card-lightmode .card-content .card-icon-plus svg {
+  width: 15px;
+  height: 15px;
+
+  fill: black;
+}
+/* card-mode: darkmode */
+.card-darkmode:not([class*="bg--"]) {
+  background: var(--color--black);
+  color: var(--color--white);
+}
+.card-darkmode .card-content .card-icon-plus svg {
+  width: 15px;
+  height: 15px;
+
+  fill: white;
+}
+
 /* Shrink font-size on small cards with media, if not explicitly set to large */
-.width-1of2 > .card .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
-.width-1of3 > .card .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
-.card.width-1of2 .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
-.card.width-1of3 .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
+.width-1of2
+  > .card
+  .card-media
+  + .card-content
+  .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
+.width-1of3
+  > .card
+  .card-media
+  + .card-content
+  .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
+.card.width-1of2
+  .card-media
+  + .card-content
+  .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
+.card.width-1of3
+  .card-media
+  + .card-content
+  .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
 .card--small-media .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
 .card-title--small:not([class*="fs-"]):not([class*="fontsize-"]) {
   font-size: var(--card-fs-title--small);
