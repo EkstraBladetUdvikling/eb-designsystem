@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.8 built on 28.1.2021 13.10.44 on branch "tooltip" at revision "6db242bc273c4ba8813e604c50476159686ec7d1" */
+/** eb-designsystem.css version 0.1.8 built on 28.1.2021 13.56.29 on branch "tooltip" at revision "4c42b44b9b9ff062685949de01b932c93a59bb26" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -885,6 +885,7 @@ a.card:focus {
 
 .tooltip-input:checked ~ .tooltip-on {
   width: 400px;
+  max-width: calc(100vw - 40px);
   height: auto;
 }
 

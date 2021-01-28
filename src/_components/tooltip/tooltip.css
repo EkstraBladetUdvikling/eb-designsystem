@@ -39,6 +39,7 @@
 
 .tooltip-input:checked ~ .tooltip-on {
   width: 400px;
+  max-width: calc(100vw - 40px);
   height: auto;
 }
 
