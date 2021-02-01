@@ -184,8 +184,11 @@ a.card-mode:focus {
   bottom: 4px;
 }
 .card-icon-plus svg {
-  width: 15px;
-  height: 15px;
+  background: var(--color--black);
+  border-radius: 20px;
+  padding: 3px;
+  width: 12px;
+  height: 12px;
 
   fill: var(--color--white);
 }
@@ -195,10 +198,13 @@ a.card-mode:focus {
   color: var(--color--black);
 }
 .card--lightmode .card-content .card-icon-plus svg {
-  width: 15px;
-  height: 15px;
+  background: var(--color--black);
+  border-radius: 20px;
+  padding: 3px;
+  width: 12px;
+  height: 12px;
 
-  fill: var(--color--black);
+  fill: var(--color--white);
 }
 /* card-mode: darkmode */
 .card--darkmode:not([class*="bg--"]) {
@@ -206,10 +212,13 @@ a.card-mode:focus {
   color: var(--color--white);
 }
 .card--darkmode .card-content .card-icon-plus svg {
-  width: 15px;
-  height: 15px;
+  background: var(--color--white);
+  border-radius: 20px;
+  padding: 3px;
+  width: 12px;
+  height: 12px;
 
-  fill: var(--color--white);
+  fill: var(--color--black);
 }
 
 /* Shrink font-size on small cards with media, if not explicitly set to large */

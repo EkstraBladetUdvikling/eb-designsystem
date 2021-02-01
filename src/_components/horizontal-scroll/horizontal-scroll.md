@@ -14,7 +14,7 @@ description: The horizontal-scroll creates a carosel of items i.e cards that can
   >
     <i class="fa fa-chevron-right"></i>
   </button>
-  <div class="flex padding-m--l padding-m--r horizontal-scroll--scroll-container">
+  <div id="example-class-container-test" class="flex padding-m--l padding-m--r horizontal-scroll--scroll-container">
     <div class="flex-item width-1of3 padding-m" style="min-width: 300px;">
       <a href="#" class="card height-1of1">
         <div class="card-content">
@@ -50,7 +50,40 @@ description: The horizontal-scroll creates a carosel of items i.e cards that can
   </div>
 </div>
 
+<script>
+  /* Horizontial Scroll elements */
+const scrollItemContainer = document.getElementById('example-class-container-test');
+const prevScrollBtn = document.getElementById('prev-scroll-btn');
+const nextScrollBtn = document.getElementById('next-scroll-btn');
+let listCurrent = 0;
 
+/* Horizontial scroll to the left */
+nextScrollBtn.addEventListener('click', () => {
+  const listLength = scrollItemContainer.children.length;
+  if (listCurrent !== listLength - 1) {
+    listCurrent++;
+    const newPosition = scrollItemContainer.children[listCurrent];
+    scrollItemContainer.scrollTo({
+      behavior: 'smooth',
+      left: newPosition.offsetLeft,
+      top: 0,
+    });
+  }
+});
+
+/* Horizontial scroll to the right */
+prevScrollBtn.addEventListener('click', () => {
+  if (listCurrent !== 0) {
+    listCurrent--;
+    const newPosition = scrollItemContainer.children[listCurrent];
+    scrollItemContainer.scrollTo({
+      behavior: 'smooth',
+      left: newPosition.offsetLeft,
+      top: 0,
+    });
+  }
+});
+</script>
 
 <span style="color:#12507b;font-weight: bolder">HTML</span> - Cards with a static min-width (as showed in the example)
 ```html
@@ -76,8 +109,6 @@ description: The horizontal-scroll creates a carosel of items i.e cards that can
   </div>
 </div>
 ```
-
-
 
 <span style="color:#12507b;font-weight: bolder">TypeScript</span> - Functions to make the horizontial-scroll work
 ```javascript
