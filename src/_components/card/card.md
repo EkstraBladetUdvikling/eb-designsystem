@@ -365,7 +365,7 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
 ```
 ## Card modes
 
-Et card-mode er re-design af de originale card-element.
+Et card-mode er re-design af det originale card-element.
 
 OBS: Det er muligt at tilføje extension:  **lightmode** eller **darkmode**.
 
