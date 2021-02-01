@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.9 built on 27.1.2021 13.58.13 on branch "KAM" at revision "5722b8c66ff673d12aa1435307a84cbc071b57b0" */
+/** eb-designsystem.css version 0.1.9 built on 28.1.2021 09.28.32 on branch "KAM" at revision "84863530e1961f38ef7ecc9151f57bbf33c11514" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -231,8 +231,8 @@
 }
 html,button,input,select,textarea{font-family:Arial,sans-serif}:root{--fs-xxsmall: 10px;--fs-xsmall: 12px;--fs-small: 14px;--fs-medium: 16px;--fs-large: 18px;--fs-xlarge: 20px;--fs-xxlarge: 30px;--fs-xxxlarge: 50px;--fs-ads: 10px;--fs-timestamp: 12px;--fs-caption: 14px;--fs-showmore: 16px;--fs-bodytext: 18px;--fs-subtitle: 20px;--fs-quote: 30px;--fs-title: 50px;
   --border-radius--small: 5px;
-  --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), 0.22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
-  --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), 0.1);
+  --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), .22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
+  --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
   --color--accept: var(--color--green);
   --color--cancel: var(--color--red);
   --color--default: var(--color--bluedark);
@@ -251,17 +251,26 @@ html,button,input,select,textarea{font-family:Arial,sans-serif}:root{--fs-xxsmal
   --fgcolor--primary: var(--fgcolor--bruger);
   --fgcolor--secondary: var(--fgcolor--graa3);
   --fontfamily--primary: "Work Sans", var(--fontfamily--secondary);
-  --fontfamily--secondary: Arial, Helvetica, sans-serif}
+  --fontfamily--secondary: Arial, Helvetica, sans-serif;
+  --fs-rem-large: 1.125rem; /* 18px */
+  --fs-rem-medium: 1rem; /* 16px */
+  --fs-rem-small: .875rem; /* 14px */
+  --fs-rem-xlarge: 1.25rem; /* 20px */
+  --fs-rem-xsmall: .75rem; /* 12px */
+  --fs-rem-xxlarge: 1.875rem; /* 30px */
+  --fs-rem-xxsmall: .625rem; /* 10px */
+  --fs-rem-xxxlarge: 2.25rem; /* 36px */
+  --fs-rem-xxxxlarge: 3.125rem /* 50px */}
 /* Systemwide variables - default + desktop */
 
 @media (--smartphone) {
   :root {
     --distance-large: 15px;
-    --distance-medium: 10px;
-    --distance-small: 5px;
-    --distance-standard: 10px;
-    --distance-xlarge: 20px;
-    --distance-xxlarge: 30px;
+  --distance-medium: 10px;
+  --distance-small: 5px;
+  --distance-standard: 10px;
+  --distance-xlarge: 20px;
+  --distance-xxlarge: 30px;
   }
 }
 /*
@@ -817,6 +826,11 @@ a.card-mode:focus {
   height: 30px;
 }
 
+.form-input--big {
+  padding: 10px;
+  height: 50px;
+}
+
 .form-input ~ .form-label {
   position: absolute;
   top: 0;
@@ -1118,17 +1132,6 @@ a.card-mode:focus {
 /**
 * Base font-size in browsers is 16px
 */
-:root {
-  --fs-rem-large: 1.125rem; /* 18px */
-  --fs-rem-medium: 1rem; /* 16px */
-  --fs-rem-small: .875rem; /* 14px */
-  --fs-rem-xlarge: 1.25rem; /* 20px */
-  --fs-rem-xsmall: .75rem; /* 12px */
-  --fs-rem-xxlarge: 1.875rem; /* 30px */
-  --fs-rem-xxsmall: .625rem; /* 10px */
-  --fs-rem-xxxlarge: 2.25rem; /* 36px */
-  --fs-rem-xxxxlarge: 3.125rem; /* 50px */
-}
 
 .fontsize-xxsmall {
   /**
@@ -1260,26 +1263,6 @@ a.card-mode:focus {
   margin-left: auto;
 }
 /* margin */
-
-.margin-none {
-  margin: 0;
-}
-
-.margin-none--t {
-  margin-top: 0;
-}
-
-.margin-none--r {
-  margin-right: 0;
-}
-
-.margin-none--b {
-  margin-bottom: 0;
-}
-
-.margin-none--l {
-  margin-left: 0;
-}
 
 .margin-s {
   margin: var(--distance-small);
@@ -1438,27 +1421,27 @@ a.card-mode:focus {
 .margin-r---auto {
   margin-right: auto;
 }
+
+.margin-none {
+  margin: 0;
+}
+
+.margin-none--t {
+  margin-top: 0;
+}
+
+.margin-none--r {
+  margin-right: 0;
+}
+
+.margin-none--b {
+  margin-bottom: 0;
+}
+
+.margin-none--l {
+  margin-left: 0;
+}
 /* padding */
-
-.padding-none {
-  padding: 0;
-}
-
-.padding-none--t {
-  padding-top: 0;
-}
-
-.padding-none--r {
-  padding-right: 0;
-}
-
-.padding-none--b {
-  padding-bottom: 0;
-}
-
-.padding-none--l {
-  padding-left: 0;
-}
 
 .padding-s {
   padding: var(--distance-small);
@@ -1608,6 +1591,26 @@ a.card-mode:focus {
 
 .padding-xxl--l {
   padding-left: var(--distance-xxlarge);
+}
+
+.padding-none {
+  padding: 0;
+}
+
+.padding-none--t {
+  padding-top: 0;
+}
+
+.padding-none--r {
+  padding-right: 0;
+}
+
+.padding-none--b {
+  padding-bottom: 0;
+}
+
+.padding-none--l {
+  padding-left: 0;
 }
 .height-auto {
   height: auto;
