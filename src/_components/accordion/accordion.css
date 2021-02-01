@@ -4,7 +4,7 @@
 .accordion-tab {
   background: rgb(var(--rgb-color--graa7));
   border-radius: var(--border-radius--small);
-  box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), .22);
+  box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), 0.22);
 }
 
 .accordion-header {
@@ -20,7 +20,6 @@
 /* icon styling */
 .accordion-header i {
   color: var(--color--graa3);
-  font-weight: normal;
 }
 /* icon active */
 .accordion-tab.accordion-expanded .accordion-header i {
