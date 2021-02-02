@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.1.9 built on 1.2.2021 18.51.36 on branch "KAM" at revision "e899865dc9e3acfc81de7f532b6c84cd361875e3" */
+/** eb-designsystem--watcher.css version 0.1.9 built on 2.2.2021 17.26.16 on branch "KAM" at revision "78257d657d3e7f30710a7435c0ee2f3c5461e6c6" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -231,8 +231,8 @@
 }
 html,button,input,select,textarea{font-family:Arial,sans-serif}:root{--fs-xxsmall: 10px;--fs-xsmall: 12px;--fs-small: 14px;--fs-medium: 16px;--fs-large: 18px;--fs-xlarge: 20px;--fs-xxlarge: 30px;--fs-xxxlarge: 50px;--fs-ads: 10px;--fs-timestamp: 12px;--fs-caption: 14px;--fs-showmore: 16px;--fs-bodytext: 18px;--fs-subtitle: 20px;--fs-quote: 30px;--fs-title: 50px;
   --border-radius--small: 5px;
-  --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), 0.22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
-  --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), 0.1);
+  --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), .22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
+  --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
   --color--accept: var(--color--green);
   --color--cancel: var(--color--red);
   --color--default: var(--color--bluedark);
@@ -251,17 +251,26 @@ html,button,input,select,textarea{font-family:Arial,sans-serif}:root{--fs-xxsmal
   --fgcolor--primary: var(--fgcolor--bruger);
   --fgcolor--secondary: var(--fgcolor--graa3);
   --fontfamily--primary: "Work Sans", var(--fontfamily--secondary);
-  --fontfamily--secondary: Arial, Helvetica, sans-serif}
+  --fontfamily--secondary: Arial, Helvetica, sans-serif;
+  --fs-rem-large: 1.125rem; /* 18px */
+  --fs-rem-medium: 1rem; /* 16px */
+  --fs-rem-small: .875rem; /* 14px */
+  --fs-rem-xlarge: 1.25rem; /* 20px */
+  --fs-rem-xsmall: .75rem; /* 12px */
+  --fs-rem-xxlarge: 1.875rem; /* 30px */
+  --fs-rem-xxsmall: .625rem; /* 10px */
+  --fs-rem-xxxlarge: 2.25rem; /* 36px */
+  --fs-rem-xxxxlarge: 3.125rem /* 50px */}
 /* Systemwide variables - default + desktop */
 
 @media (max-width: 767px) {
   :root {
     --distance-large: 15px;
-    --distance-medium: 10px;
-    --distance-small: 5px;
-    --distance-standard: 10px;
-    --distance-xlarge: 20px;
-    --distance-xxlarge: 30px;
+  --distance-medium: 10px;
+  --distance-small: 5px;
+  --distance-standard: 10px;
+  --distance-xlarge: 20px;
+  --distance-xxlarge: 30px;
   }
 }
 /*
@@ -344,22 +353,22 @@ custom media queries is the only allowed media queries
 }
 
 /* Lightmode */
-.card--lightmode .accordion-tab {
+[data-theme="lightmode"] .accordion-tab {
   background: rgb(var(--rgb-color--white));
   border: 1px solid var(--color--graa4);
   color: var(--color--black);
 }
-.card--lightmode .accordion-tab.accordion-expanded {
+[data-theme="lightmode"] .accordion-tab.accordion-expanded {
   background: rgb(var(--rgb-color--white));
   border: 1px solid var(--color--graa2);
 }
 
 /* Darkmode */
-.card--darkmode .accordion-tab {
+[data-theme="darkmode"] .accordion-tab {
   background: rgb(var(--rgb-color--graa1));
   color: var(--color--white);
 }
-.card--darkmode .accordion-tab.accordion-expanded {
+[data-theme="darkmode"] .accordion-tab.accordion-expanded {
   background: rgb(var(--rgb-color--black));
 }
 .badge {
@@ -591,8 +600,8 @@ a.badge:hover {
 @media (max-width: 767px) {
   :root {
     --card-fs-title: 20px;
-  --card-fs-title--small: 16px;
-  --card-padding: 10px;
+    --card-fs-title--small: 16px;
+    --card-padding: 10px;
   }
 }
 
@@ -746,7 +755,7 @@ a.card-mode:focus {
 .card-mode .card-media .card-border {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  height: 5px;
+  height: 8px;
 }
 .card-mode .card-media .card-icon {
   top: calc(50% - 20px);
@@ -776,11 +785,11 @@ a.card-mode:focus {
   fill: var(--color--white);
 }
 /* card-mode: lightmode */
-.card--lightmode:not([class*="bg--"]) {
+[data-theme="lightmode"]:not([class*="bg--"]) {
   background: var(--color--white);
   color: var(--color--black);
 }
-.card--lightmode .card-content .card-icon-plus svg {
+[data-theme="lightmode"] .card-content .card-icon-plus svg {
   background: var(--color--black);
   border-radius: 20px;
   padding: 3px;
@@ -790,11 +799,11 @@ a.card-mode:focus {
   fill: var(--color--white);
 }
 /* card-mode: darkmode */
-.card--darkmode:not([class*="bg--"]) {
+[data-theme="darkmode"]:not([class*="bg--"]) {
   background: var(--color--black);
   color: var(--color--white);
 }
-.card--darkmode .card-content .card-icon-plus svg {
+[data-theme="darkmode"] .card-content .card-icon-plus svg {
   background: var(--color--white);
   border-radius: 20px;
   padding: 3px;
@@ -871,6 +880,11 @@ a.card-mode:focus {
   line-height: 30px;
   padding: 5px;
   height: 30px;
+}
+
+.form-input--big {
+  padding: 10px;
+  height: 50px;
 }
 
 .form-input ~ .form-label {
@@ -1174,17 +1188,6 @@ a.card-mode:focus {
 /**
 * Base font-size in browsers is 16px
 */
-:root {
-  --fs-rem-large: 1.125rem; /* 18px */
-  --fs-rem-medium: 1rem; /* 16px */
-  --fs-rem-small: .875rem; /* 14px */
-  --fs-rem-xlarge: 1.25rem; /* 20px */
-  --fs-rem-xsmall: .75rem; /* 12px */
-  --fs-rem-xxlarge: 1.875rem; /* 30px */
-  --fs-rem-xxsmall: .625rem; /* 10px */
-  --fs-rem-xxxlarge: 2.25rem; /* 36px */
-  --fs-rem-xxxxlarge: 3.125rem; /* 50px */
-}
 
 .fontsize-xxsmall {
   /**
@@ -1316,26 +1319,6 @@ a.card-mode:focus {
   margin-left: auto;
 }
 /* margin */
-
-.margin-none {
-  margin: 0;
-}
-
-.margin-none--t {
-  margin-top: 0;
-}
-
-.margin-none--r {
-  margin-right: 0;
-}
-
-.margin-none--b {
-  margin-bottom: 0;
-}
-
-.margin-none--l {
-  margin-left: 0;
-}
 
 .margin-s {
   margin: var(--distance-small);
@@ -1494,27 +1477,27 @@ a.card-mode:focus {
 .margin-r---auto {
   margin-right: auto;
 }
+
+.margin-none {
+  margin: 0;
+}
+
+.margin-none--t {
+  margin-top: 0;
+}
+
+.margin-none--r {
+  margin-right: 0;
+}
+
+.margin-none--b {
+  margin-bottom: 0;
+}
+
+.margin-none--l {
+  margin-left: 0;
+}
 /* padding */
-
-.padding-none {
-  padding: 0;
-}
-
-.padding-none--t {
-  padding-top: 0;
-}
-
-.padding-none--r {
-  padding-right: 0;
-}
-
-.padding-none--b {
-  padding-bottom: 0;
-}
-
-.padding-none--l {
-  padding-left: 0;
-}
 
 .padding-s {
   padding: var(--distance-small);
@@ -1664,6 +1647,26 @@ a.card-mode:focus {
 
 .padding-xxl--l {
   padding-left: var(--distance-xxlarge);
+}
+
+.padding-none {
+  padding: 0;
+}
+
+.padding-none--t {
+  padding-top: 0;
+}
+
+.padding-none--r {
+  padding-right: 0;
+}
+
+.padding-none--b {
+  padding-bottom: 0;
+}
+
+.padding-none--l {
+  padding-left: 0;
 }
 .height-auto {
   height: auto;

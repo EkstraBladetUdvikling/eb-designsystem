@@ -8,8 +8,8 @@
 @media (--smartphone) {
   :root {
     --card-fs-title: 20px;
-  --card-fs-title--small: 16px;
-  --card-padding: 10px;
+    --card-fs-title--small: 16px;
+    --card-padding: 10px;
   }
 }
 
@@ -163,7 +163,7 @@ a.card-mode:focus {
 .card-mode .card-media .card-border {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  height: 5px;
+  height: 8px;
 }
 .card-mode .card-media .card-icon {
   top: calc(50% - 20px);
@@ -193,11 +193,11 @@ a.card-mode:focus {
   fill: var(--color--white);
 }
 /* card-mode: lightmode */
-.card--lightmode:not([class*="bg--"]) {
+[data-theme="lightmode"]:not([class*="bg--"]) {
   background: var(--color--white);
   color: var(--color--black);
 }
-.card--lightmode .card-content .card-icon-plus svg {
+[data-theme="lightmode"] .card-content .card-icon-plus svg {
   background: var(--color--black);
   border-radius: 20px;
   padding: 3px;
@@ -207,11 +207,11 @@ a.card-mode:focus {
   fill: var(--color--white);
 }
 /* card-mode: darkmode */
-.card--darkmode:not([class*="bg--"]) {
+[data-theme="darkmode"]:not([class*="bg--"]) {
   background: var(--color--black);
   color: var(--color--white);
 }
-.card--darkmode .card-content .card-icon-plus svg {
+[data-theme="darkmode"] .card-content .card-icon-plus svg {
   background: var(--color--white);
   border-radius: 20px;
   padding: 3px;

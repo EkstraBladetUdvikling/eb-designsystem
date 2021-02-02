@@ -367,8 +367,6 @@ Et "card" kan indeholde en top eller bund, ved at tilføje et element med navnet
 
 Et card-mode er re-design af det originale card-element.
 
-OBS: Det er muligt at tilføje extension:  **lightmode** eller **darkmode**.
-
 <span style="color:#12507b;font-weight: bolder">Default card-mode</span>
 <div class="flex grid-width--small">
     <a href="#" class="card-mode width-1of2 margin-s--r">
@@ -437,11 +435,16 @@ OBS: Det er muligt at tilføje extension:  **lightmode** eller **darkmode**.
   </div>
 </a>
 ```
+<br>
+Det er muligt at tilføje **lightmode** eller **darkmode**.
+
+Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode" / "darkmode"**.
+<br>
 
 <span style="color:#12507b;font-weight: bolder">Lightmode</span>
 
 <div class="flex grid-width--small">
-    <a href="#" class="card-mode card--lightmode width-1of2 margin-s--r">
+    <a data-theme="lightmode" href="#" class="card-mode width-1of2 margin-s--r">
       <div class="card-media">
         <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-icon">
@@ -459,7 +462,7 @@ OBS: Det er muligt at tilføje extension:  **lightmode** eller **darkmode**.
         </div>
       </div>
     </a>
-    <a href="#" class="card-mode card--lightmode width-1of2 margin-s--r">
+    <a data-theme="lightmode" href="#" class="card-mode width-1of2 margin-s--r">
       <div class="card-media">
         <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-icon">
@@ -471,7 +474,7 @@ OBS: Det er muligt at tilføje extension:  **lightmode** eller **darkmode**.
         <h2 class="fontsize-medium">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
       </div>
     </a>
-    <a href="#" class="card-mode card--lightmode width-1of2 margin-s--r">
+    <a data-theme="lightmode" href="#" class="card-mode width-1of2 margin-s--r">
       <div class="card-media">
         <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-border bg--sport"></div>
@@ -488,30 +491,30 @@ OBS: Det er muligt at tilføje extension:  **lightmode** eller **darkmode**.
 </div>
 
 ```html
-<a href="#" class="card-mode card--lightmode width-1of2 margin-s--r">
-  <div class="card-media">
-    <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
-    <div class="card-icon">
-        <i class="far fa-play-circle"></i>
+  <a data-theme="lightmode" href="#" class="card-mode width-1of2 margin-s--r">
+    <div class="card-media">
+      <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
+      <div class="card-icon">
+          <i class="far fa-play-circle"></i>
+      </div>
+      <div class="card-border bg--breaking"></div>
     </div>
-    <div class="card-border bg--breaking"></div>
-  </div>
-  <div class="card-content">
-    <p class="card-meta fontsize-small margin-s--b"><small>Politik - 2 timer siden</small></p>
-    <h2 class="fontsize-medium">Curabitur vehicula ac urna</h2>
-    <div class="card-icon-plus">
-      <svg viewBox="0 0 100 100">
-        <use xlink:href="#ebplus_sort"></use>
-      </svg>
+    <div class="card-content">
+      <p class="card-meta fontsize-small margin-s--b"><small>Politik - 2 timer siden</small></p>
+      <h2 class="fontsize-medium">Curabitur vehicula ac urna</h2>
+      <div class="card-icon-plus">
+        <svg viewBox="0 0 100 100">
+          <use xlink:href="#ebplus_sort"></use>
+        </svg>
+      </div>
     </div>
-  </div>
-</a>
+  </a>
 ```
 
 <span style="color:#12507b;font-weight: bolder">Darkmode</span>
 
 <div class="flex grid-width--small">
-    <a href="#" class="card-mode card--darkmode width-1of2 margin-s--r">
+    <a data-theme="darkmode" href="#" class="card-mode width-1of2 margin-s--r">
       <div class="card-media">
         <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-icon">
@@ -529,7 +532,7 @@ OBS: Det er muligt at tilføje extension:  **lightmode** eller **darkmode**.
         </div>
       </div>
     </a>
-    <a href="#" class="card-mode card--darkmode width-1of2 margin-s--r">
+    <a data-theme="darkmode" href="#" class="card-mode width-1of2 margin-s--r">
       <div class="card-media">
         <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-icon">
@@ -541,7 +544,7 @@ OBS: Det er muligt at tilføje extension:  **lightmode** eller **darkmode**.
         <h2 class="fontsize-medium">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
       </div>
     </a>
-    <a href="#" class="card-mode card--darkmode width-1of2 margin-s--r">
+    <a data-theme="darkmode" href="#" class="card-mode width-1of2 margin-s--r">
       <div class="card-media">
         <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-border bg--sport"></div>
@@ -557,23 +560,24 @@ OBS: Det er muligt at tilføje extension:  **lightmode** eller **darkmode**.
     </a>
 </div>
 
+
 ```html
-<a href="#" class="card-mode card--darkmode width-1of2 margin-s--r">
-  <div class="card-media">
-    <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
-      <div class="card-icon">
-        <i class="far fa-play-circle"></i>
-      </div>
-    <div class="card-border bg--breaking"></div>
-  </div>
-  <div class="card-content">
-    <p class="card-meta fontsize-small margin-s--b"><small>Politik - 2 timer siden</small></p>
-    <h2 class="fontsize-medium">Curabitur vehicula ac urna</h2>
-    <div class="card-icon-plus">
-      <svg viewBox="0 0 100 100">
-        <use xlink:href="#ebplus_sort"></use>
-      </svg>
+  <a data-theme="darkmode" href="#" class="card-mode width-1of2 margin-s--r">
+    <div class="card-media">
+      <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
+        <div class="card-icon">
+          <i class="far fa-play-circle"></i>
+        </div>
+      <div class="card-border bg--breaking"></div>
     </div>
-  </div>
-</a>
+    <div class="card-content">
+      <p class="card-meta fontsize-small margin-s--b"><small>Politik - 2 timer siden</small></p>
+      <h2 class="fontsize-medium">Curabitur vehicula ac urna</h2>
+      <div class="card-icon-plus">
+        <svg viewBox="0 0 100 100">
+          <use xlink:href="#ebplus_sort"></use>
+        </svg>
+      </div>
+    </div>
+  </a>
 ```

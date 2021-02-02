@@ -39,21 +39,21 @@
 }
 
 /* Lightmode */
-.card--lightmode .accordion-tab {
+[data-theme="lightmode"] .accordion-tab {
   background: rgb(var(--rgb-color--white));
   border: 1px solid var(--color--graa4);
   color: var(--color--black);
 }
-.card--lightmode .accordion-tab.accordion-expanded {
+[data-theme="lightmode"] .accordion-tab.accordion-expanded {
   background: rgb(var(--rgb-color--white));
   border: 1px solid var(--color--graa2);
 }
 
 /* Darkmode */
-.card--darkmode .accordion-tab {
+[data-theme="darkmode"] .accordion-tab {
   background: rgb(var(--rgb-color--graa1));
   color: var(--color--white);
 }
-.card--darkmode .accordion-tab.accordion-expanded {
+[data-theme="darkmode"] .accordion-tab.accordion-expanded {
   background: rgb(var(--rgb-color--black));
 }
