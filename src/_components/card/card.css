@@ -8,8 +8,8 @@
 @media (--smartphone) {
   :root {
     --card-fs-title: 20px;
-  --card-fs-title--small: 16px;
-  --card-padding: 10px;
+    --card-fs-title--small: 16px;
+    --card-padding: 10px;
   }
 }
 
@@ -163,7 +163,7 @@ a.card-mode:focus {
 .card-mode .card-media .card-border {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  height: 5px;
+  height: 8px;
 }
 .card-mode .card-media .card-icon {
   top: calc(50% - 20px);
