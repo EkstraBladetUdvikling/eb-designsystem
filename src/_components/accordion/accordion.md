@@ -64,15 +64,15 @@ description: Accordions anvendes til at toggle (hide/show) content.
 ```
 
 <br>
-Det er muligt at tilføje extension: **lightmode** eller **darkmode**.
+Det er muligt at tilføje: **lightmode** eller **darkmode**.
 
-Accordion er wrappet i et code-mode component, dvs der kan nu tilføjes card--lightmode el. card--darkmode.
+Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode" / "darkmode"**.
 <br>
 
 <span style="color:#12507b;font-weight: bolder">Lightmode</span>
 
 <div class="flex grid-width--small">
-  <div class="accordion card-mode card--lightmode padding-l ff-secondary width-1of1">
+  <div data-theme="lightmode" class="accordion card-mode padding-l ff-secondary width-1of1">
     <div class="accordion-tab padding-m padding-l--rl margin-s--b">
       <div class="accordion-header flex flex-justify--between">
         <span class="fontweight-normal fontsize-large">Tab 1</span>
@@ -111,7 +111,7 @@ Accordion er wrappet i et code-mode component, dvs der kan nu tilføjes card--li
 </div>
 
 ```html
-<div class="accordion card-mode card--lightmode padding-l ff-secondary width-1of1">
+<div data-theme="lightmode" class="accordion card-mode padding-l ff-secondary width-1of1">
   <div class="accordion-tab padding-m padding-l--rl margin-s--b">
     <div class="accordion-header flex flex-justify--between">
       <span class="fontweight-normal fontsize-large">Tab 2</span>
@@ -128,7 +128,7 @@ Accordion er wrappet i et code-mode component, dvs der kan nu tilføjes card--li
 <span style="color:#12507b;font-weight: bolder">Darkmode</span>
 
 <div class="flex grid-width--small">
-  <div class="accordion card-mode card--darkmode padding-l ff-secondary width-1of1">
+  <div data-theme="darkmode" class="accordion card-mode padding-l ff-secondary width-1of1">
     <div class="accordion-tab padding-m padding-l--rl margin-s--b">
       <div class="accordion-header flex flex-justify--between">
         <span class="fontweight-normal fontsize-large">Tab 1</span>
@@ -167,7 +167,7 @@ Accordion er wrappet i et code-mode component, dvs der kan nu tilføjes card--li
 </div>
 
 ```html
-<div class="accordion card-mode card--darkmode padding-l ff-secondary width-1of1">
+<div data-theme="darkmode" class="accordion card-mode padding-l ff-secondary width-1of1">
   <div class="accordion-tab padding-m padding-l--rl margin-s--b">
     <div class="accordion-header flex flex-justify--between">
       <span class="fontweight-normal fontsize-large">Tab 2</span>

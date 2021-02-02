@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.1.9 built on 2.2.2021 15.15.38 on branch "KAM" at revision "bbd5555e8e3522c685a41310f75bfefaa3e32e02" */
+/** eb-designsystem--watcher.css version 0.1.9 built on 2.2.2021 17.26.16 on branch "KAM" at revision "78257d657d3e7f30710a7435c0ee2f3c5461e6c6" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -353,22 +353,22 @@ custom media queries is the only allowed media queries
 }
 
 /* Lightmode */
-.card--lightmode .accordion-tab {
+[data-theme="lightmode"] .accordion-tab {
   background: rgb(var(--rgb-color--white));
   border: 1px solid var(--color--graa4);
   color: var(--color--black);
 }
-.card--lightmode .accordion-tab.accordion-expanded {
+[data-theme="lightmode"] .accordion-tab.accordion-expanded {
   background: rgb(var(--rgb-color--white));
   border: 1px solid var(--color--graa2);
 }
 
 /* Darkmode */
-.card--darkmode .accordion-tab {
+[data-theme="darkmode"] .accordion-tab {
   background: rgb(var(--rgb-color--graa1));
   color: var(--color--white);
 }
-.card--darkmode .accordion-tab.accordion-expanded {
+[data-theme="darkmode"] .accordion-tab.accordion-expanded {
   background: rgb(var(--rgb-color--black));
 }
 .badge {
@@ -785,11 +785,11 @@ a.card-mode:focus {
   fill: var(--color--white);
 }
 /* card-mode: lightmode */
-.card--lightmode:not([class*="bg--"]) {
+[data-theme="lightmode"]:not([class*="bg--"]) {
   background: var(--color--white);
   color: var(--color--black);
 }
-.card--lightmode .card-content .card-icon-plus svg {
+[data-theme="lightmode"] .card-content .card-icon-plus svg {
   background: var(--color--black);
   border-radius: 20px;
   padding: 3px;
@@ -799,11 +799,11 @@ a.card-mode:focus {
   fill: var(--color--white);
 }
 /* card-mode: darkmode */
-.card--darkmode:not([class*="bg--"]) {
+[data-theme="darkmode"]:not([class*="bg--"]) {
   background: var(--color--black);
   color: var(--color--white);
 }
-.card--darkmode .card-content .card-icon-plus svg {
+[data-theme="darkmode"] .card-content .card-icon-plus svg {
   background: var(--color--white);
   border-radius: 20px;
   padding: 3px;
