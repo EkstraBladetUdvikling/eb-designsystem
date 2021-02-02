@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.9 built on 1.2.2021 13.41.54 on branch "KAM" at revision "9f98aa06e33514d7385e5a6baca423355f268b2e" */
+/** eb-designsystem.css version 0.1.9 built on 2.2.2021 10.28.27 on branch "KAM" at revision "e899865dc9e3acfc81de7f532b6c84cd361875e3" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -776,10 +776,13 @@ a.card-mode:focus {
   bottom: 4px;
 }
 .card-icon-plus svg {
-  width: 15px;
-  height: 15px;
+  background: var(--color--black);
+  border-radius: 20px;
+  padding: 3px;
+  width: 12px;
+  height: 12px;
 
-  fill: var(--color--black);
+  fill: var(--color--white);
 }
 /* card-mode: lightmode */
 .card--lightmode:not([class*="bg--"]) {
@@ -787,10 +790,13 @@ a.card-mode:focus {
   color: var(--color--black);
 }
 .card--lightmode .card-content .card-icon-plus svg {
-  width: 15px;
-  height: 15px;
+  background: var(--color--black);
+  border-radius: 20px;
+  padding: 3px;
+  width: 12px;
+  height: 12px;
 
-  fill: var(--color--black);
+  fill: var(--color--white);
 }
 /* card-mode: darkmode */
 .card--darkmode:not([class*="bg--"]) {
@@ -798,10 +804,13 @@ a.card-mode:focus {
   color: var(--color--white);
 }
 .card--darkmode .card-content .card-icon-plus svg {
-  width: 15px;
-  height: 15px;
+  background: var(--color--white);
+  border-radius: 20px;
+  padding: 3px;
+  width: 12px;
+  height: 12px;
 
-  fill: var(--color--white);
+  fill: var(--color--black);
 }
 
 /* Shrink font-size on small cards with media, if not explicitly set to large */
