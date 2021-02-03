@@ -1,10 +1,16 @@
 ---
 layout: component
 title: Horizontal-scroll
-description: The horizontal-scroll creates a carosel of items i.e cards that can be scrolled horizontally left and right.
+description: Horizontal-scroll laver en carosel af items(ex. cards), som kan scroll til højre og venstre.
 ---
 
-<div class="grid-width--large horizontal-scroll--container position-relative">
+**OBS:** Husk at indsætte ***javascript-koden*** nede i bunden
+
+<br>
+
+<span style="color:#12507b;font-weight: bolder">Default horizontial-scroll</span>
+
+<div id="exampleclass-scroll-container" class="grid-width--large horizontal-scroll--container position-relative">
   <button id="prev-scroll-btn" class="button button--solid button--icon button--secondary horizontal-scroll--nav">
     <i class="fa fa-chevron-left"></i>
   </button>
@@ -14,7 +20,7 @@ description: The horizontal-scroll creates a carosel of items i.e cards that can
   >
     <i class="fa fa-chevron-right"></i>
   </button>
-  <div id="example-class-container-test" class="flex padding-m--l padding-m--r horizontal-scroll--scroll-container">
+  <div id="exampleclass-scroll-item-container" class="flex padding-m--l padding-m--r horizontal-scroll--scroll-container">
     <div class="flex-item width-1of3 padding-m" style="min-width: 300px;">
       <a href="#" class="card height-1of1">
         <div class="card-content">
@@ -51,43 +57,44 @@ description: The horizontal-scroll creates a carosel of items i.e cards that can
 </div>
 
 <script>
-  /* Horizontial Scroll elements */
-const scrollItemContainer = document.getElementById('example-class-container-test');
-const prevScrollBtn = document.getElementById('prev-scroll-btn');
-const nextScrollBtn = document.getElementById('next-scroll-btn');
+/* Horizontial Scroll elements */
+const scrollContainer = document.getElementById('exampleclass-scroll-container');
+const scrollItemContainer = document.getElementById('exampleclass-scroll-item-container');
+const prevScrollBtn = scrollContainer.querySelector('#prev-scroll-btn');
+const nextScrollBtn = scrollContainer.querySelector('#next-scroll-btn');
+const children = scrollItemContainer.children;
+const listLength = children.length;
 let listCurrent = 0;
 
 /* Horizontial scroll to the left */
-nextScrollBtn.addEventListener('click', () => {
-  const listLength = scrollItemContainer.children.length;
+nextScrollBtn.addEventListener('click', function() {
   if (listCurrent !== listLength - 1) {
     listCurrent++;
-    const newPosition = scrollItemContainer.children[listCurrent];
+    const newPos = children[listCurrent];
     scrollItemContainer.scrollTo({
       behavior: 'smooth',
-      left: newPosition.offsetLeft,
+      left: newPos.offsetLeft,
       top: 0,
     });
   }
 });
 
 /* Horizontial scroll to the right */
-prevScrollBtn.addEventListener('click', () => {
+prevScrollBtn.addEventListener('click', function() {
   if (listCurrent !== 0) {
     listCurrent--;
-    const newPosition = scrollItemContainer.children[listCurrent];
+    const newPos = children[listCurrent];
     scrollItemContainer.scrollTo({
       behavior: 'smooth',
-      left: newPosition.offsetLeft,
+      left: newPos.offsetLeft,
       top: 0,
     });
   }
 });
 </script>
 
-<span style="color:#12507b;font-weight: bolder">HTML</span> - Cards with a static min-width (as showed in the example)
 ```html
-<div class="grid-width--large horizontal-scroll--container position-relative">
+<div id="exampleclass-scroll-container" class="grid-width--large horizontal-scroll--container position-relative">
   <button id="prev-scroll-btn" class="button button--solid button--icon button--secondary horizontal-scroll--nav">
     <i class="fa fa-chevron-left"></i>
   </button>
@@ -97,7 +104,7 @@ prevScrollBtn.addEventListener('click', () => {
   >
     <i class="fa fa-chevron-right"></i>
   </button>
-  <div id="example-scroll-container" class="flex padding-m--l padding-m--r horizontal-scroll--scroll-container">
+  <div id="exampleclass-scroll-item-container" class="flex padding-m--l padding-m--r horizontal-scroll--scroll-container">
     <div class="flex-item width-1of3 padding-m" style="min-width: 300px;">
       <a href="#" class="card height-1of1">
         <div class="card-content">
@@ -110,36 +117,38 @@ prevScrollBtn.addEventListener('click', () => {
 </div>
 ```
 
-<span style="color:#12507b;font-weight: bolder">TypeScript</span> - Functions to make the horizontial-scroll work
+<span style="color:#12507b;font-weight: bolder">JavaScript (nødvendigt)</span>
 ```javascript
 /* Horizontial Scroll elements */
-const scrollItemContainer = document.getElementById('example-scroll-container') as HTMLDivElement;
-const prevScrollBtn = document.getElementById('prev-scroll-btn');
-const nextScrollBtn = document.getElementById('next-scroll-btn');
+const scrollContainer = document.getElementById('exampleclass-scroll-container');
+const scrollItemContainer = document.getElementById('exampleclass-scroll-item-container');
+const prevScrollBtn = scrollContainer.querySelector('#prev-scroll-btn');
+const nextScrollBtn = scrollContainer.querySelector('#next-scroll-btn');
+const children = scrollItemContainer.children;
+const listLength = children.length;
 let listCurrent = 0;
 
 /* Horizontial scroll to the left */
-nextScrollBtn.addEventListener('click', () => {
-  const listLength = scrollItemContainer.children.length;
+nextScrollBtn.addEventListener('click', function() {
   if (listCurrent !== listLength - 1) {
     listCurrent++;
-    const newPosition = scrollItemContainer.children[listCurrent] as HTMLDivElement;
+    const newPos = children[listCurrent];
     scrollItemContainer.scrollTo({
       behavior: 'smooth',
-      left: newPosition.offsetLeft,
+      left: newPos.offsetLeft,
       top: 0,
     });
   }
 });
 
 /* Horizontial scroll to the right */
-prevScrollBtn.addEventListener('click', () => {
+prevScrollBtn.addEventListener('click', function() {
   if (listCurrent !== 0) {
     listCurrent--;
-    const newPosition = scrollItemContainer.children[listCurrent] as HTMLDivElement;
+    const newPos = children[listCurrent];
     scrollItemContainer.scrollTo({
       behavior: 'smooth',
-      left: newPosition.offsetLeft,
+      left: newPos.offsetLeft,
       top: 0,
     });
   }
