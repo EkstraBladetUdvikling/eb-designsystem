@@ -1,0 +1,12 @@
+[data-theme="lightmode"] {
+  background: var(--color--white);
+  border-color: var(--color--graa4);
+  color: var(--color--black);
+}
+[data-theme="darkmode"] {
+  background: var(--color--graa1);
+  color: var(--color--white);
+}
+[data-theme] a {
+  color: currentColor;
+}

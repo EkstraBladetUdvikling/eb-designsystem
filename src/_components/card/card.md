@@ -375,7 +375,7 @@ Et card-mode er re-design af det originale card-element.
         <div class="card-icon">
           <i class="far fa-play-circle"></i>
         </div>
-        <div class="card-border bg--breaking"></div>
+        <div class="card-section-border bg--breaking"></div>
       </div>
       <div class="card-content">
         <p class="card-meta fontsize-small margin-s--b"><small>Politik - 2 timer siden</small></p>
@@ -393,17 +393,13 @@ Et card-mode er re-design af det originale card-element.
         <div class="card-icon">
           <i class="far fa-headphones-alt"></i>
         </div>
-        <div class="card-border bg--nyheder"></div>
+        <div class="card-section-border bg--nyheder"></div>
       </div>
       <div class="card-content">
         <h2 class="fontsize-medium">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
       </div>
     </a>
     <a href="#" class="card-mode width-1of2 margin-s--r">
-      <div class="card-media">
-        <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
-        <div class="card-border bg--sport"></div>
-      </div>
       <div class="card-content">
         <h2 class="fontsize-medium">Donec sed tincidunt ex, vestibulum congue arcu</h2>
         <div class="card-icon-plus">
@@ -412,6 +408,7 @@ Et card-mode er re-design af det originale card-element.
           </svg>
         </div>
       </div>
+      <div class="card-section-border bg--sport"></div>
     </a>
 </div>
 
@@ -422,7 +419,7 @@ Et card-mode er re-design af det originale card-element.
     <div class="card-icon">
         <i class="far fa-play-circle"></i>
     </div>
-    <div class="card-border bg--breaking"></div>
+    <div class="card-section-border bg--breaking"></div>
   </div>
   <div class="card-content">
     <p class="card-meta fontsize-small margin-s--b"><small>Politik - 2 timer siden</small></p>
@@ -450,7 +447,7 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         <div class="card-icon">
           <i class="far fa-play-circle"></i>
         </div>
-        <div class="card-border bg--breaking"></div>
+        <div class="card-section-border bg--breaking"></div>
       </div>
       <div class="card-content">
         <p class="card-meta fontsize-small margin-s--b"><small>Politik - 2 timer siden</small></p>
@@ -468,17 +465,13 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         <div class="card-icon">
           <i class="far fa-headphones-alt"></i>
         </div>
-        <div class="card-border bg--nyheder"></div>
+        <div class="card-section-border bg--nyheder"></div>
       </div>
       <div class="card-content">
         <h2 class="fontsize-medium">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
       </div>
     </a>
     <a data-theme="lightmode" href="#" class="card-mode width-1of2 margin-s--r">
-      <div class="card-media">
-        <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
-        <div class="card-border bg--sport"></div>
-      </div>
       <div class="card-content">
         <h2 class="fontsize-medium">Donec sed tincidunt ex, vestibulum congue arcu</h2>
         <div class="card-icon-plus">
@@ -487,6 +480,7 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
           </svg>
         </div>
       </div>
+      <div class="card-section-border bg--sport"></div>
     </a>
 </div>
 
@@ -497,7 +491,7 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
       <div class="card-icon">
           <i class="far fa-play-circle"></i>
       </div>
-      <div class="card-border bg--breaking"></div>
+      <div class="card-section-border bg--breaking"></div>
     </div>
     <div class="card-content">
       <p class="card-meta fontsize-small margin-s--b"><small>Politik - 2 timer siden</small></p>
@@ -520,7 +514,7 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         <div class="card-icon">
           <i class="far fa-play-circle"></i>
         </div>
-        <div class="card-border bg--breaking"></div>
+        <div class="card-section-border bg--breaking"></div>
       </div>
       <div class="card-content">
         <p class="card-meta fontsize-small margin-s--b"><small>Politik - 2 timer siden</small></p>
@@ -538,17 +532,13 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         <div class="card-icon">
           <i class="far fa-headphones-alt"></i>
         </div>
-        <div class="card-border bg--nyheder"></div>
+        <div class="card-section-border bg--nyheder"></div>
       </div>
       <div class="card-content">
         <h2 class="fontsize-medium">Morbi vestibulum tristique nunc, sit amet rutrum mi placerat vel</h2>
       </div>
     </a>
     <a data-theme="darkmode" href="#" class="card-mode width-1of2 margin-s--r">
-      <div class="card-media">
-        <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
-        <div class="card-border bg--sport"></div>
-      </div>
       <div class="card-content">
         <h2 class="fontsize-medium">Donec sed tincidunt ex, vestibulum congue arcu</h2>
         <div class="card-icon-plus">
@@ -557,6 +547,7 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
           </svg>
         </div>
       </div>
+      <div class="card-section-border bg--sport"></div>
     </a>
 </div>
 
@@ -568,7 +559,7 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         <div class="card-icon">
           <i class="far fa-play-circle"></i>
         </div>
-      <div class="card-border bg--breaking"></div>
+      <div class="card-section-border bg--breaking"></div>
     </div>
     <div class="card-content">
       <p class="card-meta fontsize-small margin-s--b"><small>Politik - 2 timer siden</small></p>

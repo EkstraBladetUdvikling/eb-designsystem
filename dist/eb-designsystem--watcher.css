@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.1.9 built on 2.2.2021 17.26.16 on branch "KAM" at revision "78257d657d3e7f30710a7435c0ee2f3c5461e6c6" */
+/** eb-designsystem--watcher.css version 0.1.9 built on 3.2.2021 10.25.35 on branch "KAM" at revision "ca1d0b415180249d2dba75cff789c196eeb8af7b" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -600,8 +600,8 @@ a.badge:hover {
 @media (max-width: 767px) {
   :root {
     --card-fs-title: 20px;
-    --card-fs-title--small: 16px;
-    --card-padding: 10px;
+  --card-fs-title--small: 16px;
+  --card-padding: 10px;
   }
 }
 
@@ -752,9 +752,14 @@ a.card-mode:focus {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-.card-mode .card-media .card-border {
+.card-section-border {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  height: 8px;
+}
+.card-section-border-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   height: 8px;
 }
 .card-mode .card-media .card-icon {
@@ -1101,6 +1106,18 @@ a.card-mode:focus {
   .animation-fogwave:before {
     animation-name: none;
   }
+}
+[data-theme="lightmode"] {
+  background: var(--color--white);
+  border-color: var(--color--graa4);
+  color: var(--color--black);
+}
+[data-theme="darkmode"] {
+  background: var(--color--graa1);
+  color: var(--color--white);
+}
+[data-theme] a {
+  color: currentColor;
 }
 
 .flex,.flex-column {
