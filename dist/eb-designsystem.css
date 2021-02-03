@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.9 built on 2.2.2021 15.16.07 on branch "KAM" at revision "78257d657d3e7f30710a7435c0ee2f3c5461e6c6" */
+/** eb-designsystem.css version 0.1.9 built on 2.2.2021 19.31.16 on branch "KAM" at revision "dae07a6bc5d7f7db33185e1861568cf56943a1cd" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -228,8 +228,6 @@
   --fgcolor--sport: #fff;
   --color--tv: #bd1118;
   --fgcolor--tv: #fff;
-}
-html,button,input,select,textarea{font-family:Arial,sans-serif}:root{--fs-xxsmall: 10px;--fs-xsmall: 12px;--fs-small: 14px;--fs-medium: 16px;--fs-large: 18px;--fs-xlarge: 20px;--fs-xxlarge: 30px;--fs-xxxlarge: 50px;--fs-ads: 10px;--fs-timestamp: 12px;--fs-caption: 14px;--fs-showmore: 16px;--fs-bodytext: 18px;--fs-subtitle: 20px;--fs-quote: 30px;--fs-title: 50px;
   --border-radius--small: 5px;
   --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), .22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
   --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
@@ -260,7 +258,8 @@ html,button,input,select,textarea{font-family:Arial,sans-serif}:root{--fs-xxsmal
   --fs-rem-xxlarge: 1.875rem; /* 30px */
   --fs-rem-xxsmall: .625rem; /* 10px */
   --fs-rem-xxxlarge: 2.25rem; /* 36px */
-  --fs-rem-xxxxlarge: 3.125rem /* 50px */}
+  --fs-rem-xxxxlarge: 3.125rem; /* 50px */
+}
 /* Systemwide variables - default + desktop */
 
 @media (--smartphone) {
@@ -362,22 +361,22 @@ custom media queries is the only allowed media queries
 }
 
 /* Lightmode */
-.card--lightmode .accordion-tab {
+[data-theme="lightmode"] .accordion-tab {
   background: rgb(var(--rgb-color--white));
   border: 1px solid var(--color--graa4);
   color: var(--color--black);
 }
-.card--lightmode .accordion-tab.accordion-expanded {
+[data-theme="lightmode"] .accordion-tab.accordion-expanded {
   background: rgb(var(--rgb-color--white));
   border: 1px solid var(--color--graa2);
 }
 
 /* Darkmode */
-.card--darkmode .accordion-tab {
+[data-theme="darkmode"] .accordion-tab {
   background: rgb(var(--rgb-color--graa1));
   color: var(--color--white);
 }
-.card--darkmode .accordion-tab.accordion-expanded {
+[data-theme="darkmode"] .accordion-tab.accordion-expanded {
   background: rgb(var(--rgb-color--black));
 }
 .badge {
@@ -794,11 +793,11 @@ a.card-mode:focus {
   fill: var(--color--white);
 }
 /* card-mode: lightmode */
-.card--lightmode:not([class*="bg--"]) {
+[data-theme="lightmode"]:not([class*="bg--"]) {
   background: var(--color--white);
   color: var(--color--black);
 }
-.card--lightmode .card-content .card-icon-plus svg {
+[data-theme="lightmode"] .card-content .card-icon-plus svg {
   background: var(--color--black);
   border-radius: 20px;
   padding: 3px;
@@ -808,11 +807,11 @@ a.card-mode:focus {
   fill: var(--color--white);
 }
 /* card-mode: darkmode */
-.card--darkmode:not([class*="bg--"]) {
+[data-theme="darkmode"]:not([class*="bg--"]) {
   background: var(--color--black);
   color: var(--color--white);
 }
-.card--darkmode .card-content .card-icon-plus svg {
+[data-theme="darkmode"] .card-content .card-icon-plus svg {
   background: var(--color--white);
   border-radius: 20px;
   padding: 3px;
@@ -1118,6 +1117,10 @@ a.card-mode:focus {
 
 .flex-column {
   flex-direction: column;
+}
+
+.flex-column--reverse {
+  flex-direction: column-reverse;
 }
 
 .flex--center {

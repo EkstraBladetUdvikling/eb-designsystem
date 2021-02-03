@@ -89,6 +89,7 @@ Her de klasser som findes i systemet men ikke er med i overstående eksempler.
 
 ```html
 <div class="flex-column"></div>
+<div class="flex-column flex-column--reverse"></div>
 <div class="flex flex-row--reverse"></div>
 ```
 
