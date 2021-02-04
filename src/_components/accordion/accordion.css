@@ -1,6 +1,3 @@
-.accordion.card-mode {
-  box-shadow: none;
-}
 .accordion-tab {
   background: rgb(var(--rgb-color--graa7));
   border-radius: var(--border-radius--small);
