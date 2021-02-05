@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.1.9 built on 5.2.2021 11.00.12 on branch "KAM" at revision "07bfbab1e32ee9e81d144ec79368600ba3d8ca11" */
+/** eb-designsystem--watcher.css version 0.1.9 built on 5.2.2021 14.20.05 on branch "KAM" at revision "b9b8756a894073485d721ef70e2ac7f159d50f70" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -764,6 +764,12 @@ a.card-mode:focus {
 }
 .card-mode .card-media .card-icon i {
   color: var(--color--white);
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+}
+.card-mode .card-media .card-icon svg {
+  fill: var(--color--white);
   font-size: 40px;
   width: 40px;
   height: 40px;

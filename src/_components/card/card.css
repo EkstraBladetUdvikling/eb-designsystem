@@ -180,6 +180,12 @@ a.card-mode:focus {
   width: 40px;
   height: 40px;
 }
+.card-mode .card-media .card-icon svg {
+  fill: var(--color--white);
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+}
 .card-mode .card-content {
   position: relative;
 }

@@ -373,7 +373,9 @@ Et card-mode er re-design af det originale card-element.
       <div class="card-media">
         <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-icon">
-          <i class="far fa-play-circle"></i>
+          <svg viewBox="0 0 100 100">
+            <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 504c137 0 248-111 248-248S393 8 256 8 8 119 8 256s111 248 248 248zM40 256c0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216 0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216zm331.7-18l-176-107c-15.8-8.8-35.7 2.5-35.7 21v208c0 18.4 19.8 29.8 35.7 21l176-101c16.4-9.1 16.4-32.8 0-42zM192 335.8V176.9c0-4.7 5.1-7.6 9.1-5.1l134.5 81.7c3.9 2.4 3.8 8.1-.1 10.3L201 341c-4 2.3-9-.6-9-5.2z"></path></svg>
+          </svg>
         </div>
         <div class="card-section-border bg--breaking"></div>
       </div>
@@ -395,7 +397,23 @@ Et card-mode er re-design af det originale card-element.
       <div class="card-media">
         <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-icon">
-          <i class="far fa-headphones-alt"></i>
+          <svg viewBox="0 0 100 100">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 53 53" style="enable-background:new 0 0 53 53;" xml:space="preserve">
+            <path d="M14.9,52.7c-0.5,0-1.1-0.1-1.6-0.3c-0.9-0.4-1.6-1.2-2-2.3L6.7,38.3c-0.4-1-0.4-2.1,0.1-3c0.4-0.9,1.2-1.6,2.2-1.9l2-0.9
+              c1-0.4,2.1-0.4,3.1,0c0.9,0.4,1.6,1.2,2,2.3l4.6,11.8c0.4,1,0.4,2.1-0.1,3c-0.4,0.9-1.2,1.6-2.2,1.9l-2,0.9
+              C15.9,52.6,15.4,52.7,14.9,52.7z M12.5,35.1c-0.1,0-0.2,0-0.3,0.1l-2,0.9c0,0-0.1,0-0.1,0.1c-0.2,0.1-0.4,0.2-0.5,0.4
+              c-0.1,0.2-0.1,0.4,0,0.7c0,0,0,0,0,0l4.7,11.9c0.1,0.3,0.2,0.5,0.4,0.6c0.2,0.1,0.4,0.1,0.7,0l2-0.9c0,0,0.1,0,0.1-0.1
+              c0.2-0.1,0.4-0.2,0.5-0.4c0.1-0.2,0.1-0.4,0-0.7l-4.7-11.9c-0.1-0.3-0.2-0.5-0.4-0.6C12.7,35.1,12.6,35.1,12.5,35.1z M38,52.6
+              c-0.5,0-0.9-0.1-1.3-0.3l-2.2-1c-1.9-0.8-2.9-3.1-2.2-5L37,34.6c0.8-2,3.1-3,5-2.2l2.2,1c0.9,0.3,1.6,1.1,2.1,2c0.5,1,0.5,2,0.1,3
+              l-4.7,11.9c0,0,0,0,0,0c-0.4,0.9-1.1,1.7-2,2.1C39.1,52.5,38.6,52.6,38,52.6z M40.7,35.1c-0.3,0-0.7,0.3-0.9,0.6l-4.7,11.9
+              c-0.2,0.4,0.1,0.9,0.6,1.1l2.2,1c0.3,0.1,0.9-0.2,1-0.6l4.7-11.9c0.1-0.2,0.1-0.4,0-0.6c-0.1-0.2-0.3-0.4-0.5-0.5l-2.2-1
+              C40.8,35.1,40.7,35.1,40.7,35.1z M40.3,49.6L40.3,49.6L40.3,49.6z M44,52.5c-0.2,0-0.5-0.1-0.7-0.2c-0.7-0.4-1-1.3-0.6-2
+              c0.1-0.1,6.8-12.6,6.8-23.8c0-12.7-10.3-23-23-23c-12.7,0-23,10.3-23,23c0,11.1,6.7,23.7,6.8,23.8c0.4,0.7,0.1,1.6-0.6,2
+              c-0.7,0.4-1.6,0.1-2-0.6c-0.3-0.5-7.2-13.3-7.2-25.2c0-14.3,11.7-26,26-26c14.3,0,26,11.7,26,26c0,11.9-6.9,24.7-7.2,25.2
+              C45,52.2,44.5,52.5,44,52.5z"/>
+            </svg>
+          </svg>
         </div>
         <div class="card-section-border bg--nyheder"></div>
       </div>
@@ -424,7 +442,9 @@ Et card-mode er re-design af det originale card-element.
   <div class="card-media">
     <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
     <div class="card-icon">
-        <i class="far fa-play-circle"></i>
+      <svg viewBox="0 0 100 100">
+        <use href="#play-circle-light"></use>
+      </svg>
     </div>
     <div class="card-section-border bg--breaking"></div>
   </div>
@@ -433,7 +453,7 @@ Et card-mode er re-design af det originale card-element.
     <h2 class="fontsize-medium">Curabitur vehicula ac urna</h2>
     <div class="card-icon-plus">
       <svg viewBox="0 0 100 100">
-        <use xlink:href="#ebplus_icon"></use>
+        <use href="#ebplus_icon"></use>
       </svg>
     </div>
   </div>
@@ -452,7 +472,9 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
       <div class="card-media">
         <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-icon">
-          <i class="far fa-play-circle"></i>
+          <svg viewBox="0 0 100 100">
+            <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 504c137 0 248-111 248-248S393 8 256 8 8 119 8 256s111 248 248 248zM40 256c0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216 0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216zm331.7-18l-176-107c-15.8-8.8-35.7 2.5-35.7 21v208c0 18.4 19.8 29.8 35.7 21l176-101c16.4-9.1 16.4-32.8 0-42zM192 335.8V176.9c0-4.7 5.1-7.6 9.1-5.1l134.5 81.7c3.9 2.4 3.8 8.1-.1 10.3L201 341c-4 2.3-9-.6-9-5.2z"></path></svg>
+          </svg>
         </div>
         <div class="card-section-border bg--breaking"></div>
       </div>
@@ -474,7 +496,23 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
       <div class="card-media">
         <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-icon">
-          <i class="far fa-headphones-alt"></i>
+          <svg viewBox="0 0 100 100">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 53 53" style="enable-background:new 0 0 53 53;" xml:space="preserve">
+            <path d="M14.9,52.7c-0.5,0-1.1-0.1-1.6-0.3c-0.9-0.4-1.6-1.2-2-2.3L6.7,38.3c-0.4-1-0.4-2.1,0.1-3c0.4-0.9,1.2-1.6,2.2-1.9l2-0.9
+              c1-0.4,2.1-0.4,3.1,0c0.9,0.4,1.6,1.2,2,2.3l4.6,11.8c0.4,1,0.4,2.1-0.1,3c-0.4,0.9-1.2,1.6-2.2,1.9l-2,0.9
+              C15.9,52.6,15.4,52.7,14.9,52.7z M12.5,35.1c-0.1,0-0.2,0-0.3,0.1l-2,0.9c0,0-0.1,0-0.1,0.1c-0.2,0.1-0.4,0.2-0.5,0.4
+              c-0.1,0.2-0.1,0.4,0,0.7c0,0,0,0,0,0l4.7,11.9c0.1,0.3,0.2,0.5,0.4,0.6c0.2,0.1,0.4,0.1,0.7,0l2-0.9c0,0,0.1,0,0.1-0.1
+              c0.2-0.1,0.4-0.2,0.5-0.4c0.1-0.2,0.1-0.4,0-0.7l-4.7-11.9c-0.1-0.3-0.2-0.5-0.4-0.6C12.7,35.1,12.6,35.1,12.5,35.1z M38,52.6
+              c-0.5,0-0.9-0.1-1.3-0.3l-2.2-1c-1.9-0.8-2.9-3.1-2.2-5L37,34.6c0.8-2,3.1-3,5-2.2l2.2,1c0.9,0.3,1.6,1.1,2.1,2c0.5,1,0.5,2,0.1,3
+              l-4.7,11.9c0,0,0,0,0,0c-0.4,0.9-1.1,1.7-2,2.1C39.1,52.5,38.6,52.6,38,52.6z M40.7,35.1c-0.3,0-0.7,0.3-0.9,0.6l-4.7,11.9
+              c-0.2,0.4,0.1,0.9,0.6,1.1l2.2,1c0.3,0.1,0.9-0.2,1-0.6l4.7-11.9c0.1-0.2,0.1-0.4,0-0.6c-0.1-0.2-0.3-0.4-0.5-0.5l-2.2-1
+              C40.8,35.1,40.7,35.1,40.7,35.1z M40.3,49.6L40.3,49.6L40.3,49.6z M44,52.5c-0.2,0-0.5-0.1-0.7-0.2c-0.7-0.4-1-1.3-0.6-2
+              c0.1-0.1,6.8-12.6,6.8-23.8c0-12.7-10.3-23-23-23c-12.7,0-23,10.3-23,23c0,11.1,6.7,23.7,6.8,23.8c0.4,0.7,0.1,1.6-0.6,2
+              c-0.7,0.4-1.6,0.1-2-0.6c-0.3-0.5-7.2-13.3-7.2-25.2c0-14.3,11.7-26,26-26c14.3,0,26,11.7,26,26c0,11.9-6.9,24.7-7.2,25.2
+              C45,52.2,44.5,52.5,44,52.5z"/>
+            </svg>
+          </svg>
         </div>
         <div class="card-section-border bg--nyheder"></div>
       </div>
@@ -503,7 +541,9 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
     <div class="card-media">
       <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
       <div class="card-icon">
-          <i class="far fa-play-circle"></i>
+        <svg viewBox="0 0 100 100">
+          <use href="#play-circle-light"></use>
+        </svg>
       </div>
       <div class="card-section-border bg--breaking"></div>
     </div>
@@ -526,7 +566,9 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
       <div class="card-media">
         <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-icon">
-          <i class="far fa-play-circle"></i>
+          <svg viewBox="0 0 100 100">
+            <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 504c137 0 248-111 248-248S393 8 256 8 8 119 8 256s111 248 248 248zM40 256c0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216 0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216zm331.7-18l-176-107c-15.8-8.8-35.7 2.5-35.7 21v208c0 18.4 19.8 29.8 35.7 21l176-101c16.4-9.1 16.4-32.8 0-42zM192 335.8V176.9c0-4.7 5.1-7.6 9.1-5.1l134.5 81.7c3.9 2.4 3.8 8.1-.1 10.3L201 341c-4 2.3-9-.6-9-5.2z"></path></svg>
+          </svg>
         </div>
         <div class="card-section-border bg--breaking"></div>
       </div>
@@ -548,7 +590,23 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
       <div class="card-media">
         <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-icon">
-          <i class="far fa-headphones-alt"></i>
+          <svg viewBox="0 0 100 100">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 53 53" style="enable-background:new 0 0 53 53;" xml:space="preserve">
+            <path d="M14.9,52.7c-0.5,0-1.1-0.1-1.6-0.3c-0.9-0.4-1.6-1.2-2-2.3L6.7,38.3c-0.4-1-0.4-2.1,0.1-3c0.4-0.9,1.2-1.6,2.2-1.9l2-0.9
+              c1-0.4,2.1-0.4,3.1,0c0.9,0.4,1.6,1.2,2,2.3l4.6,11.8c0.4,1,0.4,2.1-0.1,3c-0.4,0.9-1.2,1.6-2.2,1.9l-2,0.9
+              C15.9,52.6,15.4,52.7,14.9,52.7z M12.5,35.1c-0.1,0-0.2,0-0.3,0.1l-2,0.9c0,0-0.1,0-0.1,0.1c-0.2,0.1-0.4,0.2-0.5,0.4
+              c-0.1,0.2-0.1,0.4,0,0.7c0,0,0,0,0,0l4.7,11.9c0.1,0.3,0.2,0.5,0.4,0.6c0.2,0.1,0.4,0.1,0.7,0l2-0.9c0,0,0.1,0,0.1-0.1
+              c0.2-0.1,0.4-0.2,0.5-0.4c0.1-0.2,0.1-0.4,0-0.7l-4.7-11.9c-0.1-0.3-0.2-0.5-0.4-0.6C12.7,35.1,12.6,35.1,12.5,35.1z M38,52.6
+              c-0.5,0-0.9-0.1-1.3-0.3l-2.2-1c-1.9-0.8-2.9-3.1-2.2-5L37,34.6c0.8-2,3.1-3,5-2.2l2.2,1c0.9,0.3,1.6,1.1,2.1,2c0.5,1,0.5,2,0.1,3
+              l-4.7,11.9c0,0,0,0,0,0c-0.4,0.9-1.1,1.7-2,2.1C39.1,52.5,38.6,52.6,38,52.6z M40.7,35.1c-0.3,0-0.7,0.3-0.9,0.6l-4.7,11.9
+              c-0.2,0.4,0.1,0.9,0.6,1.1l2.2,1c0.3,0.1,0.9-0.2,1-0.6l4.7-11.9c0.1-0.2,0.1-0.4,0-0.6c-0.1-0.2-0.3-0.4-0.5-0.5l-2.2-1
+              C40.8,35.1,40.7,35.1,40.7,35.1z M40.3,49.6L40.3,49.6L40.3,49.6z M44,52.5c-0.2,0-0.5-0.1-0.7-0.2c-0.7-0.4-1-1.3-0.6-2
+              c0.1-0.1,6.8-12.6,6.8-23.8c0-12.7-10.3-23-23-23c-12.7,0-23,10.3-23,23c0,11.1,6.7,23.7,6.8,23.8c0.4,0.7,0.1,1.6-0.6,2
+              c-0.7,0.4-1.6,0.1-2-0.6c-0.3-0.5-7.2-13.3-7.2-25.2c0-14.3,11.7-26,26-26c14.3,0,26,11.7,26,26c0,11.9-6.9,24.7-7.2,25.2
+              C45,52.2,44.5,52.5,44,52.5z"/>
+            </svg>
+          </svg>
         </div>
         <div class="card-section-border bg--nyheder"></div>
       </div>
@@ -578,7 +636,9 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
     <div class="card-media">
       <img class="card-image" src="https://via.placeholder.com/300x168&text=300x168" height="168" width="300">
         <div class="card-icon">
-          <i class="far fa-play-circle"></i>
+          <svg viewBox="0 0 100 100">
+            <use href="#play-circle-light"></use>
+          </svg>
         </div>
       <div class="card-section-border bg--breaking"></div>
     </div>
