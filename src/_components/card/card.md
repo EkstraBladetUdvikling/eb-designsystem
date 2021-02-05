@@ -382,7 +382,11 @@ Et card-mode er re-design af det originale card-element.
         <h2 class="fontsize-medium">Curabitur vehicula ac urna</h2>
         <div class="card-icon-plus">
           <svg viewBox="0 0 100 100">
-            <use xlink:href="#ebplus_sort"></use>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 72.8 72.8" style="enable-background:new 0 0 72.8 72.8;" xml:space="preserve">
+            <path d="M36.4,0C16.3,0,0,16.3,0,36.4s16.3,36.4,36.4,36.4s36.4-16.3,36.4-36.4S56.5,0,36.4,0z M56.5,41.9H42.2v14.2
+              H30.6V41.9H16.3V31.4h14.2V17.2h11.7v14.1h14.2V41.9z"/>
+            </svg>
           </svg>
         </div>
       </div>
@@ -404,11 +408,14 @@ Et card-mode er re-design af det originale card-element.
         <h2 class="fontsize-medium">Donec sed tincidunt ex, vestibulum congue arcu</h2>
         <div class="card-icon-plus">
           <svg viewBox="0 0 100 100">
-            <use xlink:href="#ebplus_sort"></use>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 72.8 72.8" style="enable-background:new 0 0 72.8 72.8;" xml:space="preserve">
+            <path d="M36.4,0C16.3,0,0,16.3,0,36.4s16.3,36.4,36.4,36.4s36.4-16.3,36.4-36.4S56.5,0,36.4,0z M56.5,41.9H42.2v14.2
+              H30.6V41.9H16.3V31.4h14.2V17.2h11.7v14.1h14.2V41.9z"/>
+            </svg>
           </svg>
         </div>
       </div>
-      <div class="card-section-border bg--sport"></div>
     </a>
 </div>
 
@@ -426,7 +433,7 @@ Et card-mode er re-design af det originale card-element.
     <h2 class="fontsize-medium">Curabitur vehicula ac urna</h2>
     <div class="card-icon-plus">
       <svg viewBox="0 0 100 100">
-        <use xlink:href="#ebplus_sort"></use>
+        <use xlink:href="#ebplus_icon"></use>
       </svg>
     </div>
   </div>
@@ -454,7 +461,11 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         <h2 class="fontsize-medium">Curabitur vehicula ac urna</h2>
         <div class="card-icon-plus">
           <svg viewBox="0 0 100 100">
-            <use xlink:href="#ebplus_sort"></use>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 72.8 72.8" style="enable-background:new 0 0 72.8 72.8;" xml:space="preserve">
+            <path d="M36.4,0C16.3,0,0,16.3,0,36.4s16.3,36.4,36.4,36.4s36.4-16.3,36.4-36.4S56.5,0,36.4,0z M56.5,41.9H42.2v14.2
+              H30.6V41.9H16.3V31.4h14.2V17.2h11.7v14.1h14.2V41.9z"/>
+            </svg>
           </svg>
         </div>
       </div>
@@ -476,11 +487,14 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         <h2 class="fontsize-medium">Donec sed tincidunt ex, vestibulum congue arcu</h2>
         <div class="card-icon-plus">
           <svg viewBox="0 0 100 100">
-            <use xlink:href="#ebplus_sort"></use>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 72.8 72.8" style="enable-background:new 0 0 72.8 72.8;" xml:space="preserve">
+            <path d="M36.4,0C16.3,0,0,16.3,0,36.4s16.3,36.4,36.4,36.4s36.4-16.3,36.4-36.4S56.5,0,36.4,0z M56.5,41.9H42.2v14.2
+              H30.6V41.9H16.3V31.4h14.2V17.2h11.7v14.1h14.2V41.9z"/>
+            </svg>
           </svg>
         </div>
       </div>
-      <div class="card-section-border bg--sport"></div>
     </a>
 </div>
 
@@ -498,7 +512,7 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
       <h2 class="fontsize-medium">Curabitur vehicula ac urna</h2>
       <div class="card-icon-plus">
         <svg viewBox="0 0 100 100">
-          <use xlink:href="#ebplus_sort"></use>
+          <use href="#ebplus_icon"></use>
         </svg>
       </div>
     </div>
@@ -521,7 +535,11 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         <h2 class="fontsize-medium">Curabitur vehicula ac urna</h2>
         <div class="card-icon-plus">
           <svg viewBox="0 0 100 100">
-            <use xlink:href="#ebplus_sort"></use>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 72.8 72.8" style="enable-background:new 0 0 72.8 72.8;" xml:space="preserve">
+            <path d="M36.4,0C16.3,0,0,16.3,0,36.4s16.3,36.4,36.4,36.4s36.4-16.3,36.4-36.4S56.5,0,36.4,0z M56.5,41.9H42.2v14.2
+              H30.6V41.9H16.3V31.4h14.2V17.2h11.7v14.1h14.2V41.9z"/>
+            </svg>
           </svg>
         </div>
       </div>
@@ -543,11 +561,14 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         <h2 class="fontsize-medium">Donec sed tincidunt ex, vestibulum congue arcu</h2>
         <div class="card-icon-plus">
           <svg viewBox="0 0 100 100">
-            <use xlink:href="#ebplus_sort"></use>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 72.8 72.8" style="enable-background:new 0 0 72.8 72.8;" xml:space="preserve">
+            <path d="M36.4,0C16.3,0,0,16.3,0,36.4s16.3,36.4,36.4,36.4s36.4-16.3,36.4-36.4S56.5,0,36.4,0z M56.5,41.9H42.2v14.2
+              H30.6V41.9H16.3V31.4h14.2V17.2h11.7v14.1h14.2V41.9z"/>
+            </svg>
           </svg>
         </div>
       </div>
-      <div class="card-section-border bg--sport"></div>
     </a>
 </div>
 
@@ -566,7 +587,7 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
       <h2 class="fontsize-medium">Curabitur vehicula ac urna</h2>
       <div class="card-icon-plus">
         <svg viewBox="0 0 100 100">
-          <use xlink:href="#ebplus_sort"></use>
+          <use href="#ebplus_icon"></use>
         </svg>
       </div>
     </div>

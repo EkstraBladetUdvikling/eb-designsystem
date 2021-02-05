@@ -8,8 +8,8 @@
 @media (--smartphone) {
   :root {
     --card-fs-title: 20px;
-  --card-fs-title--small: 16px;
-  --card-padding: 10px;
+    --card-fs-title--small: 16px;
+    --card-padding: 10px;
   }
 }
 
@@ -189,13 +189,10 @@ a.card-mode:focus {
   bottom: 4px;
 }
 .card-icon-plus svg {
-  background: var(--color--black);
-  border-radius: 20px;
-  padding: 3px;
-  width: 12px;
-  height: 12px;
+  width: 18px;
+  height: 18px;
 
-  fill: var(--color--white);
+  fill: var(--color--black);
 }
 /* card-mode: lightmode */
 [data-theme="lightmode"]:not([class*="bg--"]) {
@@ -203,13 +200,10 @@ a.card-mode:focus {
   color: var(--color--black);
 }
 [data-theme="lightmode"] .card-content .card-icon-plus svg {
-  background: var(--color--black);
-  border-radius: 20px;
-  padding: 3px;
-  width: 12px;
-  height: 12px;
+  width: 18px;
+  height: 18px;
 
-  fill: var(--color--white);
+  fill: var(--color--black);
 }
 /* card-mode: darkmode */
 [data-theme="darkmode"]:not([class*="bg--"]) {
@@ -217,13 +211,10 @@ a.card-mode:focus {
   color: var(--color--white);
 }
 [data-theme="darkmode"] .card-content .card-icon-plus svg {
-  background: var(--color--white);
-  border-radius: 20px;
-  padding: 3px;
-  width: 12px;
-  height: 12px;
+  width: 18px;
+  height: 18px;
 
-  fill: var(--color--black);
+  fill: var(--color--white);
 }
 
 /* Shrink font-size on small cards with media, if not explicitly set to large */

@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.1.9 built on 4.2.2021 15.51.08 on branch "KAM" at revision "641882c2047e8c01ee6e064b00c794943a17feed" */
+/** eb-designsystem--watcher.css version 0.1.9 built on 5.2.2021 11.00.12 on branch "KAM" at revision "07bfbab1e32ee9e81d144ec79368600ba3d8ca11" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -596,8 +596,8 @@ a.badge:hover {
 @media (max-width: 767px) {
   :root {
     --card-fs-title: 20px;
-  --card-fs-title--small: 16px;
-  --card-padding: 10px;
+    --card-fs-title--small: 16px;
+    --card-padding: 10px;
   }
 }
 
@@ -777,13 +777,10 @@ a.card-mode:focus {
   bottom: 4px;
 }
 .card-icon-plus svg {
-  background: var(--color--black);
-  border-radius: 20px;
-  padding: 3px;
-  width: 12px;
-  height: 12px;
+  width: 18px;
+  height: 18px;
 
-  fill: var(--color--white);
+  fill: var(--color--black);
 }
 /* card-mode: lightmode */
 [data-theme="lightmode"]:not([class*="bg--"]) {
@@ -791,13 +788,10 @@ a.card-mode:focus {
   color: var(--color--black);
 }
 [data-theme="lightmode"] .card-content .card-icon-plus svg {
-  background: var(--color--black);
-  border-radius: 20px;
-  padding: 3px;
-  width: 12px;
-  height: 12px;
+  width: 18px;
+  height: 18px;
 
-  fill: var(--color--white);
+  fill: var(--color--black);
 }
 /* card-mode: darkmode */
 [data-theme="darkmode"]:not([class*="bg--"]) {
@@ -805,13 +799,10 @@ a.card-mode:focus {
   color: var(--color--white);
 }
 [data-theme="darkmode"] .card-content .card-icon-plus svg {
-  background: var(--color--white);
-  border-radius: 20px;
-  padding: 3px;
-  width: 12px;
-  height: 12px;
+  width: 18px;
+  height: 18px;
 
-  fill: var(--color--black);
+  fill: var(--color--white);
 }
 
 /* Shrink font-size on small cards with media, if not explicitly set to large */
