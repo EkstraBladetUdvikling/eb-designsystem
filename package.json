@@ -1,6 +1,6 @@
 {
   "name": "eb-designsystem",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "main": "index.js",
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
@@ -27,13 +27,13 @@
     "@ekstra-bladet/eb-colors": "^2.6.0",
     "@ekstra-bladet/eb-fonts": "^1.1.1",
     "csscomb": "^4.3.0",
-    "postcss": "^8.1.10",
-    "postcss-cli": "^8.3.0",
-    "postcss-custom-media": "^7.0.8",
-    "postcss-custom-properties": "^10.0.0",
+    "postcss": "^8.2.5",
+    "postcss-cli": "^8.3.1",
+    "postcss-custom-media": "^8.0.0",
+    "postcss-custom-properties": "^11.0.0",
     "postcss-discard-duplicates": "^4.0.2",
     "postcss-discard-unused": "^4.0.1",
-    "postcss-load-config": "^3.0.0",
+    "postcss-load-config": "^3.0.1",
     "postcss-merge-rules": "^4.0.3",
     "postcss-preset-env": "^6.7.0",
     "postcss-selectorcleanse": "^1.0.6"
@@ -42,6 +42,6 @@
     "cpx": "^1.5.0",
     "normalize.css": "^8.0.1",
     "onchange": "^7.1.0",
-    "postcss-import": "^13.0.0"
+    "postcss-import": "^14.0.0"
   }
 }
