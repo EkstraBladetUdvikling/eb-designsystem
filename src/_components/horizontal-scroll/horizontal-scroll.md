@@ -6,8 +6,6 @@ description: Horizontal-scroll laver en carosel af items(ex. cards), som kan scr
 
 **OBS:** Husk at indsætte ***javascript-koden*** nede i bunden
 
-<br>
-
 <span style="color:#12507b;font-weight: bolder">Default horizontial-scroll</span>
 
 <div id="exampleclass-scroll-container" class="grid-width--large horizontal-scroll--container position-relative">

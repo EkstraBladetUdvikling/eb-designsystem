@@ -3,7 +3,6 @@ layout: component
 title: Data-theme
 description: Data-theme er en data-attribute der anvendes til at skifte i mellem farve-temaer.
 ---
-<br>
 
 <span style="color:#12507b;font-weight: bolder">Anvendelse af data-theme</span>
 ```html
@@ -15,7 +14,6 @@ description: Data-theme er en data-attribute der anvendes til at skifte i mellem
   I'm now in darkmode
 <div>
 ```
-<br>
 
 <span style="color:#12507b;font-weight: bolder">Komponenter der kan anvende data-theme</span>
   <div class="grid-width--large">

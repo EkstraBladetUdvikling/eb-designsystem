@@ -6,8 +6,6 @@ description: Accordions anvendes til at toggle (hide/show) content.
 
 **OBS:** Husk at indsætte ***javascript-koden*** nede i bunden
 
-<br>
-
 <span style="color:#12507b;font-weight: bolder">Default accordion</span>
 
 <div class="flex grid-width--small">
@@ -63,11 +61,9 @@ description: Accordions anvendes til at toggle (hide/show) content.
 </div>
 ```
 
-<br>
 Det er muligt at tilføje: **lightmode** eller **darkmode**.
 
 Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode" / "darkmode"**.
-<br>
 
 <span style="color:#12507b;font-weight: bolder">Lightmode</span>
 

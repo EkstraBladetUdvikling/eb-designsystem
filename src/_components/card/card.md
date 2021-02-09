@@ -459,11 +459,9 @@ Et card-mode er re-design af det originale card-element.
   </div>
 </a>
 ```
-<br>
 Det er muligt at tilføje **lightmode** eller **darkmode**.
 
 Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode" / "darkmode"**.
-<br>
 
 <span style="color:#12507b;font-weight: bolder">Lightmode</span>
 
