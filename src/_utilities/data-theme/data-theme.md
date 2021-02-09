@@ -7,11 +7,11 @@ description: Data-theme er en data-attribute der anvendes til at skifte i mellem
 <span style="color:#12507b;font-weight: bolder">Anvendelse af data-theme</span>
 ```html
 <div data-theme="lightmode">
-  I'm now in lightmode
+  <p>I'm now in lightmode</p>
 <div>
 
 <div data-theme="darkmode">
-  I'm now in darkmode
+  <p>I'm now in darkmode</p>
 <div>
 ```
 
@@ -28,8 +28,8 @@ description: Data-theme er en data-attribute der anvendes til at skifte i mellem
       <a href="../../components/accordion/accordion.html">Accordion dokumentation</a>
     </div>
     <div class="width-1of3 padding-m">
-    <div>- lightmode</div>
-    <div>- darkmode</div>
+    <p class="margin-none">- lightmode</p>
+    <p class="margin-none">- darkmode</p>
     </div>
   </div>
   <div id="techreq-list-title" class="flex bg--graa7" style="border-bottom: 1px solid rgba(0, 0, 0, .1);">
@@ -38,8 +38,8 @@ description: Data-theme er en data-attribute der anvendes til at skifte i mellem
       <a href="../../components/card/card.html">Card dokumentation</a>
     </div>
     <div class="width-1of3 padding-m">
-    <div>- lightmode</div>
-    <div>- darkmode</div>
+    <p class="margin-none">- lightmode</p>
+    <p class="margin-none">- darkmode</p>
     </div>
   </div>
 </div>

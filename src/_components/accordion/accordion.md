@@ -15,11 +15,10 @@ description: Accordions anvendes til at toggle (hide/show) content.
         <span class="fontweight-normal fontsize-large">Tab 1</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="accordion-body padding-l fontsize-small">
-      <div><b>Lorem Ipsum?</b></div>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      <div class="padding-m--t"><b>Lorem Ipsum?</b></div>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <div class="accordion-body padding-m">
+        <p class="fontsize-small">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
       </div>
     </div>
     <div class="accordion-tab padding-m padding-l--rl margin-s--b">
@@ -27,8 +26,10 @@ description: Accordions anvendes til at toggle (hide/show) content.
         <span class="fontweight-normal fontsize-large">Tab 2</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="accordion-body padding-l fontsize-small">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <div class="accordion-body padding-m">
+        <p class="fontsize-small">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
       </div>
     </div>
       <div class="accordion-tab padding-m padding-l--rl margin-s--b">
@@ -36,11 +37,10 @@ description: Accordions anvendes til at toggle (hide/show) content.
         <span class="fontweight-normal fontsize-large">Tab 3</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="accordion-body padding-l fontsize-small">
-          voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
-        <li>At vero eos et accusamus</li>
-        <li>Et iusto odio dignissimos ducimus</li>
-        <li>Qui blanditiis praesentium</li>
+      <div class="accordion-body padding-m">
+        <p class="fontsize-small">
+            voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+        </p>
       </div>
     </div>
   </div>
@@ -52,9 +52,11 @@ description: Accordions anvendes til at toggle (hide/show) content.
       <span class="fontweight-normal fontsize-large">Tab 2</span>
       <i class="fas fa-chevron-down"></i>
     </div>
-    <div class="accordion-body padding-l fontsize-small">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    <div class="accordion-body padding-m">
+      <p class="fontsize-small">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
     </div>
   </div>
 </div>
@@ -73,11 +75,10 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         <span class="fontweight-normal fontsize-large">Tab 1</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="accordion-body padding-l fontsize-small">
-      <div><b>Lorem Ipsum?</b></div>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      <div class="padding-m--t"><b>Lorem Ipsum?</b></div>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <div class="accordion-body padding-m">
+        <p class="fontsize-small">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
       </div>
     </div>
     <div class="accordion-tab padding-m padding-l--rl margin-s--b">
@@ -85,8 +86,10 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         <span class="fontweight-normal fontsize-large">Tab 2</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="accordion-body padding-l fontsize-small">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <div class="accordion-body padding-m">
+        <p class="fontsize-small">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
       </div>
     </div>
       <div class="accordion-tab padding-m padding-l--rl margin-s--b">
@@ -94,11 +97,10 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         <span class="fontweight-normal fontsize-large">Tab 3</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="accordion-body padding-l fontsize-small">
+      <div class="accordion-body padding-m">
+        <p class="fontsize-small">
           voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
-        <li>At vero eos et accusamus</li>
-        <li>Et iusto odio dignissimos ducimus</li>
-        <li>Qui blanditiis praesentium</li>
+        </p>
       </div>
     </div>
   </div>
@@ -111,9 +113,11 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
       <span class="fontweight-normal fontsize-large">Tab 2</span>
       <i class="fas fa-chevron-down"></i>
     </div>
-    <div class="accordion-body padding-l fontsize-small">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    <div class="accordion-body padding-m">
+      <p class="fontsize-small">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
     </div>
   </div>
 </div>
@@ -128,11 +132,10 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         <span class="fontweight-normal fontsize-large">Tab 1</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="accordion-body padding-l fontsize-small">
-      <div><b>Lorem Ipsum?</b></div>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      <div class="padding-m--t"><b>Lorem Ipsum?</b></div>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <div class="accordion-body padding-m">
+        <p class="fontsize-small">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
       </div>
     </div>
     <div class="accordion-tab padding-m padding-l--rl margin-s--b">
@@ -140,20 +143,21 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         <span class="fontweight-normal fontsize-large">Tab 2</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="accordion-body padding-l fontsize-small">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <div class="accordion-body padding-m">
+        <p class="fontsize-small">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
       </div>
     </div>
-      <div class="accordion-tab padding-m padding-l--rl margin-s--b">
+    <div class="accordion-tab padding-m padding-l--rl margin-s--b">
       <div class="accordion-header flex flex-justify--between">
         <span class="fontweight-normal fontsize-large">Tab 3</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="accordion-body padding-l fontsize-small">
+      <div class="accordion-body padding-m">
+        <p class="fontsize-small">
           voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
-        <li>At vero eos et accusamus</li>
-        <li>Et iusto odio dignissimos ducimus</li>
-        <li>Qui blanditiis praesentium</li>
+        </p>
       </div>
     </div>
   </div>
@@ -166,9 +170,11 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
       <span class="fontweight-normal fontsize-large">Tab 2</span>
       <i class="fas fa-chevron-down"></i>
     </div>
-    <div class="accordion-body padding-l fontsize-small">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    <div class="accordion-body padding-m">
+      <p class="fontsize-small">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
     </div>
   </div>
 </div>
