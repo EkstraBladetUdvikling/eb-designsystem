@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.1.9 built on 5.2.2021 14.52.07 on branch "KAM" at revision "20fa3fd5fd39415d9197b466fee7c6328fa91397" */
+/** eb-designsystem.css version 0.2.0 built on 9.2.2021 13.40.35 on branch "KAM" at revision "abbe914ee99d7d706d57ede054da7a45275cd6b0" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -1026,6 +1026,70 @@ a.card-mode:focus {
 .toggle-input:checked ~ .toggle-off,
 .toggle-input ~ .toggle-on {
   display: none;
+}
+:root {
+  --tooltip-border-color: var(--card-border-color);
+  --tooltip-height: 25px;
+  --tooltip-padding: 5px 5px;
+}
+
+.tooltip {
+  position: relative;
+
+  display: inline-block;
+  height: var(--tooltip-height);
+}
+
+.tooltip-input {
+  display: none;
+}
+
+.tooltip-toggle {
+  cursor: pointer;
+}
+
+.tooltip-off,
+.tooltip-on {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  background: var(--color--white);
+  border-radius: var(--border-radius--small);
+  box-shadow: inset 0 0 0 1px var(--card-border-color);
+  box-sizing: border-box;
+  font-family: var(--fontfamily--primary);
+  overflow: hidden;
+  padding: var(--tooltip-padding);
+  width: 22px;
+  height: var(--tooltip-height);
+}
+
+.tooltip-input:checked ~ .tooltip-on {
+  width: 400px;
+  max-width: calc(100vw - 40px);
+  height: auto;
+}
+
+.tooltip-input ~ .tooltip-off,
+.tooltip-input:checked ~ .tooltip-on {
+  display: block;
+}
+
+.tooltip-input:checked ~ .tooltip-off,
+.tooltip-input ~ .tooltip-on {
+  display: none;
+}
+
+.tooltip--right .tooltip-off,
+.tooltip--right .tooltip-on {
+  right: 0;
+  left: auto;
+}
+
+.tooltip--right .tooltip-toggle {
+  float: right;
 }
 .screen-reader-text {
   /**
