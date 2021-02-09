@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.2.0 built on 9.2.2021 13.40.35 on branch "KAM" at revision "abbe914ee99d7d706d57ede054da7a45275cd6b0" */
+/** eb-designsystem.css version 0.2.0 built on 9.2.2021 17.16.09 on branch "KAM" at revision "446c561d99814afaf7f77be76b2b705f9fb3953c" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -327,6 +327,7 @@ custom media queries is the only allowed media queries
   background: rgb(var(--rgb-color--graa7));
   border-radius: var(--border-radius--small);
   box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), 0.22);
+  user-select: none;
 }
 
 .accordion-header {
@@ -355,6 +356,10 @@ custom media queries is the only allowed media queries
 
 .accordion-tab.accordion-expanded {
   border: 1px solid var(--color--graa3);
+}
+
+.accordion-body p {
+  font-size: inherit;
 }
 
 /* Lightmode */
@@ -728,7 +733,6 @@ a.card:focus {
 /* Card-modes (mutation of .card - new design) */
 .card-mode {
   border-radius: 15px;
-  box-shadow: inset 0 0 0 1px var(--card-border-color); /* DR.Edition 03/02/2020 */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
