@@ -2,6 +2,7 @@
   background: rgb(var(--rgb-color--graa7));
   border-radius: var(--border-radius--small);
   box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), 0.22);
+  user-select: none;
 }
 
 .accordion-header {

@@ -16,9 +16,9 @@ description: Accordions anvendes til at toggle (hide/show) content.
         <i class="fas fa-chevron-down"></i>
       </div>
       <div class="accordion-body padding-l fontsize-small">
-      <p><b>Lorem Ipsum?</b></p>
+      <div><b>Lorem Ipsum?</b></div>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      <p><b>Lorem Ipsum?</b></p>
+      <div class="padding-m--t"><b>Lorem Ipsum?</b></div>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </div>
     </div>
@@ -74,9 +74,9 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         <i class="fas fa-chevron-down"></i>
       </div>
       <div class="accordion-body padding-l fontsize-small">
-      <p><b>Lorem Ipsum?</b></p>
+      <div><b>Lorem Ipsum?</b></div>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      <p><b>Lorem Ipsum?</b></p>
+      <div class="padding-m--t"><b>Lorem Ipsum?</b></div>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </div>
     </div>
@@ -129,9 +129,9 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         <i class="fas fa-chevron-down"></i>
       </div>
       <div class="accordion-body padding-l fontsize-small">
-      <p><b>Lorem Ipsum?</b></p>
+      <div><b>Lorem Ipsum?</b></div>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      <p><b>Lorem Ipsum?</b></p>
+      <div class="padding-m--t"><b>Lorem Ipsum?</b></div>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </div>
     </div>

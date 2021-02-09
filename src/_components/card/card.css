@@ -131,7 +131,6 @@ a.card:focus {
 /* Card-modes (mutation of .card - new design) */
 .card-mode {
   border-radius: 15px;
-  box-shadow: inset 0 0 0 1px var(--card-border-color); /* DR.Edition 03/02/2020 */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

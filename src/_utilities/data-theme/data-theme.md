@@ -28,9 +28,8 @@ description: Data-theme er en data-attribute der anvendes til at skifte i mellem
       <a href="../../components/accordion/accordion.html">Accordion dokumentation</a>
     </div>
     <div class="width-1of3 padding-m">
-    - lightmode
-    <br>
-    - darkmode
+    <div>- lightmode</div>
+    <div>- darkmode</div>
     </div>
   </div>
   <div id="techreq-list-title" class="flex bg--graa7" style="border-bottom: 1px solid rgba(0, 0, 0, .1);">
@@ -39,9 +38,8 @@ description: Data-theme er en data-attribute der anvendes til at skifte i mellem
       <a href="../../components/card/card.html">Card dokumentation</a>
     </div>
     <div class="width-1of3 padding-m">
-    - lightmode
-    <br>
-    - darkmode
+    <div>- lightmode</div>
+    <div>- darkmode</div>
     </div>
   </div>
 </div>
