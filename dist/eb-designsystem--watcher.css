@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.2.0 built on 9.2.2021 15.41.02 on branch "KAM" at revision "477b743c370dfada1bb6b1c4dd2dfa313d87c2b6" */
+/** eb-designsystem--watcher.css version 0.2.0 built on 9.2.2021 17.19.57 on branch "KAM" at revision "7620729f6d89a368f3217774b5b90c4f847b081f" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -347,6 +347,10 @@ custom media queries is the only allowed media queries
 
 .accordion-tab.accordion-expanded {
   border: 1px solid var(--color--graa3);
+}
+
+.accordion-body p {
+  font-size: inherit;
 }
 
 /* Lightmode */
