@@ -8,11 +8,11 @@
 <Button type="solid">Button solid</Button>
 <Button type="link">Button link</Button>
 
-<textarea cols="5" rows="3">
-  <Button>Base button</Button>
-  <Button type="solid">Solid button</Button>
-  <Button type="link">Button link</Button>
-</textarea cols="5" rows="4">
+<code>
+  {`<Button>Base button</Button>`}<br>
+  {'<Button type="solid">Solid button</Button>'}<br>
+  {'<Button type="link">Button link</Button>'}
+</code>
 
 <h3>Styles</h3>
 
@@ -21,12 +21,12 @@
 <Button style="accept">Button accept</Button>
 <Button style="cancel">Button cancel</Button>
 
-<textarea cols="5" rows="4">
-  <Button style="primary">Button primary</Button>
-  <Button style="secondary">Button secondary</Button>
-  <Button style="accept">Button accept</Button>
-  <Button style="cancel">Button cancel</Button>
-</textarea cols="5" rows="4">
+<code>
+  {'<Button style="primary">Button primary</Button>'}<br>
+  {'<Button style="secondary">Button secondary</Button>'}<br>
+  {'<Button style="accept">Button accept</Button>'}<br>
+  {'<Button style="cancel">Button cancel</Button>'}
+</code>
 
 <h3>Icons</h3>
 
