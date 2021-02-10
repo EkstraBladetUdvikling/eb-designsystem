@@ -1,19 +1,16 @@
 <script>
   export let classExtension;
-
+  export let style;
   export let type;
 
   let cssClass = `button ${classExtension}`;
-  switch (type) {
-    case 'solid':
-      cssClass = `${cssClass} button--solid`;
-      break;
-    case 'link':
-      cssClass = `${cssClass} button--link`;
-      break;
-    case 'icon':
-      cssClass = `${cssClass} button--icon`;
-      break;
+
+  if (style) {
+    cssClass = `${cssClass} button--${style}`;
+  }
+
+  if (type) {
+    cssClass = `${cssClass} button--${type}`;
   }
 </script>
 
