@@ -16,7 +16,6 @@ const TEMPVERSION = './.tempversion';
 const importFrom = [
   './node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-vars-rgb.css',
   './node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-css-vars.css',
-  './node_modules/@ekstra-bladet/eb-fonts/dist/eb-fontvars-desktop.css',
   './src/_variables.css',
   './src/_custom-mediaqueries.css',
 ];

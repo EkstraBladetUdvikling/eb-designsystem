@@ -8,8 +8,8 @@
 @media (--smartphone) {
   :root {
     --card-fs-title: 20px;
-  --card-fs-title--small: 16px;
-  --card-padding: 10px;
+    --card-fs-title--small: 16px;
+    --card-padding: 10px;
   }
 }
 
@@ -128,11 +128,119 @@ a.card:focus {
   padding: 0 var(--card-padding);
 }
 
+/* Card-modes (mutation of .card - new design) */
+.card-mode {
+  border-radius: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--fontfamily--primary);
+  overflow: hidden;
+}
+.card-mode[class*="bg--"] {
+  box-shadow: none; /* Remove border when filled */
+}
+
+.card-mode:not([class*="bg--"]) {
+  background: var(--color--white);
+  color: var(--color--black);
+}
+
+a.card-mode:hover,
+a.card-mode:focus {
+  box-shadow: var(--box-shadow--hover);
+  outline: none;
+}
+.card-mode .card-media {
+  padding: 7px;
+  padding-bottom: 0;
+}
+.card-mode .card-media .card-image {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.card-section-border {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 8px;
+}
+.card-section-border-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 8px;
+}
+.card-mode .card-media .card-icon {
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+}
+.card-mode .card-media .card-icon i {
+  color: var(--color--white);
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+}
+.card-mode .card-media .card-icon svg {
+  fill: var(--color--white);
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+}
+.card-mode .card-content {
+  position: relative;
+}
+.card-icon-plus {
+  position: absolute;
+  right: 8px;
+  bottom: 4px;
+}
+.card-icon-plus svg {
+  width: 18px;
+  height: 18px;
+
+  fill: var(--color--black);
+}
+/* card-mode: lightmode */
+[data-theme="lightmode"]:not([class*="bg--"]) {
+  background: var(--color--white);
+  color: var(--color--black);
+}
+[data-theme="lightmode"] .card-content .card-icon-plus svg {
+  width: 18px;
+  height: 18px;
+
+  fill: var(--color--black);
+}
+/* card-mode: darkmode */
+[data-theme="darkmode"]:not([class*="bg--"]) {
+  background: var(--color--black);
+  color: var(--color--white);
+}
+[data-theme="darkmode"] .card-content .card-icon-plus svg {
+  width: 18px;
+  height: 18px;
+
+  fill: var(--color--white);
+}
+
 /* Shrink font-size on small cards with media, if not explicitly set to large */
-.width-1of2 > .card .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
-.width-1of3 > .card .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
-.card.width-1of2 .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
-.card.width-1of3 .card-media + .card-content .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
+.width-1of2
+  > .card
+  .card-media
+  + .card-content
+  .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
+.width-1of3
+  > .card
+  .card-media
+  + .card-content
+  .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
+.card.width-1of2
+  .card-media
+  + .card-content
+  .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
+.card.width-1of3
+  .card-media
+  + .card-content
+  .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
 .card--small-media .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
 .card-title--small:not([class*="fs-"]):not([class*="fontsize-"]) {
   font-size: var(--card-fs-title--small);
