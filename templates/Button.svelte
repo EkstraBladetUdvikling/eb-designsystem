@@ -11,6 +11,9 @@
     case 'link':
       cssClass = `${cssClass} button--link`;
       break;
+    case 'icon':
+      cssClass = `${cssClass} button--icon`;
+      break;
   }
 </script>
 
