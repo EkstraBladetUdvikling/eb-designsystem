@@ -10,8 +10,8 @@ description: Accordions anvendes til at toggle (hide/show) content.
 
 <div class="flex grid-width--small">
   <div class="accordion card-mode padding-l ff-secondary width-1of1">
-    <div class="accordion-tab padding-m padding-l--rl margin-s--b">
-      <div class="accordion-header flex flex-justify--between">
+    <div class="accordion-tab margin-s--b">
+      <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
         <span class="fontweight-normal fontsize-large">Tab 1</span>
         <i class="fas fa-chevron-down"></i>
       </div>
@@ -21,8 +21,8 @@ description: Accordions anvendes til at toggle (hide/show) content.
         </p>
       </div>
     </div>
-    <div class="accordion-tab padding-m padding-l--rl margin-s--b">
-      <div class="accordion-header flex flex-justify--between">
+    <div class="accordion-tab margin-s--b">
+      <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
         <span class="fontweight-normal fontsize-large">Tab 2</span>
         <i class="fas fa-chevron-down"></i>
       </div>
@@ -32,8 +32,8 @@ description: Accordions anvendes til at toggle (hide/show) content.
         </p>
       </div>
     </div>
-      <div class="accordion-tab padding-m padding-l--rl margin-s--b">
-      <div class="accordion-header flex flex-justify--between">
+      <div class="accordion-tab margin-s--b">
+      <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
         <span class="fontweight-normal fontsize-large">Tab 3</span>
         <i class="fas fa-chevron-down"></i>
       </div>
@@ -47,8 +47,8 @@ description: Accordions anvendes til at toggle (hide/show) content.
 </div>
 ```html
 <div class="accordion card-mode padding-l ff-secondary width-1of1">
-  <div class="accordion-tab padding-m padding-l--rl margin-s--b">
-    <div class="accordion-header flex flex-justify--between">
+  <div class="accordion-tab margin-s--b">
+    <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
       <span class="fontweight-normal fontsize-large">Tab 2</span>
       <i class="fas fa-chevron-down"></i>
     </div>
@@ -70,8 +70,8 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
 
 <div class="flex grid-width--small">
   <div data-theme="lightmode" class="accordion card-mode padding-l ff-secondary width-1of1">
-    <div class="accordion-tab padding-m padding-l--rl margin-s--b">
-      <div class="accordion-header flex flex-justify--between">
+    <div class="accordion-tab margin-s--b">
+      <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
         <span class="fontweight-normal fontsize-large">Tab 1</span>
         <i class="fas fa-chevron-down"></i>
       </div>
@@ -81,8 +81,8 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         </p>
       </div>
     </div>
-    <div class="accordion-tab padding-m padding-l--rl margin-s--b">
-      <div class="accordion-header flex flex-justify--between">
+    <div class="accordion-tab margin-s--b">
+      <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
         <span class="fontweight-normal fontsize-large">Tab 2</span>
         <i class="fas fa-chevron-down"></i>
       </div>
@@ -92,8 +92,8 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         </p>
       </div>
     </div>
-      <div class="accordion-tab padding-m padding-l--rl margin-s--b">
-      <div class="accordion-header flex flex-justify--between">
+      <div class="accordion-tab margin-s--b">
+      <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
         <span class="fontweight-normal fontsize-large">Tab 3</span>
         <i class="fas fa-chevron-down"></i>
       </div>
@@ -108,8 +108,8 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
 
 ```html
 <div data-theme="lightmode" class="accordion card-mode padding-l ff-secondary width-1of1">
-  <div class="accordion-tab padding-m padding-l--rl margin-s--b">
-    <div class="accordion-header flex flex-justify--between">
+  <div class="accordion-tab margin-s--b">
+    <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
       <span class="fontweight-normal fontsize-large">Tab 2</span>
       <i class="fas fa-chevron-down"></i>
     </div>
@@ -127,8 +127,8 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
 
 <div class="flex grid-width--small">
   <div data-theme="darkmode" class="accordion card-mode padding-l ff-secondary width-1of1">
-    <div class="accordion-tab padding-m padding-l--rl margin-s--b">
-      <div class="accordion-header flex flex-justify--between">
+    <div class="accordion-tab margin-s--b">
+      <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
         <span class="fontweight-normal fontsize-large">Tab 1</span>
         <i class="fas fa-chevron-down"></i>
       </div>
@@ -138,8 +138,8 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         </p>
       </div>
     </div>
-    <div class="accordion-tab padding-m padding-l--rl margin-s--b">
-      <div class="accordion-header flex flex-justify--between">
+    <div class="accordion-tab margin-s--b">
+      <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
         <span class="fontweight-normal fontsize-large">Tab 2</span>
         <i class="fas fa-chevron-down"></i>
       </div>
@@ -149,8 +149,8 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
         </p>
       </div>
     </div>
-    <div class="accordion-tab padding-m padding-l--rl margin-s--b">
-      <div class="accordion-header flex flex-justify--between">
+    <div class="accordion-tab margin-s--b">
+      <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
         <span class="fontweight-normal fontsize-large">Tab 3</span>
         <i class="fas fa-chevron-down"></i>
       </div>
@@ -165,8 +165,8 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
 
 ```html
 <div data-theme="darkmode" class="accordion card-mode padding-l ff-secondary width-1of1">
-  <div class="accordion-tab padding-m padding-l--rl margin-s--b">
-    <div class="accordion-header flex flex-justify--between">
+  <div class="accordion-tab margin-s--b">
+    <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
       <span class="fontweight-normal fontsize-large">Tab 2</span>
       <i class="fas fa-chevron-down"></i>
     </div>
