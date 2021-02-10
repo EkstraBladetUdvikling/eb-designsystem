@@ -145,6 +145,10 @@
   font-size: 18px;
 }
 
+.button :first-child:not(:last-child) {
+  margin-right: 5px;
+}
+
 .button .badge:first-child,
 .button .icon:first-child {
   margin-right: 10px;

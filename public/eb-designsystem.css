@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.2.0 built on 9.2.2021 12.55.36 on branch "svelteTemplates" at revision "f46e18741c1e69438d34c80370dc48aad4b33640" */
+/** eb-designsystem.css version 0.3.0 built on 10.2.2021 09.54.17 on branch "svelteTemplates" at revision "a7c4a5644eca7ab5292ef9ff3d16c84ca83a2945" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -495,6 +495,10 @@ a.badge:hover {
 
 .button .icon {
   font-size: 18px;
+}
+
+.button :first-child:not(:last-child) {
+  margin-right: 5px;
 }
 
 .button .badge:first-child,

@@ -101,7 +101,7 @@
     "body": [
       "card"
     ],
-    "description": "{\n border-radius: 5px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\"\n,\nArial\n,\nHelvetica\n,\nsans-serif;\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "{\n border-radius: 5px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem card[class*=\"bg \"]": {
     "description": "Has pseudo styling ]"
@@ -266,6 +266,41 @@
     ],
     "description": "NB! This should only be used with toggle\n{\n width: 20px;\n }"
   },
+  "designsystem tooltip": {
+    "prefix": "ds-tooltip",
+    "body": [
+      "tooltip"
+    ],
+    "description": "{\n position: relative;\ndisplay: inline-block;\nheight: 25px;\n }"
+  },
+  "designsystem tooltip input": {
+    "prefix": "ds-tooltip-input",
+    "body": [
+      "tooltip-input"
+    ],
+    "description": "{\n display: none;\n }"
+  },
+  "designsystem tooltip toggle": {
+    "prefix": "ds-tooltip-toggle",
+    "body": [
+      "tooltip-toggle"
+    ],
+    "description": "{\n cursor: pointer;\n }"
+  },
+  "designsystem tooltip off": {
+    "prefix": "ds-tooltip-off",
+    "body": [
+      "tooltip-off"
+    ],
+    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\nwidth: 22px;\nheight: 25px;\n }"
+  },
+  "designsystem tooltip on": {
+    "prefix": "ds-tooltip-on",
+    "body": [
+      "tooltip-on"
+    ],
+    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\nwidth: 22px;\nheight: 25px;\n }"
+  },
   "designsystem screen reader text": {
     "prefix": "ds-screen-reader-text",
     "body": [
@@ -418,14 +453,14 @@
     "body": [
       "ff-primary"
     ],
-    "description": "{\n font-family: \"Work Sans\"\n,\nArial\n,\nHelvetica\n,\nsans-serif;\n }"
+    "description": "{\n font-family: \"Work Sans\", Arial, Helvetica, sans-serif;\n }"
   },
   "designsystem ff secondary": {
     "prefix": "ds-ff-secondary",
     "body": [
       "ff-secondary"
     ],
-    "description": "{\n font-family: Arial\n,\nHelvetica\n,\nsans-serif;\n }"
+    "description": "{\n font-family: Arial, Helvetica, sans-serif;\n }"
   },
   "designsystem fontsize xxsmall": {
     "prefix": "ds-fontsize-xxsmall",
