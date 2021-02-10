@@ -165,13 +165,23 @@ Det her er en standard knap uden nogen hat
 </button>
 ````
 
-<button class="button button--link button--icon">
+<button class="button button--link">
   Button--link
 </button>
 
 ```html
-<button class="button button--link button--icon">
+<button class="button button--link">
   Button--link
+</button>
+```
+
+<button class="button button--big">
+  Button--big
+</button>
+
+```html
+<button class="button button--big">
+  Button--big
 </button>
 ```
 
