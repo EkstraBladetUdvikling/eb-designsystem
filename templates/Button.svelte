@@ -1,6 +1,6 @@
 <script>
   export let classExtension;
-  export let text;
+
   export let type;
 
   let cssClass = `button ${classExtension}`;
@@ -18,9 +18,5 @@
 </script>
 
 <button class={cssClass}>
-  <slot name="iconleft"></slot>
-  {#if text}
-    <span>{text}</span>
-  {/if}
-  <slot name="iconright"></slot>
+  <slot></slot>
 </button>
