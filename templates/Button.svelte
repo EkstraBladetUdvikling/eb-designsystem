@@ -3,8 +3,10 @@
   export let style;
   export let type;
 
-  let cssClass = `button ${classExtension}`;
+  let cssClass = 'button';
 
+  if (classExtension)
+    cssClass = `${cssClass} ${classExtension}`;
   if (style) {
     cssClass = `${cssClass} button--${style}`;
   }
