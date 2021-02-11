@@ -14,5 +14,5 @@
 </script>
 
 <svg viewBox="{viewBox}" style="{style}" class="{classExtension}">
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{name}"></use>
+  <use href="eb.svg#{name}"></use>
 </svg>

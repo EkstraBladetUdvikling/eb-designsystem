@@ -1,5 +1,7 @@
 <script>
+
   export let classExtension;
+  export let click;
   export let style;
   export let type;
 
@@ -16,6 +18,6 @@
   }
 </script>
 
-<button class={cssClass}>
+<button class={cssClass} on:click={click}>
   <slot></slot>
 </button>
