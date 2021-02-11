@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.2.0 built on 10.2.2021 10.37.07 on branch "KAM" at revision "52175e1f6b7753cb52d948e0cef7516e80d03fb5" */
+/** eb-designsystem--watcher.css version 0.2.0 built on 11.2.2021 11.30.41 on branch "card-mode" at revision "0301bd51072f79c9c7dff3fcaf975551b3645a45" */
 :root {
   --border-radius--small: 5px;
   --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), .22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
@@ -791,6 +791,7 @@ a.card:focus {
   flex-direction: column;
   font-family: var(--fontfamily--primary);
   overflow: hidden;
+  box-shadow: inset 0 0 0 1px var(--card-border-color); /* DR.Edition 03/02/2020 */
 }
 .card-mode[class*="bg--"] {
   box-shadow: none; /* Remove border when filled */
@@ -870,6 +871,7 @@ a.card-mode:focus {
 [data-theme="darkmode"]:not([class*="bg--"]) {
   background: var(--color--black);
   color: var(--color--white);
+  box-shadow: none;
 }
 [data-theme="darkmode"] .card-content .card-icon-plus svg {
   width: 18px;
