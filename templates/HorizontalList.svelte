@@ -1,0 +1,84 @@
+
+
+<script lang="typescript">
+  import { onMount } from "svelte";
+
+  /* Horizontial Scroll elements */
+  let scrollContainer;
+  let scrollItemContainer;
+  let prevScrollBtn;
+  let nextScrollBtn;
+
+  onMount(() => {
+    console.log(scrollContainer)
+    const children = scrollItemContainer.children;
+    const listLength = children.length;
+    const containerRight = scrollContainer.getBoundingClientRect().right;
+
+    /**
+     * Find how many visible elements we have
+     */
+    let visibleChildren = Array.from(children).filter((child: HTMLElement) => child.getBoundingClientRect().right <= containerRight)
+      .length;
+
+    if (visibleChildren === listLength) {
+      /**
+       * If there is no invisible elements hide buttons
+       */
+      prevScrollBtn.style.display = 'none';
+      nextScrollBtn.style.display = 'none';
+    } else {
+      /**
+       * We dont need to count the visible elements
+       */
+      const maxLength = listLength - visibleChildren;
+      let listCurrent = 0;
+
+      /**
+       * Advance scroll to make next or previous element visible
+       */
+      function scroll(listCurrent) {
+        const newPos = children[listCurrent];
+
+        scrollItemContainer.scrollTo({
+          behavior: 'smooth',
+          left: newPos.offsetLeft,
+          top: 0,
+        });
+      }
+
+      /* Horizontial scroll to the left */
+      nextScrollBtn.addEventListener('click', function () {
+        if (listCurrent !== maxLength) {
+          listCurrent++;
+          scroll(listCurrent);
+        }
+      });
+
+      /* Horizontial scroll to the right */
+      prevScrollBtn.addEventListener('click', function () {
+        if (listCurrent !== 0) {
+          listCurrent--;
+          scroll(listCurrent);
+        }
+      });
+    }
+  });
+</script>
+
+
+
+<div bind:this={scrollContainer} class="grid-width--large horizontal-scroll--container position-relative">
+  <button bind:this={prevScrollBtn} class="button button--solid button--icon button--secondary horizontal-scroll--nav">
+    <i class="fa fa-chevron-left"></i>
+  </button>
+  <button
+    bind:this={nextScrollBtn}
+    class="button button--solid button--icon button--secondary horizontal-scroll--nav horizontal-scroll--nav-next"
+    >
+    <i class="fa fa-chevron-right"></i>
+  </button>
+  <div bind:this={scrollItemContainer} class="flex padding-m--l padding-m--r horizontal-scroll--scroll-container">
+    <slot></slot>
+  </div>
+</div>
