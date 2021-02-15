@@ -66,8 +66,6 @@
   });
 </script>
 
-
-
 <div bind:this={scrollContainer} class="grid-width--large horizontal-scroll--container position-relative">
   <button bind:this={prevScrollBtn} class="button button--solid button--icon button--secondary horizontal-scroll--nav">
     <i class="fa fa-chevron-left"></i>
