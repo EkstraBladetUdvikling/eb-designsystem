@@ -9,16 +9,16 @@ description: Horizontal-scroll laver en carosel af items(ex. cards), som kan scr
 <span style="color:#12507b;font-weight: bolder">Default horizontial-scroll</span>
 
 <div id="exampleclass-scroll-container" class="grid-width--large horizontal-scroll--container position-relative">
-  <button id="prev-scroll-btn" class="button button--solid button--icon button--secondary horizontal-scroll--nav">
+  <button data-horizontallist="button-prev" class="button button--solid button--icon button--secondary horizontal-scroll--nav">
     <i class="fa fa-chevron-left"></i>
   </button>
   <button
-    id="next-scroll-btn"
+    data-horizontallist="button-next"
     class="button button--solid button--icon button--secondary horizontal-scroll--nav horizontal-scroll--nav-next"
   >
     <i class="fa fa-chevron-right"></i>
   </button>
-  <div id="exampleclass-scroll-item-container" class="flex padding-m--l padding-m--r horizontal-scroll--scroll-container">
+  <div data-horizontallist="itemcontainer" class="flex padding-m--l padding-m--r horizontal-scroll--scroll-container">
     <div class="flex-item width-1of3 padding-m" style="min-width: 300px;">
       <a href="#" class="card height-1of1">
         <div class="card-content">
@@ -55,54 +55,86 @@ description: Horizontal-scroll laver en carosel af items(ex. cards), som kan scr
 </div>
 
 <script>
-/* Horizontial Scroll elements */
-const scrollContainer = document.getElementById('exampleclass-scroll-container');
-const scrollItemContainer = document.getElementById('exampleclass-scroll-item-container');
-const prevScrollBtn = scrollContainer.querySelector('#prev-scroll-btn');
-const nextScrollBtn = scrollContainer.querySelector('#next-scroll-btn');
-const children = scrollItemContainer.children;
-const listLength = children.length;
-let listCurrent = 0;
+(function () {
+  function horizontalList(listId) {
 
-/* Horizontial scroll to the left */
-nextScrollBtn.addEventListener('click', function() {
-  if (listCurrent !== listLength - 1) {
-    listCurrent++;
-    const newPos = children[listCurrent];
-    scrollItemContainer.scrollTo({
-      behavior: 'smooth',
-      left: newPos.offsetLeft,
-      top: 0,
-    });
-  }
-});
+    /* Horizontial Scroll elements */
+    const scrollContainer = document.getElementById(listId);
+    const scrollItemContainer = scrollContainer.querySelector('[data-horizontallist="itemcontainer"]');
+    const prevScrollBtn = scrollContainer.querySelector('[data-horizontallist="button-prev"]');
+    const nextScrollBtn = scrollContainer.querySelector('[data-horizontallist="button-next"]');
+    const children = scrollItemContainer.children;
+    const listLength = children.length;
+    const containerRight = scrollContainer.getBoundingClientRect().right;
+    const lastChild = children[listLength - 1];
 
-/* Horizontial scroll to the right */
-prevScrollBtn.addEventListener('click', function() {
-  if (listCurrent !== 0) {
-    listCurrent--;
-    const newPos = children[listCurrent];
-    scrollItemContainer.scrollTo({
-      behavior: 'smooth',
-      left: newPos.offsetLeft,
-      top: 0,
-    });
+    /**
+     * Find how many visible elements we have
+     */
+    let visibleChildren = Array.from(children).filter((child) => child.getBoundingClientRect().right <= containerRight)
+      .length;
+
+    if (visibleChildren === listLength) {
+      /**
+       * If there is no invisible elements hide buttons
+       */
+      prevScrollBtn.style.display = 'none';
+      nextScrollBtn.style.display = 'none';
+    } else {
+      /**
+       * We dont need to count the visible elements
+       */
+      const maxLength = listLength - visibleChildren;
+      let listCurrent = 0;
+
+      /**
+       * Advance scroll to make next or previous element visible
+       */
+      function scroll(listCurrent) {
+        const newPos = children[listCurrent];
+
+        scrollItemContainer.scrollTo({
+          behavior: 'smooth',
+          left: newPos.offsetLeft,
+          top: 0,
+        });
+      }
+
+      /* Horizontial scroll to the left */
+      nextScrollBtn.addEventListener('click', function () {
+        if (listCurrent !== maxLength) {
+          listCurrent++;
+          scroll(listCurrent);
+        }
+      });
+
+      /* Horizontial scroll to the right */
+      prevScrollBtn.addEventListener('click', function () {
+        if (listCurrent !== 0) {
+          listCurrent--;
+          scroll(listCurrent);
+        }
+      });
+    }
   }
-});
+
+  horizontalList('exampleclass-scroll-container');
+})();
 </script>
 
 ```html
+
 <div id="exampleclass-scroll-container" class="grid-width--large horizontal-scroll--container position-relative">
-  <button id="prev-scroll-btn" class="button button--solid button--icon button--secondary horizontal-scroll--nav">
+  <button data-horizontallist="button-prev" class="button button--solid button--icon button--secondary horizontal-scroll--nav">
     <i class="fa fa-chevron-left"></i>
   </button>
   <button
-    id="next-scroll-btn"
+    data-horizontallist="button-next"
     class="button button--solid button--icon button--secondary horizontal-scroll--nav horizontal-scroll--nav-next"
-  >
+    >
     <i class="fa fa-chevron-right"></i>
   </button>
-  <div id="exampleclass-scroll-item-container" class="flex padding-m--l padding-m--r horizontal-scroll--scroll-container">
+  <div data-horizontallist="itemcontainer" class="flex padding-m--l padding-m--r horizontal-scroll--scroll-container">
     <div class="flex-item width-1of3 padding-m" style="min-width: 300px;">
       <a href="#" class="card height-1of1">
         <div class="card-content">
@@ -116,39 +148,71 @@ prevScrollBtn.addEventListener('click', function() {
 ```
 
 <span style="color:#12507b;font-weight: bolder">JavaScript (nødvendigt)</span>
+
 ```javascript
-/* Horizontial Scroll elements */
-const scrollContainer = document.getElementById('exampleclass-scroll-container');
-const scrollItemContainer = document.getElementById('exampleclass-scroll-item-container');
-const prevScrollBtn = scrollContainer.querySelector('#prev-scroll-btn');
-const nextScrollBtn = scrollContainer.querySelector('#next-scroll-btn');
-const children = scrollItemContainer.children;
-const listLength = children.length;
-let listCurrent = 0;
+(function () {
+  function horizontalList(listId) {
 
-/* Horizontial scroll to the left */
-nextScrollBtn.addEventListener('click', function() {
-  if (listCurrent !== listLength - 1) {
-    listCurrent++;
-    const newPos = children[listCurrent];
-    scrollItemContainer.scrollTo({
-      behavior: 'smooth',
-      left: newPos.offsetLeft,
-      top: 0,
-    });
-  }
-});
+    /* Horizontial Scroll elements */
+    const scrollContainer = document.getElementById(listId);
+    const scrollItemContainer = scrollContainer.querySelector('[data-horizontallist="itemcontainer"]');
+    const prevScrollBtn = scrollContainer.querySelector('[data-horizontallist="button-prev"]');
+    const nextScrollBtn = scrollContainer.querySelector('[data-horizontallist="button-next"]');
+    const children = scrollItemContainer.children;
+    const listLength = children.length;
+    const containerRight = scrollContainer.getBoundingClientRect().right;
+    const lastChild = children[listLength - 1];
 
-/* Horizontial scroll to the right */
-prevScrollBtn.addEventListener('click', function() {
-  if (listCurrent !== 0) {
-    listCurrent--;
-    const newPos = children[listCurrent];
-    scrollItemContainer.scrollTo({
-      behavior: 'smooth',
-      left: newPos.offsetLeft,
-      top: 0,
-    });
+    /**
+     * Find how many visible elements we have
+     */
+    let visibleChildren = Array.from(children).filter((child) => child.getBoundingClientRect().right <= containerRight)
+      .length;
+
+    if (visibleChildren === listLength) {
+      /**
+       * If there is no invisible elements hide buttons
+       */
+      prevScrollBtn.style.display = 'none';
+      nextScrollBtn.style.display = 'none';
+    } else {
+      /**
+       * We dont need to count the visible elements
+       */
+      const maxLength = listLength - visibleChildren;
+      let listCurrent = 0;
+
+      /**
+       * Advance scroll to make next or previous element visible
+       */
+      function scroll(listCurrent) {
+        const newPos = children[listCurrent];
+
+        scrollItemContainer.scrollTo({
+          behavior: 'smooth',
+          left: newPos.offsetLeft,
+          top: 0,
+        });
+      }
+
+      /* Horizontial scroll to the left */
+      nextScrollBtn.addEventListener('click', function () {
+        if (listCurrent !== maxLength) {
+          listCurrent++;
+          scroll(listCurrent);
+        }
+      });
+
+      /* Horizontial scroll to the right */
+      prevScrollBtn.addEventListener('click', function () {
+        if (listCurrent !== 0) {
+          listCurrent--;
+          scroll(listCurrent);
+        }
+      });
+    }
   }
-});
+
+  horizontalList('exampleclass-scroll-container');
+})();
 ```
