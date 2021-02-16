@@ -1,4 +1,4 @@
-<script lang="typescript">
+<script lang="ts">
   import { onMount } from "svelte";
   // Style
   import "./Accordion.css";
@@ -7,7 +7,7 @@
    * tabs: Array - data to fill the accordion-tabs
    */
   export let dataTheme: "darkmode" | "lightmode" | undefined = undefined;
-  export let tabs:[];
+  export let tabs;
   let selectedAccordion;
 
   onMount(() => {
