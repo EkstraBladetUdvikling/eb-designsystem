@@ -10,7 +10,6 @@
   let nextScrollBtn: HTMLButtonElement;
 
   onMount(() => {
-    console.log(scrollContainer)
     const children = scrollItemContainer.children;
     const listLength = children.length;
     const containerRight = scrollContainer.getBoundingClientRect().right;

@@ -2,10 +2,25 @@
   import Button from "./Button.svelte";
   import HorizontalScroll from "./components/horizontalscroll";
   import Svg from "./Svg.svelte";
-  import {Accordion} from "./components/accordion";
-
+  import { Accordion } from "./components/accordion";
   let tabs = [{title: "tab 1", content: "content 1"}, {title: "tab 2", content: "content 2"}]
+
+
+  import ArticleCard from './components/articlecard/ArticleCard.svelte';
+
+  const articleOptions = {
+    href: "#",
+    media: "https://via.placeholder.com/300x168&text=300x168",
+    section: "sport",
+    timestamp: "13 timer siden",
+    title: "Her er der noget indhold som vi vil være glade for",
+  };
+  const { href, media, section, timestamp, title } = articleOptions;
 </script>
+
+<ArticleCard href="#" section="sport" timestamp="13 timer siden" media="https://via.placeholder.com/300x168&text=300x168" title="Her er der noget indhold som vi vil være glade for" />
+<ArticleCard {...articleOptions} />
+<ArticleCard {href} {media} {section} {timestamp} {title} />
 
 <h3>Buttons</h3>
 
