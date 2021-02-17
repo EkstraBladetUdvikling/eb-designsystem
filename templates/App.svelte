@@ -1,6 +1,6 @@
 <script lang="ts">
   import Button from "./Button.svelte";
-  import HorizontalScroll from "./components/HorizontalScroll/";
+  import HorizontalScroll from "./components/horizontalscroll";
   import Svg from "./Svg.svelte";
   import {Accordion} from "./components/accordion";
 
