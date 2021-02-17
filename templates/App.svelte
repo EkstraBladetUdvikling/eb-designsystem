@@ -1,7 +1,10 @@
 <script lang="ts">
-  import Button from './Button.svelte';
-  import HorizontalList from './HorizontalList.svelte'
-  import Svg from './Svg.svelte';
+  import Button from "./Button.svelte";
+  import HorizontalList from "./HorizontalList.svelte";
+  import Svg from "./Svg.svelte";
+  import {Accordion} from "./components/accordion";
+
+  let tabs = [{title: "tab 1", content: "content 1"}, {title: "tab 2", content: "content 2"}]
 </script>
 
 <h3>Buttons</h3>
@@ -11,8 +14,8 @@
 <Button type="link">Button link</Button>
 
 <code>
-  {`<Button>Base button</Button>`}<br>
-  {'<Button type="solid">Solid button</Button>'}<br>
+  {`<Button>Base button</Button>`}<br />
+  {'<Button type="solid">Solid button</Button>'}<br />
   {'<Button type="link">Button link</Button>'}
 </code>
 
@@ -24,9 +27,9 @@
 <Button style="cancel">Button cancel</Button>
 
 <code>
-  {'<Button style="primary">Button primary</Button>'}<br>
-  {'<Button style="secondary">Button secondary</Button>'}<br>
-  {'<Button style="accept">Button accept</Button>'}<br>
+  {'<Button style="primary">Button primary</Button>'}<br />
+  {'<Button style="secondary">Button secondary</Button>'}<br />
+  {'<Button style="accept">Button accept</Button>'}<br />
   {'<Button style="cancel">Button cancel</Button>'}
 </code>
 
@@ -80,3 +83,8 @@
     </a>
   </div>
 </HorizontalList>
+
+<div class="grid-width--small">
+  <h1 style="color:#12507b;font-weight: bolder">Accordion</h1>
+  <Accordion tabs={tabs}/>
+</div>

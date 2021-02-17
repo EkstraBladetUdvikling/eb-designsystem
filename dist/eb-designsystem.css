@@ -1,70 +1,241 @@
-/** eb-designsystem.css version 0.3.1 built on 16.2.2021 10.18.15 on branch "KAM" at revision "4d705f3c0651f55d53e77cc7d6442df77e08b07f" */
+/** eb-designsystem.css version 0.4.0 built on 17.2.2021 09.25.53 on branch "svelteTemplates" at revision "e803eb09e4f36c95bfd76f833b7f60c201e86aff" */
 :root {
+  --rgb-color--bordeaux: 138, 12, 54;
+  --rgb-fgcolor--bordeaux: 255, 255, 255;
+  --rgb-color--reddark: 153, 0, 0;
+  --rgb-fgcolor--reddark: 255, 255, 255;
+  --rgb-color--red: 189, 17, 24;
+  --rgb-fgcolor--red: 255, 255, 255;
+  --rgb-color--rose: 220, 112, 149;
+  --rgb-fgcolor--rose: 255, 255, 255;
+  --rgb-color--orangedark: 227, 129, 33;
+  --rgb-fgcolor--orangedark: 255, 255, 255;
+  --rgb-color--orange: 229, 173, 2;
+  --rgb-fgcolor--orange: 255, 255, 255;
+  --rgb-color--yellow: 250, 229, 0;
+  --rgb-fgcolor--yellow: 255, 255, 255;
+  --rgb-color--yellowlight: 255, 255, 0;
+  --rgb-fgcolor--yellowlight: 0, 0, 0;
+  --rgb-color--sand: 206, 196, 166;
+  --rgb-fgcolor--sand: 255, 255, 255;
+  --rgb-color--greendark: 47, 120, 32;
+  --rgb-fgcolor--greendark: 255, 255, 255;
+  --rgb-color--green: 50, 162, 55;
+  --rgb-fgcolor--green: 255, 255, 255;
+  --rgb-color--greenlight: 147, 185, 35;
+  --rgb-fgcolor--greenlight: 255, 255, 255;
+  --rgb-color--lime: 203, 254, 51;
+  --rgb-fgcolor--lime: 0, 0, 0;
+  --rgb-color--purpledark: 101, 1, 136;
+  --rgb-fgcolor--purpledark: 255, 255, 255;
+  --rgb-color--bluedark: 18, 80, 123;
+  --rgb-fgcolor--bluedark: 255, 255, 255;
+  --rgb-color--blue: 49, 118, 155;
+  --rgb-fgcolor--blue: 255, 255, 255;
+  --rgb-color--bluelight: 79, 168, 223;
+  --rgb-fgcolor--bluelight: 255, 255, 255;
+  --rgb-color--sea: 132, 168, 196;
+  --rgb-fgcolor--sea: 255, 255, 255;
+  --rgb-color--black: 0, 0, 0;
+  --rgb-fgcolor--black: 255, 255, 255;
+  --rgb-color--graa1: 60, 60, 60;
+  --rgb-fgcolor--graa1: 255, 255, 255;
+  --rgb-color--graa2: 72, 72, 72;
+  --rgb-fgcolor--graa2: 255, 255, 255;
+  --rgb-color--graa3: 153, 153, 153;
+  --rgb-fgcolor--graa3: 255, 255, 255;
+  --rgb-color--graa4: 200, 200, 200;
+  --rgb-fgcolor--graa4: 0, 0, 0;
+  --rgb-color--graa5: 221, 221, 221;
+  --rgb-fgcolor--graa5: 0, 0, 0;
+  --rgb-color--graa6: 229, 229, 229;
+  --rgb-fgcolor--graa6: 0, 0, 0;
+  --rgb-color--graa7: 239, 239, 239;
+  --rgb-fgcolor--graa7: 0, 0, 0;
+  --rgb-color--white: 255, 255, 255;
+  --rgb-fgcolor--white: 0, 0, 0;
+  --rgb-color--pastel-red: 219, 80, 64;
+  --rgb-fgcolor--pastel-red: 255, 255, 255;
+  --rgb-color--pastel-darkred: 149, 72, 57;
+  --rgb-fgcolor--pastel-darkred: 255, 255, 255;
+  --rgb-color--pastel-lightred: 214, 126, 155;
+  --rgb-fgcolor--pastel-lightred: 255, 255, 255;
+  --rgb-color--pastel-green: 159, 194, 156;
+  --rgb-fgcolor--pastel-green: 255, 255, 255;
+  --rgb-color--pastel-darkgreen: 145, 163, 79;
+  --rgb-fgcolor--pastel-darkgreen: 255, 255, 255;
+  --rgb-color--pastel-yellow: 212, 197, 100;
+  --rgb-fgcolor--pastel-yellow: 255, 255, 255;
+  --rgb-color--eb: 189, 17, 24;
+  --rgb-fgcolor--eb: 255, 255, 255;
+  --rgb-color--eb2: 153, 0, 0;
+  --rgb-fgcolor--eb2: 255, 255, 255;
+  --rgb-color--breaking: 255, 255, 0;
+  --rgb-fgcolor--breaking: 0, 0, 0;
+  --rgb-color--bruger: 79, 168, 223;
+  --rgb-fgcolor--bruger: 255, 255, 255;
+  --rgb-color--live: 0, 0, 0;
+  --rgb-fgcolor--live: 255, 255, 255;
+  --rgb-color--native: 206, 196, 166;
+  --rgb-fgcolor--native: 255, 255, 255;
+  --rgb-color--native2: 132, 168, 196;
+  --rgb-fgcolor--native2: 255, 255, 255;
+  --rgb-color--facebook: 49, 118, 155;
+  --rgb-fgcolor--facebook: 255, 255, 255;
+  --rgb-color--twitter: 79, 168, 223;
+  --rgb-fgcolor--twitter: 255, 255, 255;
+  --rgb-color--ekstra: 189, 17, 24;
+  --rgb-fgcolor--ekstra: 255, 255, 255;
+  --rgb-color--filmmagasinet: 101, 1, 136;
+  --rgb-fgcolor--filmmagasinet: 255, 255, 255;
+  --rgb-color--flash: 229, 173, 2;
+  --rgb-fgcolor--flash: 255, 255, 255;
+  --rgb-color--forbrug: 49, 118, 155;
+  --rgb-fgcolor--forbrug: 255, 255, 255;
+  --rgb-color--livescore: 50, 162, 55;
+  --rgb-fgcolor--livescore: 255, 255, 255;
+  --rgb-color--livescore2: 203, 254, 51;
+  --rgb-fgcolor--livescore2: 0, 0, 0;
+  --rgb-color--nationen: 227, 129, 33;
+  --rgb-fgcolor--nationen: 255, 255, 255;
+  --rgb-color--nationen2: 229, 173, 2;
+  --rgb-fgcolor--nationen2: 255, 255, 255;
+  --rgb-color--nyheder: 18, 80, 123;
+  --rgb-fgcolor--nyheder: 255, 255, 255;
+  --rgb-color--nyheder2: 0, 0, 0;
+  --rgb-fgcolor--nyheder2: 255, 255, 255;
+  --rgb-color--sex-samliv: 138, 12, 54;
+  --rgb-fgcolor--sex-samliv: 255, 255, 255;
+  --rgb-color--sex-samliv2: 220, 112, 149;
+  --rgb-fgcolor--sex-samliv2: 255, 255, 255;
+  --rgb-color--skolefodbold: 147, 185, 35;
+  --rgb-fgcolor--skolefodbold: 255, 255, 255;
+  --rgb-color--sport: 50, 162, 55;
+  --rgb-fgcolor--sport: 255, 255, 255;
+  --rgb-color--tv: 189, 17, 24;
+  --rgb-fgcolor--tv: 255, 255, 255;
+  --color--bordeaux: #8a0c36;
+  --fgcolor--bordeaux: #fff;
+  --color--reddark: #900;
+  --fgcolor--reddark: #fff;
+  --color--red: #bd1118;
+  --fgcolor--red: #fff;
+  --color--rose: #dc7095;
+  --fgcolor--rose: #fff;
+  --color--orangedark: #e38121;
+  --fgcolor--orangedark: #fff;
+  --color--orange: #e5ad02;
+  --fgcolor--orange: #fff;
+  --color--yellow: #fae500;
+  --fgcolor--yellow: #fff;
+  --color--yellowlight: #ff0;
+  --fgcolor--yellowlight: #000;
+  --color--sand: #cec4a6;
+  --fgcolor--sand: #fff;
+  --color--greendark: #2f7820;
+  --fgcolor--greendark: #fff;
+  --color--green: #32a237;
+  --fgcolor--green: #fff;
+  --color--greenlight: #93b923;
+  --fgcolor--greenlight: #fff;
+  --color--lime: #cbfe33;
+  --fgcolor--lime: #000;
+  --color--purpledark: #650188;
+  --fgcolor--purpledark: #fff;
+  --color--bluedark: #12507b;
+  --fgcolor--bluedark: #fff;
+  --color--blue: #31769b;
+  --fgcolor--blue: #fff;
+  --color--bluelight: #4fa8df;
+  --fgcolor--bluelight: #fff;
+  --color--sea: #84a8c4;
+  --fgcolor--sea: #fff;
+  --color--black: #000;
+  --fgcolor--black: #fff;
+  --color--graa1: #3c3c3c;
+  --fgcolor--graa1: #fff;
+  --color--graa2: #484848;
+  --fgcolor--graa2: #fff;
+  --color--graa3: #999;
+  --fgcolor--graa3: #fff;
+  --color--graa4: #c8c8c8;
+  --fgcolor--graa4: #000;
+  --color--graa5: #ddd;
+  --fgcolor--graa5: #000;
+  --color--graa6: #e5e5e5;
+  --fgcolor--graa6: #000;
+  --color--graa7: #efefef;
+  --fgcolor--graa7: #000;
+  --color--white: #fff;
+  --fgcolor--white: #000;
+  --color--pastel-red: #db5040;
+  --fgcolor--pastel-red: #fff;
+  --color--pastel-darkred: #954839;
+  --fgcolor--pastel-darkred: #fff;
+  --color--pastel-lightred: #d67e9b;
+  --fgcolor--pastel-lightred: #fff;
+  --color--pastel-green: #9fc29c;
+  --fgcolor--pastel-green: #fff;
+  --color--pastel-darkgreen: #91a34f;
+  --fgcolor--pastel-darkgreen: #fff;
+  --color--pastel-yellow: #d4c564;
+  --fgcolor--pastel-yellow: #fff;
+  --color--eb: #bd1118;
+  --fgcolor--eb: #fff;
+  --color--eb2: #900;
+  --fgcolor--eb2: #fff;
+  --color--breaking: #ff0;
+  --fgcolor--breaking: #000;
+  --color--bruger: #4fa8df;
+  --fgcolor--bruger: #fff;
+  --color--live: #000;
+  --fgcolor--live: #fff;
+  --color--native: #cec4a6;
+  --fgcolor--native: #fff;
+  --color--native2: #84a8c4;
+  --fgcolor--native2: #fff;
+  --color--facebook: #31769b;
+  --fgcolor--facebook: #fff;
+  --color--twitter: #4fa8df;
+  --fgcolor--twitter: #fff;
+  --color--ekstra: #bd1118;
+  --fgcolor--ekstra: #fff;
+  --color--filmmagasinet: #650188;
+  --fgcolor--filmmagasinet: #fff;
+  --color--flash: #e5ad02;
+  --fgcolor--flash: #fff;
+  --color--forbrug: #31769b;
+  --fgcolor--forbrug: #fff;
+  --color--livescore: #32a237;
+  --fgcolor--livescore: #fff;
+  --color--livescore2: #cbfe33;
+  --fgcolor--livescore2: #000;
+  --color--nationen: #e38121;
+  --fgcolor--nationen: #fff;
+  --color--nationen2: #e5ad02;
+  --fgcolor--nationen2: #fff;
+  --color--nyheder: #12507b;
+  --fgcolor--nyheder: #fff;
+  --color--nyheder2: #000;
+  --fgcolor--nyheder2: #fff;
+  --color--sex-samliv: #8a0c36;
+  --fgcolor--sex-samliv: #fff;
+  --color--sex-samliv2: #dc7095;
+  --fgcolor--sex-samliv2: #fff;
+  --color--skolefodbold: #93b923;
+  --fgcolor--skolefodbold: #fff;
+  --color--sport: #32a237;
+  --fgcolor--sport: #fff;
+  --color--tv: #bd1118;
+  --fgcolor--tv: #fff;
   --border-radius--small: 5px;
   --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), .22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
   --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
   --color--accept: var(--color--green);
-  --color--black: #000;
-  --color--blue: #31769b;
-  --color--bluedark: #12507b;
-  --color--bluelight: #4fa8df;
-  --color--bordeaux: #8a0c36;
-  --color--breaking: #ff0;
-  --color--bruger: #4fa8df;
   --color--cancel: var(--color--red);
   --color--default: var(--color--bluedark);
-  --color--eb: #bd1118;
-  --color--eb2: #900;
-  --color--ekstra: #bd1118;
-  --color--facebook: #31769b;
-  --color--filmmagasinet: #650188;
-  --color--flash: #e5ad02;
-  --color--forbrug: #31769b;
-  --color--graa1: #3c3c3c;
-  --color--graa2: #484848;
-  --color--graa3: #999;
-  --color--graa4: #c8c8c8;
-  --color--graa5: #ddd;
-  --color--graa6: #e5e5e5;
-  --color--graa7: #efefef;
-  --color--green: #32a237;
-  --color--greendark: #2f7820;
-  --color--greenlight: #93b923;
-  --color--lime: #cbfe33;
-  --color--live: #000;
-  --color--livescore: #32a237;
-  --color--livescore2: #cbfe33;
-  --color--nationen: #e38121;
-  --color--nationen2: #e5ad02;
-  --color--native: #cec4a6;
-  --color--native2: #84a8c4;
-  --color--nyheder: #12507b;
-  --color--nyheder2: #000;
-  --color--orange: #e5ad02;
-  --color--orangedark: #e38121;
-  --color--pastel-darkgreen: #91a34f;
-  --color--pastel-darkred: #954839;
-  --color--pastel-green: #9fc29c;
-  --color--pastel-lightred: #d67e9b;
-  --color--pastel-red: #db5040;
-  --color--pastel-yellow: #d4c564;
   --color--primary: var(--color--bruger);
-  --color--purpledark: #650188;
-  --color--red: #bd1118;
-  --color--reddark: #900;
-  --color--rose: #dc7095;
-  --color--sand: #cec4a6;
-  --color--sea: #84a8c4;
   --color--secondary: var(--color--graa3);
-  --color--sex-samliv: #8a0c36;
-  --color--sex-samliv2: #dc7095;
-  --color--skolefodbold: #93b923;
-  --color--sport: #32a237;
-  --color--tv: #bd1118;
-  --color--twitter: #4fa8df;
-  --color--white: #fff;
-  --color--yellow: #fae500;
-  --color--yellowlight: #ff0;
   /* distance - desktop */
   --distance-large: 20px;
   --distance-medium: 10px;
@@ -73,67 +244,10 @@
   --distance-xlarge: 30px;
   --distance-xxlarge: 50px;
   --fgcolor--accept: var(--fgcolor--green);
-  --fgcolor--black: #fff;
-  --fgcolor--blue: #fff;
-  --fgcolor--bluedark: #fff;
-  --fgcolor--bluelight: #fff;
-  --fgcolor--bordeaux: #fff;
-  --fgcolor--breaking: #000;
-  --fgcolor--bruger: #fff;
   --fgcolor--cancel: var(--fgcolor--red);
   --fgcolor--default: var(--fgcolor--bluedark);
-  --fgcolor--eb: #fff;
-  --fgcolor--eb2: #fff;
-  --fgcolor--ekstra: #fff;
-  --fgcolor--facebook: #fff;
-  --fgcolor--filmmagasinet: #fff;
-  --fgcolor--flash: #fff;
-  --fgcolor--forbrug: #fff;
-  --fgcolor--graa1: #fff;
-  --fgcolor--graa2: #fff;
-  --fgcolor--graa3: #fff;
-  --fgcolor--graa4: #000;
-  --fgcolor--graa5: #000;
-  --fgcolor--graa6: #000;
-  --fgcolor--graa7: #000;
-  --fgcolor--green: #fff;
-  --fgcolor--greendark: #fff;
-  --fgcolor--greenlight: #fff;
-  --fgcolor--lime: #000;
-  --fgcolor--live: #fff;
-  --fgcolor--livescore: #fff;
-  --fgcolor--livescore2: #000;
-  --fgcolor--nationen: #fff;
-  --fgcolor--nationen2: #fff;
-  --fgcolor--native: #fff;
-  --fgcolor--native2: #fff;
-  --fgcolor--nyheder: #fff;
-  --fgcolor--nyheder2: #fff;
-  --fgcolor--orange: #fff;
-  --fgcolor--orangedark: #fff;
-  --fgcolor--pastel-darkgreen: #fff;
-  --fgcolor--pastel-darkred: #fff;
-  --fgcolor--pastel-green: #fff;
-  --fgcolor--pastel-lightred: #fff;
-  --fgcolor--pastel-red: #fff;
-  --fgcolor--pastel-yellow: #fff;
   --fgcolor--primary: var(--fgcolor--bruger);
-  --fgcolor--purpledark: #fff;
-  --fgcolor--red: #fff;
-  --fgcolor--reddark: #fff;
-  --fgcolor--rose: #fff;
-  --fgcolor--sand: #fff;
-  --fgcolor--sea: #fff;
   --fgcolor--secondary: var(--fgcolor--graa3);
-  --fgcolor--sex-samliv: #fff;
-  --fgcolor--sex-samliv2: #fff;
-  --fgcolor--skolefodbold: #fff;
-  --fgcolor--sport: #fff;
-  --fgcolor--tv: #fff;
-  --fgcolor--twitter: #fff;
-  --fgcolor--white: #000;
-  --fgcolor--yellow: #fff;
-  --fgcolor--yellowlight: #000;
   --fontfamily--primary: "Work Sans", var(--fontfamily--secondary);
   --fontfamily--secondary: Arial, Helvetica, sans-serif;
   --fs-rem-large: 1.125rem; /* 18px */
@@ -145,120 +259,6 @@
   --fs-rem-xxsmall: .625rem; /* 10px */
   --fs-rem-xxxlarge: 2.25rem; /* 36px */
   --fs-rem-xxxxlarge: 3.125rem; /* 50px */
-  --rgb-color--black: 0, 0, 0;
-  --rgb-color--blue: 49, 118, 155;
-  --rgb-color--bluedark: 18, 80, 123;
-  --rgb-color--bluelight: 79, 168, 223;
-  --rgb-color--bordeaux: 138, 12, 54;
-  --rgb-color--breaking: 255, 255, 0;
-  --rgb-color--bruger: 79, 168, 223;
-  --rgb-color--eb: 189, 17, 24;
-  --rgb-color--eb2: 153, 0, 0;
-  --rgb-color--ekstra: 189, 17, 24;
-  --rgb-color--facebook: 49, 118, 155;
-  --rgb-color--filmmagasinet: 101, 1, 136;
-  --rgb-color--flash: 229, 173, 2;
-  --rgb-color--forbrug: 49, 118, 155;
-  --rgb-color--graa1: 60, 60, 60;
-  --rgb-color--graa2: 72, 72, 72;
-  --rgb-color--graa3: 153, 153, 153;
-  --rgb-color--graa4: 200, 200, 200;
-  --rgb-color--graa5: 221, 221, 221;
-  --rgb-color--graa6: 229, 229, 229;
-  --rgb-color--graa7: 239, 239, 239;
-  --rgb-color--green: 50, 162, 55;
-  --rgb-color--greendark: 47, 120, 32;
-  --rgb-color--greenlight: 147, 185, 35;
-  --rgb-color--lime: 203, 254, 51;
-  --rgb-color--live: 0, 0, 0;
-  --rgb-color--livescore: 50, 162, 55;
-  --rgb-color--livescore2: 203, 254, 51;
-  --rgb-color--nationen: 227, 129, 33;
-  --rgb-color--nationen2: 229, 173, 2;
-  --rgb-color--native: 206, 196, 166;
-  --rgb-color--native2: 132, 168, 196;
-  --rgb-color--nyheder: 18, 80, 123;
-  --rgb-color--nyheder2: 0, 0, 0;
-  --rgb-color--orange: 229, 173, 2;
-  --rgb-color--orangedark: 227, 129, 33;
-  --rgb-color--pastel-darkgreen: 145, 163, 79;
-  --rgb-color--pastel-darkred: 149, 72, 57;
-  --rgb-color--pastel-green: 159, 194, 156;
-  --rgb-color--pastel-lightred: 214, 126, 155;
-  --rgb-color--pastel-red: 219, 80, 64;
-  --rgb-color--pastel-yellow: 212, 197, 100;
-  --rgb-color--purpledark: 101, 1, 136;
-  --rgb-color--red: 189, 17, 24;
-  --rgb-color--reddark: 153, 0, 0;
-  --rgb-color--rose: 220, 112, 149;
-  --rgb-color--sand: 206, 196, 166;
-  --rgb-color--sea: 132, 168, 196;
-  --rgb-color--sex-samliv: 138, 12, 54;
-  --rgb-color--sex-samliv2: 220, 112, 149;
-  --rgb-color--skolefodbold: 147, 185, 35;
-  --rgb-color--sport: 50, 162, 55;
-  --rgb-color--tv: 189, 17, 24;
-  --rgb-color--twitter: 79, 168, 223;
-  --rgb-color--white: 255, 255, 255;
-  --rgb-color--yellow: 250, 229, 0;
-  --rgb-color--yellowlight: 255, 255, 0;
-  --rgb-fgcolor--black: 255, 255, 255;
-  --rgb-fgcolor--blue: 255, 255, 255;
-  --rgb-fgcolor--bluedark: 255, 255, 255;
-  --rgb-fgcolor--bluelight: 255, 255, 255;
-  --rgb-fgcolor--bordeaux: 255, 255, 255;
-  --rgb-fgcolor--breaking: 0, 0, 0;
-  --rgb-fgcolor--bruger: 255, 255, 255;
-  --rgb-fgcolor--eb: 255, 255, 255;
-  --rgb-fgcolor--eb2: 255, 255, 255;
-  --rgb-fgcolor--ekstra: 255, 255, 255;
-  --rgb-fgcolor--facebook: 255, 255, 255;
-  --rgb-fgcolor--filmmagasinet: 255, 255, 255;
-  --rgb-fgcolor--flash: 255, 255, 255;
-  --rgb-fgcolor--forbrug: 255, 255, 255;
-  --rgb-fgcolor--graa1: 255, 255, 255;
-  --rgb-fgcolor--graa2: 255, 255, 255;
-  --rgb-fgcolor--graa3: 255, 255, 255;
-  --rgb-fgcolor--graa4: 0, 0, 0;
-  --rgb-fgcolor--graa5: 0, 0, 0;
-  --rgb-fgcolor--graa6: 0, 0, 0;
-  --rgb-fgcolor--graa7: 0, 0, 0;
-  --rgb-fgcolor--green: 255, 255, 255;
-  --rgb-fgcolor--greendark: 255, 255, 255;
-  --rgb-fgcolor--greenlight: 255, 255, 255;
-  --rgb-fgcolor--lime: 0, 0, 0;
-  --rgb-fgcolor--live: 255, 255, 255;
-  --rgb-fgcolor--livescore: 255, 255, 255;
-  --rgb-fgcolor--livescore2: 0, 0, 0;
-  --rgb-fgcolor--nationen: 255, 255, 255;
-  --rgb-fgcolor--nationen2: 255, 255, 255;
-  --rgb-fgcolor--native: 255, 255, 255;
-  --rgb-fgcolor--native2: 255, 255, 255;
-  --rgb-fgcolor--nyheder: 255, 255, 255;
-  --rgb-fgcolor--nyheder2: 255, 255, 255;
-  --rgb-fgcolor--orange: 255, 255, 255;
-  --rgb-fgcolor--orangedark: 255, 255, 255;
-  --rgb-fgcolor--pastel-darkgreen: 255, 255, 255;
-  --rgb-fgcolor--pastel-darkred: 255, 255, 255;
-  --rgb-fgcolor--pastel-green: 255, 255, 255;
-  --rgb-fgcolor--pastel-lightred: 255, 255, 255;
-  --rgb-fgcolor--pastel-red: 255, 255, 255;
-  --rgb-fgcolor--pastel-yellow: 255, 255, 255;
-  --rgb-fgcolor--purpledark: 255, 255, 255;
-  --rgb-fgcolor--red: 255, 255, 255;
-  --rgb-fgcolor--reddark: 255, 255, 255;
-  --rgb-fgcolor--rose: 255, 255, 255;
-  --rgb-fgcolor--sand: 255, 255, 255;
-  --rgb-fgcolor--sea: 255, 255, 255;
-  --rgb-fgcolor--sex-samliv: 255, 255, 255;
-  --rgb-fgcolor--sex-samliv2: 255, 255, 255;
-  --rgb-fgcolor--skolefodbold: 255, 255, 255;
-  --rgb-fgcolor--sport: 255, 255, 255;
-  --rgb-fgcolor--tv: 255, 255, 255;
-  --rgb-fgcolor--twitter: 255, 255, 255;
-  --rgb-fgcolor--white: 0, 0, 0;
-  --rgb-fgcolor--yellow: 255, 255, 255;
-  --rgb-fgcolor--yellowlight: 0, 0, 0;
 }
 /* Systemwide variables - default + desktop */
 
@@ -321,20 +321,19 @@ custom media queries is the only allowed media queries
 /*
 * ie11 and above media query for
 */
-@custom-media --ie only screen and (-ms-high-contrast: active), (-ms-high-contrast: none);
+@custom-media --ie only screen and (-ms-high-contrast: active),
+  (-ms-high-contrast: none);
 .accordion-tab {
   background: rgb(var(--rgb-color--graa7));
   border-radius: var(--border-radius--small);
-  box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), .22);
-
+  box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), 0.22);
   user-select: none;
 }
 
 .accordion-header {
   cursor: pointer;
 }
-.accordion-header:hover,
-.accordion-header:hover > i {
+.accordion-header:hover,.accordion-header:hover > i {
   color: var(--color--bluelight);
 }
 
@@ -489,8 +488,8 @@ a.badge:hover {
 .button--solid:not([class*="bg--"]):active,
 .button--solid:not([class*="bg--"]):hover,
 .button--solid:not([class*="bg--"]):focus {
-  background: var(--color--white);
   color: var(--color--default);
+  background: var(--color--white);
 }
 
 /* Primary button */
@@ -615,8 +614,8 @@ a.badge:hover {
 @media (--smartphone) {
   :root {
     --card-fs-title: 20px;
-  --card-fs-title--small: 16px;
-  --card-padding: 10px;
+    --card-fs-title--small: 16px;
+    --card-padding: 10px;
   }
 }
 
@@ -788,11 +787,10 @@ a.card-mode:focus {
   height: 40px;
 }
 .card-mode .card-media .card-icon svg {
+  fill: var(--color--white);
   font-size: 40px;
   width: 40px;
   height: 40px;
-
-  fill: var(--color--white);
 }
 .card-mode .card-content {
   position: relative;
@@ -1041,8 +1039,7 @@ a.card-mode:focus {
 }
 
 .js-toggle,
-.toggle-container,
-.toggle {
+.toggle-container,.toggle {
   cursor: pointer;
 }
 
@@ -1056,15 +1053,15 @@ a.card-mode:focus {
   width: 20px;
 }
 
-.js-toggle[data-toggle="off"] .toggle-off,
-.js-toggle[data-toggle="on"] .toggle-on,
+.js-toggle[data-toggle='off'] .toggle-off,
+.js-toggle[data-toggle='on'] .toggle-on,
 .toggle-input ~ .toggle-off,
 .toggle-input:checked ~ .toggle-on {
   display: inline-flex;
 }
 
-.js-toggle[data-toggle="on"] .toggle-off,
-.js-toggle[data-toggle="off"] .toggle-on,
+.js-toggle[data-toggle='on'] .toggle-off,
+.js-toggle[data-toggle='off'] .toggle-on,
 .toggle-input:checked ~ .toggle-off,
 .toggle-input ~ .toggle-on {
   display: none;
@@ -1185,11 +1182,11 @@ a.card-mode:focus {
   left: 0;
   z-index: 1;
 
-  animation-duration: 2s;
+  animation-duration: 2.0s;
   animation-iteration-count: infinite;
   animation-name: fogwave;
   animation-timing-function: linear;
-  background: linear-gradient(to right, transparent 3%, rgba(255, 255, 255, .7) 25%, transparent 40%);
+  background: linear-gradient(to right, transparent 3%,rgba(255, 255, 255, .7) 25%, transparent 40%);
   background-size: 1000px 100%;
   content: "";
   width: 100%;
@@ -1228,8 +1225,7 @@ a.card-mode:focus {
   color: currentColor;
 }
 
-.flex,
-.flex-column {
+.flex,.flex-column {
   display: flex;
 }
 
@@ -1245,8 +1241,7 @@ a.card-mode:focus {
   justify-content: center;
 }
 
-.flex--center,
-.flex-align--center {
+.flex--center,.flex-align--center {
   align-items: center;
 }
 
