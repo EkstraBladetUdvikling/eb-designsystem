@@ -1,0 +1,60 @@
+.horizontal-scroll-nav {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  z-index: 100;
+
+  align-items: center;
+  background: var(--color--secondary);
+  border: 1px solid var(--color--secondary);
+  border-radius: var(--button-border-radius);
+  box-sizing: border-box;
+  color: var(--fgcolor--secondary);
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  justify-content: center;
+  opacity: 0;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  min-width: var(--button-height);
+  height: var(--button-height);
+}
+
+.horizontal-scroll-nav:hover {
+  background-color: var(--fgcolor--secondary);
+  color: var(--color--secondary);
+}
+
+.horizontal-scroll-nav[data-horizontallist="button-next"] {
+  right: 5px;
+  left: auto;
+}
+
+.horizontal-scroll-container:hover .horizontal-scroll-nav {
+  opacity: 1;
+}
+
+.horizontal-scroll-items {
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox hack to hide scrollbar */
+}
+
+.horizontal-scroll-items::-webkit-scrollbar {
+  display: none; /* Chrome on Windows hack to hide scrollbar */
+}
+
+.horizontal-scroll-item {
+  scroll-snap-align: start;
+}
+
+.horizontal-scroll-item--small {
+  height: 84px;
+}

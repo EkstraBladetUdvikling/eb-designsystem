@@ -1,6 +1,6 @@
 <script lang="ts">
   import Button from "./Button.svelte";
-  import HorizontalList from "./HorizontalList.svelte";
+  import HorizontalScroll from "./components/HorizontalScroll/";
   import Svg from "./Svg.svelte";
   import {Accordion} from "./components/accordion";
 
@@ -49,7 +49,7 @@
   <span style="font-size: 30px">&times;</span>
 </Button>
 
-<HorizontalList>
+<HorizontalScroll>
   <div class="flex-item width-1of3 padding-m" style="min-width: 300px;">
     <a href="#d" class="card height-1of1">
       <div class="card-content">
@@ -82,7 +82,7 @@
       </div>
     </a>
   </div>
-</HorizontalList>
+</HorizontalScroll>
 
 <div class="grid-width--small">
   <h1 style="color:#12507b;font-weight: bolder">Accordion</h1>

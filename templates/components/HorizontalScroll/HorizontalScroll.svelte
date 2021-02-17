@@ -1,13 +1,13 @@
-
-
 <script lang="typescript">
+  import './HorizontalScroll.css';
+
   import { onMount } from "svelte";
 
   /* Horizontial Scroll elements */
-  let scrollContainer;
-  let scrollItemContainer;
-  let prevScrollBtn;
-  let nextScrollBtn;
+  let scrollContainer: HTMLDivElement;
+  let scrollItemContainer: HTMLDivElement;
+  let prevScrollBtn: HTMLButtonElement;
+  let nextScrollBtn: HTMLButtonElement;
 
   onMount(() => {
     console.log(scrollContainer)
@@ -38,7 +38,7 @@
        * Advance scroll to make next or previous element visible
        */
       function scroll(listCurrent) {
-        const newPos = children[listCurrent];
+        const newPos = children[listCurrent] as HTMLElement;
 
         scrollItemContainer.scrollTo({
           behavior: 'smooth',
