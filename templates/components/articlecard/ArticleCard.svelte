@@ -2,15 +2,19 @@
   import Card from "../card";
 
   export let title: string;
+  export let className: string = undefined;
   export let href: string = undefined;
   export let media: string = undefined;
   export let section: string = undefined;
+  export let style: string = undefined;
   export let timestamp: string = undefined;
 
+  let baseClass = `margin-m`;
+
+  if (className) baseClass = `${className} ${baseClass}`;
 </script>
 
-
-<Card {href} className="margin-m">
+<Card {href} className={baseClass} {style}>
   {#if media}
   <div class="card-media">
     <img alt={title} class="card-image" src={media} height="343" width="610">

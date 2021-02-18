@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Button from "./Button.svelte";
+  import Button from "./components/button";
   import HorizontalScroll from "./components/horizontalscroll";
   import Svg from "./Svg.svelte";
   import { Accordion } from "./components/accordion";
@@ -16,6 +16,34 @@
     title: "Her er der noget indhold som vi vil være glade for",
   };
   const { href, media, section, timestamp, title } = articleOptions;
+
+
+  const articles = [
+    {
+      href: 'a',
+      section: 'Underholdning',
+      timestamp: '2 timer siden',
+      title: 'Aliquam ultricies felis eget orci commodo fringilla',
+    },
+    {
+      href: 'a',
+      section: 'Sport',
+      timestamp: '3 timer siden',
+      title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    },
+    {
+      href: 'a',
+      section: 'Nyheder',
+      timestamp: '4 timer siden',
+      title: 'Ekspert om ny testplan: Vil koste 100 milliarder kroner',
+    },
+    {
+      href: 'a',
+      section: 'Sport',
+      timestamp: '4 timer siden',
+      title: 'Aliquam ultricies felis eget orci commodo fringilla',
+    }
+  ]
 </script>
 
 <ArticleCard href="#" section="sport" timestamp="13 timer siden" media="https://via.placeholder.com/300x168&text=300x168" title="Her er der noget indhold som vi vil være glade for" />
@@ -64,39 +92,11 @@
   <span style="font-size: 30px">&times;</span>
 </Button>
 
+
 <HorizontalScroll>
-  <div class="flex-item width-1of3 padding-m" style="min-width: 300px;">
-    <a href="#d" class="card height-1of1">
-      <div class="card-content">
-        <p class="card-meta color--graa3"><small><span class="color--flash">flash!</span> - 2 timer siden</small></p>
-        <h3 class="card-title">Aliquam ultricies felis eget orci commodo fringilla</h3>
-      </div>
-    </a>
-  </div>
-  <div class="flex-item width-1of3 padding-m" style="min-width: 300px;">
-    <a href="#c" class="card height-1of1">
-      <div class="card-content">
-        <p class="card-meta color--graa3"><small><span class="color--tv">TV</span> - 3 timer siden</small></p>
-        <h3 class="card-title">felis eget orci commodo ulimito</h3>
-      </div>
-    </a>
-  </div>
-  <div class="flex-item width-1of3 padding-m" style="min-width: 300px;">
-    <a href="#b" class="card height-1of1">
-      <div class="card-content">
-        <p class="card-meta color--graa3"><small><span class="color--sport">sport</span> - 5 timer siden</small></p>
-        <h3 class="card-title">Ultricies commodo lecos mania</h3>
-      </div>
-    </a>
-  </div>
-  <div class="flex-item width-1of3 padding-m" style="min-width: 300px;">
-    <a href="#a" class="card height-1of1">
-      <div class="card-content">
-        <p class="card-meta color--graa3"><small><span class="color--flash">nyheder</span> - 8 timer siden</small></p>
-        <h3 class="card-title">Fringilla levos tumio arcadia</h3>
-      </div>
-    </a>
-  </div>
+  {#each articles as {href, section, timestamp, title}}
+    <ArticleCard {href} {section} {timestamp} {title} style="min-width: 250px" />
+  {/each}
 </HorizontalScroll>
 
 <div class="grid-width--small">

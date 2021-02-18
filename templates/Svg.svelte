@@ -1,5 +1,5 @@
 <script>
-  export let classExtension;
+  export let className;
   export let name;
   export let style;
   export let viewBox;
@@ -13,6 +13,6 @@
   }
 </script>
 
-<svg viewBox="{viewBox}" style="{style}" class="{classExtension}">
+<svg viewBox="{viewBox}" style="{style}" class="{className}">
   <use href="eb.svg#{name}"></use>
 </svg>
