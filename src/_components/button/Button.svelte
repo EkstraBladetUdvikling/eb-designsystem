@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="typescript">
 
   export let classExtension;
   export let click;
@@ -7,8 +7,10 @@
 
   let cssClass = 'button';
 
-  if (classExtension)
+  if (classExtension) {
     cssClass = `${cssClass} ${classExtension}`;
+  }
+
   if (style) {
     cssClass = `${cssClass} button--${style}`;
   }
