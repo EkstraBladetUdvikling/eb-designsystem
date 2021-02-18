@@ -1,19 +1,18 @@
 <script lang="ts">
-  import Router from 'svelte-spa-router';
+  import Router, {link} from 'svelte-spa-router';
   import Routes from './routes/routes';
 
-  const routes = Routes;
+  const routeList = Routes;
+
+  // Fills the object to create a SPA routing
+  let routes = {};
+  routeList.forEach(route => {
+    routes[route.link] = route.component;
+  })
 </script>
 
-  <a href="#/">Forside</a>
-  <a href="#/components/accordion">Accordion</a>
-  <a href="#/components/button">Button</a>
-  <a href="#/components/card">Card</a>
-  <a href="#/components/icon">Icon</a>
-  <a href="#/components/horizontalscroll">Horizontal Scroll</a>
-  <a href="#/components/menu">Menu</a>
-
-  <a href="#/utilities/datatheme">Data Theme</a>
-
+  {#each routeList as route}
+    <a use:link href={route.link}>{route.title}</a>
+  {/each}
 
   <Router {routes} />
