@@ -34,23 +34,25 @@
     "svelte-spa-router": "^3.1.0"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "@rollup/plugin-typescript": "^6.0.0",
+    "@tsconfig/svelte": "^1.0.0",
     "cpx": "^1.5.0",
+    "csscomb": "^4.3.0",
     "normalize.css": "^8.0.1",
     "onchange": "^7.1.0",
-    "postcss-import": "^14.0.0",
-    "csscomb": "^4.3.0",
     "postcss": "^8.2.5",
     "postcss-cli": "^8.3.1",
     "postcss-custom-media": "^8.0.0",
     "postcss-custom-properties": "^11.0.0",
     "postcss-discard-duplicates": "^4.0.2",
     "postcss-discard-unused": "^4.0.1",
+    "postcss-import": "^14.0.0",
     "postcss-load-config": "^3.0.1",
     "postcss-merge-rules": "^4.0.3",
     "postcss-preset-env": "^6.7.0",
     "postcss-selectorcleanse": "^1.0.6",
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-node-resolve": "^11.0.0",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",
@@ -59,9 +61,7 @@
     "svelte": "^3.0.0",
     "svelte-check": "^1.0.0",
     "svelte-preprocess": "^4.0.0",
-    "@rollup/plugin-typescript": "^6.0.0",
-    "typescript": "^3.9.3",
     "tslib": "^2.0.0",
-    "@tsconfig/svelte": "^1.0.0"
+    "typescript": "^3.9.3"
   }
 }

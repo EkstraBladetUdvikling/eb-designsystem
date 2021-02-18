@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="typescript">
 
   export let classExtension;
   export let click;

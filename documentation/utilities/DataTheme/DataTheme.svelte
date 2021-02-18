@@ -1,6 +1,5 @@
 <script lang="ts">
   // Style
-  import "./DataTheme.css";
 </script>
 <div class="grid-width--small">
   <h1 style="color:#12507b;font-weight: bolder">Data Theme</h1>
