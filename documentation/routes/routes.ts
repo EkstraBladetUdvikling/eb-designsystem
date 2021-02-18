@@ -7,15 +7,15 @@ import HorizontalScroll from '../components/HorizontalScroll.svelte';
 import Menu from '../components/Menu.svelte';
 import DataTheme from '../utilities/DataTheme/DataTheme.svelte';
 
-const routes = {
-  '/': Home,
-  '/components/accordion': Accordion,
-  '/components/button': Button,
-  '/components/card': Card,
-  '/components/icon': Icon,
-  '/components/horizontalscroll': HorizontalScroll,
-  '/components/menu': Menu,
-  '/utilities/datatheme': DataTheme,
-};
+const routes = [
+  { link: '/', title: 'Forside', component: Home },
+  { link: '/components/accordion', title: 'Accordion', component: Accordion },
+  { link: '/components/button', title: 'Button', component: Button },
+  { link: '/components/card', title: 'Card', component: Card },
+  { link: '/components/icon', title: 'Icon', component: Icon },
+  { link: '/components/horizontalscroll', title: 'Horizontal Scroll', component: HorizontalScroll },
+  { link: '/components/menu', title: 'Menu', component: Menu },
+  { link: '/utilities/datatheme', title: 'Data-theme', component: DataTheme },
+];
 
 export default routes;
