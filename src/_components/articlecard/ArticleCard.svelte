@@ -1,4 +1,4 @@
-<script lang="typescript">
+<script lang="ts">
   import Card from "../card";
 
   export let title: string;
