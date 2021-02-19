@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Menu from "../../src/_components/menu";
+  import Menu from '../../src/_components/menu';
 </script>
 
 <div class="grid-width--small">

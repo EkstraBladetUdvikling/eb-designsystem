@@ -1,38 +1,35 @@
 <script lang="ts">
-import ArticleCard from "../../src/_components/articlecard";
+  import ArticleCard from '../../src/_components/articlecard';
 
-let article =
-  {
+  let article = {
     href: '#',
     media: {
-      src:'https://via.placeholder.com/610x343&text=610x343'
+      src: 'https://via.placeholder.com/610x343&text=610x343',
     },
-    section: "Sport",
+    section: 'Sport',
     timestamp: '2 timer siden',
-    title: "List element",
+    title: 'List element',
   };
 
-let article_small =
-  {
+  let article_small = {
     ...article,
     // media: {
     //   height: '115',
     //   src:'https://via.placeholder.com/200x112&text=200x112',
     //   width:'200'
     // },
-    title: "List element small card",
+    title: 'List element small card',
     type: 'small-media',
   };
 
-let article_small_rev =
-  {
+  let article_small_rev = {
     ...article,
     media: {
       height: '115',
-      src:'https://via.placeholder.com/200x112&text=200x112',
-      width:'200'
+      src: 'https://via.placeholder.com/200x112&text=200x112',
+      width: '200',
     },
-    title: "Small media reverse card list element",
+    title: 'Small media reverse card list element',
     type: 'small-media--reverse',
   };
 </script>

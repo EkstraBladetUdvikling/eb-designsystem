@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Button from "../../src/_components/button";
-  import Icon from "../../src/_components/icon";
+  import Button from '../../src/_components/button';
+  import Icon from '../../src/_components/icon';
 </script>
 
 <div class="grid-width--small">

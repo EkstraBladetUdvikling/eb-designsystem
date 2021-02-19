@@ -1,6 +1,6 @@
-<script lang="typescript">
+<script lang="ts">
 
-  let baseClass = 'card'
+  let baseClass = "card";
   export let className: string;
   export let href: string = undefined;
   export let style: string = undefined;
@@ -9,7 +9,7 @@
   if (className) baseClass = `${className} ${baseClass}`;
 
   switch(type) {
-    case 'mode':
+    case "mode":
       baseClass = `${baseClass} card-mode`;
     case 'small-media':
       baseClass = `${baseClass} card--small-media`;
@@ -18,7 +18,6 @@
       baseClass = `${baseClass} card--small-media card--small-media--reverse`;
       break;
   }
-
 </script>
 
 
