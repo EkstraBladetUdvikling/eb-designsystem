@@ -6,8 +6,12 @@
    * dataTheme: string - Adds a theme to the accordion (optional)
    * tabs: Array - data to fill the accordion-tabs
    */
+  interface ITabsConfig {
+    content: string;
+    title: string;
+  }
   export let dataTheme: "darkmode" | "lightmode" | undefined = undefined;
-  export let tabs;
+  export let tabs: ITabsConfig[];
   let selectedAccordion;
 
   onMount(() => {

@@ -28,7 +28,7 @@
       <img alt={title} class="card-image" src={media.src} height={media.height} width={media.width} />
     </div>
   {/if}
-  <div class="card-content">
+  <slot slot="content">
     {#if section || timestamp}
       <p class="card-meta color--graa3">
         <small>
@@ -45,5 +45,5 @@
       </p>
     {/if}
     <h2 class="card-title">{title}</h2>
-  </div>
+  </slot>
 </Card>

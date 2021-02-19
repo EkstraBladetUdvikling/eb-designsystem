@@ -1,14 +1,14 @@
 <script lang="ts">
 
-  export let classExtension;
+  export let className;
   export let click;
   export let style;
   export let type;
 
   let cssClass = 'button';
 
-  if (classExtension) {
-    cssClass = `${cssClass} ${classExtension}`;
+  if (className) {
+    cssClass = `${cssClass} ${className}`;
   }
 
   if (style) {
