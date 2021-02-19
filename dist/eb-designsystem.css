@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.3.1 built on 16.2.2021 10.18.15 on branch "KAM" at revision "4d705f3c0651f55d53e77cc7d6442df77e08b07f" */
+/** eb-designsystem.css version 0.3.1 built on 19.2.2021 14.44.51 on branch "toggle-buttons" at revision "23b0ac0b5f0d9bd079d93ccc829bb31bde2dedbe" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -1030,7 +1030,8 @@ a.card-mode:focus {
 .horizontal-scroll-item--small {
   height: 84px;
 }
-.toggle-input {
+.toggle-input,
+.toggle-radio {
   display: none;
 }
 
@@ -1049,18 +1050,46 @@ a.card-mode:focus {
   width: 20px;
 }
 
-.js-toggle[data-toggle='off'] .toggle-off,
-.js-toggle[data-toggle='on'] .toggle-on,
+.js-toggle[data-toggle="off"] .toggle-off,
+.js-toggle[data-toggle="on"] .toggle-on,
 .toggle-input ~ .toggle-off,
 .toggle-input:checked ~ .toggle-on {
   display: inline-flex;
 }
 
-.js-toggle[data-toggle='on'] .toggle-off,
-.js-toggle[data-toggle='off'] .toggle-on,
+.js-toggle[data-toggle="on"] .toggle-off,
+.js-toggle[data-toggle="off"] .toggle-on,
 .toggle-input:checked ~ .toggle-off,
 .toggle-input ~ .toggle-on {
   display: none;
+}
+
+.toggle-radio .button {
+  border-color: var(--color--primary);
+  color: var(--color--primary);
+}
+
+.toggle-radio:checked + .button,
+.toggle-radio .button:active,
+.toggle-radio .button:hover,
+.toggle-radio .button:focus {
+  background: var(--color--primary);
+  border-color: var(--color--primary);
+  color: var(--fgcolor--primary);
+}
+
+.toggle-radio:first-of-type + .button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.toggle-radio:not(:first-of-type):not(:last-of-type) + .button {
+  border-radius: 0;
+}
+
+.toggle-radio:last-of-type + .button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 :root {
   --tooltip-border-color: var(--card-border-color);
