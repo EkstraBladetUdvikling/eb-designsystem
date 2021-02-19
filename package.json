@@ -6,11 +6,11 @@
   "author": "tegner <jesper.h.tegner@jppol.dk>",
   "license": "MIT",
   "scripts": {
-    "build:designsystem": "yarn build:css && yarn build:watcher && postcss dist/eb-designsystem--watcher.css -o public/eb-designsystem--watcher.css --no-map -u postcss-preset-env && yarn build:snippets",
+    "build:designsystem": "yarn build:css && yarn build:watcher && yarn build:snippets",
     "build:css": "node build-css.js",
     "build:nonie": "node build-css.js --nonie",
     "build:ie": "node build-css.js --ie",
-    "build:preview": "postcss preview/css/_index.css -o preview/css/main.css --no-map -u postcss-import",
+    "build:preview": "postcss preview/css/_index.css -o public/css/main.css --no-map -u postcss-import",
     "build:snippets": "node build-snippets",
     "build:watch": "onchange 'src/**/*.css' -- yarn build:watcher & onchange 'preview/**/{_*.css,html}' -- yarn build:preview",
     "build:watcher": "yarn build:css --watcher && yarn build:preview",
