@@ -76,7 +76,7 @@ const buildCSS = async (args) => {
         postcssPlugins.push(presetEnv(cssnextObject));
         break;
       case '--watcher':
-        outFolder = 'public';
+        outFolder = 'public/css';
         postcssPlugins.push(postcssCustomMedia(customMediaOptions));
         break;
       default:
