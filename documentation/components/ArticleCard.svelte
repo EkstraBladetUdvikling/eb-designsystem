@@ -7,7 +7,7 @@ let article =
     section: "Sport",
     timestamp: '2 timer siden',
     title: "tab 1",
-  }
+  };
 </script>
 
 <div class="grid-width--small">
