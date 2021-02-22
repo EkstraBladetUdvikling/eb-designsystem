@@ -193,6 +193,10 @@
   min-width: var(--button-height--big);
 }
 
+.button--small.button--icon {
+  min-width: var(--button-height--small);
+}
+
 .button.button--icon .icon {
   margin: 0;
 }
