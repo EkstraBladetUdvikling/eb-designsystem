@@ -34,14 +34,12 @@
 </div>
 <Code>
   {`
-    <div class="flex">
-      <Button className="margin-m" extension="solid">Button solid</Button>
-      <Button className="margin-m" extension="link">Button link</Button>
-      <Button className="margin-m" extension="icon">
-        <span style="font-size: 30px">&times;</span>
-      </Button>
-      <Button className="margin-m" extension="big">Button big</Button>
-    </div>
+  <Button className="margin-m" extension="solid">Button solid</Button>
+  <Button className="margin-m" extension="link">Button link</Button>
+  <Button className="margin-m" extension="icon">
+    <span style="font-size: 30px">&times;</span>
+  </Button>
+  <Button className="margin-m" extension="big">Button big</Button>
   `}
 </Code>
 
@@ -57,10 +55,10 @@
 
 <Code>
   {`
-    <Button className="margin-m" extension="big">Button big</Button>
-    <Button className="margin-m" extension="{['big', 'solid']}">Button big solid</Button>
-    <Button className="margin-m" extension="{['big', 'link']}">Button big link</Button>
-    `}
+  <Button className="margin-m" extension="big">Button big</Button>
+  <Button className="margin-m" extension="{['big', 'solid']}">Button big solid</Button>
+  <Button className="margin-m" extension="{['big', 'link']}">Button big link</Button>
+  `}
 </Code>
 
 <h3>Styles</h3>
@@ -73,10 +71,10 @@
 
 <Code>
   {`
-    <Button className="margin-m" type="primary">Button primary</Button>
-    <Button className="margin-m" type="secondary">Button secondary</Button>
-    <Button className="margin-m" type="accept">Button accept</Button>
-    <Button className="margin-m" type="cancel">Button cancel</Button>
+  <Button className="margin-m" type="primary">Button primary</Button>
+  <Button className="margin-m" type="secondary">Button secondary</Button>
+  <Button className="margin-m" type="accept">Button accept</Button>
+  <Button className="margin-m" type="cancel">Button cancel</Button>
   `}
 </Code>
 
@@ -87,11 +85,11 @@
 </Button>
 <Code>
   {`
-    <Button className="margin-m">
-      <Icon name="ekstrabladet" style="height:20px;" />
-      <span>button with icon right</span>
-    </Button>
-    `}
+  <Button className="margin-m">
+    <Icon name="ekstrabladet" style="height:20px;" />
+    <span>button with icon right</span>
+  </Button>
+  `}
 </Code>
 
 <Button className="margin-m">
@@ -100,11 +98,11 @@
 </Button>
 <Code>
   {`
-    <Button className="margin-m">
-      <span>button with icon right</span>
-      <Icon name="ekstrabladet" style="height:20px;" />
-    </Button>
-    `}
+  <Button className="margin-m">
+    <span>button with icon right</span>
+    <Icon name="ekstrabladet" style="height:20px;" />
+  </Button>
+  `}
 </Code>
 
 <Button className="margin-m" extension="icon">
@@ -115,8 +113,8 @@
 </Button>
 <Code>
   {`
-    <Button className="margin-m" extension="icon">
-      <span style="font-size: 30px">&times;</span>
-    </Button>
+  <Button className="margin-m" extension="icon">
+    <span style="font-size: 30px">&times;</span>
+  </Button>
   `}
 </Code>
