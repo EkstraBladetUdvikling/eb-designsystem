@@ -23,6 +23,7 @@
   <li>link</li>
   <li>icon</li>
   <li>big</li>
+  <li>small</li>
 </ul>
 <div class="flex">
   <Button className="margin-m" extension="solid">Button solid</Button>
@@ -30,7 +31,8 @@
   <Button className="margin-m" extension="icon">
     <span style="font-size: 30px">&times;</span>
   </Button>
-  <Button className="margin-m" extension={'big'}>Button big</Button>
+  <Button className="margin-m" extension="big">Button big</Button>
+  <Button className="margin-m" extension="small">Button small</Button>
 </div>
 <Code>
   {`
@@ -44,11 +46,18 @@
 </Code>
 
 <h3>extension attribute combinations</h3>
-<p><b>big</b> can be combined with the other three extensions</p>
+<p><b>big</b> and <b>small</b> can be combined with the other three extensions</p>
 <div class="flex">
   <Button className="margin-m" extension={['big', 'solid']}>Button big solid</Button>
   <Button className="margin-m" extension={['big', 'link']}>Button big link</Button>
   <Button className="margin-m" extension={['big', 'icon']}>
+    <span style="font-size: 30px">&times;</span>
+  </Button>
+</div>
+<div class="flex">
+  <Button className="margin-m" extension={['small', 'solid']}>Button small solid</Button>
+  <Button className="margin-m" extension={['small', 'link']}>Button small link</Button>
+  <Button className="margin-m" extension={['small', 'icon']}>
     <span style="font-size: 30px">&times;</span>
   </Button>
 </div>
@@ -58,6 +67,11 @@
   <Button className="margin-m" extension="big">Button big</Button>
   <Button className="margin-m" extension="{['big', 'solid']}">Button big solid</Button>
   <Button className="margin-m" extension="{['big', 'link']}">Button big link</Button>
+  <Button className="margin-m" extension={['small', 'solid']}>Button small solid</Button>
+  <Button className="margin-m" extension={['small', 'link']}>Button small link</Button>
+  <Button className="margin-m" extension={['small', 'icon']}>
+    <span style="font-size: 30px">&times;</span>
+  </Button>
   `}
 </Code>
 
@@ -108,13 +122,28 @@
 <Button className="margin-m" extension="icon">
   <span style="font-size: 30px">&times;</span>
 </Button>
+<Button className="margin-m" extension={['icon', 'solid', 'small']}>
+  <span style="font-size: 30px">&times;</span>
+</Button>
 <Button className="margin-m" extension={['icon', 'solid']}>
   <span style="font-size: 30px">&times;</span>
+</Button>
+<Button className="margin-m" extension={['icon', 'solid', 'big']}>
+  <span style="font-size: 40px">&times;</span>
 </Button>
 <Code>
   {`
   <Button className="margin-m" extension="icon">
     <span style="font-size: 30px">&times;</span>
+  </Button>
+  <Button className="margin-m" extension="{['icon', 'solid', 'small']}">
+    <span style="font-size: 30px">&times;</span>
+  </Button>
+  <Button className="margin-m" extension="{['icon', 'solid']}">
+    <span style="font-size: 30px">&times;</span>
+  </Button>
+  <Button className="margin-m" extension="{['icon', 'solid', 'big']}">
+    <span style="font-size: 40px">&times;</span>
   </Button>
   `}
 </Code>

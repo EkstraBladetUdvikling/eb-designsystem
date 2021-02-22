@@ -2,9 +2,11 @@
   export let language = 'markup';
 </script>
 
-<pre>
-  <code class="language-{language}">
-    <slot>
-    </slot>
-  </code>
-</pre>
+<div class="margin-l--tb">
+  <pre>
+    <code class="language-{language}">
+      <slot>
+      </slot>
+    </code>
+  </pre>
+</div>

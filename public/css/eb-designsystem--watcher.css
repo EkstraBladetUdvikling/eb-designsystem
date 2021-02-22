@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.4.0 built on 22.2.2021 15.39.48 on branch "svelteTemplates" at revision "204a706f1d1a56c83ee6310a7dfe08edeab14f20" */
+/** eb-designsystem--watcher.css version 0.4.0 built on 22.2.2021 15.52.11 on branch "svelteTemplates" at revision "26cf37b067a042291c6454173af19b78fead4181" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -603,6 +603,10 @@ a.badge:hover {
 
 .button--big.button--icon {
   min-width: var(--button-height--big);
+}
+
+.button--small.button--icon {
+  min-width: var(--button-height--small);
 }
 
 .button.button--icon .icon {
