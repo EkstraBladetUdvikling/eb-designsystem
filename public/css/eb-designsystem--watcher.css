@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.4.0 built on 19.2.2021 10.02.48 on branch "building" at revision "612d3117e21e2438290a01b7a73dea13f3b27e6b" */
+/** eb-designsystem--watcher.css version 0.4.0 built on 19.2.2021 13.12.03 on branch "svelteTemplates" at revision "3aa7e31c70ece60311f84da8298c8e1af45694ea" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -569,16 +569,6 @@ a.badge:hover {
   margin-left: 10px;
 }
 
-.button--icon {
-  justify-content: center;
-  padding: 0;
-  min-width: var(--button-height);
-}
-
-.button--icon .icon {
-  margin: 0;
-}
-
 .button.button--link,
 .button.button--link:active,
 .button.button--link:hover,
@@ -594,6 +584,20 @@ a.badge:hover {
   font-weight: bold;
   padding: 0 40px;
   height: var(--button-height--big);
+}
+
+.button.button--icon {
+  justify-content: center;
+  padding: 0;
+  min-width: var(--button-height);
+}
+
+.button--big.button--icon {
+  min-width: var(--button-height--big);
+}
+
+.button.button--icon .icon {
+  margin: 0;
 }
 :root {
   --card-border-color: var(--color--graa7);
