@@ -70,12 +70,13 @@ const buildCSS = async (args) => {
     const srcFolder = './src';
     const cssFilesToRead = options.build === '--ie' ? [] : importFrom;
     const postcssPlugins = [];
-
+    let outFolder = 'dist';
     switch (options.build) {
       case '--ie':
         postcssPlugins.push(presetEnv(cssnextObject));
         break;
       case '--watcher':
+        outFolder = 'public';
         postcssPlugins.push(postcssCustomMedia(customMediaOptions));
         break;
       default:
@@ -87,7 +88,7 @@ const buildCSS = async (args) => {
      * Find all css files in src folder
      */
     readFolder(srcFolder, fileTypeToFind, cssFilesToRead);
-    const outFolder = 'dist';
+
     const outputFileName = `eb-designsystem${options.build}.css`;
     const outputFile = `${outFolder}/${outputFileName}`;
 

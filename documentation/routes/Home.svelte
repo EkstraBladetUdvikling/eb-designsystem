@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Icon from "../../src/_components/icon";
+  import Icon from '../../src/_components/icon';
 </script>
 
 <div class="flex flex-justify--around padding-xl--tb width-1of1">

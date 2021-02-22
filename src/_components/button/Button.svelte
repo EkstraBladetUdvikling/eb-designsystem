@@ -1,18 +1,26 @@
 <script lang="ts">
+  export let className: string;
+  export let click: (ev: MouseEvent) => void;
+  export let disabled: boolean = false;
 
-  export let classExtension;
-  export let click;
-  export let style;
-  export let type;
+  type TExtension = 'big' | 'icon' | 'link' | 'solid';
+  export let extension: TExtension | TExtension[];
+
+  type TType = 'accept' | 'cancel' | 'primary' | 'secondary';
+  export let type: TType;
 
   let cssClass = 'button';
 
-  if (classExtension) {
-    cssClass = `${cssClass} ${classExtension}`;
+  if (className) {
+    cssClass = `${cssClass} ${className}`;
   }
 
-  if (style) {
-    cssClass = `${cssClass} button--${style}`;
+  if (extension) {
+    if (typeof extension === 'string') {
+      cssClass = `${cssClass} button--${extension}`;
+    } else if (Array.isArray(extension)) {
+      cssClass = `${cssClass} button--${extension.join(' button--')}`;
+    }
   }
 
   if (type) {
@@ -20,6 +28,6 @@
   }
 </script>
 
-<button class={cssClass} on:click={click}>
-  <slot></slot>
+<button class={cssClass} on:click={click} {disabled}>
+  <slot />
 </button>
