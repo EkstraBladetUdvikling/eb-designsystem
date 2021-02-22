@@ -5,7 +5,6 @@
 <pre>
   <code class="language-{language}">
     <slot>
-      Hello?
     </slot>
   </code>
 </pre>
