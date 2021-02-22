@@ -22,7 +22,7 @@
     <div id="techreq-list-title" class="flex bg--graa7" style="border-bottom: 1px solid rgba(0, 0, 0, .1);">
       <div class="width-1of3 padding-m">Accordion</div>
       <div class="width-1of3 padding-m">
-        <a href="../../components/accordion/accordion.html">Accordion dokumentation</a>
+        <a href="#/components/accordion">Accordion dokumentation</a>
       </div>
       <div class="width-1of3 padding-m">
         <p class="margin-none">- lightmode</p>
@@ -32,7 +32,7 @@
     <div id="techreq-list-title" class="flex bg--graa7" style="border-bottom: 1px solid rgba(0, 0, 0, .1);">
       <div class="width-1of3 padding-m">Card (Card-mode)</div>
       <div class="width-1of3 padding-m">
-        <a href="../../components/card/card.html">Card dokumentation</a>
+        <a href="#/components/card">Card dokumentation</a>
       </div>
       <div class="width-1of3 padding-m">
         <p class="margin-none">- lightmode</p>

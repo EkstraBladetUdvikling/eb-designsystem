@@ -10,7 +10,7 @@
     <div class="flex flex-justify--center">
       <h1>Ekstrabladet design system</h1>
     </div>
-    <div class="flex height-1of1 text-align--center">
+    <div class="flex height-1of1 text-align--center margin-l--t">
       <div class="width-1of2">
         <h2>Svelte mig her</h2>
       </div>

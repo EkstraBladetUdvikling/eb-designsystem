@@ -22,7 +22,6 @@
       head.addEventListener('click', () => {
         for (const othertab of tabs) {
           if (othertab !== tab) {
-            console.log('closing');
             othertab.classList.remove('accordion-expanded');
           }
         }

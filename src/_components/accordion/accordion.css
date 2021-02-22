@@ -1,5 +1,6 @@
 .accordion-tab {
   background: rgb(var(--rgb-color--graa7));
+  border: 1px solid transparent;
   border-radius: var(--border-radius--small);
   box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), 0.22);
   user-select: none;
@@ -16,11 +17,13 @@
 }
 
 /* icon styling */
-.accordion-header i {
+.accordion-header i,
+.accordion-header svg {
   color: var(--color--graa3);
 }
 /* icon active */
-.accordion-tab.accordion-expanded .accordion-header i {
+.accordion-tab.accordion-expanded .accordion-header i,
+.accordion-tab.accordion-expanded .accordion-header svg {
   transform: rotate(180deg);
 }
 
