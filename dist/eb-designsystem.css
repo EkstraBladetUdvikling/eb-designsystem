@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.3.1 built on 22.2.2021 09.32.38 on branch "small-buttons" at revision "10dd6a4773fdc77a942e050b2fb4c7834f1d0927" */
+/** eb-designsystem.css version 0.3.1 built on 22.2.2021 14.28.31 on branch "master" at revision "07d4bb5c6272760997191e3be6fc2b4b3582de61" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -325,6 +325,7 @@ custom media queries is the only allowed media queries
   (-ms-high-contrast: none);
 .accordion-tab {
   background: rgb(var(--rgb-color--graa7));
+  border: 1px solid transparent;
   border-radius: var(--border-radius--small);
   box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), 0.22);
   user-select: none;
