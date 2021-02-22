@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.3.1 built on 22.2.2021 10.14.42 on branch "accordion-fix" at revision "10dd6a4773fdc77a942e050b2fb4c7834f1d0927" */
+/** eb-designsystem--watcher.css version 0.3.1 built on 22.2.2021 12.00.38 on branch "small-buttons" at revision "5265b593cd333422e7ae4da9d968ca7203ac9ea7" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -417,6 +417,7 @@ a.badge:hover {
   --button-border-radius: var(--button-height);
   --button-height: 36px;
   --button-height--big: 50px;
+  --button-height--small: 30px;
 }
 
 .button {
@@ -584,6 +585,11 @@ a.badge:hover {
   border: 0;
   color: inherit;
   outline: none;
+}
+
+.button.button--small {
+  font-size: 12px;
+  height: var(--button-height--small);
 }
 
 .button.button--big {

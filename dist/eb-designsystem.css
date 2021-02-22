@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.3.1 built on 22.2.2021 09.21.23 on branch "master" at revision "da2dd4f6ad3b0161ab12085aad7d8610c7b0f993" */
+/** eb-designsystem.css version 0.3.1 built on 22.2.2021 09.32.38 on branch "small-buttons" at revision "10dd6a4773fdc77a942e050b2fb4c7834f1d0927" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -425,6 +425,7 @@ a.badge:hover {
   --button-border-radius: var(--button-height);
   --button-height: 36px;
   --button-height--big: 50px;
+  --button-height--small: 30px;
 }
 
 .button {
@@ -592,6 +593,11 @@ a.badge:hover {
   border: 0;
   color: inherit;
   outline: none;
+}
+
+.button.button--small {
+  font-size: 12px;
+  height: var(--button-height--small);
 }
 
 .button.button--big {

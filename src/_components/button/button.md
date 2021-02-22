@@ -153,7 +153,7 @@ Det her er en standard knap uden nogen hat
 <button class="button button--icon">
   <i class="icon far fa-times"></i>
 </button>
-````
+```
 
 <button class="button button--solid button--icon">
   <i class="icon fal fa-times"></i>
@@ -162,27 +162,29 @@ Det her er en standard knap uden nogen hat
 ```html
 <button class="button button--solid button--icon">
   <i class="icon fal fa-times"></i>
-</button>
-````
-
-<button class="button button--link">
-  Button--link
-</button>
-
-```html
-<button class="button button--link">
-  Button--link
 </button>
 ```
 
+<button class="button button--link">
+  Button--link
+</button>
+
+```html
+<button class="button button--link">Button--link</button>
+```
+
+<button class="button button--small">
+  Button--small
+</button>
+
 <button class="button button--big">
   Button--big
 </button>
 
 ```html
-<button class="button button--big">
-  Button--big
-</button>
+<button class="button button--small">Button--small</button>
+
+<button class="button button--big">Button--big</button>
 ```
 
 ## Button with badge
