@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.3.1 built on 22.2.2021 08.22.04 on branch "toggle-buttons" at revision "9cbdd809ead8e9083efb346b2155768cca94b271" */
+/** eb-designsystem--watcher.css version 0.3.1 built on 22.2.2021 10.14.42 on branch "accordion-fix" at revision "10dd6a4773fdc77a942e050b2fb4c7834f1d0927" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -316,6 +316,7 @@ custom media queries is the only allowed media queries
 */
 .accordion-tab {
   background: rgb(var(--rgb-color--graa7));
+  border: 1px solid transparent;
   border-radius: var(--border-radius--small);
   box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), 0.22);
   user-select: none;
