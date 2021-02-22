@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  // Style
-  import './Accordion.css';
+
   /**
    * dataTheme: string - Adds a theme to the accordion (optional)
    * tabs: Array - data to fill the accordion-tabs
