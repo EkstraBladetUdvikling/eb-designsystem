@@ -8,7 +8,7 @@
 <p>Badges kan benyttes som mærkater eller som indikation af tags. Størrelsen af et badge kan styres vha. font-sizes.</p>
 
 <Code language="typescript">
-  {`import Badge from '../../src/_components/badge/Badge.svelte';`}
+  {`import Badge from './src/_components/badge/Badge.svelte';`}
 </Code>
 
 <div class="margin-l--tb">

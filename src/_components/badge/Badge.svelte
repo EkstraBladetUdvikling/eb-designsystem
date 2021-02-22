@@ -23,7 +23,6 @@
   if (type) {
     cssClass = `${cssClass} badge--${type}`;
   }
-  console.log(cssClass, className, extension, type);
 </script>
 
 <span class={cssClass}>
