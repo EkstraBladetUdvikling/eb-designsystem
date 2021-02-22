@@ -1,4 +1,5 @@
-.toggle-input {
+.toggle-input,
+.toggle-radio {
   display: none;
 }
 
@@ -18,16 +19,46 @@
   width: 20px;
 }
 
-.js-toggle[data-toggle='off'] .toggle-off,
-.js-toggle[data-toggle='on'] .toggle-on,
+.js-toggle[data-toggle="off"] .toggle-off,
+.js-toggle[data-toggle="on"] .toggle-on,
 .toggle-input ~ .toggle-off,
 .toggle-input:checked ~ .toggle-on {
   display: inline-flex;
 }
 
-.js-toggle[data-toggle='on'] .toggle-off,
-.js-toggle[data-toggle='off'] .toggle-on,
+.js-toggle[data-toggle="on"] .toggle-off,
+.js-toggle[data-toggle="off"] .toggle-on,
 .toggle-input:checked ~ .toggle-off,
 .toggle-input ~ .toggle-on {
   display: none;
+}
+
+.toggle--buttons .button {
+  border-color: var(--color--primary);
+  border-right-width: 0;
+  color: var(--color--primary);
+}
+
+.toggle-radio:checked + .button,
+.toggle--buttons .button:active,
+.toggle--buttons .button:hover,
+.toggle--buttons .button:focus {
+  background: var(--color--primary);
+  border-color: var(--color--primary);
+  color: var(--fgcolor--primary);
+}
+
+.toggle-radio:first-of-type + .button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.toggle-radio:not(:first-of-type):not(:last-of-type) + .button {
+  border-radius: 0;
+}
+
+.toggle-radio:last-of-type + .button {
+  border-top-left-radius: 0;
+  border-right-width: 1px;
+  border-bottom-left-radius: 0;
 }

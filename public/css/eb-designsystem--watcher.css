@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.4.0 built on 19.2.2021 13.12.03 on branch "svelteTemplates" at revision "3aa7e31c70ece60311f84da8298c8e1af45694ea" */
+/** eb-designsystem--watcher.css version 0.4.0 built on 22.2.2021 15.39.48 on branch "svelteTemplates" at revision "204a706f1d1a56c83ee6310a7dfe08edeab14f20" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -316,6 +316,7 @@ custom media queries is the only allowed media queries
 */
 .accordion-tab {
   background: rgb(var(--rgb-color--graa7));
+  border: 1px solid transparent;
   border-radius: var(--border-radius--small);
   box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), 0.22);
   user-select: none;
@@ -329,11 +330,13 @@ custom media queries is the only allowed media queries
 }
 
 /* icon styling */
-.accordion-header i {
+.accordion-header i,
+.accordion-header svg {
   color: var(--color--graa3);
 }
 /* icon active */
-.accordion-tab.accordion-expanded .accordion-header i {
+.accordion-tab.accordion-expanded .accordion-header i,
+.accordion-tab.accordion-expanded .accordion-header svg {
   transform: rotate(180deg);
 }
 
@@ -416,6 +419,7 @@ a.badge:hover {
   --button-border-radius: var(--button-height);
   --button-height: 36px;
   --button-height--big: 50px;
+  --button-height--small: 30px;
 }
 
 .button {
@@ -577,6 +581,11 @@ a.badge:hover {
   border: 0;
   color: inherit;
   outline: none;
+}
+
+.button.button--small {
+  font-size: 12px;
+  height: var(--button-height--small);
 }
 
 .button.button--big {
@@ -1031,7 +1040,8 @@ a.card-mode:focus {
 .horizontal-scroll-item--small {
   height: 84px;
 }
-.toggle-input {
+.toggle-input,
+.toggle-radio {
   display: none;
 }
 
@@ -1050,18 +1060,48 @@ a.card-mode:focus {
   width: 20px;
 }
 
-.js-toggle[data-toggle='off'] .toggle-off,
-.js-toggle[data-toggle='on'] .toggle-on,
+.js-toggle[data-toggle="off"] .toggle-off,
+.js-toggle[data-toggle="on"] .toggle-on,
 .toggle-input ~ .toggle-off,
 .toggle-input:checked ~ .toggle-on {
   display: inline-flex;
 }
 
-.js-toggle[data-toggle='on'] .toggle-off,
-.js-toggle[data-toggle='off'] .toggle-on,
+.js-toggle[data-toggle="on"] .toggle-off,
+.js-toggle[data-toggle="off"] .toggle-on,
 .toggle-input:checked ~ .toggle-off,
 .toggle-input ~ .toggle-on {
   display: none;
+}
+
+.toggle--buttons .button {
+  border-color: var(--color--primary);
+  border-right-width: 0;
+  color: var(--color--primary);
+}
+
+.toggle-radio:checked + .button,
+.toggle--buttons .button:active,
+.toggle--buttons .button:hover,
+.toggle--buttons .button:focus {
+  background: var(--color--primary);
+  border-color: var(--color--primary);
+  color: var(--fgcolor--primary);
+}
+
+.toggle-radio:first-of-type + .button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.toggle-radio:not(:first-of-type):not(:last-of-type) + .button {
+  border-radius: 0;
+}
+
+.toggle-radio:last-of-type + .button {
+  border-top-left-radius: 0;
+  border-right-width: 1px;
+  border-bottom-left-radius: 0;
 }
 :root {
   --tooltip-border-color: var(--card-border-color);

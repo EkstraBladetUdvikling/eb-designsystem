@@ -2,6 +2,7 @@
   --button-border-radius: var(--button-height);
   --button-height: 36px;
   --button-height--big: 50px;
+  --button-height--small: 30px;
 }
 
 .button {
@@ -168,6 +169,11 @@
   border: 0;
   color: inherit;
   outline: none;
+}
+
+.button.button--small {
+  font-size: 12px;
+  height: var(--button-height--small);
 }
 
 .button.button--big {
