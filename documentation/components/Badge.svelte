@@ -1,6 +1,7 @@
 <script>
-  import Badge from '../../src/_components/badge/Badge.svelte';
   import Code from './Code.svelte';
+
+  import Badge from '../../src/_components/badge/Badge.svelte';
 </script>
 
 <h1>Badge</h1>
