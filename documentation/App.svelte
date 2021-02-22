@@ -3,7 +3,6 @@
   import Routes from './routes/routes';
   import Sidebar from './routes/Sidebar.svelte';
   import Navbar from './routes/Navbar.svelte';
-  import Icon from '../src/_components/icon';
 
   const routeList = Routes;
 

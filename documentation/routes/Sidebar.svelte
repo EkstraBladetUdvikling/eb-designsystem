@@ -22,26 +22,32 @@
       });
     });
   });
+  // Listener to check whenever the hash URL changes make sure to match the menu
+  window.addEventListener('hashchange', () => {
+    url = window.location.hash.substr(1);
+  });
 </script>
 
-<div id="sidebar-menu" class="sidebar-container padding-l--t height-100vh bg--white margin-l--r">
+<div id="sidebar-menu" class="sidebar-container height-100vh bg--white margin-l--r">
   {#each menuItems as menuItem}
-    <a
-      class="sidebar-item {`${
-        menuItem.link === url ? 'active-item' : ''
-      }`} width-1of1 padding-m--t padding-l--rl fontsize-large"
-      href={menuItem.link}
-      use:link
-    >
-      {menuItem.title}
-    </a>
+    <div class="sidebar-menuitem-container padding-l">
+      <a
+        class="sidebar-item {`${
+          menuItem.link === url ? 'active-item' : ''
+        }`} width-1of1 padding-m--t fontsize-large"
+        href={menuItem.link}
+        use:link
+      >
+        {menuItem.title}
+      </a>
+    </div>
   {/each}
-  <div>
-    <div class="sidebar-submenu-title padding-l--rl padding-l--t fontsize-large">Components</div>
+  <div class="sidebar-menuitem-container padding-l">
+    <div class="sidebar-submenu-title fontsize-small">Components</div>
     <div class="sidebar-submenu-items">
       {#each componentMenuItems as menuItem}
         <a
-          class="sidebar-item {`${menuItem.link === url ? 'active-item' : ''}`} width-1of1 padding-m--t padding-xl--rl"
+          class="sidebar-item {`${menuItem.link === url ? 'active-item' : ''}`} width-1of1 padding-m--t padding-m--rl"
           href={menuItem.link}
           use:link
         >
@@ -50,12 +56,12 @@
       {/each}
     </div>
   </div>
-  <div>
-    <div class="sidebar-submenu-title padding-l--rl padding-l--t fontsize-large">Utilities</div>
+  <div class="sidebar-menuitem-container padding-l">
+    <div class="sidebar-submenu-title fontsize-small">Utilities</div>
     <div class="sidebar-submenu-items">
       {#each utilityMenuItems as menuItem}
         <a
-          class="sidebar-item {`${menuItem.link === url ? 'active-item' : ''}`} width-1of1 padding-m--t padding-xl--rl"
+          class="sidebar-item {`${menuItem.link === url ? 'active-item' : ''}`} width-1of1 padding-m--t padding-m--rl"
           href={menuItem.link}
           use:link
         >
@@ -82,6 +88,9 @@
     width: 250px;
     overflow-y: auto;
     box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+  }
+  .sidebar-menuitem-container {
+    border-bottom: 1px solid var(--color--graa6);
   }
   .sidebar-container .sidebar-item {
     box-sizing: border-box;
