@@ -50,3 +50,48 @@ title: Toggle element
   <i class="toggle toggle-on far fa-times-circle color--reddark"></i>
 </label>
 ```
+
+## Toggle Buttons
+
+<div class="toggle toggle--buttons" role="group">
+  <input type="radio" hidden class="toggle-radio" name="toggle-example1" id="toggle1" checked="">
+  <label class="button" for="toggle1">Toggle 1</label>
+
+  <input type="radio" hidden class="toggle-radio" name="toggle-example1" id="toggle2">
+  <label class="button" for="toggle2">Toggle 2</label>
+</div>
+
+```html
+<div class="toggle toggle--buttons" role="group">
+  <input type="radio" hidden class="toggle-radio" name="toggle-example1" id="toggle1" checked="">
+  <label class="button" for="toggle1">Toggle 1</label>
+
+  <input type="radio" hidden class="toggle-radio" name="toggle-example1" id="toggle2">
+  <label class="button" for="toggle2">Toggle 2</label>
+</div>
+```
+
+<div class="toggle toggle--buttons" role="group">
+  <input type="radio" hidden class="toggle-radio" name="toggle-example2" id="toggle3" checked="">
+  <label class="button" for="toggle3">Toggle 3</label>
+
+  <input type="radio" hidden class="toggle-radio" name="toggle-example2" id="toggle4">
+  <label class="button" for="toggle4">Toggle 4</label>
+
+  <input type="radio" hidden class="toggle-radio" name="toggle-example2" id="toggle5">
+  <label class="button" for="toggle5">Toggle 5</label>
+</div>
+
+
+```html
+<div class="toggle toggle--buttons" role="group">
+  <input type="radio" hidden class="toggle-radio" name="toggle-example2" id="toggle3" checked="">
+  <label class="button" for="toggle3">Toggle 3</label>
+
+  <input type="radio" hidden class="toggle-radio" name="toggle-example2" id="toggle4">
+  <label class="button" for="toggle4">Toggle 4</label>
+
+  <input type="radio" hidden class="toggle-radio" name="toggle-example2" id="toggle5">
+  <label class="button" for="toggle5">Toggle 5</label>
+</div>
+```
