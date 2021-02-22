@@ -3,17 +3,14 @@
   export let click: (ev: MouseEvent) => void;
   export let disabled: boolean = false;
 
-  type TExtension = 'big' | 'icon' | 'link' | 'solid';
-  export let extension: TExtension | TExtension[];
-
-  type TType = 'accept' | 'cancel' | 'primary' | 'secondary';
-  export let type: TType;
-
   let cssClass = 'button';
 
   if (className) {
     cssClass = `${cssClass} ${className}`;
   }
+
+  type TExtension = 'big' | 'icon' | 'link' | 'small' | 'solid';
+  export let extension: TExtension | TExtension[];
 
   if (extension) {
     if (typeof extension === 'string') {
@@ -22,6 +19,9 @@
       cssClass = `${cssClass} button--${extension.join(' button--')}`;
     }
   }
+
+  type TType = 'accept' | 'cancel' | 'primary' | 'secondary';
+  export let type: TType;
 
   if (type) {
     cssClass = `${cssClass} button--${type}`;
