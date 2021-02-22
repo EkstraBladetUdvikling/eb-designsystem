@@ -10,7 +10,7 @@ import DataTheme from '../utilities/DataTheme/DataTheme.svelte';
 const routes = [
   { link: '/', title: 'Forside', component: Home },
   { link: '/components/accordion', title: 'Accordion', type: 'component', component: Accordion },
-  { link: '/components/articlecard', title: 'Article Card', component: ArticleCard },
+  { link: '/components/articlecard', title: 'Article Card', type: 'component', component: ArticleCard },
   { link: '/components/button', title: 'Button', type: 'component', component: Button },
   { link: '/components/card', title: 'Card', type: 'component', component: Card },
   { link: '/components/icon', title: 'Icon', type: 'component', component: Icon },

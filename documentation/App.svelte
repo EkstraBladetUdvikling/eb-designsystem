@@ -1,9 +1,5 @@
 <script lang="ts">
-<<<<<<< HEAD
   import Router from 'svelte-spa-router';
-=======
-  import Router, { link } from 'svelte-spa-router';
->>>>>>> 3aa7e31c70ece60311f84da8298c8e1af45694ea
   import Routes from './routes/routes';
   import Sidebar from './routes/Sidebar.svelte';
   import Navbar from './routes/Navbar.svelte';
@@ -13,7 +9,6 @@
 
   // Fills the object to create a SPA routing
   let routes = {};
-<<<<<<< HEAD
   let menuItemList = [];
   routeList.forEach((route) => {
     routes[route.link] = route.component;
@@ -33,15 +28,3 @@
 <div class="content-container">
   <Router {routes} />
 </div>
-=======
-  routeList.forEach((route) => {
-    routes[route.link] = route.component;
-  });
-</script>
-
-{#each routeList as route}
-  <a use:link href={route.link}>{route.title}</a>
-{/each}
-
-<Router {routes} />
->>>>>>> 3aa7e31c70ece60311f84da8298c8e1af45694ea
