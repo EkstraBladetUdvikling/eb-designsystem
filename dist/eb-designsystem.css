@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.3.1 built on 19.2.2021 14.44.51 on branch "toggle-buttons" at revision "23b0ac0b5f0d9bd079d93ccc829bb31bde2dedbe" */
+/** eb-designsystem.css version 0.3.1 built on 22.2.2021 08.23.14 on branch "toggle-buttons" at revision "9cbdd809ead8e9083efb346b2155768cca94b271" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -1064,15 +1064,16 @@ a.card-mode:focus {
   display: none;
 }
 
-.toggle-radio .button {
+.toggle--buttons .button {
   border-color: var(--color--primary);
+  border-right-width: 0;
   color: var(--color--primary);
 }
 
 .toggle-radio:checked + .button,
-.toggle-radio .button:active,
-.toggle-radio .button:hover,
-.toggle-radio .button:focus {
+.toggle--buttons .button:active,
+.toggle--buttons .button:hover,
+.toggle--buttons .button:focus {
   background: var(--color--primary);
   border-color: var(--color--primary);
   color: var(--fgcolor--primary);
@@ -1089,6 +1090,7 @@ a.card-mode:focus {
 
 .toggle-radio:last-of-type + .button {
   border-top-left-radius: 0;
+  border-right-width: 1px;
   border-bottom-left-radius: 0;
 }
 :root {

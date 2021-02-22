@@ -33,15 +33,16 @@
   display: none;
 }
 
-.toggle-radio .button {
+.toggle--buttons .button {
   border-color: var(--color--primary);
+  border-right-width: 0;
   color: var(--color--primary);
 }
 
 .toggle-radio:checked + .button,
-.toggle-radio .button:active,
-.toggle-radio .button:hover,
-.toggle-radio .button:focus {
+.toggle--buttons .button:active,
+.toggle--buttons .button:hover,
+.toggle--buttons .button:focus {
   background: var(--color--primary);
   border-color: var(--color--primary);
   color: var(--fgcolor--primary);
@@ -58,5 +59,6 @@
 
 .toggle-radio:last-of-type + .button {
   border-top-left-radius: 0;
+  border-right-width: 1px;
   border-bottom-left-radius: 0;
 }
