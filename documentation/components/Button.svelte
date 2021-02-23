@@ -8,7 +8,7 @@
 <h1 style="color:#12507b;font-weight: bolder">Buttons</h1>
 
 <Code language="typescript">
-  {`import Badge from './src/_components/badge/Badge.svelte';`}
+  {`import Badge from './src/_components/button/Button.svelte';`}
 </Code>
 
 <Button>Base button</Button>

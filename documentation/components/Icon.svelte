@@ -6,15 +6,15 @@
   <h1 style="color:#12507b;font-weight: bolder">Icon library</h1>
 
   <div class="flex flex-wrap--wrap">
-    <div class="margin-l">
+    <div class="margin-l color--red">
       <Icon className="margin-s" style="width: 36px; height: 36px;" name="angle_down_pro" />
       angle_down_pro
     </div>
-    <div class="margin-l">
+    <div class="margin-l color--green">
       <Icon className="margin-s" style="width: 36px; height: 36px;" name="angle_left_pro" />
       angle_left_pro
     </div>
-    <div class="margin-l">
+    <div class="margin-l color--blue">
       <Icon className="margin-s" style="width: 36px; height: 36px;" name="angle_up_pro" />
       angle_up_pro
     </div>

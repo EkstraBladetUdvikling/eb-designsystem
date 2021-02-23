@@ -15,15 +15,19 @@
   });
 </script>
 
-<style>
-  .content-container {
-    margin-top: 90px; /* height of navbar + 15px to create space */
-    margin-left: 280px; /* length of sidebar + 15px to create space */
-  }
-</style>
-
 <Navbar />
 <Sidebar {menuItemList} />
 <div class="content-container">
   <Router {routes} />
 </div>
+
+<svelte:head>
+  <script defer src="./prism.js"></script>
+</svelte:head>
+
+<style>
+  .content-container {
+      margin-top: 90px; /* height of navbar + 15px to create space */
+    margin-left: 280px; /* length of sidebar + 15px to create space */
+    }
+</style>

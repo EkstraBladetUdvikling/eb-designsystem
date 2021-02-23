@@ -63,7 +63,7 @@
 </script>
 
 {#if type === 'svg'}
-  <svg {viewBox} {style} class={className}>
+  <svg {viewBox} {style} class="icon-svg {className}">
     <use href="eb.svg#{name}" />
   </svg>
 {:else}
