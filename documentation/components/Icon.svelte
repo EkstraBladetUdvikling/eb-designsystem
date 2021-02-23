@@ -7,82 +7,103 @@
 </div>
 <div class="flex flex-wrap--wrap" style="width: 600px;">
   <div class="margin-l">
-    angle_down_pro <Icon className="margin-s" style="width: 36px; height: 36px;" name="angle_down_pro" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="angle_down_pro" />
+    angle_down_pro
   </div>
   <div class="margin-l">
-    angle_left_pro <Icon className="margin-s" style="width: 36px; height: 36px;" name="angle_left_pro" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="angle_left_pro" />
+    angle_left_pro
   </div>
   <div class="margin-l">
-    angle_up_pro <Icon className="margin-s" style="width: 36px; height: 36px;" name="angle_up_pro" />
-  </div>
-  <div class="margin-l">article <Icon className="margin-s" style="width: 36px; height: 36px;" name="article" /></div>
-  <div class="margin-l">
-    check_pro <Icon className="margin-s" style="width: 36px; height: 36px;" name="check_pro" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="angle_up_pro" />
+    angle_up_pro
   </div>
   <div class="margin-l">
-    credit_card <Icon className="margin-s" style="width: 36px; height: 36px;" name="credit_card" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="article" />
+    article
   </div>
   <div class="margin-l">
-    ebplus_icon <Icon className="margin-s" style="width: 36px; height: 36px;" name="ebplus_icon" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="check_pro" />
+    check_pro
   </div>
   <div class="margin-l">
-    ebplus_logo_hvid <Icon className="margin-s" style="width: 36px; height: 36px;" name="ebplus_logo_hvid" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="credit_card" />
+    credit_card
   </div>
   <div class="margin-l">
-    ebplus_logo_sort <Icon className="margin-s" style="width: 36px; height: 36px;" name="ebplus_logo_sort" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="ebplus_icon" />
+    ebplus_icon
   </div>
   <div class="margin-l">
-    ebplus_sort <Icon className="margin-s" style="width: 36px; height: 36px;" name="ebplus_sort" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="ebplus_sort" />
+    ebplus_sort
   </div>
   <div class="margin-l">
-    ekstrabladet <Icon className="margin-s" style="width: 36px; height: 36px;" name="ekstrabladet" />
-  </div>
-  <div class="margin-l">envelope <Icon className="margin-s" style="width: 36px; height: 36px;" name="envelope" /></div>
-  <div class="margin-l">gallery <Icon className="margin-s" style="width: 36px; height: 36px;" name="gallery" /></div>
-  <div class="margin-l">
-    headphones <Icon className="margin-s" style="width: 36px; height: 36px;" name="headphones" />
-  </div>
-  <div class="margin-l">headset <Icon className="margin-s" style="width: 36px; height: 36px;" name="headset" /></div>
-  <div class="margin-l">lock <Icon className="margin-s" style="width: 36px; height: 36px;" name="lock" /></div>
-  <div class="margin-l">
-    medielogin <Icon className="margin-s" style="width: 36px; height: 36px;" name="medielogin" />
-  </div>
-  <div class="margin-l">menu <Icon className="margin-s" style="width: 36px; height: 36px;" name="menu-bars" /></div>
-  <div class="margin-l">
-    miteb-regular <Icon className="margin-s" style="width: 36px; height: 36px;" name="miteb-regular" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="envelope" />
+    envelope
   </div>
   <div class="margin-l">
-    miteb-solid <Icon className="margin-s" style="width: 36px; height: 36px;" name="miteb-solid" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="gallery" />
+    gallery
   </div>
   <div class="margin-l">
-    mobil_fone <Icon className="margin-s" style="width: 36px; height: 36px;" name="mobil_fone" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="headphones" />
+    headphones
   </div>
   <div class="margin-l">
-    mobilepay_icon <Icon className="margin-s" style="width: 36px; height: 36px;" name="mobilepay_icon" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="headset" />
+    headset
   </div>
   <div class="margin-l">
-    mobilepay_logo <Icon className="margin-s" style="width: 36px; height: 36px;" name="mobilepay_logo" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="lock" />
+    lock
   </div>
   <div class="margin-l">
-    newspaper <Icon className="margin-s" style="width: 36px; height: 36px;" name="newspaper" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="medielogin" />
+    medielogin
   </div>
   <div class="margin-l">
-    play-circle-light <Icon className="margin-s" style="width: 36px; height: 36px;" name="play-circle-light" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="menu-bars" />
+    menu
   </div>
   <div class="margin-l">
-    play-icon <Icon className="margin-s" style="width: 36px; height: 36px;" name="play-icon" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="miteb-regular" />
+    miteb-regular
   </div>
   <div class="margin-l">
-    tag-regular <Icon className="margin-s" style="width: 36px; height: 36px;" name="tag-regular" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="miteb-solid" />
+    miteb-solid
   </div>
   <div class="margin-l">
-    tag-solid <Icon className="margin-s" style="width: 36px; height: 36px;" name="tag-solid" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="mobil_fone" />
+    mobil_fone
   </div>
   <div class="margin-l">
-    tags-regular <Icon className="margin-s" style="width: 36px; height: 36px;" name="tags-regular" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="newspaper" />
+    newspaper
   </div>
   <div class="margin-l">
-    tags-solid <Icon className="margin-s" style="width: 36px; height: 36px;" name="tags-solid" />
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="play-circle-light" />
+    play-circle-light
   </div>
-  <div class="margin-l">video <Icon className="margin-s" style="width: 36px; height: 36px;" name="video" /></div>
+  <div class="margin-l">
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="tag-regular" />
+    tag-regular
+  </div>
+  <div class="margin-l">
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="tag-solid" />
+    tag-solid
+  </div>
+  <div class="margin-l">
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="tags-regular" />
+    tags-regular
+  </div>
+  <div class="margin-l">
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="tags-solid" />
+    tags-solid
+  </div>
+  <div class="margin-l">
+    <Icon className="margin-s" style="width: 36px; height: 36px;" name="video" />
+    video
+  </div>
 </div>
