@@ -82,7 +82,6 @@
   }
 </script>
 
-<div>#{name}</div>
 {#if type === 'svg'}
   <svg {viewBox} {style} class={className}>
     <use href="eb.svg#{name}" />
