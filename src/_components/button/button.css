@@ -144,7 +144,10 @@
 }
 
 .button .icon {
+  color: currentColor;
   font-size: 18px;
+
+  fill: currentColor;
 }
 
 .button :first-child:not(:last-child) {

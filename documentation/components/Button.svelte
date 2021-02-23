@@ -95,25 +95,25 @@
 <h3>Buttons with Icon</h3>
 <Button className="margin-m">
   <span>button with icon right</span>
-  <Icon name="medielogin" style="height:20px;" />
+  <Icon className="icon" name="medielogin" style="height:20px;" />
 </Button>
 <Code>
   {`
   <Button className="margin-m">
     <span>button with icon right</span>
-    <Icon name="medielogin" style="height:20px;" />
+    <Icon className="icon" name="medielogin" style="height:20px;" />
   </Button>
   `}
 </Code>
 
 <Button className="margin-m">
-  <Icon name="angle_left_pro" style="height:20px;" />
+  <Icon className="icon" name="angle_left_pro" style="height:20px;" />
   <span>button with icon left</span>
 </Button>
 <Code>
   {`
   <Button className="margin-m">
-    <Icon name="angle_left_pro" style="height:20px;" />
+    <Icon className="icon" name="angle_left_pro" style="height:20px;" />
     <span>button with icon right</span>
   </Button>
   `}
