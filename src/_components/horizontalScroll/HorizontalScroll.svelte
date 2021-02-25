@@ -1,7 +1,5 @@
 <script lang="typescript">
-  import './HorizontalScroll.css';
-
-  import { onMount } from "svelte";
+  import { onMount } from 'svelte';
 
   /* Horizontial Scroll elements */
   let scrollContainer: HTMLDivElement;
@@ -17,8 +15,9 @@
     /**
      * Find how many visible elements we have
      */
-    let visibleChildren = Array.from(children).filter((child: HTMLElement) => child.getBoundingClientRect().right <= containerRight)
-      .length;
+    let visibleChildren = Array.from(children).filter(
+      (child: HTMLElement) => child.getBoundingClientRect().right <= containerRight
+    ).length;
 
     if (visibleChildren === listLength) {
       /**
@@ -67,12 +66,16 @@
 
 <div bind:this={scrollContainer} class="horizontal-scroll-container grid-width--large  position-relative">
   <button bind:this={prevScrollBtn} class="horizontal-scroll-nav" data-horizontallist="button-prev">
-    <i class="fa fa-chevron-left"></i>
+    <i class="fa fa-chevron-left" />
   </button>
   <button bind:this={nextScrollBtn} class="horizontal-scroll-nav" data-horizontallist="button-next">
-    <i class="fa fa-chevron-right"></i>
+    <i class="fa fa-chevron-right" />
   </button>
-  <div bind:this={scrollItemContainer} class="horizontal-scroll-items flex padding-m--l padding-m--r" data-horizontallist="horizontallist">
-    <slot></slot>
+  <div
+    bind:this={scrollItemContainer}
+    class="horizontal-scroll-items flex padding-m--l padding-m--r"
+    data-horizontallist="horizontallist"
+  >
+    <slot />
   </div>
 </div>

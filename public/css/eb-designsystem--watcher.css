@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.4.0 built on 23.2.2021 14.12.06 on branch "svelteTemplates" at revision "5625c6e93217f9b0b78e0edcd64c5005dc824e77" */
+/** eb-designsystem--watcher.css version 0.4.0 built on 25.2.2021 10.26.08 on branch "svelteTemplates" at revision "9e67dec6fd168199f3a3b0912483d5b9249eb362" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -318,7 +318,8 @@ custom media queries is the only allowed media queries
   background: rgb(var(--rgb-color--graa7));
   border: 1px solid transparent;
   border-radius: var(--border-radius--small);
-  box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), 0.22);
+  box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), .22);
+
   user-select: none;
 }
 
