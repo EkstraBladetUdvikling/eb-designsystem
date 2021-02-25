@@ -6,6 +6,7 @@ import Button from '../components/Button.svelte';
 import Card from '../components/Card.svelte';
 import Icon from '../components/Icon.svelte';
 import HorizontalScroll from '../components/HorizontalScroll.svelte';
+import Toggle from '../components/Toggle.svelte';
 import Tooltip from '../components/Tooltip.svelte';
 import DataTheme from '../utilities/DataTheme/DataTheme.svelte';
 
@@ -18,6 +19,7 @@ const routes = [
   { link: '/components/card', title: 'Card', type: 'component', component: Card },
   { link: '/components/icon', title: 'Icon', type: 'component', component: Icon },
   { link: '/components/horizontalscroll', title: 'Horizontal Scroll', type: 'component', component: HorizontalScroll },
+  { link: '/components/toggle', title: 'Toggle', type: 'component', component: Toggle },
   { link: '/components/tooltip', title: 'Tooltip', type: 'component', component: Tooltip },
   { link: '/utilities/datatheme', title: 'Data-theme', type: 'utility', component: DataTheme },
 ];
