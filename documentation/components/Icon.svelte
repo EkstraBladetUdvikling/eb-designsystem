@@ -3,7 +3,7 @@
 </script>
 
 <div class="grid-width--small">
-  <h1 style="color:#12507b;font-weight: bolder">Icon library</h1>
+  <h1 style="color:#bd1118;font-weight: bolder">Icon library</h1>
 
   <div class="flex flex-wrap--wrap">
     <div class="margin-l color--red">

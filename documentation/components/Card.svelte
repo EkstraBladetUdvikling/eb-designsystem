@@ -4,7 +4,7 @@
 </script>
 
 <div class="grid-width--small">
-  <h1 style="color:#12507b;font-weight: bolder">Card</h1>
+  <h1 style="color:#bd1118;font-weight: bolder">Card</h1>
   <Card className="margin-l">
     <div slot="header">
       Header

@@ -4,7 +4,8 @@
   import Tooltip from '../../src/_components/tooltip';
 </script>
 
-<h1>Tooltip</h1>
+<h1 style="color:#bd1118;font-weight: bolder">Tooltip</h1>
+
 <Code>
   {`import Tooltip from './src/_components/tooltip';`}
 </Code>

@@ -29,12 +29,20 @@
 </script>
 
 <div id="sidebar-menu" class="sidebar-container height-100vh bg--white margin-l--r">
+  <div class="flex flex-justify--around sidebar-logo-container padding-m--rl">
+    <div>
+      <a href="/#/">
+        <img alt="" src="ekstrabladet.svg" style="height:70px;" />
+      </a>
+    </div>
+    <div class="flex-item flex-item--center">
+      <p class="flex--grow width-1of1 color--graa1 fontweight-bold">Design system</p>
+    </div>
+  </div>
   {#each menuItems as menuItem}
     <div class="sidebar-menuitem-container padding-l">
       <a
-        class="sidebar-item {`${
-          menuItem.link === url ? 'active-item' : ''
-        }`} width-1of1 padding-m--t fontsize-large"
+        class="sidebar-item {`${menuItem.link === url ? 'active-item' : ''}`} width-1of1 padding-m--t fontsize-large"
         href={menuItem.link}
         use:link
       >
@@ -83,11 +91,16 @@
     text-decoration: none;
   }
   .sidebar-container {
-    top: 60px; /* height of navbar */
+    top: 0px; /* height of navbar */
     position: fixed;
     width: 250px;
     overflow-y: auto;
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+    border-right: 1px solid var(--color--graa6);
+  }
+  .sidebar-logo-container {
+    height: 60px;
+    max-height: 60px;
+    border-bottom: 1px solid var(--color--graa6);
   }
   .sidebar-menuitem-container {
     border-bottom: 1px solid var(--color--graa6);
