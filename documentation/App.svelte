@@ -13,11 +13,6 @@
     routes[route.link] = route.component;
     menuItemList.push(route);
   });
-
-  function routeDidLoad(event) {
-    console.log('event', event);
-    // prism.highlightAll();
-  }
 </script>
 
 <Navbar />
