@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Code from './Code.svelte';
+  import Prism from 'svelte-prism';
 
   import Accordion from '../../src/_components/accordion';
 
@@ -25,8 +25,9 @@
 <div class="grid-width--small">
   <h1 style="color:#12507b;font-weight: bolder">Accordion</h1>
 
-  <Code language="typescript" className="grid-width--small">
-    {`
+  <Prism
+    language="js"
+    source={`
     import Accordion from '../../src/_components/accordion';
 
     // Example tabs
@@ -35,27 +36,21 @@
       { title: 'Tab 2', content: 'content 2' },
     ];
     `}
-  </Code>
+  />
 
   <h2>Default accordion</h2>
 
   <Accordion {tabs} />
 
-  <Code className="grid-width--small">
-    {`<Accordion {tabs} />`}
-  </Code>
+  <Prism language="html" source={`<Accordion {tabs} />`} />
 
   <h2>Accordion with lightmode</h2>
   <Accordion dataTheme="lightmode" {tabs} />
 
-  <Code className="grid-width--small">
-    {`<Accordion dataTheme="lightmode" {tabs} />`}
-  </Code>
+  <Prism language="html" source={`<Accordion dataTheme="lightmode" {tabs} />`} />
 
   <h2>Accordion with darkmode</h2>
   <Accordion dataTheme="darkmode" {tabs} />
 
-  <Code className="grid-width--small">
-    {`<Accordion dataTheme="darkmode" {tabs} />`}
-  </Code>
+  <Prism language="html" source={`<Accordion dataTheme="darkmode" {tabs} />`} />
 </div>

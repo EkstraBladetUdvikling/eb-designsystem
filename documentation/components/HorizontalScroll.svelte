@@ -1,10 +1,5 @@
 <script lang="ts">
   import HorizontalScroll from '../../src/_components/horizontalScroll';
-
-  let tabs = [
-    { title: 'tab 1', content: 'content 1' },
-    { title: 'tab 2', content: 'content 2' },
-  ];
 </script>
 
 <div class="grid-width--small">

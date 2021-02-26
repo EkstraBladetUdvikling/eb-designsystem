@@ -13,21 +13,22 @@
     routes[route.link] = route.component;
     menuItemList.push(route);
   });
+
+  function routeDidLoad(event) {
+    console.log('event', event);
+    // prism.highlightAll();
+  }
 </script>
 
 <Navbar />
 <Sidebar {menuItemList} />
 <div class="content-container">
-  <Router {routes} />
+  <Router {routes} on:routeLoaded{routeDidLoad} />
 </div>
-
-<svelte:head>
-  <script defer src="./prism.js"></script>
-</svelte:head>
 
 <style>
   .content-container {
-    margin-top: 90px; /* height of navbar + 15px to create space */
+      margin-top: 90px; /* height of navbar + 15px to create space */
     margin-left: 280px; /* length of sidebar + 15px to create space */
-  }
+    }
 </style>
