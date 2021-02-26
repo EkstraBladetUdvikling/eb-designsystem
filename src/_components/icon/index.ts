@@ -1,6 +1,6 @@
 export { default } from './Icon.svelte';
 
-export const icons = [
+export const svgIcons = [
   'angle_down_pro',
   'angle_left_pro',
   'angle_up_pro',
