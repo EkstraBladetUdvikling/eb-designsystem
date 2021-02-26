@@ -35,7 +35,7 @@
 </script>
 
 <div class="grid-width--small">
-  <h1 style="color:#12507b;font-weight: bolder">ArticleCard</h1>
+  <h1 style="color:#bd1118;font-weight: bolder">ArticleCard</h1>
 
   <ArticleCard {...article} />
   <ArticleCard {...article_small} />

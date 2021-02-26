@@ -22,13 +22,13 @@
 
 <Navbar />
 <Sidebar {menuItemList} />
-<div class="content-container">
-  <Router {routes} on:routeLoaded{routeDidLoad} />
+<div class="content-container padding-xl">
+  <Router {routes} />
 </div>
 
 <style>
   .content-container {
-      margin-top: 90px; /* height of navbar + 15px to create space */
-    margin-left: 280px; /* length of sidebar + 15px to create space */
+      margin-top: 60px; /* height of navbar */
+    margin-left: 250px; /* length of sidebar */
     }
 </style>

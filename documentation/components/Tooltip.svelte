@@ -4,7 +4,7 @@
   import Tooltip from '../../src/_components/tooltip';
 </script>
 
-<h1>Tooltip</h1>
+<h1 style="color:#bd1118;font-weight: bolder">Tooltip</h1>
 <div class="grid-width--small">
   <Prism language="js" source={`import Tooltip from './src/_components/tooltip';`} />
 

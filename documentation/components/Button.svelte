@@ -7,7 +7,7 @@
   const language = 'html';
 </script>
 
-<h1 style="color:#12507b;font-weight: bolder">Buttons</h1>
+<h1 style="color:#bd1118;font-weight: bolder">Buttons</h1>
 
 <Prism language="js" source={`import Button from './src/_components/button/Button.svelte';`} />
 
