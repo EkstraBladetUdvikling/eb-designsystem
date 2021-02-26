@@ -23,7 +23,7 @@
 </script>
 
 <div class="grid-width--small">
-  <h1 style="color:#bd1118;font-weight: bolder">Accordion</h1>
+  <h1 class="color--eb">Accordion</h1>
 
   <Prism
     language="js"

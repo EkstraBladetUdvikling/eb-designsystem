@@ -1,9 +1,10 @@
 <script lang="ts">
   // Style
 </script>
+
 <div class="grid-width--small">
-  <h1 style="color:#bd1118;font-weight: bolder">Data Theme</h1>
-  <span style="color:#484848;font-weight: bolder">Anvendelse af data-theme</span>
+  <h1 class="color--eb">Data Theme</h1>
+  <span class="color--graa2" style="font-weight: bolder">Anvendelse af data-theme</span>
   <div data-theme="lightmode">
     <p>I'm now in lightmode</p>
   </div>
@@ -12,7 +13,7 @@
     <p>I'm now in darkmode</p>
   </div>
 
-  <span style="color:#484848;font-weight: bolder">Komponenter der kan anvende data-theme</span>
+  <span class="color--graa2" style="font-weight: bolder">Komponenter der kan anvende data-theme</span>
   <div class="grid-width--large">
     <div id="techreq-list-title" class="flex bg--graa7" style="border-bottom: 1px solid rgba(0, 0, 0, .1);">
       <div class="width-1of3 padding-m fontweight-bold">Component</div>

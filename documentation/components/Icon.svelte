@@ -1,110 +1,27 @@
 <script lang="ts">
-  import Icon from '../../src/_components/icon';
+  import Prism from 'svelte-prism';
+
+  import Icon, { icons } from '../../src/_components/icon';
 </script>
 
 <div class="grid-width--small">
-  <h1 style="color:#bd1118;font-weight: bolder">Icon library</h1>
-
+  <h1 class="color--eb">Icon library</h1>
+  <p>Der findes følgende ikoner</p>
+  <ul>
+    {#each icons as name}
+      <li>{name}</li>
+    {/each}
+  </ul>
   <div class="flex flex-wrap--wrap">
-    <div class="margin-l color--red">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="angle_down_pro" />
-      angle_down_pro
-    </div>
-    <div class="margin-l color--green">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="angle_left_pro" />
-      angle_left_pro
-    </div>
-    <div class="margin-l color--blue">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="angle_up_pro" />
-      angle_up_pro
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="article" />
-      article
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="check_pro" />
-      check_pro
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="credit_card" />
-      credit_card
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="ebplus_icon" />
-      ebplus_icon
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="ebplus_sort" />
-      ebplus_sort
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="envelope" />
-      envelope
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="gallery" />
-      gallery
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="headphones" />
-      headphones
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="headset" />
-      headset
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="lock" />
-      lock
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="medielogin" />
-      medielogin
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="menu-bars" />
-      menu
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="miteb-regular" />
-      miteb-regular
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="miteb-solid" />
-      miteb-solid
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="mobil_fone" />
-      mobil_fone
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="newspaper" />
-      newspaper
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="play-circle-light" />
-      play-circle-light
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="tag-regular" />
-      tag-regular
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="tag-solid" />
-      tag-solid
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="tags-regular" />
-      tags-regular
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="tags-solid" />
-      tags-solid
-    </div>
-    <div class="margin-l">
-      <Icon className="margin-s" style="width: 36px; height: 36px;" name="video" />
-      video
-    </div>
+    {#each icons as name}
+      <div
+        class="flex flex-column flex-align--center flex-justify--center margin-m padding-m"
+        style="border: 1px solid #111; border-radius: 5px;"
+      >
+        <Icon className="margin-s" style="width: 36px; height: 36px;" {name} />
+        <small>{name}</small>
+      </div>
+    {/each}
   </div>
+  <Prism language="html" source={`<Icon {name} className="margin-s" style="width: 36px; height: 36px;" />`} />
 </div>

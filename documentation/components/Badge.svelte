@@ -6,7 +6,7 @@
   const language = 'html';
 </script>
 
-<h1 style="color:#bd1118;font-weight: bolder">Badge</h1>
+<h1 class="color--eb">Badge</h1>
 
 <p>Badges kan benyttes som mærkater eller som indikation af tags. Størrelsen af et badge kan styres vha. font-sizes.</p>
 
