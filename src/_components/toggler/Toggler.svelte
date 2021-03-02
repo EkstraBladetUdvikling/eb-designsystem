@@ -1,4 +1,8 @@
 <script lang="ts">
+  import { createEventDispatcher } from 'svelte';
+
+  const dispatch = createEventDispatcher();
+
   export let className = undefined;
 
   let baseClass = `toggle`;
@@ -8,6 +12,8 @@
   let itsOn = true;
   function toggle() {
     itsOn = !itsOn;
+
+    dispatch('toggle', itsOn);
   }
 </script>
 

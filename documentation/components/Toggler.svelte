@@ -10,7 +10,11 @@
 <Prism language="js" source={`import Toggler from './src/_components/toggler/Toggler.svelte';`} />
 
 <h2 class="margin-l--tb">Toggler with text</h2>
-<Toggler>
+<Toggler
+  on:toggle={(event) => {
+    console.log('hello its on?', event.detail);
+  }}
+>
   <slot slot="on">on</slot>
   <slot slot="off">off</slot>
 </Toggler>
@@ -18,7 +22,9 @@
 <Prism
   language="html"
   source={`
-<Toggler>
+<Toggler on:toggle="{(event) => {
+    console.log('hello its on?', event.detail);
+  }}">
   <slot slot="on">on</slot>
   <slot slot="off">off</slot>
 </Toggler>
@@ -27,7 +33,11 @@
 
 <h2 class="margin-l--tb">Toggler with icon</h2>
 
-<Toggler>
+<Toggler
+  on:toggle={(event) => {
+    console.log('hello its on?', event.detail);
+  }}
+>
   <slot slot="on">
     <Icon name="angle_down_pro" style="width: 24px; height: 24px;" />
   </slot>
@@ -39,7 +49,9 @@
 <Prism
   language="html"
   source={`
-<Toggler>
+<Toggler on:toggle="{(event) => {
+    console.log('hello its on?', event.detail);
+  }}">
   <slot slot="on">
     <Icon name="angle_down_pro" style="width: 24px; height: 24px;" />
   </slot>
