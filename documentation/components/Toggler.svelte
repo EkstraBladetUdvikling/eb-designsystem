@@ -5,7 +5,7 @@
   import Toggler from '../../src/_components/toggler/Toggler.svelte';
 </script>
 
-<h1>Toggler</h1>
+<h1 class="color--eb">Toggler</h1>
 
 <Prism language="js" source={`import Toggler from './src/_components/toggler/Toggler.svelte';`} />
 
