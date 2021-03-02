@@ -4,7 +4,7 @@
 
 <div class="grid-width--small">
   <h1 class="color--eb">Data Theme</h1>
-  <span class="color--graa2" style="font-weight: bolder">Anvendelse af data-theme</span>
+  <h3>Anvendelse af data-theme</h3>
   <div data-theme="lightmode">
     <p>I'm now in lightmode</p>
   </div>
@@ -13,14 +13,14 @@
     <p>I'm now in darkmode</p>
   </div>
 
-  <span class="color--graa2" style="font-weight: bolder">Komponenter der kan anvende data-theme</span>
+  <h3>Komponenter der kan anvende data-theme</h3>
   <div class="grid-width--large">
-    <div id="techreq-list-title" class="flex bg--graa7" style="border-bottom: 1px solid rgba(0, 0, 0, .1);">
+    <div class="flex bg--graa7" style="border-bottom: 1px solid rgba(0, 0, 0, .1);">
       <div class="width-1of3 padding-m fontweight-bold">Component</div>
       <div class="width-1of3 padding-m fontweight-bold">Link</div>
       <div class="width-1of3 padding-m fontweight-bold">Temaer</div>
     </div>
-    <div id="techreq-list-title" class="flex bg--graa7" style="border-bottom: 1px solid rgba(0, 0, 0, .1);">
+    <div class="flex bg--graa7" style="border-bottom: 1px solid rgba(0, 0, 0, .1);">
       <div class="width-1of3 padding-m">Accordion</div>
       <div class="width-1of3 padding-m">
         <a href="#/components/accordion">Accordion dokumentation</a>
@@ -30,7 +30,7 @@
         <p class="margin-none">- darkmode</p>
       </div>
     </div>
-    <div id="techreq-list-title" class="flex bg--graa7" style="border-bottom: 1px solid rgba(0, 0, 0, .1);">
+    <div class="flex bg--graa7" style="border-bottom: 1px solid rgba(0, 0, 0, .1);">
       <div class="width-1of3 padding-m">Card (Card-mode)</div>
       <div class="width-1of3 padding-m">
         <a href="#/components/card">Card dokumentation</a>

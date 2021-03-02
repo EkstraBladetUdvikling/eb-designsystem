@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.4.0 built on 22.2.2021 15.39.46 on branch "svelteTemplates" at revision "204a706f1d1a56c83ee6310a7dfe08edeab14f20" */
+/** eb-designsystem.css version 0.4.0 built on 2.3.2021 15.26.18 on branch "svelteTemplates" at revision "8dbcd717286f7eaa609901d62bd173de4248412f" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -327,7 +327,8 @@ custom media queries is the only allowed media queries
   background: rgb(var(--rgb-color--graa7));
   border: 1px solid transparent;
   border-radius: var(--border-radius--small);
-  box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), 0.22);
+  box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), .22);
+
   user-select: none;
 }
 
@@ -565,7 +566,10 @@ a.badge:hover {
 }
 
 .button .icon {
+  color: currentColor;
   font-size: 18px;
+
+  fill: currentColor;
 }
 
 .button :first-child:not(:last-child) {
@@ -612,6 +616,10 @@ a.badge:hover {
 
 .button--big.button--icon {
   min-width: var(--button-height--big);
+}
+
+.button--small.button--icon {
+  min-width: var(--button-height--small);
 }
 
 .button.button--icon .icon {
@@ -967,7 +975,11 @@ a.card-mode:focus {
 */
 .form-checkbox--icon {
   position: absolute;
+  top: 2px;
+  left: 3px;
   z-index: -1;
+
+  transform: scale(.1);
 }
 
 .form-checkbox--icon ~ .form-label {
@@ -1048,6 +1060,41 @@ a.card-mode:focus {
 
 .horizontal-scroll-item--small {
   height: 84px;
+}
+.icon-svg {
+  fill: currentColor;
+}
+/**
+* Pillnavigation
+*/
+.pillnavigation .button {
+  border-color: var(--color--primary);
+  border-right-width: 0;
+  color: var(--color--primary);
+}
+
+.pillnavigation .button:active,
+.pillnavigation .button:hover,
+.pillnavigation .button:focus,
+.pillnavigation .button[data-selected="true"] {
+  background: var(--color--primary);
+  border-color: var(--color--primary);
+  color: var(--fgcolor--primary);
+}
+
+.pillnavigation .button:first-of-type {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.pillnavigation .button:not(:first-of-type):not(:last-of-type) {
+  border-radius: 0;
+}
+
+.pillnavigation .button:last-of-type {
+  border-top-left-radius: 0;
+  border-right-width: 1px;
+  border-bottom-left-radius: 0;
 }
 .toggle-input,
 .toggle-radio {

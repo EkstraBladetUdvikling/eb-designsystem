@@ -4,7 +4,7 @@
   import PillNavigation, { Pill, PillContent, PillList } from '../../src/_components/pillnavigation';
 </script>
 
-<h1>Pill navigation / Toggle buttons</h1>
+<h1 class="color--eb">Pill navigation / Toggle buttons</h1>
 
 <Prism
   language="js"

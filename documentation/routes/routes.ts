@@ -10,6 +10,7 @@ import HorizontalScroll from '../components/HorizontalScroll.svelte';
 import PillNavigation from '../components/PillNavigation.svelte';
 import Toggler from '../components/Toggler.svelte';
 import Tooltip from '../components/Tooltip.svelte';
+import Animation from '../utilities/Animation/Animation.svelte';
 import DataTheme from '../utilities/DataTheme/DataTheme.svelte';
 
 const routes = [
@@ -25,6 +26,7 @@ const routes = [
   { link: '/components/pillnavigation', title: 'Pill navigation', type: 'component', component: PillNavigation },
   { link: '/components/toggler', title: 'Toggler', type: 'component', component: Toggler },
   { link: '/components/tooltip', title: 'Tooltip', type: 'component', component: Tooltip },
+  { link: '/utilities/animation', title: 'Animation', type: 'utility', component: Animation },
   { link: '/utilities/datatheme', title: 'Data-theme', type: 'utility', component: DataTheme },
 ];
 
