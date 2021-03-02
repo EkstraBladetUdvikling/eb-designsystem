@@ -2,6 +2,7 @@
   export let className: string;
   export let click: (ev: MouseEvent) => void;
   export let disabled: boolean = false;
+  export let selected: boolean = false;
 
   let cssClass = 'button';
 
@@ -28,6 +29,6 @@
   }
 </script>
 
-<button class={cssClass} on:click={click} {disabled}>
+<button class={cssClass} on:click={click} {disabled} data-selected={selected}>
   <slot />
 </button>

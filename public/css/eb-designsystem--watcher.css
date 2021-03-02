@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.4.0 built on 25.2.2021 10.26.08 on branch "svelteTemplates" at revision "9e67dec6fd168199f3a3b0912483d5b9249eb362" */
+/** eb-designsystem--watcher.css version 0.4.0 built on 2.3.2021 10.19.32 on branch "svelteTemplates" at revision "f8ce7d847d20b858f8aa2d869052635121811557" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -1050,6 +1050,38 @@ a.card-mode:focus {
 }
 .icon-svg {
   fill: currentColor;
+}
+/**
+* Pillnavigation
+*/
+.pillnavigation .button {
+  border-color: var(--color--primary);
+  border-right-width: 0;
+  color: var(--color--primary);
+}
+
+.pillnavigation .button:active,
+.pillnavigation .button:hover,
+.pillnavigation .button:focus,
+.pillnavigation .button[data-selected="true"] {
+  background: var(--color--primary);
+  border-color: var(--color--primary);
+  color: var(--fgcolor--primary);
+}
+
+.pillnavigation .button:first-of-type {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.pillnavigation .button:not(:first-of-type):not(:last-of-type) {
+  border-radius: 0;
+}
+
+.pillnavigation .button:last-of-type {
+  border-top-left-radius: 0;
+  border-right-width: 1px;
+  border-bottom-left-radius: 0;
 }
 .toggle-input,
 .toggle-radio {
