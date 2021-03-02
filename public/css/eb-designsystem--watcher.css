@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.4.0 built on 2.3.2021 10.19.32 on branch "svelteTemplates" at revision "f8ce7d847d20b858f8aa2d869052635121811557" */
+/** eb-designsystem--watcher.css version 0.4.0 built on 2.3.2021 15.15.36 on branch "svelteTemplates" at revision "a856fcb24c871a8f2c58778b37e595a4ae22cb0a" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -966,7 +966,11 @@ a.card-mode:focus {
 */
 .form-checkbox--icon {
   position: absolute;
+  top: 2px;
+  left: 3px;
   z-index: -1;
+
+  transform: scale(.1);
 }
 
 .form-checkbox--icon ~ .form-label {

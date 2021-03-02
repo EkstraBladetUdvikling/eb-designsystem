@@ -1,6 +1,12 @@
 <script lang="typescript">
   import { onMount } from 'svelte';
 
+  export let className = undefined;
+
+  let baseClass = `horizontal-scroll-container position-relative`;
+
+  if (className) baseClass = `${className} ${baseClass}`;
+
   /* Horizontial Scroll elements */
   let scrollContainer: HTMLDivElement;
   let scrollItemContainer: HTMLDivElement;
