@@ -1,8 +1,15 @@
 <script lang="ts">
+  import Prism from 'svelte-prism';
+
   import PillNavigation, { Pill, PillContent, PillList } from '../../src/_components/pillnavigation';
 </script>
 
 <h1>Pill navigation / Toggle buttons</h1>
+
+<Prism
+  language="js"
+  source={`import PillNavigation, { Pill, PillContent, PillList } from './src/_components/pillnavigation';`}
+/>
 
 <div class="margin-xl">
   <PillNavigation>
@@ -14,6 +21,20 @@
     <PillContent>Content 2</PillContent>
   </PillNavigation>
 </div>
+
+<Prism
+  language="html"
+  source={`
+<PillNavigation>
+  <PillList>
+    <Pill>Toggle 1</Pill>
+    <Pill>Toggle 2</Pill>
+  </PillList>
+  <PillContent>Content 1</PillContent>
+  <PillContent>Content 2</PillContent>
+</PillNavigation>
+`}
+/>
 
 <div class="margin-xl">
   <PillNavigation>
@@ -66,3 +87,40 @@
     </PillContent>
   </PillNavigation>
 </div>
+
+<Prism
+  language="html"
+  source={`
+<PillNavigation>
+    <PillList>
+      <Pill>Toggle 1</Pill>
+      <Pill>Toggle 2</Pill>
+      <Pill>Toggle 3</Pill>
+    </PillList>
+    <PillContent>
+      <div>
+        <h1>Content 1</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing...
+        </p>
+      </div>
+    </PillContent>
+    <PillContent>
+      <div>
+        <h1>Content 2</h1>
+        <p>
+          Aenean in ipsum varius, facilisis leo nec...
+        </p>
+      </div>
+    </PillContent>
+    <PillContent>
+      <div>
+        <h1>Content 3</h1>
+        <p>
+          Donec mattis arcu metus, et accumsan erat...
+        </p>
+      </div>
+    </PillContent>
+  </PillNavigation>
+`}
+/>

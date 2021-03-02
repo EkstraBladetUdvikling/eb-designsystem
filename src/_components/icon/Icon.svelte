@@ -1,7 +1,7 @@
 <script lang="ts">
   export let className: string;
   export let name: string;
-  export let style: string;
+  export let style: string = 'width: 36px; height: 36px;';
   export let viewBox: string;
   export let type: 'svg' | 'fa' = 'svg';
 

@@ -4,14 +4,17 @@
   let baseClass = `toggle`;
 
   if (className) baseClass = `${className} ${baseClass}`;
+
+  let itsOn = true;
+  function toggle() {
+    itsOn = !itsOn;
+  }
 </script>
 
-<label class={baseClass}>
-  <input type="checkbox" hidden class="toggle-input" />
-  <span class="toggle toggle-on">
+<button class={baseClass} on:click={toggle}>
+  {#if itsOn}
     <slot name="on" />
-  </span>
-  <span class="toggle toggle-off">
+  {:else}
     <slot name="off" />
-  </span>
-</label>
+  {/if}
+</button>
