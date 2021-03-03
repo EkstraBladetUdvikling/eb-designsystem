@@ -1,15 +1,5 @@
 <script>
   import Prism from 'svelte-prism';
-
-  import PillNavigation, { Pill, PillContent, PillList } from '../../../src/_components/pillnavigation';
-
-  let tabs = [
-    {
-      title: 'Tab 1',
-      content:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lobortis porttitor augue sed commodo. Etiam ornare arcu quis turpis pulvinar, ullamcorper ullamcorper nunc ullamcorper. Maecenas porttitor, erat in feugiat faucibus, velit sem luctus leo, nec congue tellus erat sit amet purus.',
-    },
-  ];
 </script>
 
 <div class="grid-width--large">
