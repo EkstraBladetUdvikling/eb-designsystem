@@ -11,33 +11,33 @@ description: Accordions anvendes til at toggle (hide/show) content.
 <div class="flex grid-width--small">
   <div class="accordion card-mode padding-l ff-secondary width-1of1">
     <div class="accordion-tab margin-s--b">
-      <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
+      <div class="accordion-header flex flex-justify--between padding-m">
         <span class="fontweight-normal fontsize-large">Tab 1</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="accordion-body padding-m fontsize-small">
+      <div class="accordion-body padding-l--rl fontsize-small">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
     </div>
     <div class="accordion-tab margin-s--b">
-      <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
+      <div class="accordion-header flex flex-justify--between padding-m">
         <span class="fontweight-normal fontsize-large">Tab 2</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="accordion-body padding-m fontsize-small">
+      <div class="accordion-body padding-l--rl fontsize-small">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
     </div>
       <div class="accordion-tab margin-s--b">
-      <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
+      <div class="accordion-header flex flex-justify--between padding-m">
         <span class="fontweight-normal fontsize-large">Tab 3</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="accordion-body padding-m fontsize-small">
+      <div class="accordion-body padding-l--rl fontsize-small">
         <p>
             voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
         </p>
@@ -48,11 +48,11 @@ description: Accordions anvendes til at toggle (hide/show) content.
 ```html
 <div class="accordion card-mode padding-l ff-secondary width-1of1">
   <div class="accordion-tab margin-s--b">
-    <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
+    <div class="accordion-header flex flex-justify--between padding-m">
       <span class="fontweight-normal fontsize-large">Tab 2</span>
       <i class="fas fa-chevron-down"></i>
     </div>
-    <div class="accordion-body padding-m fontsize-small">
+    <div class="accordion-body padding-l--rl fontsize-small">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -71,33 +71,33 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
 <div class="flex grid-width--small">
   <div data-theme="lightmode" class="accordion card-mode padding-l ff-secondary width-1of1">
     <div class="accordion-tab margin-s--b">
-      <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
+      <div class="accordion-header flex flex-justify--between padding-m">
         <span class="fontweight-normal fontsize-large">Tab 1</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="accordion-body padding-m fontsize-small">
+      <div class="accordion-body padding-l--rl fontsize-small">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
     </div>
     <div class="accordion-tab margin-s--b">
-      <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
+      <div class="accordion-header flex flex-justify--between padding-m">
         <span class="fontweight-normal fontsize-large">Tab 2</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="accordion-body padding-m fontsize-small">
+      <div class="accordion-body padding-l--rl fontsize-small">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
     </div>
       <div class="accordion-tab margin-s--b">
-      <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
+      <div class="accordion-header flex flex-justify--between padding-m">
         <span class="fontweight-normal fontsize-large">Tab 3</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="accordion-body padding-m fontsize-small">
+      <div class="accordion-body padding-l--rl fontsize-small">
         <p>
           voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
         </p>
@@ -109,11 +109,11 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
 ```html
 <div data-theme="lightmode" class="accordion card-mode padding-l ff-secondary width-1of1">
   <div class="accordion-tab margin-s--b">
-    <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
+    <div class="accordion-header flex flex-justify--between padding-m">
       <span class="fontweight-normal fontsize-large">Tab 2</span>
       <i class="fas fa-chevron-down"></i>
     </div>
-    <div class="accordion-body padding-m fontsize-small">
+    <div class="accordion-body padding-l--rl fontsize-small">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -128,33 +128,33 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
 <div class="flex grid-width--small">
   <div data-theme="darkmode" class="accordion card-mode padding-l ff-secondary width-1of1">
     <div class="accordion-tab margin-s--b">
-      <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
+      <div class="accordion-header flex flex-justify--between padding-m">
         <span class="fontweight-normal fontsize-large">Tab 1</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="accordion-body padding-m fontsize-small">
+      <div class="accordion-body padding-l--rl fontsize-small">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
     </div>
     <div class="accordion-tab margin-s--b">
-      <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
+      <div class="accordion-header flex flex-justify--between padding-m">
         <span class="fontweight-normal fontsize-large">Tab 2</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="accordion-body padding-m fontsize-small">
+      <div class="accordion-body padding-l--rl fontsize-small">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
     </div>
     <div class="accordion-tab margin-s--b">
-      <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
+      <div class="accordion-header flex flex-justify--between padding-m">
         <span class="fontweight-normal fontsize-large">Tab 3</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="accordion-body padding-m fontsize-small">
+      <div class="accordion-body padding-l--rl fontsize-small">
         <p>
           voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
         </p>
@@ -166,11 +166,11 @@ Light- eller darkmode tilknyttes via en data-attribute: **data-theme="lightmode"
 ```html
 <div data-theme="darkmode" class="accordion card-mode padding-l ff-secondary width-1of1">
   <div class="accordion-tab margin-s--b">
-    <div class="accordion-header flex flex-justify--between padding-m padding-l--rl">
+    <div class="accordion-header flex flex-justify--between padding-m">
       <span class="fontweight-normal fontsize-large">Tab 2</span>
       <i class="fas fa-chevron-down"></i>
     </div>
-    <div class="accordion-body padding-m fontsize-small">
+    <div class="accordion-body padding-l--rl fontsize-small">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
