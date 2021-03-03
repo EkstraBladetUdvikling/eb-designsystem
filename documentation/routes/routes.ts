@@ -12,6 +12,7 @@ import Toggler from '../components/Toggler.svelte';
 import Tooltip from '../components/Tooltip.svelte';
 import Animation from '../utilities/Animation/Animation.svelte';
 import DataTheme from '../utilities/DataTheme/DataTheme.svelte';
+import Flex from '../utilities/Flex/Flex.svelte';
 
 const routes = [
   { link: '/', title: 'Overblik', component: Home },
@@ -27,7 +28,8 @@ const routes = [
   { link: '/components/toggler', title: 'Toggler', type: 'component', component: Toggler },
   { link: '/components/tooltip', title: 'Tooltip', type: 'component', component: Tooltip },
   { link: '/utilities/animation', title: 'Animation', type: 'utility', component: Animation },
-  { link: '/utilities/datatheme', title: 'Data-theme', type: 'utility', component: DataTheme },
+  { link: '/utilities/datatheme', title: 'Data theme', type: 'utility', component: DataTheme },
+  { link: '/utilities/flex', title: 'Flex', type: 'utility', component: Flex },
 ];
 
 export default routes;
