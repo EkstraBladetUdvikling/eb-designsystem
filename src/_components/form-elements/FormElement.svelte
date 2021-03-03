@@ -5,9 +5,12 @@
 
   import TextInput from './TextInput.svelte';
 
+  export let className = undefined;
+  export let fieldName = undefined;
+  export let group = undefined;
   export let inputtype = 'text';
   export let label = undefined;
-  export let className = undefined;
+  export let value;
 
   let component = TextInput;
   switch (inputtype) {
@@ -22,7 +25,7 @@
 </script>
 
 <div class="form-element margin-l--b">
-  <svelte:component this={component} class={className} {label} {inputtype}>
+  <svelte:component this={component} class={className} {label} {inputtype} {group} {value} name={fieldName}>
     <slot />
   </svelte:component>
 </div>

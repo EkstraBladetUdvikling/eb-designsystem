@@ -1,6 +1,10 @@
 <script lang="ts">
-  export let inputtype = 'checkbox';
+  export let fieldName = undefined;
+  export let group = undefined;
   export let label = undefined;
+  export let inputtype = 'checkbox';
+  export let value;
+
   export let className = undefined;
 
   let baseClass = `form-checkbox form-checkbox--icon`;
@@ -9,7 +13,7 @@
 </script>
 
 <label>
-  <input type={inputtype} class={baseClass} />
+  <input type={inputtype} class={baseClass} name={fieldName} {group} {value} />
   <span class="form-label">
     {label}
     {#if inputtype === 'checkbox'}
