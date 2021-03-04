@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let isLoading = true;
+  export let isLoading = false;
 </script>
 
 {#if isLoading}
