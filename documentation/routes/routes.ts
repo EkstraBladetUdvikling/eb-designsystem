@@ -8,6 +8,7 @@ import FormElement from '../components/FormElement.svelte';
 import Icon from '../components/Icon.svelte';
 import HorizontalScroll from '../components/HorizontalScroll.svelte';
 import PillNavigation from '../components/PillNavigation.svelte';
+import Spinner from '../components/Spinner.svelte';
 import Toggler from '../components/Toggler.svelte';
 import Tooltip from '../components/Tooltip.svelte';
 import Animation from '../utilities/Animation/Animation.svelte';
@@ -25,6 +26,7 @@ const routes = [
   { link: '/components/icon', title: 'Icon', type: 'component', component: Icon },
   { link: '/components/horizontalscroll', title: 'Horizontal scroll', type: 'component', component: HorizontalScroll },
   { link: '/components/pillnavigation', title: 'Pill navigation', type: 'component', component: PillNavigation },
+  { link: '/components/spinner', title: 'Spinner', type: 'component', component: Spinner },
   { link: '/components/toggler', title: 'Toggler', type: 'component', component: Toggler },
   { link: '/components/tooltip', title: 'Tooltip', type: 'component', component: Tooltip },
   { link: '/utilities/animation', title: 'Animation', type: 'utility', component: Animation },
