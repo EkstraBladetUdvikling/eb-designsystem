@@ -25,7 +25,8 @@
     "installsnippets": "node install-snippets",
     "installsnippets:eb": "node install-snippets ../ekstrabladet/ekstrabladet-publication/src/main/.vscode",
     "move_to_eb": "yarn installds:eb",
-    "start:designsystem": "yarn build:watcher && yarn build:preview && yarn build:watch"
+    "start:designsystem": "yarn build:watcher && yarn build:preview && yarn build:watch",
+    "svgs": "node build/svgs.js"
   },
   "dependencies": {
     "@ekstra-bladet/eb-colors": "^2.6.0",
@@ -63,6 +64,7 @@
     "svelte-check": "^1.0.0",
     "svelte-preprocess": "^4.0.0",
     "svelte-prism": "^1.1.3",
+    "svg-sprite": "^1.5.0",
     "tslib": "^2.0.0",
     "typescript": "^3.9.3"
   }
