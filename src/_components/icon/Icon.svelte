@@ -5,13 +5,14 @@
 <script lang="ts">
   export let className: string = undefined;
   export let name: IconTypes;
-  export let style: string = 'width: 36px; height: 36px;';
-  export let viewBox: string;
+  export let viewBox: string = '0 0 50 50';
   export let type: 'svg' | 'fa' = 'svg';
+  export let width: number | string = 36;
+  export let style: string = undefined;
 
-  if (!viewBox) {
-    viewBox = '0 0 50 50';
-  }
+  const defaultStyle = `width: ${width}px; height: ${width}px;`;
+
+  style = style ? `${defaultStyle} ${style}` : defaultStyle;
 </script>
 
 {#if type === 'svg'}
