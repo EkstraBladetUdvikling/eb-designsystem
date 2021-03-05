@@ -2,6 +2,7 @@
   import { createEventDispatcher } from 'svelte';
 
   export let className = undefined;
+  export let isSwitch = false;
 
   let baseClass = `toggle`;
 
@@ -19,10 +20,20 @@
   }
 </script>
 
-<button class={baseClass} on:click={toggle}>
-  {#if itsOn}
+{#if isSwitch}
+  <button data-status={itsOn} class="toggle--switch {baseClass}" on:click={toggle}>
     <slot name="on" />
-  {:else}
+  </button>
+  <slot name="icon" />
+  <button data-status={itsOn} class="toggle--switch {baseClass}" on:click={toggle}>
     <slot name="off" />
-  {/if}
-</button>
+  </button>
+{:else}
+  <button class={baseClass} on:click={toggle}>
+    {#if itsOn}
+      <slot name="on" />
+    {:else}
+      <slot name="off" />
+    {/if}
+  </button>
+{/if}

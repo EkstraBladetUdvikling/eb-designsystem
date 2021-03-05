@@ -1,4 +1,6 @@
 <script lang="ts">
+  type IconTypes = 'lock';
+
   export let className: string;
   export let name: string;
   export let style: string = 'width: 36px; height: 36px;';

@@ -61,3 +61,24 @@
 </Toggler>
 `}
 />
+
+<Toggler
+  isSwitch={true}
+  on:toggle={(event) => {
+    console.log('hello its on?', event.detail);
+  }}
+>
+  <slot slot="on">Crack</slot>
+  <slot slot="off">Cocaine</slot>
+</Toggler>
+
+<Toggler
+  isSwitch={true}
+  on:toggle={(event) => {
+    console.log('hello its on?', event.detail);
+  }}
+>
+  <slot slot="on">Crack</slot>
+
+  <slot slot="off">Cocaine</slot>
+</Toggler>
