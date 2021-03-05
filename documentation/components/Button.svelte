@@ -5,17 +5,35 @@
   import Icon from '../../src/_components/icon';
 
   const language = 'html';
+
+  function buttonClick() {
+    console.log('funck!');
+  }
 </script>
 
 <h1 class="color--eb">Buttons</h1>
 
 <Prism language="js" source={`import Button from './src/_components/button/Button.svelte';`} />
 
-<Button>Base button</Button>
+<Button
+  on:click={() => {
+    console.log('click the button');
+  }}>Base button</Button
+>
 <Prism
   {language}
   source={`
-    <Button>Base button</Button>
+  <Button on:click="{() => {
+    console.log('click the button');
+  }}">Base button</Button>
+  `}
+/>
+
+<Button on:click={buttonClick}>Base button</Button>
+<Prism
+  {language}
+  source={`
+  <Button on:click="{buttonClick}">Base button</Button>
   `}
 />
 
@@ -101,27 +119,27 @@
 <h3>Buttons with Icon</h3>
 <Button className="margin-m">
   <span>button with icon right</span>
-  <Icon className="icon" name="medielogin" style="height:20px;" />
+  <Icon className="icon" name="medielogin" width="20" />
 </Button>
 <Prism
   {language}
   source={`
   <Button className="margin-m">
     <span>button with icon right</span>
-    <Icon className="icon" name="medielogin" style="height:20px;" />
+    <Icon className="icon" name="medielogin" width="20"/>
   </Button>
   `}
 />
 
 <Button className="margin-m">
-  <Icon className="icon" name="angle_left_pro" style="height:20px;" />
+  <Icon className="icon" name="angle-left" width="20" />
   <span>button with icon left</span>
 </Button>
 <Prism
   {language}
   source={`
   <Button className="margin-m">
-    <Icon className="icon" name="angle_left_pro" style="height:20px;" />
+    <Icon className="icon" name="angle-left" width="20"/>
     <span>button with icon right</span>
   </Button>
   `}

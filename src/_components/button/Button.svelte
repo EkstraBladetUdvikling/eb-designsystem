@@ -1,8 +1,6 @@
 <script lang="ts">
   export let className: string;
-  export let click: (ev: MouseEvent) => void;
   export let disabled: boolean = false;
-  export let selected: boolean = false;
 
   let cssClass = 'button';
 
@@ -27,8 +25,33 @@
   if (type) {
     cssClass = `${cssClass} button--${type}`;
   }
+
+  let buttonEl: HTMLButtonElement;
+  /**
+   * For use in group
+   */
+  import { getContext, onMount } from 'svelte';
+  import { BUTTONS } from '../buttongroup/ButtonGroup.svelte';
+
+  let registerTab, selectButton, selectedButton;
+
+  const button = {};
+  const contextButtons: any = getContext(BUTTONS);
+  if (contextButtons) {
+    registerTab = contextButtons.registerTab;
+    selectButton = contextButtons.selectButton;
+    selectedButton = contextButtons.selectedButton;
+
+    registerTab(button);
+  }
+
+  onMount(() => {
+    if (typeof selectButton !== 'undefined') {
+      buttonEl.addEventListener('click', () => selectButton(button));
+    }
+  });
 </script>
 
-<button class={cssClass} on:click={click} {disabled} data-selected={selected}>
+<button bind:this={buttonEl} class={cssClass} on:click {disabled} data-selected={$selectedButton === button}>
   <slot />
 </button>

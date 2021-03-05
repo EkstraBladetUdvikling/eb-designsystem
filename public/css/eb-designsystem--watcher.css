@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.4.0 built on 5.3.2021 12.25.44 on branch "togglers" at revision "5abb45909c7ce42901432fccb2fe888b8c191364" */
+/** eb-designsystem--watcher.css version 0.4.0 built on 5.3.2021 12.52.06 on branch "togglers" at revision "27a97456c83ecd19fa65651bc9564c37870c7736" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -615,6 +615,42 @@ a.badge:hover {
 
 .button.button--icon .icon {
   margin: 0;
+}
+/**
+* Pillnavigation
+*/
+.buttongroup {
+  display: flex;
+}
+
+.buttongroup .button {
+  border-color: var(--color--primary);
+  border-right-width: 0;
+  color: var(--color--primary);
+}
+
+.buttongroup .button:active,
+.buttongroup .button:hover,
+.buttongroup .button:focus,
+.buttongroup .button[data-selected="true"] {
+  background: var(--color--primary);
+  border-color: var(--color--primary);
+  color: var(--fgcolor--primary);
+}
+
+.buttongroup .button:first-of-type {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.buttongroup .button:not(:first-of-type):not(:last-of-type) {
+  border-radius: 0;
+}
+
+.buttongroup .button:last-of-type {
+  border-top-left-radius: 0;
+  border-right-width: 1px;
+  border-bottom-left-radius: 0;
 }
 :root {
   --card-border-color: var(--color--graa7);
