@@ -8,13 +8,17 @@
   cursor: pointer;
 }
 
-.toggle {
+.toggle,
+.toggle:active,
+.toggle:focus {
   align-content: center;
+  background: none;
   border: 0;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
   padding: 0;
+  -webkit-appearance: none;
 }
 
 .toggle--icon {

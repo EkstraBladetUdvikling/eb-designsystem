@@ -68,16 +68,48 @@
     console.log('hello its on?', event.detail);
   }}
 >
-  <slot slot="on">Crack</slot>
-  <slot slot="off">Cocaine</slot>
+  <slot slot="on">on</slot>
+  <slot slot="off">off</slot>
 </Toggler>
+
+<Prism
+  language="html"
+  source={`
+<Toggler
+  isSwitch="{true}"
+  on:toggle="{(event) => {
+    console.log('hello its on?', event.detail);
+  }}"
+>
+  <slot slot="on">on</slot>
+  <slot slot="off">off</slot>
+</Toggler>
+`}
+/>
 
 <Toggler
   isSwitch={true}
+  defaultState={false}
   on:toggle={(event) => {
     console.log('hello its on?', event.detail);
   }}
 >
-  <slot slot="on">Crack</slot>
-  <slot slot="off">Cocaine</slot>
+  <slot slot="on">on</slot>
+  <slot slot="off">off</slot>
 </Toggler>
+
+<Prism
+  language="html"
+  source={`
+<Toggler
+  isSwitch="{true}"
+  defaultState="{false}"
+  on:toggle="{(event) => {
+    console.log('hello its on?', event.detail);
+  }}"
+>
+  <slot slot="on">on</slot>
+  <slot slot="off">off</slot>
+</Toggler>
+`}
+/>
