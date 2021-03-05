@@ -1,48 +1,23 @@
 <script lang="ts" context="module">
-  export type IconTypes =
-    | 'angledown'
-    | 'angleleft'
-    | 'angleright'
-    | 'angleup'
-    | 'article'
-    | 'check'
-    | 'creditcard'
-    | 'ebplusicon'
-    | 'ebplussort'
-    | 'envelope'
-    | 'gallery'
-    | 'headphones'
-    | 'headset'
-    | 'lock'
-    | 'medielogin'
-    | 'menubars'
-    | 'mitebregular'
-    | 'mitebsolid'
-    | 'mobilphone'
-    | 'newspaper'
-    | 'playcircle'
-    | 'tagregular'
-    | 'tagsolid'
-    | 'tagsregular'
-    | 'tagssolid'
-    | 'video';
+  import type { IconTypes } from 'Icon.svelte';
 </script>
 
 <script lang="ts">
   export let className: string = undefined;
   export let name: IconTypes;
-  export let style: string = 'width: 36px; height: 36px;';
-  export let viewBox: string;
+  export let viewBox: string = '0 0 50 50';
   export let type: 'svg' | 'fa' = 'svg';
+  export let width: number | string = 36;
+  export let style: string = undefined;
 
-  if (!viewBox) {
-    viewBox = '0 0 50 50';
-  }
+  const defaultStyle = `width: ${width}px; height: ${width}px;`;
+
+  style = style ? `${defaultStyle} ${style}` : defaultStyle;
 </script>
 
 {#if type === 'svg'}
   <svg {viewBox} {style} class="icon-svg {className}">
-    <use href="eb.svg#{name}" />
+    <use href="/svg/symbol/icons.svg#{name}" />
   </svg>
 {:else}
   <i class={className} aria-hidden="true" />

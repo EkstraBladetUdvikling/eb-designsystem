@@ -1,33 +1,35 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
 
+  import type { IconTypes } from 'Icon.svelte';
   import Icon from '../../src/_components/icon/Icon.svelte';
+
   const icons: IconTypes[] = [
-    'angledown',
-    'angleleft',
-    'angleright',
-    'angleup',
+    'angle-down',
+    'angle-left',
+    'angle-right',
+    'angle-up',
     'article',
     'check',
     'creditcard',
-    'ebplusicon',
-    'ebplussort',
+    'ebplus_icon',
+    'ebplus_sort',
     'envelope',
     'gallery',
     'headphones',
     'headset',
     'lock',
     'medielogin',
-    'menubars',
-    'mitebregular',
-    'mitebsolid',
-    'mobilphone',
+    'menu-bars',
+    'miteb-regular',
+    'miteb-solid',
     'newspaper',
-    'playcircle',
-    'tagregular',
-    'tagsolid',
-    'tagsregular',
-    'tagssolid',
+    'play',
+    'smartphone',
+    'tag-regular',
+    'tag-solid',
+    'tags-regular',
+    'tags-solid',
     'video',
   ];
 </script>
