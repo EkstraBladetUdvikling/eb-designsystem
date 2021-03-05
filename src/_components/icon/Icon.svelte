@@ -1,8 +1,36 @@
-<script lang="ts">
-  type IconTypes = 'lock';
+<script lang="ts" context="module">
+  export type IconTypes =
+    | 'angledown'
+    | 'angleleft'
+    | 'angleright'
+    | 'angleup'
+    | 'article'
+    | 'check'
+    | 'creditcard'
+    | 'ebplusicon'
+    | 'ebplussort'
+    | 'envelope'
+    | 'gallery'
+    | 'headphones'
+    | 'headset'
+    | 'lock'
+    | 'medielogin'
+    | 'menubars'
+    | 'mitebregular'
+    | 'mitebsolid'
+    | 'mobilphone'
+    | 'newspaper'
+    | 'playcircle'
+    | 'tagregular'
+    | 'tagsolid'
+    | 'tagsregular'
+    | 'tagssolid'
+    | 'video';
+</script>
 
-  export let className: string;
-  export let name: string;
+<script lang="ts">
+  export let className: string = undefined;
+  export let name: IconTypes;
   export let style: string = 'width: 36px; height: 36px;';
   export let viewBox: string;
   export let type: 'svg' | 'fa' = 'svg';
