@@ -1,31 +1,5 @@
 <script lang="ts" context="module">
-  export type IconTypes =
-    | 'angledown'
-    | 'angleleft'
-    | 'angleright'
-    | 'angleup'
-    | 'article'
-    | 'check'
-    | 'creditcard'
-    | 'ebplusicon'
-    | 'ebplussort'
-    | 'envelope'
-    | 'gallery'
-    | 'headphones'
-    | 'headset'
-    | 'lock'
-    | 'medielogin'
-    | 'menubars'
-    | 'mitebregular'
-    | 'mitebsolid'
-    | 'mobilphone'
-    | 'newspaper'
-    | 'playcircle'
-    | 'tagregular'
-    | 'tagsolid'
-    | 'tagsregular'
-    | 'tagssolid'
-    | 'video';
+  import type { IconTypes } from 'Icon.svelte';
 </script>
 
 <script lang="ts">
@@ -42,7 +16,7 @@
 
 {#if type === 'svg'}
   <svg {viewBox} {style} class="icon-svg {className}">
-    <use href="eb.svg#{name}" />
+    <use href="/svg/symbol/icons.svg#{name}" />
   </svg>
 {:else}
   <i class={className} aria-hidden="true" />
