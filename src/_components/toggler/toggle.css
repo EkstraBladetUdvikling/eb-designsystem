@@ -10,9 +10,11 @@
 
 .toggle {
   align-content: center;
+  border: 0;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
+  padding: 0;
 }
 
 .toggle--icon {

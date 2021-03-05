@@ -39,10 +39,10 @@
   }}
 >
   <slot slot="on">
-    <Icon name="angle_down_pro" style="width: 24px; height: 24px;" />
+    <Icon name="angle-down" style="width: 24px; height: 24px;" />
   </slot>
   <slot slot="off">
-    <Icon name="angle_up_pro" style="width: 24px; height: 24px;" />
+    <Icon name="angle-up" style="width: 24px; height: 24px;" />
   </slot>
 </Toggler>
 
@@ -79,6 +79,5 @@
   }}
 >
   <slot slot="on">Crack</slot>
-
   <slot slot="off">Cocaine</slot>
 </Toggler>

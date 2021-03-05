@@ -1,6 +1,8 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
 
+  import Icon from '../icon/Icon.svelte';
+
   export let className = undefined;
   export let isSwitch = false;
 
@@ -24,7 +26,7 @@
   <button data-status={itsOn} class="toggle--switch {baseClass}" on:click={toggle}>
     <slot name="on" />
   </button>
-  <slot name="icon" />
+  <Icon name="toggle-{itsOn ? 'on' : 'off'}" width="20" />
   <button data-status={itsOn} class="toggle--switch {baseClass}" on:click={toggle}>
     <slot name="off" />
   </button>
