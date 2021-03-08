@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.3.2 built on 8.3.2021 10.53.37 on branch "helper-border" at revision "af6477c37d68ef03c740ba9a16e493050ae544a1" */
+/** eb-designsystem--watcher.css version 0.3.2 built on 8.3.2021 13.22.10 on branch "helper-border" at revision "eff1caaf03bef660f619bca757aa9896dc7bdbb7" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -1439,7 +1439,7 @@ a.card-mode:focus {
 /* Variables */
 :root {
   --border-radius-small: 5px;
-  --border-radius-medium: 10px;
+  --border-radius-medium: 10px; /* default */
   --border-radius-large: 15px;
 }
 
@@ -1447,7 +1447,7 @@ a.card-mode:focus {
 .border-radius-s {
   border-radius: var(--border-radius-small);
 }
-.border-radius-m {
+.border-radius {
   border-radius: var(--border-radius-medium);
 }
 .border-radius-l {
@@ -1459,7 +1459,7 @@ a.card-mode:focus {
   border-top-left-radius: var(--border-radius-small);
   border-top-right-radius: var(--border-radius-small);
 }
-.border-radius-m--t {
+.border-radius--t {
   border-top-left-radius: var(--border-radius-medium);
   border-top-right-radius: var(--border-radius-medium);
 }
@@ -1473,7 +1473,7 @@ a.card-mode:focus {
   border-bottom-left-radius: var(--border-radius-small);
   border-bottom-right-radius: var(--border-radius-small);
 }
-.border-radius-m--b {
+.border-radius--b {
   border-bottom-left-radius: var(--border-radius-medium);
   border-bottom-right-radius: var(--border-radius-medium);
 }

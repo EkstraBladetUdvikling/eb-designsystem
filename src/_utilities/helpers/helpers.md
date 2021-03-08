@@ -87,20 +87,20 @@ Vi har også to samle klasser for *top-bottom* og *right-left*.
 Alle border-radius
 ```html
 <div class="border-radius-s"></div>
-<div class="border-radius-m"></div>
+<div class="border-radius"></div>
 <div class="border-radius-l"></div>
 ```
 
 Top border-radius
 ```html
 <div class="border-radius-s--t"></div>
-<div class="border-radius-m--t"></div>
+<div class="border-radius--t"></div>
 <div class="border-radius-l--t"></div>
 ```
 
 Bottom border-radius
 ```html
 <div class="border-radius-s--b"></div>
-<div class="border-radius-m--b"></div>
+<div class="border-radius--b"></div>
 <div class="border-radius-l--b"></div>
 ```
