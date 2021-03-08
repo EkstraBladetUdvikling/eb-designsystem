@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.3.1 built on 22.2.2021 12.00.38 on branch "small-buttons" at revision "5265b593cd333422e7ae4da9d968ca7203ac9ea7" */
+/** eb-designsystem--watcher.css version 0.3.2 built on 8.3.2021 10.53.37 on branch "helper-border" at revision "af6477c37d68ef03c740ba9a16e493050ae544a1" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -1435,6 +1435,51 @@ a.card-mode:focus {
 
 .grid-width--xlarge {
   width: var(--grid-xlarge);
+}
+/* Variables */
+:root {
+  --border-radius-small: 5px;
+  --border-radius-medium: 10px;
+  --border-radius-large: 15px;
+}
+
+/* All border-radius */
+.border-radius-s {
+  border-radius: var(--border-radius-small);
+}
+.border-radius-m {
+  border-radius: var(--border-radius-medium);
+}
+.border-radius-l {
+  border-radius: var(--border-radius-large);
+}
+
+/* Top border-radius */
+.border-radius-s--t {
+  border-top-left-radius: var(--border-radius-small);
+  border-top-right-radius: var(--border-radius-small);
+}
+.border-radius-m--t {
+  border-top-left-radius: var(--border-radius-medium);
+  border-top-right-radius: var(--border-radius-medium);
+}
+.border-radius-l--t {
+  border-top-left-radius: var(--border-radius-large);
+  border-top-right-radius: var(--border-radius-large);
+}
+
+/* Bottom border-radius */
+.border-radius-s--b {
+  border-bottom-left-radius: var(--border-radius-small);
+  border-bottom-right-radius: var(--border-radius-small);
+}
+.border-radius-m--b {
+  border-bottom-left-radius: var(--border-radius-medium);
+  border-bottom-right-radius: var(--border-radius-medium);
+}
+.border-radius-l--b {
+  border-bottom-left-radius: var(--border-radius-large);
+  border-bottom-right-radius: var(--border-radius-large);
 }
 .hidden {
   display: none;
