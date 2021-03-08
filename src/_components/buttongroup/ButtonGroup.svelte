@@ -6,6 +6,8 @@
   import { setContext, onDestroy } from 'svelte';
   import { writable } from 'svelte/store';
 
+  import { Background } from '@ekstra-bladet/eb-colors/dist/eb-colors';
+
   const buttons = [];
   const panels = [];
   const selectedButton = writable(null);
@@ -48,8 +50,45 @@
   let baseClass = `buttongroup`;
 
   if (className) baseClass = `${className} ${baseClass}`;
+
+  type TType = 'accept' | 'cancel' | 'primary' | 'secondary';
+  export let type: TType;
+
+  if (type) {
+    baseClass = `${baseClass} buttongroup--${type}`;
+  }
+
+  export let color;
+
+  if (color) {
+    baseClass = `${baseClass} buttongroup--special`;
+  }
+  console.log('Background', Background[color]);
+  const { backgroundColor: colorBackground, color: colorForeground } = Background[color]
+    ? Background[color]
+    : Background['Breaking'];
 </script>
 
-<div class={baseClass}>
+{#if color}
+  <style>
+    .buttongroup--special .button {
+          background: var(--color--white);
+      border-color: var(--groupcolor-main);
+      border-right-width: 0;
+      color: var(--groupcolor-main);
+        }
+
+        .buttongroup--special .button:active,
+        .buttongroup--special .button:hover,
+        .buttongroup--special .button:focus,
+        .buttongroup--special .button[data-selected="true"] {
+          background: var(--groupcolor-main);
+      border-color: var(--groupcolor-main);
+      color: var(--groupcolor-main-foreground);
+        }
+  </style>
+{/if}
+
+<div class={baseClass} style="--groupcolor-main:{colorBackground};--groupcolor-foreground:{colorForeground};">
   <slot />
 </div>

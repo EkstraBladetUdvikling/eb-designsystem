@@ -52,8 +52,8 @@
   <Button className="margin-m" extension="icon">
     <span style="font-size: 30px">&times;</span>
   </Button>
-  <Button className="margin-m" extension="big">Button big</Button>
-  <Button className="margin-m" extension="small">Button small</Button>
+  <Button className="margin-m" size="big">Button big</Button>
+  <Button className="margin-m" size="small">Button small</Button>
 </div>
 <Prism
   {language}
@@ -63,23 +63,24 @@
   <Button className="margin-m" extension="icon">
     <span style="font-size: 30px">&times;</span>
   </Button>
-  <Button className="margin-m" extension="big">Button big</Button>
+  <Button className="margin-m" size="big">Button big</Button>
+  <Button className="margin-m" size="small">Button small</Button>
   `}
 />
 
-<h3>extension attribute combinations</h3>
+<h3>Size attribute</h3>
 <p><b>big</b> and <b>small</b> can be combined with the other three extensions</p>
 <div class="flex">
-  <Button className="margin-m" extension={['big', 'solid']}>Button big solid</Button>
-  <Button className="margin-m" extension={['big', 'link']}>Button big link</Button>
-  <Button className="margin-m" extension={['big', 'icon']}>
+  <Button className="margin-m" size="big" extension="solid">Button big solid</Button>
+  <Button className="margin-m" size="big" extension="link">Button big link</Button>
+  <Button className="margin-m" size="big" extension="icon">
     <span style="font-size: 30px">&times;</span>
   </Button>
 </div>
 <div class="flex">
-  <Button className="margin-m" extension={['small', 'solid']}>Button small solid</Button>
-  <Button className="margin-m" extension={['small', 'link']}>Button small link</Button>
-  <Button className="margin-m" extension={['small', 'icon']}>
+  <Button className="margin-m" size="small" extension="solid">Button small solid</Button>
+  <Button className="margin-m" size="small" extension="link">Button small link</Button>
+  <Button className="margin-m" size="small" extension="icon">
     <span style="font-size: 30px">&times;</span>
   </Button>
 </div>
@@ -87,12 +88,12 @@
 <Prism
   {language}
   source={`
-  <Button className="margin-m" extension="big">Button big</Button>
-  <Button className="margin-m" extension="{['big', 'solid']}">Button big solid</Button>
-  <Button className="margin-m" extension="{['big', 'link']}">Button big link</Button>
-  <Button className="margin-m" extension={['small', 'solid']}>Button small solid</Button>
-  <Button className="margin-m" extension={['small', 'link']}>Button small link</Button>
-  <Button className="margin-m" extension={['small', 'icon']}>
+  <Button className="margin-m" size="big">Button big</Button>
+  <Button className="margin-m" size="big" extension="solid">Button big solid</Button>
+  <Button className="margin-m" size="big" extension="link">Button big link</Button>
+  <Button className="margin-m" size="small" extension="solid">Button small solid</Button>
+  <Button className="margin-m" size="small" extension="link">Button small link</Button>
+  <Button className="margin-m" size="small" extension="icon">
     <span style="font-size: 30px">&times;</span>
   </Button>
   `}
@@ -145,31 +146,34 @@
   `}
 />
 
-<Button className="margin-m" extension="icon">
-  <span style="font-size: 30px">&times;</span>
-</Button>
-<Button className="margin-m" extension={['icon', 'solid', 'small']}>
-  <span style="font-size: 30px">&times;</span>
-</Button>
-<Button className="margin-m" extension={['icon', 'solid']}>
-  <span style="font-size: 30px">&times;</span>
-</Button>
-<Button className="margin-m" extension={['icon', 'solid', 'big']}>
-  <span style="font-size: 40px">&times;</span>
-</Button>
+<div class="flex">
+  <Button className="margin-m" extension="icon">
+    <span style="font-size: 30px">&times;</span>
+  </Button>
+  <Button className="margin-m" size="small" extension="icon solid">
+    <span style="font-size: 30px">&times;</span>
+  </Button>
+  <Button className="margin-m" extension="icon solid">
+    <span style="font-size: 30px">&times;</span>
+  </Button>
+  <Button className="margin-m" size="big" extension="icon solid">
+    <span style="font-size: 40px">&times;</span>
+  </Button>
+</div>
+
 <Prism
   {language}
   source={`
   <Button className="margin-m" extension="icon">
     <span style="font-size: 30px">&times;</span>
   </Button>
-  <Button className="margin-m" extension="{['icon', 'solid', 'small']}">
+  <Button className="margin-m" size="small" extension="icon solid">
     <span style="font-size: 30px">&times;</span>
   </Button>
-  <Button className="margin-m" extension="{['icon', 'solid']}">
+  <Button className="margin-m" extension="icon solid">
     <span style="font-size: 30px">&times;</span>
   </Button>
-  <Button className="margin-m" extension="{['icon', 'solid', 'big']}">
+  <Button className="margin-m" size="big" extension="icon solid">
     <span style="font-size: 40px">&times;</span>
   </Button>
   `}

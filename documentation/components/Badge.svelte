@@ -1,4 +1,6 @@
 <script>
+  import { BluedarkCSSClass, GreenCSSClass, GreendarkCSSClass } from '@ekstra-bladet/eb-colors';
+
   import Prism from 'svelte-prism';
 
   import Badge from '../../src/_components/badge';
@@ -46,18 +48,18 @@
 
 <p>Som links / aktive tags:</p>
 <div class="margin-l--tb">
-  <Badge href="#" className="margin-s bg--bluedark">Bandekriminialitet</Badge>
-  <Badge href="#" className="margin-s bg--green">Sport</Badge>
-  <Badge href="#" className="margin-s bg--greendark">Nicklas Bendtner</Badge>
+  <Badge href="#" className="margin-s {BluedarkCSSClass}">Bandekriminialitet</Badge>
+  <Badge href="#" className="margin-s {GreenCSSClass}">Sport</Badge>
+  <Badge href="#" className="margin-s {GreendarkCSSClass}">Nicklas Bendtner</Badge>
 </div>
 
 <Prism
   {language}
   source={`
   <div class="margin-l--tb">
-    <Badge href="#" className="margin-s bg--bluedark">Bandekriminialitet</Badge>
-    <Badge href="#" className="margin-s bg--green">Sport</Badge>
-    <Badge href="#" className="margin-s bg--greendark">Nicklas Bendtner</Badge>
+    <Badge href="#" className="margin-s {BluedarkCSSClass}">Bandekriminialitet</Badge>
+    <Badge href="#" className="margin-s {GreenCSSClass}">Sport</Badge>
+    <Badge href="#" className="margin-s {GreendarkCSSClass}">Nicklas Bendtner</Badge>
   </div>
   `}
 />
@@ -67,7 +69,7 @@
 <div class="margin-l--tb">
   <Badge className="text-transform--uppercase"><small>Small text uppercase</small></Badge>
   <Badge className="bg--native">Native</Badge>
-  <Badge className="badge--small bg--greendark fontsize-xsmall">Greendark xsmall</Badge>
+  <Badge className="badge--small fontsize-xsmall {GreendarkCSSClass}">Greendark xsmall</Badge>
   <Badge>Badge with icon <i class="fa fal fa-trash" /></Badge>
 </div>
 
@@ -77,7 +79,7 @@
   <div class="margin-l--tb">
     <Badge className="text-transform--uppercase"><small>Small text uppercase</small></Badge>
     <Badge className="bg--native">Native</Badge>
-    <Badge className="badge--small bg--greendark fontsize-xsmall">Greendark xsmall</Badge>
+    <Badge className="badge--small {GreendarkCSSClass} fontsize-xsmall">Greendark xsmall</Badge>
     <Badge>Badge with icon <i class="fa fal fa-trash" /></Badge>
   </div>
   `}

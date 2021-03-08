@@ -6,18 +6,19 @@
 }
 
 .buttongroup .button {
-  border-color: var(--color--primary);
+  background: var(--color--white);
+  border-color: var(--color--default);
   border-right-width: 0;
-  color: var(--color--primary);
+  color: var(--color--default);
 }
 
 .buttongroup .button:active,
 .buttongroup .button:hover,
 .buttongroup .button:focus,
 .buttongroup .button[data-selected="true"] {
-  background: var(--color--primary);
-  border-color: var(--color--primary);
-  color: var(--fgcolor--primary);
+  background: var(--color--default);
+  border-color: var(--color--default);
+  color: var(--fgcolor--default);
 }
 
 .buttongroup .button:first-of-type {
@@ -33,4 +34,68 @@
   border-top-left-radius: 0;
   border-right-width: 1px;
   border-bottom-left-radius: 0;
+}
+
+.buttongroup--primary .button {
+  background: var(--color--white);
+  border-color: var(--color--primary);
+  border-right-width: 0;
+  color: var(--color--primary);
+}
+
+.buttongroup--primary .button:active,
+.buttongroup--primary .button:hover,
+.buttongroup--primary .button:focus,
+.buttongroup--primary .button[data-selected="true"] {
+  background: var(--color--primary);
+  border-color: var(--color--primary);
+  color: var(--fgcolor--primary);
+}
+
+.buttongroup--secondary .button {
+  background: var(--color--white);
+  border-color: var(--color--secondary);
+  border-right-width: 0;
+  color: var(--color--secondary);
+}
+
+.buttongroup--secondary .button:active,
+.buttongroup--secondary .button:hover,
+.buttongroup--secondary .button:focus,
+.buttongroup--secondary .button[data-selected="true"] {
+  background: var(--color--secondary);
+  border-color: var(--color--secondary);
+  color: var(--fgcolor--secondary);
+}
+
+.buttongroup--cancel .button {
+  background: var(--color--white);
+  border-color: var(--color--cancel);
+  border-right-width: 0;
+  color: var(--color--cancel);
+}
+
+.buttongroup--cancel .button:active,
+.buttongroup--cancel .button:hover,
+.buttongroup--cancel .button:focus,
+.buttongroup--cancel .button[data-selected="true"] {
+  background: var(--color--cancel);
+  border-color: var(--color--cancel);
+  color: var(--fgcolor--cancel);
+}
+
+.buttongroup--accept .button {
+  background: var(--color--white);
+  border-color: var(--color--accept);
+  border-right-width: 0;
+  color: var(--color--accept);
+}
+
+.buttongroup--accept .button:active,
+.buttongroup--accept .button:hover,
+.buttongroup--accept .button:focus,
+.buttongroup--accept .button[data-selected="true"] {
+  background: var(--color--accept);
+  border-color: var(--color--accept);
+  color: var(--fgcolor--accept);
 }

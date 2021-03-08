@@ -8,15 +8,21 @@
     cssClass = `${cssClass} ${className}`;
   }
 
-  type TExtension = 'big' | 'icon' | 'link' | 'small' | 'solid';
-  export let extension: TExtension | TExtension[];
+  type TExtension = 'icon' | 'link' | 'solid' | 'icon link' | 'icon solid';
+  type TSize = 'big' | 'small';
+  export let extension: TExtension;
+  export let size: TSize;
 
   if (extension) {
-    if (typeof extension === 'string') {
-      cssClass = `${cssClass} button--${extension}`;
-    } else if (Array.isArray(extension)) {
-      cssClass = `${cssClass} button--${extension.join(' button--')}`;
-    }
+    let extSplit = extension.split(' ');
+    console.log(extSplit);
+    extSplit.forEach((extClass) => {
+      cssClass = `${cssClass} button--${extClass}`;
+    });
+  }
+
+  if (size) {
+    cssClass = `${cssClass} button--${size}`;
   }
 
   type TType = 'accept' | 'cancel' | 'primary' | 'secondary';
