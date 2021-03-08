@@ -3,6 +3,7 @@ import Accordion from '../components/Accordion.svelte';
 import ArticleCard from '../components/ArticleCard.svelte';
 import Badge from '../components/Badge.svelte';
 import Button from '../components/Button.svelte';
+import ButtonGroup from '../components/ButtonGroup.svelte';
 import Card from '../components/Card.svelte';
 import FormElement from '../components/FormElement.svelte';
 import Icon from '../components/Icon.svelte';
@@ -21,6 +22,7 @@ const routes = [
   { link: '/components/articlecard', title: 'Article card', type: 'component', component: ArticleCard },
   { link: '/components/badge', title: 'Badge', type: 'component', component: Badge },
   { link: '/components/button', title: 'Button', type: 'component', component: Button },
+  { link: '/components/buttongroup', title: 'Button group', type: 'component', component: ButtonGroup },
   { link: '/components/card', title: 'Card', type: 'component', component: Card },
   { link: '/components/form-elements', title: 'Form elements', type: 'component', component: FormElement },
   { link: '/components/icon', title: 'Icon', type: 'component', component: Icon },

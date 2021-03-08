@@ -16,7 +16,7 @@
 </script>
 
 {#if type === 'svg'}
-  <svg {viewBox} {style} class="icon-svg {className}">
+  <svg {viewBox} {style} class="icon-svg {className}" on:click>
     <use href="/svg/symbol/icons.svg#{name}" />
   </svg>
 {:else}

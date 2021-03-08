@@ -1,7 +1,10 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
 
+  import Icon from '../icon/Icon.svelte';
+
   export let className = undefined;
+  export let defaultState = true;
   export let isSwitch = false;
 
   let baseClass = `toggle`;
@@ -11,25 +14,30 @@
   /**
    * Handle user click on toggle element
    */
-  const dispatch = createEventDispatcher();
-  let itsOn = true;
-  function toggle() {
-    itsOn = !itsOn;
 
+  let itsOn = defaultState;
+  let name: 'toggle-on' | 'toggle-off' = itsOn ? 'toggle-on' : 'toggle-off';
+  const dispatch = createEventDispatcher();
+  function toggle(status?: boolean) {
+    itsOn = status ?? !itsOn;
+
+    name = itsOn ? 'toggle-on' : 'toggle-off';
     dispatch('toggle', itsOn);
   }
 </script>
 
 {#if isSwitch}
-  <button data-status={itsOn} class="toggle--switch {baseClass}" on:click={toggle}>
-    <slot name="on" />
-  </button>
-  <slot name="icon" />
-  <button data-status={itsOn} class="toggle--switch {baseClass}" on:click={toggle}>
-    <slot name="off" />
-  </button>
+  <div class="flex flex-align--center">
+    <button data-status={itsOn} class="toggle--switch {baseClass}" on:click={() => toggle(true)}>
+      <slot name="on" />
+    </button>
+    <Icon className="margin-s--rl" bind:name width="20" on:click={() => toggle()} style="cursor: pointer;" />
+    <button data-status={itsOn} class="toggle--switch {baseClass}" on:click={() => toggle(false)}>
+      <slot name="off" />
+    </button>
+  </div>
 {:else}
-  <button class={baseClass} on:click={toggle}>
+  <button class={baseClass} on:click={() => toggle()}>
     {#if itsOn}
       <slot name="on" />
     {:else}
