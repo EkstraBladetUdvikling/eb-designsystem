@@ -150,6 +150,11 @@
   margin-left: var(--distance-xxlarge);
 }
 
+.margin-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .margin-l--auto {
   margin-left: auto;
 }
