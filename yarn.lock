@@ -420,6 +420,11 @@ colorette@^1.2.1:
   resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.2.1.tgz#4d0b921325c14faf92633086a536db6e89564b1b"
   integrity sha512-puCDz0CzydiSYOrnXpz/PKd69zRrribezjtE9yd4zvytoRc8+RY/KJPvtPFKZS3E3wP6neGyMe0vOTlHO5L3Pw==
 
+colorette@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.2.2.tgz#cbcc79d5e99caea2dbf10eb3a26fd8b3e6acfa94"
+  integrity sha512-MKGMzyfeuutC/ZJ1cba9NqcNpfeqMUcYmyF1ZFY6/Cn7CNSAKx6a+s48sqLqyAiZuaP2TcqMhoo+dlwFnVxT9w==
+
 component-emitter@^1.2.1:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.3.0.tgz#16e4070fba8ae29b679f2215853ee181ab2eabc0"
@@ -1402,10 +1407,10 @@ nan@^2.12.1:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.2.tgz#f5376400695168f4cc694ac9393d0c9585eeea19"
   integrity sha512-M2ufzIiINKCuDfBSAUr1vWQ+vuVcA9kqx8JJUsbQi6yf1uGRyb7HfpdfUr5qLXf3B/t8dPvcjhKMmlfnP47EzQ==
 
-nanoid@^3.1.18:
-  version "3.1.19"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.19.tgz#baf8331efb722320f7ea4ef367f056e8d965172d"
-  integrity sha512-giCapaolEGFzITf00P2rSIjWoY3aWS3bb7AzjnfFJH4EOaAPLtyUrr3C5nQ//x4v1wTcU1JgtBpOKPOqqHrakg==
+nanoid@^3.1.20:
+  version "3.1.20"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.20.tgz#badc263c6b1dcf14b71efaa85f6ab4c1d6cfc788"
+  integrity sha512-a1cQNyczgKbLX9jwbS/+d7W8fX/RfgYR7lVWwWOGIPNgK2m0MWvrGF6/m4kk6U3QcFMnZf3RIhL0v2Jgh/0Uxw==
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -1582,10 +1587,10 @@ postcss-attribute-case-insensitive@^4.0.1:
     postcss "^7.0.2"
     postcss-selector-parser "^6.0.2"
 
-postcss-cli@^8.3.0:
-  version "8.3.0"
-  resolved "https://registry.yarnpkg.com/postcss-cli/-/postcss-cli-8.3.0.tgz#fa06c96cbd0620768c788cae74ba462622a9013c"
-  integrity sha512-GqWohD9VmH+LCe+xsv6VCdcgNylNBmsrbxJlyXUGteGGdcmazj2YxSiJMUmQpg8pE6LRox9idtsTB7JZq5a+rw==
+postcss-cli@^8.3.1:
+  version "8.3.1"
+  resolved "https://registry.yarnpkg.com/postcss-cli/-/postcss-cli-8.3.1.tgz#865dad08300ac59ae9cecb7066780aa81c767a77"
+  integrity sha512-leHXsQRq89S3JC9zw/tKyiVV2jAhnfQe0J8VI4eQQbUjwIe0XxVqLrR+7UsahF1s9wi4GlqP6SJ8ydf44cgF2Q==
   dependencies:
     chalk "^4.0.0"
     chokidar "^3.3.0"
@@ -1649,12 +1654,16 @@ postcss-custom-media@^7.0.8:
   dependencies:
     postcss "^7.0.14"
 
-postcss-custom-properties@^10.0.0:
-  version "10.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-custom-properties/-/postcss-custom-properties-10.0.0.tgz#5cb31afc530f58ad241f1e836dd5f5f7065334df"
-  integrity sha512-55BPj5FudpCiPZzBaO+MOeqmwMDa+nV9/0QBJBfhZjYg6D9hE+rW9lpMBLTJoF4OTXnS5Po4yM1nMlgkPbCxFg==
+postcss-custom-media@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-custom-media/-/postcss-custom-media-8.0.0.tgz#1be6aff8be7dc9bf1fe014bde3b71b92bb4552f1"
+  integrity sha512-FvO2GzMUaTN0t1fBULDeIvxr5IvbDXcIatt6pnJghc736nqNgsGao5NT+5+WVLAQiTt6Cb3YUms0jiPaXhL//g==
+
+postcss-custom-properties@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-custom-properties/-/postcss-custom-properties-11.0.0.tgz#f98cd192cd8dfcd8afa3baa1ad5b5d91d01292f3"
+  integrity sha512-Fhnx/QLt+CTt23A/KKVx1anZD9nmVpOxKCKv5owWacMoOsBXFhMAD6SZYbmPMH4nHdIeMUnWOvLZnlY4niS0sA==
   dependencies:
-    postcss "^7.0.17"
     postcss-values-parser "^4.0.0"
 
 postcss-custom-properties@^8.0.11:
@@ -1749,10 +1758,10 @@ postcss-image-set-function@^3.0.1:
     postcss "^7.0.2"
     postcss-values-parser "^2.0.0"
 
-postcss-import@^13.0.0:
-  version "13.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-import/-/postcss-import-13.0.0.tgz#d6960cd9e3de5464743b04dd8cd9d870662f8b8c"
-  integrity sha512-LPUbm3ytpYopwQQjqgUH4S3EM/Gb9QsaSPP/5vnoi+oKVy3/mIk2sc0Paqw7RL57GpScm9MdIMUypw2znWiBpg==
+postcss-import@^14.0.0:
+  version "14.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-import/-/postcss-import-14.0.0.tgz#3ed1dadac5a16650bde3f4cdea6633b9c3c78296"
+  integrity sha512-gFDDzXhqr9ELmnLHgCC3TbGfA6Dm/YMb/UN8/f7Uuq4fL7VTk2vOIj6hwINEwbokEmp123bLD7a5m+E+KIetRg==
   dependencies:
     postcss-value-parser "^4.0.0"
     read-cache "^1.0.0"
@@ -1779,6 +1788,14 @@ postcss-load-config@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/postcss-load-config/-/postcss-load-config-3.0.0.tgz#850bb066edd65b734329eacf83af0c0764226c87"
   integrity sha512-lErrN8imuEF1cSiHBV8MiR7HeuzlDpCGNtaMyYHlOBuJHHOGw6S4xOMZp8BbXPr7AGQp14L6PZDlIOpfFJ6f7w==
+  dependencies:
+    cosmiconfig "^7.0.0"
+    import-cwd "^3.0.0"
+
+postcss-load-config@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-load-config/-/postcss-load-config-3.0.1.tgz#d214bf9cfec1608ffaf0f4161b3ba20664ab64b9"
+  integrity sha512-/pDHe30UYZUD11IeG8GWx9lNtu1ToyTsZHnyy45B4Mrwr/Kb6NgYl7k753+05CJNKnjbwh4975amoPJ+TEjHNQ==
   dependencies:
     cosmiconfig "^7.0.0"
     import-cwd "^3.0.0"
@@ -1991,15 +2008,14 @@ postcss@^7.0.0, postcss@^7.0.14, postcss@^7.0.17, postcss@^7.0.18, postcss@^7.0.
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postcss@^8.1.10:
-  version "8.1.10"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.1.10.tgz#129834f94c720554d2cfdaeb27d5542ac4a026ea"
-  integrity sha512-iBXEV5VTTYaRRdxiFYzTtuv2lGMQBExqkZKSzkJe+Fl6rvQrA/49UVGKqB+LG54hpW/TtDBMGds8j33GFNW7pg==
+postcss@^8.2.7:
+  version "8.2.7"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.7.tgz#48ed8d88b4de10afa0dfd1c3f840aa57b55c4d47"
+  integrity sha512-DsVLH3xJzut+VT+rYr0mtvOtpTjSyqDwPf5EZWXcb0uAKfitGpTY9Ec+afi2+TgdN8rWS9Cs88UDYehKo/RvOw==
   dependencies:
-    colorette "^1.2.1"
-    nanoid "^3.1.18"
+    colorette "^1.2.2"
+    nanoid "^3.1.20"
     source-map "^0.6.1"
-    vfile-location "^3.2.0"
 
 preserve@^0.2.0:
   version "0.2.0"
@@ -2414,11 +2430,6 @@ vendors@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/vendors/-/vendors-1.0.4.tgz#e2b800a53e7a29b93506c3cf41100d16c4c4ad8e"
   integrity sha512-/juG65kTL4Cy2su4P8HjtkTxk6VmJDiOPBufWniqQ6wknac6jNiXS9vU+hO3wgusiyqWlzTbVHi0dyJqRONg3w==
-
-vfile-location@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/vfile-location/-/vfile-location-3.2.0.tgz#d8e41fbcbd406063669ebf6c33d56ae8721d0f3c"
-  integrity sha512-aLEIZKv/oxuCDZ8lkJGhuhztf/BW4M+iHdCwglA/eWc+vtuRFJj8EtgceYFX4LRjOhCAAiNHsKGssC6onJ+jbA==
 
 vow-fs@0.3.6:
   version "0.3.6"
