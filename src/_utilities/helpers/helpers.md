@@ -88,19 +88,16 @@ Alle border-radius
 ```html
 <div class="border-radius-s"></div>
 <div class="border-radius"></div>
-<div class="border-radius-l"></div>
 ```
 
 Top border-radius
 ```html
 <div class="border-radius-s--t"></div>
 <div class="border-radius--t"></div>
-<div class="border-radius-l--t"></div>
 ```
 
 Bottom border-radius
 ```html
 <div class="border-radius-s--b"></div>
 <div class="border-radius--b"></div>
-<div class="border-radius-l--b"></div>
 ```
