@@ -1561,6 +1561,43 @@ h6,p {
 .grid-width--xlarge {
   width: var(--grid-xlarge);
 }
+/* Variables */
+:root {
+  --border-radius-small: 5px;
+  --border-radius-medium: 10px; /* default */
+}
+
+/* All border-radius */
+.border-radius-s {
+  border-radius: var(--border-radius-small);
+}
+.border-radius {
+  border-radius: var(--border-radius-medium);
+}
+
+/* Top border-radius */
+.border-radius-s--t {
+  border-top-left-radius: var(--border-radius-small);
+  border-top-right-radius: var(--border-radius-small);
+}
+.border-radius--t {
+  border-top-left-radius: var(--border-radius-medium);
+  border-top-right-radius: var(--border-radius-medium);
+}
+
+/* Bottom border-radius */
+.border-radius-s--b {
+  border-bottom-left-radius: var(--border-radius-small);
+  border-bottom-right-radius: var(--border-radius-small);
+}
+.border-radius--b {
+  border-bottom-left-radius: var(--border-radius-medium);
+  border-bottom-right-radius: var(--border-radius-medium);
+}
+[hidden] {
+  display: none !important;
+}
+
 .hidden {
   display: none;
 }
