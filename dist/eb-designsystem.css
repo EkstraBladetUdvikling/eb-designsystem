@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.4.0 built on 2.3.2021 15.26.18 on branch "svelteTemplates" at revision "8dbcd717286f7eaa609901d62bd173de4248412f" */
+/** eb-designsystem.css version 0.4.0 built on 9.3.2021 20.01.13 on branch "svelteTemplates" at revision "291abbf72652cd81eb0620cbb0013112a2e233ad" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -236,7 +236,7 @@
   --color--default: var(--color--bluedark);
   --color--primary: var(--color--bruger);
   --color--secondary: var(--color--graa3);
-  /* distance - desktop */
+  /* distance - desktop & tablet */
   --distance-large: 20px;
   --distance-medium: 10px;
   --distance-small: 5px;
@@ -258,9 +258,34 @@
   --fs-rem-xxlarge: 1.875rem; /* 30px */
   --fs-rem-xxsmall: .625rem; /* 10px */
   --fs-rem-xxxlarge: 2.25rem; /* 36px */
+  --fs-rem-xxxsmall: .4375rem; /* 7px */
   --fs-rem-xxxxlarge: 3.125rem; /* 50px */
+  --fs-large: var(--fs-rem-large);
+  --fs-medium: var(--fs-rem-medium);
+  --fs-small: var(--fs-rem-small);
+  --fs-xlarge: var(--fs-rem-xlarge);
+  --fs-xsmall: var(--fs-rem-xsmall);
+  --fs-xxlarge: var(--fs-rem-xxlarge);
+  --fs-xxsmall: var(--fs-rem-xxsmall);
+  --fs-xxxlarge: var(--fs-rem-xxxxlarge);
+  --fs-ads: var(--fs-xxsmall);
+  --fs-bodytext: var(--fs-large);
+  --fs-caption: var(--fs-small);
+  --fs-quote: var(--fs-xxlarge);
+  --fs-showmore: var(--fs-medium);
+  --fs-subtitle: var(--fs-xlarge);
+  --fs-timestamp: var(--fs-xsmall);
+  --fs-title: var(--fs-xxxlarge);
 }
 /* Systemwide variables - default + desktop */
+
+/**
+* Device corrected fontsize names
+*/
+
+/**
+  * Aliased Fontsizes
+  */
 
 @media (--smartphone) {
   :root {
@@ -270,7 +295,31 @@
   --distance-standard: 10px;
   --distance-xlarge: 20px;
   --distance-xxlarge: 30px;
+    --fs-large: var(--fs-rem-medium);
+  --fs-medium: var(--fs-rem-medium);
+  --fs-small: var(--fs-rem-xsmall);
+  --fs-xlarge: var(--fs-rem-xlarge);
+  --fs-xsmall: var(--fs-rem-xxsmall);
+  --fs-xxlarge: var(--fs-rem-xxlarge);
+  --fs-xxsmall: var(--fs-rem-xxxsmall);
+  --fs-xxxlarge: var(--fs-rem-xxxlarge);
+    --fs-ads: var(--fs-xxsmall);
+  --fs-bodytext: var(--fs-large);
+  --fs-caption: var(--fs-small);
+  --fs-quote: var(--fs-xxlarge);
+  --fs-showmore: var(--fs-medium);
+  --fs-subtitle: var(--fs-xlarge);
+  --fs-timestamp: var(--fs-xsmall);
+  --fs-title: var(--fs-xxxlarge);
   }
+
+  /**
+  * SMARTPHONE Fontsizes pixel
+  */
+
+  /**
+  * SMARTPHONE Aliased Fontsizes
+  */
 }
 /*
 ---
@@ -624,6 +673,107 @@ a.badge:hover {
 
 .button.button--icon .icon {
   margin: 0;
+}
+/**
+* Pillnavigation
+*/
+.buttongroup {
+  display: flex;
+}
+
+.buttongroup .button {
+  background: var(--color--white);
+  border-color: var(--color--default);
+  border-right-width: 0;
+  color: var(--color--default);
+}
+
+.buttongroup .button:active,
+.buttongroup .button:hover,
+.buttongroup .button:focus,
+.buttongroup .button[data-selected="true"] {
+  background: var(--color--default);
+  border-color: var(--color--default);
+  color: var(--fgcolor--default);
+}
+
+.buttongroup .button:first-of-type {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.buttongroup .button:not(:first-of-type):not(:last-of-type) {
+  border-radius: 0;
+}
+
+.buttongroup .button:last-of-type {
+  border-top-left-radius: 0;
+  border-right-width: 1px;
+  border-bottom-left-radius: 0;
+}
+
+.buttongroup--primary .button {
+  background: var(--color--white);
+  border-color: var(--color--primary);
+  border-right-width: 0;
+  color: var(--color--primary);
+}
+
+.buttongroup--primary .button:active,
+.buttongroup--primary .button:hover,
+.buttongroup--primary .button:focus,
+.buttongroup--primary .button[data-selected="true"] {
+  background: var(--color--primary);
+  border-color: var(--color--primary);
+  color: var(--fgcolor--primary);
+}
+
+.buttongroup--secondary .button {
+  background: var(--color--white);
+  border-color: var(--color--secondary);
+  border-right-width: 0;
+  color: var(--color--secondary);
+}
+
+.buttongroup--secondary .button:active,
+.buttongroup--secondary .button:hover,
+.buttongroup--secondary .button:focus,
+.buttongroup--secondary .button[data-selected="true"] {
+  background: var(--color--secondary);
+  border-color: var(--color--secondary);
+  color: var(--fgcolor--secondary);
+}
+
+.buttongroup--cancel .button {
+  background: var(--color--white);
+  border-color: var(--color--cancel);
+  border-right-width: 0;
+  color: var(--color--cancel);
+}
+
+.buttongroup--cancel .button:active,
+.buttongroup--cancel .button:hover,
+.buttongroup--cancel .button:focus,
+.buttongroup--cancel .button[data-selected="true"] {
+  background: var(--color--cancel);
+  border-color: var(--color--cancel);
+  color: var(--fgcolor--cancel);
+}
+
+.buttongroup--accept .button {
+  background: var(--color--white);
+  border-color: var(--color--accept);
+  border-right-width: 0;
+  color: var(--color--accept);
+}
+
+.buttongroup--accept .button:active,
+.buttongroup--accept .button:hover,
+.buttongroup--accept .button:focus,
+.buttongroup--accept .button[data-selected="true"] {
+  background: var(--color--accept);
+  border-color: var(--color--accept);
+  color: var(--fgcolor--accept);
 }
 :root {
   --card-border-color: var(--color--graa7);
@@ -1096,20 +1246,56 @@ a.card-mode:focus {
   border-right-width: 1px;
   border-bottom-left-radius: 0;
 }
+.loader .bounce {
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.loader .bounce1 {
+  animation-delay: -0.32s;
+}
+
+.loader .bounce2 {
+  animation-delay: -0.16s;
+}
+
+@keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+.toggle {
+  align-content: center;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+}
 .toggle-input,
 .toggle-radio {
   display: none;
 }
 
 .js-toggle,
-.toggle-container,.toggle {
+.toggle-container {
   cursor: pointer;
 }
 
-.toggle {
+.toggle,
+.toggle:active,
+.toggle:focus {
   align-content: center;
+  background: none;
+  border: 0;
+  cursor: pointer;
   display: inline-flex;
   justify-content: center;
+  padding: 0;
+  -webkit-appearance: none;
 }
 
 .toggle--icon {
@@ -1397,12 +1583,79 @@ a.card-mode:focus {
 .flex-item--center {
   align-self: center;
 }
+.fs-ads {
+  font-size: var(--fs-ads);
+  line-height: normal;
+}
+
+.fs-bodytext {
+  font-size: var(--fs-bodytext);
+  line-height: normal;
+}
+
+.fs-caption {
+  font-size: var(--fs-caption);
+  line-height: normal;
+}
+
+.fs-quote {
+  font-size: var(--fs-quote);
+  line-height: normal;
+}
+
+.fs-showmore {
+  font-size: var(--fs-showmore);
+  line-height: normal;
+}
+
+.fs-subtitle {
+  font-size: var(--fs-subtitle);
+  line-height: normal;
+}
+
+.fs-timestamp {
+  font-size: var(--fs-timestamp);
+  line-height: normal;
+}
+
+.fs-title {
+  font-size: var(--fs-title);
+  line-height: normal;
+}
 .ff-primary {
   font-family: var(--fontfamily--primary);
 }
 
-.ff-secondary {
+.ff-secondary,html,
+button,
+input,
+select,
+textarea {
   font-family: var(--fontfamily--secondary);
+}
+
+h1 {
+  font-size: var(--fs-title);
+}
+
+h1,h2 {
+  line-height: normal;
+}
+
+h2 {
+  font-size: var(--fs-subtitle);
+}
+
+h3 {
+  font-size: var(--fs-xlarge);
+}
+
+h4,h5 {
+  font-size: var(--fs-large);
+}
+
+h6,p {
+  font-size: var(--fs-medium);
 }
 /**
 * Base font-size in browsers is 16px
@@ -1504,6 +1757,43 @@ a.card-mode:focus {
 .grid-width--xlarge {
   width: var(--grid-xlarge);
 }
+/* Variables */
+:root {
+  --border-radius-small: 5px;
+  --border-radius-medium: 10px; /* default */
+}
+
+/* All border-radius */
+.border-radius-s {
+  border-radius: var(--border-radius-small);
+}
+.border-radius {
+  border-radius: var(--border-radius-medium);
+}
+
+/* Top border-radius */
+.border-radius-s--t {
+  border-top-left-radius: var(--border-radius-small);
+  border-top-right-radius: var(--border-radius-small);
+}
+.border-radius--t {
+  border-top-left-radius: var(--border-radius-medium);
+  border-top-right-radius: var(--border-radius-medium);
+}
+
+/* Bottom border-radius */
+.border-radius-s--b {
+  border-bottom-left-radius: var(--border-radius-small);
+  border-bottom-right-radius: var(--border-radius-small);
+}
+.border-radius--b {
+  border-bottom-left-radius: var(--border-radius-medium);
+  border-bottom-right-radius: var(--border-radius-medium);
+}
+[hidden] {
+  display: none !important;
+}
+
 .hidden {
   display: none;
 }

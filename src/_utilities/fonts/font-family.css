@@ -5,3 +5,41 @@
 .ff-secondary {
   font-family: var(--fontfamily--secondary);
 }
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: var(--fontfamily--secondary);
+}
+
+h1 {
+  font-size: var(--fs-title);
+  line-height: normal;
+}
+
+h2 {
+  font-size: var(--fs-subtitle);
+  line-height: normal;
+}
+
+h3 {
+  font-size: var(--fs-xlarge);
+}
+
+h4 {
+  font-size: var(--fs-large);
+}
+
+h5 {
+  font-size: var(--fs-large);
+}
+
+h6 {
+  font-size: var(--fs-medium);
+}
+
+p {
+  font-size: var(--fs-medium);
+}
