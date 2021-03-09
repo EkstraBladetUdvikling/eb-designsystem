@@ -1,0 +1,50 @@
+:root {
+  --fs-ads: var(--fs-xxsmall);
+  --fs-bodytext: var(--fs-large);
+  --fs-caption: var(--fs-small);
+  --fs-quote: var(--fs-xxlarge);
+  --fs-showmore: var(--fs-medium);
+  --fs-subtitle: var(--fs-xlarge);
+  --fs-timestamp: var(--fs-xsmall);
+  --fs-title: var(--fs-xxxlarge);
+}
+
+.fs-ads {
+  font-size: var(--fs-ads);
+  line-height: normal;
+}
+
+.fs-bodytext {
+  font-size: var(--fs-bodytext);
+  line-height: normal;
+}
+
+.fs-caption {
+  font-size: var(--fs-caption);
+  line-height: normal;
+}
+
+.fs-quote {
+  font-size: var(--fs-quote);
+  line-height: normal;
+}
+
+.fs-showmore {
+  font-size: var(--fs-showmore);
+  line-height: normal;
+}
+
+.fs-subtitle {
+  font-size: var(--fs-subtitle);
+  line-height: normal;
+}
+
+.fs-timestamp {
+  font-size: var(--fs-timestamp);
+  line-height: normal;
+}
+
+.fs-title {
+  font-size: var(--fs-title);
+  line-height: normal;
+}
