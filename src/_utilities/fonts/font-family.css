@@ -15,11 +15,13 @@ textarea {
 }
 
 h1 {
-  font-size: var(--fs-xxxlarge);
+  font-size: var(--fs-title);
+  line-height: normal;
 }
 
 h2 {
-  font-size: var(--fs-xxlarge);
+  font-size: var(--fs-subtitle);
+  line-height: normal;
 }
 
 h3 {

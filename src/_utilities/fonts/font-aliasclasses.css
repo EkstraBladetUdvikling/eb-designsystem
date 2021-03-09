@@ -1,14 +1,3 @@
-:root {
-  --fs-ads: var(--fs-xxsmall);
-  --fs-bodytext: var(--fs-large);
-  --fs-caption: var(--fs-small);
-  --fs-quote: var(--fs-xxlarge);
-  --fs-showmore: var(--fs-medium);
-  --fs-subtitle: var(--fs-xlarge);
-  --fs-timestamp: var(--fs-xsmall);
-  --fs-title: var(--fs-xxxlarge);
-}
-
 .fs-ads {
   font-size: var(--fs-ads);
   line-height: normal;
