@@ -13,7 +13,7 @@
 
 <h1 class="color--eb">Buttons</h1>
 
-<Prism language="js" source={`import Button from './src/_components/button/Button.svelte';`} />
+<Prism language="js" source={`import Button from '@ekstra-bladet/designsystem/src/_components/button';`} />
 
 <Button
   on:click={() => {

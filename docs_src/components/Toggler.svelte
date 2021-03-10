@@ -7,7 +7,7 @@
 
 <h1 class="color--eb">Toggler</h1>
 
-<Prism language="js" source={`import Toggler from './src/_components/toggler/Toggler.svelte';`} />
+<Prism language="js" source={`import Toggler from '@ekstra-bladet/designsystem/src/_components/toggler';`} />
 
 <h2 class="margin-l--tb">Toggler with text</h2>
 <Toggler

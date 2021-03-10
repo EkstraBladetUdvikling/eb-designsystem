@@ -6,7 +6,7 @@
 
 <h1 class="color--eb">Tooltip</h1>
 <div class="grid-width--small">
-  <Prism language="js" source={`import Tooltip from './src/_components/tooltip';`} />
+  <Prism language="js" source={`import Tooltip from '@ekstra-bladet/designsystem/src/_components/tooltip';`} />
 
   <h2>Default tooltip</h2>
   <div class="flex margin-l--tb">

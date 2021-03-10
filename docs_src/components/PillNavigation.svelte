@@ -8,7 +8,7 @@
 
 <Prism
   language="js"
-  source={`import PillNavigation, { Pill, PillContent, PillList } from './src/_components/pillnavigation';`}
+  source={`import PillNavigation, { Pill, PillContent, PillList } from '@ekstra-bladet/designsystem/src/_components/pillnavigation';`}
 />
 
 <div class="margin-xl">
