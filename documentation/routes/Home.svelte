@@ -2,19 +2,19 @@
   import Card from '../../src/_components/card';
   import Routes from './routes';
 
-  let componentsLink = "/#/";
-  let utilityLink = "/#/";
-  let colorLink = "/#/";
+  let componentsLink = "#/";
+  let utilityLink = "#/";
+  let colorLink = "#/";
   // Adds dynamic links to home-section cards. It finds the first element for each type.
   Routes.forEach(route => {
-    if(componentsLink === "/#/" && route.type === "component") {
-      componentsLink = `/#${route.link}`;
+    if(componentsLink === "#/" && route.type === "component") {
+      componentsLink = `#${route.link}`;
     }
-    if(utilityLink === "/#/" && route.type === "utility") {
-      utilityLink = `/#${route.link}`;
+    if(utilityLink === "#/" && route.type === "utility") {
+      utilityLink = `#${route.link}`;
     }
-    if(colorLink === "/#/" && route.type === "color") {
-      colorLink = `/#${route.link}`;
+    if(colorLink === "#/" && route.type === "color") {
+      colorLink = `#${route.link}`;
     }
   })
 </script>

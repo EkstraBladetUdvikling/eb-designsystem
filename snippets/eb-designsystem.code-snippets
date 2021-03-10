@@ -4,7 +4,7 @@
     "body": [
       "accordion-tab"
     ],
-    "description": "{\n background: rgb(var(--rgb-color--graa7));\nborder: 1px solid transparent;\nborder-radius: 5px;\nbox-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), 0.22);\nuser-select: none;\n }"
+    "description": "{\n background: rgb(var(--rgb-color--graa7));\nborder: 1px solid transparent;\nborder-radius: 5px;\nbox-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), .22);\nuser-select: none;\n }"
   },
   "designsystem accordion header": {
     "prefix": "ds-accordion-header",
@@ -129,7 +129,14 @@
     "body": [
       "button--icon"
     ],
-    "description": "NB! This should only be used with button\nThis extends button with: {\n justify-content: center;\npadding: 0;\nmin-width: 36px;\n }\n NB! This should only be used with button--big\nThis extends button--big with: {\n min-width: 50px;\n }"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n justify-content: center;\npadding: 0;\nmin-width: 36px;\n }\n NB! This should only be used with button--big\nThis extends button--big with: {\n min-width: 50px;\n }\n NB! This should only be used with button--small\nThis extends button--small with: {\n min-width: 30px;\n }"
+  },
+  "designsystem buttongroup": {
+    "prefix": "ds-buttongroup",
+    "body": [
+      "buttongroup"
+    ],
+    "description": "{\n display: flex;\n }"
   },
   "designsystem card": {
     "prefix": "ds-card",
@@ -274,7 +281,7 @@
     "body": [
       "form-checkbox--icon"
     ],
-    "description": "NB! This should only be used with form-checkbox\n{\n position: absolute;\nz-index: -1;\n }"
+    "description": "NB! This should only be used with form-checkbox\n{\n position: absolute;\ntop: 2px;\nleft: 3px;\nz-index: -1;\ntransform: scale(.1);\n }"
   },
   "designsystem horizontal scroll nav": {
     "prefix": "ds-horizontal-scroll-nav",
@@ -307,47 +314,54 @@
     ],
     "description": "NB! This should only be used with horizontal-scroll-item\n{\n height: 84px;\n }"
   },
+  "designsystem icon svg": {
+    "prefix": "ds-icon-svg",
+    "body": [
+      "icon-svg"
+    ],
+    "description": "{\n fill: currentColor;\n }"
+  },
   "designsystem toggle input": {
     "prefix": "ds-toggle-input",
     "body": [
       "toggle-input"
     ],
-    "description": "{\n display: none;\n }"
+    "description": "{\n display: none;\n }\n {\n display: none;\n }"
   },
   "designsystem toggle radio": {
     "prefix": "ds-toggle-radio",
     "body": [
       "toggle-radio"
     ],
-    "description": "{\n display: none;\n }"
+    "description": "{\n display: none;\n }\n {\n display: none;\n }"
   },
   "designsystem js toggle": {
     "prefix": "ds-js-toggle",
     "body": [
       "js-toggle"
     ],
-    "description": "{\n cursor: pointer;\n }"
+    "description": "{\n cursor: pointer;\n }\n {\n cursor: pointer;\n }"
   },
   "designsystem toggle container": {
     "prefix": "ds-toggle-container",
     "body": [
       "toggle-container"
     ],
-    "description": "{\n cursor: pointer;\n }"
+    "description": "{\n cursor: pointer;\n }\n {\n cursor: pointer;\n }"
   },
   "designsystem toggle": {
     "prefix": "ds-toggle",
     "body": [
       "toggle"
     ],
-    "description": "{\n align-content: center;\ncursor: pointer;\ndisplay: inline-flex;\njustify-content: center;\n }"
+    "description": "{\n align-content: center;\ncursor: pointer;\ndisplay: inline-flex;\njustify-content: center;\n }\n {\n align-content: center;\nbackground: none;\nborder: 0;\ncursor: pointer;\ndisplay: inline-flex;\njustify-content: center;\npadding: 0;\n-webkit-appearance: none;\n }\n Has pseudo styling :active\n Has pseudo styling :focus"
   },
   "designsystem toggle icon": {
     "prefix": "ds-toggle--icon",
     "body": [
       "toggle--icon"
     ],
-    "description": "NB! This should only be used with toggle\n{\n width: 20px;\n }"
+    "description": "NB! This should only be used with toggle\n{\n width: 20px;\n }\n NB! This should only be used with toggle\n{\n width: 20px;\n }"
   },
   "designsystem tooltip": {
     "prefix": "ds-tooltip",
@@ -538,6 +552,62 @@
     ],
     "description": "NB! This should only be used with flex-item\n{\n align-self: center;\n }"
   },
+  "designsystem fs ads": {
+    "prefix": "ds-fs-ads",
+    "body": [
+      "fs-ads"
+    ],
+    "description": "{\n font-size: .625rem;\nline-height: normal;\n }"
+  },
+  "designsystem fs bodytext": {
+    "prefix": "ds-fs-bodytext",
+    "body": [
+      "fs-bodytext"
+    ],
+    "description": "{\n font-size: 1.125rem;\nline-height: normal;\n }"
+  },
+  "designsystem fs caption": {
+    "prefix": "ds-fs-caption",
+    "body": [
+      "fs-caption"
+    ],
+    "description": "{\n font-size: .875rem;\nline-height: normal;\n }"
+  },
+  "designsystem fs quote": {
+    "prefix": "ds-fs-quote",
+    "body": [
+      "fs-quote"
+    ],
+    "description": "{\n font-size: 1.875rem;\nline-height: normal;\n }"
+  },
+  "designsystem fs showmore": {
+    "prefix": "ds-fs-showmore",
+    "body": [
+      "fs-showmore"
+    ],
+    "description": "{\n font-size: 1rem;\nline-height: normal;\n }"
+  },
+  "designsystem fs subtitle": {
+    "prefix": "ds-fs-subtitle",
+    "body": [
+      "fs-subtitle"
+    ],
+    "description": "{\n font-size: 1.25rem;\nline-height: normal;\n }"
+  },
+  "designsystem fs timestamp": {
+    "prefix": "ds-fs-timestamp",
+    "body": [
+      "fs-timestamp"
+    ],
+    "description": "{\n font-size: .75rem;\nline-height: normal;\n }"
+  },
+  "designsystem fs title": {
+    "prefix": "ds-fs-title",
+    "body": [
+      "fs-title"
+    ],
+    "description": "{\n font-size: 3.125rem;\nline-height: normal;\n }"
+  },
   "designsystem ff primary": {
     "prefix": "ds-ff-primary",
     "body": [
@@ -677,6 +747,48 @@
       "grid-width--xlarge"
     ],
     "description": "NB! This should only be used with grid-width\n{\n width: 930px;\n }"
+  },
+  "designsystem border radius s": {
+    "prefix": "ds-border-radius-s",
+    "body": [
+      "border-radius-s"
+    ],
+    "description": "{\n border-radius: 5px;\n }"
+  },
+  "designsystem border radius": {
+    "prefix": "ds-border-radius",
+    "body": [
+      "border-radius"
+    ],
+    "description": "{\n border-radius: 10px;\n }"
+  },
+  "designsystem border radius s t": {
+    "prefix": "ds-border-radius-s--t",
+    "body": [
+      "border-radius-s--t"
+    ],
+    "description": "NB! This should only be used with border-radius-s\n{\n border-top-left-radius: 5px;\nborder-top-right-radius: 5px;\n }"
+  },
+  "designsystem border radius t": {
+    "prefix": "ds-border-radius--t",
+    "body": [
+      "border-radius--t"
+    ],
+    "description": "NB! This should only be used with border-radius\n{\n border-top-left-radius: 10px;\nborder-top-right-radius: 10px;\n }"
+  },
+  "designsystem border radius s b": {
+    "prefix": "ds-border-radius-s--b",
+    "body": [
+      "border-radius-s--b"
+    ],
+    "description": "NB! This should only be used with border-radius-s\n{\n border-bottom-left-radius: 5px;\nborder-bottom-right-radius: 5px;\n }"
+  },
+  "designsystem border radius b": {
+    "prefix": "ds-border-radius--b",
+    "body": [
+      "border-radius--b"
+    ],
+    "description": "NB! This should only be used with border-radius\n{\n border-bottom-left-radius: 10px;\nborder-bottom-right-radius: 10px;\n }"
   },
   "designsystem hidden": {
     "prefix": "ds-hidden",

@@ -31,7 +31,7 @@
 <div id="sidebar-menu" class="sidebar-container height-100vh bg--white margin-l--r">
   <div class="flex flex-justify--around sidebar-logo-container padding-m--rl">
     <div>
-      <a href="/#/">
+      <a href="#/">
         <img alt="" src="ekstrabladet.svg" style="height:70px;" />
       </a>
     </div>
