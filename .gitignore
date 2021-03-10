@@ -9,3 +9,4 @@ node_modules
 .tempversion
 .ruby-version
 _build-css*
+docs/build/bundle.js.map
