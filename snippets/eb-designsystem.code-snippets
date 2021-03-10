@@ -4,7 +4,7 @@
     "body": [
       "accordion-tab"
     ],
-    "description": "{\n background: rgb(var(--rgb-color--graa7));\nborder-radius: 5px;\nbox-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), 0.22);\nuser-select: none;\n }"
+    "description": "{\n background: rgb(var(--rgb-color--graa7));\nborder: 1px solid transparent;\nborder-radius: 5px;\nbox-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), 0.22);\nuser-select: none;\n }"
   },
   "designsystem accordion header": {
     "prefix": "ds-accordion-header",
@@ -103,13 +103,6 @@
     ],
     "description": "NB! This should only be used with button\nThis extends button with: {\n border-color: var(--color--red);\ncolor: var(--color--red);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus\n NB! This should only be used with button--solid\nThis extends button--solid with: {\n background: var(--color--red);\ncolor: var(--fgcolor--red);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
-  "designsystem button icon": {
-    "prefix": "ds-button--icon",
-    "body": [
-      "button--icon"
-    ],
-    "description": "NB! This should only be used with button\n{\n justify-content: center;\npadding: 0;\nmin-width: 36px;\n }"
-  },
   "designsystem button link": {
     "prefix": "ds-button--link",
     "body": [
@@ -130,6 +123,13 @@
       "button--big"
     ],
     "description": "NB! This should only be used with button\nThis extends button with: {\n font-size: 20px;\nfont-weight: bold;\npadding: 0 40px;\nheight: 50px;\n }"
+  },
+  "designsystem button icon": {
+    "prefix": "ds-button--icon",
+    "body": [
+      "button--icon"
+    ],
+    "description": "NB! This should only be used with button\nThis extends button with: {\n justify-content: center;\npadding: 0;\nmin-width: 36px;\n }\n NB! This should only be used with button--big\nThis extends button--big with: {\n min-width: 50px;\n }"
   },
   "designsystem card": {
     "prefix": "ds-card",
@@ -205,7 +205,7 @@
     "body": [
       "card-mode"
     ],
-    "description": "{\n border-radius: 15px;\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "{\n border-radius: 15px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem card mode[class*=\"bg \"]": {
     "description": "Has pseudo styling ]"

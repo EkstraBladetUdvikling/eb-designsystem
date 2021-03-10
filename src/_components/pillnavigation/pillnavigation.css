@@ -1,0 +1,32 @@
+/**
+* Pillnavigation
+*/
+.pillnavigation .button {
+  border-color: var(--color--primary);
+  border-right-width: 0;
+  color: var(--color--primary);
+}
+
+.pillnavigation .button:active,
+.pillnavigation .button:hover,
+.pillnavigation .button:focus,
+.pillnavigation .button[data-selected="true"] {
+  background: var(--color--primary);
+  border-color: var(--color--primary);
+  color: var(--fgcolor--primary);
+}
+
+.pillnavigation .button:first-of-type {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.pillnavigation .button:not(:first-of-type):not(:last-of-type) {
+  border-radius: 0;
+}
+
+.pillnavigation .button:last-of-type {
+  border-top-left-radius: 0;
+  border-right-width: 1px;
+  border-bottom-left-radius: 0;
+}

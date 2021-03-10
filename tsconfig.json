@@ -1,0 +1,9 @@
+{
+  "extends": "@tsconfig/svelte/tsconfig.json",
+
+  "include": ["templates/**/*", "src", "documentation"],
+  "exclude": ["node_modules/*", "__sapper__/*", "../public/*"],
+  "compileOptions": {
+    "typeRoots": ["./src/types"]
+  }
+}
