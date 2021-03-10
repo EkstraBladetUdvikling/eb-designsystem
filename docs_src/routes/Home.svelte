@@ -27,6 +27,9 @@
     <div class="flex flex-justify--center  margin-l--b">
       <h1>Design system</h1>
     </div>
+    <div class="text-align--center margin-m--tb padding-m bg--graa7">
+      yarn add @ekstra-bladet/designsystem
+    </div>
     <div class="flex">
       <div class="home-section width-1of1 margin-m">
         <Card className="padding-m" href={componentsLink}>

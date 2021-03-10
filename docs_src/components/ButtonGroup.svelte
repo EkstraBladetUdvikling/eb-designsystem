@@ -10,8 +10,8 @@
 
 <Prism
   language="js"
-  source={`import Button from '../../src/_components/button';
-import ButtonGroup  from '../../src/_components/buttongroup';
+  source={`import Button from '@ekstra-bladet/designsystem/src/_components/button';
+import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongroup';
 `}
 />
 

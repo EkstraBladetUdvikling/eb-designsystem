@@ -8,7 +8,7 @@
 
 <h1 class="color--eb">Spinner</h1>
 
-<Prism language="js" source={`import Spinner from './src/_components/spinner/Spinner.svelte'`} />
+<Prism language="js" source={`import Spinner from '@ekstra-bladet/designsystem/src/_components/spinner'`} />
 
 <div class="padding-l bg--graa5">
   <Spinner isLoading={spinnerActive}/>

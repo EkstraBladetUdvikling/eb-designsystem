@@ -19,7 +19,7 @@
   <Prism
     language="js"
     source={`
-    import ArticleCard from '../../src/_components/articlecard';
+    import ArticleCard from '@ekstra-bladet/designsystem/src/_components/articlecard';
     `}
   />
   <p>ArticleCard attributer</p>

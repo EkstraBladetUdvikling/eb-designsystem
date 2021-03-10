@@ -12,7 +12,7 @@
 
 <p>Badges kan benyttes som mærkater eller som indikation af tags. Størrelsen af et badge kan styres vha. font-sizes.</p>
 
-<Prism language="js" source={`import Badge from './src/_components/badge/Badge.svelte';`} />
+<Prism language="js" source={`import Badge from '@ekstra-bladet/designsystem/src/_components/badge';`} />
 
 <div class="margin-l--tb">
   <Badge className="margin-s">Standard badge</Badge>

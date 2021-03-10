@@ -28,7 +28,7 @@
   <Prism
     language="js"
     source={`
-    import Accordion from '../../src/_components/accordion';
+    import Accordion from '@ekstra-bladet/designsystem/src/_components/accordion';
 
     // Example tabs
     let tabs = [
