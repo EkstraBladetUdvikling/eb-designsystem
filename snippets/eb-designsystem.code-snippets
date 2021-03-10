@@ -4,7 +4,7 @@
     "body": [
       "accordion-tab"
     ],
-    "description": "{\n background: rgb(var(--rgb-color--graa7));\nborder-radius: 5px;\nbox-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), 0.22);\nuser-select: none;\n }"
+    "description": "{\n background: rgb(var(--rgb-color--graa7));\nborder: 1px solid transparent;\nborder-radius: 5px;\nbox-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), 0.22);\nuser-select: none;\n }"
   },
   "designsystem accordion header": {
     "prefix": "ds-accordion-header",
@@ -538,6 +538,62 @@
     ],
     "description": "NB! This should only be used with flex-item\n{\n align-self: center;\n }"
   },
+  "designsystem fs ads": {
+    "prefix": "ds-fs-ads",
+    "body": [
+      "fs-ads"
+    ],
+    "description": "{\n font-size: .625rem;\nline-height: normal;\n }"
+  },
+  "designsystem fs bodytext": {
+    "prefix": "ds-fs-bodytext",
+    "body": [
+      "fs-bodytext"
+    ],
+    "description": "{\n font-size: 1.125rem;\nline-height: normal;\n }"
+  },
+  "designsystem fs caption": {
+    "prefix": "ds-fs-caption",
+    "body": [
+      "fs-caption"
+    ],
+    "description": "{\n font-size: .875rem;\nline-height: normal;\n }"
+  },
+  "designsystem fs quote": {
+    "prefix": "ds-fs-quote",
+    "body": [
+      "fs-quote"
+    ],
+    "description": "{\n font-size: 1.875rem;\nline-height: normal;\n }"
+  },
+  "designsystem fs showmore": {
+    "prefix": "ds-fs-showmore",
+    "body": [
+      "fs-showmore"
+    ],
+    "description": "{\n font-size: 1rem;\nline-height: normal;\n }"
+  },
+  "designsystem fs subtitle": {
+    "prefix": "ds-fs-subtitle",
+    "body": [
+      "fs-subtitle"
+    ],
+    "description": "{\n font-size: 1.25rem;\nline-height: normal;\n }"
+  },
+  "designsystem fs timestamp": {
+    "prefix": "ds-fs-timestamp",
+    "body": [
+      "fs-timestamp"
+    ],
+    "description": "{\n font-size: .75rem;\nline-height: normal;\n }"
+  },
+  "designsystem fs title": {
+    "prefix": "ds-fs-title",
+    "body": [
+      "fs-title"
+    ],
+    "description": "{\n font-size: 3.125rem;\nline-height: normal;\n }"
+  },
   "designsystem ff primary": {
     "prefix": "ds-ff-primary",
     "body": [
@@ -678,6 +734,48 @@
     ],
     "description": "NB! This should only be used with grid-width\n{\n width: 930px;\n }"
   },
+  "designsystem border radius s": {
+    "prefix": "ds-border-radius-s",
+    "body": [
+      "border-radius-s"
+    ],
+    "description": "{\n border-radius: 5px;\n }"
+  },
+  "designsystem border radius": {
+    "prefix": "ds-border-radius",
+    "body": [
+      "border-radius"
+    ],
+    "description": "{\n border-radius: 10px;\n }"
+  },
+  "designsystem border radius s t": {
+    "prefix": "ds-border-radius-s--t",
+    "body": [
+      "border-radius-s--t"
+    ],
+    "description": "NB! This should only be used with border-radius-s\n{\n border-top-left-radius: 5px;\nborder-top-right-radius: 5px;\n }"
+  },
+  "designsystem border radius t": {
+    "prefix": "ds-border-radius--t",
+    "body": [
+      "border-radius--t"
+    ],
+    "description": "NB! This should only be used with border-radius\n{\n border-top-left-radius: 10px;\nborder-top-right-radius: 10px;\n }"
+  },
+  "designsystem border radius s b": {
+    "prefix": "ds-border-radius-s--b",
+    "body": [
+      "border-radius-s--b"
+    ],
+    "description": "NB! This should only be used with border-radius-s\n{\n border-bottom-left-radius: 5px;\nborder-bottom-right-radius: 5px;\n }"
+  },
+  "designsystem border radius b": {
+    "prefix": "ds-border-radius--b",
+    "body": [
+      "border-radius--b"
+    ],
+    "description": "NB! This should only be used with border-radius\n{\n border-bottom-left-radius: 10px;\nborder-bottom-right-radius: 10px;\n }"
+  },
   "designsystem hidden": {
     "prefix": "ds-hidden",
     "body": [
@@ -740,6 +838,13 @@
       "margin-auto"
     ],
     "description": "{\n margin-right: auto;\nmargin-left: auto;\n }"
+  },
+  "designsystem fill current color": {
+    "prefix": "ds-fill-current-color",
+    "body": [
+      "fill-current-color"
+    ],
+    "description": "{\n fill: currentColor;\n }"
   },
   "designsystem margin s": {
     "prefix": "ds-margin-s",

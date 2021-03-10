@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.3.3 built on 9.3.2021 13.33.17 on branch "ebFonts" at revision "96a9479f2636401ad7c0233e4b657828ea8ab774" */
+/** eb-designsystem.css version 0.3.3 built on 10.3.2021 09.21.59 on branch "master" at revision "39430f97bbbdc66462da3d093da6ff1feee02fbd" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -1630,6 +1630,10 @@ h6,p {
 .margin-auto {
   margin-right: auto;
   margin-left: auto;
+}
+
+.fill-current-color {
+  fill: currentColor;
 }
 /* margin */
 
