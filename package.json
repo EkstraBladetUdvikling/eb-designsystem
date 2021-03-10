@@ -1,5 +1,5 @@
 {
-  "name": "eb-designsystem",
+  "name": "@ekstra-bladet/designsystem",
   "version": "0.4.0",
   "main": "index.js",
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
