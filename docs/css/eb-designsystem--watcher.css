@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.4.0 built on 8.3.2021 09.22.26 on branch "svelteTemplates" at revision "a1415b8befc379d137a3b1c59fd1fd350c578439" */
+/** eb-designsystem--watcher.css version 0.4.0 built on 10.3.2021 12.07.51 on branch "github-pages" at revision "ad8ef3f85fc7c3700376868e990af17f5faf1107" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -236,7 +236,7 @@
   --color--default: var(--color--bluedark);
   --color--primary: var(--color--bruger);
   --color--secondary: var(--color--graa3);
-  /* distance - desktop */
+  /* distance - desktop & tablet */
   --distance-large: 20px;
   --distance-medium: 10px;
   --distance-small: 5px;
@@ -258,9 +258,34 @@
   --fs-rem-xxlarge: 1.875rem; /* 30px */
   --fs-rem-xxsmall: .625rem; /* 10px */
   --fs-rem-xxxlarge: 2.25rem; /* 36px */
+  --fs-rem-xxxsmall: .4375rem; /* 7px */
   --fs-rem-xxxxlarge: 3.125rem; /* 50px */
+  --fs-large: var(--fs-rem-large);
+  --fs-medium: var(--fs-rem-medium);
+  --fs-small: var(--fs-rem-small);
+  --fs-xlarge: var(--fs-rem-xlarge);
+  --fs-xsmall: var(--fs-rem-xsmall);
+  --fs-xxlarge: var(--fs-rem-xxlarge);
+  --fs-xxsmall: var(--fs-rem-xxsmall);
+  --fs-xxxlarge: var(--fs-rem-xxxxlarge);
+  --fs-ads: var(--fs-xxsmall);
+  --fs-bodytext: var(--fs-large);
+  --fs-caption: var(--fs-small);
+  --fs-quote: var(--fs-xxlarge);
+  --fs-showmore: var(--fs-medium);
+  --fs-subtitle: var(--fs-xlarge);
+  --fs-timestamp: var(--fs-xsmall);
+  --fs-title: var(--fs-xxxlarge);
 }
 /* Systemwide variables - default + desktop */
+
+/**
+* Device corrected fontsize names
+*/
+
+/**
+  * Aliased Fontsizes
+  */
 
 @media (max-width: 767px) {
   :root {
@@ -270,7 +295,31 @@
   --distance-standard: 10px;
   --distance-xlarge: 20px;
   --distance-xxlarge: 30px;
+    --fs-large: var(--fs-rem-medium);
+  --fs-medium: var(--fs-rem-medium);
+  --fs-small: var(--fs-rem-xsmall);
+  --fs-xlarge: var(--fs-rem-xlarge);
+  --fs-xsmall: var(--fs-rem-xxsmall);
+  --fs-xxlarge: var(--fs-rem-xxlarge);
+  --fs-xxsmall: var(--fs-rem-xxxsmall);
+  --fs-xxxlarge: var(--fs-rem-xxxlarge);
+    --fs-ads: var(--fs-xxsmall);
+  --fs-bodytext: var(--fs-large);
+  --fs-caption: var(--fs-small);
+  --fs-quote: var(--fs-xxlarge);
+  --fs-showmore: var(--fs-medium);
+  --fs-subtitle: var(--fs-xlarge);
+  --fs-timestamp: var(--fs-xsmall);
+  --fs-title: var(--fs-xxxlarge);
   }
+
+  /**
+  * SMARTPHONE Fontsizes pixel
+  */
+
+  /**
+  * SMARTPHONE Aliased Fontsizes
+  */
 }
 /*
 ---
@@ -1525,12 +1574,79 @@ a.card-mode:focus {
 .flex-item--center {
   align-self: center;
 }
+.fs-ads {
+  font-size: var(--fs-ads);
+  line-height: normal;
+}
+
+.fs-bodytext {
+  font-size: var(--fs-bodytext);
+  line-height: normal;
+}
+
+.fs-caption {
+  font-size: var(--fs-caption);
+  line-height: normal;
+}
+
+.fs-quote {
+  font-size: var(--fs-quote);
+  line-height: normal;
+}
+
+.fs-showmore {
+  font-size: var(--fs-showmore);
+  line-height: normal;
+}
+
+.fs-subtitle {
+  font-size: var(--fs-subtitle);
+  line-height: normal;
+}
+
+.fs-timestamp {
+  font-size: var(--fs-timestamp);
+  line-height: normal;
+}
+
+.fs-title {
+  font-size: var(--fs-title);
+  line-height: normal;
+}
 .ff-primary {
   font-family: var(--fontfamily--primary);
 }
 
-.ff-secondary {
+.ff-secondary,html,
+button,
+input,
+select,
+textarea {
   font-family: var(--fontfamily--secondary);
+}
+
+h1 {
+  font-size: var(--fs-title);
+}
+
+h1,h2 {
+  line-height: normal;
+}
+
+h2 {
+  font-size: var(--fs-subtitle);
+}
+
+h3 {
+  font-size: var(--fs-xlarge);
+}
+
+h4,h5 {
+  font-size: var(--fs-large);
+}
+
+h6,p {
+  font-size: var(--fs-medium);
 }
 /**
 * Base font-size in browsers is 16px
@@ -1632,6 +1748,43 @@ a.card-mode:focus {
 .grid-width--xlarge {
   width: var(--grid-xlarge);
 }
+/* Variables */
+:root {
+  --border-radius-small: 5px;
+  --border-radius-medium: 10px; /* default */
+}
+
+/* All border-radius */
+.border-radius-s {
+  border-radius: var(--border-radius-small);
+}
+.border-radius {
+  border-radius: var(--border-radius-medium);
+}
+
+/* Top border-radius */
+.border-radius-s--t {
+  border-top-left-radius: var(--border-radius-small);
+  border-top-right-radius: var(--border-radius-small);
+}
+.border-radius--t {
+  border-top-left-radius: var(--border-radius-medium);
+  border-top-right-radius: var(--border-radius-medium);
+}
+
+/* Bottom border-radius */
+.border-radius-s--b {
+  border-bottom-left-radius: var(--border-radius-small);
+  border-bottom-right-radius: var(--border-radius-small);
+}
+.border-radius--b {
+  border-bottom-left-radius: var(--border-radius-medium);
+  border-bottom-right-radius: var(--border-radius-medium);
+}
+[hidden] {
+  display: none !important;
+}
+
 .hidden {
   display: none;
 }

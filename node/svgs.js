@@ -2,7 +2,7 @@ const SVGSpriter = require('svg-sprite');
 const fs = require('fs');
 const path = require('path');
 
-const dest = 'public/svg';
+const dest = 'docs/svg';
 const spriter = new SVGSpriter({
   dest,
   mode: {
