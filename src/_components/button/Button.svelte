@@ -9,8 +9,11 @@
   }
 
   type TExtension = 'icon' | 'link' | 'solid' | 'icon link' | 'icon solid';
-  type TSize = 'big' | 'small';
   export let extension: TExtension;
+
+  export let href: string = undefined;
+
+  type TSize = 'big' | 'small';
   export let size: TSize;
 
   if (extension) {
@@ -32,7 +35,7 @@
     cssClass = `${cssClass} button--${type}`;
   }
 
-  let buttonEl: HTMLButtonElement;
+  let buttonEl: HTMLButtonElement | HTMLAnchorElement;
   /**
    * For use in group
    */
@@ -58,6 +61,12 @@
   });
 </script>
 
-<button bind:this={buttonEl} class={cssClass} on:click {disabled} data-selected={$selectedButton === button}>
-  <slot />
-</button>
+{#if href}
+  <a {href} bind:this={buttonEl} class={cssClass} on:click {disabled} data-selected={$selectedButton === button}>
+    <slot />
+  </a>
+{:else}
+  <button bind:this={buttonEl} class={cssClass} on:click {disabled} data-selected={$selectedButton === button}>
+    <slot />
+  </button>
+{/if}

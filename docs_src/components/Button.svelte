@@ -29,11 +29,11 @@
   `}
 />
 
-<Button on:click={buttonClick}>Base button</Button>
+<Button href="#" on:click={buttonClick}>Base button as anchor element</Button>
 <Prism
   {language}
   source={`
-  <Button on:click="{buttonClick}">Base button</Button>
+  <Button href="#" on:click="{buttonClick}">Base button</Button>
   `}
 />
 
