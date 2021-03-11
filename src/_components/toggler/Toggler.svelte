@@ -7,7 +7,7 @@
   export let defaultState = true;
   export let isSwitch = false;
 
-  let baseClass = `toggle`;
+  let baseClass = `toggle-button`;
 
   if (className) baseClass = `${className} ${baseClass}`;
 
