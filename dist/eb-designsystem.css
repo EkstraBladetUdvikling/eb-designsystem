@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.4.0 built on 10.3.2021 12.07.49 on branch "github-pages" at revision "ad8ef3f85fc7c3700376868e990af17f5faf1107" */
+/** eb-designsystem.css version 0.4.2 built on 11.3.2021 11.55.39 on branch "article-redesign" at revision "fb245972fe14a9f8cbef709e1db8d1637d0a99bf" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -647,6 +647,7 @@ a.badge:hover {
 
 .button.button--small {
   font-size: 12px;
+  padding: 0 15px;
   height: var(--button-height--small);
 }
 
@@ -1826,6 +1827,10 @@ h6,p {
 .margin-auto {
   margin-right: auto;
   margin-left: auto;
+}
+
+.fill-current-color {
+  fill: currentColor;
 }
 /* margin */
 

@@ -115,7 +115,7 @@
     "body": [
       "button--small"
     ],
-    "description": "NB! This should only be used with button\nThis extends button with: {\n font-size: 12px;\nheight: 30px;\n }"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n font-size: 12px;\npadding: 0 15px;\nheight: 30px;\n }"
   },
   "designsystem button big": {
     "prefix": "ds-button--big",
@@ -852,6 +852,13 @@
       "margin-auto"
     ],
     "description": "{\n margin-right: auto;\nmargin-left: auto;\n }"
+  },
+  "designsystem fill current color": {
+    "prefix": "ds-fill-current-color",
+    "body": [
+      "fill-current-color"
+    ],
+    "description": "{\n fill: currentColor;\n }"
   },
   "designsystem margin s": {
     "prefix": "ds-margin-s",
