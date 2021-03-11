@@ -4,7 +4,7 @@
     "body": [
       "accordion-tab"
     ],
-    "description": "{\n background: rgb(var(--rgb-color--graa7));\nborder: 1px solid transparent;\nborder-radius: 5px;\nbox-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), 0.22);\nuser-select: none;\n }"
+    "description": "{\n background: rgb(var(--rgb-color--graa7));\nborder: 1px solid transparent;\nborder-radius: 5px;\nbox-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), .22);\nuser-select: none;\n }"
   },
   "designsystem accordion header": {
     "prefix": "ds-accordion-header",
@@ -103,13 +103,6 @@
     ],
     "description": "NB! This should only be used with button\nThis extends button with: {\n border-color: var(--color--red);\ncolor: var(--color--red);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus\n NB! This should only be used with button--solid\nThis extends button--solid with: {\n background: var(--color--red);\ncolor: var(--fgcolor--red);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
-  "designsystem button icon": {
-    "prefix": "ds-button--icon",
-    "body": [
-      "button--icon"
-    ],
-    "description": "NB! This should only be used with button\n{\n justify-content: center;\npadding: 0;\nmin-width: 36px;\n }"
-  },
   "designsystem button link": {
     "prefix": "ds-button--link",
     "body": [
@@ -130,6 +123,20 @@
       "button--big"
     ],
     "description": "NB! This should only be used with button\nThis extends button with: {\n font-size: 20px;\nfont-weight: bold;\npadding: 0 40px;\nheight: 50px;\n }"
+  },
+  "designsystem button icon": {
+    "prefix": "ds-button--icon",
+    "body": [
+      "button--icon"
+    ],
+    "description": "NB! This should only be used with button\nThis extends button with: {\n justify-content: center;\npadding: 0;\nmin-width: 36px;\n }\n NB! This should only be used with button--big\nThis extends button--big with: {\n min-width: 50px;\n }\n NB! This should only be used with button--small\nThis extends button--small with: {\n min-width: 30px;\n }"
+  },
+  "designsystem buttongroup": {
+    "prefix": "ds-buttongroup",
+    "body": [
+      "buttongroup"
+    ],
+    "description": "{\n display: flex;\n }"
   },
   "designsystem card": {
     "prefix": "ds-card",
@@ -205,7 +212,7 @@
     "body": [
       "card-mode"
     ],
-    "description": "{\n border-radius: 15px;\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "{\n border-radius: 15px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem card mode[class*=\"bg \"]": {
     "description": "Has pseudo styling ]"
@@ -274,7 +281,7 @@
     "body": [
       "form-checkbox--icon"
     ],
-    "description": "NB! This should only be used with form-checkbox\n{\n position: absolute;\nz-index: -1;\n }"
+    "description": "NB! This should only be used with form-checkbox\n{\n position: absolute;\ntop: 2px;\nleft: 3px;\nz-index: -1;\ntransform: scale(.1);\n }"
   },
   "designsystem horizontal scroll nav": {
     "prefix": "ds-horizontal-scroll-nav",
@@ -307,47 +314,54 @@
     ],
     "description": "NB! This should only be used with horizontal-scroll-item\n{\n height: 84px;\n }"
   },
+  "designsystem icon svg": {
+    "prefix": "ds-icon-svg",
+    "body": [
+      "icon-svg"
+    ],
+    "description": "{\n fill: currentColor;\n }"
+  },
   "designsystem toggle input": {
     "prefix": "ds-toggle-input",
     "body": [
       "toggle-input"
     ],
-    "description": "{\n display: none;\n }"
+    "description": "{\n display: none;\n }\n {\n display: none;\n }"
   },
   "designsystem toggle radio": {
     "prefix": "ds-toggle-radio",
     "body": [
       "toggle-radio"
     ],
-    "description": "{\n display: none;\n }"
+    "description": "{\n display: none;\n }\n {\n display: none;\n }"
   },
   "designsystem js toggle": {
     "prefix": "ds-js-toggle",
     "body": [
       "js-toggle"
     ],
-    "description": "{\n cursor: pointer;\n }"
+    "description": "{\n cursor: pointer;\n }\n {\n cursor: pointer;\n }"
   },
   "designsystem toggle container": {
     "prefix": "ds-toggle-container",
     "body": [
       "toggle-container"
     ],
-    "description": "{\n cursor: pointer;\n }"
+    "description": "{\n cursor: pointer;\n }\n {\n cursor: pointer;\n }"
   },
   "designsystem toggle": {
     "prefix": "ds-toggle",
     "body": [
       "toggle"
     ],
-    "description": "{\n align-content: center;\ncursor: pointer;\ndisplay: inline-flex;\njustify-content: center;\n }"
+    "description": "{\n align-content: center;\ncursor: pointer;\ndisplay: inline-flex;\njustify-content: center;\n }\n {\n align-content: center;\nbackground: none;\nborder: 0;\ncursor: pointer;\ndisplay: inline-flex;\njustify-content: center;\npadding: 0;\n-webkit-appearance: none;\n }\n Has pseudo styling :active\n Has pseudo styling :focus"
   },
   "designsystem toggle icon": {
     "prefix": "ds-toggle--icon",
     "body": [
       "toggle--icon"
     ],
-    "description": "NB! This should only be used with toggle\n{\n width: 20px;\n }"
+    "description": "NB! This should only be used with toggle\n{\n width: 20px;\n }\n NB! This should only be used with toggle\n{\n width: 20px;\n }"
   },
   "designsystem tooltip": {
     "prefix": "ds-tooltip",
@@ -838,13 +852,6 @@
       "margin-auto"
     ],
     "description": "{\n margin-right: auto;\nmargin-left: auto;\n }"
-  },
-  "designsystem fill current color": {
-    "prefix": "ds-fill-current-color",
-    "body": [
-      "fill-current-color"
-    ],
-    "description": "{\n fill: currentColor;\n }"
   },
   "designsystem margin s": {
     "prefix": "ds-margin-s",

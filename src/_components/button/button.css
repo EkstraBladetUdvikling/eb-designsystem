@@ -144,7 +144,14 @@
 }
 
 .button .icon {
+  color: currentColor;
   font-size: 18px;
+
+  fill: currentColor;
+}
+
+.button :first-child:not(:last-child) {
+  margin-right: 5px;
 }
 
 .button .badge:first-child,
@@ -155,16 +162,6 @@
 .button .badge:last-child,
 .button .icon:last-child {
   margin-left: 10px;
-}
-
-.button--icon {
-  justify-content: center;
-  padding: 0;
-  min-width: var(--button-height);
-}
-
-.button--icon .icon {
-  margin: 0;
 }
 
 .button.button--link,
@@ -187,4 +184,22 @@
   font-weight: bold;
   padding: 0 40px;
   height: var(--button-height--big);
+}
+
+.button.button--icon {
+  justify-content: center;
+  padding: 0;
+  min-width: var(--button-height);
+}
+
+.button--big.button--icon {
+  min-width: var(--button-height--big);
+}
+
+.button--small.button--icon {
+  min-width: var(--button-height--small);
+}
+
+.button.button--icon .icon {
+  margin: 0;
 }

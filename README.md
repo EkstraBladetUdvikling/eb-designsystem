@@ -11,76 +11,30 @@
 
 ## Getting Started
 
-To get your machine ready to work follow this guide
-
-* [Install jekyll](https://jekyllrb.com/docs/installation/macos/)
-
-This will likely get you version 3 or higher of ruby, which is incompatible with dependencies.
-
-To remedy this follow this guide to enable running multiple ruby versions
-* [Install rbenv](https://github.com/rbenv/rbenv#installation)
-
-Then install ruby version 2.7.2
-
-```shell
-$ rbenv install 2.7.2
-```
-
-Now in the root of this project, make the project use the newly install version 2.7.2
-
-```shell
-$ rbenv local 2.7.2
-$ echo 'export PATH="$HOME/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/bin:$PATH"' >> ~/.bash_profile
-```
-
-Your .bash_profile should then have these three lines, in the following order
-
-```shell
-$ export PATH="/usr/local/opt/ruby/bin:$PATH"
-$ export PATH="$HOME/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/bin:$PATH"
-$ eval "$(rbenv init -)"
-```
-
-Then restart your terminal, to make profile changes take effect, running *ruby -v* in the project folder should now give you version 2.7.2
-
-```shell
-$ ruby -v
-```
-
-If it returns as expected continue
-
-```shell
-$ gem install bundler jekyll
-$ bundle install
-$ yarn install
-```
+EB Designsystem is running on Svelte, go read teh docs for more info: https://svelte.dev/
 
 ### Dependencies
 
 * node > 14.12.0
 * yarn > 1.22.5
-* ruby = 2.7.2
-* * bundler
-* * jekyll
 
 ### Installing
 
 ```shell
-bundle install
 yarn install
 ```
 
 ## Developing
 
-`yarn start`
+`yarn dev`
 
 ## Deployment
 
 1.  Create a branch with all your changes
 2.  Submit a Pull Request on github and get it approved by someone else in the frontend team
 3.  Merge your branch into master :rocket:
-
-4.  run `yarn dist:move` to move code to ekstrabladet project
+4.  run `yarn build && yarn dist` to build your awesome code
+5.  run `yarn dist:move` to move code to ekstrabladet project
 
 ## Snippets
 
