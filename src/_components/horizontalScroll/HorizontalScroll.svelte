@@ -1,5 +1,5 @@
 <script lang="typescript">
-  import { onMount } from 'svelte';
+  import { afterUpdate, onMount } from 'svelte';
 
   export let className = undefined;
 
@@ -13,7 +13,7 @@
   let prevScrollBtn: HTMLButtonElement;
   let nextScrollBtn: HTMLButtonElement;
 
-  onMount(() => {
+  afterUpdate(() => {
     const children = scrollItemContainer.children;
     const listLength = children.length;
     const containerRight = scrollContainer.getBoundingClientRect().right;
