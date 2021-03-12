@@ -1,15 +1,17 @@
 <script lang="ts">
-  let baseClass = "card";
+  import type { TCardType } from '../../types/Card';
+
+  let baseClass = 'card';
   export let className: string;
   export let href: string = undefined;
   export let style: string = undefined;
-  export let type: string = undefined;
 
-  if (className) baseClass = `${className} ${baseClass}`;
+  export let type: TCardType = undefined;
 
-  switch(type) {
-    case "mode":
-      baseClass = `${baseClass} card-mode`;
+  switch (type) {
+    case 'mode':
+      baseClass = `card-mode`;
+      break;
     case 'small-media':
       baseClass = `${baseClass} card--small-media`;
       break;
@@ -18,27 +20,26 @@
       break;
   }
 
-
+  if (className) baseClass = `${className} ${baseClass}`;
 </script>
 
-
 {#if href}
-  <a href={href} class={baseClass} {style}>
+  <a {href} class={baseClass} {style}>
     {#if $$slots.header}
-      <slot name="header" class="card-header"></slot>
+      <slot name="header" class="card-header" />
     {/if}
     {#if $$slots.media}
-      <slot name="media" class="card-media"></slot>
+      <slot name="media" class="card-media" />
     {/if}
-    <slot></slot>
+    <slot />
     {#if $$slots.content}
-    <div class="card-content">
-      <slot name="content"></slot>
-    </div>
+      <div class="card-content">
+        <slot name="content" />
+      </div>
     {/if}
     {#if $$slots.footer}
       <div class="card-footer">
-        <slot name="footer"></slot>
+        <slot name="footer" />
       </div>
     {/if}
   </a>
@@ -46,24 +47,23 @@
   <div class={baseClass} {style}>
     {#if $$slots.header}
       <div class="card-header">
-        <slot name="header"></slot>
+        <slot name="header" />
       </div>
     {/if}
     {#if $$slots.media}
       <div class="card-media">
-        <slot name="media"></slot>
+        <slot name="media" />
       </div>
     {/if}
-    <slot></slot>
+    <slot />
     {#if $$slots.content}
-    <div class="card-content">
-
-      <slot name="content"></slot>
-    </div>
+      <div class="card-content">
+        <slot name="content" />
+      </div>
     {/if}
     {#if $$slots.footer}
       <div class="card-footer">
-        <slot name="footer"></slot>
+        <slot name="footer" />
       </div>
     {/if}
   </div>

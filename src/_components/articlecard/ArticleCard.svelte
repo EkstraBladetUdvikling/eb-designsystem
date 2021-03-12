@@ -1,4 +1,6 @@
 <script lang="ts">
+  import type { TCardType } from '../../types/Card';
+
   import Card from '../card';
 
   interface IMediaOptions {
@@ -16,24 +18,33 @@
   export let style: string = undefined;
   export let timestamp: string = undefined;
   export let title: string;
-  export let type: string = undefined;
+  export let type: TCardType = undefined;
 
   let baseClass = `margin-m`;
 
   if (className) baseClass = `${className} ${baseClass}`;
 
+  let loadingStyle = 'padding-top: 56.25%; width: 100%;';
   if (loading) {
-    baseClass = `${className} ${baseClass} animation-fogwave`;
-    media = {
-      height: '200',
-      src: 'https://via.placeholder.com/610x343&text=Loading',
-      width: '200',
-    };
+    baseClass = `${baseClass} animation-fogwave`;
+
     title = 'Loading';
+
+    switch (type) {
+      case 'small-media':
+      case 'small-media--reverse':
+        loadingStyle = 'width: 200px;height: 115px;';
+        break;
+    }
   }
 </script>
 
 <Card {href} className={baseClass} {style} {type}>
+  {#if loading}
+    <div class="card-media">
+      <div class="card-image bg--graa4" style={loadingStyle} />
+    </div>
+  {/if}
   {#if media}
     <div class="card-media">
       <img alt={title} class="card-image" src={media.src} height={media.height} width={media.width} />
