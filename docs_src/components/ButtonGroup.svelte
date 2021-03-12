@@ -26,6 +26,7 @@ import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongrou
     <Button
       size="big"
       extension="solid"
+      initial={true}
       on:click={() => {
         console.log('Click 2');
       }}>Toggle 2</Button
