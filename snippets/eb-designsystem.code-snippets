@@ -354,7 +354,7 @@
     "body": [
       "toggle"
     ],
-    "description": "{\n align-content: center;\ncursor: pointer;\ndisplay: inline-flex;\njustify-content: center;\n }\n {\n align-content: center;\nbackground: none;\nborder: 0;\ncursor: pointer;\ndisplay: inline-flex;\njustify-content: center;\npadding: 0;\n-webkit-appearance: none;\n }\n Has pseudo styling :active\n Has pseudo styling :focus"
+    "description": "{\n align-content: center;\ncursor: pointer;\ndisplay: inline-flex;\njustify-content: center;\n }\n {\n align-content: center;\ncursor: pointer;\ndisplay: inline-flex;\njustify-content: center;\n }"
   },
   "designsystem toggle icon": {
     "prefix": "ds-toggle--icon",
@@ -362,6 +362,13 @@
       "toggle--icon"
     ],
     "description": "NB! This should only be used with toggle\n{\n width: 20px;\n }\n NB! This should only be used with toggle\n{\n width: 20px;\n }"
+  },
+  "designsystem toggle button": {
+    "prefix": "ds-toggle-button",
+    "body": [
+      "toggle-button"
+    ],
+    "description": "{\n align-content: center;\nbackground: none;\nborder: 0;\ncursor: pointer;\ndisplay: inline-flex;\njustify-content: center;\npadding: 0;\n-webkit-appearance: none;\n }\n Has pseudo styling :active\n Has pseudo styling :focus"
   },
   "designsystem tooltip": {
     "prefix": "ds-tooltip",

@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.4.0 built on 10.3.2021 12.07.49 on branch "github-pages" at revision "ad8ef3f85fc7c3700376868e990af17f5faf1107" */
+/** eb-designsystem.css version 0.4.3 built on 12.3.2021 11.34.21 on branch "loading" at revision "3188dddc0898685806bf3a62e0f5f3b3d3250966" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -1268,13 +1268,6 @@ a.card-mode:focus {
     transform: scale(1);
   }
 }
-
-.toggle {
-  align-content: center;
-  cursor: pointer;
-  display: inline-flex;
-  justify-content: center;
-}
 .toggle-input,
 .toggle-radio {
   display: none;
@@ -1285,15 +1278,20 @@ a.card-mode:focus {
   cursor: pointer;
 }
 
-.toggle,
-.toggle:active,
-.toggle:focus {
+.toggle,.toggle-button,
+.toggle-button:active,
+.toggle-button:focus {
   align-content: center;
-  background: none;
-  border: 0;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
+}
+
+.toggle-button,
+.toggle-button:active,
+.toggle-button:focus {
+  background: none;
+  border: 0;
   padding: 0;
   -webkit-appearance: none;
 }

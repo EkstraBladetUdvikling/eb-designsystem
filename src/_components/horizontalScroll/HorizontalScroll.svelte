@@ -70,7 +70,7 @@
   });
 </script>
 
-<div bind:this={scrollContainer} class="horizontal-scroll-container grid-width--large  position-relative">
+<div bind:this={scrollContainer} class="horizontal-scroll-container grid-width--large position-relative">
   <button bind:this={prevScrollBtn} class="horizontal-scroll-nav" data-horizontallist="button-prev">
     <i class="fa fa-chevron-left" />
   </button>
