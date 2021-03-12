@@ -16976,7 +16976,7 @@ import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongrou
     			button = element("button");
     			if_block.c();
     			attr_dev(button, "class", /*baseClass*/ ctx[1]);
-    			add_location(button, file$t, 32, 2, 1094);
+    			add_location(button, file$t, 32, 2, 1101);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -17096,12 +17096,12 @@ import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongrou
     			if (off_slot) off_slot.c();
     			attr_dev(button0, "data-status", /*itsOn*/ ctx[2]);
     			attr_dev(button0, "class", button0_class_value = "toggle--switch " + /*baseClass*/ ctx[1]);
-    			add_location(button0, file$t, 23, 4, 693);
+    			add_location(button0, file$t, 23, 4, 700);
     			attr_dev(button1, "data-status", /*itsOn*/ ctx[2]);
     			attr_dev(button1, "class", button1_class_value = "toggle--switch " + /*baseClass*/ ctx[1]);
-    			add_location(button1, file$t, 27, 4, 940);
+    			add_location(button1, file$t, 27, 4, 947);
     			attr_dev(div, "class", "flex flex-align--center");
-    			add_location(div, file$t, 22, 2, 651);
+    			add_location(div, file$t, 22, 2, 658);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -17390,7 +17390,7 @@ import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongrou
     	let { className = undefined } = $$props;
     	let { defaultState = true } = $$props;
     	let { isSwitch = false } = $$props;
-    	let baseClass = `toggle`;
+    	let baseClass = `toggle-button`;
     	if (className) baseClass = `${className} ${baseClass}`;
 
     	/**
