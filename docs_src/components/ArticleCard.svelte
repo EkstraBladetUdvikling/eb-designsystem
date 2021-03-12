@@ -44,6 +44,15 @@
   `}
   />
 
+  <ArticleCard loading={true} />
+
+  <Prism
+    language="html"
+    source={`
+      <ArticleCard loading={true} />
+    `}
+  />
+
   <ArticleCard {...article} />
 
   <Prism

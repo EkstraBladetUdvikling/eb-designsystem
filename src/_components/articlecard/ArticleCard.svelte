@@ -10,6 +10,7 @@
 
   export let className: string = undefined;
   export let href: string = undefined;
+  export let loading: boolean = false;
   export let media: Partial<IMediaOptions> = undefined;
   export let section: string = undefined;
   export let style: string = undefined;
@@ -20,6 +21,16 @@
   let baseClass = `margin-m`;
 
   if (className) baseClass = `${className} ${baseClass}`;
+
+  if (loading) {
+    baseClass = `${className} ${baseClass} animation-fogwave`;
+    media = {
+      height: '200',
+      src: 'https://via.placeholder.com/610x343&text=Loading',
+      width: '200',
+    };
+    title = 'Loading';
+  }
 </script>
 
 <Card {href} className={baseClass} {style} {type}>

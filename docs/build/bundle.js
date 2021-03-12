@@ -5799,7 +5799,7 @@ var app = (function () {
     const get_default_slot_changes = dirty => ({});
     const get_default_slot_context = ctx => ({ slot: "content" });
 
-    // (16:2) {#if media}
+    // (26:2) {#if media}
     function create_if_block_4$1(ctx) {
     	let div;
     	let img;
@@ -5811,33 +5811,33 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			img = element("img");
-    			attr_dev(img, "alt", /*title*/ ctx[5]);
+    			attr_dev(img, "alt", /*title*/ ctx[1]);
     			attr_dev(img, "class", "card-image");
-    			if (img.src !== (img_src_value = /*media*/ ctx[1].src)) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "height", img_height_value = /*media*/ ctx[1].height);
-    			attr_dev(img, "width", img_width_value = /*media*/ ctx[1].width);
-    			add_location(img, file$5, 17, 6, 481);
+    			if (img.src !== (img_src_value = /*media*/ ctx[0].src)) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "height", img_height_value = /*media*/ ctx[0].height);
+    			attr_dev(img, "width", img_width_value = /*media*/ ctx[0].width);
+    			add_location(img, file$5, 27, 6, 743);
     			attr_dev(div, "class", "card-media");
-    			add_location(div, file$5, 16, 4, 450);
+    			add_location(div, file$5, 26, 4, 712);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, img);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*title*/ 32) {
-    				attr_dev(img, "alt", /*title*/ ctx[5]);
+    			if (dirty & /*title*/ 2) {
+    				attr_dev(img, "alt", /*title*/ ctx[1]);
     			}
 
-    			if (dirty & /*media*/ 2 && img.src !== (img_src_value = /*media*/ ctx[1].src)) {
+    			if (dirty & /*media*/ 1 && img.src !== (img_src_value = /*media*/ ctx[0].src)) {
     				attr_dev(img, "src", img_src_value);
     			}
 
-    			if (dirty & /*media*/ 2 && img_height_value !== (img_height_value = /*media*/ ctx[1].height)) {
+    			if (dirty & /*media*/ 1 && img_height_value !== (img_height_value = /*media*/ ctx[0].height)) {
     				attr_dev(img, "height", img_height_value);
     			}
 
-    			if (dirty & /*media*/ 2 && img_width_value !== (img_width_value = /*media*/ ctx[1].width)) {
+    			if (dirty & /*media*/ 1 && img_width_value !== (img_width_value = /*media*/ ctx[0].width)) {
     				attr_dev(img, "width", img_width_value);
     			}
     		},
@@ -5850,22 +5850,22 @@ var app = (function () {
     		block,
     		id: create_if_block_4$1.name,
     		type: "if",
-    		source: "(16:2) {#if media}",
+    		source: "(26:2) {#if media}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (22:4) {#if section || timestamp}
+    // (32:4) {#if section || timestamp}
     function create_if_block$3(ctx) {
     	let p;
     	let small;
     	let t0;
     	let t1;
-    	let if_block0 = /*section*/ ctx[2] && create_if_block_3$1(ctx);
-    	let if_block1 = /*section*/ ctx[2] && /*timestamp*/ ctx[4] && create_if_block_2$1(ctx);
-    	let if_block2 = /*timestamp*/ ctx[4] && create_if_block_1$1(ctx);
+    	let if_block0 = /*section*/ ctx[3] && create_if_block_3$1(ctx);
+    	let if_block1 = /*section*/ ctx[3] && /*timestamp*/ ctx[5] && create_if_block_2$1(ctx);
+    	let if_block2 = /*timestamp*/ ctx[5] && create_if_block_1$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -5876,9 +5876,9 @@ var app = (function () {
     			if (if_block1) if_block1.c();
     			t1 = space();
     			if (if_block2) if_block2.c();
-    			add_location(small, file$5, 23, 8, 701);
+    			add_location(small, file$5, 33, 8, 963);
     			attr_dev(p, "class", "card-meta color--graa3");
-    			add_location(p, file$5, 22, 6, 658);
+    			add_location(p, file$5, 32, 6, 920);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -5890,7 +5890,7 @@ var app = (function () {
     			if (if_block2) if_block2.m(small, null);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*section*/ ctx[2]) {
+    			if (/*section*/ ctx[3]) {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
@@ -5903,7 +5903,7 @@ var app = (function () {
     				if_block0 = null;
     			}
 
-    			if (/*section*/ ctx[2] && /*timestamp*/ ctx[4]) {
+    			if (/*section*/ ctx[3] && /*timestamp*/ ctx[5]) {
     				if (if_block1) ; else {
     					if_block1 = create_if_block_2$1(ctx);
     					if_block1.c();
@@ -5914,7 +5914,7 @@ var app = (function () {
     				if_block1 = null;
     			}
 
-    			if (/*timestamp*/ ctx[4]) {
+    			if (/*timestamp*/ ctx[5]) {
     				if (if_block2) {
     					if_block2.p(ctx, dirty);
     				} else {
@@ -5939,14 +5939,14 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(22:4) {#if section || timestamp}",
+    		source: "(32:4) {#if section || timestamp}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (25:10) {#if section}
+    // (35:10) {#if section}
     function create_if_block_3$1(ctx) {
     	let span;
     	let t;
@@ -5954,16 +5954,16 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			span = element("span");
-    			t = text(/*section*/ ctx[2]);
+    			t = text(/*section*/ ctx[3]);
     			attr_dev(span, "class", "color--sport");
-    			add_location(span, file$5, 25, 12, 745);
+    			add_location(span, file$5, 35, 12, 1007);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
     			append_dev(span, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*section*/ 4) set_data_dev(t, /*section*/ ctx[2]);
+    			if (dirty & /*section*/ 8) set_data_dev(t, /*section*/ ctx[3]);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(span);
@@ -5974,14 +5974,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$1.name,
     		type: "if",
-    		source: "(25:10) {#if section}",
+    		source: "(35:10) {#if section}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (28:10) {#if section && timestamp}
+    // (38:10) {#if section && timestamp}
     function create_if_block_2$1(ctx) {
     	let t;
 
@@ -6001,26 +6001,26 @@ var app = (function () {
     		block,
     		id: create_if_block_2$1.name,
     		type: "if",
-    		source: "(28:10) {#if section && timestamp}",
+    		source: "(38:10) {#if section && timestamp}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (31:10) {#if timestamp}
+    // (41:10) {#if timestamp}
     function create_if_block_1$1(ctx) {
     	let t;
 
     	const block = {
     		c: function create() {
-    			t = text(/*timestamp*/ ctx[4]);
+    			t = text(/*timestamp*/ ctx[5]);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*timestamp*/ 16) set_data_dev(t, /*timestamp*/ ctx[4]);
+    			if (dirty & /*timestamp*/ 32) set_data_dev(t, /*timestamp*/ ctx[5]);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(t);
@@ -6031,18 +6031,18 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(31:10) {#if timestamp}",
+    		source: "(41:10) {#if timestamp}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (21:2) <slot slot="content">     {#if section || timestamp}
+    // (31:2) <slot slot="content">     {#if section || timestamp}
     function create_content_slot(ctx) {
     	let current;
-    	const default_slot_template = /*#slots*/ ctx[9].default;
-    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[10], get_default_slot_context);
+    	const default_slot_template = /*#slots*/ ctx[10].default;
+    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[11], get_default_slot_context);
     	const default_slot_or_fallback = default_slot || fallback_block(ctx);
 
     	const block = {
@@ -6058,11 +6058,11 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (default_slot) {
-    				if (default_slot.p && dirty & /*$$scope*/ 1024) {
-    					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[10], dirty, get_default_slot_changes, get_default_slot_context);
+    				if (default_slot.p && dirty & /*$$scope*/ 2048) {
+    					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[11], dirty, get_default_slot_changes, get_default_slot_context);
     				}
     			} else {
-    				if (default_slot_or_fallback && default_slot_or_fallback.p && dirty & /*title, timestamp, section*/ 52) {
+    				if (default_slot_or_fallback && default_slot_or_fallback.p && dirty & /*title, timestamp, section*/ 42) {
     					default_slot_or_fallback.p(ctx, dirty);
     				}
     			}
@@ -6085,28 +6085,28 @@ var app = (function () {
     		block,
     		id: create_content_slot.name,
     		type: "slot",
-    		source: "(21:2) <slot slot=\\\"content\\\">     {#if section || timestamp}",
+    		source: "(31:2) <slot slot=\\\"content\\\">     {#if section || timestamp}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (21:23)      
+    // (31:23)      
     function fallback_block(ctx) {
     	let t0;
     	let h2;
     	let t1;
-    	let if_block = (/*section*/ ctx[2] || /*timestamp*/ ctx[4]) && create_if_block$3(ctx);
+    	let if_block = (/*section*/ ctx[3] || /*timestamp*/ ctx[5]) && create_if_block$3(ctx);
 
     	const block = {
     		c: function create() {
     			if (if_block) if_block.c();
     			t0 = space();
     			h2 = element("h2");
-    			t1 = text(/*title*/ ctx[5]);
+    			t1 = text(/*title*/ ctx[1]);
     			attr_dev(h2, "class", "card-title");
-    			add_location(h2, file$5, 36, 4, 980);
+    			add_location(h2, file$5, 46, 4, 1242);
     		},
     		m: function mount(target, anchor) {
     			if (if_block) if_block.m(target, anchor);
@@ -6115,7 +6115,7 @@ var app = (function () {
     			append_dev(h2, t1);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*section*/ ctx[2] || /*timestamp*/ ctx[4]) {
+    			if (/*section*/ ctx[3] || /*timestamp*/ ctx[5]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -6128,7 +6128,7 @@ var app = (function () {
     				if_block = null;
     			}
 
-    			if (dirty & /*title*/ 32) set_data_dev(t1, /*title*/ ctx[5]);
+    			if (dirty & /*title*/ 2) set_data_dev(t1, /*title*/ ctx[1]);
     		},
     		d: function destroy(detaching) {
     			if (if_block) if_block.d(detaching);
@@ -6141,17 +6141,17 @@ var app = (function () {
     		block,
     		id: fallback_block.name,
     		type: "fallback",
-    		source: "(21:23)      ",
+    		source: "(31:23)      ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (15:0) <Card {href} className={baseClass} {style} {type}>
+    // (25:0) <Card {href} className={baseClass} {style} {type}>
     function create_default_slot$1(ctx) {
     	let t;
-    	let if_block = /*media*/ ctx[1] && create_if_block_4$1(ctx);
+    	let if_block = /*media*/ ctx[0] && create_if_block_4$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -6163,7 +6163,7 @@ var app = (function () {
     			insert_dev(target, t, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*media*/ ctx[1]) {
+    			if (/*media*/ ctx[0]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -6188,7 +6188,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(15:0) <Card {href} className={baseClass} {style} {type}>",
+    		source: "(25:0) <Card {href} className={baseClass} {style} {type}>",
     		ctx
     	});
 
@@ -6201,9 +6201,9 @@ var app = (function () {
 
     	card = new Card({
     			props: {
-    				href: /*href*/ ctx[0],
+    				href: /*href*/ ctx[2],
     				className: /*baseClass*/ ctx[7],
-    				style: /*style*/ ctx[3],
+    				style: /*style*/ ctx[4],
     				type: /*type*/ ctx[6],
     				$$slots: {
     					default: [create_default_slot$1],
@@ -6227,12 +6227,12 @@ var app = (function () {
     		},
     		p: function update(ctx, [dirty]) {
     			const card_changes = {};
-    			if (dirty & /*href*/ 1) card_changes.href = /*href*/ ctx[0];
+    			if (dirty & /*href*/ 4) card_changes.href = /*href*/ ctx[2];
     			if (dirty & /*baseClass*/ 128) card_changes.className = /*baseClass*/ ctx[7];
-    			if (dirty & /*style*/ 8) card_changes.style = /*style*/ ctx[3];
+    			if (dirty & /*style*/ 16) card_changes.style = /*style*/ ctx[4];
     			if (dirty & /*type*/ 64) card_changes.type = /*type*/ ctx[6];
 
-    			if (dirty & /*$$scope, title, timestamp, section, media*/ 1078) {
+    			if (dirty & /*$$scope, title, timestamp, section, media*/ 2091) {
     				card_changes.$$scope = { dirty, ctx };
     			}
 
@@ -6268,6 +6268,7 @@ var app = (function () {
     	validate_slots("ArticleCard", slots, ['default']);
     	let { className = undefined } = $$props;
     	let { href = undefined } = $$props;
+    	let { loading = false } = $$props;
     	let { media = undefined } = $$props;
     	let { section = undefined } = $$props;
     	let { style = undefined } = $$props;
@@ -6276,7 +6277,30 @@ var app = (function () {
     	let { type = undefined } = $$props;
     	let baseClass = `margin-m`;
     	if (className) baseClass = `${className} ${baseClass}`;
-    	const writable_props = ["className", "href", "media", "section", "style", "timestamp", "title", "type"];
+
+    	if (loading) {
+    		baseClass = `${className} ${baseClass} animation-fogwave`;
+
+    		media = {
+    			height: "200",
+    			src: "https://via.placeholder.com/610x343&text=Loading",
+    			width: "200"
+    		};
+
+    		title = "Loading";
+    	}
+
+    	const writable_props = [
+    		"className",
+    		"href",
+    		"loading",
+    		"media",
+    		"section",
+    		"style",
+    		"timestamp",
+    		"title",
+    		"type"
+    	];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<ArticleCard> was created with unknown prop '${key}'`);
@@ -6284,20 +6308,22 @@ var app = (function () {
 
     	$$self.$$set = $$props => {
     		if ("className" in $$props) $$invalidate(8, className = $$props.className);
-    		if ("href" in $$props) $$invalidate(0, href = $$props.href);
-    		if ("media" in $$props) $$invalidate(1, media = $$props.media);
-    		if ("section" in $$props) $$invalidate(2, section = $$props.section);
-    		if ("style" in $$props) $$invalidate(3, style = $$props.style);
-    		if ("timestamp" in $$props) $$invalidate(4, timestamp = $$props.timestamp);
-    		if ("title" in $$props) $$invalidate(5, title = $$props.title);
+    		if ("href" in $$props) $$invalidate(2, href = $$props.href);
+    		if ("loading" in $$props) $$invalidate(9, loading = $$props.loading);
+    		if ("media" in $$props) $$invalidate(0, media = $$props.media);
+    		if ("section" in $$props) $$invalidate(3, section = $$props.section);
+    		if ("style" in $$props) $$invalidate(4, style = $$props.style);
+    		if ("timestamp" in $$props) $$invalidate(5, timestamp = $$props.timestamp);
+    		if ("title" in $$props) $$invalidate(1, title = $$props.title);
     		if ("type" in $$props) $$invalidate(6, type = $$props.type);
-    		if ("$$scope" in $$props) $$invalidate(10, $$scope = $$props.$$scope);
+    		if ("$$scope" in $$props) $$invalidate(11, $$scope = $$props.$$scope);
     	};
 
     	$$self.$capture_state = () => ({
     		Card,
     		className,
     		href,
+    		loading,
     		media,
     		section,
     		style,
@@ -6309,12 +6335,13 @@ var app = (function () {
 
     	$$self.$inject_state = $$props => {
     		if ("className" in $$props) $$invalidate(8, className = $$props.className);
-    		if ("href" in $$props) $$invalidate(0, href = $$props.href);
-    		if ("media" in $$props) $$invalidate(1, media = $$props.media);
-    		if ("section" in $$props) $$invalidate(2, section = $$props.section);
-    		if ("style" in $$props) $$invalidate(3, style = $$props.style);
-    		if ("timestamp" in $$props) $$invalidate(4, timestamp = $$props.timestamp);
-    		if ("title" in $$props) $$invalidate(5, title = $$props.title);
+    		if ("href" in $$props) $$invalidate(2, href = $$props.href);
+    		if ("loading" in $$props) $$invalidate(9, loading = $$props.loading);
+    		if ("media" in $$props) $$invalidate(0, media = $$props.media);
+    		if ("section" in $$props) $$invalidate(3, section = $$props.section);
+    		if ("style" in $$props) $$invalidate(4, style = $$props.style);
+    		if ("timestamp" in $$props) $$invalidate(5, timestamp = $$props.timestamp);
+    		if ("title" in $$props) $$invalidate(1, title = $$props.title);
     		if ("type" in $$props) $$invalidate(6, type = $$props.type);
     		if ("baseClass" in $$props) $$invalidate(7, baseClass = $$props.baseClass);
     	};
@@ -6324,15 +6351,16 @@ var app = (function () {
     	}
 
     	return [
-    		href,
     		media,
+    		title,
+    		href,
     		section,
     		style,
     		timestamp,
-    		title,
     		type,
     		baseClass,
     		className,
+    		loading,
     		slots,
     		$$scope
     	];
@@ -6344,12 +6372,13 @@ var app = (function () {
 
     		init(this, options, instance$6, create_fragment$6, safe_not_equal, {
     			className: 8,
-    			href: 0,
-    			media: 1,
-    			section: 2,
-    			style: 3,
-    			timestamp: 4,
-    			title: 5,
+    			href: 2,
+    			loading: 9,
+    			media: 0,
+    			section: 3,
+    			style: 4,
+    			timestamp: 5,
+    			title: 1,
     			type: 6
     		});
 
@@ -6363,7 +6392,7 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*title*/ ctx[5] === undefined && !("title" in props)) {
+    		if (/*title*/ ctx[1] === undefined && !("title" in props)) {
     			console.warn("<ArticleCard> was created without expected prop 'title'");
     		}
     	}
@@ -6381,6 +6410,14 @@ var app = (function () {
     	}
 
     	set href(value) {
+    		throw new Error("<ArticleCard>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get loading() {
+    		throw new Error("<ArticleCard>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set loading(value) {
     		throw new Error("<ArticleCard>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
@@ -6509,17 +6546,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	const articlecard0_spread_levels = [/*article*/ ctx[0]];
-    	let articlecard0_props = {};
-
-    	for (let i = 0; i < articlecard0_spread_levels.length; i += 1) {
-    		articlecard0_props = assign(articlecard0_props, articlecard0_spread_levels[i]);
-    	}
-
-    	articlecard0 = new ArticleCard({
-    			props: articlecard0_props,
-    			$$inline: true
-    		});
+    	articlecard0 = new ArticleCard({ props: { loading: true }, $$inline: true });
 
     	prism2 = new Prism$1({
     			props: {
@@ -6734,9 +6761,9 @@ var app = (function () {
     			add_location(h1, file$6, 14, 2, 358);
     			add_location(p, file$6, 21, 2, 539);
     			attr_dev(div0, "class", "flex");
-    			add_location(div0, file$6, 103, 2, 2644);
+    			add_location(div0, file$6, 103, 2, 2646);
     			attr_dev(div1, "class", "flex");
-    			add_location(div1, file$6, 107, 2, 2740);
+    			add_location(div1, file$6, 107, 2, 2742);
     			attr_dev(div2, "class", "grid-width--small");
     			add_location(div2, file$6, 13, 0, 324);
     		},
@@ -6783,12 +6810,6 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			const articlecard0_changes = (dirty & /*article*/ 1)
-    			? get_spread_update(articlecard0_spread_levels, [get_spread_object(/*article*/ ctx[0])])
-    			: {};
-
-    			articlecard0.$set(articlecard0_changes);
-
     			const articlecard2_changes = (dirty & /*article*/ 1)
     			? get_spread_update(articlecard2_spread_levels, [
     					get_spread_object(/*article*/ ctx[0]),
@@ -14464,8 +14485,6 @@ import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongrou
     }
 
     /* src/_components/horizontalScroll/HorizontalScroll.svelte generated by Svelte v3.32.2 */
-
-    const { console: console_1$5 } = globals;
     const file$l = "src/_components/horizontalScroll/HorizontalScroll.svelte";
 
     function create_fragment$n(ctx) {
@@ -14493,20 +14512,20 @@ import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongrou
     			div0 = element("div");
     			if (default_slot) default_slot.c();
     			attr_dev(i0, "class", "fa fa-chevron-left");
-    			add_location(i0, file$l, 63, 4, 2231);
+    			add_location(i0, file$l, 62, 4, 2188);
     			attr_dev(button0, "class", "horizontal-scroll-nav");
     			attr_dev(button0, "data-horizontallist", "button-prev");
-    			add_location(button0, file$l, 62, 2, 2128);
+    			add_location(button0, file$l, 61, 2, 2085);
     			attr_dev(i1, "class", "fa fa-chevron-right");
-    			add_location(i1, file$l, 66, 4, 2381);
+    			add_location(i1, file$l, 65, 4, 2338);
     			attr_dev(button1, "class", "horizontal-scroll-nav");
     			attr_dev(button1, "data-horizontallist", "button-next");
-    			add_location(button1, file$l, 65, 2, 2278);
+    			add_location(button1, file$l, 64, 2, 2235);
     			attr_dev(div0, "class", "horizontal-scroll-items flex padding-m--l padding-m--r");
     			attr_dev(div0, "data-horizontallist", "horizontallist");
-    			add_location(div0, file$l, 68, 2, 2429);
-    			attr_dev(div1, "class", "horizontal-scroll-container grid-width--large  position-relative");
-    			add_location(div1, file$l, 61, 0, 2019);
+    			add_location(div0, file$l, 67, 2, 2386);
+    			attr_dev(div1, "class", "horizontal-scroll-container grid-width--large position-relative");
+    			add_location(div1, file$l, 60, 0, 1977);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -14586,7 +14605,6 @@ import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongrou
     		const children = scrollItemContainer.children;
     		const listLength = children.length;
     		const containerRight = scrollContainer.getBoundingClientRect().right;
-    		console.log("afterUpdate", children);
 
     		/**
      * Find how many visible elements we have
@@ -14642,7 +14660,7 @@ import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongrou
     	const writable_props = ["className"];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$5.warn(`<HorizontalScroll> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<HorizontalScroll> was created with unknown prop '${key}'`);
     	});
 
     	function button0_binding($$value) {
@@ -14783,6 +14801,46 @@ import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongrou
     	let t16;
     	let t17;
     	let h33;
+    	let t19;
+    	let div9;
+    	let a4;
+    	let div8;
+    	let p4;
+    	let small4;
+    	let span4;
+    	let t21;
+    	let t22;
+    	let h34;
+    	let t24;
+    	let div11;
+    	let a5;
+    	let div10;
+    	let p5;
+    	let small5;
+    	let span5;
+    	let t26;
+    	let t27;
+    	let h35;
+    	let t29;
+    	let div13;
+    	let a6;
+    	let div12;
+    	let p6;
+    	let small6;
+    	let span6;
+    	let t31;
+    	let t32;
+    	let h36;
+    	let t34;
+    	let div15;
+    	let a7;
+    	let div14;
+    	let p7;
+    	let small7;
+    	let span7;
+    	let t36;
+    	let t37;
+    	let h37;
 
     	const block = {
     		c: function create() {
@@ -14833,6 +14891,54 @@ import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongrou
     			t17 = space();
     			h33 = element("h3");
     			h33.textContent = "Fringilla levos tumio arcadia";
+    			t19 = space();
+    			div9 = element("div");
+    			a4 = element("a");
+    			div8 = element("div");
+    			p4 = element("p");
+    			small4 = element("small");
+    			span4 = element("span");
+    			span4.textContent = "sport";
+    			t21 = text(" - 5 timer siden");
+    			t22 = space();
+    			h34 = element("h3");
+    			h34.textContent = "Ultricies commodo lecos mania";
+    			t24 = space();
+    			div11 = element("div");
+    			a5 = element("a");
+    			div10 = element("div");
+    			p5 = element("p");
+    			small5 = element("small");
+    			span5 = element("span");
+    			span5.textContent = "nyheder";
+    			t26 = text(" - 8 timer siden");
+    			t27 = space();
+    			h35 = element("h3");
+    			h35.textContent = "Fringilla levos tumio arcadia";
+    			t29 = space();
+    			div13 = element("div");
+    			a6 = element("a");
+    			div12 = element("div");
+    			p6 = element("p");
+    			small6 = element("small");
+    			span6 = element("span");
+    			span6.textContent = "sport";
+    			t31 = text(" - 5 timer siden");
+    			t32 = space();
+    			h36 = element("h3");
+    			h36.textContent = "Ultricies commodo lecos mania";
+    			t34 = space();
+    			div15 = element("div");
+    			a7 = element("a");
+    			div14 = element("div");
+    			p7 = element("p");
+    			small7 = element("small");
+    			span7 = element("span");
+    			span7.textContent = "nyheder";
+    			t36 = text(" - 8 timer siden");
+    			t37 = space();
+    			h37 = element("h3");
+    			h37.textContent = "Fringilla levos tumio arcadia";
     			attr_dev(span0, "class", "color--flash");
     			add_location(span0, file$m, 8, 49, 362);
     			add_location(small0, file$m, 8, 42, 355);
@@ -14893,6 +14999,66 @@ import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongrou
     			attr_dev(div7, "class", "flex-item width-1of3 padding-m");
     			set_style(div7, "min-width", "300px");
     			add_location(div7, file$m, 29, 2, 1274);
+    			attr_dev(span4, "class", "color--sport");
+    			add_location(span4, file$m, 40, 49, 1835);
+    			add_location(small4, file$m, 40, 42, 1828);
+    			attr_dev(p4, "class", "card-meta color--graa3");
+    			add_location(p4, file$m, 40, 8, 1794);
+    			attr_dev(h34, "class", "card-title");
+    			add_location(h34, file$m, 41, 8, 1911);
+    			attr_dev(div8, "class", "card-content");
+    			add_location(div8, file$m, 39, 6, 1759);
+    			attr_dev(a4, "href", "#b");
+    			attr_dev(a4, "class", "card height-1of1");
+    			add_location(a4, file$m, 38, 4, 1714);
+    			attr_dev(div9, "class", "flex-item width-1of3 padding-m");
+    			set_style(div9, "min-width", "300px");
+    			add_location(div9, file$m, 37, 2, 1639);
+    			attr_dev(span5, "class", "color--flash");
+    			add_location(span5, file$m, 48, 49, 2198);
+    			add_location(small5, file$m, 48, 42, 2191);
+    			attr_dev(p5, "class", "card-meta color--graa3");
+    			add_location(p5, file$m, 48, 8, 2157);
+    			attr_dev(h35, "class", "card-title");
+    			add_location(h35, file$m, 49, 8, 2276);
+    			attr_dev(div10, "class", "card-content");
+    			add_location(div10, file$m, 47, 6, 2122);
+    			attr_dev(a5, "href", "#a");
+    			attr_dev(a5, "class", "card height-1of1");
+    			add_location(a5, file$m, 46, 4, 2077);
+    			attr_dev(div11, "class", "flex-item width-1of3 padding-m");
+    			set_style(div11, "min-width", "300px");
+    			add_location(div11, file$m, 45, 2, 2002);
+    			attr_dev(span6, "class", "color--sport");
+    			add_location(span6, file$m, 56, 49, 2563);
+    			add_location(small6, file$m, 56, 42, 2556);
+    			attr_dev(p6, "class", "card-meta color--graa3");
+    			add_location(p6, file$m, 56, 8, 2522);
+    			attr_dev(h36, "class", "card-title");
+    			add_location(h36, file$m, 57, 8, 2639);
+    			attr_dev(div12, "class", "card-content");
+    			add_location(div12, file$m, 55, 6, 2487);
+    			attr_dev(a6, "href", "#b");
+    			attr_dev(a6, "class", "card height-1of1");
+    			add_location(a6, file$m, 54, 4, 2442);
+    			attr_dev(div13, "class", "flex-item width-1of3 padding-m");
+    			set_style(div13, "min-width", "300px");
+    			add_location(div13, file$m, 53, 2, 2367);
+    			attr_dev(span7, "class", "color--flash");
+    			add_location(span7, file$m, 64, 49, 2926);
+    			add_location(small7, file$m, 64, 42, 2919);
+    			attr_dev(p7, "class", "card-meta color--graa3");
+    			add_location(p7, file$m, 64, 8, 2885);
+    			attr_dev(h37, "class", "card-title");
+    			add_location(h37, file$m, 65, 8, 3004);
+    			attr_dev(div14, "class", "card-content");
+    			add_location(div14, file$m, 63, 6, 2850);
+    			attr_dev(a7, "href", "#a");
+    			attr_dev(a7, "class", "card height-1of1");
+    			add_location(a7, file$m, 62, 4, 2805);
+    			attr_dev(div15, "class", "flex-item width-1of3 padding-m");
+    			set_style(div15, "min-width", "300px");
+    			add_location(div15, file$m, 61, 2, 2730);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -14934,6 +15100,46 @@ import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongrou
     			append_dev(small3, t16);
     			append_dev(div6, t17);
     			append_dev(div6, h33);
+    			insert_dev(target, t19, anchor);
+    			insert_dev(target, div9, anchor);
+    			append_dev(div9, a4);
+    			append_dev(a4, div8);
+    			append_dev(div8, p4);
+    			append_dev(p4, small4);
+    			append_dev(small4, span4);
+    			append_dev(small4, t21);
+    			append_dev(div8, t22);
+    			append_dev(div8, h34);
+    			insert_dev(target, t24, anchor);
+    			insert_dev(target, div11, anchor);
+    			append_dev(div11, a5);
+    			append_dev(a5, div10);
+    			append_dev(div10, p5);
+    			append_dev(p5, small5);
+    			append_dev(small5, span5);
+    			append_dev(small5, t26);
+    			append_dev(div10, t27);
+    			append_dev(div10, h35);
+    			insert_dev(target, t29, anchor);
+    			insert_dev(target, div13, anchor);
+    			append_dev(div13, a6);
+    			append_dev(a6, div12);
+    			append_dev(div12, p6);
+    			append_dev(p6, small6);
+    			append_dev(small6, span6);
+    			append_dev(small6, t31);
+    			append_dev(div12, t32);
+    			append_dev(div12, h36);
+    			insert_dev(target, t34, anchor);
+    			insert_dev(target, div15, anchor);
+    			append_dev(div15, a7);
+    			append_dev(a7, div14);
+    			append_dev(div14, p7);
+    			append_dev(p7, small7);
+    			append_dev(small7, span7);
+    			append_dev(small7, t36);
+    			append_dev(div14, t37);
+    			append_dev(div14, h37);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div1);
@@ -14943,6 +15149,14 @@ import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongrou
     			if (detaching) detach_dev(div5);
     			if (detaching) detach_dev(t14);
     			if (detaching) detach_dev(div7);
+    			if (detaching) detach_dev(t19);
+    			if (detaching) detach_dev(div9);
+    			if (detaching) detach_dev(t24);
+    			if (detaching) detach_dev(div11);
+    			if (detaching) detach_dev(t29);
+    			if (detaching) detach_dev(div13);
+    			if (detaching) detach_dev(t34);
+    			if (detaching) detach_dev(div15);
     		}
     	};
 
@@ -17524,7 +17738,7 @@ import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongrou
 
     /* docs_src/components/Toggler.svelte generated by Svelte v3.32.2 */
 
-    const { console: console_1$6 } = globals;
+    const { console: console_1$5 } = globals;
     const file$u = "docs_src/components/Toggler.svelte";
     const get_default_slot_changes_7 = dirty => ({});
     const get_default_slot_context_7 = ctx => ({ slot: "off" });
@@ -18646,7 +18860,7 @@ import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongrou
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$6.warn(`<Toggler> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$5.warn(`<Toggler> was created with unknown prop '${key}'`);
     	});
 
     	const toggle_handler = event => {

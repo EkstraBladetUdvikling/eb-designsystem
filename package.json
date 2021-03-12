@@ -1,11 +1,12 @@
 {
   "name": "@ekstra-bladet/designsystem",
   "version": "0.4.3",
-  "main": "index.js",
+  "main": "dist/eb-designsystem.css",
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
   "license": "MIT",
   "scripts": {
+    "build": "yarn build:designsystem && yarn build:svelte",
     "build:designsystem": "yarn build:css && yarn build:watcher && yarn build:snippets",
     "build:css": "node build-css.js",
     "build:nonie": "node build-css.js --nonie",
@@ -14,7 +15,7 @@
     "build:snippets": "node build-snippets",
     "build:watch": "onchange 'src/**/*.css' -- yarn build:watcher & onchange 'preview/**/{_*.css,html}' -- yarn build:preview",
     "build:watcher": "yarn build:css --watcher && yarn build:preview",
-    "build": "yarn rollup -c",
+    "build:svelte": "yarn rollup -c",
     "dev": "yarn rollup -c -w & yarn build:watch",
     "start": "sirv docs",
     "validate": "svelte-check",
