@@ -113,4 +113,21 @@
     <ArticleCard {...article} />
     <ArticleCard {...article} />
   </div>
+
+  <h2>Loading placeholder</h2>
+
+  <ArticleCard loading={true} />
+  <ArticleCard loading={true} type="small-media" />
+  <ArticleCard loading={true} type="small-media--reverse" />
+  <ArticleCard loading={true} type="mode" />
+
+  <Prism
+    language="html"
+    source={`
+      <ArticleCard loading={true} />
+      <ArticleCard loading={true} type="small-media" />
+      <ArticleCard loading={true} type="small-media--reverse" />
+      <ArticleCard loading={true} type="mode" />
+    `}
+  />
 </div>
