@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.4.2 built on 11.3.2021 11.55.39 on branch "article-redesign" at revision "fb245972fe14a9f8cbef709e1db8d1637d0a99bf" */
+/** eb-designsystem.css version 0.4.2 built on 15.3.2021 15.44.47 on branch "article-redesign" at revision "d1b34e6676fa4acf4ed244d658588e2574ec57e6" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -786,8 +786,8 @@ a.badge:hover {
 @media (--smartphone) {
   :root {
     --card-fs-title: 20px;
-  --card-fs-title--small: 16px;
-  --card-padding: 10px;
+    --card-fs-title--small: 16px;
+    --card-padding: 10px;
   }
 }
 
@@ -909,7 +909,7 @@ a.card:focus {
 
 /* Card-modes (mutation of .card - new design) */
 .card-mode {
-  border-radius: 15px;
+  border-radius: var(--border-radius-medium);
   box-shadow: inset 0 0 0 1px var(--card-border-color); /* DR.Edition 03/02/2020 */
   box-sizing: border-box;
   display: flex;
@@ -936,17 +936,17 @@ a.card-mode:focus {
   padding-bottom: 0;
 }
 .card-mode .card-media .card-image {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .card-section-border {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   height: 8px;
 }
 .card-section-border-top {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   height: 8px;
 }
 .card-mode .card-media .card-icon {
@@ -1056,46 +1056,6 @@ a.card-mode:focus {
   margin-top: 25px;
 }
 
-.form-input {
-  /**
-  @description: Form input, dependent on the surrounding form-element
-  @template:
-  <div class="form-element">
-    <input type="text" class="form-input form-input--text" id="formInput" placeholder="$1" />
-    <label for="formInput" class="form-label">$1</label>
-  </div>
-  */
-  border: 1px solid;
-  border-radius: var(--form-border-radius);
-  box-sizing: border-box;
-  line-height: 30px;
-  padding: 5px;
-  height: 30px;
-}
-
-.form-input--big {
-  padding: 10px;
-  height: 50px;
-}
-
-.form-input ~ .form-label {
-  position: absolute;
-  top: 0;
-  left: 5px;
-
-  font-size: .7em;
-  transform: translate(0, -110%);
-}
-
-.form-input:placeholder-shown ~ .form-label {
-  opacity: 0;
-}
-
-.form-input:not(:placeholder-shown) ~ .form-label,
-.form-input:focus ~ .form-label {
-  opacity: 1;
-}
-
 .form-element--icon {
   position: relative;
 
@@ -1121,6 +1081,33 @@ a.card-mode:focus {
   margin-left: 5px;
 }
 
+.form-input-container {
+  border: 1px solid black;
+}
+
+.form-input-container span {
+  line-height: 1.15;
+  padding: 1px 2px;
+  white-space: nowrap;
+}
+
+.form-input-container.focus {
+  border: 1px solid var(--color--bluelight);
+}
+
+.form-input-container.focus span {
+  color: var(--color--bluelight);
+}
+
+.form-input-container input,
+.form-input-container textarea {
+  border: none;
+}
+.form-input-container input:focus,
+.form-input-container textarea:focus {
+  outline: none;
+}
+
 /**
 * Icon checkbox
 */
@@ -1130,7 +1117,7 @@ a.card-mode:focus {
   left: 3px;
   z-index: -1;
 
-  transform: scale(.1);
+  transform: scale(0.1);
 }
 
 .form-checkbox--icon ~ .form-label {
@@ -1269,13 +1256,6 @@ a.card-mode:focus {
     transform: scale(1);
   }
 }
-
-.toggle {
-  align-content: center;
-  cursor: pointer;
-  display: inline-flex;
-  justify-content: center;
-}
 .toggle-input,
 .toggle-radio {
   display: none;
@@ -1286,15 +1266,20 @@ a.card-mode:focus {
   cursor: pointer;
 }
 
-.toggle,
-.toggle:active,
-.toggle:focus {
+.toggle,.toggle-button,
+.toggle-button:active,
+.toggle-button:focus {
   align-content: center;
-  background: none;
-  border: 0;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
+}
+
+.toggle-button,
+.toggle-button:active,
+.toggle-button:focus {
+  background: none;
+  border: 0;
   padding: 0;
   -webkit-appearance: none;
 }

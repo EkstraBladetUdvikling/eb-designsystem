@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  export let inputtype = 'text';
+  export let inputtype = 'textarea';
   export let label = undefined;
   export let className = undefined;
   export let size = "padding-m--tb";
@@ -32,9 +32,9 @@
   });
 </script>
 
-<div class={`form-input-container flex border-radius padding-m--rl ${size}`}>
+<div class={`form-input-container flex flex-column border-radius padding-m--rl ${size}`}>
   {#if label}
     <span class="hidden">{label}:</span>
   {/if}
-  <input type={inputtype} placeholder={label} class={baseClass} />
+  <textarea class={baseClass} placeholder={label}></textarea>
 </div>

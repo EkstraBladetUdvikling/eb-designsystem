@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.4.2 built on 15.3.2021 10.30.25 on branch "article-redesign" at revision "538a53f6ac7c0511b1292958fd60af31e6d8e029" */
+/** eb-designsystem--watcher.css version 0.4.2 built on 15.3.2021 14.31.27 on branch "article-redesign" at revision "d1b34e6676fa4acf4ed244d658588e2574ec57e6" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -1047,46 +1047,6 @@ a.card-mode:focus {
   margin-top: 25px;
 }
 
-.form-input {
-  /**
-  @description: Form input, dependent on the surrounding form-element
-  @template:
-  <div class="form-element">
-    <input type="text" class="form-input form-input--text" id="formInput" placeholder="$1" />
-    <label for="formInput" class="form-label">$1</label>
-  </div>
-  */
-  border: 1px solid;
-  border-radius: var(--form-border-radius);
-  box-sizing: border-box;
-  line-height: 30px;
-  padding: 5px;
-  height: 30px;
-}
-
-.form-input--big {
-  padding: 10px;
-  height: 50px;
-}
-
-.form-input ~ .form-label {
-  position: absolute;
-  top: 0;
-  left: 5px;
-
-  font-size: .7em;
-  transform: translate(0, -110%);
-}
-
-.form-input:placeholder-shown ~ .form-label {
-  opacity: 0;
-}
-
-.form-input:not(:placeholder-shown) ~ .form-label,
-.form-input:focus ~ .form-label {
-  opacity: 1;
-}
-
 .form-element--icon {
   position: relative;
 
@@ -1112,6 +1072,33 @@ a.card-mode:focus {
   margin-left: 5px;
 }
 
+.form-input-container {
+  border: 1px solid black;
+}
+
+.form-input-container span {
+  line-height: 1.15;
+  padding: 1px 2px;
+  white-space: nowrap;
+}
+
+.form-input-container.focus {
+  border: 1px solid var(--color--bluelight);
+}
+
+.form-input-container.focus span {
+  color: var(--color--bluelight);
+}
+
+.form-input-container input,
+.form-input-container textarea {
+  border: none;
+}
+.form-input-container input:focus,
+.form-input-container textarea:focus {
+  outline: none;
+}
+
 /**
 * Icon checkbox
 */
@@ -1121,7 +1108,7 @@ a.card-mode:focus {
   left: 3px;
   z-index: -1;
 
-  transform: scale(.1);
+  transform: scale(0.1);
 }
 
 .form-checkbox--icon ~ .form-label {
