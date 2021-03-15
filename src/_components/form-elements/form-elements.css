@@ -69,6 +69,11 @@
   outline: none;
 }
 
+.form-input-container.focus input::placeholder,
+.form-input-container.focus textarea::placeholder {
+  color: transparent;
+}
+
 /**
 * Icon checkbox
 */

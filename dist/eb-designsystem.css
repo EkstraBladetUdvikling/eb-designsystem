@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.4.2 built on 15.3.2021 15.44.47 on branch "article-redesign" at revision "d1b34e6676fa4acf4ed244d658588e2574ec57e6" */
+/** eb-designsystem.css version 0.4.2 built on 15.3.2021 16.18.47 on branch "article-redesign" at revision "220f843a8125808a374b0591172f2a8afc02a98d" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -1106,6 +1106,11 @@ a.card-mode:focus {
 .form-input-container input:focus,
 .form-input-container textarea:focus {
   outline: none;
+}
+
+.form-input-container.focus input::placeholder,
+.form-input-container.focus textarea::placeholder {
+  color: transparent;
 }
 
 /**
