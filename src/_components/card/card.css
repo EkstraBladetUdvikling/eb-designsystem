@@ -212,11 +212,6 @@ a.card-mode:focus .card-inner {
   box-shadow: none;
 }
 
-.card-mode .card-media .card-image {
-  border-top-left-radius: var(--border-radius-medium);
-  border-top-right-radius: var(--border-radius-medium);
-}
-
 .card-mode .card-section-border {
   border-top-left-radius: var(--border-radius-medium);
   border-top-right-radius: var(--border-radius-medium);

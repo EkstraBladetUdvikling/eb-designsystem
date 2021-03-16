@@ -1,5 +1,7 @@
-<script lang="typescript">
+<script lang="ts">
   import { afterUpdate } from 'svelte';
+
+  import { throttle } from '../../misc/throttle';
   import Button from '../button';
 
   export let className = undefined;
@@ -17,18 +19,52 @@
   let listCurrent = 0;
   let children;
   let maxLength;
+  let listLength;
+
+  function updateDataSet(pos) {
+    switch (pos) {
+      case 'neutral':
+        scrollContainer.dataset.atstart = 'false';
+        scrollContainer.dataset.atend = 'false';
+        listCurrent = 1;
+        break;
+      case 'end':
+        scrollContainer.dataset.atstart = 'false';
+        scrollContainer.dataset.atend = 'true';
+        listCurrent = maxLength;
+        break;
+      case 'start':
+        scrollContainer.dataset.atstart = 'true';
+        scrollContainer.dataset.atend = 'false';
+        listCurrent = 0;
+        break;
+    }
+  }
 
   function updateButtons() {
     console.log('listCurrent', listCurrent, 'maxLength', maxLength);
     if (listCurrent === 0) {
-      scrollContainer.dataset.atstart = 'true';
-      scrollContainer.dataset.atend = 'false';
+      updateDataSet('start');
     } else if (listCurrent === maxLength) {
-      scrollContainer.dataset.atstart = 'false';
-      scrollContainer.dataset.atend = 'true';
+      updateDataSet('end');
     } else {
-      scrollContainer.dataset.atstart = 'false';
-      scrollContainer.dataset.atend = 'false';
+      updateDataSet('neutral');
+    }
+  }
+
+  function updateButtonsThroughScroll() {
+    const childLeft = children[0].getBoundingClientRect().left;
+    const wrapLeft = scrollItemContainer.getBoundingClientRect().left;
+
+    const childRight = children[listLength - 1].getBoundingClientRect().right;
+    const wrapRight = scrollItemContainer.getBoundingClientRect().right;
+
+    if (childLeft - 5 === wrapLeft) {
+      updateDataSet('start');
+    } else if (childRight - 10 <= wrapRight) {
+      updateDataSet('end');
+    } else {
+      updateDataSet('neutral');
     }
   }
 
@@ -63,9 +99,10 @@
   afterUpdate(() => {
     console.log('children', 'children?', children);
     if (children) return;
+    console.log('children', 'after after after');
     children = scrollItemContainer.children;
 
-    const listLength = children.length;
+    listLength = children.length;
     const containerRight = scrollContainer.getBoundingClientRect().right;
 
     /**
@@ -85,14 +122,10 @@
       nextScrollBtn.style.display = 'none';
     }
 
-    scrollItemContainer.addEventListener('touchend', () => {
-      console.log('touchend?');
-    });
-    scrollItemContainer.addEventListener('mouseenter', () => {
-      console.log('mouseenter?');
-    });
     scrollItemContainer.addEventListener('wheel', () => {
-      console.log('wheel?');
+      throttle(function () {
+        updateButtonsThroughScroll();
+      }, 150);
     });
 
     updateButtons();

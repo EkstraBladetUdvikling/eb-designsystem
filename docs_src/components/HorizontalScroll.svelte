@@ -6,6 +6,7 @@
   let articles = [
     {
       href: '#',
+      isPlus: true,
       media: {
         src: 'https://via.placeholder.com/610x343&text=610x343',
       },
@@ -16,10 +17,7 @@
     {
       href: '#',
       isPlus: true,
-      media: {
-        src: 'https://via.placeholder.com/610x343&text=610x343',
-      },
-      section: 'Underholdning',
+      section: 'Nyheder',
       timestamp: '3 timer siden',
       title: 'Det skal jo altså ikke være for nemt',
     },

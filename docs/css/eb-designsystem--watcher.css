@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.4.5 built on 16.3.2021 13.36.46 on branch "EBCD-13910" at revision "5c7dc5fe1b80c1c99bb700b11499de6f4c32efc0" */
+/** eb-designsystem--watcher.css version 0.4.5 built on 16.3.2021 21.16.11 on branch "EBCD-13910" at revision "88102d16f055aeef5e6d13a3ad3bc2c008239acb" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -980,12 +980,9 @@ a.card-mode:focus .card-inner {
   box-shadow: none;
 }
 
-.card-mode .card-media .card-image,.card-mode .card-section-border {
+.card-mode .card-section-border {
   border-top-left-radius: var(--border-radius-medium);
   border-top-right-radius: var(--border-radius-medium);
-}
-
-.card-mode .card-section-border {
   height: 8px;
 }
 
@@ -1170,23 +1167,32 @@ a.card-mode:focus .card-inner {
 
 .horizontal-scroll-container {
   padding-right: var(--right-pos);
+  padding-left: var(--right-pos);
 }
 
+.horizontal-scroll-container::before,
 .horizontal-scroll-container::after {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 1;
 
   box-shadow: -20px 0 20px -20px rgba(0, 0, 0, .4);
   content: " ";
   opacity: 1;
+  transition: opacity 200ms, height 200ms;
   width: var(--right-pos);
   height: 100%;
 }
 
-.horizontal-scroll-container[data-atend="true"]::after {
+.horizontal-scroll-container::before {
+  left: calc(var(--right-pos) * -1);
+
+  box-shadow: 20px 0 20px -20px rgba(0, 0, 0, .4);
+}
+
+.horizontal-scroll-container[data-atend="true"]::after,.horizontal-scroll-container[data-atstart="true"]::before {
   opacity: 0;
-  transition: opacity 300ms, height 300ms;
   height: 0;
 }
 
