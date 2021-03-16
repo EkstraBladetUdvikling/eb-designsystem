@@ -1,10 +1,38 @@
+:root {
+  --right-pos: calc(var(--button-height) * 1.5);
+}
+
+.horizontal-scroll-container {
+  padding-right: var(--right-pos);
+}
+
+.horizontal-scroll-container::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  box-shadow: -20px 0 20px -20px rgba(0, 0, 0, .4);
+  content: " ";
+  opacity: 1;
+  width: var(--right-pos);
+  height: 100%;
+}
+
+.horizontal-scroll-container[data-atend="true"]::after {
+  opacity: 0;
+  transition: opacity 300ms, height 300ms;
+  height: 0;
+}
+
 .horizontal-scroll-nav {
   position: absolute;
   top: 50%;
   left: 5px;
   z-index: 100;
 
-  align-items: center;
+  box-shadow: var(--card-mode--box-shadow);
+  opacity: 0;
+  /* align-items: center;
   background: var(--color--secondary);
   border: 1px solid var(--color--secondary);
   border-radius: var(--button-border-radius);
@@ -22,20 +50,24 @@
   transform: translateY(-50%);
   white-space: nowrap;
   min-width: var(--button-height);
-  height: var(--button-height);
+  height: var(--button-height); */
 }
 
-.horizontal-scroll-nav:hover {
+/* .horizontal-scroll-nav:hover {
   background-color: var(--fgcolor--secondary);
   color: var(--color--secondary);
+} */
+
+.horizontal-scroll-container:not([data-atstart="true"]):hover .button-prev {
+  opacity: 1;
 }
 
-.horizontal-scroll-nav[data-horizontallist="button-next"] {
+.horizontal-scroll-nav.button-next {
   right: 5px;
   left: auto;
 }
 
-.horizontal-scroll-container:hover .horizontal-scroll-nav {
+.horizontal-scroll-container:not([data-atend="true"]):hover .button-next {
   opacity: 1;
 }
 

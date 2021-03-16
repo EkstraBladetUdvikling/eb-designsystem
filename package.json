@@ -27,7 +27,7 @@
     "installsnippets:eb": "node install-snippets ../ekstrabladet/ekstrabladet-publication/src/main/.vscode",
     "move_to_eb": "yarn installds:eb",
     "start:designsystem": "yarn build:watcher && yarn build:preview && yarn build:watch",
-    "svgs": "node build/svgs.js"
+    "svgs": "node node/svgs.js"
   },
   "dependencies": {
     "@ekstra-bladet/eb-colors": "^2.6.0",

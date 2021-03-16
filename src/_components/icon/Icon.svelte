@@ -5,6 +5,7 @@
 <script lang="ts">
   export let className: string = undefined;
   export let name: IconTypes;
+  export let flipped: boolean = false;
   export let viewBox: string = '0 0 50 50';
   export let type: 'svg' | 'fa' = 'svg';
   export let width: number | string = 36;
@@ -13,10 +14,12 @@
   const defaultStyle = `width: ${width}px; height: ${width}px;`;
 
   style = style ? `${defaultStyle} ${style}` : defaultStyle;
+
+  let baseClass = className ? `icon-svg ${className}` : 'icon-svg';
 </script>
 
 {#if type === 'svg'}
-  <svg {viewBox} {style} class="icon-svg {className}" on:click>
+  <svg {viewBox} {style} class={baseClass} on:click data-flipped={flipped}>
     <use href="/svg/symbol/icons.svg#{name}" />
   </svg>
 {:else}
