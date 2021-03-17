@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.4.5 built on 17.3.2021 15.23.57 on branch "EBCD-13910" at revision "f6790f68128a1b152dbc8fe5074f1efeff824681" */
+/** eb-designsystem.css version 0.4.5 built on 17.3.2021 21.20.17 on branch "EBCD-13910" at revision "0d75ccc4ff5ffbea945e3eec01e610b51fc00f91" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -676,6 +676,7 @@ a.badge:hover {
 
 .button.button--small {
   font-size: 12px;
+  padding: 0 15px;
   height: var(--button-height--small);
 }
 
@@ -1148,7 +1149,7 @@ a.card-mode:focus .card-inner {
   top: 0;
   left: 5px;
 
-  font-size: .7em;
+  font-size: 0.7em;
   transform: translate(0, -110%);
 }
 
@@ -1186,6 +1187,42 @@ a.card-mode:focus .card-inner {
   margin-left: 5px;
 }
 
+.form-input-container {
+  border: 1px solid black;
+}
+
+.form-input-container span {
+  line-height: 1.15;
+  padding: 1px 2px;
+  white-space: nowrap;
+}
+
+[data-focus="true"] {
+  border: 1px solid var(--color--bluelight);
+}
+
+[data-focus="true"] span {
+  color: var(--color--bluelight);
+}
+
+.form-input-container input,
+.form-input-container textarea {
+  line-height: normal;
+  padding: 1px 2px;
+  height: auto;
+  border: none;
+}
+
+.form-input-container input:focus,
+.form-input-container textarea:focus {
+  outline: none;
+}
+
+.form-input-container.focus input::placeholder,
+.form-input-container.focus textarea::placeholder {
+  color: transparent;
+}
+
 /**
 * Icon checkbox
 */
@@ -1196,7 +1233,7 @@ a.card-mode:focus .card-inner {
   left: 3px;
   z-index: -1;
 
-  transform: scale(.1);
+  transform: scale(0.1);
 }
 
 .form-checkbox--icon ~ .form-label {
