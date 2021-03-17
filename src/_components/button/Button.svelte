@@ -18,7 +18,7 @@
 
   if (extension) {
     let extSplit = extension.split(' ');
-    console.log(extSplit);
+
     extSplit.forEach((extClass) => {
       cssClass = `${cssClass} button--${extClass}`;
     });

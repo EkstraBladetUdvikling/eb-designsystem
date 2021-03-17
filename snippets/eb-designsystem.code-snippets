@@ -143,103 +143,92 @@
     "body": [
       "card"
     ],
-    "description": "{\n border-radius: 5px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "{\n border-radius: 5px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus\n {\n border-radius: 5px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem card[class*=\"bg \"]": {
-    "description": "Has pseudo styling ]"
+    "description": "Has pseudo styling ]\n Has pseudo styling ]"
   },
   "designsystem card media": {
     "prefix": "ds-card-media",
     "body": [
       "card-media"
     ],
-    "description": "{\n position: relative;\nmin-height: 1px;\n }"
+    "description": "{\n position: relative;\nmin-height: 1px;\n }\n {\n position: relative;\nmin-height: 1px;\n }"
   },
   "designsystem card image": {
     "prefix": "ds-card-image",
     "body": [
       "card-image"
     ],
-    "description": "{\n display: block;\nwidth: 100%;\nheight: auto;\n }"
+    "description": "{\n display: block;\nwidth: 100%;\nheight: auto;\n }\n {\n display: block;\nwidth: 100%;\nheight: auto;\n }"
   },
   "designsystem card content": {
     "prefix": "ds-card-content",
     "body": [
       "card-content"
     ],
-    "description": "{\n padding: 20px;\nflex: 1 0 auto;\n }"
+    "description": "{\n padding: 20px;\nflex: 1 0 auto;\n }\n {\n padding: 20px;\nflex: 1 0 auto;\n }"
   },
   "designsystem card header": {
     "prefix": "ds-card-header",
     "body": [
       "card-header"
     ],
-    "description": "{\n box-sizing: border-box;\nmargin: 0;\npadding: calc(20px / 2) 20px;\nwidth: 100%;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
+    "description": "{\n box-sizing: border-box;\nmargin: 0;\npadding: calc(20px / 2) 20px;\nwidth: 100%;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n {\n box-sizing: border-box;\nmargin: 0;\npadding: calc(20px / 2) 20px;\nwidth: 100%;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
   },
   "designsystem card footer": {
     "prefix": "ds-card-footer",
     "body": [
       "card-footer"
     ],
-    "description": "{\n box-sizing: border-box;\nmargin: 0;\npadding: calc(20px / 2) 20px;\nwidth: 100%;\n }\n {\n align-self: flex-end;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
+    "description": "{\n box-sizing: border-box;\nmargin: 0;\npadding: calc(20px / 2) 20px;\nwidth: 100%;\n }\n {\n align-self: flex-end;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n {\n box-sizing: border-box;\nmargin: 0;\npadding: calc(20px / 2) 20px;\nwidth: 100%;\n }\n {\n align-self: flex-end;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
   },
   "designsystem card meta": {
     "prefix": "ds-card-meta",
     "body": [
       "card-meta"
     ],
-    "description": "{\n font-weight: 500;\nmargin: 0 0 1px;\n }"
+    "description": "{\n font-weight: 500;\nmargin: 0 0 1px;\n }\n {\n font-weight: 500;\nmargin: 0 0 1px;\n }"
   },
   "designsystem card title": {
-    "description": "Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])"
+    "description": "Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])\n Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])"
   },
   "designsystem card small media": {
     "prefix": "ds-card--small-media",
     "body": [
       "card--small-media"
     ],
-    "description": "NB! This should only be used with card\n{\n align-items: center;\nflex-direction: row;\nflex-wrap: wrap;\n }"
+    "description": "NB! This should only be used with card\n{\n align-items: center;\nflex-direction: row;\nflex-wrap: wrap;\n }\n NB! This should only be used with card\n{\n align-items: center;\nflex-direction: row;\nflex-wrap: wrap;\n }"
   },
   "designsystem card small media reverse": {
     "prefix": "ds-card--small-media--reverse",
     "body": [
       "card--small-media--reverse"
     ],
-    "description": "NB! This should only be used with card\n{\n flex-direction: row-reverse;\n }"
+    "description": "NB! This should only be used with card\n{\n flex-direction: row-reverse;\n }\n NB! This should only be used with card\n{\n flex-direction: row-reverse;\n }"
+  },
+  "designsystem card title small": {
+    "description": "Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])\n Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])"
   },
   "designsystem card mode": {
     "prefix": "ds-card-mode",
     "body": [
       "card-mode"
     ],
-    "description": "{\n border-radius: 10px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "This extends card with: {\n border-radius: 10px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-shadow: 0 0 10px 5px rgba(var(--rgb-color--black), .22);\nbox-shadow: none;\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: unset;\npadding: 2px;\nflex-shrink: 0;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus\n This extends card with: {\n border-radius: 10px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-shadow: 0 0 10px 5px rgba(var(--rgb-color--black), .22);\nbox-shadow: none;\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: unset;\npadding: 2px;\nflex-shrink: 0;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
-  "designsystem card mode[class*=\"bg \"]": {
-    "description": "Has pseudo styling ]"
-  },
-  "designsystem card section border": {
-    "prefix": "ds-card-section-border",
+  "designsystem card inner": {
+    "prefix": "ds-card-inner",
     "body": [
-      "card-section-border"
+      "card-inner"
     ],
-    "description": "{\n border-bottom-left-radius: 5px;\nborder-bottom-right-radius: 5px;\nheight: 8px;\n }"
+    "description": "{\n border-radius: 10px;\nbox-shadow: 0 10px 20px rgba(0, 0, 0, .1);\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\n }\n {\n border-radius: 10px;\nbox-shadow: 0 10px 20px rgba(0, 0, 0, .1);\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\n }"
   },
-  "designsystem card section border top": {
-    "prefix": "ds-card-section-border-top",
-    "body": [
-      "card-section-border-top"
-    ],
-    "description": "{\n border-top-left-radius: 5px;\nborder-top-right-radius: 5px;\nheight: 8px;\n }"
+  "designsystem card mode[data theme=\"lightmode\"]": {
+    "description": "Has pseudo styling :hover\n Has pseudo styling :hover"
   },
-  "designsystem card icon plus": {
-    "prefix": "ds-card-icon-plus",
-    "body": [
-      "card-icon-plus"
-    ],
-    "description": "{\n position: absolute;\nright: 8px;\nbottom: 4px;\n }"
-  },
-  "designsystem card title small": {
-    "description": "Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])"
+  "designsystem card mode[data theme=\"darkmode\"]": {
+    "description": "Has pseudo styling :hover\n Has pseudo styling :hover"
   },
   "designsystem form element": {
     "prefix": "ds-form-element",
@@ -247,6 +236,20 @@
       "form-element"
     ],
     "description": "{\n position: relative;\nmargin-top: 15px;\n }"
+  },
+  "designsystem form input": {
+    "prefix": "ds-form-input",
+    "body": [
+      "form-input"
+    ],
+    "description": "Form input, dependent on the surrounding form-element\n {\n border: 1px solid;\nborder-radius: 5px;\nbox-sizing: border-box;\nline-height: 30px;\npadding: 5px;\nheight: 30px;\n }"
+  },
+  "designsystem form input big": {
+    "prefix": "ds-form-input--big",
+    "body": [
+      "form-input--big"
+    ],
+    "description": "NB! This should only be used with form-input\n{\n padding: 10px;\nheight: 50px;\n }"
   },
   "designsystem form element icon": {
     "prefix": "ds-form-element--icon",
@@ -269,13 +272,6 @@
     ],
     "description": "{\n border: 1px solid black;\n }"
   },
-  "designsystem focus": {
-    "prefix": "ds-focus",
-    "body": [
-      "focus"
-    ],
-    "description": "This extends form-input-container with: {\n border: 1px solid var(--color--bluelight);\n }"
-  },
   "designsystem form checkbox icon": {
     "prefix": "ds-form-checkbox--icon",
     "body": [
@@ -283,15 +279,32 @@
     ],
     "description": "NB! This should only be used with form-checkbox\n{\n position: absolute;\ntop: 2px;\nleft: 3px;\nz-index: -1;\ntransform: scale(0.1);\n }"
   },
+  "designsystem horizontal scroll container": {
+    "prefix": "ds-horizontal-scroll-container",
+    "body": [
+      "horizontal-scroll-container"
+    ],
+    "description": "{\n padding-right: calc(36px * 1.5);\npadding-left: calc(36px * 1.5);\n }\n Has pseudo styling ::before\n Has pseudo styling ::after\n Has pseudo styling ::before"
+  },
+  "designsystem horizontal scroll container[data atend=\"true\"]": {
+    "description": "Has pseudo styling ::after"
+  },
+  "designsystem horizontal scroll container[data atstart=\"true\"]": {
+    "description": "Has pseudo styling ::before"
+  },
   "designsystem horizontal scroll nav": {
     "prefix": "ds-horizontal-scroll-nav",
     "body": [
       "horizontal-scroll-nav"
     ],
-    "description": "{\n position: absolute;\ntop: 50%;\nleft: 5px;\nz-index: 100;\nalign-items: center;\nbackground: var(--color--graa3);\nborder: 1px solid var(--color--graa3);\nborder-radius: 36px;\nbox-sizing: border-box;\ncolor: var(--fgcolor--graa3);\ncursor: pointer;\ndisplay: flex;\nfont-size: 14px;\njustify-content: center;\nopacity: 0;\noutline: none;\npadding: 0;\ntext-align: center;\ntext-decoration: none;\ntransform: translateY(-50%);\nwhite-space: nowrap;\nmin-width: 36px;\nheight: 36px;\n }\n Has pseudo styling :hover"
+    "description": "{\n position: absolute;\ntop: 50%;\nleft: 5px;\nz-index: 100;\nbox-shadow: 0 10px 20px rgba(0, 0, 0, .1);\nopacity: 0;\n }"
   },
-  "designsystem horizontal scroll nav[data horizontallist=\"button next\"]": {
-    "description": "Has pseudo styling ]"
+  "designsystem button next": {
+    "prefix": "ds-button-next",
+    "body": [
+      "button-next"
+    ],
+    "description": "This extends horizontal-scroll-nav with: {\n right: 5px;\nleft: auto;\n }"
   },
   "designsystem horizontal scroll items": {
     "prefix": "ds-horizontal-scroll-items",

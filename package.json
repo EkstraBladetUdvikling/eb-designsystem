@@ -1,6 +1,6 @@
 {
   "name": "@ekstra-bladet/designsystem",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "main": "dist/eb-designsystem.css",
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
@@ -16,10 +16,10 @@
     "build:watch": "onchange 'src/**/*.css' -- yarn build:watcher & onchange 'preview/**/{_*.css,html}' -- yarn build:preview",
     "build:watcher": "yarn build:css --watcher && yarn build:preview",
     "build:svelte": "yarn rollup -c",
-    "dev": "yarn rollup -c -w & yarn build:watch",
+    "dev": "yarn rollup -c -w & yarn build:watcher & yarn build:watch",
     "start": "sirv docs",
     "validate": "svelte-check",
-    "dist": "yarn build:css",
+    "dist": "yarn build",
     "dist:move": "yarn dist && yarn move_to_eb",
     "installds": "node install-system",
     "installds:eb": "node install-system ../ekstrabladet/ekstrabladet-publication/src/main/frontend/css-main/main/css",
@@ -27,7 +27,7 @@
     "installsnippets:eb": "node install-snippets ../ekstrabladet/ekstrabladet-publication/src/main/.vscode",
     "move_to_eb": "yarn installds:eb",
     "start:designsystem": "yarn build:watcher && yarn build:preview && yarn build:watch",
-    "svgs": "node build/svgs.js"
+    "svgs": "node node/svgs.js"
   },
   "dependencies": {
     "@ekstra-bladet/eb-colors": "^2.6.0",
@@ -56,7 +56,7 @@
     "postcss-preset-env": "^6.7.0",
     "postcss-selectorcleanse": "^1.0.6",
     "prismjs": "^1.23.0",
-    "rollup": "^2.41.1",
+    "rollup": "^2.41.4",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^7.0.0",
