@@ -42,6 +42,8 @@
   import { getContext, onMount } from 'svelte';
   import { BUTTONS } from '../buttongroup/ButtonGroup.svelte';
 
+  export let initial = false;
+
   let registerTab, selectButton, selectedButton;
 
   const button = {};
@@ -52,6 +54,10 @@
     selectedButton = contextButtons.selectedButton;
 
     registerTab(button);
+
+    if (initial) {
+      selectButton(button);
+    }
   }
 
   onMount(() => {

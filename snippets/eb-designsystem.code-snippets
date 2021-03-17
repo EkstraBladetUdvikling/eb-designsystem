@@ -212,7 +212,7 @@
     "body": [
       "card-mode"
     ],
-    "description": "{\n border-radius: 15px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "{\n border-radius: 10px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem card mode[class*=\"bg \"]": {
     "description": "Has pseudo styling ]"
@@ -222,14 +222,14 @@
     "body": [
       "card-section-border"
     ],
-    "description": "{\n border-bottom-left-radius: 10px;\nborder-bottom-right-radius: 10px;\nheight: 8px;\n }"
+    "description": "{\n border-bottom-left-radius: 5px;\nborder-bottom-right-radius: 5px;\nheight: 8px;\n }"
   },
   "designsystem card section border top": {
     "prefix": "ds-card-section-border-top",
     "body": [
       "card-section-border-top"
     ],
-    "description": "{\n border-top-left-radius: 10px;\nborder-top-right-radius: 10px;\nheight: 8px;\n }"
+    "description": "{\n border-top-left-radius: 5px;\nborder-top-right-radius: 5px;\nheight: 8px;\n }"
   },
   "designsystem card icon plus": {
     "prefix": "ds-card-icon-plus",
@@ -248,20 +248,6 @@
     ],
     "description": "{\n position: relative;\nmargin-top: 15px;\n }"
   },
-  "designsystem form input": {
-    "prefix": "ds-form-input",
-    "body": [
-      "form-input"
-    ],
-    "description": "Form input, dependent on the surrounding form-element\n {\n border: 1px solid;\nborder-radius: 5px;\nbox-sizing: border-box;\nline-height: 30px;\npadding: 5px;\nheight: 30px;\n }"
-  },
-  "designsystem form input big": {
-    "prefix": "ds-form-input--big",
-    "body": [
-      "form-input--big"
-    ],
-    "description": "NB! This should only be used with form-input\n{\n padding: 10px;\nheight: 50px;\n }"
-  },
   "designsystem form element icon": {
     "prefix": "ds-form-element--icon",
     "body": [
@@ -276,12 +262,26 @@
     ],
     "description": "NB! This should only be used with form-input\nThis extends form-input with: {\n border: 0;\nline-height: normal;\npadding: 0;\nheight: auto;\n }"
   },
+  "designsystem form input container": {
+    "prefix": "ds-form-input-container",
+    "body": [
+      "form-input-container"
+    ],
+    "description": "{\n border: 1px solid black;\n }"
+  },
+  "designsystem focus": {
+    "prefix": "ds-focus",
+    "body": [
+      "focus"
+    ],
+    "description": "This extends form-input-container with: {\n border: 1px solid var(--color--bluelight);\n }"
+  },
   "designsystem form checkbox icon": {
     "prefix": "ds-form-checkbox--icon",
     "body": [
       "form-checkbox--icon"
     ],
-    "description": "NB! This should only be used with form-checkbox\n{\n position: absolute;\ntop: 2px;\nleft: 3px;\nz-index: -1;\ntransform: scale(.1);\n }"
+    "description": "NB! This should only be used with form-checkbox\n{\n position: absolute;\ntop: 2px;\nleft: 3px;\nz-index: -1;\ntransform: scale(0.1);\n }"
   },
   "designsystem horizontal scroll nav": {
     "prefix": "ds-horizontal-scroll-nav",
@@ -354,7 +354,7 @@
     "body": [
       "toggle"
     ],
-    "description": "{\n align-content: center;\ncursor: pointer;\ndisplay: inline-flex;\njustify-content: center;\n }\n {\n align-content: center;\nbackground: none;\nborder: 0;\ncursor: pointer;\ndisplay: inline-flex;\njustify-content: center;\npadding: 0;\n-webkit-appearance: none;\n }\n Has pseudo styling :active\n Has pseudo styling :focus"
+    "description": "{\n align-content: center;\ncursor: pointer;\ndisplay: inline-flex;\njustify-content: center;\n }\n {\n align-content: center;\ncursor: pointer;\ndisplay: inline-flex;\njustify-content: center;\n }"
   },
   "designsystem toggle icon": {
     "prefix": "ds-toggle--icon",
@@ -362,6 +362,13 @@
       "toggle--icon"
     ],
     "description": "NB! This should only be used with toggle\n{\n width: 20px;\n }\n NB! This should only be used with toggle\n{\n width: 20px;\n }"
+  },
+  "designsystem toggle button": {
+    "prefix": "ds-toggle-button",
+    "body": [
+      "toggle-button"
+    ],
+    "description": "{\n align-content: center;\nbackground: none;\nborder: 0;\ncursor: pointer;\ndisplay: inline-flex;\njustify-content: center;\npadding: 0;\n-webkit-appearance: none;\n }\n Has pseudo styling :active\n Has pseudo styling :focus"
   },
   "designsystem tooltip": {
     "prefix": "ds-tooltip",
@@ -852,13 +859,6 @@
       "margin-auto"
     ],
     "description": "{\n margin-right: auto;\nmargin-left: auto;\n }"
-  },
-  "designsystem fill current color": {
-    "prefix": "ds-fill-current-color",
-    "body": [
-      "fill-current-color"
-    ],
-    "description": "{\n fill: currentColor;\n }"
   },
   "designsystem margin s": {
     "prefix": "ds-margin-s",
