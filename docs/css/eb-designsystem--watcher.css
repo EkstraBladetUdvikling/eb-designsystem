@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.4.4 built on 17.3.2021 13.19.43 on branch "article-redesign" at revision "11e44d4ff28a4a69c6f70b91d45d2631d2ad61f0" */
+/** eb-designsystem--watcher.css version 0.4.4 built on 17.3.2021 13.36.44 on branch "article-redesign" at revision "4717933410170f39e9c490102a1a4ec27b74b924" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -1132,6 +1132,9 @@ a.card-mode:focus {
 
 .form-input-container input,
 .form-input-container textarea {
+  line-height: normal;
+  padding: 1px 2px;
+  height: auto;
   border: none;
 }
 .form-input-container input:focus,
