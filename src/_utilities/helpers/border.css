@@ -1,7 +1,7 @@
 /* Variables */
 :root {
-  --border-radius-small: 5px;
   --border-radius-medium: 10px; /* default */
+  --border-radius-small: 5px;
 }
 
 /* All border-radius */
