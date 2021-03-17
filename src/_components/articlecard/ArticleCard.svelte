@@ -24,7 +24,7 @@
   export let title: string;
   export let type: TCardType = undefined;
 
-  let baseClass = `card-mode margin-s`;
+  let baseClass = `card-mode card-mode--article margin-s`;
 
   if (className) baseClass = `${className} ${baseClass}`;
 
@@ -46,7 +46,7 @@
 
   switch (type) {
     case 'mode':
-      baseClass = `card-mode`;
+      baseClass = `card-mode card-mode--article`;
       break;
     case 'small-media':
       innerClass = `${innerClass} card--small-media`;
@@ -72,7 +72,7 @@
     {#if section}
       <div class="card-section-border bg--{section.toLowerCase()}" />
     {/if}
-    <div class="flex-column flex-column--reverse">
+    <div class="flex-column flex-column--reverse flex-item--grow flex-justify--between">
       {#if isPlus}
         <div class="card-icon flex flex-justify--end">
           <Icon name="ebplus_icon" width="20" />

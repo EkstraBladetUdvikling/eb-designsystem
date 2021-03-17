@@ -6135,9 +6135,9 @@ var app = (function () {
     			div0 = element("div");
     			attr_dev(div0, "class", "card-image bg--graa4");
     			attr_dev(div0, "style", /*loadingStyle*/ ctx[10]);
-    			add_location(div0, file$w, 47, 8, 1317);
+    			add_location(div0, file$w, 47, 8, 1355);
     			attr_dev(div1, "class", "card-media");
-    			add_location(div1, file$w, 46, 6, 1284);
+    			add_location(div1, file$w, 46, 6, 1322);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -6181,9 +6181,9 @@ var app = (function () {
     			if (img.src !== (img_src_value = /*media*/ ctx[4].src)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "height", img_height_value = /*media*/ ctx[4].height);
     			attr_dev(img, "width", img_width_value = /*media*/ ctx[4].width);
-    			add_location(img, file$w, 52, 8, 1453);
+    			add_location(img, file$w, 52, 8, 1491);
     			attr_dev(div, "class", "card-media");
-    			add_location(div, file$w, 51, 6, 1420);
+    			add_location(div, file$w, 51, 6, 1458);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -6231,7 +6231,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			attr_dev(div, "class", div_class_value = "card-section-border bg--" + /*section*/ ctx[5].toLowerCase());
-    			add_location(div, file$w, 56, 6, 1597);
+    			add_location(div, file$w, 56, 6, 1635);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -6273,7 +6273,7 @@ var app = (function () {
     			div = element("div");
     			create_component(icon.$$.fragment);
     			attr_dev(div, "class", "card-icon flex flex-justify--end");
-    			add_location(div, file$w, 60, 8, 1749);
+    			add_location(div, file$w, 60, 8, 1787);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -6321,7 +6321,7 @@ var app = (function () {
     			t = space();
     			if (if_block1) if_block1.c();
     			attr_dev(div, "class", "card-meta flex fontsize-xxsmall");
-    			add_location(div, file$w, 67, 10, 1951);
+    			add_location(div, file$w, 67, 10, 1989);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -6431,9 +6431,9 @@ var app = (function () {
     			t0 = space();
     			span = element("span");
     			t1 = text(/*section*/ ctx[5]);
-    			add_location(span, file$w, 71, 16, 2147);
+    			add_location(span, file$w, 71, 16, 2185);
     			attr_dev(div, "class", "width-1of2");
-    			add_location(div, file$w, 69, 14, 2037);
+    			add_location(div, file$w, 69, 14, 2075);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -6492,7 +6492,7 @@ var app = (function () {
     			t0 = space();
     			t1 = text(/*timestamp*/ ctx[8]);
     			attr_dev(div, "class", "width-1of2");
-    			add_location(div, file$w, 75, 14, 2251);
+    			add_location(div, file$w, 75, 14, 2289);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -6567,14 +6567,14 @@ var app = (function () {
     			h2 = element("h2");
     			t5 = text(/*title*/ ctx[0]);
     			attr_dev(h2, "class", "card-title");
-    			add_location(h2, file$w, 82, 8, 2430);
+    			add_location(h2, file$w, 82, 8, 2468);
     			attr_dev(div0, "class", "card-content");
-    			add_location(div0, file$w, 65, 6, 1879);
+    			add_location(div0, file$w, 65, 6, 1917);
     			attr_dev(div1, "class", "flex-column flex-column--reverse");
-    			add_location(div1, file$w, 58, 4, 1675);
+    			add_location(div1, file$w, 58, 4, 1713);
     			attr_dev(div2, "class", /*innerClass*/ ctx[11]);
     			attr_dev(div2, "data-theme", /*theme*/ ctx[7]);
-    			add_location(div2, file$w, 44, 2, 1216);
+    			add_location(div2, file$w, 44, 2, 1254);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -6801,7 +6801,7 @@ var app = (function () {
     	let { timestamp = undefined } = $$props;
     	let { title } = $$props;
     	let { type = undefined } = $$props;
-    	let baseClass = `card-mode margin-s`;
+    	let baseClass = `card-mode card-mode--article margin-s`;
     	if (className) baseClass = `${className} ${baseClass}`;
     	let loadingStyle = "padding-top: 56.25%; width: 100%;";
 
@@ -6821,7 +6821,7 @@ var app = (function () {
 
     	switch (type) {
     		case "mode":
-    			baseClass = `card-mode`;
+    			baseClass = `card-mode card-mode--article`;
     			break;
     		case "small-media":
     			innerClass = `${innerClass} card--small-media`;
@@ -7052,40 +7052,44 @@ var app = (function () {
     	let t1;
     	let prism0;
     	let t2;
-    	let articlecard0;
-    	let t3;
-    	let prism1;
+    	let p;
     	let t4;
-    	let articlecard1;
+    	let prism1;
     	let t5;
-    	let prism2;
+    	let articlecard0;
     	let t6;
-    	let articlecard2;
+    	let prism2;
     	let t7;
-    	let prism3;
+    	let articlecard1;
     	let t8;
-    	let articlecard3;
+    	let prism3;
     	let t9;
-    	let prism4;
+    	let articlecard2;
     	let t10;
-    	let articlecard4;
+    	let prism4;
     	let t11;
-    	let prism5;
+    	let articlecard3;
     	let t12;
-    	let h2;
+    	let prism5;
+    	let t13;
+    	let articlecard4;
     	let t14;
-    	let articlecard5;
-    	let t15;
-    	let articlecard6;
-    	let t16;
-    	let articlecard7;
-    	let t17;
-    	let articlecard8;
-    	let t18;
     	let prism6;
+    	let t15;
+    	let h2;
+    	let t17;
+    	let articlecard5;
+    	let t18;
+    	let articlecard6;
     	let t19;
-    	let articlecard9;
+    	let articlecard7;
     	let t20;
+    	let articlecard8;
+    	let t21;
+    	let prism7;
+    	let t22;
+    	let articlecard9;
+    	let t23;
     	let articlecard10;
     	let current;
 
@@ -7095,6 +7099,30 @@ var app = (function () {
     				source: `
     import ArticleCard from '@ekstra-bladet/designsystem/src/_components/articlecard';
     `
+    			},
+    			$$inline: true
+    		});
+
+    	prism1 = new Prism$1({
+    			props: {
+    				language: "js",
+    				source: `
+    interface IMediaOptions {
+      className: string;
+      height: string;
+      src: string;
+      width: string;
+    }
+
+    export let className: string = undefined;
+    export let href: string = undefined;
+    export let media: Partial<IMediaOptions> = undefined;
+    export let section: string = undefined;
+    export let style: string = undefined;
+    export let timestamp: string = undefined;
+    export let title: string;
+    export let type: string = undefined;
+  `
     			},
     			$$inline: true
     		});
@@ -7111,7 +7139,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	prism1 = new Prism$1({
+    	prism2 = new Prism$1({
     			props: {
     				language: "js",
     				source: `
@@ -7140,7 +7168,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	prism2 = new Prism$1({
+    	prism3 = new Prism$1({
     			props: {
     				language: "html",
     				source: `
@@ -7168,7 +7196,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	prism3 = new Prism$1({
+    	prism4 = new Prism$1({
     			props: {
     				language: "html",
     				source: `
@@ -7204,7 +7232,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	prism4 = new Prism$1({
+    	prism5 = new Prism$1({
     			props: {
     				language: "html",
     				source: `
@@ -7243,7 +7271,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	prism5 = new Prism$1({
+    	prism6 = new Prism$1({
     			props: {
     				language: "html",
     				source: `
@@ -7277,7 +7305,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	prism6 = new Prism$1({
+    	prism7 = new Prism$1({
     			props: {
     				language: "html",
     				source: `
@@ -7328,45 +7356,51 @@ var app = (function () {
     			t1 = space();
     			create_component(prism0.$$.fragment);
     			t2 = space();
-    			create_component(articlecard0.$$.fragment);
-    			t3 = space();
-    			create_component(prism1.$$.fragment);
+    			p = element("p");
+    			p.textContent = "ArticleCard attributer";
     			t4 = space();
-    			create_component(articlecard1.$$.fragment);
+    			create_component(prism1.$$.fragment);
     			t5 = space();
-    			create_component(prism2.$$.fragment);
+    			create_component(articlecard0.$$.fragment);
     			t6 = space();
-    			create_component(articlecard2.$$.fragment);
+    			create_component(prism2.$$.fragment);
     			t7 = space();
-    			create_component(prism3.$$.fragment);
+    			create_component(articlecard1.$$.fragment);
     			t8 = space();
-    			create_component(articlecard3.$$.fragment);
+    			create_component(prism3.$$.fragment);
     			t9 = space();
-    			create_component(prism4.$$.fragment);
+    			create_component(articlecard2.$$.fragment);
     			t10 = space();
-    			create_component(articlecard4.$$.fragment);
+    			create_component(prism4.$$.fragment);
     			t11 = space();
-    			create_component(prism5.$$.fragment);
+    			create_component(articlecard3.$$.fragment);
     			t12 = space();
+    			create_component(prism5.$$.fragment);
+    			t13 = space();
+    			create_component(articlecard4.$$.fragment);
+    			t14 = space();
+    			create_component(prism6.$$.fragment);
+    			t15 = space();
     			h2 = element("h2");
     			h2.textContent = "Loading placeholder";
-    			t14 = space();
-    			create_component(articlecard5.$$.fragment);
-    			t15 = space();
-    			create_component(articlecard6.$$.fragment);
-    			t16 = space();
-    			create_component(articlecard7.$$.fragment);
     			t17 = space();
-    			create_component(articlecard8.$$.fragment);
+    			create_component(articlecard5.$$.fragment);
     			t18 = space();
-    			create_component(prism6.$$.fragment);
+    			create_component(articlecard6.$$.fragment);
     			t19 = space();
-    			create_component(articlecard9.$$.fragment);
+    			create_component(articlecard7.$$.fragment);
     			t20 = space();
+    			create_component(articlecard8.$$.fragment);
+    			t21 = space();
+    			create_component(prism7.$$.fragment);
+    			t22 = space();
+    			create_component(articlecard9.$$.fragment);
+    			t23 = space();
     			create_component(articlecard10.$$.fragment);
     			attr_dev(h1, "class", "color--eb");
     			add_location(h1, file$v, 14, 2, 358);
-    			add_location(h2, file$v, 125, 2, 3103);
+    			add_location(p, file$v, 21, 2, 539);
+    			add_location(h2, file$v, 125, 2, 3094);
     			attr_dev(div, "class", "grid-width--small");
     			add_location(div, file$v, 13, 0, 324);
     		},
@@ -7379,40 +7413,44 @@ var app = (function () {
     			append_dev(div, t1);
     			mount_component(prism0, div, null);
     			append_dev(div, t2);
-    			mount_component(articlecard0, div, null);
-    			append_dev(div, t3);
-    			mount_component(prism1, div, null);
+    			append_dev(div, p);
     			append_dev(div, t4);
-    			mount_component(articlecard1, div, null);
+    			mount_component(prism1, div, null);
     			append_dev(div, t5);
-    			mount_component(prism2, div, null);
+    			mount_component(articlecard0, div, null);
     			append_dev(div, t6);
-    			mount_component(articlecard2, div, null);
+    			mount_component(prism2, div, null);
     			append_dev(div, t7);
-    			mount_component(prism3, div, null);
+    			mount_component(articlecard1, div, null);
     			append_dev(div, t8);
-    			mount_component(articlecard3, div, null);
+    			mount_component(prism3, div, null);
     			append_dev(div, t9);
-    			mount_component(prism4, div, null);
+    			mount_component(articlecard2, div, null);
     			append_dev(div, t10);
-    			mount_component(articlecard4, div, null);
+    			mount_component(prism4, div, null);
     			append_dev(div, t11);
-    			mount_component(prism5, div, null);
+    			mount_component(articlecard3, div, null);
     			append_dev(div, t12);
-    			append_dev(div, h2);
+    			mount_component(prism5, div, null);
+    			append_dev(div, t13);
+    			mount_component(articlecard4, div, null);
     			append_dev(div, t14);
-    			mount_component(articlecard5, div, null);
-    			append_dev(div, t15);
-    			mount_component(articlecard6, div, null);
-    			append_dev(div, t16);
-    			mount_component(articlecard7, div, null);
-    			append_dev(div, t17);
-    			mount_component(articlecard8, div, null);
-    			append_dev(div, t18);
     			mount_component(prism6, div, null);
+    			append_dev(div, t15);
+    			append_dev(div, h2);
+    			append_dev(div, t17);
+    			mount_component(articlecard5, div, null);
+    			append_dev(div, t18);
+    			mount_component(articlecard6, div, null);
     			append_dev(div, t19);
-    			mount_component(articlecard9, div, null);
+    			mount_component(articlecard7, div, null);
     			append_dev(div, t20);
+    			mount_component(articlecard8, div, null);
+    			append_dev(div, t21);
+    			mount_component(prism7, div, null);
+    			append_dev(div, t22);
+    			mount_component(articlecard9, div, null);
+    			append_dev(div, t23);
     			mount_component(articlecard10, div, null);
     			current = true;
     		},
@@ -7480,42 +7518,44 @@ var app = (function () {
     		i: function intro(local) {
     			if (current) return;
     			transition_in(prism0.$$.fragment, local);
-    			transition_in(articlecard0.$$.fragment, local);
     			transition_in(prism1.$$.fragment, local);
-    			transition_in(articlecard1.$$.fragment, local);
+    			transition_in(articlecard0.$$.fragment, local);
     			transition_in(prism2.$$.fragment, local);
-    			transition_in(articlecard2.$$.fragment, local);
+    			transition_in(articlecard1.$$.fragment, local);
     			transition_in(prism3.$$.fragment, local);
-    			transition_in(articlecard3.$$.fragment, local);
+    			transition_in(articlecard2.$$.fragment, local);
     			transition_in(prism4.$$.fragment, local);
-    			transition_in(articlecard4.$$.fragment, local);
+    			transition_in(articlecard3.$$.fragment, local);
     			transition_in(prism5.$$.fragment, local);
+    			transition_in(articlecard4.$$.fragment, local);
+    			transition_in(prism6.$$.fragment, local);
     			transition_in(articlecard5.$$.fragment, local);
     			transition_in(articlecard6.$$.fragment, local);
     			transition_in(articlecard7.$$.fragment, local);
     			transition_in(articlecard8.$$.fragment, local);
-    			transition_in(prism6.$$.fragment, local);
+    			transition_in(prism7.$$.fragment, local);
     			transition_in(articlecard9.$$.fragment, local);
     			transition_in(articlecard10.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(prism0.$$.fragment, local);
-    			transition_out(articlecard0.$$.fragment, local);
     			transition_out(prism1.$$.fragment, local);
-    			transition_out(articlecard1.$$.fragment, local);
+    			transition_out(articlecard0.$$.fragment, local);
     			transition_out(prism2.$$.fragment, local);
-    			transition_out(articlecard2.$$.fragment, local);
+    			transition_out(articlecard1.$$.fragment, local);
     			transition_out(prism3.$$.fragment, local);
-    			transition_out(articlecard3.$$.fragment, local);
+    			transition_out(articlecard2.$$.fragment, local);
     			transition_out(prism4.$$.fragment, local);
-    			transition_out(articlecard4.$$.fragment, local);
+    			transition_out(articlecard3.$$.fragment, local);
     			transition_out(prism5.$$.fragment, local);
+    			transition_out(articlecard4.$$.fragment, local);
+    			transition_out(prism6.$$.fragment, local);
     			transition_out(articlecard5.$$.fragment, local);
     			transition_out(articlecard6.$$.fragment, local);
     			transition_out(articlecard7.$$.fragment, local);
     			transition_out(articlecard8.$$.fragment, local);
-    			transition_out(prism6.$$.fragment, local);
+    			transition_out(prism7.$$.fragment, local);
     			transition_out(articlecard9.$$.fragment, local);
     			transition_out(articlecard10.$$.fragment, local);
     			current = false;
@@ -7523,21 +7563,22 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
     			destroy_component(prism0);
-    			destroy_component(articlecard0);
     			destroy_component(prism1);
-    			destroy_component(articlecard1);
+    			destroy_component(articlecard0);
     			destroy_component(prism2);
-    			destroy_component(articlecard2);
+    			destroy_component(articlecard1);
     			destroy_component(prism3);
-    			destroy_component(articlecard3);
+    			destroy_component(articlecard2);
     			destroy_component(prism4);
-    			destroy_component(articlecard4);
+    			destroy_component(articlecard3);
     			destroy_component(prism5);
+    			destroy_component(articlecard4);
+    			destroy_component(prism6);
     			destroy_component(articlecard5);
     			destroy_component(articlecard6);
     			destroy_component(articlecard7);
     			destroy_component(articlecard8);
-    			destroy_component(prism6);
+    			destroy_component(prism7);
     			destroy_component(articlecard9);
     			destroy_component(articlecard10);
     		}
@@ -14760,12 +14801,6 @@ import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongrou
     	}
     }
 
-    /**
-     * Returns a function, that, as long as it continues to be invoked, will not
-     * be triggered. The function will be called after it stops being called for
-     * N milliseconds. If `immediate` is passed, trigger the function on the
-     * leading edge, instead of the trailing.
-     */
     function throttle(callback, wait) {
         let inThrottle;
         return function () {

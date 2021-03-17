@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.4.5 built on 17.3.2021 13.21.43 on branch "EBCD-13910" at revision "8a4b34654f61d434242b453bd9f0030159f7c477" */
+/** eb-designsystem.css version 0.4.5 built on 17.3.2021 15.23.57 on branch "EBCD-13910" at revision "f6790f68128a1b152dbc8fe5074f1efeff824681" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -1050,7 +1050,11 @@ a.card-mode:focus .card-inner {
 .card-mode .card-content {
   position: relative;
 
-  padding: 10px 15px 0;
+  padding: 10px 15px 15px;
+}
+
+.card-mode .card-icon ~ .card-content {
+  padding-bottom: 0;
 }
 
 .card-mode .card-icon {
@@ -1085,7 +1089,7 @@ a.card-mode:focus .card-inner {
 /* card-mode: lightmode */
 
 .card-mode[data-theme="lightmode"]:hover,
-[data-theme="lightmode"]:not([class*="bg--"]):not([class*="card-mode"]) {
+[data-theme="lightmode"]:not([class*="bg--"]):not([class*="card-mode--article"]) {
   background: var(--color--white);
   color: var(--color--black);
 }
@@ -1093,7 +1097,7 @@ a.card-mode:focus .card-inner {
 /* card-mode: darkmode */
 
 .card-mode[data-theme="darkmode"]:hover,
-[data-theme="darkmode"]:not([class*="bg--"]):not([class*="card-mode"]) {
+[data-theme="darkmode"]:not([class*="bg--"]):not([class*="card-mode--article"]) {
   background: var(--color--black);
   color: var(--color--white);
 }
