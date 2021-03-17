@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.4.4 built on 17.3.2021 12.38.00 on branch "article-redesign" at revision "d1e11c361d1338661b9d6a8d66158fe98194dbe9" */
+/** eb-designsystem--watcher.css version 0.4.4 built on 17.3.2021 13.19.43 on branch "article-redesign" at revision "11e44d4ff28a4a69c6f70b91d45d2631d2ad61f0" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -1045,6 +1045,46 @@ a.card-mode:focus {
 
 .form-group .form-element + .form-element {
   margin-top: 25px;
+}
+
+.form-input {
+  /**
+  @description: Form input, dependent on the surrounding form-element
+  @template:
+  <div class="form-element">
+    <input type="text" class="form-input form-input--text" id="formInput" placeholder="$1" />
+    <label for="formInput" class="form-label">$1</label>
+  </div>
+  */
+  border: 1px solid;
+  border-radius: var(--form-border-radius);
+  box-sizing: border-box;
+  line-height: 30px;
+  padding: 5px;
+  height: 30px;
+}
+
+.form-input--big {
+  padding: 10px;
+  height: 50px;
+}
+
+.form-input ~ .form-label {
+  position: absolute;
+  top: 0;
+  left: 5px;
+
+  font-size: 0.7em;
+  transform: translate(0, -110%);
+}
+
+.form-input:placeholder-shown ~ .form-label {
+  opacity: 0;
+}
+
+.form-input:not(:placeholder-shown) ~ .form-label,
+.form-input:focus ~ .form-label {
+  opacity: 1;
 }
 
 .form-element--icon {
