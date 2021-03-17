@@ -19,7 +19,7 @@
     "dev": "yarn rollup -c -w & yarn build:watch",
     "start": "sirv docs",
     "validate": "svelte-check",
-    "dist": "yarn build:css",
+    "dist": "yarn build",
     "dist:move": "yarn dist && yarn move_to_eb",
     "installds": "node install-system",
     "installds:eb": "node install-system ../ekstrabladet/ekstrabladet-publication/src/main/frontend/css-main/main/css",

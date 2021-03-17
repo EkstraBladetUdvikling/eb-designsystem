@@ -4,8 +4,9 @@
   let radio = 1;
 </script>
 
-<FormElement inputtype="text" label="Noget indhold her" />
-<FormElement inputtype="text" label="Noget ANDET indhold her" />
+<FormElement inputtype="text" size="small" label="input size small" />
+<FormElement inputtype="text" label="input size medium(standard)" />
+<FormElement inputtype="text" size="large" label="input size large" />
 
 <FormElement inputtype="select" label="Noget indhold her">
   <option value="optioin1">Option 1</option>
@@ -18,3 +19,4 @@
 <FormElement inputtype="radio" label="Radio denne her også" bind:group={radio} value={2} />
 
 <FormElement inputtype="number" label="Noget tal indhold her" />
+<FormElement inputtype="textarea" label="Kommentar label" />
