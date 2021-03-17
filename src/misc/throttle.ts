@@ -6,7 +6,6 @@
  */
 let myTimeout;
 export function throttle(callback, wait) {
-  console.log('myTiume', myTimeout);
   if (!myTimeout) {
     myTimeout = setTimeout(() => {
       clearTimeout(myTimeout);

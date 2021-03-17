@@ -42,7 +42,6 @@
   }
 
   function updateButtons() {
-    console.log('listCurrent', listCurrent, 'maxLength', maxLength);
     if (listCurrent === 0) {
       updateDataSet('start');
     } else if (listCurrent === maxLength) {
@@ -97,9 +96,8 @@
   }
 
   afterUpdate(() => {
-    console.log('children', 'children?', children);
     if (children) return;
-    console.log('children', 'after after after');
+
     children = scrollItemContainer.children;
 
     listLength = children.length;
@@ -129,28 +127,6 @@
     });
 
     updateButtons();
-    // else {
-    //   /**
-    //    * We dont need to count the visible elements
-    //    */
-    //   maxLength = listLength - visibleChildren;
-
-    //   /* Horizontial scroll to the left */
-    //   nextScrollBtn.addEventListener('click', function () {
-    //     if (listCurrent !== maxLength) {
-    //       listCurrent++;
-    //       scroll(listCurrent);
-    //     }
-    //   });
-
-    //   /* Horizontial scroll to the right */
-    //   prevScrollBtn.addEventListener('click', function () {
-    //     if (listCurrent !== 0) {
-    //       listCurrent--;
-    //       scroll(listCurrent);
-    //     }
-    //   });
-    // }
   });
 </script>
 
@@ -158,15 +134,9 @@
   <h1>{title}</h1>
 {/if}
 <div bind:this={scrollContainer} class="horizontal-scroll-container position-relative">
-  <!-- <button bind:this={prevScrollBtn} class="horizontal-scroll-nav bg--white" data-horizontallist="button-prev">
-    <i class="fa fa-chevron-left" />
-  </button> -->
   <Button on:click={prevScroll} className="horizontal-scroll-nav button-prev bg--white" extension="icon">
     <i class="fa fa-chevron-left" />
   </Button>
-  <!-- <button bind:this={nextScrollBtn} class="horizontal-scroll-nav bg--white" data-horizontallist="button-next">
-    <i class="fa fa-chevron-right" />
-  </button> -->
   <Button on:click={nextScroll} className="horizontal-scroll-nav button-next bg--white" extension="icon">
     <i class="fa fa-chevron-right" />
   </Button>

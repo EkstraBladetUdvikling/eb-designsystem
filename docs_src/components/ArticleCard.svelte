@@ -126,7 +126,7 @@
   `}
   />
 
-  <!-- <h2>Loading placeholder</h2>
+  <h2>Loading placeholder</h2>
 
   <ArticleCard loading={true} />
   <ArticleCard loading={true} type="small-media" />
@@ -141,7 +141,7 @@
       <ArticleCard loading={true} type="small-media--reverse" />
       <ArticleCard loading={true} type="mode" />
     `}
-  /> -->
+  />
 
   <ArticleCard isPlus={true} {...article} style="width: 215px;" />
   <ArticleCard isPlus={true} theme="darkmode" {...article} style="width: 215px;" />
