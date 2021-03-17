@@ -2,6 +2,7 @@
   import { afterUpdate } from 'svelte';
 
   import { throttle } from '../../misc/throttle';
+
   import Button from '../button';
 
   export let className = undefined;
@@ -52,6 +53,7 @@
   }
 
   function updateButtonsThroughScroll() {
+    console.log('updateButtonsThroughScroll');
     const childLeft = children[0].getBoundingClientRect().left;
     const wrapLeft = scrollItemContainer.getBoundingClientRect().left;
 
@@ -96,6 +98,7 @@
   }
 
   afterUpdate(() => {
+    console.log('afterUpdate');
     if (children) return;
 
     children = scrollItemContainer.children;
@@ -120,11 +123,12 @@
       nextScrollBtn.style.display = 'none';
     }
 
-    scrollItemContainer.addEventListener('wheel', () => {
-      throttle(function () {
+    scrollItemContainer.addEventListener(
+      'wheel',
+      throttle(() => {
         updateButtonsThroughScroll();
-      }, 150);
-    });
+      }, 150)
+    );
 
     updateButtons();
   });

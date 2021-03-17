@@ -23,7 +23,7 @@
 }
 
 .horizontal-scroll-container::before {
-  left: calc(var(--right-pos) * -1);
+  left: 0;
 
   box-shadow: 20px 0 20px -20px rgba(0, 0, 0, .4);
 }

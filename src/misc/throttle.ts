@@ -4,13 +4,15 @@
  * N milliseconds. If `immediate` is passed, trigger the function on the
  * leading edge, instead of the trailing.
  */
-let myTimeout;
 export function throttle(callback, wait) {
-  if (!myTimeout) {
-    myTimeout = setTimeout(() => {
-      clearTimeout(myTimeout);
-      myTimeout = undefined;
-      callback();
-    }, wait);
-  }
+  let inThrottle;
+  return function () {
+    const args = arguments;
+    const context = this;
+    if (!inThrottle) {
+      callback.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => (inThrottle = false), wait);
+    }
+  };
 }

@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.4.5 built on 17.3.2021 09.01.38 on branch "EBCD-13910" at revision "ab8b9d051b8f30f01a11b7fca960639c102da4d8" */
+/** eb-designsystem.css version 0.4.5 built on 17.3.2021 13.21.43 on branch "EBCD-13910" at revision "8a4b34654f61d434242b453bd9f0030159f7c477" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -1240,7 +1240,7 @@ a.card-mode:focus .card-inner {
 }
 
 .horizontal-scroll-container::before {
-  left: calc(var(--right-pos) * -1);
+  left: 0;
 
   box-shadow: 20px 0 20px -20px rgba(0, 0, 0, .4);
 }
