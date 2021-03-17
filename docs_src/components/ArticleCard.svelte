@@ -22,7 +22,7 @@
     import ArticleCard from '@ekstra-bladet/designsystem/src/_components/articlecard';
     `}
   />
-  <!-- <p>ArticleCard attributer</p>
+  <p>ArticleCard attributer</p>
   <Prism
     language="js"
     source={`
@@ -42,7 +42,7 @@
     export let title: string;
     export let type: string = undefined;
   `}
-  /> -->
+  />
 
   <ArticleCard {...article} />
 
