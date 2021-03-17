@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /** eb-designsystem--watcher.css version 0.4.2 built on 15.3.2021 16.18.03 on branch "article-redesign" at revision "220f843a8125808a374b0591172f2a8afc02a98d" */
+=======
+/** eb-designsystem--watcher.css version 0.4.2 built on 11.3.2021 19.16.46 on branch "master" at revision "870c46586d8e4d7a2245f4897cbf718f92504c43" */
+>>>>>>> parent of d1b34e6... New card: border-radius 10px.
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -638,7 +642,6 @@ a.badge:hover {
 
 .button.button--small {
   font-size: 12px;
-  padding: 0 15px;
   height: var(--button-height--small);
 }
 
@@ -777,8 +780,8 @@ a.badge:hover {
 @media (max-width: 767px) {
   :root {
     --card-fs-title: 20px;
-    --card-fs-title--small: 16px;
-    --card-padding: 10px;
+  --card-fs-title--small: 16px;
+  --card-padding: 10px;
   }
 }
 
@@ -900,7 +903,7 @@ a.card:focus {
 
 /* Card-modes (mutation of .card - new design) */
 .card-mode {
-  border-radius: var(--border-radius-medium);
+  border-radius: 15px;
   box-shadow: inset 0 0 0 1px var(--card-border-color); /* DR.Edition 03/02/2020 */
   box-sizing: border-box;
   display: flex;
@@ -927,17 +930,17 @@ a.card-mode:focus {
   padding-bottom: 0;
 }
 .card-mode .card-media .card-image {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .card-section-border {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   height: 8px;
 }
 .card-section-border-top {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   height: 8px;
 }
 .card-mode .card-media .card-icon {
@@ -1808,10 +1811,6 @@ h6,p {
 .margin-auto {
   margin-right: auto;
   margin-left: auto;
-}
-
-.fill-current-color {
-  fill: currentColor;
 }
 /* margin */
 
