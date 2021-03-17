@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.4.4 built on 17.3.2021 09.02.20 on branch "article-redesign" at revision "7f1169b70caa10602ef19aee8f4a44087a171f7f" */
+/** eb-designsystem.css version 0.4.4 built on 17.3.2021 13.44.32 on branch "article-redesign" at revision "72179c9c229f484c3817b4ca8ceb89b7f96c824d" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -229,8 +229,8 @@
   --color--tv: #bd1118;
   --fgcolor--tv: #fff;
   --border-radius--small: 5px;
-  --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), 0.22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
-  --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), 0.1);
+  --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), .22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
+  --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
   --color--accept: var(--color--green);
   --color--cancel: var(--color--red);
   --color--default: var(--color--bluedark);
@@ -252,13 +252,13 @@
   --fontfamily--secondary: Arial, Helvetica, sans-serif;
   --fs-rem-large: 1.125rem; /* 18px */
   --fs-rem-medium: 1rem; /* 16px */
-  --fs-rem-small: 0.875rem; /* 14px */
+  --fs-rem-small: .875rem; /* 14px */
   --fs-rem-xlarge: 1.25rem; /* 20px */
-  --fs-rem-xsmall: 0.75rem; /* 12px */
+  --fs-rem-xsmall: .75rem; /* 12px */
   --fs-rem-xxlarge: 1.875rem; /* 30px */
-  --fs-rem-xxsmall: 0.625rem; /* 10px */
+  --fs-rem-xxsmall: .625rem; /* 10px */
   --fs-rem-xxxlarge: 2.25rem; /* 36px */
-  --fs-rem-xxxsmall: 0.4375rem; /* 7px */
+  --fs-rem-xxxsmall: .4375rem; /* 7px */
   --fs-rem-xxxxlarge: 3.125rem; /* 50px */
   --fs-large: var(--fs-rem-large);
   --fs-medium: var(--fs-rem-medium);
@@ -290,27 +290,27 @@
 @media (--smartphone) {
   :root {
     --distance-large: 15px;
-    --distance-medium: 10px;
-    --distance-small: 5px;
-    --distance-standard: 10px;
-    --distance-xlarge: 20px;
-    --distance-xxlarge: 30px;
+  --distance-medium: 10px;
+  --distance-small: 5px;
+  --distance-standard: 10px;
+  --distance-xlarge: 20px;
+  --distance-xxlarge: 30px;
     --fs-large: var(--fs-rem-medium);
-    --fs-medium: var(--fs-rem-medium);
-    --fs-small: var(--fs-rem-xsmall);
-    --fs-xlarge: var(--fs-rem-xlarge);
-    --fs-xsmall: var(--fs-rem-xxsmall);
-    --fs-xxlarge: var(--fs-rem-xxlarge);
-    --fs-xxsmall: var(--fs-rem-xxxsmall);
-    --fs-xxxlarge: var(--fs-rem-xxxlarge);
+  --fs-medium: var(--fs-rem-medium);
+  --fs-small: var(--fs-rem-xsmall);
+  --fs-xlarge: var(--fs-rem-xlarge);
+  --fs-xsmall: var(--fs-rem-xxsmall);
+  --fs-xxlarge: var(--fs-rem-xxlarge);
+  --fs-xxsmall: var(--fs-rem-xxxsmall);
+  --fs-xxxlarge: var(--fs-rem-xxxlarge);
     --fs-ads: var(--fs-xxsmall);
-    --fs-bodytext: var(--fs-large);
-    --fs-caption: var(--fs-small);
-    --fs-quote: var(--fs-xxlarge);
-    --fs-showmore: var(--fs-medium);
-    --fs-subtitle: var(--fs-xlarge);
-    --fs-timestamp: var(--fs-xsmall);
-    --fs-title: var(--fs-xxxlarge);
+  --fs-bodytext: var(--fs-large);
+  --fs-caption: var(--fs-small);
+  --fs-quote: var(--fs-xxlarge);
+  --fs-showmore: var(--fs-medium);
+  --fs-subtitle: var(--fs-xlarge);
+  --fs-timestamp: var(--fs-xsmall);
+  --fs-title: var(--fs-xxxlarge);
   }
 
   /**
@@ -370,12 +370,13 @@ custom media queries is the only allowed media queries
 /*
 * ie11 and above media query for
 */
-@custom-media --ie only screen and (-ms-high-contrast: active), (-ms-high-contrast: none);
+@custom-media --ie only screen and (-ms-high-contrast: active),
+  (-ms-high-contrast: none);
 .accordion-tab {
   background: rgb(var(--rgb-color--graa7));
   border: 1px solid transparent;
   border-radius: var(--border-radius--small);
-  box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), 0.22);
+  box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), .22);
 
   user-select: none;
 }
@@ -383,8 +384,7 @@ custom media queries is the only allowed media queries
 .accordion-header {
   cursor: pointer;
 }
-.accordion-header:hover,
-.accordion-header:hover > i {
+.accordion-header:hover,.accordion-header:hover > i {
   color: var(--color--bluelight);
 }
 
@@ -448,7 +448,7 @@ custom media queries is the only allowed media queries
 
 a.badge:focus,
 a.badge:hover {
-  opacity: 0.8; /* DR.Edition 03/02/2020 */
+  opacity: .8; /* DR.Edition 03/02/2020 */
 }
 
 .badge.badge--small {
@@ -523,7 +523,7 @@ a.badge:hover {
 
 .button:disabled {
   cursor: default;
-  opacity: 0.7;
+  opacity: .7;
 
   pointer-events: none;
 }
@@ -786,8 +786,8 @@ a.badge:hover {
 @media (--smartphone) {
   :root {
     --card-fs-title: 20px;
-    --card-fs-title--small: 16px;
-    --card-padding: 10px;
+  --card-fs-title--small: 16px;
+  --card-padding: 10px;
   }
 }
 
@@ -909,7 +909,7 @@ a.card:focus {
 
 /* Card-modes (mutation of .card - new design) */
 .card-mode {
-  border-radius: var(--border-radius-medium);
+  border-radius: 15px;
   box-shadow: inset 0 0 0 1px var(--card-border-color); /* DR.Edition 03/02/2020 */
   box-sizing: border-box;
   display: flex;
@@ -936,17 +936,17 @@ a.card-mode:focus {
   padding-bottom: 0;
 }
 .card-mode .card-media .card-image {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .card-section-border {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   height: 8px;
 }
 .card-section-border-top {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   height: 8px;
 }
 .card-mode .card-media .card-icon {
@@ -1056,6 +1056,46 @@ a.card-mode:focus {
   margin-top: 25px;
 }
 
+.form-input {
+  /**
+  @description: Form input, dependent on the surrounding form-element
+  @template:
+  <div class="form-element">
+    <input type="text" class="form-input form-input--text" id="formInput" placeholder="$1" />
+    <label for="formInput" class="form-label">$1</label>
+  </div>
+  */
+  border: 1px solid;
+  border-radius: var(--form-border-radius);
+  box-sizing: border-box;
+  line-height: 30px;
+  padding: 5px;
+  height: 30px;
+}
+
+.form-input--big {
+  padding: 10px;
+  height: 50px;
+}
+
+.form-input ~ .form-label {
+  position: absolute;
+  top: 0;
+  left: 5px;
+
+  font-size: 0.7em;
+  transform: translate(0, -110%);
+}
+
+.form-input:placeholder-shown ~ .form-label {
+  opacity: 0;
+}
+
+.form-input:not(:placeholder-shown) ~ .form-label,
+.form-input:focus ~ .form-label {
+  opacity: 1;
+}
+
 .form-element--icon {
   position: relative;
 
@@ -1091,16 +1131,19 @@ a.card-mode:focus {
   white-space: nowrap;
 }
 
-.form-input-container.focus {
+[data-focus="true"] {
   border: 1px solid var(--color--bluelight);
 }
 
-.form-input-container.focus span {
+[data-focus="true"] span {
   color: var(--color--bluelight);
 }
 
 .form-input-container input,
 .form-input-container textarea {
+  line-height: normal;
+  padding: 1px 2px;
+  height: auto;
   border: none;
 }
 .form-input-container input:focus,
@@ -1271,8 +1314,7 @@ a.card-mode:focus {
   cursor: pointer;
 }
 
-.toggle,
-.toggle-button,
+.toggle,.toggle-button,
 .toggle-button:active,
 .toggle-button:focus {
   align-content: center;
@@ -1453,11 +1495,11 @@ a.card-mode:focus {
   left: 0;
   z-index: 1;
 
-  animation-duration: 2s;
+  animation-duration: 2.0s;
   animation-iteration-count: infinite;
   animation-name: fogwave;
   animation-timing-function: linear;
-  background: linear-gradient(to right, transparent 3%, rgba(255, 255, 255, 0.7) 25%, transparent 40%);
+  background: linear-gradient(to right, transparent 3%,rgba(255, 255, 255, .7) 25%, transparent 40%);
   background-size: 1000px 100%;
   content: "";
   width: 100%;
@@ -1496,8 +1538,7 @@ a.card-mode:focus {
   color: currentColor;
 }
 
-.flex,
-.flex-column {
+.flex,.flex-column {
   display: flex;
 }
 
@@ -1513,8 +1554,7 @@ a.card-mode:focus {
   justify-content: center;
 }
 
-.flex--center,
-.flex-align--center {
+.flex--center,.flex-align--center {
   align-items: center;
 }
 
@@ -1620,8 +1660,7 @@ a.card-mode:focus {
   font-family: var(--fontfamily--primary);
 }
 
-.ff-secondary,
-html,
+.ff-secondary,html,
 button,
 input,
 select,
@@ -1633,8 +1672,7 @@ h1 {
   font-size: var(--fs-title);
 }
 
-h1,
-h2 {
+h1,h2 {
   line-height: normal;
 }
 
@@ -1646,13 +1684,11 @@ h3 {
   font-size: var(--fs-xlarge);
 }
 
-h4,
-h5 {
+h4,h5 {
   font-size: var(--fs-large);
 }
 
-h6,
-p {
+h6,p {
   font-size: var(--fs-medium);
 }
 /**
@@ -1734,9 +1770,9 @@ p {
 @media (--smartphone) {
   :root {
     --grid-large: 100%;
-    --grid-medium: 100%;
-    --grid-small: 100;
-    --grid-xlarge: 100%;
+  --grid-medium: 100%;
+  --grid-small: 100;
+  --grid-xlarge: 100%;
   }
 }
 

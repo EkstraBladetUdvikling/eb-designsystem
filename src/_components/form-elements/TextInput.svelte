@@ -7,12 +7,13 @@
   export let size = "padding-m--tb";
 
   let inputEl: HTMLInputElement;
+  let inputLabelEl: HTMLSpanElement;
   let baseClass = `form-input form-input--${inputtype} width-1of1`;
 
   if (className) baseClass = `${className} ${baseClass}`;
 
-   /* focus effect on form elements */
-   onMount(() => {
+  /* focus effect on form elements */
+  onMount(() => {
     inputEl.addEventListener('focus', () => {
       inputEl.parentElement.setAttribute('data-focus', 'true');
       const inputLabel = inputEl.previousElementSibling;
@@ -20,10 +21,8 @@
     });
     inputEl.addEventListener('focusout', () => {
       inputEl.parentElement.setAttribute('data-focus', 'false');
-      const inputValue = inputEl.value;
-      if (inputValue.length === 0) {
-        const inputLabel = inputEl.previousElementSibling;
-        inputLabel.classList.add('hidden');
+      if (inputEl.value.length === 0) {
+        inputLabelEl.classList.add('hidden');
       }
     });
   });
@@ -31,7 +30,7 @@
 
 <div class={`form-input-container flex border-radius padding-m--rl ${size}`}>
   {#if label}
-    <span class="hidden">{label}:</span>
+    <span bind:this={inputLabelEl} class="hidden">{label}:</span>
   {/if}
   <input bind:this={inputEl} on:focus type={inputtype} placeholder={label} class={baseClass} />
 </div>
