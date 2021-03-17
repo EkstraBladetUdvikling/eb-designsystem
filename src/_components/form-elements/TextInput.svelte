@@ -6,28 +6,25 @@
   export let className = undefined;
   export let size = "padding-m--tb";
 
+  let inputEl: HTMLInputElement;
   let baseClass = `form-input form-input--${inputtype} width-1of1`;
 
   if (className) baseClass = `${className} ${baseClass}`;
 
-  /* focus effect on form elements */
-  onMount(() => {
-    const inputForms = document.querySelectorAll('.form-input');
-    inputForms.forEach((input, index) => {
-      input.addEventListener('focus', () => {
-        input.parentElement.classList.add('focus');
-        const inputLabel = input.previousElementSibling;
-        inputLabel.classList.remove('hidden');
-      });
-      input.addEventListener('focusout', () => {
-        input.parentElement.classList.remove('focus');
-        const inputElement = document.querySelectorAll('.form-input')[index] as HTMLInputElement;
-        const inputValue = inputElement.value;
-        if (inputValue.length === 0) {
-          const inputLabel = input.previousElementSibling;
-          inputLabel.classList.add('hidden');
-        }
-      });
+   /* focus effect on form elements */
+   onMount(() => {
+    inputEl.addEventListener('focus', () => {
+      inputEl.parentElement.setAttribute('data-focus', 'true');
+      const inputLabel = inputEl.previousElementSibling;
+      inputLabel.classList.remove('hidden');
+    });
+    inputEl.addEventListener('focusout', () => {
+      inputEl.parentElement.setAttribute('data-focus', 'false');
+      const inputValue = inputEl.value;
+      if (inputValue.length === 0) {
+        const inputLabel = inputEl.previousElementSibling;
+        inputLabel.classList.add('hidden');
+      }
     });
   });
 </script>
@@ -36,5 +33,5 @@
   {#if label}
     <span class="hidden">{label}:</span>
   {/if}
-  <input type={inputtype} placeholder={label} class={baseClass} />
+  <input bind:this={inputEl} on:focus type={inputtype} placeholder={label} class={baseClass} />
 </div>

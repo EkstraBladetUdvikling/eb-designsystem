@@ -6,28 +6,25 @@
   export let className = undefined;
   export let size = "padding-m--tb";
 
+  let textareaEl: HTMLTextAreaElement;
   let baseClass = `form-input form-input--${inputtype} width-1of1`;
 
   if (className) baseClass = `${className} ${baseClass}`;
 
-  /* focus effect on form elements */
-  onMount(() => {
-    const inputForms = document.querySelectorAll('.form-input');
-    inputForms.forEach((input, index) => {
-      input.addEventListener('focus', () => {
-        input.parentElement.classList.add('focus');
-        const inputLabel = input.previousElementSibling;
-        inputLabel.classList.remove('hidden');
-      });
-      input.addEventListener('focusout', () => {
-        input.parentElement.classList.remove('focus');
-        const inputElement = document.querySelectorAll('.form-input')[index] as HTMLInputElement;
-        const inputValue = inputElement.value;
-        if (inputValue.length === 0) {
-          const inputLabel = input.previousElementSibling;
-          inputLabel.classList.add('hidden');
-        }
-      });
+     /* focus effect on form elements */
+     onMount(() => {
+    textareaEl.addEventListener('focus', () => {
+      textareaEl.parentElement.setAttribute('data-focus', 'true');
+      const inputLabel = textareaEl.previousElementSibling;
+      inputLabel.classList.remove('hidden');
+    });
+    textareaEl.addEventListener('focusout', () => {
+      textareaEl.parentElement.setAttribute('data-focus', 'false');
+      const inputValue = textareaEl.value;
+      if (inputValue.length === 0) {
+        const inputLabel = textareaEl.previousElementSibling;
+        inputLabel.classList.add('hidden');
+      }
     });
   });
 </script>
@@ -36,5 +33,5 @@
   {#if label}
     <span class="hidden">{label}:</span>
   {/if}
-  <textarea class={baseClass} placeholder={label}></textarea>
+  <textarea bind:this={textareaEl} on:focus class={baseClass} placeholder={label}></textarea>
 </div>

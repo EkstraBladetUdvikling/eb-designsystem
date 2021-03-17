@@ -52,11 +52,11 @@
   white-space: nowrap;
 }
 
-.form-input-container.focus {
+[data-focus="true"] {
   border: 1px solid var(--color--bluelight);
 }
 
-.form-input-container.focus span {
+[data-focus="true"] span {
   color: var(--color--bluelight);
 }
 
