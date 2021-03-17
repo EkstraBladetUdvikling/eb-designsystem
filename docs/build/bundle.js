@@ -6257,13 +6257,62 @@ var app = (function () {
     	return block;
     }
 
-    // (61:6) {#if section || timestamp}
-    function create_if_block_1$1(ctx) {
+    // (60:6) {#if isPlus}
+    function create_if_block_3(ctx) {
+    	let div;
+    	let icon;
+    	let current;
+
+    	icon = new Icon({
+    			props: { name: "ebplus_icon", width: "20" },
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			create_component(icon.$$.fragment);
+    			attr_dev(div, "class", "card-icon flex flex-justify--end");
+    			add_location(div, file$w, 60, 8, 1749);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			mount_component(icon, div, null);
+    			current = true;
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(icon.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(icon.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_component(icon);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_3.name,
+    		type: "if",
+    		source: "(60:6) {#if isPlus}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (67:8) {#if section || timestamp}
+    function create_if_block$9(ctx) {
     	let div;
     	let t;
     	let current;
-    	let if_block0 = /*section*/ ctx[5] && create_if_block_3(ctx);
-    	let if_block1 = /*timestamp*/ ctx[8] && create_if_block_2(ctx);
+    	let if_block0 = /*section*/ ctx[5] && create_if_block_2(ctx);
+    	let if_block1 = /*timestamp*/ ctx[8] && create_if_block_1$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -6272,7 +6321,7 @@ var app = (function () {
     			t = space();
     			if (if_block1) if_block1.c();
     			attr_dev(div, "class", "card-meta flex fontsize-xxsmall");
-    			add_location(div, file$w, 61, 8, 1744);
+    			add_location(div, file$w, 67, 10, 1951);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -6290,7 +6339,7 @@ var app = (function () {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_3(ctx);
+    					if_block0 = create_if_block_2(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(div, t);
@@ -6313,7 +6362,7 @@ var app = (function () {
     						transition_in(if_block1, 1);
     					}
     				} else {
-    					if_block1 = create_if_block_2(ctx);
+    					if_block1 = create_if_block_1$1(ctx);
     					if_block1.c();
     					transition_in(if_block1, 1);
     					if_block1.m(div, null);
@@ -6348,17 +6397,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$1.name,
+    		id: create_if_block$9.name,
     		type: "if",
-    		source: "(61:6) {#if section || timestamp}",
+    		source: "(67:8) {#if section || timestamp}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (63:10) {#if section}
-    function create_if_block_3(ctx) {
+    // (69:12) {#if section}
+    function create_if_block_2(ctx) {
     	let div;
     	let icon;
     	let t0;
@@ -6382,9 +6431,9 @@ var app = (function () {
     			t0 = space();
     			span = element("span");
     			t1 = text(/*section*/ ctx[5]);
-    			add_location(span, file$w, 65, 14, 1932);
+    			add_location(span, file$w, 71, 16, 2147);
     			attr_dev(div, "class", "width-1of2");
-    			add_location(div, file$w, 63, 12, 1826);
+    			add_location(div, file$w, 69, 14, 2037);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -6414,17 +6463,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_3.name,
+    		id: create_if_block_2.name,
     		type: "if",
-    		source: "(63:10) {#if section}",
+    		source: "(69:12) {#if section}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (69:10) {#if timestamp}
-    function create_if_block_2(ctx) {
+    // (75:12) {#if timestamp}
+    function create_if_block_1$1(ctx) {
     	let div;
     	let icon;
     	let t0;
@@ -6443,7 +6492,7 @@ var app = (function () {
     			t0 = space();
     			t1 = text(/*timestamp*/ ctx[8]);
     			attr_dev(div, "class", "width-1of2");
-    			add_location(div, file$w, 69, 12, 2028);
+    			add_location(div, file$w, 75, 14, 2251);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -6472,58 +6521,9 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2.name,
+    		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(69:10) {#if timestamp}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (80:4) {#if isPlus}
-    function create_if_block$9(ctx) {
-    	let div;
-    	let icon;
-    	let current;
-
-    	icon = new Icon({
-    			props: { name: "ebplus_icon", width: "20" },
-    			$$inline: true
-    		});
-
-    	const block = {
-    		c: function create() {
-    			div = element("div");
-    			create_component(icon.$$.fragment);
-    			attr_dev(div, "class", "card-icon flex flex-justify--end");
-    			add_location(div, file$w, 80, 6, 2264);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			mount_component(icon, div, null);
-    			current = true;
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(icon.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(icon.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			destroy_component(icon);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block$9.name,
-    		type: "if",
-    		source: "(80:4) {#if isPlus}",
+    		source: "(75:12) {#if timestamp}",
     		ctx
     	});
 
@@ -6532,61 +6532,66 @@ var app = (function () {
 
     // (44:0) <Card {href} className={baseClass} {style} {theme}>
     function create_default_slot$c(ctx) {
-    	let div1;
+    	let div2;
     	let t0;
     	let t1;
     	let t2;
-    	let div0;
+    	let div1;
     	let t3;
-    	let h2;
+    	let div0;
     	let t4;
+    	let h2;
     	let t5;
     	let current;
     	let if_block0 = /*loading*/ ctx[2] && create_if_block_6(ctx);
     	let if_block1 = /*media*/ ctx[4] && create_if_block_5(ctx);
     	let if_block2 = /*section*/ ctx[5] && create_if_block_4(ctx);
-    	let if_block3 = (/*section*/ ctx[5] || /*timestamp*/ ctx[8]) && create_if_block_1$1(ctx);
-    	let if_block4 = /*isPlus*/ ctx[3] && create_if_block$9(ctx);
+    	let if_block3 = /*isPlus*/ ctx[3] && create_if_block_3(ctx);
+    	let if_block4 = (/*section*/ ctx[5] || /*timestamp*/ ctx[8]) && create_if_block$9(ctx);
 
     	const block = {
     		c: function create() {
-    			div1 = element("div");
+    			div2 = element("div");
     			if (if_block0) if_block0.c();
     			t0 = space();
     			if (if_block1) if_block1.c();
     			t1 = space();
     			if (if_block2) if_block2.c();
     			t2 = space();
-    			div0 = element("div");
+    			div1 = element("div");
     			if (if_block3) if_block3.c();
     			t3 = space();
-    			h2 = element("h2");
-    			t4 = text(/*title*/ ctx[0]);
-    			t5 = space();
+    			div0 = element("div");
     			if (if_block4) if_block4.c();
+    			t4 = space();
+    			h2 = element("h2");
+    			t5 = text(/*title*/ ctx[0]);
     			attr_dev(h2, "class", "card-title");
-    			add_location(h2, file$w, 76, 6, 2193);
+    			add_location(h2, file$w, 82, 8, 2430);
     			attr_dev(div0, "class", "card-content");
-    			add_location(div0, file$w, 59, 4, 1676);
-    			attr_dev(div1, "class", /*innerClass*/ ctx[11]);
-    			attr_dev(div1, "data-theme", /*theme*/ ctx[7]);
-    			add_location(div1, file$w, 44, 2, 1216);
+    			add_location(div0, file$w, 65, 6, 1879);
+    			attr_dev(div1, "class", "flex-column flex-column--reverse");
+    			add_location(div1, file$w, 58, 4, 1675);
+    			attr_dev(div2, "class", /*innerClass*/ ctx[11]);
+    			attr_dev(div2, "data-theme", /*theme*/ ctx[7]);
+    			add_location(div2, file$w, 44, 2, 1216);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
-    			if (if_block0) if_block0.m(div1, null);
-    			append_dev(div1, t0);
-    			if (if_block1) if_block1.m(div1, null);
-    			append_dev(div1, t1);
-    			if (if_block2) if_block2.m(div1, null);
-    			append_dev(div1, t2);
+    			insert_dev(target, div2, anchor);
+    			if (if_block0) if_block0.m(div2, null);
+    			append_dev(div2, t0);
+    			if (if_block1) if_block1.m(div2, null);
+    			append_dev(div2, t1);
+    			if (if_block2) if_block2.m(div2, null);
+    			append_dev(div2, t2);
+    			append_dev(div2, div1);
+    			if (if_block3) if_block3.m(div1, null);
+    			append_dev(div1, t3);
     			append_dev(div1, div0);
-    			if (if_block3) if_block3.m(div0, null);
-    			append_dev(div0, t3);
+    			if (if_block4) if_block4.m(div0, null);
+    			append_dev(div0, t4);
     			append_dev(div0, h2);
-    			append_dev(h2, t4);
-    			append_dev(div1, t5);
-    			if (if_block4) if_block4.m(div1, null);
+    			append_dev(h2, t5);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -6596,7 +6601,7 @@ var app = (function () {
     				} else {
     					if_block0 = create_if_block_6(ctx);
     					if_block0.c();
-    					if_block0.m(div1, t0);
+    					if_block0.m(div2, t0);
     				}
     			} else if (if_block0) {
     				if_block0.d(1);
@@ -6609,7 +6614,7 @@ var app = (function () {
     				} else {
     					if_block1 = create_if_block_5(ctx);
     					if_block1.c();
-    					if_block1.m(div1, t1);
+    					if_block1.m(div2, t1);
     				}
     			} else if (if_block1) {
     				if_block1.d(1);
@@ -6622,25 +6627,23 @@ var app = (function () {
     				} else {
     					if_block2 = create_if_block_4(ctx);
     					if_block2.c();
-    					if_block2.m(div1, t2);
+    					if_block2.m(div2, t2);
     				}
     			} else if (if_block2) {
     				if_block2.d(1);
     				if_block2 = null;
     			}
 
-    			if (/*section*/ ctx[5] || /*timestamp*/ ctx[8]) {
+    			if (/*isPlus*/ ctx[3]) {
     				if (if_block3) {
-    					if_block3.p(ctx, dirty);
-
-    					if (dirty & /*section, timestamp*/ 288) {
+    					if (dirty & /*isPlus*/ 8) {
     						transition_in(if_block3, 1);
     					}
     				} else {
-    					if_block3 = create_if_block_1$1(ctx);
+    					if_block3 = create_if_block_3(ctx);
     					if_block3.c();
     					transition_in(if_block3, 1);
-    					if_block3.m(div0, t3);
+    					if_block3.m(div1, t3);
     				}
     			} else if (if_block3) {
     				group_outros();
@@ -6652,18 +6655,18 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (!current || dirty & /*title*/ 1) set_data_dev(t4, /*title*/ ctx[0]);
-
-    			if (/*isPlus*/ ctx[3]) {
+    			if (/*section*/ ctx[5] || /*timestamp*/ ctx[8]) {
     				if (if_block4) {
-    					if (dirty & /*isPlus*/ 8) {
+    					if_block4.p(ctx, dirty);
+
+    					if (dirty & /*section, timestamp*/ 288) {
     						transition_in(if_block4, 1);
     					}
     				} else {
     					if_block4 = create_if_block$9(ctx);
     					if_block4.c();
     					transition_in(if_block4, 1);
-    					if_block4.m(div1, null);
+    					if_block4.m(div0, t4);
     				}
     			} else if (if_block4) {
     				group_outros();
@@ -6675,12 +6678,14 @@ var app = (function () {
     				check_outros();
     			}
 
+    			if (!current || dirty & /*title*/ 1) set_data_dev(t5, /*title*/ ctx[0]);
+
     			if (!current || dirty & /*innerClass*/ 2048) {
-    				attr_dev(div1, "class", /*innerClass*/ ctx[11]);
+    				attr_dev(div2, "class", /*innerClass*/ ctx[11]);
     			}
 
     			if (!current || dirty & /*theme*/ 128) {
-    				attr_dev(div1, "data-theme", /*theme*/ ctx[7]);
+    				attr_dev(div2, "data-theme", /*theme*/ ctx[7]);
     			}
     		},
     		i: function intro(local) {
@@ -6695,7 +6700,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
+    			if (detaching) detach_dev(div2);
     			if (if_block0) if_block0.d();
     			if (if_block1) if_block1.d();
     			if (if_block2) if_block2.d();
@@ -6749,7 +6754,7 @@ var app = (function () {
     			if (dirty & /*style*/ 64) card_changes.style = /*style*/ ctx[6];
     			if (dirty & /*theme*/ 128) card_changes.theme = /*theme*/ ctx[7];
 
-    			if (dirty & /*$$scope, innerClass, theme, isPlus, title, timestamp, section, media, loadingStyle, loading*/ 19901) {
+    			if (dirty & /*$$scope, innerClass, theme, title, timestamp, section, isPlus, media, loadingStyle, loading*/ 19901) {
     				card_changes.$$scope = { dirty, ctx };
     			}
 
@@ -7067,17 +7072,9 @@ var app = (function () {
     	let t11;
     	let prism5;
     	let t12;
-    	let h2;
-    	let t14;
     	let articlecard5;
-    	let t15;
+    	let t13;
     	let articlecard6;
-    	let t16;
-    	let articlecard7;
-    	let t17;
-    	let articlecard8;
-    	let t18;
-    	let prism6;
     	let current;
 
     	prism0 = new Prism$1({
@@ -7248,36 +7245,33 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	articlecard5 = new ArticleCard({ props: { loading: true }, $$inline: true });
+    	const articlecard5_spread_levels = [{ isPlus: true }, /*article*/ ctx[0], { style: "width: 215px;" }];
+    	let articlecard5_props = {};
+
+    	for (let i = 0; i < articlecard5_spread_levels.length; i += 1) {
+    		articlecard5_props = assign(articlecard5_props, articlecard5_spread_levels[i]);
+    	}
+
+    	articlecard5 = new ArticleCard({
+    			props: articlecard5_props,
+    			$$inline: true
+    		});
+
+    	const articlecard6_spread_levels = [
+    		{ isPlus: true },
+    		{ theme: "darkmode" },
+    		/*article*/ ctx[0],
+    		{ style: "width: 215px;" }
+    	];
+
+    	let articlecard6_props = {};
+
+    	for (let i = 0; i < articlecard6_spread_levels.length; i += 1) {
+    		articlecard6_props = assign(articlecard6_props, articlecard6_spread_levels[i]);
+    	}
 
     	articlecard6 = new ArticleCard({
-    			props: { loading: true, type: "small-media" },
-    			$$inline: true
-    		});
-
-    	articlecard7 = new ArticleCard({
-    			props: {
-    				loading: true,
-    				type: "small-media--reverse"
-    			},
-    			$$inline: true
-    		});
-
-    	articlecard8 = new ArticleCard({
-    			props: { loading: true, type: "mode" },
-    			$$inline: true
-    		});
-
-    	prism6 = new Prism$1({
-    			props: {
-    				language: "html",
-    				source: `
-      <ArticleCard loading={true} />
-      <ArticleCard loading={true} type="small-media" />
-      <ArticleCard loading={true} type="small-media--reverse" />
-      <ArticleCard loading={true} type="mode" />
-    `
-    			},
+    			props: articlecard6_props,
     			$$inline: true
     		});
 
@@ -7309,21 +7303,11 @@ var app = (function () {
     			t11 = space();
     			create_component(prism5.$$.fragment);
     			t12 = space();
-    			h2 = element("h2");
-    			h2.textContent = "Loading placeholder";
-    			t14 = space();
     			create_component(articlecard5.$$.fragment);
-    			t15 = space();
+    			t13 = space();
     			create_component(articlecard6.$$.fragment);
-    			t16 = space();
-    			create_component(articlecard7.$$.fragment);
-    			t17 = space();
-    			create_component(articlecard8.$$.fragment);
-    			t18 = space();
-    			create_component(prism6.$$.fragment);
     			attr_dev(h1, "class", "color--eb");
     			add_location(h1, file$v, 14, 2, 358);
-    			add_location(h2, file$v, 125, 2, 3103);
     			attr_dev(div, "class", "grid-width--small");
     			add_location(div, file$v, 13, 0, 324);
     		},
@@ -7356,17 +7340,9 @@ var app = (function () {
     			append_dev(div, t11);
     			mount_component(prism5, div, null);
     			append_dev(div, t12);
-    			append_dev(div, h2);
-    			append_dev(div, t14);
     			mount_component(articlecard5, div, null);
-    			append_dev(div, t15);
+    			append_dev(div, t13);
     			mount_component(articlecard6, div, null);
-    			append_dev(div, t16);
-    			mount_component(articlecard7, div, null);
-    			append_dev(div, t17);
-    			mount_component(articlecard8, div, null);
-    			append_dev(div, t18);
-    			mount_component(prism6, div, null);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -7408,6 +7384,27 @@ var app = (function () {
     			: {};
 
     			articlecard4.$set(articlecard4_changes);
+
+    			const articlecard5_changes = (dirty & /*article*/ 1)
+    			? get_spread_update(articlecard5_spread_levels, [
+    					articlecard5_spread_levels[0],
+    					get_spread_object(/*article*/ ctx[0]),
+    					articlecard5_spread_levels[2]
+    				])
+    			: {};
+
+    			articlecard5.$set(articlecard5_changes);
+
+    			const articlecard6_changes = (dirty & /*article*/ 1)
+    			? get_spread_update(articlecard6_spread_levels, [
+    					articlecard6_spread_levels[0],
+    					articlecard6_spread_levels[1],
+    					get_spread_object(/*article*/ ctx[0]),
+    					articlecard6_spread_levels[3]
+    				])
+    			: {};
+
+    			articlecard6.$set(articlecard6_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -7424,9 +7421,6 @@ var app = (function () {
     			transition_in(prism5.$$.fragment, local);
     			transition_in(articlecard5.$$.fragment, local);
     			transition_in(articlecard6.$$.fragment, local);
-    			transition_in(articlecard7.$$.fragment, local);
-    			transition_in(articlecard8.$$.fragment, local);
-    			transition_in(prism6.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
@@ -7443,9 +7437,6 @@ var app = (function () {
     			transition_out(prism5.$$.fragment, local);
     			transition_out(articlecard5.$$.fragment, local);
     			transition_out(articlecard6.$$.fragment, local);
-    			transition_out(articlecard7.$$.fragment, local);
-    			transition_out(articlecard8.$$.fragment, local);
-    			transition_out(prism6.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -7463,9 +7454,6 @@ var app = (function () {
     			destroy_component(prism5);
     			destroy_component(articlecard5);
     			destroy_component(articlecard6);
-    			destroy_component(articlecard7);
-    			destroy_component(articlecard8);
-    			destroy_component(prism6);
     		}
     	};
 
@@ -14701,14 +14689,14 @@ import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongrou
      */
     let myTimeout;
     function throttle(callback, wait) {
-      console.log('myTiume', myTimeout);
-      if (!myTimeout) {
-        myTimeout = setTimeout(() => {
-          clearTimeout(myTimeout);
-          myTimeout = undefined;
-          callback();
-        }, wait);
-      }
+        console.log('myTiume', myTimeout);
+        if (!myTimeout) {
+            myTimeout = setTimeout(() => {
+                clearTimeout(myTimeout);
+                myTimeout = undefined;
+                callback();
+            }, wait);
+        }
     }
 
     /* src/_components/horizontalScroll/HorizontalScroll.svelte generated by Svelte v3.35.0 */

@@ -4,6 +4,9 @@ const path = require('path');
 const pkg = require('./package.json');
 
 const postcss = require('postcss');
+const postcssImport = require('postcss-import')({
+  skipDuplicates: true,
+});
 const discardDuplicates = require('postcss-discard-duplicates')();
 const discardUnused = require('postcss-discard-unused')();
 const mergeRules = require('postcss-merge-rules')();
@@ -39,7 +42,8 @@ const customMediaOptions = {
 const readFolder = (folderName, filesToFind, array, lvl = 0) => {
   fs.readdirSync(folderName, { withFileTypes: true }).forEach((output) => {
     if (output.isFile() && lvl !== 0) {
-      if (path.extname(output.name).toLowerCase() === filesToFind) {
+      const extName = path.extname(output.name).toLowerCase();
+      if (extName === filesToFind && output.name.indexOf('_') !== 0) {
         array.push(`${folderName}/${output.name}`);
       }
     } else if (output.isDirectory()) {
@@ -69,7 +73,7 @@ const buildCSS = async (args) => {
     const options = getOptions(args);
     const srcFolder = './src';
     const cssFilesToRead = options.build === '--ie' ? [] : importFrom;
-    const postcssPlugins = [];
+    const postcssPlugins = [postcssImport];
     let outFolder = 'dist';
     switch (options.build) {
       case '--ie':
@@ -122,7 +126,7 @@ const buildCSS = async (args) => {
     if (tempversionBuild !== '') {
       version = `${version} | TEMP VERSION: ${tempversionBuild}`;
     }
-
+    console.log('css', css.indexOf('@import'));
     await postcss([...postcssPlugins, discardDuplicates, discardUnused, mergeRules])
       .process(css, {
         from: 'undefined',

@@ -72,31 +72,32 @@
     {#if section}
       <div class="card-section-border bg--{section.toLowerCase()}" />
     {/if}
-
-    <div class="card-content">
-      {#if section || timestamp}
-        <div class="card-meta flex fontsize-xxsmall">
-          {#if section}
-            <div class="width-1of2">
-              <Icon flipped={true} name="tag-regular" width="8" />
-              <span>{section}</span>
-            </div>
-          {/if}
-          {#if timestamp}
-            <div class="width-1of2">
-              <Icon name="clock" width="8" />
-              {timestamp}
-            </div>
-          {/if}
+    <div class="flex-column flex-column--reverse">
+      {#if isPlus}
+        <div class="card-icon flex flex-justify--end">
+          <Icon name="ebplus_icon" width="20" />
         </div>
       {/if}
-      <h2 class="card-title">{title}</h2>
-    </div>
 
-    {#if isPlus}
-      <div class="card-icon flex flex-justify--end">
-        <Icon name="ebplus_icon" width="20" />
+      <div class="card-content">
+        {#if section || timestamp}
+          <div class="card-meta flex fontsize-xxsmall">
+            {#if section}
+              <div class="width-1of2">
+                <Icon flipped={true} name="tag-regular" width="8" />
+                <span>{section}</span>
+              </div>
+            {/if}
+            {#if timestamp}
+              <div class="width-1of2">
+                <Icon name="clock" width="8" />
+                {timestamp}
+              </div>
+            {/if}
+          </div>
+        {/if}
+        <h2 class="card-title">{title}</h2>
       </div>
-    {/if}
+    </div>
   </div>
 </Card>

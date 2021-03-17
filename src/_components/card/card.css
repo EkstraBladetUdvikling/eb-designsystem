@@ -163,6 +163,10 @@ a.card:focus {
   }
 }
 
+/**
+  * CARD MODE
+  * Card-mode (mutation of .card - new design)
+  */
 :root {
   --card-mode--box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
   --card-mode--title: 18px;
@@ -170,7 +174,6 @@ a.card:focus {
   --card-mode-padding: 15px;
 }
 
-/* Card-modes (mutation of .card - new design) */
 .card.card-mode {
   border-radius: var(--border-radius-medium);
   box-shadow: inset 0 0 0 1px var(--card-border-color); /* DR.Edition 03/02/2020 */
