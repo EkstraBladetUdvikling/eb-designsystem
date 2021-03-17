@@ -16,7 +16,7 @@
     "build:watch": "onchange 'src/**/*.css' -- yarn build:watcher & onchange 'preview/**/{_*.css,html}' -- yarn build:preview",
     "build:watcher": "yarn build:css --watcher && yarn build:preview",
     "build:svelte": "yarn rollup -c",
-    "dev": "yarn rollup -c -w & yarn build:watch",
+    "dev": "yarn rollup -c -w & yarn build:watcher & yarn build:watch",
     "start": "sirv docs",
     "validate": "svelte-check",
     "dist": "yarn build:css",
