@@ -84,3 +84,17 @@
   </div>
   `}
 />
+
+<p>on:click:</p>
+<div class="margin-l--tb">
+  <Badge onClick={() => alert('Hello World!')}>Badge with onClick will have cursor pointer</Badge>
+</div>
+
+<Prism
+  {language}
+  source={`
+  <div class="margin-l--tb">
+    <Badge onClick={() => alert('Hello World!')}></Badge>
+  </div>
+  `}
+/>
