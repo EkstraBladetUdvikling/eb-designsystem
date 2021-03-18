@@ -106,26 +106,7 @@ const buildCSS = async (args) => {
       readFileContent.push(fs.readFileSync(fileName));
     });
     const css = readFileContent.join('');
-    let tempversionBuild = '';
-    if (options.watching) {
-      if (fs.existsSync(TEMPVERSION)) {
-        const readVersion = parseInt(fs.readFileSync(TEMPVERSION).toString(), 10);
-        tempversionBuild = readVersion + 1;
-      } else {
-        tempversionBuild = 0;
-      }
-    }
-    const branchInfo = fs.readFileSync('.git/HEAD').toString().trim().split('/');
-    const branch = branchInfo[branchInfo.length - 1];
-    let rev = require('child_process').execSync('git rev-parse HEAD').toString().trim();
 
-    const date = new Date();
-    const dateString = `${date.toLocaleDateString('da')} ${date.toLocaleTimeString('da')}`;
-
-    let version = `${outputFileName} version ${pkg.version} built on ${dateString} on branch "${branch}" at revision "${rev}"`;
-    if (tempversionBuild !== '') {
-      version = `${version} | TEMP VERSION: ${tempversionBuild}`;
-    }
     console.log('css', css.indexOf('@import'));
     await postcss([...postcssPlugins, discardDuplicates, discardUnused, mergeRules])
       .process(css, {
@@ -134,10 +115,9 @@ const buildCSS = async (args) => {
       .then((result) => {
         try {
           const resultCss = result.css;
-          fs.writeFile(outputFile, `/** ${version} */\n${resultCss}`, () => {
+          fs.writeFile(outputFile, resultCss, () => {
             return true;
           });
-          console.log(version);
 
           console.log(`postcss PRODUCTION ready -> ${outputFile}`);
         } catch (err) {
