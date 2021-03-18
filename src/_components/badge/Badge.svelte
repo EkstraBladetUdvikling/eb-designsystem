@@ -20,7 +20,7 @@
   type TType = 'danger' | 'primary' | 'secondary' | 'succes';
   export let type: TType;
 
-  let style: string = '';
+  let style: string = undefined;
   export let onClick: any;
 
   if (onClick) {
