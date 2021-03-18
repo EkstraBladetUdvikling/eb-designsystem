@@ -1,4 +1,3 @@
-/** eb-designsystem.css version 0.4.6 built on 18.3.2021 14.08.42 on branch "badgeType" at revision "a5f769d4ca833159e11580d1f8367aa9d9ea42c5" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -460,7 +459,7 @@ custom media queries is the only allowed media queries
   white-space: nowrap;
 }
 
-.badge:not([class*="bg--"]):not([data-type]) {
+.badge:not([class*="bg--"]):not([class*="badge--"]) {
   background-color: var(--color--white);
   border: 1px solid var(--card-border-color);
   color: var(--fgcolor--white);
@@ -475,22 +474,22 @@ a.badge:hover {
   padding: 2px 3px;
 }
 
-.badge[data-type="primary"] {
+.badge.badge--primary {
   background-color: var(--color--primary);
   color: var(--fgcolor--primary);
 }
 
-.badge[data-type="secondary"] {
+.badge.badge--secondary {
   background-color: var(--color--secondary);
   color: var(--fgcolor--secondary);
 }
 
-.badge[data-type="success"] {
+.badge.badge--success {
   background-color: var(--color--accept);
   color: var(--fgcolor--accept);
 }
 
-.badge[data-type="danger"] {
+.badge.badge--danger {
   background-color: var(--color--cancel);
   color: var(--fgcolor--cancel);
 }
@@ -1013,14 +1012,18 @@ a.card:focus {
   height: 100%;
 }
 
-.card-mode:not([class*="bg--"]) {
+.card-mode:not([class*="bg--"]):hover,
+:not([class*="bg--"]) .card-inner {
   background: var(--color--white);
-  color: var(--color--black);
+  color: var(--fgcolor--white);
+}
+
+.card-mode:not([class*="bg--"]) {
+  background: inherit;
 }
 
 a.card-mode:hover,
 a.card-mode:focus {
-  border-color: white;
   box-shadow: var(--card-mode--box-shadow);
   outline: none;
 }

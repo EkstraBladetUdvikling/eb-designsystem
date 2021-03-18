@@ -4,6 +4,10 @@
   "main": "dist/eb-designsystem.css",
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
+  "files": [
+    "./src",
+    "./dist"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "yarn build:designsystem && yarn build:svelte",
@@ -26,8 +30,9 @@
     "installsnippets": "node install-snippets",
     "installsnippets:eb": "node install-snippets ../ekstrabladet/ekstrabladet-publication/src/main/.vscode",
     "move_to_eb": "yarn installds:eb",
+    "copy_svg": "cpx \"./docs/svg/symbol/icons.svg\" \"./dist\" --update",
     "start:designsystem": "yarn build:watcher && yarn build:preview && yarn build:watch",
-    "svgs": "node node/svgs.js"
+    "svgs": "node node/svgs.js && yarn copy_svg"
   },
   "dependencies": {
     "@ekstra-bladet/eb-colors": "^2.6.0",
