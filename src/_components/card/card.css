@@ -198,14 +198,18 @@ a.card:focus {
   height: 100%;
 }
 
-.card-mode:not([class*="bg--"]) {
+.card-mode:not([class*="bg--"]):hover,
+:not([class*="bg--"]) .card-inner {
   background: var(--color--white);
-  color: var(--color--black);
+  color: var(--fgcolor--white);
+}
+
+.card-mode:not([class*="bg--"]) {
+  background: inherit;
 }
 
 a.card-mode:hover,
 a.card-mode:focus {
-  border-color: white;
   box-shadow: var(--card-mode--box-shadow);
   outline: none;
 }
