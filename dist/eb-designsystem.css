@@ -459,7 +459,7 @@ custom media queries is the only allowed media queries
   white-space: nowrap;
 }
 
-.badge:not([class*="bg--"]):not([class*="badge--"]) {
+.badge:not([class*="bg--"]):not([data-type]) {
   background-color: var(--color--white);
   border: 1px solid var(--card-border-color);
   color: var(--fgcolor--white);
@@ -474,22 +474,22 @@ a.badge:hover {
   padding: 2px 3px;
 }
 
-.badge.badge--primary {
+.badge[data-type="primary"] {
   background-color: var(--color--primary);
   color: var(--fgcolor--primary);
 }
 
-.badge.badge--secondary {
+.badge[data-type="secondary"] {
   background-color: var(--color--secondary);
   color: var(--fgcolor--secondary);
 }
 
-.badge.badge--success {
+.badge[data-type="success"] {
   background-color: var(--color--accept);
   color: var(--fgcolor--accept);
 }
 
-.badge.badge--danger {
+.badge[data-type="danger"] {
   background-color: var(--color--cancel);
   color: var(--fgcolor--cancel);
 }
