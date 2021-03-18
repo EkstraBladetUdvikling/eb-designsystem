@@ -53,7 +53,6 @@
   }
 
   function updateButtonsThroughScroll() {
-    console.log('updateButtonsThroughScroll');
     const childLeft = children[0].getBoundingClientRect().left;
     const wrapLeft = scrollItemContainer.getBoundingClientRect().left;
 
@@ -98,7 +97,6 @@
   }
 
   afterUpdate(() => {
-    console.log('afterUpdate');
     if (children) return;
 
     children = scrollItemContainer.children;

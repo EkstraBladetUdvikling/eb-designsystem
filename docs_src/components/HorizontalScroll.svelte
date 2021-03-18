@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Accordion from '../../src/_components/accordion';
   import ArticleCard from '../../src/_components/articlecard';
   import HorizontalScroll from '../../src/_components/horizontalScroll';
 
@@ -11,23 +10,24 @@
         src: 'https://via.placeholder.com/610x343&text=610x343',
       },
       section: 'Sport',
-      timestamp: '2 timer siden',
+      timestamp: 'Thu Mar 18 2021 20:46:32',
       title: 'List element 1',
     },
     {
       href: '#',
       isPlus: true,
       section: 'Nyheder',
-      timestamp: '3 timer siden',
+      timestamp: 'Thu Mar 18 2021 18:46:32',
       title: 'Det skal jo altså ikke være for nemt',
     },
     {
       href: '#',
+      isBreaking: true,
       media: {
         src: 'https://via.placeholder.com/610x343&text=610x343',
       },
       section: 'Sport',
-      timestamp: '4 timer siden',
+      timestamp: 'Thu Mar 18 2021 17:46:32',
       title: 'List element 3',
     },
     {
@@ -36,7 +36,7 @@
         src: 'https://via.placeholder.com/610x343&text=610x343',
       },
       section: 'Sport',
-      timestamp: '5 timer siden',
+      timestamp: 'Thu Mar 17 2021 21:46:32',
       title: 'List element 4',
     },
   ];

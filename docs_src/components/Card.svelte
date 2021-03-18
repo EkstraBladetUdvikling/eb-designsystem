@@ -26,4 +26,23 @@
       <Button>Vælg</Button>
     </div>
   </Card>
+  <Card className="margin-l card--small-media">
+    <div class="card-media">
+      <img
+        class="card-image"
+        src="/incoming/k1h4fx/8330072/IMAGE_ALTERNATES/relationBig_150/dcx-80680819-20201016132637"
+        loading="lazy"
+        alt=""
+        title=""
+        height="84"
+        width="150"
+      />
+    </div>
+    <div class="card-content">
+      <p class="card-meta color--graa3">
+        <small><span class="color--flash">Danske kongelige</span> - 5 timer siden</small>
+      </p>
+      <h2 class="card-title">Grundet corona: Tjener millioner</h2>
+    </div>
+  </Card>
 </div>
