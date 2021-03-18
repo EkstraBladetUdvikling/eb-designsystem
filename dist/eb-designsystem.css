@@ -809,6 +809,8 @@ a.badge:hover {
 
 :root {
   --card-border-color: var(--color--graa7);
+  --card-border-section--color: var(--color--eb);
+  --card-border-section--width: 8px;
   --card-fs-title: 30px;
   --card-fs-title--small: 20px;
   --card-padding: 20px;
@@ -1012,8 +1014,28 @@ a.card:focus {
   height: 100%;
 }
 
+.card-inner.card--small-media {
+  flex-direction: row;
+}
+
+.card-inner.card--small-media--reverse {
+  flex-direction: row-reverse;
+}
+
+.card-content-wrapper {
+  border-top: var(--card-border-section--width) solid currentColor;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.card-media ~ .card-content-wrapper {
+  border: 0;
+}
+
 .card-mode:not([class*="bg--"]):hover,
-:not([class*="bg--"]) .card-inner {
+.card-inner:not([class*="bg--"]) {
   background: var(--color--white);
   color: var(--fgcolor--white);
 }
@@ -1036,11 +1058,18 @@ a.card-mode:focus .card-inner {
 .card-mode .card-section-border {
   border-top-left-radius: var(--border-radius-medium);
   border-top-right-radius: var(--border-radius-medium);
-  height: 8px;
+  height: var(--card-border-section--width);
 }
 
 .card-mode .card-section-border:not([class*="bg--"]) {
   background: var(--color--graa7);
+}
+
+.card-mode .card-media {
+  border: 0 solid currentColor;
+  border-bottom-left-radius: var(--border-radius-medium);
+  border-bottom-right-radius: var(--border-radius-medium);
+  border-bottom-width: var(--card-border-section--width);
 }
 
 .card-mode .card-media ~ .card-section-border {
@@ -1048,7 +1077,33 @@ a.card-mode:focus .card-inner {
   border-top-right-radius: 0;
   border-bottom-left-radius: var(--border-radius-medium);
   border-bottom-right-radius: var(--border-radius-medium);
-  height: 8px;
+  height: var(--card-border-section--width);
+}
+
+.card-mode .card--small-media .card-media ~ .card-section-border {
+  width: var(--card-border-section--width);
+  min-height: 100px;
+}
+
+.card-mode .card--small-media .card-media {
+  border-width: 0;
+  border-top-right-radius: var(--border-radius-medium);
+  border-right-width: var(--card-border-section--width);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: var(--border-radius-medium);
+}
+
+.card-mode .card--small-media--reverse .card-media {
+  border-width: 0;
+  border-top-left-radius: var(--border-radius-medium);
+  border-bottom-left-radius: var(--border-radius-medium);
+  border-left-width: var(--card-border-section--width);
+}
+
+.card-mode .card--small-media .card-content-wrapper {
+  flex-grow: 0;
+
+  flex: 1;
 }
 
 .card-mode .card-content {
@@ -1104,6 +1159,13 @@ a.card-mode:focus .card-inner {
 [data-theme="darkmode"]:not([class*="bg--"]):not([class*="card-mode--article"]) {
   background: var(--color--black);
   color: var(--color--white);
+}
+
+.card-mode[data-breaking="true"] .card-inner,
+.card-mode[data-breaking="true"]:hover,
+[data-breaking="true"]:not([class*="bg--"]):not([class*="card-mode--article"]) {
+  background: var(--color--breaking);
+  color: var(--fgcolor--breaking);
 }
 
 :root {
