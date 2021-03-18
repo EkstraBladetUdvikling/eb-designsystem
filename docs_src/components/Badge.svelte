@@ -6,11 +6,6 @@
   import Badge from '../../src/_components/badge';
 
   const language = 'html';
-  let typeName = 'secondary';
-  function yo(arg) {
-    typeName = 'a';
-    console.log(arg, typeName);
-  }
 </script>
 
 <h1 class="color--eb">Badge</h1>
@@ -20,9 +15,7 @@
 <Prism language="js" source={`import Badge from '@ekstra-bladet/designsystem/src/_components/badge';`} />
 
 <div class="margin-l--tb">
-  <Badge className="margin-s" type={typeName === 'a' ? 'primary' : 'secondary'} onClick={() => yo('!')}
-    >Standard badge</Badge
-  >
+  <Badge className="margin-s">Standard badge</Badge>
 </div>
 <Prism
   {language}

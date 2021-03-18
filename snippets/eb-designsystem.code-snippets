@@ -25,7 +25,7 @@
     "body": [
       "badge"
     ],
-    "description": "{\n border-radius: 5px;\npadding: 5px 7px;\nwhite-space: nowrap;\n }\n Has pseudo styling :not([class*=\"bg--\"]):not([class*=\"badge--\"])\n Has pseudo styling :focus\n Has pseudo styling :hover"
+    "description": "{\n border-radius: 5px;\npadding: 5px 7px;\nwhite-space: nowrap;\n }\n Has pseudo styling :not([class*=\"bg--\"]):not([data-type])\n Has pseudo styling :focus\n Has pseudo styling :hover"
   },
   "designsystem badge small": {
     "prefix": "ds-badge--small",
@@ -34,33 +34,17 @@
     ],
     "description": "NB! This should only be used with badge\nThis extends badge with: {\n padding: 2px 3px;\n }"
   },
-  "designsystem badge primary": {
-    "prefix": "ds-badge--primary",
-    "body": [
-      "badge--primary"
-    ],
-    "description": "NB! This should only be used with badge\nThis extends badge with: {\n background-color: var(--color--bruger);\ncolor: var(--fgcolor--bruger);\n }"
+  "designsystem badge[data type=\"primary\"]": {
+    "description": "Has pseudo styling ]"
   },
-  "designsystem badge secondary": {
-    "prefix": "ds-badge--secondary",
-    "body": [
-      "badge--secondary"
-    ],
-    "description": "NB! This should only be used with badge\nThis extends badge with: {\n background-color: var(--color--graa3);\ncolor: var(--fgcolor--graa3);\n }"
+  "designsystem badge[data type=\"secondary\"]": {
+    "description": "Has pseudo styling ]"
   },
-  "designsystem badge success": {
-    "prefix": "ds-badge--success",
-    "body": [
-      "badge--success"
-    ],
-    "description": "NB! This should only be used with badge\nThis extends badge with: {\n background-color: var(--color--green);\ncolor: var(--fgcolor--green);\n }"
+  "designsystem badge[data type=\"success\"]": {
+    "description": "Has pseudo styling ]"
   },
-  "designsystem badge danger": {
-    "prefix": "ds-badge--danger",
-    "body": [
-      "badge--danger"
-    ],
-    "description": "NB! This should only be used with badge\nThis extends badge with: {\n background-color: var(--color--red);\ncolor: var(--fgcolor--red);\n }"
+  "designsystem badge[data type=\"danger\"]": {
+    "description": "Has pseudo styling ]"
   },
   "designsystem button": {
     "prefix": "ds-button",
@@ -143,92 +127,92 @@
     "body": [
       "card"
     ],
-    "description": "{\n border-radius: 5px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus\n {\n border-radius: 5px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "{\n border-radius: 5px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem card[class*=\"bg \"]": {
-    "description": "Has pseudo styling ]\n Has pseudo styling ]"
+    "description": "Has pseudo styling ]"
   },
   "designsystem card media": {
     "prefix": "ds-card-media",
     "body": [
       "card-media"
     ],
-    "description": "{\n position: relative;\nmin-height: 1px;\n }\n {\n position: relative;\nmin-height: 1px;\n }"
+    "description": "{\n position: relative;\nmin-height: 1px;\n }"
   },
   "designsystem card image": {
     "prefix": "ds-card-image",
     "body": [
       "card-image"
     ],
-    "description": "{\n display: block;\nwidth: 100%;\nheight: auto;\n }\n {\n display: block;\nwidth: 100%;\nheight: auto;\n }"
+    "description": "{\n display: block;\nwidth: 100%;\nheight: auto;\n }"
   },
   "designsystem card content": {
     "prefix": "ds-card-content",
     "body": [
       "card-content"
     ],
-    "description": "{\n padding: 20px;\nflex: 1 0 auto;\n }\n {\n padding: 20px;\nflex: 1 0 auto;\n }"
+    "description": "{\n padding: 20px;\nflex: 1 0 auto;\n }"
   },
   "designsystem card header": {
     "prefix": "ds-card-header",
     "body": [
       "card-header"
     ],
-    "description": "{\n box-sizing: border-box;\nmargin: 0;\npadding: calc(20px / 2) 20px;\nwidth: 100%;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n {\n box-sizing: border-box;\nmargin: 0;\npadding: calc(20px / 2) 20px;\nwidth: 100%;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
+    "description": "{\n box-sizing: border-box;\nmargin: 0;\npadding: calc(20px / 2) 20px;\nwidth: 100%;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
   },
   "designsystem card footer": {
     "prefix": "ds-card-footer",
     "body": [
       "card-footer"
     ],
-    "description": "{\n box-sizing: border-box;\nmargin: 0;\npadding: calc(20px / 2) 20px;\nwidth: 100%;\n }\n {\n align-self: flex-end;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n {\n box-sizing: border-box;\nmargin: 0;\npadding: calc(20px / 2) 20px;\nwidth: 100%;\n }\n {\n align-self: flex-end;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
+    "description": "{\n box-sizing: border-box;\nmargin: 0;\npadding: calc(20px / 2) 20px;\nwidth: 100%;\n }\n {\n align-self: flex-end;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
   },
   "designsystem card meta": {
     "prefix": "ds-card-meta",
     "body": [
       "card-meta"
     ],
-    "description": "{\n font-weight: 500;\nmargin: 0 0 1px;\n }\n {\n font-weight: 500;\nmargin: 0 0 1px;\n }"
+    "description": "{\n font-weight: 500;\nmargin: 0 0 1px;\n }"
   },
   "designsystem card title": {
-    "description": "Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])\n Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])"
+    "description": "Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])"
   },
   "designsystem card small media": {
     "prefix": "ds-card--small-media",
     "body": [
       "card--small-media"
     ],
-    "description": "NB! This should only be used with card\n{\n align-items: center;\nflex-direction: row;\nflex-wrap: wrap;\n }\n NB! This should only be used with card\n{\n align-items: center;\nflex-direction: row;\nflex-wrap: wrap;\n }"
+    "description": "NB! This should only be used with card\n{\n align-items: center;\nflex-direction: row;\nflex-wrap: wrap;\n }"
   },
   "designsystem card small media reverse": {
     "prefix": "ds-card--small-media--reverse",
     "body": [
       "card--small-media--reverse"
     ],
-    "description": "NB! This should only be used with card\n{\n flex-direction: row-reverse;\n }\n NB! This should only be used with card\n{\n flex-direction: row-reverse;\n }"
+    "description": "NB! This should only be used with card\n{\n flex-direction: row-reverse;\n }"
   },
   "designsystem card title small": {
-    "description": "Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])\n Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])"
+    "description": "Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])"
   },
   "designsystem card mode": {
     "prefix": "ds-card-mode",
     "body": [
       "card-mode"
     ],
-    "description": "This extends card with: {\n border-radius: 10px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-shadow: 0 0 10px 5px rgba(var(--rgb-color--black), .22);\nbox-shadow: none;\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: unset;\npadding: 2px;\nflex-shrink: 0;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus\n This extends card with: {\n border-radius: 10px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-shadow: 0 0 10px 5px rgba(var(--rgb-color--black), .22);\nbox-shadow: none;\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: unset;\npadding: 2px;\nflex-shrink: 0;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "This extends card with: {\n border-radius: 10px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-shadow: 0 0 10px 5px rgba(var(--rgb-color--black), .22);\nbox-shadow: none;\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: unset;\npadding: 2px;\nflex-shrink: 0;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem card inner": {
     "prefix": "ds-card-inner",
     "body": [
       "card-inner"
     ],
-    "description": "{\n border-radius: 10px;\nbox-shadow: 0 10px 20px rgba(0, 0, 0, .1);\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\n }\n {\n border-radius: 10px;\nbox-shadow: 0 10px 20px rgba(0, 0, 0, .1);\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\n }"
+    "description": "{\n border-radius: 10px;\nbox-shadow: 0 10px 20px rgba(0, 0, 0, .1);\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\n }"
   },
   "designsystem card mode[data theme=\"lightmode\"]": {
-    "description": "Has pseudo styling :hover\n Has pseudo styling :hover"
+    "description": "Has pseudo styling :hover"
   },
   "designsystem card mode[data theme=\"darkmode\"]": {
-    "description": "Has pseudo styling :hover\n Has pseudo styling :hover"
+    "description": "Has pseudo styling :hover"
   },
   "designsystem form element": {
     "prefix": "ds-form-element",

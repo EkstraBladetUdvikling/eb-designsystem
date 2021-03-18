@@ -1,4 +1,4 @@
-/** eb-designsystem--watcher.css version 0.4.6 built on 18.3.2021 12.36.41 on branch "badgeType" at revision "c9838cea647fd2b6128b2307c9ec9bba9636a8a3" */
+/** eb-designsystem--watcher.css version 0.4.6 built on 18.3.2021 14.08.44 on branch "badgeType" at revision "a5f769d4ca833159e11580d1f8367aa9d9ea42c5" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -443,7 +443,7 @@ custom media queries is the only allowed media queries
   white-space: nowrap;
 }
 
-.badge:not([class*="bg--"]):not([class*="badge--"]) {
+.badge:not([class*="bg--"]):not([data-type]) {
   background-color: var(--color--white);
   border: 1px solid var(--card-border-color);
   color: var(--fgcolor--white);
@@ -458,22 +458,22 @@ a.badge:hover {
   padding: 2px 3px;
 }
 
-.badge.badge--primary {
+.badge[data-type="primary"] {
   background-color: var(--color--primary);
   color: var(--fgcolor--primary);
 }
 
-.badge.badge--secondary {
+.badge[data-type="secondary"] {
   background-color: var(--color--secondary);
   color: var(--fgcolor--secondary);
 }
 
-.badge.badge--success {
+.badge[data-type="success"] {
   background-color: var(--color--accept);
   color: var(--fgcolor--accept);
 }
 
-.badge.badge--danger {
+.badge[data-type="danger"] {
   background-color: var(--color--cancel);
   color: var(--fgcolor--cancel);
 }
