@@ -20,11 +20,7 @@
   type TType = 'danger' | 'primary' | 'secondary' | 'succes';
   export let type: TType;
 
-  if (type) {
-    cssClass = `${cssClass} badge--${type}`;
-  }
-
-  let style: string = '';
+  let style: string = undefined;
   export let onClick: any;
 
   if (onClick) {
@@ -32,6 +28,6 @@
   }
 </script>
 
-<span class={cssClass} on:click={onClick} {style}>
+<span class={cssClass} on:click={onClick} {style} data-type={type}>
   <slot />
 </span>
