@@ -1,4 +1,4 @@
-/** eb-designsystem.css version 0.4.5 built on 17.3.2021 21.31.58 on branch "master" at revision "b3c482319e565ec7e0e3a9d5adcef84e8b4fd48d" */
+/** eb-designsystem.css version 0.4.6 built on 18.3.2021 10.43.30 on branch "EBCD-13910-2" at revision "b74f659f6520d2207907afe852bc2dac2da32a91" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -1013,14 +1013,18 @@ a.card:focus {
   height: 100%;
 }
 
-.card-mode:not([class*="bg--"]) {
+.card-mode:not([class*="bg--"]):hover,
+:not([class*="bg--"]) .card-inner {
   background: var(--color--white);
-  color: var(--color--black);
+  color: var(--fgcolor--white);
+}
+
+.card-mode:not([class*="bg--"]) {
+  background: inherit;
 }
 
 a.card-mode:hover,
 a.card-mode:focus {
-  border-color: white;
   box-shadow: var(--card-mode--box-shadow);
   outline: none;
 }

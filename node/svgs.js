@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const dest = 'docs/svg';
+
 const spriter = new SVGSpriter({
   dest,
   mode: {

@@ -4,6 +4,10 @@
   "main": "dist/eb-designsystem.css",
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
+  "files": [
+    "./src",
+    "./dist"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "yarn build:designsystem && yarn build:svelte",
