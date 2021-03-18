@@ -32,6 +32,6 @@
   }
 </script>
 
-<span class={cssClass} on:click={onClick} {style}>
+<span class={cssClass} on:click={onClick} {style} data-type={type}>
   <slot />
 </span>
