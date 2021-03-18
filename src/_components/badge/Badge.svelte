@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { afterUpdate, beforeUpdate } from 'svelte';
+
   export let className: string;
 
   let cssClass = 'badge';
@@ -30,6 +32,11 @@
   if (onClick) {
     style = 'cursor: pointer';
   }
+
+  afterUpdate(() => {
+    console.log('type', type);
+    cssClass += ' after--' + type;
+  });
 </script>
 
 <span class={cssClass} on:click={onClick} {style} data-type={type}>
