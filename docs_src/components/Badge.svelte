@@ -20,10 +20,9 @@
 <Prism language="js" source={`import Badge from '@ekstra-bladet/designsystem/src/_components/badge';`} />
 
 <div class="margin-l--tb">
-  <Badge className="margin-s {typeName}" type={typeName === 'a' ? 'primary' : 'secondary'} onClick={() => yo('!')}
+  <Badge className="margin-s" type={typeName === 'a' ? 'primary' : 'secondary'} onClick={() => yo('!')}
     >Standard badge</Badge
   >
-  <div class={typeName === 'danger' ? 'danger' : 'colos'} />
 </div>
 <Prism
   {language}
