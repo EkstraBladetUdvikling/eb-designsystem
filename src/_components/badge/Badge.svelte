@@ -23,8 +23,15 @@
   if (type) {
     cssClass = `${cssClass} badge--${type}`;
   }
+
+  let style: string = '';
+  export let onClick: any;
+
+  if (onClick) {
+    style = 'cursor: pointer';
+  }
 </script>
 
-<span class={cssClass}>
+<span class={cssClass} on:click={onClick} {style}>
   <slot />
 </span>
