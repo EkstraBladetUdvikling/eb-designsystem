@@ -25,7 +25,7 @@
     "start": "sirv docs",
     "validate": "svelte-check",
     "dist": "yarn build",
-    "predist": "echo this was pre",
+    "prepublish": "yarn dist",
     "dist:move": "yarn dist && yarn move_to_eb",
     "installds": "node node/install-system",
     "installds:eb": "node node/nstall-system ../ekstrabladet/ekstrabladet-publication/src/main/frontend/css-main/main/css",
