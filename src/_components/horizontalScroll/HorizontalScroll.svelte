@@ -133,9 +133,9 @@
 </script>
 
 {#if title}
-  <h1>{title}</h1>
+  <h1 class="horizontal-scroll-padding">{title}</h1>
 {/if}
-<div bind:this={scrollContainer} class="horizontal-scroll-container position-relative">
+<div bind:this={scrollContainer} class="horizontal-scroll-container horizontal-scroll-padding position-relative">
   <Button on:click={prevScroll} className="horizontal-scroll-nav button-prev bg--white" extension="icon">
     <i class="fa fa-chevron-left" />
   </Button>
