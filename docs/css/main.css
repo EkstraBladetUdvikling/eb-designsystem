@@ -703,55 +703,6 @@ template {
 .border--white {
   border-color: #fff;
 }
-html,button,input,select,textarea{font-family:Arial,sans-serif}
-:root{--fs-xxsmall: 10px}
-.fs-xxsmall{font-size:10px}
-:root{--fs-xsmall: 12px}
-.fs-xsmall{font-size:12px}
-:root{--fs-small: 14px}
-.fs-small{font-size:14px}
-:root{--fs-medium: 16px}
-.fs-medium{font-size:16px}
-:root{--fs-large: 18px}
-.fs-large{font-size:18px}
-:root{--fs-xlarge: 20px}
-.fs-xlarge{font-size:20px}
-:root{--fs-xxlarge: 30px}
-.fs-xxlarge{font-size:30px}
-:root{--fs-xxxlarge: 50px}
-.fs-xxxlarge{font-size:50px}
-h1{font-size:50px}
-h2{font-size:30px}
-h3{font-size:20px}
-h4{font-size:18px}
-h5{font-size:18px}
-h6{font-size:16px}
-p{font-size:16px}
-:root{--fs-xxsmall: 10px}
-.fs-xxsmall{font-size:10px}
-:root{--fs-xsmall: 12px}
-.fs-xsmall{font-size:12px}
-:root{--fs-small: 14px}
-.fs-small{font-size:14px}
-:root{--fs-medium: 16px}
-.fs-medium{font-size:16px}
-:root{--fs-large: 18px}
-.fs-large{font-size:18px}
-:root{--fs-xlarge: 20px}
-.fs-xlarge{font-size:20px}
-:root{--fs-xxlarge: 30px}
-.fs-xxlarge{font-size:30px}
-:root{--fs-xxxlarge: 50px}
-.fs-xxxlarge{font-size:50px}
-:root{--fs-ads: 10px;--fs-timestamp: 12px;--fs-caption: 14px;--fs-showmore: 16px;--fs-bodytext: 18px;--fs-subtitle: 20px;--fs-quote: 30px;--fs-title: 50px}
-.fs-ads{font-size:10px;line-height:normal}
-.fs-timestamp{font-size:12px;line-height:normal}
-.fs-caption{font-size:14px;line-height:normal}
-.fs-showmore{font-size:16px;line-height:normal}
-.fs-bodytext{font-size:18px;line-height:normal}
-.fs-subtitle{font-size:20px;line-height:normal}
-.fs-quote{font-size:30px;line-height:normal}
-.fs-title{font-size:50px;line-height:normal}
 /** Syntax highlighting styles */
 .highlight {
   background: #fff;
@@ -1006,12 +957,12 @@ h2 {
 }
 @media (max-width: 767px) {
   .dsm-nav-top-desktop .nav-top {
-  padding-right: 10px;
+    padding-right: 10px;
   padding-left: 10px;
   min-width: 300px;
   }
   .nav-vertical {
-  position: fixed;
+    position: fixed;
   z-index: 1;
 
   background: #eee;
