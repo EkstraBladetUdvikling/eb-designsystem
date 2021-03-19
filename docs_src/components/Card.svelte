@@ -30,7 +30,7 @@
     <div class="card-media">
       <img
         class="card-image"
-        src="/incoming/k1h4fx/8330072/IMAGE_ALTERNATES/relationBig_150/dcx-80680819-20201016132637"
+        src="https://via.placeholder.com/150x84&text=150x84"
         loading="lazy"
         alt=""
         title=""
