@@ -1966,7 +1966,9 @@ h6,p {
 /* Variables */
 
 :root {
-  --border-radius-medium: 10px; /* default */
+  --border-radius: 10px; /* default */
+
+  --border-radius-medium: var(--border-radius); /* default */
   --border-radius-small: 5px;
 }
 
