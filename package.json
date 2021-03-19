@@ -5,8 +5,9 @@
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
   "files": [
-    "./src",
-    "./dist"
+    "./dist",
+    "./snippets",
+    "./src"
   ],
   "license": "MIT",
   "scripts": {
@@ -36,7 +37,6 @@
   },
   "dependencies": {
     "@ekstra-bladet/eb-colors": "^2.6.0",
-    "@ekstra-bladet/eb-fonts": "^1.1.1",
     "sirv-cli": "^1.0.0",
     "svelte-spa-router": "^3.1.0"
   },
@@ -73,5 +73,8 @@
     "svg-sprite": "^1.5.0",
     "tslib": "^2.0.0",
     "typescript": "^4.2.3"
+  },
+  "peerDependencies": {
+    "postcss": "^8.2.8"
   }
 }
