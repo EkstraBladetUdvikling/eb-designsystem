@@ -2,6 +2,9 @@
   import type { TCardType } from '../../types/Card';
   import type { TThemes } from '../../_utilities/data-theme/DataTheme';
 
+  import { Background } from '@ekstra-bladet/eb-colors/dist/eb-colors';
+  import { parseDate } from '../../misc/parsedate';
+
   import Card from '../card';
   import Icon from '../icon';
 
@@ -15,6 +18,7 @@
   export let className: string = undefined;
   export let href: string = undefined;
   export let loading: boolean = false;
+  export let isBreaking: boolean = false;
   export let isPlus: boolean = false;
   export let media: Partial<IMediaOptions> = undefined;
   export let section: string = undefined;
@@ -55,9 +59,12 @@
       innerClass = `${innerClass} card--small-media card--small-media--reverse`;
       break;
   }
+
+  let sectionColor;
+  if (section) sectionColor = Background[section].backgroundColor;
 </script>
 
-<Card {href} className={baseClass} {style} {theme}>
+<Card {href} className={baseClass} {style} {theme} data-breaking={isBreaking}>
   <div class={innerClass} data-theme={theme}>
     {#if loading}
       <div class="card-media">
@@ -65,14 +72,11 @@
       </div>
     {/if}
     {#if media}
-      <div class="card-media">
+      <div class="card-media" style="border-color: {sectionColor};">
         <img alt={title} class="card-image" src={media.src} height={media.height} width={media.width} />
       </div>
     {/if}
-    {#if section}
-      <div class="card-section-border bg--{section.toLowerCase()}" />
-    {/if}
-    <div class="flex-column flex-column--reverse flex-item--grow flex-justify--between">
+    <div class="card-content-wrapper" style="border-color: {sectionColor};">
       {#if isPlus}
         <div class="card-icon flex flex-justify--end">
           <Icon name="ebplus_icon" width="20" />
@@ -91,7 +95,7 @@
             {#if timestamp}
               <div class="width-1of2">
                 <Icon name="clock" width="8" />
-                {timestamp}
+                {parseDate(timestamp)}
               </div>
             {/if}
           </div>

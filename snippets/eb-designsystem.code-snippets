@@ -182,14 +182,14 @@
     "body": [
       "card--small-media"
     ],
-    "description": "NB! This should only be used with card\n{\n align-items: center;\nflex-direction: row;\nflex-wrap: wrap;\n }\n NB! This should only be used with card\n{\n align-items: center;\nflex-direction: row;\nflex-wrap: wrap;\n }"
+    "description": "NB! This should only be used with card\n{\n align-items: center;\nflex-direction: row;\nflex-wrap: wrap;\n }\n NB! This should only be used with card\n{\n align-items: center;\nflex-direction: row;\nflex-wrap: wrap;\n }\n NB! This should only be used with card-inner\nThis extends card-inner with: {\n flex-direction: row;\n }"
   },
   "designsystem card small media reverse": {
     "prefix": "ds-card--small-media--reverse",
     "body": [
       "card--small-media--reverse"
     ],
-    "description": "NB! This should only be used with card\n{\n flex-direction: row-reverse;\n }\n NB! This should only be used with card\n{\n flex-direction: row-reverse;\n }"
+    "description": "NB! This should only be used with card\n{\n flex-direction: row-reverse;\n }\n NB! This should only be used with card\n{\n flex-direction: row-reverse;\n }\n NB! This should only be used with card-inner\nThis extends card-inner with: {\n flex-direction: row-reverse;\n }"
   },
   "designsystem card title small": {
     "description": "Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])\n Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])"
@@ -206,13 +206,23 @@
     "body": [
       "card-inner"
     ],
-    "description": "{\n border-radius: 10px;\nbox-shadow: 0 10px 20px rgba(0, 0, 0, .1);\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\n }\n {\n border-radius: 10px;\nbox-shadow: 0 10px 20px rgba(0, 0, 0, .1);\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\n }"
+    "description": "{\n border-radius: 10px;\nbox-shadow: 0 10px 20px rgba(0, 0, 0, .1);\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\n }\n {\n border-radius: 10px;\nbox-shadow: 0 10px 20px rgba(0, 0, 0, .1);\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
   },
   "designsystem card mode[data theme=\"lightmode\"]": {
     "description": "Has pseudo styling :hover\n Has pseudo styling :hover"
   },
   "designsystem card mode[data theme=\"darkmode\"]": {
     "description": "Has pseudo styling :hover\n Has pseudo styling :hover"
+  },
+  "designsystem card content wrapper": {
+    "prefix": "ds-card-content-wrapper",
+    "body": [
+      "card-content-wrapper"
+    ],
+    "description": "{\n border-top: 8px solid currentColor;\ndisplay: flex;\nflex-direction: column-reverse;\nflex-grow: 1;\njustify-content: space-between;\n }"
+  },
+  "designsystem card mode[data breaking=\"true\"]": {
+    "description": "Has pseudo styling :hover"
   },
   "designsystem form element": {
     "prefix": "ds-form-element",
