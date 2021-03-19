@@ -385,7 +385,7 @@ custom media queries is the only allowed media queries
 .accordion-tab {
   background: rgb(var(--rgb-color--graa7));
   border: 1px solid transparent;
-  border-radius: var(--border-radius--small);
+  border-radius: var(--border-radius);
   box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), .22);
 
   user-select: none;
@@ -825,7 +825,7 @@ a.badge:hover {
 }
 
 .card {
-  border-radius: var(--border-radius--small);
+  border-radius: var(--border-radius);
   box-shadow: inset 0 0 0 1px var(--card-border-color); /* DR.Edition 03/02/2020 */
   box-sizing: border-box;
   display: flex;
@@ -1325,7 +1325,7 @@ a.card-mode:focus .card-inner {
   --right-pos: calc(var(--button-height) * 1.5);
 }
 
-.horizontal-scroll-container {
+.horizontal-scroll-padding {
   padding-right: var(--right-pos);
   padding-left: var(--right-pos);
 }
@@ -1364,31 +1364,7 @@ a.card-mode:focus .card-inner {
 
   box-shadow: var(--card-mode--box-shadow);
   opacity: 0;
-  /* align-items: center;
-  background: var(--color--secondary);
-  border: 1px solid var(--color--secondary);
-  border-radius: var(--button-border-radius);
-  box-sizing: border-box;
-  color: var(--fgcolor--secondary);
-  cursor: pointer;
-  display: flex;
-  font-size: 14px;
-  justify-content: center;
-  opacity: 0;
-  outline: none;
-  padding: 0;
-  text-align: center;
-  text-decoration: none;
-  transform: translateY(-50%);
-  white-space: nowrap;
-  min-width: var(--button-height);
-  height: var(--button-height); */
 }
-
-/* .horizontal-scroll-nav:hover {
-  background-color: var(--fgcolor--secondary);
-  color: var(--color--secondary);
-} */
 
 .horizontal-scroll-container:not([data-atstart="true"]):hover .button-prev {
   opacity: 1;
