@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const pkg = require('./package.json');
+const pkg = require('../package.json');
 
 const postcss = require('postcss');
 const postcssImport = require('postcss-import')({

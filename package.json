@@ -5,18 +5,19 @@
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
   "files": [
-    "./src",
-    "./dist"
+    "./dist",
+    "./snippets",
+    "./src"
   ],
   "license": "MIT",
   "scripts": {
-    "build": "yarn build:designsystem && yarn build:svelte",
+    "build": "yarn build:designsystem && yarn build:svelte && yarn svgs",
     "build:designsystem": "yarn build:css && yarn build:watcher && yarn build:snippets",
-    "build:css": "node build-css.js",
-    "build:nonie": "node build-css.js --nonie",
-    "build:ie": "node build-css.js --ie",
+    "build:css": "node node/build-css.js",
+    "build:nonie": "node node/build-css.js --nonie",
+    "build:ie": "node node/build-css.js --ie",
     "build:preview": "postcss preview/css/_index.css -o docs/css/main.css --no-map -u postcss-import",
-    "build:snippets": "node build-snippets",
+    "build:snippets": "node node/build-snippets",
     "build:watch": "onchange 'src/**/*.css' -- yarn build:watcher & onchange 'preview/**/{_*.css,html}' -- yarn build:preview",
     "build:watcher": "yarn build:css --watcher && yarn build:preview",
     "build:svelte": "yarn rollup -c",
@@ -24,11 +25,12 @@
     "start": "sirv docs",
     "validate": "svelte-check",
     "dist": "yarn build",
+    "predist": "echo this was pre",
     "dist:move": "yarn dist && yarn move_to_eb",
-    "installds": "node install-system",
-    "installds:eb": "node install-system ../ekstrabladet/ekstrabladet-publication/src/main/frontend/css-main/main/css",
-    "installsnippets": "node install-snippets",
-    "installsnippets:eb": "node install-snippets ../ekstrabladet/ekstrabladet-publication/src/main/.vscode",
+    "installds": "node node/install-system",
+    "installds:eb": "node node/nstall-system ../ekstrabladet/ekstrabladet-publication/src/main/frontend/css-main/main/css",
+    "installsnippets": "node node/install-snippets",
+    "installsnippets:eb": "node node/install-snippets ../ekstrabladet/ekstrabladet-publication/src/main/.vscode",
     "move_to_eb": "yarn installds:eb",
     "copy_svg": "cpx \"./docs/svg/symbol/icons.svg\" \"./dist\" --update",
     "start:designsystem": "yarn build:watcher && yarn build:preview && yarn build:watch",
@@ -36,7 +38,6 @@
   },
   "dependencies": {
     "@ekstra-bladet/eb-colors": "^2.6.0",
-    "@ekstra-bladet/eb-fonts": "^1.1.1",
     "sirv-cli": "^1.0.0",
     "svelte-spa-router": "^3.1.0"
   },
@@ -61,7 +62,7 @@
     "postcss-preset-env": "^6.7.0",
     "postcss-selectorcleanse": "^1.0.6",
     "prismjs": "^1.23.0",
-    "rollup": "^2.41.4",
+    "rollup": "^2.42.0",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^7.0.0",
@@ -73,5 +74,8 @@
     "svg-sprite": "^1.5.0",
     "tslib": "^2.0.0",
     "typescript": "^4.2.3"
+  },
+  "peerDependencies": {
+    "postcss": "^8.2.8"
   }
 }
