@@ -886,6 +886,16 @@ a.card:focus {
   margin: 0 0 1px;
 }
 
+.card-meta-item {
+  white-space: nowrap;
+  min-width: 50%;
+}
+
+.card-meta-item + .card-meta-item {
+  padding-left: 5px;
+  min-width: auto;
+}
+
 /* Legacy - remove when not used in Escenic */
 
 .card-meta .card-badge {
@@ -1306,6 +1316,12 @@ a.card-mode:focus .card-inner {
 
 :root {
   --right-pos: calc(var(--button-height) * 1.5);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --right-pos: 10px;
+  }
 }
 
 .horizontal-scroll-padding {

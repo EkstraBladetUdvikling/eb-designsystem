@@ -2,6 +2,12 @@
   --right-pos: calc(var(--button-height) * 1.5);
 }
 
+@media (--smartphone) {
+  :root {
+    --right-pos: 10px;
+  }
+}
+
 .horizontal-scroll-padding {
   padding-right: var(--right-pos);
   padding-left: var(--right-pos);
