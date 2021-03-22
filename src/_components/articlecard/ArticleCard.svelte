@@ -16,6 +16,7 @@
   }
 
   export let className: string = undefined;
+  export let colorClass: string = undefined;
   export let href: string = undefined;
   export let loading: boolean = false;
   export let isBreaking: boolean = false;
@@ -61,7 +62,14 @@
   }
 
   let sectionColor;
-  if (section) sectionColor = Background[section].backgroundColor;
+
+  if (colorClass) {
+    try {
+      sectionColor = Background[colorClass.charAt(0).toUpperCase() + colorClass.slice(1)].backgroundColor;
+    } catch (error) {
+      console.error('ArticleCard.svelte . colorClass error', error);
+    }
+  }
 </script>
 
 <Card {href} className={baseClass} {style} {theme} data-breaking={isBreaking}>
@@ -87,13 +95,13 @@
         {#if section || timestamp}
           <div class="card-meta flex fontsize-xxsmall">
             {#if section}
-              <div class="width-1of2">
+              <div class="card-meta-item">
                 <Icon flipped={true} name="tag-regular" width="8" />
                 <span>{section}</span>
               </div>
             {/if}
             {#if timestamp}
-              <div class="width-1of2">
+              <div class="card-meta-item">
                 <Icon name="clock" width="8" />
                 {parseDate(timestamp)}
               </div>

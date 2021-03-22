@@ -22,12 +22,12 @@
   let maxLength;
   let listLength;
 
-  function updateDataSet(pos) {
+  function updateDataSet(pos, fromScroll = false) {
     switch (pos) {
       case 'neutral':
         scrollContainer.dataset.atstart = 'false';
         scrollContainer.dataset.atend = 'false';
-        listCurrent = 1;
+        if (fromScroll) listCurrent = 1;
         break;
       case 'end':
         scrollContainer.dataset.atstart = 'false';
@@ -60,11 +60,11 @@
     const wrapRight = scrollItemContainer.getBoundingClientRect().right;
 
     if (childLeft - 5 === wrapLeft) {
-      updateDataSet('start');
+      updateDataSet('start', true);
     } else if (childRight - 10 <= wrapRight) {
-      updateDataSet('end');
+      updateDataSet('end', true);
     } else {
-      updateDataSet('neutral');
+      updateDataSet('neutral', true);
     }
   }
 
@@ -84,14 +84,15 @@
 
   function nextScroll(_ev: MouseEvent): void {
     if (listCurrent !== maxLength) {
-      listCurrent++;
+      listCurrent = listCurrent + 1;
+
       scroll(listCurrent);
     }
   }
 
   function prevScroll(_ev: MouseEvent): void {
     if (listCurrent !== 0) {
-      listCurrent--;
+      listCurrent = listCurrent - 1;
       scroll(listCurrent);
     }
   }
