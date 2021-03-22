@@ -214,6 +214,13 @@
   "designsystem card mode[data theme=\"darkmode\"]": {
     "description": "Has pseudo styling :hover\n Has pseudo styling :hover"
   },
+  "designsystem card meta item": {
+    "prefix": "ds-card-meta-item",
+    "body": [
+      "card-meta-item"
+    ],
+    "description": "{\n white-space: nowrap;\nmin-width: 50%;\n }"
+  },
   "designsystem card content wrapper": {
     "prefix": "ds-card-content-wrapper",
     "body": [
