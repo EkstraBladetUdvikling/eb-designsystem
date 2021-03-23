@@ -136,7 +136,7 @@
 {#if title}
   <h1 class="horizontal-scroll-padding">{title}</h1>
 {/if}
-<div bind:this={scrollContainer} class="horizontal-scroll-container horizontal-scroll-padding position-relative">
+<div bind:this={scrollContainer} class="horizontal-scroll-container position-relative">
   <Button on:click={prevScroll} className="horizontal-scroll-nav button-prev bg--white" extension="icon">
     <i class="fa fa-chevron-left" />
   </Button>
@@ -145,7 +145,7 @@
   </Button>
   <div
     bind:this={scrollItemContainer}
-    class="horizontal-scroll-items flex position-relative padding-l--tb"
+    class="horizontal-scroll-items flex position-relative"
     data-horizontallist="horizontallist"
   >
     <slot />

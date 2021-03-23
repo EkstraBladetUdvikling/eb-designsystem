@@ -1325,16 +1325,15 @@ a.card-mode:focus .card-inner {
   }
 }
 
-.horizontal-scroll-padding {
-  padding-right: var(--right-pos);
-  padding-left: var(--right-pos);
+.smartphone .horizontal-scroll-padding {
+  padding: 0 var(--distance-medium);
 }
 
 .horizontal-scroll-container::before,
 .horizontal-scroll-container::after {
   position: absolute;
   top: 0;
-  right: 0;
+  right: calc(var(--right-pos) * -1);
   z-index: 1;
 
   box-shadow: -20px 0 20px -20px rgba(0, 0, 0, .4);
@@ -1350,13 +1349,19 @@ a.card-mode:focus .card-inner {
 }
 
 .horizontal-scroll-container::before {
-  left: 0;
+  right: auto;
+  left: calc(var(--right-pos) * -1);
 
   box-shadow: 20px 0 20px -20px rgba(0, 0, 0, .4);
 }
 
 .smartphone .horizontal-scroll-container::before {
   box-shadow: 5px 0 10px -3px rgb(0 0 0 / 40%);
+}
+
+.smartphone .horizontal-scroll-container::after,
+.smartphone .horizontal-scroll-container::before {
+  display: none;
 }
 
 .horizontal-scroll-container[data-atend="true"]::after,.horizontal-scroll-container[data-atstart="true"]::before {
@@ -1390,9 +1395,16 @@ a.card-mode:focus .card-inner {
 .horizontal-scroll-items {
   overflow-x: scroll;
   overflow-y: hidden;
+  padding-top: var(--distance-large);
+  padding-bottom: var(--distance-large);
 
   scroll-snap-type: x mandatory;
   scrollbar-width: none; /* Firefox hack to hide scrollbar */
+}
+
+.smartphone .horizontal-scroll-items {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .horizontal-scroll-items::-webkit-scrollbar {
