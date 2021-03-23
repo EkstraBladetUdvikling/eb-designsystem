@@ -1,5 +1,8 @@
 <script lang="ts" context="module">
   import type { IconTypes } from 'Icon.svelte';
+
+  // import Check from './svgs/check.svg';
+  import * as IconSVGS from './svgs/IconComponents';
 </script>
 
 <script lang="ts">
@@ -19,9 +22,7 @@
 </script>
 
 {#if type === 'svg'}
-  <svg {viewBox} {style} class={baseClass} on:click data-flipped={flipped}>
-    <use href="/svg/symbol/icons.svg#{name}" />
-  </svg>
+  <svelte:component this={IconSVGS[name.replace('-', '')]} {style} class={baseClass} on:click data-flipped={flipped} />
 {:else}
   <i class={className} aria-hidden="true" />
 {/if}
