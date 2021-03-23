@@ -280,13 +280,6 @@
     ],
     "description": "NB! This should only be used with form-checkbox\n{\n position: absolute;\ntop: 2px;\nleft: 3px;\nz-index: -1;\ntransform: scale(0.1);\n }"
   },
-  "designsystem horizontal scroll padding": {
-    "prefix": "ds-horizontal-scroll-padding",
-    "body": [
-      "horizontal-scroll-padding"
-    ],
-    "description": "{\n padding-right: calc(36px * 1.5);\npadding-left: calc(36px * 1.5);\n }"
-  },
   "designsystem horizontal scroll container": {
     "description": "Has pseudo styling ::before\n Has pseudo styling ::after\n Has pseudo styling ::before"
   },
@@ -315,7 +308,7 @@
     "body": [
       "horizontal-scroll-items"
     ],
-    "description": "{\n overflow-x: scroll;\noverflow-y: hidden;\nscroll-snap-type: x mandatory;\nscrollbar-width: none;\n }\n Has pseudo styling ::-webkit-scrollbar"
+    "description": "{\n overflow-x: scroll;\noverflow-y: hidden;\npadding-top: 20px;\npadding-bottom: 20px;\nscroll-snap-type: x mandatory;\nscrollbar-width: none;\n }\n Has pseudo styling ::-webkit-scrollbar"
   },
   "designsystem horizontal scroll item": {
     "prefix": "ds-horizontal-scroll-item",
