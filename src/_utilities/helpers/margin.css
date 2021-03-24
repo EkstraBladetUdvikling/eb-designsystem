@@ -1,5 +1,25 @@
 /* margin */
 
+.margin-none {
+  margin: 0;
+}
+
+.margin-none--t {
+  margin-top: 0;
+}
+
+.margin-none--r {
+  margin-right: 0;
+}
+
+.margin-none--b {
+  margin-bottom: 0;
+}
+
+.margin-none--l {
+  margin-left: 0;
+}
+
 .margin-s {
   margin: var(--distance-small);
 }
@@ -156,24 +176,4 @@
 
 .margin-r---auto {
   margin-right: auto;
-}
-
-.margin-none {
-  margin: 0;
-}
-
-.margin-none--t {
-  margin-top: 0;
-}
-
-.margin-none--r {
-  margin-right: 0;
-}
-
-.margin-none--b {
-  margin-bottom: 0;
-}
-
-.margin-none--l {
-  margin-left: 0;
 }
