@@ -9,7 +9,6 @@
   export let className: string = undefined;
   export let name: IconTypes;
   export let flipped: boolean = false;
-  export let viewBox: string = '0 0 50 50';
   export let type: 'svg' | 'fa' = 'svg';
   export let width: number | string = 36;
   export let style: string = undefined;
