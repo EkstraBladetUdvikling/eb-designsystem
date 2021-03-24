@@ -870,6 +870,41 @@
     ],
     "description": "{\n margin-right: auto;\nmargin-left: auto;\n }"
   },
+  "designsystem margin none": {
+    "prefix": "ds-margin-none",
+    "body": [
+      "margin-none"
+    ],
+    "description": "{\n margin: 0;\n }"
+  },
+  "designsystem margin none t": {
+    "prefix": "ds-margin-none--t",
+    "body": [
+      "margin-none--t"
+    ],
+    "description": "NB! This should only be used with margin-none\n{\n margin-top: 0;\n }"
+  },
+  "designsystem margin none r": {
+    "prefix": "ds-margin-none--r",
+    "body": [
+      "margin-none--r"
+    ],
+    "description": "NB! This should only be used with margin-none\n{\n margin-right: 0;\n }"
+  },
+  "designsystem margin none b": {
+    "prefix": "ds-margin-none--b",
+    "body": [
+      "margin-none--b"
+    ],
+    "description": "NB! This should only be used with margin-none\n{\n margin-bottom: 0;\n }"
+  },
+  "designsystem margin none l": {
+    "prefix": "ds-margin-none--l",
+    "body": [
+      "margin-none--l"
+    ],
+    "description": "NB! This should only be used with margin-none\n{\n margin-left: 0;\n }"
+  },
   "designsystem margin s": {
     "prefix": "ds-margin-s",
     "body": [
@@ -1129,40 +1164,40 @@
     ],
     "description": "NB! This should only be used with margin-r\n{\n margin-right: auto;\n }"
   },
-  "designsystem margin none": {
-    "prefix": "ds-margin-none",
+  "designsystem padding none": {
+    "prefix": "ds-padding-none",
     "body": [
-      "margin-none"
+      "padding-none"
     ],
-    "description": "{\n margin: 0;\n }"
+    "description": "{\n padding: 0;\n }"
   },
-  "designsystem margin none t": {
-    "prefix": "ds-margin-none--t",
+  "designsystem padding none t": {
+    "prefix": "ds-padding-none--t",
     "body": [
-      "margin-none--t"
+      "padding-none--t"
     ],
-    "description": "NB! This should only be used with margin-none\n{\n margin-top: 0;\n }"
+    "description": "NB! This should only be used with padding-none\n{\n padding-top: 0;\n }"
   },
-  "designsystem margin none r": {
-    "prefix": "ds-margin-none--r",
+  "designsystem padding none r": {
+    "prefix": "ds-padding-none--r",
     "body": [
-      "margin-none--r"
+      "padding-none--r"
     ],
-    "description": "NB! This should only be used with margin-none\n{\n margin-right: 0;\n }"
+    "description": "NB! This should only be used with padding-none\n{\n padding-right: 0;\n }"
   },
-  "designsystem margin none b": {
-    "prefix": "ds-margin-none--b",
+  "designsystem padding none b": {
+    "prefix": "ds-padding-none--b",
     "body": [
-      "margin-none--b"
+      "padding-none--b"
     ],
-    "description": "NB! This should only be used with margin-none\n{\n margin-bottom: 0;\n }"
+    "description": "NB! This should only be used with padding-none\n{\n padding-bottom: 0;\n }"
   },
-  "designsystem margin none l": {
-    "prefix": "ds-margin-none--l",
+  "designsystem padding none l": {
+    "prefix": "ds-padding-none--l",
     "body": [
-      "margin-none--l"
+      "padding-none--l"
     ],
-    "description": "NB! This should only be used with margin-none\n{\n margin-left: 0;\n }"
+    "description": "NB! This should only be used with padding-none\n{\n padding-left: 0;\n }"
   },
   "designsystem padding s": {
     "prefix": "ds-padding-s",
@@ -1408,41 +1443,6 @@
       "padding-xxl--l"
     ],
     "description": "NB! This should only be used with padding-xxl\n{\n padding-left: 50px;\n }"
-  },
-  "designsystem padding none": {
-    "prefix": "ds-padding-none",
-    "body": [
-      "padding-none"
-    ],
-    "description": "{\n padding: 0;\n }"
-  },
-  "designsystem padding none t": {
-    "prefix": "ds-padding-none--t",
-    "body": [
-      "padding-none--t"
-    ],
-    "description": "NB! This should only be used with padding-none\n{\n padding-top: 0;\n }"
-  },
-  "designsystem padding none r": {
-    "prefix": "ds-padding-none--r",
-    "body": [
-      "padding-none--r"
-    ],
-    "description": "NB! This should only be used with padding-none\n{\n padding-right: 0;\n }"
-  },
-  "designsystem padding none b": {
-    "prefix": "ds-padding-none--b",
-    "body": [
-      "padding-none--b"
-    ],
-    "description": "NB! This should only be used with padding-none\n{\n padding-bottom: 0;\n }"
-  },
-  "designsystem padding none l": {
-    "prefix": "ds-padding-none--l",
-    "body": [
-      "padding-none--l"
-    ],
-    "description": "NB! This should only be used with padding-none\n{\n padding-left: 0;\n }"
   },
   "designsystem height auto": {
     "prefix": "ds-height-auto",
