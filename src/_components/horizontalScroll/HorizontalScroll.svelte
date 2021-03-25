@@ -15,8 +15,6 @@
   /* Horizontial Scroll elements */
   let scrollContainer: HTMLDivElement;
   let scrollItemContainer: HTMLDivElement;
-  let prevScrollBtn: HTMLButtonElement;
-  let nextScrollBtn: HTMLButtonElement;
   let listCurrent = 0;
   let children;
   let maxLength;
@@ -113,14 +111,6 @@
     ).length;
 
     maxLength = listLength - visibleChildren;
-
-    if (visibleChildren === listLength) {
-      /**
-       * If there is no invisible elements hide buttons
-       */
-      prevScrollBtn.style.display = 'none';
-      nextScrollBtn.style.display = 'none';
-    }
 
     scrollItemContainer.addEventListener(
       'wheel',
