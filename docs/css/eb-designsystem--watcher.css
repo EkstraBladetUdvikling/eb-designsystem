@@ -978,7 +978,7 @@ a.card:focus {
   */
 
 :root {
-  --card-mode--box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+  --card-mode--box-shadow: 0 5px 18px rgba(0, 0, 0, .1);
   --card-mode--title: 18px;
   --card-mode-icon--height: 20px;
   --card-mode-padding: 15px;
