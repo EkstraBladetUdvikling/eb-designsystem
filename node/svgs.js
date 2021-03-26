@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const dest = 'docs/svg';
+
 const spriter = new SVGSpriter({
   dest,
   mode: {
@@ -12,11 +13,13 @@ const spriter = new SVGSpriter({
   },
 });
 
-const svgs = fs.readdirSync('./svgs').filter((fileName) => fileName.indexOf('.svg') !== -1);
+const iconPath = './src/_components/icon/svgs';
+
+const svgs = fs.readdirSync(iconPath).filter((fileName) => fileName.indexOf('.svg') !== -1);
 
 const svgNames = [];
 svgs.forEach((svgFileName) => {
-  const svgFilePath = `./svgs/${svgFileName}`;
+  const svgFilePath = `${iconPath}/${svgFileName}`;
 
   spriter.add(path.resolve(svgFilePath), svgFileName, fs.readFileSync(svgFilePath, { encoding: 'utf-8' }));
 
@@ -49,3 +52,15 @@ const definitionFile = `declare module 'Icon.svelte' {
 `;
 
 fs.writeFileSync(`./src/types/Icon.d.ts`, definitionFile);
+
+let iconComponents = [];
+
+svgNames.forEach((svgname, idx) => {
+  const exportName = svgname.replace('-', '');
+
+  iconComponents.push(`export { default as ${exportName} } from './${svgname}.svg'`);
+});
+
+const componentFile = iconComponents.join(';');
+
+fs.writeFileSync(`./src/_components/icon/svgs/IconComponents.ts`, componentFile);

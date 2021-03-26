@@ -1,30 +1,25 @@
 <script lang="ts">
-  import type { TCardType } from '../../types/Card';
+  import type { TThemes } from '../../_utilities/data-theme/DataTheme';
 
   let baseClass = 'card';
   export let className: string;
   export let href: string = undefined;
   export let style: string = undefined;
-
-  export let type: TCardType = undefined;
-
-  switch (type) {
-    case 'mode':
-      baseClass = `card-mode`;
-      break;
-    case 'small-media':
-      baseClass = `${baseClass} card--small-media`;
-      break;
-    case 'small-media--reverse':
-      baseClass = `${baseClass} card--small-media card--small-media--reverse`;
-      break;
-  }
+  export let theme: TThemes = undefined;
 
   if (className) baseClass = `${className} ${baseClass}`;
+
+  const dataProps = {};
+
+  for (const prop in $$props) {
+    if (prop.indexOf('data-') === 0) {
+      dataProps[prop] = $$props[prop];
+    }
+  }
 </script>
 
 {#if href}
-  <a {href} class={baseClass} {style}>
+  <a {href} class={baseClass} {style} data-theme={theme} {...dataProps}>
     {#if $$slots.header}
       <slot name="header" class="card-header" />
     {/if}
@@ -44,7 +39,7 @@
     {/if}
   </a>
 {:else}
-  <div class={baseClass} {style}>
+  <div class={baseClass} {style} data-theme={theme}>
     {#if $$slots.header}
       <div class="card-header">
         <slot name="header" />

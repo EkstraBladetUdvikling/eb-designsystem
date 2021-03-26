@@ -1,9 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 
-const pkg = require('./package.json');
+const pkg = require('../package.json');
 
 const postcss = require('postcss');
+const postcssImport = require('postcss-import')({
+  skipDuplicates: true,
+});
 const discardDuplicates = require('postcss-discard-duplicates')();
 const discardUnused = require('postcss-discard-unused')();
 const mergeRules = require('postcss-merge-rules')();
@@ -39,7 +42,8 @@ const customMediaOptions = {
 const readFolder = (folderName, filesToFind, array, lvl = 0) => {
   fs.readdirSync(folderName, { withFileTypes: true }).forEach((output) => {
     if (output.isFile() && lvl !== 0) {
-      if (path.extname(output.name).toLowerCase() === filesToFind) {
+      const extName = path.extname(output.name).toLowerCase();
+      if (extName === filesToFind && output.name.indexOf('_') !== 0) {
         array.push(`${folderName}/${output.name}`);
       }
     } else if (output.isDirectory()) {
@@ -69,7 +73,7 @@ const buildCSS = async (args) => {
     const options = getOptions(args);
     const srcFolder = './src';
     const cssFilesToRead = options.build === '--ie' ? [] : importFrom;
-    const postcssPlugins = [];
+    const postcssPlugins = [postcssImport];
     let outFolder = 'dist';
     switch (options.build) {
       case '--ie':
@@ -102,27 +106,8 @@ const buildCSS = async (args) => {
       readFileContent.push(fs.readFileSync(fileName));
     });
     const css = readFileContent.join('');
-    let tempversionBuild = '';
-    if (options.watching) {
-      if (fs.existsSync(TEMPVERSION)) {
-        const readVersion = parseInt(fs.readFileSync(TEMPVERSION).toString(), 10);
-        tempversionBuild = readVersion + 1;
-      } else {
-        tempversionBuild = 0;
-      }
-    }
-    const branchInfo = fs.readFileSync('.git/HEAD').toString().trim().split('/');
-    const branch = branchInfo[branchInfo.length - 1];
-    let rev = require('child_process').execSync('git rev-parse HEAD').toString().trim();
 
-    const date = new Date();
-    const dateString = `${date.toLocaleDateString('da')} ${date.toLocaleTimeString('da')}`;
-
-    let version = `${outputFileName} version ${pkg.version} built on ${dateString} on branch "${branch}" at revision "${rev}"`;
-    if (tempversionBuild !== '') {
-      version = `${version} | TEMP VERSION: ${tempversionBuild}`;
-    }
-
+    console.log('css', css.indexOf('@import'));
     await postcss([...postcssPlugins, discardDuplicates, discardUnused, mergeRules])
       .process(css, {
         from: 'undefined',
@@ -130,10 +115,9 @@ const buildCSS = async (args) => {
       .then((result) => {
         try {
           const resultCss = result.css;
-          fs.writeFile(outputFile, `/** ${version} */\n${resultCss}`, () => {
+          fs.writeFile(outputFile, resultCss, () => {
             return true;
           });
-          console.log(version);
 
           console.log(`postcss PRODUCTION ready -> ${outputFile}`);
         } catch (err) {

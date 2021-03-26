@@ -1,7 +1,7 @@
 .accordion-tab {
   background: rgb(var(--rgb-color--graa7));
   border: 1px solid transparent;
-  border-radius: var(--border-radius--small);
+  border-radius: var(--border-radius);
   box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), .22);
 
   user-select: none;

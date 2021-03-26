@@ -6,6 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
+import svelteSVG from 'rollup-plugin-svelte-svg';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -33,14 +34,15 @@ function serve() {
 export default {
   input: 'docs_src/main.ts',
   output: {
-    sourcemap: true,
+    sourcemap: false,
     format: 'iife',
     name: 'app',
     file: 'docs/build/bundle.js',
   },
   plugins: [
+    svelteSVG(),
     svelte({
-      preprocess: sveltePreprocess({ sourceMap: !production }),
+      preprocess: sveltePreprocess({ sourceMap: false }),
       compilerOptions: {
         // enable run-time checks when not in production
         dev: !production,
@@ -61,8 +63,8 @@ export default {
     }),
     commonjs(),
     typescript({
-      sourceMap: !production,
-      inlineSources: !production,
+      sourceMap: false,
+      inlineSources: false,
     }),
 
     // In dev mode, call `npm run start` once

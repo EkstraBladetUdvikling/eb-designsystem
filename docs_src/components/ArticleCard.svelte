@@ -62,7 +62,7 @@
   />
   <ArticleCard
     href={article.href}
-    media={{ src: 'https://via.placeholder.com/610x343&text=610x343' }}
+    media={undefined}
     section={article.section}
     timestamp={article.timestamp}
     title={article.title}
@@ -104,15 +104,27 @@
   `}
   />
 
-  <div class="flex">
-    <ArticleCard {...article} />
-    <ArticleCard {...article} />
-  </div>
-  <div class="flex">
-    <ArticleCard {...article} />
-    <ArticleCard {...article} />
-    <ArticleCard {...article} />
-  </div>
+  <ArticleCard
+    {...article}
+    theme="darkmode"
+    media={{
+      height: '115',
+      src: 'https://via.placeholder.com/200x112&text=200x112',
+      width: '200',
+    }}
+    title="Card-mode list element"
+    type="mode"
+  />
+  <Prism
+    language="html"
+    source={`
+    <ArticleCard {...article} media="{{
+      height: '115',
+      src: 'https://via.placeholder.com/200x112&text=200x112',
+      width: '200',
+    }}" title="Small media reverse card list element" type="mode" />
+  `}
+  />
 
   <h2>Loading placeholder</h2>
 
@@ -130,4 +142,7 @@
       <ArticleCard loading={true} type="mode" />
     `}
   />
+
+  <ArticleCard isPlus={true} {...article} style="width: 215px;" />
+  <ArticleCard isPlus={true} theme="darkmode" {...article} style="width: 215px;" />
 </div>
