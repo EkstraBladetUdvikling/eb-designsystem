@@ -1,4 +1,3 @@
-/** eb-designsystem--watcher.css version 0.4.4 built on 17.3.2021 13.36.44 on branch "article-redesign" at revision "4717933410170f39e9c490102a1a4ec27b74b924" */
 :root {
   --rgb-color--bordeaux: 138, 12, 54;
   --rgb-fgcolor--bordeaux: 255, 255, 255;
@@ -6,9 +5,11 @@
   --rgb-fgcolor--reddark: 255, 255, 255;
   --rgb-color--red: 189, 17, 24;
   --rgb-fgcolor--red: 255, 255, 255;
+  --rgb-color--pink: 179, 30, 97;
+  --rgb-fgcolor--pink: 255, 255, 255;
   --rgb-color--rose: 220, 112, 149;
   --rgb-fgcolor--rose: 255, 255, 255;
-  --rgb-color--orangedark: 227, 129, 33;
+  --rgb-color--orangedark: 233, 108, 13;
   --rgb-fgcolor--orangedark: 255, 255, 255;
   --rgb-color--orange: 229, 173, 2;
   --rgb-fgcolor--orange: 255, 255, 255;
@@ -20,20 +21,24 @@
   --rgb-fgcolor--sand: 255, 255, 255;
   --rgb-color--greendark: 47, 120, 32;
   --rgb-fgcolor--greendark: 255, 255, 255;
-  --rgb-color--green: 50, 162, 55;
+  --rgb-color--green: 2, 158, 93;
   --rgb-fgcolor--green: 255, 255, 255;
   --rgb-color--greenlight: 147, 185, 35;
   --rgb-fgcolor--greenlight: 255, 255, 255;
   --rgb-color--lime: 203, 254, 51;
   --rgb-fgcolor--lime: 0, 0, 0;
-  --rgb-color--purpledark: 101, 1, 136;
+  --rgb-color--purpledark: 81, 32, 140;
   --rgb-fgcolor--purpledark: 255, 255, 255;
-  --rgb-color--bluedark: 18, 80, 123;
+  --rgb-color--bluenavy: 26, 35, 126;
+  --rgb-fgcolor--bluenavy: 255, 255, 255;
+  --rgb-color--bluedark: 16, 88, 194;
   --rgb-fgcolor--bluedark: 255, 255, 255;
   --rgb-color--blue: 49, 118, 155;
   --rgb-fgcolor--blue: 255, 255, 255;
   --rgb-color--bluelight: 79, 168, 223;
   --rgb-fgcolor--bluelight: 255, 255, 255;
+  --rgb-color--cyan: 0, 182, 210;
+  --rgb-fgcolor--cyan: 255, 255, 255;
   --rgb-color--sea: 132, 168, 196;
   --rgb-fgcolor--sea: 255, 255, 255;
   --rgb-color--black: 0, 0, 0;
@@ -86,43 +91,43 @@
   --rgb-fgcolor--twitter: 255, 255, 255;
   --rgb-color--ekstra: 189, 17, 24;
   --rgb-fgcolor--ekstra: 255, 255, 255;
-  --rgb-color--filmmagasinet: 101, 1, 136;
-  --rgb-fgcolor--filmmagasinet: 255, 255, 255;
   --rgb-color--flash: 229, 173, 2;
   --rgb-fgcolor--flash: 255, 255, 255;
-  --rgb-color--forbrug: 49, 118, 155;
+  --rgb-color--forbrug: 0, 182, 210;
   --rgb-fgcolor--forbrug: 255, 255, 255;
-  --rgb-color--livescore: 50, 162, 55;
+  --rgb-color--leder: 26, 35, 126;
+  --rgb-fgcolor--leder: 255, 255, 255;
+  --rgb-color--livescore: 2, 158, 93;
   --rgb-fgcolor--livescore: 255, 255, 255;
   --rgb-color--livescore2: 203, 254, 51;
   --rgb-fgcolor--livescore2: 0, 0, 0;
-  --rgb-color--nationen: 227, 129, 33;
-  --rgb-fgcolor--nationen: 255, 255, 255;
-  --rgb-color--nationen2: 229, 173, 2;
-  --rgb-fgcolor--nationen2: 255, 255, 255;
-  --rgb-color--nyheder: 18, 80, 123;
+  --rgb-color--nyheder: 16, 88, 194;
   --rgb-fgcolor--nyheder: 255, 255, 255;
   --rgb-color--nyheder2: 0, 0, 0;
   --rgb-fgcolor--nyheder2: 255, 255, 255;
-  --rgb-color--sex-samliv: 138, 12, 54;
+  --rgb-color--sex-samliv: 179, 30, 97;
   --rgb-fgcolor--sex-samliv: 255, 255, 255;
   --rgb-color--sex-samliv2: 220, 112, 149;
   --rgb-fgcolor--sex-samliv2: 255, 255, 255;
   --rgb-color--skolefodbold: 147, 185, 35;
   --rgb-fgcolor--skolefodbold: 255, 255, 255;
-  --rgb-color--sport: 50, 162, 55;
+  --rgb-color--sport: 2, 158, 93;
   --rgb-fgcolor--sport: 255, 255, 255;
   --rgb-color--tv: 189, 17, 24;
   --rgb-fgcolor--tv: 255, 255, 255;
+  --rgb-color--underholdning: 81, 32, 140;
+  --rgb-fgcolor--underholdning: 255, 255, 255;
   --color--bordeaux: #8a0c36;
   --fgcolor--bordeaux: #fff;
   --color--reddark: #900;
   --fgcolor--reddark: #fff;
   --color--red: #bd1118;
   --fgcolor--red: #fff;
+  --color--pink: #b31e61;
+  --fgcolor--pink: #fff;
   --color--rose: #dc7095;
   --fgcolor--rose: #fff;
-  --color--orangedark: #e38121;
+  --color--orangedark: #e96c0d;
   --fgcolor--orangedark: #fff;
   --color--orange: #e5ad02;
   --fgcolor--orange: #fff;
@@ -134,20 +139,24 @@
   --fgcolor--sand: #fff;
   --color--greendark: #2f7820;
   --fgcolor--greendark: #fff;
-  --color--green: #32a237;
+  --color--green: #029e5d;
   --fgcolor--green: #fff;
   --color--greenlight: #93b923;
   --fgcolor--greenlight: #fff;
   --color--lime: #cbfe33;
   --fgcolor--lime: #000;
-  --color--purpledark: #650188;
+  --color--purpledark: #51208c;
   --fgcolor--purpledark: #fff;
-  --color--bluedark: #12507b;
+  --color--bluenavy: #1a237e;
+  --fgcolor--bluenavy: #fff;
+  --color--bluedark: #1058c2;
   --fgcolor--bluedark: #fff;
   --color--blue: #31769b;
   --fgcolor--blue: #fff;
   --color--bluelight: #4fa8df;
   --fgcolor--bluelight: #fff;
+  --color--cyan: #00b6d2;
+  --fgcolor--cyan: #fff;
   --color--sea: #84a8c4;
   --fgcolor--sea: #fff;
   --color--black: #000;
@@ -200,37 +209,35 @@
   --fgcolor--twitter: #fff;
   --color--ekstra: #bd1118;
   --fgcolor--ekstra: #fff;
-  --color--filmmagasinet: #650188;
-  --fgcolor--filmmagasinet: #fff;
   --color--flash: #e5ad02;
   --fgcolor--flash: #fff;
-  --color--forbrug: #31769b;
+  --color--forbrug: #00b6d2;
   --fgcolor--forbrug: #fff;
-  --color--livescore: #32a237;
+  --color--leder: #1a237e;
+  --fgcolor--leder: #fff;
+  --color--livescore: #029e5d;
   --fgcolor--livescore: #fff;
   --color--livescore2: #cbfe33;
   --fgcolor--livescore2: #000;
-  --color--nationen: #e38121;
-  --fgcolor--nationen: #fff;
-  --color--nationen2: #e5ad02;
-  --fgcolor--nationen2: #fff;
-  --color--nyheder: #12507b;
+  --color--nyheder: #1058c2;
   --fgcolor--nyheder: #fff;
   --color--nyheder2: #000;
   --fgcolor--nyheder2: #fff;
-  --color--sex-samliv: #8a0c36;
+  --color--sex-samliv: #b31e61;
   --fgcolor--sex-samliv: #fff;
   --color--sex-samliv2: #dc7095;
   --fgcolor--sex-samliv2: #fff;
   --color--skolefodbold: #93b923;
   --fgcolor--skolefodbold: #fff;
-  --color--sport: #32a237;
+  --color--sport: #029e5d;
   --fgcolor--sport: #fff;
   --color--tv: #bd1118;
   --fgcolor--tv: #fff;
+  --color--underholdning: #51208c;
+  --fgcolor--underholdning: #fff;
   --border-radius--small: 5px;
-  --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), 0.22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
-  --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), 0.1);
+  --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), .22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
+  --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
   --color--accept: var(--color--green);
   --color--cancel: var(--color--red);
   --color--default: var(--color--bluedark);
@@ -252,13 +259,13 @@
   --fontfamily--secondary: Arial, Helvetica, sans-serif;
   --fs-rem-large: 1.125rem; /* 18px */
   --fs-rem-medium: 1rem; /* 16px */
-  --fs-rem-small: 0.875rem; /* 14px */
+  --fs-rem-small: .875rem; /* 14px */
   --fs-rem-xlarge: 1.25rem; /* 20px */
-  --fs-rem-xsmall: 0.75rem; /* 12px */
+  --fs-rem-xsmall: .75rem; /* 12px */
   --fs-rem-xxlarge: 1.875rem; /* 30px */
-  --fs-rem-xxsmall: 0.625rem; /* 10px */
+  --fs-rem-xxsmall: .625rem; /* 10px */
   --fs-rem-xxxlarge: 2.25rem; /* 36px */
-  --fs-rem-xxxsmall: 0.4375rem; /* 7px */
+  --fs-rem-xxxsmall: .4375rem; /* 7px */
   --fs-rem-xxxxlarge: 3.125rem; /* 50px */
   --fs-large: var(--fs-rem-large);
   --fs-medium: var(--fs-rem-medium);
@@ -291,27 +298,27 @@
 @media (max-width: 767px) {
   :root {
     --distance-large: 15px;
-    --distance-medium: 10px;
-    --distance-small: 5px;
-    --distance-standard: 10px;
-    --distance-xlarge: 20px;
-    --distance-xxlarge: 30px;
+  --distance-medium: 10px;
+  --distance-small: 5px;
+  --distance-standard: 10px;
+  --distance-xlarge: 20px;
+  --distance-xxlarge: 30px;
     --fs-large: var(--fs-rem-medium);
-    --fs-medium: var(--fs-rem-medium);
-    --fs-small: var(--fs-rem-xsmall);
-    --fs-xlarge: var(--fs-rem-xlarge);
-    --fs-xsmall: var(--fs-rem-xxsmall);
-    --fs-xxlarge: var(--fs-rem-xxlarge);
-    --fs-xxsmall: var(--fs-rem-xxxsmall);
-    --fs-xxxlarge: var(--fs-rem-xxxlarge);
+  --fs-medium: var(--fs-rem-medium);
+  --fs-small: var(--fs-rem-xsmall);
+  --fs-xlarge: var(--fs-rem-xlarge);
+  --fs-xsmall: var(--fs-rem-xxsmall);
+  --fs-xxlarge: var(--fs-rem-xxlarge);
+  --fs-xxsmall: var(--fs-rem-xxxsmall);
+  --fs-xxxlarge: var(--fs-rem-xxxlarge);
     --fs-ads: var(--fs-xxsmall);
-    --fs-bodytext: var(--fs-large);
-    --fs-caption: var(--fs-small);
-    --fs-quote: var(--fs-xxlarge);
-    --fs-showmore: var(--fs-medium);
-    --fs-subtitle: var(--fs-xlarge);
-    --fs-timestamp: var(--fs-xsmall);
-    --fs-title: var(--fs-xxxlarge);
+  --fs-bodytext: var(--fs-large);
+  --fs-caption: var(--fs-small);
+  --fs-quote: var(--fs-xxlarge);
+  --fs-showmore: var(--fs-medium);
+  --fs-subtitle: var(--fs-xlarge);
+  --fs-timestamp: var(--fs-xsmall);
+  --fs-title: var(--fs-xxxlarge);
   }
 
   /**
@@ -370,7 +377,7 @@ custom media queries is the only allowed media queries
   background: rgb(var(--rgb-color--graa7));
   border: 1px solid transparent;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), 0.22);
+  box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), .22);
 
   user-select: none;
 }
@@ -378,8 +385,8 @@ custom media queries is the only allowed media queries
 .accordion-header {
   cursor: pointer;
 }
-.accordion-header:hover,
-.accordion-header:hover > i {
+
+.accordion-header:hover,.accordion-header:hover > i {
   color: var(--color--bluelight);
 }
 
@@ -451,7 +458,7 @@ custom media queries is the only allowed media queries
 
 a.badge:focus,
 a.badge:hover {
-  opacity: 0.8; /* DR.Edition 03/02/2020 */
+  opacity: .8; /* DR.Edition 03/02/2020 */
 }
 
 .badge.badge--small {
@@ -530,7 +537,7 @@ a.badge:hover {
 
 .button:disabled {
   cursor: default;
-  opacity: 0.7;
+  opacity: .7;
 
   pointer-events: none;
 }
@@ -803,8 +810,8 @@ a.badge:hover {
 @media (max-width: 767px) {
   :root {
     --card-fs-title: 20px;
-    --card-fs-title--small: 16px;
-    --card-padding: 10px;
+  --card-fs-title--small: 16px;
+  --card-padding: 10px;
   }
 }
 
@@ -963,7 +970,7 @@ a.card:focus {
   font-size: var(--card-fs-title--small);
 }
 
-@media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media only screen and (-ms-high-contrast: active),(-ms-high-contrast: none) {
   .card-media .card-icon svg {
     max-height: 40px;
   }
@@ -979,7 +986,7 @@ a.card:focus {
   */
 
 :root {
-  --card-mode--box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+  --card-mode--box-shadow: 0 5px 18px rgba(0, 0, 0, .1);
   --card-mode--title: 18px;
   --card-mode-icon--height: 20px;
   --card-mode-padding: 15px;
@@ -997,8 +1004,7 @@ a.card:focus {
   flex-shrink: 0;
 }
 
-.card.card-mode,
-.card-inner {
+.card.card-mode,.card-inner {
   border-radius: var(--border-radius-medium);
   display: flex;
   flex-direction: column;
@@ -1164,15 +1170,6 @@ a.card-mode:focus .card-inner {
   color: var(--fgcolor--breaking);
 }
 
-@media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .card-media .card-icon svg {
-    max-height: 40px;
-  }
-
-  .card-media .card-icon img {
-    width: 100%;
-  }
-}
 :root {
   --color--focus: var(--color--blue);
   --form-border-radius: var(--border-radius--small);
@@ -1282,6 +1279,7 @@ a.card-mode:focus .card-inner {
   height: auto;
   border: none;
 }
+
 .form-input-container input:focus,
 .form-input-container textarea:focus {
   outline: none;
@@ -1346,7 +1344,7 @@ a.card-mode:focus .card-inner {
   right: calc(var(--right-pos) * -1);
   z-index: 1;
 
-  box-shadow: -20px 0 20px -20px rgba(0, 0, 0, 0.4);
+  box-shadow: -20px 0 20px -20px rgba(0, 0, 0, .4);
   content: " ";
   opacity: 1;
   transition: opacity 200ms, height 200ms;
@@ -1362,7 +1360,7 @@ a.card-mode:focus .card-inner {
   right: auto;
   left: calc(var(--right-pos) * -1);
 
-  box-shadow: 20px 0 20px -20px rgba(0, 0, 0, 0.4);
+  box-shadow: 20px 0 20px -20px rgba(0, 0, 0, .4);
 }
 
 .smartphone .horizontal-scroll-container::before {
@@ -1374,8 +1372,7 @@ a.card-mode:focus .card-inner {
   display: none;
 }
 
-.horizontal-scroll-container[data-atend="true"]::after,
-.horizontal-scroll-container[data-atstart="true"]::before {
+.horizontal-scroll-container[data-atend="true"]::after,.horizontal-scroll-container[data-atstart="true"]::before {
   opacity: 0;
   height: 0;
 }
@@ -1505,8 +1502,7 @@ a.card-mode:focus .card-inner {
   cursor: pointer;
 }
 
-.toggle,
-.toggle-button,
+.toggle,.toggle-button,
 .toggle-button:active,
 .toggle-button:focus {
   align-content: center;
@@ -1690,11 +1686,11 @@ a.card-mode:focus .card-inner {
   left: 0;
   z-index: 1;
 
-  animation-duration: 2s;
+  animation-duration: 2.0s;
   animation-iteration-count: infinite;
   animation-name: fogwave;
   animation-timing-function: linear;
-  background: linear-gradient(to right, transparent 3%, rgba(255, 255, 255, 0.7) 25%, transparent 40%);
+  background: linear-gradient(to right, transparent 3%,rgba(255, 255, 255, .7) 25%, transparent 40%);
   background-size: 1000px 100%;
   content: "";
   width: 100%;
@@ -1736,8 +1732,7 @@ a.card-mode:focus .card-inner {
   color: currentColor;
 }
 
-.flex,
-.flex-column {
+.flex,.flex-column {
   display: flex;
 }
 
@@ -1753,8 +1748,7 @@ a.card-mode:focus .card-inner {
   justify-content: center;
 }
 
-.flex--center,
-.flex-align--center {
+.flex--center,.flex-align--center {
   align-items: center;
 }
 
@@ -1862,8 +1856,7 @@ a.card-mode:focus .card-inner {
   font-family: var(--fontfamily--primary);
 }
 
-.ff-secondary,
-html,
+.ff-secondary,html,
 button,
 input,
 select,
@@ -1875,8 +1868,7 @@ h1 {
   font-size: var(--fs-title);
 }
 
-h1,
-h2 {
+h1,h2 {
   line-height: normal;
 }
 
@@ -1888,13 +1880,11 @@ h3 {
   font-size: var(--fs-xlarge);
 }
 
-h4,
-h5 {
+h4,h5 {
   font-size: var(--fs-large);
 }
 
-h6,
-p {
+h6,p {
   font-size: var(--fs-medium);
 }
 
@@ -1979,9 +1969,9 @@ p {
 @media (max-width: 767px) {
   :root {
     --grid-large: 100%;
-    --grid-medium: 100%;
-    --grid-small: 100;
-    --grid-xlarge: 100%;
+  --grid-medium: 100%;
+  --grid-small: 100;
+  --grid-xlarge: 100%;
   }
 }
 
@@ -2004,8 +1994,10 @@ p {
 /* Variables */
 
 :root {
+  --border-radius: 10px; /* default */
+
+  --border-radius-medium: var(--border-radius); /* default */
   --border-radius-small: 5px;
-  --border-radius-medium: 10px; /* default */
 }
 
 /* All border-radius */
