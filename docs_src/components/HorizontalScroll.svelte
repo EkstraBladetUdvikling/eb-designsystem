@@ -12,7 +12,17 @@
       section: 'Landsholds fodbold',
       colorClass: 'sport',
       timestamp: 'Thu Mar 18 2021 20:46:32',
-      title: 'List element 1',
+      title: `Sag om rockervold: 'Når han er på stoffer, siger han ting, der ikke passer'`,
+    },
+    {
+      href: '#',
+      media: {
+        src: 'https://via.placeholder.com/610x343&text=610x343',
+      },
+      section: 'Sport',
+      colorClass: 'sport',
+      timestamp: 'Thu Mar 18 2021 17:46:32',
+      title: `Sag om rockervold: 'Når han er på stoffer, siger han ting, der ikke passer' - to til tre gange `,
     },
     {
       href: '#',
@@ -20,21 +30,11 @@
       section: 'Nyheder',
       colorClass: 'nyheder',
       timestamp: 'Thu Mar 18 2021 18:46:32',
-      title: 'Det skal jo altså ikke være for nemt',
+      title: `Sag om rockervold: 'Når han er på stoffer, siger han ting, der ikke passer' - to til tre gange`,
     },
     {
       href: '#',
       isBreaking: true,
-      media: {
-        src: 'https://via.placeholder.com/610x343&text=610x343',
-      },
-      section: 'Sport',
-      colorClass: 'sport',
-      timestamp: 'Thu Mar 18 2021 17:46:32',
-      title: 'List element 3',
-    },
-    {
-      href: '#',
       media: {
         src: 'https://via.placeholder.com/610x343&text=610x343',
       },

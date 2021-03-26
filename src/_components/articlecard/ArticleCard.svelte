@@ -85,30 +85,31 @@
       </div>
     {/if}
     <div class="card-content-wrapper" style="border-color: {sectionColor};">
-      {#if isPlus}
-        <div class="card-icon flex flex-justify--end">
+      <div class="card-icon flex flex-justify--end">
+        {#if isPlus}
           <Icon name="ebplus_icon" width="20" />
-        </div>
-      {/if}
-
+        {/if}
+      </div>
       <div class="card-content">
         {#if section || timestamp}
-          <div class="card-meta flex fontsize-xxsmall">
+          <div class="card-meta flex fontsize-xxsmall padding-s--b">
             {#if section}
               <div class="card-meta-item">
-                <Icon flipped={true} name="tag-regular" width="8" />
-                <span>{section}</span>
+                <span class="flex flex-justify--center">
+                  <Icon flipped={true} name="tag-regular" width="12" />
+                  <span class="padding-s--l">{section}</span>
+                </span>
               </div>
             {/if}
             {#if timestamp}
               <div class="card-meta-item">
-                <Icon name="clock" width="8" />
-                {parseDate(timestamp)}
+                <Icon name="clock" width="12" />
+                <span class="padding-s--l">{parseDate(timestamp)}</span>
               </div>
             {/if}
           </div>
         {/if}
-        <h2 class="card-title">{title}</h2>
+        <h2 class="card-title card-title--truncated">{title}</h2>
       </div>
     </div>
   </div>

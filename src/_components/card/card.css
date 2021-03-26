@@ -90,18 +90,21 @@ a.card:focus {
 
 .card-meta {
   font-weight: normal;
-  margin: 0 0 1px;
 }
 
 .card-meta-item {
+  align-items: center;
+  display: flex;
   flex-grow: 1;
+  padding-right: 5px;
   white-space: nowrap;
-  width: 100%;
+  min-width: 50%;
 }
 
 .card-meta-item + .card-meta-item {
-  padding-left: 5px;
-  width: 50%;
+  padding-right: 0;
+  min-width: auto;
+  max-width: 50%;
 }
 
 /* Legacy - remove when not used in Escenic */
@@ -340,6 +343,25 @@ a.card-mode:focus .card-inner {
   font-size: var(--card-mode--title);
   font-weight: 700;
   margin: 0;
+}
+
+.card-media ~ .card-content-wrapper .card-title--truncated {
+  --max-lines: 4;
+}
+
+.card-title--truncated {
+  position: relative;
+
+  display: -webkit-box;
+  line-height: var(--lh);
+  overflow: hidden;
+  min-height: calc(var(--lh) * var(--max-lines));
+  max-height: calc(var(--lh) * var(--max-lines));
+
+  -webkit-box-orient: vertical;
+  --lh: 1.2em;
+  -webkit-line-clamp: var(--max-lines);
+  --max-lines: 9;
 }
 
 /* card-mode: lightmode */
