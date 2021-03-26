@@ -172,7 +172,7 @@
     "body": [
       "card-meta"
     ],
-    "description": "{\n font-weight: 500;\nmargin: 0 0 1px;\n }\n {\n font-weight: normal;\nmargin: 0 0 1px;\n }"
+    "description": "{\n font-weight: 500;\nmargin: 0 0 1px;\n }\n {\n font-weight: normal;\n }"
   },
   "designsystem card title": {
     "description": "Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])\n Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])"
@@ -219,7 +219,7 @@
     "body": [
       "card-meta-item"
     ],
-    "description": "{\n flex-grow: 1;\nwhite-space: nowrap;\nwidth: 100%;\n }"
+    "description": "{\n align-items: center;\ndisplay: flex;\nflex-grow: 1;\npadding-right: 5px;\nwhite-space: nowrap;\nmin-width: 50%;\n }"
   },
   "designsystem card content wrapper": {
     "prefix": "ds-card-content-wrapper",
@@ -227,6 +227,13 @@
       "card-content-wrapper"
     ],
     "description": "{\n border-top: 8px solid currentColor;\ndisplay: flex;\nflex-direction: column-reverse;\nflex-grow: 1;\njustify-content: space-between;\n }"
+  },
+  "designsystem card title truncated": {
+    "prefix": "ds-card-title--truncated",
+    "body": [
+      "card-title--truncated"
+    ],
+    "description": "NB! This should only be used with card-title\n{\n position: relative;\ndisplay: -webkit-box;\nline-height: var(--lh);\noverflow: hidden;\nmin-height: calc(var(--lh) * var(--max-lines));\nmax-height: calc(var(--lh) * var(--max-lines));\n-webkit-box-orient: vertical;\n--lh: 1.2em;\n-webkit-line-clamp: var(--max-lines);\n--max-lines: 9;\n }"
   },
   "designsystem card mode[data breaking=\"true\"]": {
     "description": "Has pseudo styling :hover"
