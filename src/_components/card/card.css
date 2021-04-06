@@ -346,7 +346,7 @@ a.card-mode:focus .card-inner {
 }
 
 .card-media ~ .card-content-wrapper .card-title--truncated {
-  --max-lines: 4;
+  --max-lines: var(--custom-max-lines, 4);
 }
 
 .card-title--truncated {
@@ -361,7 +361,7 @@ a.card-mode:focus .card-inner {
   -webkit-box-orient: vertical;
   --lh: 1.2em;
   -webkit-line-clamp: var(--max-lines);
-  --max-lines: 9;
+  --max-lines: var(--custom-max-lines, 9);
 }
 
 /* card-mode: lightmode */

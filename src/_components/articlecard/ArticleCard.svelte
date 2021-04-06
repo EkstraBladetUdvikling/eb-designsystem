@@ -7,6 +7,7 @@
 
   import Card from '../card';
   import Icon from '../icon';
+  import Accordion from '../accordion';
 
   interface IMediaOptions {
     className: string;
@@ -22,6 +23,7 @@
   export let isBreaking: boolean = false;
   export let isPlus: boolean = false;
   export let media: Partial<IMediaOptions> = undefined;
+  export let maxLines: number = undefined;
   export let section: string = undefined;
   export let style: string = undefined;
   export let theme: TThemes = undefined;
@@ -70,6 +72,8 @@
       console.error('ArticleCard.svelte . colorClass error', error);
     }
   }
+  console.log('maxLines', maxLines);
+  const titleStyle = maxLines ? `--custom-max-lines: ${maxLines};` : undefined;
 </script>
 
 <Card {href} className={baseClass} {style} {theme} data-breaking={isBreaking}>
@@ -109,7 +113,7 @@
             {/if}
           </div>
         {/if}
-        <h2 class="card-title card-title--truncated">{title}</h2>
+        <h2 class="card-title card-title--truncated" style={titleStyle}>{title}</h2>
       </div>
     </div>
   </div>
