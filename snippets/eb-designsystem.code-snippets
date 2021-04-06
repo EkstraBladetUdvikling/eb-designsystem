@@ -182,14 +182,14 @@
     "body": [
       "card--small-media"
     ],
-    "description": "NB! This should only be used with card\n{\n align-items: center;\nflex-direction: row;\nflex-wrap: wrap;\n }\n NB! This should only be used with card\n{\n align-items: center;\nflex-direction: row;\nflex-wrap: wrap;\n }\n NB! This should only be used with card-inner\nThis extends card-inner with: {\n flex-direction: row;\n }"
+    "description": "NB! This should only be used with card\n{\n align-items: center;\nflex-direction: row;\nflex-wrap: wrap;\n }\n NB! This should only be used with card\n{\n align-items: center;\nflex-direction: row;\nflex-wrap: wrap;\n }\n NB! This should only be used with card-inner\nThis extends card-inner with: {\n flex-direction: row;\nwidth: 100%;\n }"
   },
   "designsystem card small media reverse": {
     "prefix": "ds-card--small-media--reverse",
     "body": [
       "card--small-media--reverse"
     ],
-    "description": "NB! This should only be used with card\n{\n flex-direction: row-reverse;\n }\n NB! This should only be used with card\n{\n flex-direction: row-reverse;\n }\n NB! This should only be used with card-inner\nThis extends card-inner with: {\n flex-direction: row-reverse;\n }"
+    "description": "NB! This should only be used with card\n{\n flex-direction: row-reverse;\n }\n NB! This should only be used with card\n{\n flex-direction: row-reverse;\n }\n NB! This should only be used with card-inner\nThis extends card-inner with: {\n flex-direction: row-reverse;\nwidth: 100%;\n }"
   },
   "designsystem card title small": {
     "description": "Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])\n Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])"
