@@ -927,6 +927,10 @@ a.card:focus {
   flex-basis: 0;
 }
 
+.card-mode .card--small-media .card-content {
+  padding: 10px 0 0 10px;
+}
+
 .card--small-media .card-media {
   min-width: 100px;
   max-width: 45%;
