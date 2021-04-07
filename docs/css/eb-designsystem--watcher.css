@@ -1035,10 +1035,14 @@ a.card:focus {
   border: 0;
 }
 
+:root {
+  --color--list-hover: var(--color--white);
+  --fgcolor--list-hover: var(--fgcolor--white);
+}
+
 .card-mode:not([class*="bg--"]):hover,
 .card-inner:not([class*="bg--"]) {
-  background: var(--color--white);
-  color: var(--fgcolor--white);
+  background: var(--color--list-hover);
 }
 
 .card-mode:not([class*="bg--"]) {
