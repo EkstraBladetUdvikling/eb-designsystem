@@ -532,8 +532,8 @@ a.badge:hover {
 
 .button:not([class*="bg--"]) {
   background: var(--color--white);
-  border: 1px solid var(--color--section, --color--default);
-  color: var(--color--section, --color--default);
+  border: 1px solid var(--color--section, var(--color--default));
+  color: var(--color--section, var(--color--default));
 }
 
 /* Custom button - temp solution */
@@ -563,9 +563,9 @@ a.badge:hover {
 .button:hover,
 .button:focus,
 .button--solid:not([class*="bg--"]) {
-  background: var(--color--section, --color--default);
-  border: 1px solid var(--color--section, --color--default);
-  color: var(--fgcolor--section, --fgcolor--default);
+  background: var(--color--section, var(--color--default));
+  border: 1px solid var(--color--section, var(--color--default));
+  color: var(--fgcolor--section, var(--fgcolor--default));
   outline: none;
 }
 
@@ -574,8 +574,8 @@ a.badge:hover {
 .button--solid:not([class*="bg--"]):active,
 .button--solid:not([class*="bg--"]):hover,
 .button--solid:not([class*="bg--"]):focus {
-  color: var(--color--section, --color--default);
-  background: var(--fgcolor--section, --color--white);
+  color: var(--color--section, var(--color--default));
+  background: var(--fgcolor--section, var(--color--white));
 }
 
 /* Primary button */
