@@ -196,8 +196,6 @@ a.card:focus {
 
 .card.card-mode {
   border-radius: var(--border-radius-medium);
-  box-shadow: inset 0 0 0 1px var(--card-border-color); /* DR.Edition 03/02/2020 */
-  box-shadow: var(--box-shadow--hover);
   box-shadow: none;
   box-sizing: border-box;
   display: flex;
