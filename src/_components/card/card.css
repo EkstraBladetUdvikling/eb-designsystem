@@ -201,7 +201,7 @@ a.card:focus {
   display: flex;
   flex-direction: column;
   font-family: var(--fontfamily--secondary);
-  overflow: unset;
+  overflow: auto;
   padding: 2px;
 
   flex-shrink: 0;
