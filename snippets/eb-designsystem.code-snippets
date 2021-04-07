@@ -179,7 +179,7 @@
     "body": [
       "card-meta-item"
     ],
-    "description": "{\n align-items: center;\ndisplay: flex;\nflex-grow: 1;\npadding-right: 5px;\nwhite-space: nowrap;\nmin-width: 50%;\n }"
+    "description": "{\n align-items: center;\ndisplay: flex;\npadding-right: 5px;\nwhite-space: nowrap;\n }"
   },
   "designsystem card title": {
     "description": "Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])"

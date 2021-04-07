@@ -95,16 +95,8 @@ a.card:focus {
 .card-meta-item {
   align-items: center;
   display: flex;
-  flex-grow: 1;
   padding-right: 5px;
   white-space: nowrap;
-  min-width: 50%;
-}
-
-.card-meta-item + .card-meta-item {
-  padding-right: 0;
-  min-width: auto;
-  max-width: 50%;
 }
 
 /* Legacy - remove when not used in Escenic */
