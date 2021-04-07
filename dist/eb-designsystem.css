@@ -1060,6 +1060,7 @@ a.card:focus {
 .card-mode:not([class*="bg--"]):hover,
 .card-inner:not([class*="bg--"]) {
   background: var(--color--list-hover);
+  color: var(--fgcolor--list-hover);
 }
 
 .card-mode:not([class*="bg--"]) {
