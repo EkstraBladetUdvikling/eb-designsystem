@@ -27,8 +27,8 @@
 /* Default button coloring */
 .button:not([class*="bg--"]) {
   background: var(--color--white);
-  border: 1px solid var(--color--default);
-  color: var(--color--default);
+  border: 1px solid var(--color--section, --color--default);
+  color: var(--color--section, --color--default);
 }
 
 /* Custom button - temp solution */
@@ -56,9 +56,9 @@
 .button:hover,
 .button:focus,
 .button--solid:not([class*="bg--"]) {
-  background: var(--color--default);
-  border: 1px solid var(--color--default);
-  color: var(--fgcolor--default);
+  background: var(--color--section, --color--default);
+  border: 1px solid var(--color--section, --color--default);
+  color: var(--fgcolor--section, --fgcolor--default);
   outline: none;
 }
 
@@ -66,13 +66,13 @@
 .button--solid:not([class*="bg--"]):active,
 .button--solid:not([class*="bg--"]):hover,
 .button--solid:not([class*="bg--"]):focus {
-  color: var(--color--default);
+  color: var(--color--section, --color--default);
 }
 
 .button--solid:not([class*="bg--"]):active,
 .button--solid:not([class*="bg--"]):hover,
 .button--solid:not([class*="bg--"]):focus {
-  background: var(--color--white);
+  background: var(--fgcolor--section, --color--white);
 }
 
 /* Primary button */
