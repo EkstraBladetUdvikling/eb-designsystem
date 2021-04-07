@@ -37,7 +37,7 @@
 
 a.card:hover,
 a.card:focus {
-  box-shadow: var(--box-shadow--hover);
+  box-shadow: var(--box-shadow);
   outline: none;
 }
 
@@ -188,7 +188,6 @@ a.card:focus {
   * Card-mode (mutation of .card - new design)
   */
 :root {
-  --card-mode--box-shadow: 0 5px 18px rgba(0, 0, 0, .1);
   --card-mode--title: 18px;
   --card-mode-icon--height: 20px;
   --card-mode-padding: 15px;
@@ -209,7 +208,7 @@ a.card:focus {
 
 .card-inner {
   border-radius: var(--border-radius-medium);
-  box-shadow: var(--card-mode--box-shadow);
+  box-shadow: var(--box-shadow);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -255,7 +254,7 @@ a.card:focus {
 
 a.card-mode:hover,
 a.card-mode:focus {
-  box-shadow: var(--card-mode--box-shadow);
+  box-shadow: var(--box-shadow);
   outline: none;
 }
 

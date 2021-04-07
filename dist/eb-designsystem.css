@@ -227,9 +227,9 @@
   --fgcolor--sport: #fff;
   --color--tv: #bd1118;
   --fgcolor--tv: #fff;
+  --box-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);
+
   --border-radius--small: 5px;
-  --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), .22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
-  --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
   --color--accept: var(--color--green);
   --color--cancel: var(--color--red);
   --color--default: var(--color--bluedark);
@@ -383,10 +383,10 @@ custom media queries is the only allowed media queries
   (-ms-high-contrast: none);
 
 .accordion-tab {
-  background: rgb(var(--rgb-color--graa7));
+  background: rgb(var(--rgb-color--white));
   border: 1px solid transparent;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), .22);
+  box-shadow: var(--box-shadow);
 
   user-select: none;
 }
@@ -422,7 +422,7 @@ custom media queries is the only allowed media queries
 }
 
 .accordion-tab.accordion-expanded {
-  border: 1px solid var(--color--graa3);
+  border: 1px solid var(--color--graa5);
 }
 
 .accordion-body p {
@@ -847,7 +847,7 @@ a.badge:hover {
 
 a.card:hover,
 a.card:focus {
-  box-shadow: var(--box-shadow--hover);
+  box-shadow: var(--box-shadow);
   outline: none;
 }
 
@@ -1002,7 +1002,6 @@ a.card:focus {
   */
 
 :root {
-  --card-mode--box-shadow: 0 5px 18px rgba(0, 0, 0, .1);
   --card-mode--title: 18px;
   --card-mode-icon--height: 20px;
   --card-mode-padding: 15px;
@@ -1025,7 +1024,7 @@ a.card:focus {
 }
 
 .card-inner {
-  box-shadow: var(--card-mode--box-shadow);
+  box-shadow: var(--box-shadow);
   overflow: hidden;
   height: 100%;
 }
@@ -1069,7 +1068,7 @@ a.card:focus {
 
 a.card-mode:hover,
 a.card-mode:focus {
-  box-shadow: var(--card-mode--box-shadow);
+  box-shadow: var(--box-shadow);
   outline: none;
 }
 
@@ -1423,7 +1422,7 @@ a.card-mode:focus .card-inner {
   left: 5px;
   z-index: 100;
 
-  box-shadow: var(--card-mode--box-shadow);
+  box-shadow: var(--box-shadow);
   opacity: 0;
 }
 
@@ -1638,7 +1637,7 @@ a.card-mode:focus .card-inner {
 
   background: var(--color--white);
   border-radius: var(--border-radius--small);
-  box-shadow: inset 0 0 0 1px var(--card-border-color);
+  box-shadow: var(--box-shadow);
   box-sizing: border-box;
   font-family: var(--fontfamily--primary);
   overflow: hidden;
