@@ -4,7 +4,7 @@
     "body": [
       "accordion-tab"
     ],
-    "description": "{\n background: rgb(var(--rgb-color--graa7));\nborder: 1px solid transparent;\nborder-radius: 10px;\nbox-shadow: 0 0 2px 0 rgba(var(--rgb-color--black), .22);\nuser-select: none;\n }"
+    "description": "{\n background: rgb(var(--rgb-color--white));\nborder: 1px solid transparent;\nborder-radius: 10px;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\nuser-select: none;\n }"
   },
   "designsystem accordion header": {
     "prefix": "ds-accordion-header",
@@ -18,7 +18,7 @@
     "body": [
       "accordion-expanded"
     ],
-    "description": "This extends accordion-tab with: {\n border: 1px solid var(--color--graa3);\n }"
+    "description": "This extends accordion-tab with: {\n border: 1px solid var(--color--graa5);\n }"
   },
   "designsystem badge": {
     "prefix": "ds-badge",
@@ -172,14 +172,14 @@
     "body": [
       "card-meta"
     ],
-    "description": "{\n font-weight: normal;\nmargin: 0 0 1px;\n }"
+    "description": "{\n font-weight: normal;\n }"
   },
   "designsystem card meta item": {
     "prefix": "ds-card-meta-item",
     "body": [
       "card-meta-item"
     ],
-    "description": "{\n flex-grow: 1;\nwhite-space: nowrap;\nwidth: 100%;\n }"
+    "description": "{\n align-items: center;\ndisplay: flex;\nflex-grow: 1;\npadding-right: 5px;\nwhite-space: nowrap;\nmin-width: 50%;\n }"
   },
   "designsystem card title": {
     "description": "Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])"
@@ -206,14 +206,14 @@
     "body": [
       "card-mode"
     ],
-    "description": "This extends card with: {\n border-radius: 10px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-shadow: 0 0 10px 5px rgba(var(--rgb-color--black), .22);\nbox-shadow: none;\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: unset;\npadding: 2px;\nflex-shrink: 0;\n }\n Has pseudo styling :not([class*=\"bg--\"]):hover\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "This extends card with: {\n border-radius: 10px;\nbox-shadow: none;\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: unset;\npadding: 2px;\nflex-shrink: 0;\n }\n Has pseudo styling :not([class*=\"bg--\"]):hover\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem card inner": {
     "prefix": "ds-card-inner",
     "body": [
       "card-inner"
     ],
-    "description": "{\n border-radius: 10px;\nbox-shadow: 0 5px 18px rgba(0, 0, 0, .1);\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
+    "description": "{\n border-radius: 10px;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
   },
   "designsystem card content wrapper": {
     "prefix": "ds-card-content-wrapper",
@@ -221,6 +221,13 @@
       "card-content-wrapper"
     ],
     "description": "{\n border-top: 8px solid currentColor;\ndisplay: flex;\nflex-direction: column-reverse;\nflex-grow: 1;\njustify-content: space-between;\n }"
+  },
+  "designsystem card title truncated": {
+    "prefix": "ds-card-title--truncated",
+    "body": [
+      "card-title--truncated"
+    ],
+    "description": "NB! This should only be used with card-title\n{\n position: relative;\ndisplay: -webkit-box;\nline-height: var(--lh);\noverflow: hidden;\nmin-height: calc(var(--lh) * var(--max-lines));\nmax-height: calc(var(--lh) * var(--max-lines));\n-webkit-box-orient: vertical;\n--lh: 1.2em;\n-webkit-line-clamp: var(--max-lines);\n--max-lines: 9;\n }"
   },
   "designsystem card mode[data theme=\"lightmode\"]": {
     "description": "Has pseudo styling :hover"
@@ -294,7 +301,7 @@
     "body": [
       "horizontal-scroll-nav"
     ],
-    "description": "{\n position: absolute;\ntop: 50%;\nleft: 5px;\nz-index: 100;\nbox-shadow: 0 5px 18px rgba(0, 0, 0, .1);\nopacity: 0;\n }"
+    "description": "{\n position: absolute;\ntop: 50%;\nleft: 5px;\nz-index: 100;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\nopacity: 0;\n }"
   },
   "designsystem button next": {
     "prefix": "ds-button-next",
@@ -406,14 +413,14 @@
     "body": [
       "tooltip-off"
     ],
-    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\nwidth: 22px;\nheight: 25px;\n }"
+    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\nbox-sizing: border-box;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\nwidth: 22px;\nheight: 25px;\n }"
   },
   "designsystem tooltip on": {
     "prefix": "ds-tooltip-on",
     "body": [
       "tooltip-on"
     ],
-    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\nwidth: 22px;\nheight: 25px;\n }"
+    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\nbox-sizing: border-box;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\nwidth: 22px;\nheight: 25px;\n }"
   },
   "designsystem screen reader text": {
     "prefix": "ds-screen-reader-text",
