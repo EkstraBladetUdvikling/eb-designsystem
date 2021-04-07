@@ -1,8 +1,8 @@
 /** eb-designsystem--watcher.css version 0.3.2 built on 8.3.2021 13.22.10 on branch "helper-border" at revision "eff1caaf03bef660f619bca757aa9896dc7bdbb7" */
 :root {
+  --box-shadow: 0 0 5px 18px rgba(var(--rgb-color--black), .1);
+
   --border-radius--small: 5px;
-  --box-shadow--hover: 0 0 10px 5px rgba(var(--rgb-color--black), .22); /* DR.Edition 03/02/2020 - converted from #c8c8c8 */
-  --box-shadow--mainmenu: 0 10px 10px 0 rgba(var(--rgb-color--black), .1);
   --color--accept: var(--color--green);
   --color--black: #000;
   --color--blue: #31769b;
@@ -641,7 +641,7 @@ a.badge:hover {
 
 a.card:hover,
 a.card:focus {
-  box-shadow: var(--box-shadow--hover);
+  box-shadow: var(--box-shadow);
   outline: none;
 }
 
@@ -1449,9 +1449,9 @@ a.card-mode:focus {
 }
 /* Variables */
 :root {
-  --border-radius-small: 5px;
-  --border-radius-medium: 10px; /* default */
   --border-radius-large: 15px;
+  --border-radius-medium: 10px; /* default */
+  --border-radius-small: 5px;
 }
 
 /* All border-radius */
