@@ -20,7 +20,7 @@
 /* icon styling */
 .accordion-header i,
 .accordion-header svg {
-  color: var(--color--graa3);
+  color: var(--color--black);
 }
 /* icon active */
 .accordion-tab.accordion-expanded .accordion-header i,
@@ -54,6 +54,10 @@
   background: rgb(var(--rgb-color--white));
   border: 1px solid var(--color--graa2);
 }
+[data-theme="lightmode"] .accordion-header i,
+[data-theme="lightmode"] .accordion-header svg {
+  color: var(--color--graa3);
+}
 
 /* Darkmode */
 [data-theme="darkmode"] .accordion-tab {
@@ -62,4 +66,8 @@
 }
 [data-theme="darkmode"] .accordion-tab.accordion-expanded {
   background: rgb(var(--rgb-color--black));
+}
+[data-theme="darkmode"] .accordion-header i,
+[data-theme="darkmode"] .accordion-header svg {
+  color: var(--color--graa3);
 }
