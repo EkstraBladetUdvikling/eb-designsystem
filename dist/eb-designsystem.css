@@ -905,7 +905,7 @@ a.card:focus {
 .card-meta-item {
   align-items: center;
   display: flex;
-  padding-right: 5px;
+  padding-right: var(--distance-medium);
   white-space: nowrap;
 }
 
@@ -1003,7 +1003,7 @@ a.card:focus {
   box-shadow: none;
   box-sizing: border-box;
   font-family: var(--fontfamily--secondary);
-  overflow: auto;
+  overflow: unset;
   padding: 2px;
 
   flex-shrink: 0;

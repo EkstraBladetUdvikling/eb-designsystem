@@ -179,7 +179,7 @@
     "body": [
       "card-meta-item"
     ],
-    "description": "{\n align-items: center;\ndisplay: flex;\npadding-right: 5px;\nwhite-space: nowrap;\n }"
+    "description": "{\n align-items: center;\ndisplay: flex;\npadding-right: 10px;\nwhite-space: nowrap;\n }"
   },
   "designsystem card title": {
     "description": "Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])"
@@ -206,7 +206,7 @@
     "body": [
       "card-mode"
     ],
-    "description": "This extends card with: {\n border-radius: 10px;\nbox-shadow: none;\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: auto;\npadding: 2px;\nflex-shrink: 0;\n }\n Has pseudo styling :not([class*=\"bg--\"]):hover\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "This extends card with: {\n border-radius: 10px;\nbox-shadow: none;\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: unset;\npadding: 2px;\nflex-shrink: 0;\n }\n Has pseudo styling :not([class*=\"bg--\"]):hover\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem card inner": {
     "prefix": "ds-card-inner",
