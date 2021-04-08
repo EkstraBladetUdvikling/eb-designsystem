@@ -81,7 +81,7 @@ const buildCSS = async (args) => {
         break;
       case '--watcher':
         outFolder = 'docs/css';
-        postcssPlugins.push(postcssCustomMedia(customMediaOptions));
+        // postcssPlugins.push(postcssCustomMedia(customMediaOptions));
         break;
       default:
         break;

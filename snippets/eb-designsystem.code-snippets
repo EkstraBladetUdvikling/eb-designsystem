@@ -213,14 +213,14 @@
     "body": [
       "card-inner"
     ],
-    "description": "{\n border-radius: 10px;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
+    "description": "{\n border-radius: 10px;\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
   },
   "designsystem card content wrapper": {
     "prefix": "ds-card-content-wrapper",
     "body": [
       "card-content-wrapper"
     ],
-    "description": "{\n border-top: 8px solid currentColor;\ndisplay: flex;\nflex-direction: column-reverse;\nflex-grow: 1;\njustify-content: space-between;\n }"
+    "description": "{\n display: flex;\nflex-direction: column-reverse;\nflex-grow: 1;\njustify-content: space-between;\n }"
   },
   "designsystem card title truncated": {
     "prefix": "ds-card-title--truncated",

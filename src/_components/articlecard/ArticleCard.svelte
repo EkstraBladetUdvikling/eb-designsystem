@@ -25,8 +25,7 @@
   export let media: Partial<IMediaOptions> = undefined;
   export let maxLines: number = undefined;
   export let section: string = undefined;
-  export let style: string = undefined;
-  export let theme: TThemes = undefined;
+  export let style: string = '';
   export let timestamp: string = undefined;
   export let title: string;
   export let type: TCardType = undefined;
@@ -73,22 +72,24 @@
     }
   }
   console.log('maxLines', maxLines);
-  const titleStyle = maxLines ? `--custom-max-lines: ${maxLines};` : undefined;
+  const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
+
+  style = `${style}; --color--list-hover: var(--color--${colorClass}); --fgcolor--list-hover: var(--fgcolor--${colorClass});`;
 </script>
 
-<Card {href} className={baseClass} {style} {theme} data-breaking={isBreaking}>
-  <div class={innerClass} data-theme={theme}>
+<Card {href} className={baseClass} {style} data-breaking={isBreaking}>
+  <div class={innerClass}>
     {#if loading}
       <div class="card-media">
         <div class="card-image bg--graa4" style={loadingStyle} />
       </div>
     {/if}
     {#if media}
-      <div class="card-media" style="border-color: {sectionColor};">
+      <div class="card-media">
         <img alt={title} class="card-image" src={media.src} height={media.height} width={media.width} />
       </div>
     {/if}
-    <div class="card-content-wrapper" style="border-color: {sectionColor};">
+    <div class="card-content-wrapper">
       <div class="card-icon flex flex-justify--end">
         {#if isPlus}
           <Icon name="ebplus_icon" width="20" />

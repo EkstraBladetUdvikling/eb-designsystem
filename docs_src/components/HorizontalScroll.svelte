@@ -94,11 +94,3 @@
     {/each}
   </HorizontalScroll>
 </div>
-
-<div class="grid-width--small">
-  <HorizontalScroll title="Liste med artikler DARKMODE">
-    {#each articles as article}
-      <ArticleCard theme="darkmode" {...article} style="width: 215px;" maxLines={2} />
-    {/each}
-  </HorizontalScroll>
-</div>
