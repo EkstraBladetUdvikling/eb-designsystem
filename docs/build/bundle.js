@@ -9651,9 +9651,9 @@ var app = (function () {
     			div0 = element("div");
     			attr_dev(div0, "class", "card-image bg--graa4");
     			attr_dev(div0, "style", /*loadingStyle*/ ctx[11]);
-    			add_location(div0, file$x, 91, 10, 2819);
+    			add_location(div0, file$x, 91, 10, 2870);
     			attr_dev(div1, "class", "card-media");
-    			add_location(div1, file$x, 90, 8, 2784);
+    			add_location(div1, file$x, 90, 8, 2835);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -9697,10 +9697,10 @@ var app = (function () {
     			if (img.src !== (img_src_value = /*media*/ ctx[5].src)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "height", img_height_value = /*media*/ ctx[5].height);
     			attr_dev(img, "width", img_width_value = /*media*/ ctx[5].width);
-    			add_location(img, file$x, 96, 10, 3003);
+    			add_location(img, file$x, 96, 10, 3054);
     			attr_dev(div, "class", "card-media");
     			set_style(div, "border-color", /*sectionColor*/ ctx[13]);
-    			add_location(div, file$x, 95, 8, 2930);
+    			add_location(div, file$x, 95, 8, 2981);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -9801,7 +9801,7 @@ var app = (function () {
     			t = space();
     			if (if_block1) if_block1.c();
     			attr_dev(div, "class", "card-meta flex fontsize-xxsmall padding-s--b");
-    			add_location(div, file$x, 107, 12, 3450);
+    			add_location(div, file$x, 107, 12, 3501);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -9914,11 +9914,11 @@ var app = (function () {
     			span0 = element("span");
     			t1 = text(/*section*/ ctx[6]);
     			attr_dev(span0, "class", "padding-s--l");
-    			add_location(span0, file$x, 112, 20, 3735);
+    			add_location(span0, file$x, 112, 20, 3786);
     			attr_dev(span1, "class", "flex flex-justify--center");
-    			add_location(span1, file$x, 110, 18, 3600);
+    			add_location(span1, file$x, 110, 18, 3651);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$x, 109, 16, 3553);
+    			add_location(div, file$x, 109, 16, 3604);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -9981,9 +9981,9 @@ var app = (function () {
     			span = element("span");
     			t1 = text(t1_value);
     			attr_dev(span, "class", "padding-s--l");
-    			add_location(span, file$x, 119, 18, 3992);
+    			add_location(span, file$x, 119, 18, 4043);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$x, 117, 16, 3894);
+    			add_location(div, file$x, 117, 16, 3945);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -10057,17 +10057,17 @@ var app = (function () {
     			h2 = element("h2");
     			t4 = text(/*title*/ ctx[0]);
     			attr_dev(div0, "class", "card-icon flex flex-justify--end");
-    			add_location(div0, file$x, 100, 8, 3214);
+    			add_location(div0, file$x, 100, 8, 3265);
     			attr_dev(h2, "class", "card-title card-title--truncated");
-    			add_location(h2, file$x, 124, 10, 4137);
+    			add_location(h2, file$x, 124, 10, 4188);
     			attr_dev(div1, "class", "card-content");
-    			add_location(div1, file$x, 105, 8, 3374);
+    			add_location(div1, file$x, 105, 8, 3425);
     			attr_dev(div2, "class", "card-content-wrapper");
     			set_style(div2, "border-color", /*sectionColor*/ ctx[13]);
-    			add_location(div2, file$x, 99, 6, 3133);
+    			add_location(div2, file$x, 99, 6, 3184);
     			attr_dev(div3, "class", /*innerClass*/ ctx[12]);
     			attr_dev(div3, "data-theme", /*theme*/ ctx[8]);
-    			add_location(div3, file$x, 88, 4, 2712);
+    			add_location(div3, file$x, 88, 4, 2763);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
@@ -10224,7 +10224,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(card.$$.fragment);
-    			add_location(div, file$x, 86, 0, 2601);
+    			add_location(div, file$x, 86, 0, 2652);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10351,7 +10351,10 @@ var app = (function () {
     	};
 
     	let observer = new IntersectionObserver(entries => {
-    			const isVisible = entries[0].isVisible;
+    			const isVisible = entries[0].isVisible
+    			? entries[0].isVisible
+    			: entries[0].isIntersecting;
+
     			console.log(entries[0]);
 
     			if (isVisible) {
