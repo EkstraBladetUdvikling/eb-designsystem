@@ -1,6 +1,6 @@
 {
   "name": "@ekstra-bladet/designsystem",
-  "version": "0.4.27",
+  "version": "0.5.0",
   "main": "dist/eb-designsystem.css",
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",

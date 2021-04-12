@@ -411,7 +411,7 @@ custom media queries is the only allowed media queries
 
 .accordion-header i,
 .accordion-header svg {
-  color: var(--color--graa3);
+  color: var(--color--black);
 }
 
 /* icon active */
@@ -450,6 +450,11 @@ custom media queries is the only allowed media queries
   border: 1px solid var(--color--graa2);
 }
 
+[data-theme="lightmode"] .accordion-header i,
+[data-theme="lightmode"] .accordion-header svg {
+  color: var(--color--graa3);
+}
+
 /* Darkmode */
 
 [data-theme="darkmode"] .accordion-tab {
@@ -459,6 +464,11 @@ custom media queries is the only allowed media queries
 
 [data-theme="darkmode"] .accordion-tab.accordion-expanded {
   background: rgb(var(--rgb-color--black));
+}
+
+[data-theme="darkmode"] .accordion-header i,
+[data-theme="darkmode"] .accordion-header svg {
+  color: var(--color--graa3);
 }
 
 .badge {
