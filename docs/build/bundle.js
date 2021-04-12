@@ -9640,7 +9640,7 @@ var app = (function () {
     const { console: console_1$4 } = globals;
     const file$x = "src/_components/articlecard/ArticleCard.svelte";
 
-    // (87:6) {#if loading}
+    // (90:6) {#if loading}
     function create_if_block_5(ctx) {
     	let div1;
     	let div0;
@@ -9651,9 +9651,9 @@ var app = (function () {
     			div0 = element("div");
     			attr_dev(div0, "class", "card-image bg--graa4");
     			attr_dev(div0, "style", /*loadingStyle*/ ctx[11]);
-    			add_location(div0, file$x, 88, 10, 2758);
+    			add_location(div0, file$x, 91, 10, 2819);
     			attr_dev(div1, "class", "card-media");
-    			add_location(div1, file$x, 87, 8, 2723);
+    			add_location(div1, file$x, 90, 8, 2784);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -9673,14 +9673,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5.name,
     		type: "if",
-    		source: "(87:6) {#if loading}",
+    		source: "(90:6) {#if loading}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (92:6) {#if media}
+    // (95:6) {#if media}
     function create_if_block_4(ctx) {
     	let div;
     	let img;
@@ -9697,10 +9697,10 @@ var app = (function () {
     			if (img.src !== (img_src_value = /*media*/ ctx[5].src)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "height", img_height_value = /*media*/ ctx[5].height);
     			attr_dev(img, "width", img_width_value = /*media*/ ctx[5].width);
-    			add_location(img, file$x, 93, 10, 2942);
+    			add_location(img, file$x, 96, 10, 3003);
     			attr_dev(div, "class", "card-media");
     			set_style(div, "border-color", /*sectionColor*/ ctx[13]);
-    			add_location(div, file$x, 92, 8, 2869);
+    			add_location(div, file$x, 95, 8, 2930);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -9736,14 +9736,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(92:6) {#if media}",
+    		source: "(95:6) {#if media}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (99:10) {#if isPlus}
+    // (102:10) {#if isPlus}
     function create_if_block_3(ctx) {
     	let icon;
     	let current;
@@ -9779,14 +9779,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(99:10) {#if isPlus}",
+    		source: "(102:10) {#if isPlus}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (104:10) {#if section || timestamp}
+    // (107:10) {#if section || timestamp}
     function create_if_block$a(ctx) {
     	let div;
     	let t;
@@ -9801,7 +9801,7 @@ var app = (function () {
     			t = space();
     			if (if_block1) if_block1.c();
     			attr_dev(div, "class", "card-meta flex fontsize-xxsmall padding-s--b");
-    			add_location(div, file$x, 104, 12, 3389);
+    			add_location(div, file$x, 107, 12, 3450);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -9879,14 +9879,14 @@ var app = (function () {
     		block,
     		id: create_if_block$a.name,
     		type: "if",
-    		source: "(104:10) {#if section || timestamp}",
+    		source: "(107:10) {#if section || timestamp}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (106:14) {#if section}
+    // (109:14) {#if section}
     function create_if_block_2(ctx) {
     	let div;
     	let span1;
@@ -9914,11 +9914,11 @@ var app = (function () {
     			span0 = element("span");
     			t1 = text(/*section*/ ctx[6]);
     			attr_dev(span0, "class", "padding-s--l");
-    			add_location(span0, file$x, 109, 20, 3674);
+    			add_location(span0, file$x, 112, 20, 3735);
     			attr_dev(span1, "class", "flex flex-justify--center");
-    			add_location(span1, file$x, 107, 18, 3539);
+    			add_location(span1, file$x, 110, 18, 3600);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$x, 106, 16, 3492);
+    			add_location(div, file$x, 109, 16, 3553);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -9951,14 +9951,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(106:14) {#if section}",
+    		source: "(109:14) {#if section}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (114:14) {#if timestamp}
+    // (117:14) {#if timestamp}
     function create_if_block_1$1(ctx) {
     	let div;
     	let icon;
@@ -9981,9 +9981,9 @@ var app = (function () {
     			span = element("span");
     			t1 = text(t1_value);
     			attr_dev(span, "class", "padding-s--l");
-    			add_location(span, file$x, 116, 18, 3931);
+    			add_location(span, file$x, 119, 18, 3992);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$x, 114, 16, 3833);
+    			add_location(div, file$x, 117, 16, 3894);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -10015,14 +10015,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(114:14) {#if timestamp}",
+    		source: "(117:14) {#if timestamp}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (85:2) <Card {href} className={baseClass} {style} {theme} data-breaking={isBreaking}>
+    // (88:2) <Card {href} className={baseClass} {style} {theme} data-breaking={isBreaking}>
     function create_default_slot$c(ctx) {
     	let div3;
     	let t0;
@@ -10057,17 +10057,17 @@ var app = (function () {
     			h2 = element("h2");
     			t4 = text(/*title*/ ctx[0]);
     			attr_dev(div0, "class", "card-icon flex flex-justify--end");
-    			add_location(div0, file$x, 97, 8, 3153);
+    			add_location(div0, file$x, 100, 8, 3214);
     			attr_dev(h2, "class", "card-title card-title--truncated");
-    			add_location(h2, file$x, 121, 10, 4076);
+    			add_location(h2, file$x, 124, 10, 4137);
     			attr_dev(div1, "class", "card-content");
-    			add_location(div1, file$x, 102, 8, 3313);
+    			add_location(div1, file$x, 105, 8, 3374);
     			attr_dev(div2, "class", "card-content-wrapper");
     			set_style(div2, "border-color", /*sectionColor*/ ctx[13]);
-    			add_location(div2, file$x, 96, 6, 3072);
+    			add_location(div2, file$x, 99, 6, 3133);
     			attr_dev(div3, "class", /*innerClass*/ ctx[12]);
     			attr_dev(div3, "data-theme", /*theme*/ ctx[8]);
-    			add_location(div3, file$x, 85, 4, 2651);
+    			add_location(div3, file$x, 88, 4, 2712);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
@@ -10195,7 +10195,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$c.name,
     		type: "slot",
-    		source: "(85:2) <Card {href} className={baseClass} {style} {theme} data-breaking={isBreaking}>",
+    		source: "(88:2) <Card {href} className={baseClass} {style} {theme} data-breaking={isBreaking}>",
     		ctx
     	});
 
@@ -10224,7 +10224,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(card.$$.fragment);
-    			add_location(div, file$x, 83, 0, 2540);
+    			add_location(div, file$x, 86, 0, 2601);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10345,13 +10345,16 @@ var app = (function () {
     		? document.querySelector(intersectionRoot)
     		: null,
     		rootMargin: "0px",
-    		threshold: intersectionThreshold
+    		threshold: intersectionThreshold,
+    		trackVisibility: true,
+    		delay: 100
     	};
 
     	let observer = new IntersectionObserver(entries => {
-    			const intersecting = entries[0].isIntersecting;
+    			const isVisible = entries[0].isVisible;
+    			console.log(entries[0]);
 
-    			if (intersecting) {
+    			if (isVisible) {
     				const intersectedEvent = new CustomEvent("articleCardInview", { detail: intersectionData });
     				document.dispatchEvent(intersectedEvent);
     				observer.unobserve(element);

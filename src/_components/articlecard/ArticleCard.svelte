@@ -81,11 +81,14 @@
     root: intersectionRoot ? document.querySelector(intersectionRoot) : null,
     rootMargin: '0px',
     threshold: intersectionThreshold,
+    trackVisibility: true,
+    delay: 100,
   };
   let observer = new IntersectionObserver((entries) => {
-    const intersecting = entries[0].isIntersecting;
+    const isVisible = entries[0].isVisible;
+    console.log(entries[0]);
 
-    if (intersecting) {
+    if (isVisible) {
       const intersectedEvent = new CustomEvent('articleCardInview', {
         detail: intersectionData,
       });
