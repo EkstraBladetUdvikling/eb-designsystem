@@ -2,6 +2,7 @@
   import type { TCardType } from '../../types/Card';
   import type { TThemes } from '../../_utilities/data-theme/DataTheme';
 
+  import { onMount } from 'svelte';
   import { Background } from '@ekstra-bladet/eb-colors/dist/eb-colors';
   import { parseDate } from '../../misc/parsedate';
 
@@ -28,6 +29,10 @@
   export let timestamp: string = undefined;
   export let title: string;
   export let type: TCardType = undefined;
+  export let intersection: boolean = false;
+  export let intersectionRoot: string | null = undefined;
+  export let intersectionThreshold: number = 0.5;
+  export let intersectionData: any = {};
 
   let baseClass = `card-mode card-mode--article margin-s`;
 
@@ -70,47 +75,74 @@
       console.error('ArticleCard.svelte . colorClass error', error);
     }
   }
+
+  let element: Element;
+  let options = {
+    root: intersectionRoot ? document.querySelector(intersectionRoot) : null,
+    rootMargin: '0px',
+    threshold: intersectionThreshold,
+  };
+  let observer = new IntersectionObserver((entries) => {
+    const intersecting = entries[0].isIntersecting;
+
+    if (intersecting) {
+      const intersectedEvent = new CustomEvent('articleCardInview', {
+        detail: intersectionData,
+      });
+      document.dispatchEvent(intersectedEvent);
+      observer.unobserve(element);
+    }
+  }, options);
+
+  onMount(() => {
+    if (typeof IntersectionObserver !== 'undefined' && intersection) {
+      observer.observe(element);
+      return () => observer.unobserve(element);
+    }
+  });
 </script>
 
-<Card {href} className={baseClass} {style} {theme} data-breaking={isBreaking}>
-  <div class={innerClass} data-theme={theme}>
-    {#if loading}
-      <div class="card-media">
-        <div class="card-image bg--graa4" style={loadingStyle} />
-      </div>
-    {/if}
-    {#if media}
-      <div class="card-media" style="border-color: {sectionColor};">
-        <img alt={title} class="card-image" src={media.src} height={media.height} width={media.width} />
-      </div>
-    {/if}
-    <div class="card-content-wrapper" style="border-color: {sectionColor};">
-      <div class="card-icon flex flex-justify--end">
-        {#if isPlus}
-          <Icon name="ebplus_icon" width="20" />
-        {/if}
-      </div>
-      <div class="card-content">
-        {#if section || timestamp}
-          <div class="card-meta flex fontsize-xxsmall padding-s--b">
-            {#if section}
-              <div class="card-meta-item">
-                <span class="flex flex-justify--center">
-                  <Icon flipped={true} name="tag-regular" width="12" />
-                  <span class="padding-s--l">{section}</span>
-                </span>
-              </div>
-            {/if}
-            {#if timestamp}
-              <div class="card-meta-item">
-                <Icon name="clock" width="12" />
-                <span class="padding-s--l">{parseDate(timestamp)}</span>
-              </div>
-            {/if}
-          </div>
-        {/if}
-        <h2 class="card-title card-title--truncated">{title}</h2>
+<div bind:this={element}>
+  <Card {href} className={baseClass} {style} {theme} data-breaking={isBreaking}>
+    <div class={innerClass} data-theme={theme}>
+      {#if loading}
+        <div class="card-media">
+          <div class="card-image bg--graa4" style={loadingStyle} />
+        </div>
+      {/if}
+      {#if media}
+        <div class="card-media" style="border-color: {sectionColor};">
+          <img alt={title} class="card-image" src={media.src} height={media.height} width={media.width} />
+        </div>
+      {/if}
+      <div class="card-content-wrapper" style="border-color: {sectionColor};">
+        <div class="card-icon flex flex-justify--end">
+          {#if isPlus}
+            <Icon name="ebplus_icon" width="20" />
+          {/if}
+        </div>
+        <div class="card-content">
+          {#if section || timestamp}
+            <div class="card-meta flex fontsize-xxsmall padding-s--b">
+              {#if section}
+                <div class="card-meta-item">
+                  <span class="flex flex-justify--center">
+                    <Icon flipped={true} name="tag-regular" width="12" />
+                    <span class="padding-s--l">{section}</span>
+                  </span>
+                </div>
+              {/if}
+              {#if timestamp}
+                <div class="card-meta-item">
+                  <Icon name="clock" width="12" />
+                  <span class="padding-s--l">{parseDate(timestamp)}</span>
+                </div>
+              {/if}
+            </div>
+          {/if}
+          <h2 class="card-title card-title--truncated">{title}</h2>
+        </div>
       </div>
     </div>
-  </div>
-</Card>
+  </Card>
+</div>
