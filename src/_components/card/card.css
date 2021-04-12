@@ -246,6 +246,7 @@ a.card-mode:focus .card-inner {
 }
 
 .card-mode .card--small-media .card-content-wrapper {
+  align-self: stretch;
   flex-grow: 0;
 
   flex: 1;
