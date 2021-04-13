@@ -32,9 +32,9 @@
 
 <div data-theme={dataTheme} bind:this={selectedAccordion} class="accordion card-mode padding-l ff-secondary width-1of1">
   {#each tabs as tab}
-    <div class="accordion-tab margin-s--b">
-      <div class="accordion-header flex flex-justify--between padding-m">
-        <span class="fontweight-normal fontsize-large">{tab.title}</span>
+    <div class="accordion-tab margin-m--b">
+      <div class="accordion-header flex flex-justify--between flex-align--center padding-m">
+        <span class="fontweight-bold fontsize-medium">{tab.title}</span>
         <i class="fas fa-chevron-down" />
       </div>
       <div class="accordion-body padding-m padding-l--rl fontsize-small">

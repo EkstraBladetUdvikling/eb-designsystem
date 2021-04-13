@@ -1,6 +1,6 @@
 {
   "name": "@ekstra-bladet/designsystem",
-  "version": "0.4.27",
+  "version": "0.5.1",
   "main": "dist/eb-designsystem.css",
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
@@ -37,7 +37,7 @@
     "svgs": "node node/svgs.js && yarn copy_svg"
   },
   "dependencies": {
-    "@ekstra-bladet/eb-colors": "^2.6.0",
+    "@ekstra-bladet/eb-colors": "^3.0.0",
     "sirv-cli": "^1.0.0",
     "svelte-spa-router": "^3.1.0"
   },
