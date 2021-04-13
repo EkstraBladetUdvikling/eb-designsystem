@@ -12,6 +12,14 @@
     timestamp: '2 timer siden',
     title: 'List element',
   };
+
+  document.addEventListener(
+    'articleCardInview',
+    function (e) {
+      console.log('articleCardInview', e);
+    },
+    false
+  );
 </script>
 
 <div class="grid-width--small">
@@ -44,7 +52,7 @@
   `}
   />
 
-  <ArticleCard {...article} />
+  <ArticleCard {...article} intersection={true} />
 
   <Prism
     language="js"
