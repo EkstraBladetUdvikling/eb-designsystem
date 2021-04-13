@@ -36,6 +36,13 @@
     timestamp: 'Thu Mar 31 2021 20:46:32',
     title: `Sag om rockervold: 'Når han er på stoffer, siger han ting, der ikke passer'`,
   };
+  document.addEventListener(
+    'articleCardInview',
+    function (e) {
+      console.log('articleCardInview', e);
+    },
+    false
+  );
 </script>
 
 <div class="grid-width--small">
@@ -74,7 +81,7 @@
   `}
   />
 
-  <ArticleCard {...article} />
+  <ArticleCard {...article} intersection={true} />
 
   <ArticleCard {...article1} />
 

@@ -1,6 +1,6 @@
 {
   "name": "@ekstra-bladet/designsystem",
-  "version": "0.5.0",
+  "version": "0.6.1",
   "main": "dist/eb-designsystem.css",
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
@@ -11,7 +11,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "yarn build:designsystem && yarn build:svelte && yarn svgs",
+    "build": "yarn build:designsystem && yarn svgs && yarn build:svelte",
     "build:designsystem": "yarn build:css && yarn build:watcher && yarn build:snippets",
     "build:css": "node node/build-css.js",
     "build:nonie": "node node/build-css.js --nonie",
