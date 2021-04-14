@@ -1,14 +1,11 @@
 <script lang="ts">
   import type { TCardType } from '../../types/Card';
-  import type { TThemes } from '../../_utilities/data-theme/DataTheme';
 
-  import { onMount } from 'svelte';
   import { Background } from '@ekstra-bladet/eb-colors/dist/eb-colors';
   import { parseDate } from '../../misc/parsedate';
 
   import Card from '../card';
   import Icon from '../icon';
-  import Accordion from '../accordion';
 
   interface IMediaOptions {
     className: string;
