@@ -33,7 +33,6 @@
   };
   let observer = new IntersectionObserver((entries) => {
     const isVisible = entries[0].isVisible ? entries[0].isVisible : entries[0].isIntersecting;
-    console.log('entries[0]', entries[0]);
 
     if (isVisible) {
       const intersectedEvent = new CustomEvent('articleCardInview', {
