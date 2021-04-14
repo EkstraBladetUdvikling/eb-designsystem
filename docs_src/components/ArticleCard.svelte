@@ -9,10 +9,33 @@
       src: 'https://via.placeholder.com/610x343&text=610x343',
     },
     section: 'Sport',
-    timestamp: '2 timer siden',
+    colorClass: 'sport',
+    timestamp: 'Thu Mar 18 2021 20:46:32',
     title: 'List element',
   };
 
+  let article1 = {
+    href: '#',
+    media: {
+      src: 'https://via.placeholder.com/610x343&text=610x343',
+    },
+    section: 'Underholdning',
+    colorClass: 'underholdning',
+    timestamp: 'Thu Mar 28 2021 20:46:32',
+    title: 'List element',
+  };
+
+  let article2 = {
+    href: '#',
+    isPlus: true,
+    media: {
+      src: 'https://via.placeholder.com/610x343&text=610x343',
+    },
+    section: 'Udenlandsk fodbold',
+    colorClass: 'sport',
+    timestamp: 'Thu Mar 31 2021 20:46:32',
+    title: `Sag om rockervold: 'Når han er på stoffer, siger han ting, der ikke passer'`,
+  };
   document.addEventListener(
     'articleCardInview',
     function (e) {
@@ -42,17 +65,27 @@
     }
 
     export let className: string = undefined;
+    export let colorClass: string = undefined;
     export let href: string = undefined;
+    export let loading: boolean = false;
+    export let isBreaking: boolean = false;
+    export let isPlus: boolean = false;
     export let media: Partial<IMediaOptions> = undefined;
+    export let maxLines: number = undefined;
     export let section: string = undefined;
     export let style: string = undefined;
+    export let theme: TThemes = undefined;
     export let timestamp: string = undefined;
     export let title: string;
-    export let type: string = undefined;
+    export let type: TCardType = undefined;
   `}
   />
 
   <ArticleCard {...article} intersection={true} />
+
+  <ArticleCard {...article1} />
+
+  <ArticleCard {...article2} />
 
   <Prism
     language="js"
@@ -63,12 +96,14 @@
         src: 'https://via.placeholder.com/610x343&text=610x343',
       },
       section: 'Sport',
-      timestamp: '2 timer siden',
+      colorClass: 'sport',
+      timestamp: 'Thu Mar 18 2021 20:46:32',
       title: 'List element',
     };
     `}
   />
   <ArticleCard
+    colorClass={article.colorClass}
     href={article.href}
     media={undefined}
     section={article.section}
@@ -93,6 +128,7 @@
 
   <ArticleCard
     {...article}
+    maxLines={2}
     media={{
       height: '115',
       src: 'https://via.placeholder.com/200x112&text=200x112',
@@ -104,33 +140,16 @@
   <Prism
     language="html"
     source={`
-    <ArticleCard {...article} media="{{
-      height: '115',
-      src: 'https://via.placeholder.com/200x112&text=200x112',
-      width: '200',
-    }}" title="Small media reverse card list element" type="small-media--reverse" />
-  `}
-  />
-
-  <ArticleCard
-    {...article}
-    theme="darkmode"
-    media={{
-      height: '115',
-      src: 'https://via.placeholder.com/200x112&text=200x112',
-      width: '200',
-    }}
-    title="Card-mode list element"
-    type="mode"
-  />
-  <Prism
-    language="html"
-    source={`
-    <ArticleCard {...article} media="{{
-      height: '115',
-      src: 'https://via.placeholder.com/200x112&text=200x112',
-      width: '200',
-    }}" title="Small media reverse card list element" type="mode" />
+    <ArticleCard
+      {...article}
+      maxLines={2}
+      media="{{
+        height: '115',
+        src: 'https://via.placeholder.com/200x112&text=200x112',
+        width: '200',
+      }}"
+      title="Small media reverse card list element"
+      type="small-media--reverse" />
   `}
   />
 
@@ -139,7 +158,6 @@
   <ArticleCard loading={true} />
   <ArticleCard loading={true} type="small-media" />
   <ArticleCard loading={true} type="small-media--reverse" />
-  <ArticleCard loading={true} type="mode" />
 
   <Prism
     language="html"
@@ -147,10 +165,8 @@
       <ArticleCard loading={true} />
       <ArticleCard loading={true} type="small-media" />
       <ArticleCard loading={true} type="small-media--reverse" />
-      <ArticleCard loading={true} type="mode" />
     `}
   />
 
   <ArticleCard isPlus={true} {...article} style="width: 215px;" />
-  <ArticleCard isPlus={true} theme="darkmode" {...article} style="width: 215px;" />
 </div>

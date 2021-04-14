@@ -295,7 +295,7 @@
   * Aliased Fontsizes
   */
 
-@media (max-width: 767px) {
+@media (--smartphone) {
   :root {
     --distance-large: 15px;
   --distance-medium: 10px;
@@ -353,25 +353,42 @@ custom media queries is the only allowed media queries
 ```
 */
 
+@custom-media --smartphone (max-width: 767px);
+
 /*
 * custom media query for desktop
 */
+
+@custom-media --desktop (min-width: 767px);
+
+@custom-media --widedesktop (min-width: 940px);
+
+@custom-media --xtrawidedesktop (min-width: 1140px);
 
 /*
 * media-query for ipad
 */
 
+@custom-media --tablet only screen and (min-width: 768px) and (max-width: 1024px);
+
 /*
 * Landscape media-query for ipad
 */
+
+@custom-media --landscape only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape);
 
 /*
 * Portrait media-query for ipad
 */
 
+@custom-media --portrait only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait);
+
 /*
 * ie11 and above media query for
 */
+
+@custom-media --ie only screen and (-ms-high-contrast: active),
+  (-ms-high-contrast: none);
 
 .accordion-tab {
   background: rgb(var(--rgb-color--white));
@@ -817,7 +834,7 @@ a.badge:hover {
   --card-padding: 20px;
 }
 
-@media (max-width: 767px) {
+@media (--smartphone) {
   :root {
     --card-fs-title: 20px;
   --card-fs-title--small: 16px;
@@ -906,16 +923,8 @@ a.card:focus {
 .card-meta-item {
   align-items: center;
   display: flex;
-  flex-grow: 1;
-  padding-right: 5px;
+  padding-right: var(--distance-medium);
   white-space: nowrap;
-  min-width: 50%;
-}
-
-.card-meta-item + .card-meta-item {
-  padding-right: 0;
-  min-width: auto;
-  max-width: 50%;
 }
 
 /* Legacy - remove when not used in Escenic */
@@ -945,9 +954,16 @@ a.card:focus {
   flex-basis: 0;
 }
 
+.card-mode .card--small-media .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 5px 0 10px;
+}
+
 .card--small-media .card-media {
   min-width: 100px;
-  max-width: 50%;
+  max-width: 45%;
 }
 
 .card--small-media--reverse {
@@ -983,7 +999,7 @@ a.card:focus {
   font-size: var(--card-fs-title--small);
 }
 
-@media only screen and (-ms-high-contrast: active),(-ms-high-contrast: none) {
+@media (--ie) {
   .card-media .card-icon svg {
     max-height: 40px;
   }
@@ -1021,35 +1037,36 @@ a.card:focus {
 }
 
 .card-inner {
-  box-shadow: var(--box-shadow);
   overflow: hidden;
   height: 100%;
 }
 
 .card-inner.card--small-media {
   flex-direction: row;
+  width: 100%;
 }
 
 .card-inner.card--small-media--reverse {
   flex-direction: row-reverse;
+  width: 100%;
 }
 
 .card-content-wrapper {
-  border-top: var(--card-border-section--width) solid currentColor;
   display: flex;
   flex-direction: column-reverse;
   flex-grow: 1;
   justify-content: space-between;
 }
 
-.card-media ~ .card-content-wrapper {
-  border: 0;
+:root {
+  --color--list-hover: var(--color--white);
+  --fgcolor--list-hover: var(--fgcolor--white);
 }
 
 .card-mode:not([class*="bg--"]):hover,
 .card-inner:not([class*="bg--"]) {
-  background: var(--color--white);
-  color: var(--fgcolor--white);
+  background: var(--color--list-hover);
+  color: var(--fgcolor--list-hover);
 }
 
 .card-mode:not([class*="bg--"]) {
@@ -1057,62 +1074,14 @@ a.card:focus {
 }
 
 a.card-mode:hover,
-a.card-mode:focus {
-  box-shadow: var(--box-shadow);
-  outline: none;
-}
-
+a.card-mode:focus,
 a.card-mode:hover .card-inner,
 a.card-mode:focus .card-inner {
   box-shadow: none;
 }
 
-.card-mode .card-section-border {
-  border-top-left-radius: var(--border-radius-medium);
-  border-top-right-radius: var(--border-radius-medium);
-  height: var(--card-border-section--width);
-}
-
-.card-mode .card-section-border:not([class*="bg--"]) {
-  background: var(--color--graa7);
-}
-
-.card-mode .card-media {
-  border: 0 solid currentColor;
-  border-bottom-left-radius: var(--border-radius-medium);
-  border-bottom-right-radius: var(--border-radius-medium);
-  border-bottom-width: var(--card-border-section--width);
-}
-
-.card-mode .card-media ~ .card-section-border {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: var(--border-radius-medium);
-  border-bottom-right-radius: var(--border-radius-medium);
-  height: var(--card-border-section--width);
-}
-
-.card-mode .card--small-media .card-media ~ .card-section-border {
-  width: var(--card-border-section--width);
-  min-height: 100px;
-}
-
-.card-mode .card--small-media .card-media {
-  border-width: 0;
-  border-top-right-radius: var(--border-radius-medium);
-  border-right-width: var(--card-border-section--width);
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: var(--border-radius-medium);
-}
-
-.card-mode .card--small-media--reverse .card-media {
-  border-width: 0;
-  border-top-left-radius: var(--border-radius-medium);
-  border-bottom-left-radius: var(--border-radius-medium);
-  border-left-width: var(--card-border-section--width);
-}
-
 .card-mode .card--small-media .card-content-wrapper {
+  align-self: stretch;
   flex-grow: 0;
 
   flex: 1;
@@ -1356,7 +1325,7 @@ a.card-mode:focus .card-inner {
   --right-pos: calc(var(--button-height) * 1.5);
 }
 
-@media (max-width: 767px) {
+@media (--smartphone) {
   :root {
     --right-pos: 10px;
   }
@@ -1995,7 +1964,7 @@ h6,p {
   --grid-xlarge: 930px;
 }
 
-@media (max-width: 767px) {
+@media (--smartphone) {
   :root {
     --grid-large: 100%;
   --grid-medium: 100%;

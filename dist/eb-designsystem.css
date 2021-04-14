@@ -923,16 +923,8 @@ a.card:focus {
 .card-meta-item {
   align-items: center;
   display: flex;
-  flex-grow: 1;
-  padding-right: 5px;
+  padding-right: var(--distance-medium);
   white-space: nowrap;
-  min-width: 50%;
-}
-
-.card-meta-item + .card-meta-item {
-  padding-right: 0;
-  min-width: auto;
-  max-width: 50%;
 }
 
 /* Legacy - remove when not used in Escenic */
@@ -962,9 +954,16 @@ a.card:focus {
   flex-basis: 0;
 }
 
+.card-mode .card--small-media .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 5px 0 10px;
+}
+
 .card--small-media .card-media {
   min-width: 100px;
-  max-width: 50%;
+  max-width: 45%;
 }
 
 .card--small-media--reverse {
@@ -1038,35 +1037,36 @@ a.card:focus {
 }
 
 .card-inner {
-  box-shadow: var(--box-shadow);
   overflow: hidden;
   height: 100%;
 }
 
 .card-inner.card--small-media {
   flex-direction: row;
+  width: 100%;
 }
 
 .card-inner.card--small-media--reverse {
   flex-direction: row-reverse;
+  width: 100%;
 }
 
 .card-content-wrapper {
-  border-top: var(--card-border-section--width) solid currentColor;
   display: flex;
   flex-direction: column-reverse;
   flex-grow: 1;
   justify-content: space-between;
 }
 
-.card-media ~ .card-content-wrapper {
-  border: 0;
+:root {
+  --color--list-hover: var(--color--white);
+  --fgcolor--list-hover: var(--fgcolor--white);
 }
 
 .card-mode:not([class*="bg--"]):hover,
 .card-inner:not([class*="bg--"]) {
-  background: var(--color--white);
-  color: var(--fgcolor--white);
+  background: var(--color--list-hover);
+  color: var(--fgcolor--list-hover);
 }
 
 .card-mode:not([class*="bg--"]) {
@@ -1074,62 +1074,14 @@ a.card:focus {
 }
 
 a.card-mode:hover,
-a.card-mode:focus {
-  box-shadow: var(--box-shadow);
-  outline: none;
-}
-
+a.card-mode:focus,
 a.card-mode:hover .card-inner,
 a.card-mode:focus .card-inner {
   box-shadow: none;
 }
 
-.card-mode .card-section-border {
-  border-top-left-radius: var(--border-radius-medium);
-  border-top-right-radius: var(--border-radius-medium);
-  height: var(--card-border-section--width);
-}
-
-.card-mode .card-section-border:not([class*="bg--"]) {
-  background: var(--color--graa7);
-}
-
-.card-mode .card-media {
-  border: 0 solid currentColor;
-  border-bottom-left-radius: var(--border-radius-medium);
-  border-bottom-right-radius: var(--border-radius-medium);
-  border-bottom-width: var(--card-border-section--width);
-}
-
-.card-mode .card-media ~ .card-section-border {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: var(--border-radius-medium);
-  border-bottom-right-radius: var(--border-radius-medium);
-  height: var(--card-border-section--width);
-}
-
-.card-mode .card--small-media .card-media ~ .card-section-border {
-  width: var(--card-border-section--width);
-  min-height: 100px;
-}
-
-.card-mode .card--small-media .card-media {
-  border-width: 0;
-  border-top-right-radius: var(--border-radius-medium);
-  border-right-width: var(--card-border-section--width);
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: var(--border-radius-medium);
-}
-
-.card-mode .card--small-media--reverse .card-media {
-  border-width: 0;
-  border-top-left-radius: var(--border-radius-medium);
-  border-bottom-left-radius: var(--border-radius-medium);
-  border-left-width: var(--card-border-section--width);
-}
-
 .card-mode .card--small-media .card-content-wrapper {
+  align-self: stretch;
   flex-grow: 0;
 
   flex: 1;

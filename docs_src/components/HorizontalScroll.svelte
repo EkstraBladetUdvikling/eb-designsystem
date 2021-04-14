@@ -9,7 +9,7 @@
       media: {
         src: 'https://via.placeholder.com/610x343&text=610x343',
       },
-      section: 'Landsholds fodbold',
+      section: 'Udenlandsk fodbold',
       colorClass: 'sport',
       timestamp: 'Thu Mar 18 2021 20:46:32',
       title: `Sag om rockervold: 'Når han er på stoffer, siger han ting, der ikke passer'`,
@@ -19,7 +19,7 @@
       media: {
         src: 'https://via.placeholder.com/610x343&text=610x343',
       },
-      section: 'Sport',
+      section: 'Landsholds foldbold',
       colorClass: 'sport',
       timestamp: 'Thu Mar 18 2021 17:46:32',
       title: `Sag om rockervold: 'Når han er på stoffer, siger han ting, der ikke passer' - to til tre gange `,
@@ -91,14 +91,6 @@
   <HorizontalScroll title="Liste med artikler">
     {#each articles as article}
       <ArticleCard {...article} style="width: 215px;" />
-    {/each}
-  </HorizontalScroll>
-</div>
-
-<div class="grid-width--small">
-  <HorizontalScroll title="Liste med artikler DARKMODE">
-    {#each articles as article}
-      <ArticleCard theme="darkmode" {...article} style="width: 215px;" />
     {/each}
   </HorizontalScroll>
 </div>
