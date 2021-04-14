@@ -103,7 +103,7 @@
       return () => observer.unobserve(element);
     }
   });
-  console.log('maxLines', maxLines);
+
   const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
 
   style = `${style}; --color--list-hover: var(--color--${colorClass}); --fgcolor--list-hover: var(--fgcolor--${colorClass});`;
@@ -150,6 +150,6 @@
           <h2 class="card-title card-title--truncated" style={titleStyle}>{title}</h2>
         </div>
       </div>
-    </div></Card
-  >
+    </div>
+  </Card>
 </div>
