@@ -88,6 +88,7 @@
   {intersectionRoot}
   {intersectionThreshold}
   {intersectionData}
+  on:click
 >
   <div class={innerClass}>
     {#if loading}

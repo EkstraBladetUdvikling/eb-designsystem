@@ -52,7 +52,7 @@
 </script>
 
 {#if href}
-  <a {href} class={baseClass} {style} data-theme={theme} {...dataProps} bind:this={element}>
+  <a {href} class={baseClass} {style} data-theme={theme} {...dataProps} bind:this={element} on:click>
     {#if $$slots.header}
       <slot name="header" class="card-header" />
     {/if}
@@ -72,7 +72,7 @@
     {/if}
   </a>
 {:else}
-  <div class={baseClass} {style} data-theme={theme} bind:this={element}>
+  <div class={baseClass} {style} data-theme={theme} bind:this={element} on:click>
     {#if $$slots.header}
       <div class="card-header">
         <slot name="header" />
