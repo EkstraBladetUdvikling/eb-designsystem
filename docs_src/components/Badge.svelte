@@ -3,7 +3,7 @@
 
   import Prism from 'svelte-prism';
 
-  import Badge from '../../src/_components/badge';
+  import { Badge } from '../../src/_components';
 
   const language = 'html';
 </script>
@@ -12,7 +12,7 @@
 
 <p>Badges kan benyttes som mærkater eller som indikation af tags. Størrelsen af et badge kan styres vha. font-sizes.</p>
 
-<Prism language="js" source={`import Badge from '@ekstra-bladet/designsystem/src/_components/badge';`} />
+<Prism language="js" source={`import { Badge } from '@ekstra-bladet/designsystem/src/_components';`} />
 
 <div class="margin-l--tb">
   <Badge className="margin-s">Standard badge</Badge>

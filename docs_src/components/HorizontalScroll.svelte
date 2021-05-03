@@ -1,6 +1,5 @@
 <script lang="ts">
-  import ArticleCard from '../../src/_components/articlecard';
-  import HorizontalScroll from '../../src/_components/horizontalScroll';
+  import { ArticleCard, HorizontalScroll } from '../../src/_components';
 
   let articles = [
     {

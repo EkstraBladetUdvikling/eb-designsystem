@@ -4,8 +4,7 @@
   import { Background } from '@ekstra-bladet/eb-colors/dist/eb-colors';
   import { parseDate } from '../../misc/parsedate';
 
-  import Card from '../card';
-  import Icon from '../icon';
+  import { Card, Icon } from '../';
 
   interface IMediaOptions {
     className: string;

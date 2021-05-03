@@ -1,9 +1,7 @@
 <script>
   import Prism from 'svelte-prism';
 
-  import Badge from '../../../src/_components/badge';
-  import ArticleCard from '../../../src/_components/articlecard';
-  import PillNavigation, { Pill, PillContent, PillList } from '../../../src/_components/pillnavigation';
+  import { ArticleCard, Badge, PillNavigation, Pill, PillContent, PillList } from '../../../src/_components';
 
   let article = {
     href: '#',
