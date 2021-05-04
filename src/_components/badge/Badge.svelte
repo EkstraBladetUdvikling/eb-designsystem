@@ -2,9 +2,6 @@
   export let className: string;
 
   let cssClass = 'badge';
-  if (className) {
-    cssClass = `${cssClass} ${className}`;
-  }
 
   type TExtension = 'small';
   export let extension: TExtension | TExtension[];
@@ -28,6 +25,6 @@
   }
 </script>
 
-<span class={cssClass} on:click={onClick} {style} data-type={type}>
+<span class={`${cssClass} ${className}`} on:click {style} data-type={type}>
   <slot />
 </span>

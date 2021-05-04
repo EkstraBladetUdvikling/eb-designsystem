@@ -34,8 +34,6 @@
 
   let baseClass = `card-mode card-mode--article margin-s`;
 
-  if (className) baseClass = `${className} ${baseClass}`;
-
   let loadingStyle = 'padding-top: 56.25%; width: 100%;';
   if (loading) {
     baseClass = `${baseClass} animation-fogwave`;
@@ -75,14 +73,12 @@
   }
 
   const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
-
-  style = `${style}; --color--list-hover: var(--color--${colorClass}); --fgcolor--list-hover: var(--fgcolor--${colorClass});`;
 </script>
 
 <Card
   {href}
-  className={baseClass}
-  {style}
+  className={`${className} ${baseClass}`}
+  style={`${style}; --color--list-hover: var(--color--${colorClass}); --fgcolor--list-hover: var(--fgcolor--${colorClass});`}
   data-breaking={isBreaking}
   {intersection}
   {intersectionRoot}
