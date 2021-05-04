@@ -17,12 +17,7 @@
   type TType = 'danger' | 'primary' | 'secondary' | 'succes';
   export let type: TType;
 
-  let style: string = undefined;
-  export let onClick: any;
-
-  if (onClick) {
-    style = 'cursor: pointer';
-  }
+  export let style: string = undefined;
 </script>
 
 <span class={`${cssClass} ${className}`} on:click {style} data-type={type}>
