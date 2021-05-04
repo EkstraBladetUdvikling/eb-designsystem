@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Card from '../../src/_components/card';
+  import Card from '../../src/_components/card/Card.svelte';
   import Routes from './routes';
 
   let componentsLink = '#/';
