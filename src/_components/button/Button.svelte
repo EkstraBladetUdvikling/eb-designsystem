@@ -2,7 +2,7 @@
   export let className: string;
   export let disabled: boolean = false;
 
-  let cssClass = 'button';
+  $: cssClass = 'button';
 
   if (className) {
     cssClass = `${cssClass} ${className}`;
