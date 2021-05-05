@@ -2,11 +2,7 @@
   export let className: string;
   export let disabled: boolean = false;
 
-  $: cssClass = 'button';
-
-  if (className) {
-    cssClass = `${cssClass} ${className}`;
-  }
+  let cssClass = 'button';
 
   type TExtension = 'icon' | 'link' | 'solid' | 'icon link' | 'icon solid';
   export let extension: TExtension;
@@ -34,6 +30,8 @@
   if (type) {
     cssClass = `${cssClass} button--${type}`;
   }
+
+  $: cssClass += ` ${className}`;
 
   let buttonEl: HTMLButtonElement | HTMLAnchorElement;
   /**
