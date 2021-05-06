@@ -14,27 +14,29 @@
     width: string;
   }
 
+  export let title: string;
+
   export let className: string = undefined;
   export let colorClass: string = undefined;
   export let href: string = undefined;
-  export let loading: boolean = false;
   export let isBreaking: boolean = false;
   export let isPlus: boolean = false;
-  export let media: Partial<IMediaOptions> = undefined;
+  export let loading: boolean = false;
   export let maxLines: number = undefined;
+  export let media: Partial<IMediaOptions> = undefined;
   export let section: string = undefined;
   export let style: string = '';
   export let timestamp: string = undefined;
-  export let title: string;
+  export let truncateTitle: boolean = false;
   export let type: TCardType = undefined;
+
+  // Intersection observer
   export let intersection: boolean = false;
   export let intersectionRoot: string | null = undefined;
   export let intersectionThreshold: number = 0.5;
   export let intersectionData: any = {};
 
   let baseClass = `card-mode card-mode--article margin-s`;
-
-  if (className) baseClass = `${className} ${baseClass}`;
 
   let loadingStyle = 'padding-top: 56.25%; width: 100%;';
   if (loading) {
@@ -64,25 +66,16 @@
       break;
   }
 
-  let sectionColor;
-
-  if (colorClass) {
-    try {
-      sectionColor = Background[colorClass.charAt(0).toUpperCase() + colorClass.slice(1)].backgroundColor;
-    } catch (error) {
-      console.error('ArticleCard.svelte . colorClass error', error);
-    }
-  }
-
   const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
 
-  style = `${style}; --color--list-hover: var(--color--${colorClass}); --fgcolor--list-hover: var(--fgcolor--${colorClass});`;
+  $: styleProp = `${style}; --color--list-hover: var(--color--${colorClass}); --fgcolor--list-hover: var(--fgcolor--${colorClass});`;
+  $: cssClass = `${className} ${baseClass}`;
 </script>
 
 <Card
   {href}
-  className={baseClass}
-  {style}
+  className={cssClass}
+  style={styleProp}
   data-breaking={isBreaking}
   {intersection}
   {intersectionRoot}
@@ -126,7 +119,7 @@
             {/if}
           </div>
         {/if}
-        <h2 class="card-title card-title--truncated" style={titleStyle}>{title}</h2>
+        <h2 class="card-title {truncateTitle ? 'card-title--truncated' : ''}" style={titleStyle}>{title}</h2>
       </div>
     </div>
   </div>

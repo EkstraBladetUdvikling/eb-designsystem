@@ -1,39 +1,34 @@
 <script lang="ts">
-  export let className: string;
-  export let disabled: boolean = false;
-
-  let cssClass = 'button';
-
   type TExtension = 'icon' | 'link' | 'solid' | 'icon link' | 'icon solid';
-  export let extension: TExtension;
-
-  export let href: string = undefined;
-
   type TSize = 'big' | 'small';
-  export let size: TSize;
+  type TType = 'accept' | 'cancel' | 'primary' | 'secondary';
 
+  export let className: string = undefined;
+  export let disabled: boolean = false;
+  export let extension: TExtension = undefined;
+  export let href: string = undefined;
+  export let size: TSize = undefined;
+  export let type: TType = undefined;
+
+  let baseClass = 'button';
   if (extension) {
     let extSplit = extension.split(' ');
 
     extSplit.forEach((extClass) => {
-      cssClass = `${cssClass} button--${extClass}`;
+      baseClass = `${baseClass} button--${extClass}`;
     });
   }
 
   if (size) {
-    cssClass = `${cssClass} button--${size}`;
+    baseClass = `${baseClass} button--${size}`;
   }
-
-  type TType = 'accept' | 'cancel' | 'primary' | 'secondary';
-  export let type: TType;
 
   if (type) {
-    cssClass = `${cssClass} button--${type}`;
+    baseClass = `${baseClass} button--${type}`;
   }
 
-  $: cssClass += ` ${className}`;
-
   let buttonEl: HTMLButtonElement | HTMLAnchorElement;
+
   /**
    * For use in group
    */
@@ -63,6 +58,8 @@
       buttonEl.addEventListener('click', () => selectButton(button));
     }
   });
+
+  $: cssClass = `${baseClass} ${className}`;
 </script>
 
 {#if href}
