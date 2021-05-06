@@ -1,25 +1,34 @@
 <script lang="ts">
   export let className: string;
-
-  let cssClass = 'badge';
+  export let href: string;
 
   type TExtension = 'small';
   export let extension: TExtension | TExtension[];
 
-  if (extension) {
-    if (typeof extension === 'string') {
-      cssClass = `${cssClass} button--${extension}`;
-    } else if (Array.isArray(extension)) {
-      cssClass = `${cssClass} badge--${extension.join(' badge--')}`;
-    }
-  }
+  export let style: string = undefined;
 
   type TType = 'danger' | 'primary' | 'secondary' | 'succes';
   export let type: TType;
 
-  export let style: string = undefined;
+  let baseClass = 'badge';
+
+  if (extension) {
+    if (typeof extension === 'string') {
+      baseClass = `${baseClass} button--${extension}`;
+    } else if (Array.isArray(extension)) {
+      baseClass = `${baseClass} badge--${extension.join(' badge--')}`;
+    }
+  }
+
+  $: cssClass = `${baseClass} ${className}`;
 </script>
 
-<span class={`${cssClass} ${className}`} on:click {style} data-type={type}>
-  <slot />
-</span>
+{#if href}
+  <a {href} class={cssClass} on:click {style} data-type={type}>
+    <slot />
+  </a>
+{:else}
+  <span class={cssClass} on:click {style} data-type={type}>
+    <slot />
+  </span>
+{/if}

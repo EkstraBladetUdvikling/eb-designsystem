@@ -26,6 +26,7 @@
   export let style: string = '';
   export let timestamp: string = undefined;
   export let title: string;
+  export let truncateTitle: boolean = false;
   export let type: TCardType = undefined;
   export let intersection: boolean = false;
   export let intersectionRoot: string | null = undefined;
@@ -73,12 +74,15 @@
   }
 
   const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
+
+  $: styleProp = `${style}; --color--list-hover: var(--color--${colorClass}); --fgcolor--list-hover: var(--fgcolor--${colorClass});`;
+  $: cssClass = `${className} ${baseClass}`;
 </script>
 
 <Card
   {href}
-  className={`${className} ${baseClass}`}
-  style={`${style}; --color--list-hover: var(--color--${colorClass}); --fgcolor--list-hover: var(--fgcolor--${colorClass});`}
+  className={cssClass}
+  style={styleProp}
   data-breaking={isBreaking}
   {intersection}
   {intersectionRoot}
@@ -122,7 +126,7 @@
             {/if}
           </div>
         {/if}
-        <h2 class="card-title card-title--truncated" style={titleStyle}>{title}</h2>
+        <h2 class="card-title {truncateTitle ? 'card-title--truncated' : ''}" style={titleStyle}>{title}</h2>
       </div>
     </div>
   </div>
