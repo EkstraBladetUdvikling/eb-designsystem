@@ -1,14 +1,12 @@
 <script lang="ts">
-  export let className: string;
-  export let href: string;
-
   type TExtension = 'small';
-  export let extension: TExtension | TExtension[];
-
-  export let style: string = undefined;
-
   type TType = 'danger' | 'primary' | 'secondary' | 'succes';
-  export let type: TType;
+
+  export let className: string = undefined;
+  export let extension: TExtension | TExtension[] = undefined;
+  export let href: string = undefined;
+  export let style: string = undefined;
+  export let type: TType = undefined;
 
   let baseClass = 'badge';
 

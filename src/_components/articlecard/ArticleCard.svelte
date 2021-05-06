@@ -14,20 +14,23 @@
     width: string;
   }
 
+  export let title: string;
+
   export let className: string = undefined;
   export let colorClass: string = undefined;
   export let href: string = undefined;
-  export let loading: boolean = false;
   export let isBreaking: boolean = false;
   export let isPlus: boolean = false;
-  export let media: Partial<IMediaOptions> = undefined;
+  export let loading: boolean = false;
   export let maxLines: number = undefined;
+  export let media: Partial<IMediaOptions> = undefined;
   export let section: string = undefined;
   export let style: string = '';
   export let timestamp: string = undefined;
-  export let title: string;
   export let truncateTitle: boolean = false;
   export let type: TCardType = undefined;
+
+  // Intersection observer
   export let intersection: boolean = false;
   export let intersectionRoot: string | null = undefined;
   export let intersectionThreshold: number = 0.5;
@@ -61,16 +64,6 @@
     case 'small-media--reverse':
       innerClass = `${innerClass} card--small-media card--small-media--reverse`;
       break;
-  }
-
-  let sectionColor;
-
-  if (colorClass) {
-    try {
-      sectionColor = Background[colorClass.charAt(0).toUpperCase() + colorClass.slice(1)].backgroundColor;
-    } catch (error) {
-      console.error('ArticleCard.svelte . colorClass error', error);
-    }
   }
 
   const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
