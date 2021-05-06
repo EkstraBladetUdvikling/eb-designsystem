@@ -1,7 +1,7 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
 
-  import { Accordion } from '../../src/_components';
+  import { Accordion } from '../../src';
 
   let tabs = [
     {
@@ -28,7 +28,7 @@
   <Prism
     language="js"
     source={`
-    import { Accordion } from '@ekstra-bladet/designsystem/src/_components';
+    import { Accordion } from '@ekstra-bladet/designsystem';
 
     // Example tabs
     let tabs = [

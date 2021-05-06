@@ -2,7 +2,7 @@
   import Prism from 'svelte-prism';
 
   import type { IconTypes } from 'Icon.svelte';
-  import { Icon } from '../../src/_components';
+  import { Icon } from '../../src';
 
   const icons: IconTypes[] = [
     'angle-down',

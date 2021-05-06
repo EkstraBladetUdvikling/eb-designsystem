@@ -1,7 +1,7 @@
 <script>
   import Prism from 'svelte-prism';
 
-  import { Accordion, PillNavigation, Pill, PillContent, PillList } from '../../../src/_components';
+  import { Accordion, PillNavigation, Pill, PillContent, PillList } from '../../../src/';
 
   let tabs = [
     {

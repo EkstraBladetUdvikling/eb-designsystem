@@ -1,7 +1,7 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
 
-  import { Button, Icon } from '../../src/_components/';
+  import { Button, Icon } from '../../src';
 
   const language = 'html';
 
@@ -12,7 +12,7 @@
 
 <h1 class="color--eb">Buttons</h1>
 
-<Prism language="js" source={`import { Button } from '@ekstra-bladet/designsystem/src/_components';`} />
+<Prism language="js" source={`import { Button } from '@ekstra-bladet/designsystem';`} />
 
 <Button
   on:click={() => {

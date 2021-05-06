@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Card } from '../../src/_components';
+  import { Button, Card } from '../../src';
 </script>
 
 <div class="grid-width--small">

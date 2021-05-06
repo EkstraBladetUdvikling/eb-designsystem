@@ -1,12 +1,12 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
 
-  import { Icon, Toggler } from '../../src/_components';
+  import { Icon, Toggler } from '../../src';
 </script>
 
 <h1 class="color--eb">Toggler</h1>
 
-<Prism language="js" source={`import { Toggler } from '@ekstra-bladet/designsystem/src/_components';`} />
+<Prism language="js" source={`import { Toggler } from '@ekstra-bladet/designsystem';`} />
 
 <h2 class="margin-l--tb">Toggler with text</h2>
 <Toggler

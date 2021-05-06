@@ -1,12 +1,12 @@
 <script>
   import Prism from 'svelte-prism';
 
-  import { Tooltip } from '../../src/_components';
+  import { Tooltip } from '../../src';
 </script>
 
 <h1 class="color--eb">Tooltip</h1>
 <div class="grid-width--small">
-  <Prism language="js" source={`import { Tooltip } from '@ekstra-bladet/designsystem/src/_components';`} />
+  <Prism language="js" source={`import { Tooltip } from '@ekstra-bladet/designsystem';`} />
 
   <h2>Default tooltip</h2>
   <div class="flex margin-l--tb">
