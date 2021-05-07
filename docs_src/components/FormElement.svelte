@@ -1,5 +1,5 @@
 <script lang="ts">
-  import FormElement from '../../src/_components/form-elements/FormElement.svelte';
+  import { FormElement } from '../../src';
 
   let radio = 1;
 </script>

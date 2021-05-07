@@ -1,6 +1,5 @@
 <script lang="ts">
-  import Button from '../../src/_components/button';
-  import Card from '../../src/_components/card';
+  import { Button, Card } from '../../src';
 </script>
 
 <div class="grid-width--small">

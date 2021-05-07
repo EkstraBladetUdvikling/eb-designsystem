@@ -1,8 +1,7 @@
 <script>
   import Prism from 'svelte-prism';
 
-  import Accordion from '../../../src/_components/accordion';
-  import PillNavigation, { Pill, PillContent, PillList } from '../../../src/_components/pillnavigation';
+  import { Accordion, PillNavigation, Pill, PillContent, PillList } from '../../../src/';
 
   let tabs = [
     {
@@ -48,14 +47,8 @@
     <PillContent>
       <Prism language="html" source={`<Accordion dataTheme="lightmode" {tabs} />`} />
       <Prism language="html" source={`<Accordion dataTheme="darkmode" {tabs} />`} />
-      <Prism
-        language="html"
-        source={`<div data-theme="lightmode"><p>I'm now in lightmode</p></div>`}
-      />
-      <Prism
-        language="html"
-        source={`<div data-theme="darkmode"><p>I'm now in darkmode</p></div>`}
-      />
+      <Prism language="html" source={`<div data-theme="lightmode"><p>I'm now in lightmode</p></div>`} />
+      <Prism language="html" source={`<div data-theme="darkmode"><p>I'm now in darkmode</p></div>`} />
     </PillContent>
   </PillNavigation>
 

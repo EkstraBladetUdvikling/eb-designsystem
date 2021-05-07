@@ -1,14 +1,14 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
 
-  import PillNavigation, { Pill, PillContent, PillList } from '../../src/_components/pillnavigation';
+  import { PillNavigation, Pill, PillContent, PillList } from '../../src';
 </script>
 
 <h1 class="color--eb">Pill navigation / Toggle buttons</h1>
 
 <Prism
   language="js"
-  source={`import PillNavigation, { Pill, PillContent, PillList } from '@ekstra-bladet/designsystem/src/_components/pillnavigation';`}
+  source={`import { PillNavigation, Pill, PillContent, PillList } from '@ekstra-bladet/designsystem';`}
 />
 
 <div class="margin-xl">
