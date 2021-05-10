@@ -2,16 +2,14 @@
   import Prism from 'svelte-prism';
   // import { Bordeaux, PastelDarkgreen } from '@ekstra-bladet/eb-colors/dist/eb-colors';
 
-  import Button from '../../src/_components/button';
-  import ButtonGroup, { GroupContent } from '../../src/_components/buttongroup';
+  import { Button, ButtonGroup } from '../../src';
 </script>
 
 <h1 class="color--eb">Button groups</h1>
 
 <Prism
   language="js"
-  source={`import Button from '@ekstra-bladet/designsystem/src/_components/button';
-import ButtonGroup  from '@ekstra-bladet/designsystem/src/_components/buttongroup';
+  source={`import { Button, ButtonGroup } from '@ekstra-bladet/designsystem';
 `}
 />
 

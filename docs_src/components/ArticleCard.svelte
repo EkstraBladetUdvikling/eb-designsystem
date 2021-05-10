@@ -1,7 +1,7 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
 
-  import ArticleCard from '../../src/_components/articlecard';
+  import { ArticleCard } from '../../src';
 
   let article = {
     href: '#',
@@ -50,7 +50,7 @@
   <Prism
     language="js"
     source={`
-    import ArticleCard from '@ekstra-bladet/designsystem/src/_components/articlecard';
+    import { ArticleCard } from '@ekstra-bladet/designsystem';
     `}
   />
   <p>ArticleCard attributer</p>
