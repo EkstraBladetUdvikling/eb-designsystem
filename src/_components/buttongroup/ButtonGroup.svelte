@@ -64,11 +64,13 @@
 
   const { backgroundColor: colorBackground, color: colorForeground } = Background[color]
     ? Background[color]
-    : Background['Breaking'];
+    : Background['Bruger'];
 
-  $: cssClass = `${className} ${baseClass}`;
+  console.log(color, colorBackground, colorForeground);
+
+  $: cssClass = className ? `${className} ${baseClass}` : baseClass;
 </script>
 
-<div class={baseClass} style="--groupcolor-main:{colorBackground};--groupcolor-foreground:{colorForeground};">
+<div class={cssClass} style="--groupcolor-main:{colorBackground};--groupcolor-foreground:{colorForeground};">
   <slot />
 </div>
