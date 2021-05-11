@@ -1002,7 +1002,7 @@ var app = (function () {
     }
 
     // (202:0) {#if componentParams}
-    function create_if_block$e(ctx) {
+    function create_if_block$d(ctx) {
     	let switch_instance;
     	let switch_instance_anchor;
     	let current;
@@ -1090,7 +1090,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$e.name,
+    		id: create_if_block$d.name,
     		type: "if",
     		source: "(202:0) {#if componentParams}",
     		ctx
@@ -1104,7 +1104,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$e, create_else_block$7];
+    	const if_block_creators = [create_if_block$d, create_else_block$7];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -2361,7 +2361,7 @@ var app = (function () {
     }
 
     // (45:0) {#if href}
-    function create_if_block$d(ctx) {
+    function create_if_block$c(ctx) {
     	let a;
     	let t0;
     	let t1;
@@ -2568,7 +2568,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$d.name,
+    		id: create_if_block$c.name,
     		type: "if",
     		source: "(45:0) {#if href}",
     		ctx
@@ -3016,7 +3016,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$d, create_else_block$6];
+    	const if_block_creators = [create_if_block$c, create_else_block$6];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -6781,7 +6781,7 @@ var app = (function () {
     }
 
     // (16:0) {#if type === 'svg'}
-    function create_if_block$c(ctx) {
+    function create_if_block$b(ctx) {
     	let switch_instance;
     	let switch_instance_anchor;
     	let current;
@@ -6863,7 +6863,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$c.name,
+    		id: create_if_block$b.name,
     		type: "if",
     		source: "(16:0) {#if type === 'svg'}",
     		ctx
@@ -6877,7 +6877,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$c, create_else_block$5];
+    	const if_block_creators = [create_if_block$b, create_else_block$5];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -7107,9 +7107,9 @@ var app = (function () {
     			div0 = element("div");
     			attr_dev(div0, "class", "card-image bg--graa4");
     			attr_dev(div0, "style", /*loadingStyle*/ ctx[13]);
-    			add_location(div0, file$F, 67, 8, 2066);
+    			add_location(div0, file$F, 67, 8, 2090);
     			attr_dev(div1, "class", "card-media");
-    			add_location(div1, file$F, 66, 6, 2033);
+    			add_location(div1, file$F, 66, 6, 2057);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -7153,9 +7153,9 @@ var app = (function () {
     			if (img.src !== (img_src_value = /*media*/ ctx[5].src)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "height", img_height_value = /*media*/ ctx[5].height);
     			attr_dev(img, "width", img_width_value = /*media*/ ctx[5].width);
-    			add_location(img, file$F, 72, 8, 2202);
+    			add_location(img, file$F, 72, 8, 2226);
     			attr_dev(div, "class", "card-media");
-    			add_location(div, file$F, 71, 6, 2169);
+    			add_location(div, file$F, 71, 6, 2193);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -7238,7 +7238,7 @@ var app = (function () {
     }
 
     // (83:8) {#if section || timestamp}
-    function create_if_block$b(ctx) {
+    function create_if_block$a(ctx) {
     	let div;
     	let t;
     	let current;
@@ -7252,7 +7252,7 @@ var app = (function () {
     			t = space();
     			if (if_block1) if_block1.c();
     			attr_dev(div, "class", "card-meta flex fontsize-xxsmall padding-s--b");
-    			add_location(div, file$F, 83, 10, 2589);
+    			add_location(div, file$F, 83, 10, 2613);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -7328,7 +7328,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$b.name,
+    		id: create_if_block$a.name,
     		type: "if",
     		source: "(83:8) {#if section || timestamp}",
     		ctx
@@ -7365,11 +7365,11 @@ var app = (function () {
     			span0 = element("span");
     			t1 = text(/*section*/ ctx[6]);
     			attr_dev(span0, "class", "padding-s--l");
-    			add_location(span0, file$F, 88, 18, 2864);
+    			add_location(span0, file$F, 88, 18, 2888);
     			attr_dev(span1, "class", "flex flex-justify--center");
-    			add_location(span1, file$F, 86, 16, 2733);
+    			add_location(span1, file$F, 86, 16, 2757);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$F, 85, 14, 2688);
+    			add_location(div, file$F, 85, 14, 2712);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -7432,9 +7432,9 @@ var app = (function () {
     			span = element("span");
     			t1 = text(t1_value);
     			attr_dev(span, "class", "padding-s--l");
-    			add_location(span, file$F, 95, 16, 3107);
+    			add_location(span, file$F, 95, 16, 3131);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$F, 93, 14, 3013);
+    			add_location(div, file$F, 93, 14, 3037);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -7490,7 +7490,7 @@ var app = (function () {
     	let if_block0 = /*loading*/ ctx[4] && create_if_block_5(ctx);
     	let if_block1 = /*media*/ ctx[5] && create_if_block_4(ctx);
     	let if_block2 = /*isPlus*/ ctx[3] && create_if_block_3(ctx);
-    	let if_block3 = (/*section*/ ctx[6] || /*timestamp*/ ctx[7]) && create_if_block$b(ctx);
+    	let if_block3 = (/*section*/ ctx[6] || /*timestamp*/ ctx[7]) && create_if_block$a(ctx);
 
     	const block = {
     		c: function create() {
@@ -7509,16 +7509,16 @@ var app = (function () {
     			h2 = element("h2");
     			t4 = text(/*title*/ ctx[0]);
     			attr_dev(div0, "class", "card-icon flex flex-justify--end");
-    			add_location(div0, file$F, 76, 6, 2367);
+    			add_location(div0, file$F, 76, 6, 2391);
     			attr_dev(h2, "class", h2_class_value = "card-title " + (/*truncateTitle*/ ctx[8] ? "card-title--truncated" : ""));
     			attr_dev(h2, "style", /*titleStyle*/ ctx[17]);
-    			add_location(h2, file$F, 100, 8, 3242);
+    			add_location(h2, file$F, 100, 8, 3266);
     			attr_dev(div1, "class", "card-content");
-    			add_location(div1, file$F, 81, 6, 2517);
+    			add_location(div1, file$F, 81, 6, 2541);
     			attr_dev(div2, "class", "card-content-wrapper");
-    			add_location(div2, file$F, 75, 4, 2326);
+    			add_location(div2, file$F, 75, 4, 2350);
     			attr_dev(div3, "class", /*innerClass*/ ctx[14]);
-    			add_location(div3, file$F, 64, 2, 1984);
+    			add_location(div3, file$F, 64, 2, 2008);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
@@ -7593,7 +7593,7 @@ var app = (function () {
     						transition_in(if_block3, 1);
     					}
     				} else {
-    					if_block3 = create_if_block$b(ctx);
+    					if_block3 = create_if_block$a(ctx);
     					if_block3.c();
     					transition_in(if_block3, 1);
     					if_block3.m(div1, t3);
@@ -7896,7 +7896,7 @@ var app = (function () {
     		}
 
     		if ($$self.$$.dirty & /*className, baseClass*/ 8650752) {
-    			$$invalidate(16, cssClass = `${className} ${baseClass}`);
+    			$$invalidate(16, cssClass = className ? `${className} ${baseClass}` : baseClass);
     		}
     	};
 
@@ -8198,7 +8198,7 @@ var app = (function () {
     }
 
     // (18:0) {#if href}
-    function create_if_block$a(ctx) {
+    function create_if_block$9(ctx) {
     	let a;
     	let current;
     	let mounted;
@@ -8272,7 +8272,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$a.name,
+    		id: create_if_block$9.name,
     		type: "if",
     		source: "(18:0) {#if href}",
     		ctx
@@ -8286,7 +8286,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$a, create_else_block$4];
+    	const if_block_creators = [create_if_block$9, create_else_block$4];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -8514,60 +8514,25 @@ var app = (function () {
     /* src/_components/buttongroup/ButtonGroup.svelte generated by Svelte v3.38.1 */
     const file$D = "src/_components/buttongroup/ButtonGroup.svelte";
 
-    // (55:0) {#if color}
-    function create_if_block$9(ctx) {
-    	let style;
-
-    	const block = {
-    		c: function create() {
-    			style = element("style");
-    			style.textContent = ".buttongroup--special .button {\n          background: var(--color--white);\n      border-color: var(--groupcolor-main);\n      border-right-width: 0;\n      color: var(--groupcolor-main);\n        }\n\n        .buttongroup--special .button:active,\n        .buttongroup--special .button:hover,\n        .buttongroup--special .button:focus,\n        .buttongroup--special .button[data-selected=\"true\"] {\n          background: var(--groupcolor-main);\n      border-color: var(--groupcolor-main);\n      color: var(--groupcolor-main-foreground);\n        }";
-    			add_location(style, file$D, 55, 2, 1785);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, style, anchor);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(style);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block$9.name,
-    		type: "if",
-    		source: "(55:0) {#if color}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
     function create_fragment$E(ctx) {
-    	let t;
     	let div;
     	let current;
-    	let if_block = /*color*/ ctx[0] && create_if_block$9(ctx);
     	const default_slot_template = /*#slots*/ ctx[7].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[6], null);
 
     	const block = {
     		c: function create() {
-    			if (if_block) if_block.c();
-    			t = space();
     			div = element("div");
     			if (default_slot) default_slot.c();
-    			attr_dev(div, "class", /*baseClass*/ ctx[1]);
-    			set_style(div, "--groupcolor-main", /*colorBackground*/ ctx[2]);
-    			set_style(div, "--groupcolor-foreground", /*colorForeground*/ ctx[3]);
-    			add_location(div, file$D, 74, 0, 2357);
+    			attr_dev(div, "class", /*baseClass*/ ctx[0]);
+    			set_style(div, "--groupcolor-main", /*colorBackground*/ ctx[1]);
+    			set_style(div, "--groupcolor-foreground", /*colorForeground*/ ctx[2]);
+    			add_location(div, file$D, 53, 0, 1778);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			if (if_block) if_block.m(target, anchor);
-    			insert_dev(target, t, anchor);
     			insert_dev(target, div, anchor);
 
     			if (default_slot) {
@@ -8577,25 +8542,14 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (/*color*/ ctx[0]) {
-    				if (if_block) ; else {
-    					if_block = create_if_block$9(ctx);
-    					if_block.c();
-    					if_block.m(t.parentNode, t);
-    				}
-    			} else if (if_block) {
-    				if_block.d(1);
-    				if_block = null;
-    			}
-
     			if (default_slot) {
     				if (default_slot.p && (!current || dirty & /*$$scope*/ 64)) {
     					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[6], dirty, null, null);
     				}
     			}
 
-    			if (!current || dirty & /*baseClass*/ 2) {
-    				attr_dev(div, "class", /*baseClass*/ ctx[1]);
+    			if (!current || dirty & /*baseClass*/ 1) {
+    				attr_dev(div, "class", /*baseClass*/ ctx[0]);
     			}
     		},
     		i: function intro(local) {
@@ -8608,8 +8562,6 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (if_block) if_block.d(detaching);
-    			if (detaching) detach_dev(t);
     			if (detaching) detach_dev(div);
     			if (default_slot) default_slot.d(detaching);
     		}
@@ -8629,6 +8581,7 @@ var app = (function () {
     const BUTTONS$1 = {};
 
     function instance$E($$self, $$props, $$invalidate) {
+    	let cssClass;
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("ButtonGroup", slots, ['default']);
     	const buttons = [];
@@ -8674,14 +8627,13 @@ var app = (function () {
 
     	let { className = undefined } = $$props;
     	let baseClass = `buttongroup`;
-    	if (className) baseClass = `${className} ${baseClass}`;
-    	let { type } = $$props;
+    	let { type = undefined } = $$props;
 
     	if (type) {
     		baseClass = `${baseClass} buttongroup--${type}`;
     	}
 
-    	let { color } = $$props;
+    	let { color = undefined } = $$props;
 
     	if (color) {
     		baseClass = `${baseClass} buttongroup--special`;
@@ -8698,9 +8650,9 @@ var app = (function () {
     	});
 
     	$$self.$$set = $$props => {
-    		if ("className" in $$props) $$invalidate(4, className = $$props.className);
-    		if ("type" in $$props) $$invalidate(5, type = $$props.type);
-    		if ("color" in $$props) $$invalidate(0, color = $$props.color);
+    		if ("className" in $$props) $$invalidate(3, className = $$props.className);
+    		if ("type" in $$props) $$invalidate(4, type = $$props.type);
+    		if ("color" in $$props) $$invalidate(5, color = $$props.color);
     		if ("$$scope" in $$props) $$invalidate(6, $$scope = $$props.$$scope);
     	};
 
@@ -8719,27 +8671,35 @@ var app = (function () {
     		type,
     		color,
     		colorBackground,
-    		colorForeground
+    		colorForeground,
+    		cssClass
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("className" in $$props) $$invalidate(4, className = $$props.className);
-    		if ("baseClass" in $$props) $$invalidate(1, baseClass = $$props.baseClass);
-    		if ("type" in $$props) $$invalidate(5, type = $$props.type);
-    		if ("color" in $$props) $$invalidate(0, color = $$props.color);
+    		if ("className" in $$props) $$invalidate(3, className = $$props.className);
+    		if ("baseClass" in $$props) $$invalidate(0, baseClass = $$props.baseClass);
+    		if ("type" in $$props) $$invalidate(4, type = $$props.type);
+    		if ("color" in $$props) $$invalidate(5, color = $$props.color);
+    		if ("cssClass" in $$props) cssClass = $$props.cssClass;
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*className, baseClass*/ 9) {
+    			cssClass = `${className} ${baseClass}`;
+    		}
+    	};
+
     	return [
-    		color,
     		baseClass,
     		colorBackground,
     		colorForeground,
     		className,
     		type,
+    		color,
     		$$scope,
     		slots
     	];
@@ -8748,7 +8708,7 @@ var app = (function () {
     class ButtonGroup extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$E, create_fragment$E, safe_not_equal, { className: 4, type: 5, color: 0 });
+    		init(this, options, instance$E, create_fragment$E, safe_not_equal, { className: 3, type: 4, color: 5 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -8756,17 +8716,6 @@ var app = (function () {
     			options,
     			id: create_fragment$E.name
     		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
-
-    		if (/*type*/ ctx[5] === undefined && !("type" in props)) {
-    			console.warn("<ButtonGroup> was created without expected prop 'type'");
-    		}
-
-    		if (/*color*/ ctx[0] === undefined && !("color" in props)) {
-    			console.warn("<ButtonGroup> was created without expected prop 'color'");
-    		}
     	}
 
     	get className() {
@@ -8814,7 +8763,7 @@ var app = (function () {
     			attr_dev(button_1, "class", /*cssClass*/ ctx[4]);
     			button_1.disabled = /*disabled*/ ctx[0];
     			attr_dev(button_1, "data-selected", button_1_data_selected_value = /*$selectedButton*/ ctx[5] === /*button*/ ctx[6]);
-    			add_location(button_1, file$C, 48, 2, 1376);
+    			add_location(button_1, file$C, 48, 2, 1400);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button_1, anchor);
@@ -8897,7 +8846,7 @@ var app = (function () {
     			attr_dev(a, "class", /*cssClass*/ ctx[4]);
     			attr_dev(a, "disabled", /*disabled*/ ctx[0]);
     			attr_dev(a, "data-selected", a_data_selected_value = /*$selectedButton*/ ctx[5] === /*button*/ ctx[6]);
-    			add_location(a, file$C, 44, 2, 1234);
+    			add_location(a, file$C, 44, 2, 1258);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -9187,8 +9136,8 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*baseClass, className*/ 4224) {
-    			$$invalidate(4, cssClass = `${baseClass} ${className}`);
+    		if ($$self.$$.dirty & /*className, baseClass*/ 4224) {
+    			$$invalidate(4, cssClass = className ? `${baseClass} ${className}` : baseClass);
     		}
     	};
 

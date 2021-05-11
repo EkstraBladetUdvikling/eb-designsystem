@@ -726,6 +726,27 @@ a.badge:hover {
 * Pillnavigation
 */
 
+/* .buttongroup--special .button {
+  background: var(--color--white);
+border-color: var(--groupcolor-main);
+border-right-width: 0;
+color: var(--groupcolor-main);
+}
+
+.buttongroup--special .button:active,
+.buttongroup--special .button:hover,
+.buttongroup--special .button:focus,
+.buttongroup--special .button[data-selected="true"] {
+  background: var(--groupcolor-main);
+border-color: var(--groupcolor-main);
+color: var(--groupcolor-main-foreground);
+} */
+
+:root {
+  --groupcolor-main: var(--color--default);
+  --groupcolor-main-foreground: var(--fgcolor--default);
+}
+
 .buttongroup {
   display: flex;
 }

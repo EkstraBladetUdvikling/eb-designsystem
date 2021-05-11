@@ -723,8 +723,13 @@ a.badge:hover {
 }
 
 /**
-* Pillnavigation
+* Buttongroup
 */
+
+:root {
+  --groupcolor-main: var(--color--default);
+  --groupcolor-main-foreground: var(--fgcolor--default);
+}
 
 .buttongroup {
   display: flex;
@@ -732,18 +737,18 @@ a.badge:hover {
 
 .buttongroup .button {
   background: var(--color--white);
-  border-color: var(--color--default);
+  border-color: var(--groupcolor-main);
   border-right-width: 0;
-  color: var(--color--default);
+  color: var(--groupcolor-main);
 }
 
 .buttongroup .button:active,
 .buttongroup .button:hover,
 .buttongroup .button:focus,
 .buttongroup .button[data-selected="true"] {
-  background: var(--color--default);
-  border-color: var(--color--default);
-  color: var(--fgcolor--default);
+  background: var(--groupcolor-main);
+  border-color: var(--groupcolor-main);
+  color: var(--groupcolor-main-foreground);
 }
 
 .buttongroup .button:first-of-type {

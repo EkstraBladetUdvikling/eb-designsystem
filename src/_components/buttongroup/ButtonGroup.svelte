@@ -49,16 +49,14 @@
 
   let baseClass = `buttongroup`;
 
-  if (className) baseClass = `${className} ${baseClass}`;
-
   type TType = 'accept' | 'cancel' | 'primary' | 'secondary';
-  export let type: TType;
+  export let type: TType = undefined;
 
   if (type) {
     baseClass = `${baseClass} buttongroup--${type}`;
   }
 
-  export let color;
+  export let color = undefined;
 
   if (color) {
     baseClass = `${baseClass} buttongroup--special`;
@@ -67,27 +65,9 @@
   const { backgroundColor: colorBackground, color: colorForeground } = Background[color]
     ? Background[color]
     : Background['Breaking'];
+
+  $: cssClass = `${className} ${baseClass}`;
 </script>
-
-{#if color}
-  <style>
-    .buttongroup--special .button {
-          background: var(--color--white);
-      border-color: var(--groupcolor-main);
-      border-right-width: 0;
-      color: var(--groupcolor-main);
-        }
-
-        .buttongroup--special .button:active,
-        .buttongroup--special .button:hover,
-        .buttongroup--special .button:focus,
-        .buttongroup--special .button[data-selected="true"] {
-          background: var(--groupcolor-main);
-      border-color: var(--groupcolor-main);
-      color: var(--groupcolor-main-foreground);
-        }
-  </style>
-{/if}
 
 <div class={baseClass} style="--groupcolor-main:{colorBackground};--groupcolor-foreground:{colorForeground};">
   <slot />

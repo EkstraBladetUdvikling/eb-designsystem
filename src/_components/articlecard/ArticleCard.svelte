@@ -69,7 +69,7 @@
   const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
 
   $: styleProp = `${style}; --color--list-hover: var(--color--${colorClass}); --fgcolor--list-hover: var(--fgcolor--${colorClass});`;
-  $: cssClass = `${className} ${baseClass}`;
+  $: cssClass = className ? `${className} ${baseClass}` : baseClass;
 </script>
 
 <Card

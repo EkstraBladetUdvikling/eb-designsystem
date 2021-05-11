@@ -59,7 +59,7 @@
     }
   });
 
-  $: cssClass = `${baseClass} ${className}`;
+  $: cssClass = className ? `${baseClass} ${className}` : baseClass;
 </script>
 
 {#if href}
