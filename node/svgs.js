@@ -13,7 +13,7 @@ const spriter = new SVGSpriter({
   },
 });
 
-const iconPath = './src/_components/icon/svgs';
+const iconPath = './src/components/icon/svgs';
 
 const svgs = fs.readdirSync(iconPath).filter((fileName) => fileName.indexOf('.svg') !== -1);
 
@@ -63,4 +63,4 @@ svgNames.forEach((svgname, idx) => {
 
 const componentFile = iconComponents.join(';');
 
-fs.writeFileSync(`./src/_components/icon/svgs/IconComponents.ts`, componentFile);
+fs.writeFileSync(`./src/components/icon/svgs/IconComponents.ts`, componentFile);
