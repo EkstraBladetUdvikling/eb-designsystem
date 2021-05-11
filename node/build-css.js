@@ -92,7 +92,8 @@ const buildCSS = async (args) => {
      * Find all css files in src folder
      */
     readFolder(srcFolder, fileTypeToFind, cssFilesToRead);
-
+    cssFilesToRead.push('./node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-classes.css');
+    console.log('cssFilesToRead', cssFilesToRead);
     const outputFileName = `eb-designsystem${options.build}.css`;
     const outputFile = `${outFolder}/${outputFileName}`;
 

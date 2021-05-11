@@ -2,7 +2,7 @@
   import Prism from 'svelte-prism';
 
   import type { IconTypes } from 'Icon.svelte';
-  import Icon from '../../src/_components/icon/Icon.svelte';
+  import { Icon } from '../../src';
 
   const icons: IconTypes[] = [
     'angle-down',
@@ -11,13 +11,17 @@
     'angle-up',
     'article',
     'check',
+    'clock',
     'creditcard',
     'ebplus_icon',
     'ebplus_sort',
     'envelope',
+    'figcaption-pin',
     'gallery',
     'headphones',
     'headset',
+    'history-regular',
+    'lock-old',
     'lock',
     'medielogin',
     'menu-bars',
@@ -26,10 +30,13 @@
     'newspaper',
     'play',
     'smartphone',
+    'star-regular',
     'tag-regular',
     'tag-solid',
     'tags-regular',
     'tags-solid',
+    'toggle-off',
+    'toggle-on',
     'video',
   ];
 </script>

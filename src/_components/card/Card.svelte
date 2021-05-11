@@ -3,13 +3,12 @@
 
   import type { TThemes } from '../../_utilities/data-theme/DataTheme';
 
-  let baseClass = 'card';
-  export let className: string;
+  export let className: string = undefined;
   export let href: string = undefined;
   export let style: string = undefined;
   export let theme: TThemes = undefined;
 
-  if (className) baseClass = `${className} ${baseClass}`;
+  let baseClass = 'card';
 
   const dataProps = {};
 
@@ -49,10 +48,12 @@
       return () => observer.unobserve(element);
     }
   });
+
+  $: cssClass = `${className} ${baseClass}`;
 </script>
 
 {#if href}
-  <a {href} class={baseClass} {style} data-theme={theme} {...dataProps} bind:this={element} on:click>
+  <a {href} class={cssClass} {style} data-theme={theme} {...dataProps} bind:this={element} on:click>
     {#if $$slots.header}
       <slot name="header" class="card-header" />
     {/if}

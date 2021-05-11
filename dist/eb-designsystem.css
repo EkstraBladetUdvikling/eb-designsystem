@@ -726,6 +726,27 @@ a.badge:hover {
 * Pillnavigation
 */
 
+/* .buttongroup--special .button {
+  background: var(--color--white);
+border-color: var(--groupcolor-main);
+border-right-width: 0;
+color: var(--groupcolor-main);
+}
+
+.buttongroup--special .button:active,
+.buttongroup--special .button:hover,
+.buttongroup--special .button:focus,
+.buttongroup--special .button[data-selected="true"] {
+  background: var(--groupcolor-main);
+border-color: var(--groupcolor-main);
+color: var(--groupcolor-main-foreground);
+} */
+
+:root {
+  --groupcolor-main: var(--color--default);
+  --groupcolor-main-foreground: var(--fgcolor--default);
+}
+
 .buttongroup {
   display: flex;
 }
@@ -2496,4 +2517,571 @@ h6,p {
 
 .text-transform--uppercase {
   text-transform: uppercase;
+}
+
+.bg--bordeaux {
+  background: #8a0c36;
+  color: #fff;
+}
+
+.bg--reddark {
+  background: #900;
+  color: #fff;
+}
+
+.bg--red {
+  background: #bd1118;
+  color: #fff;
+}
+
+.bg--pink {
+  background: #b31e61;
+  color: #fff;
+}
+
+.bg--rose {
+  background: #dc7095;
+  color: #fff;
+}
+
+.bg--orangedark {
+  background: #e96c0d;
+  color: #fff;
+}
+
+.bg--orange {
+  background: #e5ad02;
+  color: #fff;
+}
+
+.bg--yellow {
+  background: #fae500;
+  color: #fff;
+}
+
+.bg--yellowlight {
+  background: #ff0;
+  color: #000;
+}
+
+.bg--sand {
+  background: #cec4a6;
+  color: #fff;
+}
+
+.bg--greendark {
+  background: #2f7820;
+  color: #fff;
+}
+
+.bg--green {
+  background: #029e5d;
+  color: #fff;
+}
+
+.bg--greenlight {
+  background: #93b923;
+  color: #fff;
+}
+
+.bg--lime {
+  background: #cbfe33;
+  color: #000;
+}
+
+.bg--purpledark {
+  background: #51208c;
+  color: #fff;
+}
+
+.bg--bluenavy {
+  background: #1a237e;
+  color: #fff;
+}
+
+.bg--bluedark {
+  background: #1058c2;
+  color: #fff;
+}
+
+.bg--blue {
+  background: #31769b;
+  color: #fff;
+}
+
+.bg--bluelight {
+  background: #4fa8df;
+  color: #fff;
+}
+
+.bg--cyan {
+  background: #00b6d2;
+  color: #fff;
+}
+
+.bg--sea {
+  background: #84a8c4;
+  color: #fff;
+}
+
+.bg--black {
+  background: #000;
+  color: #fff;
+}
+
+.bg--graa1 {
+  background: #3c3c3c;
+  color: #fff;
+}
+
+.bg--graa2 {
+  background: #484848;
+  color: #fff;
+}
+
+.bg--graa3 {
+  background: #999;
+  color: #fff;
+}
+
+.bg--graa4 {
+  background: #c8c8c8;
+  color: #000;
+}
+
+.bg--graa5 {
+  background: #ddd;
+  color: #000;
+}
+
+.bg--graa6 {
+  background: #e5e5e5;
+  color: #000;
+}
+
+.bg--graa7 {
+  background: #efefef;
+  color: #000;
+}
+
+.bg--white {
+  background: #fff;
+  color: #000;
+}
+
+.bg--pastel-red {
+  background: #db5040;
+  color: #fff;
+}
+
+.bg--pastel-darkred {
+  background: #954839;
+  color: #fff;
+}
+
+.bg--pastel-lightred {
+  background: #d67e9b;
+  color: #fff;
+}
+
+.bg--pastel-green {
+  background: #9fc29c;
+  color: #fff;
+}
+
+.bg--pastel-darkgreen {
+  background: #91a34f;
+  color: #fff;
+}
+
+.bg--pastel-yellow {
+  background: #d4c564;
+  color: #fff;
+}
+
+.bg--eb {
+  background: #bd1118;
+  color: #fff;
+}
+
+.bg--eb2 {
+  background: #900;
+  color: #fff;
+}
+
+.bg--breaking {
+  background: #ff0;
+  color: #000;
+}
+
+.bg--bruger {
+  background: #4fa8df;
+  color: #fff;
+}
+
+.bg--live {
+  background: #000;
+  color: #fff;
+}
+
+.bg--native {
+  background: #cec4a6;
+  color: #fff;
+}
+
+.bg--native2 {
+  background: #84a8c4;
+  color: #fff;
+}
+
+.bg--facebook {
+  background: #31769b;
+  color: #fff;
+}
+
+.bg--twitter {
+  background: #4fa8df;
+  color: #fff;
+}
+
+.bg--ekstra {
+  background: #bd1118;
+  color: #fff;
+}
+
+.bg--flash {
+  background: #e5ad02;
+  color: #fff;
+}
+
+.bg--forbrug {
+  background: #00b6d2;
+  color: #fff;
+}
+
+.bg--leder {
+  background: #1a237e;
+  color: #fff;
+}
+
+.bg--livescore {
+  background: #029e5d;
+  color: #fff;
+}
+
+.bg--livescore2 {
+  background: #cbfe33;
+  color: #000;
+}
+
+.bg--nyheder {
+  background: #1058c2;
+  color: #fff;
+}
+
+.bg--nyheder2 {
+  background: #000;
+  color: #fff;
+}
+
+.bg--sex-samliv {
+  background: #b31e61;
+  color: #fff;
+}
+
+.bg--sex-samliv2 {
+  background: #dc7095;
+  color: #fff;
+}
+
+.bg--skolefodbold {
+  background: #93b923;
+  color: #fff;
+}
+
+.bg--sport {
+  background: #029e5d;
+  color: #fff;
+}
+
+.bg--tv {
+  background: #bd1118;
+  color: #fff;
+}
+
+.bg--underholdning {
+  background: #51208c;
+  color: #fff;
+}
+
+.color--bordeaux {
+  color: #8a0c36;
+}
+
+.color--reddark {
+  color: #900;
+}
+
+.color--red {
+  color: #bd1118;
+}
+
+.color--pink {
+  color: #b31e61;
+}
+
+.color--rose {
+  color: #dc7095;
+}
+
+.color--orangedark {
+  color: #e96c0d;
+}
+
+.color--orange {
+  color: #e5ad02;
+}
+
+.color--yellow {
+  color: #fae500;
+}
+
+.color--yellowlight {
+  color: #ff0;
+}
+
+.color--sand {
+  color: #cec4a6;
+}
+
+.color--greendark {
+  color: #2f7820;
+}
+
+.color--green {
+  color: #029e5d;
+}
+
+.color--greenlight {
+  color: #93b923;
+}
+
+.color--lime {
+  color: #cbfe33;
+}
+
+.color--purpledark {
+  color: #51208c;
+}
+
+.color--bluenavy {
+  color: #1a237e;
+}
+
+.color--bluedark {
+  color: #1058c2;
+}
+
+.color--blue {
+  color: #31769b;
+}
+
+.color--bluelight {
+  color: #4fa8df;
+}
+
+.color--cyan {
+  color: #00b6d2;
+}
+
+.color--sea {
+  color: #84a8c4;
+}
+
+.color--black {
+  color: #000;
+}
+
+.color--graa1 {
+  color: #3c3c3c;
+}
+
+.color--graa2 {
+  color: #484848;
+}
+
+.color--graa3 {
+  color: #999;
+}
+
+.color--graa4 {
+  color: #c8c8c8;
+}
+
+.color--graa5 {
+  color: #ddd;
+}
+
+.color--graa6 {
+  color: #e5e5e5;
+}
+
+.color--graa7 {
+  color: #efefef;
+}
+
+.color--white {
+  color: #fff;
+}
+
+.color--pastel-red {
+  color: #db5040;
+}
+
+.color--pastel-darkred {
+  color: #954839;
+}
+
+.color--pastel-lightred {
+  color: #d67e9b;
+}
+
+.color--pastel-green {
+  color: #9fc29c;
+}
+
+.color--pastel-darkgreen {
+  color: #91a34f;
+}
+
+.color--pastel-yellow {
+  color: #d4c564;
+}
+
+.color--eb {
+  color: #bd1118;
+}
+
+.color--eb2 {
+  color: #900;
+}
+
+.color--breaking {
+  color: #ff0;
+}
+
+.color--bruger {
+  color: #4fa8df;
+}
+
+.color--live {
+  color: #000;
+}
+
+.color--native {
+  color: #cec4a6;
+}
+
+.color--native2 {
+  color: #84a8c4;
+}
+
+.color--facebook {
+  color: #31769b;
+}
+
+.color--twitter {
+  color: #4fa8df;
+}
+
+.color--ekstra {
+  color: #bd1118;
+}
+
+.color--flash {
+  color: #e5ad02;
+}
+
+.color--forbrug {
+  color: #00b6d2;
+}
+
+.color--leder {
+  color: #1a237e;
+}
+
+.color--livescore {
+  color: #029e5d;
+}
+
+.color--livescore2 {
+  color: #cbfe33;
+}
+
+.color--nyheder {
+  color: #1058c2;
+}
+
+.color--nyheder2 {
+  color: #000;
+}
+
+.color--sex-samliv {
+  color: #b31e61;
+}
+
+.color--sex-samliv2 {
+  color: #dc7095;
+}
+
+.color--skolefodbold {
+  color: #93b923;
+}
+
+.color--sport {
+  color: #029e5d;
+}
+
+.color--tv {
+  color: #bd1118;
+}
+
+.color--underholdning {
+  color: #51208c;
+}
+
+.border--black {
+  border-color: #000;
+}
+
+.border--graa1 {
+  border-color: #3c3c3c;
+}
+
+.border--graa2 {
+  border-color: #484848;
+}
+
+.border--graa3 {
+  border-color: #999;
+}
+
+.border--graa4 {
+  border-color: #c8c8c8;
+}
+
+.border--graa5 {
+  border-color: #ddd;
+}
+
+.border--graa6 {
+  border-color: #e5e5e5;
+}
+
+.border--graa7 {
+  border-color: #efefef;
+}
+
+.border--white {
+  border-color: #fff;
 }

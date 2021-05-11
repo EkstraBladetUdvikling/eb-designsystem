@@ -3,7 +3,7 @@
 
   import { throttle } from '../../misc/throttle';
 
-  import Button from '../button';
+  import Button from '../button/Button.svelte';
 
   export let className = undefined;
   export let title: string = undefined;
