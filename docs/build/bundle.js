@@ -18846,8 +18846,8 @@ var app = (function () {
     const { console: console_1$1 } = globals;
     const file$j = "docs_src/components/ButtonGroup.svelte";
 
-    // (17:6) <Button         on:click={() => {           console.log('Click 1');         }}>
-    function create_default_slot_24(ctx) {
+    // (13:2) <Button     on:click={() => {       console.log('Click 1');     }}>
+    function create_default_slot_27(ctx) {
     	let t;
 
     	const block = {
@@ -18864,17 +18864,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_24.name,
+    		id: create_default_slot_27.name,
     		type: "slot",
-    		source: "(17:6) <Button         on:click={() => {           console.log('Click 1');         }}>",
+    		source: "(13:2) <Button     on:click={() => {       console.log('Click 1');     }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (22:6) <Button         on:click={() => {           console.log('Click 2');         }}>
-    function create_default_slot_23(ctx) {
+    // (18:2) <Button     on:click={() => {       console.log('Click 2');     }}>
+    function create_default_slot_26(ctx) {
     	let t;
 
     	const block = {
@@ -18891,17 +18891,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_23.name,
+    		id: create_default_slot_26.name,
     		type: "slot",
-    		source: "(22:6) <Button         on:click={() => {           console.log('Click 2');         }}>",
+    		source: "(18:2) <Button     on:click={() => {       console.log('Click 2');     }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (16:4) <ButtonGroup>
-    function create_default_slot_22(ctx) {
+    // (12:0) <ButtonGroup className="buttongroup--solid">
+    function create_default_slot_25(ctx) {
     	let button0;
     	let t;
     	let button1;
@@ -18909,7 +18909,7 @@ var app = (function () {
 
     	button0 = new Button({
     			props: {
-    				$$slots: { default: [create_default_slot_24] },
+    				$$slots: { default: [create_default_slot_27] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -18919,7 +18919,7 @@ var app = (function () {
 
     	button1 = new Button({
     			props: {
-    				$$slots: { default: [create_default_slot_23] },
+    				$$slots: { default: [create_default_slot_26] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -18942,14 +18942,152 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const button0_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
     			button0.$set(button0_changes);
     			const button1_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
+    				button1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button1.$set(button1_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button0.$$.fragment, local);
+    			transition_in(button1.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button0.$$.fragment, local);
+    			transition_out(button1.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(button0, detaching);
+    			if (detaching) detach_dev(t);
+    			destroy_component(button1, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_25.name,
+    		type: "slot",
+    		source: "(12:0) <ButtonGroup className=\\\"buttongroup--solid\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (29:6) <Button         on:click={() => {           console.log('Click 1');         }}>
+    function create_default_slot_24(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Toggle 1");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_24.name,
+    		type: "slot",
+    		source: "(29:6) <Button         on:click={() => {           console.log('Click 1');         }}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (34:6) <Button         on:click={() => {           console.log('Click 2');         }}>
+    function create_default_slot_23(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Toggle 2");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_23.name,
+    		type: "slot",
+    		source: "(34:6) <Button         on:click={() => {           console.log('Click 2');         }}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (28:4) <ButtonGroup>
+    function create_default_slot_22(ctx) {
+    	let button0;
+    	let t;
+    	let button1;
+    	let current;
+
+    	button0 = new Button({
+    			props: {
+    				$$slots: { default: [create_default_slot_24] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button0.$on("click", /*click_handler_2*/ ctx[2]);
+
+    	button1 = new Button({
+    			props: {
+    				$$slots: { default: [create_default_slot_23] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button1.$on("click", /*click_handler_3*/ ctx[3]);
+
+    	const block = {
+    		c: function create() {
+    			create_component(button0.$$.fragment);
+    			t = space();
+    			create_component(button1.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(button0, target, anchor);
+    			insert_dev(target, t, anchor);
+    			mount_component(button1, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const button0_changes = {};
+
+    			if (dirty & /*$$scope*/ 524288) {
+    				button0_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button0.$set(button0_changes);
+    			const button1_changes = {};
+
+    			if (dirty & /*$$scope*/ 524288) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -18977,14 +19115,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_22.name,
     		type: "slot",
-    		source: "(16:4) <ButtonGroup>",
+    		source: "(28:4) <ButtonGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (31:6) <Button         on:click={() => {           console.log('Button 1');         }}>
+    // (43:6) <Button         on:click={() => {           console.log('Button 1');         }}>
     function create_default_slot_21(ctx) {
     	let t;
 
@@ -19004,14 +19142,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_21.name,
     		type: "slot",
-    		source: "(31:6) <Button         on:click={() => {           console.log('Button 1');         }}>",
+    		source: "(43:6) <Button         on:click={() => {           console.log('Button 1');         }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (36:6) <Button         on:click={() => {           console.log('Button 2');         }}>
+    // (48:6) <Button         on:click={() => {           console.log('Button 2');         }}>
     function create_default_slot_20(ctx) {
     	let t;
 
@@ -19031,14 +19169,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_20.name,
     		type: "slot",
-    		source: "(36:6) <Button         on:click={() => {           console.log('Button 2');         }}>",
+    		source: "(48:6) <Button         on:click={() => {           console.log('Button 2');         }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (41:6) <Button         on:click={() => {           console.log('Button 3');         }}>
+    // (53:6) <Button         on:click={() => {           console.log('Button 3');         }}>
     function create_default_slot_19(ctx) {
     	let t;
 
@@ -19058,14 +19196,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_19.name,
     		type: "slot",
-    		source: "(41:6) <Button         on:click={() => {           console.log('Button 3');         }}>",
+    		source: "(53:6) <Button         on:click={() => {           console.log('Button 3');         }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (30:4) <ButtonGroup>
+    // (42:4) <ButtonGroup>
     function create_default_slot_18(ctx) {
     	let button0;
     	let t0;
@@ -19082,7 +19220,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button0.$on("click", /*click_handler_2*/ ctx[2]);
+    	button0.$on("click", /*click_handler_4*/ ctx[4]);
 
     	button1 = new Button({
     			props: {
@@ -19092,7 +19230,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button1.$on("click", /*click_handler_3*/ ctx[3]);
+    	button1.$on("click", /*click_handler_5*/ ctx[5]);
 
     	button2 = new Button({
     			props: {
@@ -19102,7 +19240,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button2.$on("click", /*click_handler_4*/ ctx[4]);
+    	button2.$on("click", /*click_handler_6*/ ctx[6]);
 
     	const block = {
     		c: function create() {
@@ -19123,21 +19261,21 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const button0_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
     			button0.$set(button0_changes);
     			const button1_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
     			button1.$set(button1_changes);
     			const button2_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				button2_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19169,14 +19307,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_18.name,
     		type: "slot",
-    		source: "(30:4) <ButtonGroup>",
+    		source: "(42:4) <ButtonGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (78:4) <Button       size="big"       initial={true}       on:click={() => {         console.log('Click 1');       }}>
+    // (90:4) <Button       size="big"       initial={true}       on:click={() => {         console.log('Click 1');       }}>
     function create_default_slot_17(ctx) {
     	let t;
 
@@ -19196,14 +19334,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_17.name,
     		type: "slot",
-    		source: "(78:4) <Button       size=\\\"big\\\"       initial={true}       on:click={() => {         console.log('Click 1');       }}>",
+    		source: "(90:4) <Button       size=\\\"big\\\"       initial={true}       on:click={() => {         console.log('Click 1');       }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (85:4) <Button       size="big"       extension="solid"       on:click={() => {         console.log('Click 2');       }}>
+    // (97:4) <Button       size="big"       extension="solid"       on:click={() => {         console.log('Click 2');       }}>
     function create_default_slot_16(ctx) {
     	let t;
 
@@ -19223,14 +19361,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_16.name,
     		type: "slot",
-    		source: "(85:4) <Button       size=\\\"big\\\"       extension=\\\"solid\\\"       on:click={() => {         console.log('Click 2');       }}>",
+    		source: "(97:4) <Button       size=\\\"big\\\"       extension=\\\"solid\\\"       on:click={() => {         console.log('Click 2');       }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (77:2) <ButtonGroup>
+    // (89:2) <ButtonGroup>
     function create_default_slot_15(ctx) {
     	let button0;
     	let t;
@@ -19247,7 +19385,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button0.$on("click", /*click_handler_5*/ ctx[5]);
+    	button0.$on("click", /*click_handler_7*/ ctx[7]);
 
     	button1 = new Button({
     			props: {
@@ -19259,7 +19397,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button1.$on("click", /*click_handler_6*/ ctx[6]);
+    	button1.$on("click", /*click_handler_8*/ ctx[8]);
 
     	const block = {
     		c: function create() {
@@ -19276,14 +19414,14 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const button0_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
     			button0.$set(button0_changes);
     			const button1_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19311,14 +19449,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_15.name,
     		type: "slot",
-    		source: "(77:2) <ButtonGroup>",
+    		source: "(89:2) <ButtonGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (127:4) <Button       size="big"       on:click={() => {         console.log('Click 1');       }}>
+    // (139:4) <Button       size="big"       on:click={() => {         console.log('Click 1');       }}>
     function create_default_slot_14(ctx) {
     	let t;
 
@@ -19338,14 +19476,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_14.name,
     		type: "slot",
-    		source: "(127:4) <Button       size=\\\"big\\\"       on:click={() => {         console.log('Click 1');       }}>",
+    		source: "(139:4) <Button       size=\\\"big\\\"       on:click={() => {         console.log('Click 1');       }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (133:4) <Button       size="big"       extension="solid"       on:click={() => {         console.log('Click 2');       }}>
+    // (145:4) <Button       size="big"       extension="solid"       on:click={() => {         console.log('Click 2');       }}>
     function create_default_slot_13$1(ctx) {
     	let t;
 
@@ -19365,14 +19503,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_13$1.name,
     		type: "slot",
-    		source: "(133:4) <Button       size=\\\"big\\\"       extension=\\\"solid\\\"       on:click={() => {         console.log('Click 2');       }}>",
+    		source: "(145:4) <Button       size=\\\"big\\\"       extension=\\\"solid\\\"       on:click={() => {         console.log('Click 2');       }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (126:2) <ButtonGroup type="accept">
+    // (138:2) <ButtonGroup type="accept">
     function create_default_slot_12$1(ctx) {
     	let button0;
     	let t;
@@ -19388,7 +19526,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button0.$on("click", /*click_handler_7*/ ctx[7]);
+    	button0.$on("click", /*click_handler_9*/ ctx[9]);
 
     	button1 = new Button({
     			props: {
@@ -19400,7 +19538,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button1.$on("click", /*click_handler_8*/ ctx[8]);
+    	button1.$on("click", /*click_handler_10*/ ctx[10]);
 
     	const block = {
     		c: function create() {
@@ -19417,14 +19555,14 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const button0_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
     			button0.$set(button0_changes);
     			const button1_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19452,14 +19590,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_12$1.name,
     		type: "slot",
-    		source: "(126:2) <ButtonGroup type=\\\"accept\\\">",
+    		source: "(138:2) <ButtonGroup type=\\\"accept\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (145:4) <Button       size="big"       on:click={() => {         console.log('Click 1');       }}>
+    // (157:4) <Button       size="big"       on:click={() => {         console.log('Click 1');       }}>
     function create_default_slot_11$1(ctx) {
     	let t;
 
@@ -19479,14 +19617,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_11$1.name,
     		type: "slot",
-    		source: "(145:4) <Button       size=\\\"big\\\"       on:click={() => {         console.log('Click 1');       }}>",
+    		source: "(157:4) <Button       size=\\\"big\\\"       on:click={() => {         console.log('Click 1');       }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (151:4) <Button       size="big"       extension="solid"       type="accept"       on:click={() => {         console.log('Click 2');       }}>
+    // (163:4) <Button       size="big"       extension="solid"       type="accept"       on:click={() => {         console.log('Click 2');       }}>
     function create_default_slot_10$1(ctx) {
     	let t;
 
@@ -19506,14 +19644,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_10$1.name,
     		type: "slot",
-    		source: "(151:4) <Button       size=\\\"big\\\"       extension=\\\"solid\\\"       type=\\\"accept\\\"       on:click={() => {         console.log('Click 2');       }}>",
+    		source: "(163:4) <Button       size=\\\"big\\\"       extension=\\\"solid\\\"       type=\\\"accept\\\"       on:click={() => {         console.log('Click 2');       }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (144:2) <ButtonGroup type="cancel">
+    // (156:2) <ButtonGroup type="cancel">
     function create_default_slot_9$1(ctx) {
     	let button0;
     	let t;
@@ -19529,7 +19667,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button0.$on("click", /*click_handler_9*/ ctx[9]);
+    	button0.$on("click", /*click_handler_11*/ ctx[11]);
 
     	button1 = new Button({
     			props: {
@@ -19542,7 +19680,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button1.$on("click", /*click_handler_10*/ ctx[10]);
+    	button1.$on("click", /*click_handler_12*/ ctx[12]);
 
     	const block = {
     		c: function create() {
@@ -19559,14 +19697,14 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const button0_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
     			button0.$set(button0_changes);
     			const button1_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19594,14 +19732,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_9$1.name,
     		type: "slot",
-    		source: "(144:2) <ButtonGroup type=\\\"cancel\\\">",
+    		source: "(156:2) <ButtonGroup type=\\\"cancel\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (164:4) <Button       size="big"       on:click={() => {         console.log('Click 1');       }}>
+    // (176:4) <Button       size="big"       on:click={() => {         console.log('Click 1');       }}>
     function create_default_slot_8$2(ctx) {
     	let t;
 
@@ -19621,14 +19759,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8$2.name,
     		type: "slot",
-    		source: "(164:4) <Button       size=\\\"big\\\"       on:click={() => {         console.log('Click 1');       }}>",
+    		source: "(176:4) <Button       size=\\\"big\\\"       on:click={() => {         console.log('Click 1');       }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (170:4) <Button       size="big"       extension="solid"       on:click={() => {         console.log('Click 2');       }}>
+    // (182:4) <Button       size="big"       extension="solid"       on:click={() => {         console.log('Click 2');       }}>
     function create_default_slot_7$2(ctx) {
     	let t;
 
@@ -19648,14 +19786,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$2.name,
     		type: "slot",
-    		source: "(170:4) <Button       size=\\\"big\\\"       extension=\\\"solid\\\"       on:click={() => {         console.log('Click 2');       }}>",
+    		source: "(182:4) <Button       size=\\\"big\\\"       extension=\\\"solid\\\"       on:click={() => {         console.log('Click 2');       }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (163:2) <ButtonGroup type="primary">
+    // (175:2) <ButtonGroup type="primary">
     function create_default_slot_6$2(ctx) {
     	let button0;
     	let t;
@@ -19671,7 +19809,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button0.$on("click", /*click_handler_11*/ ctx[11]);
+    	button0.$on("click", /*click_handler_13*/ ctx[13]);
 
     	button1 = new Button({
     			props: {
@@ -19683,7 +19821,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button1.$on("click", /*click_handler_12*/ ctx[12]);
+    	button1.$on("click", /*click_handler_14*/ ctx[14]);
 
     	const block = {
     		c: function create() {
@@ -19700,14 +19838,14 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const button0_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
     			button0.$set(button0_changes);
     			const button1_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19735,14 +19873,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6$2.name,
     		type: "slot",
-    		source: "(163:2) <ButtonGroup type=\\\"primary\\\">",
+    		source: "(175:2) <ButtonGroup type=\\\"primary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (182:4) <Button       size="big"       on:click={() => {         console.log('Click 1');       }}>
+    // (194:4) <Button       size="big"       on:click={() => {         console.log('Click 1');       }}>
     function create_default_slot_5$3(ctx) {
     	let t;
 
@@ -19762,14 +19900,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$3.name,
     		type: "slot",
-    		source: "(182:4) <Button       size=\\\"big\\\"       on:click={() => {         console.log('Click 1');       }}>",
+    		source: "(194:4) <Button       size=\\\"big\\\"       on:click={() => {         console.log('Click 1');       }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (188:4) <Button       size="big"       extension="solid"       on:click={() => {         console.log('Click 2');       }}>
+    // (200:4) <Button       size="big"       extension="solid"       on:click={() => {         console.log('Click 2');       }}>
     function create_default_slot_4$3(ctx) {
     	let t;
 
@@ -19789,14 +19927,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$3.name,
     		type: "slot",
-    		source: "(188:4) <Button       size=\\\"big\\\"       extension=\\\"solid\\\"       on:click={() => {         console.log('Click 2');       }}>",
+    		source: "(200:4) <Button       size=\\\"big\\\"       extension=\\\"solid\\\"       on:click={() => {         console.log('Click 2');       }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (181:2) <ButtonGroup type="secondary">
+    // (193:2) <ButtonGroup type="secondary">
     function create_default_slot_3$3(ctx) {
     	let button0;
     	let t;
@@ -19812,7 +19950,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button0.$on("click", /*click_handler_13*/ ctx[13]);
+    	button0.$on("click", /*click_handler_15*/ ctx[15]);
 
     	button1 = new Button({
     			props: {
@@ -19824,7 +19962,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button1.$on("click", /*click_handler_14*/ ctx[14]);
+    	button1.$on("click", /*click_handler_16*/ ctx[16]);
 
     	const block = {
     		c: function create() {
@@ -19841,14 +19979,14 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const button0_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
     			button0.$set(button0_changes);
     			const button1_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19876,14 +20014,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$3.name,
     		type: "slot",
-    		source: "(181:2) <ButtonGroup type=\\\"secondary\\\">",
+    		source: "(193:2) <ButtonGroup type=\\\"secondary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (201:4) <Button       size="big"       on:click={() => {         console.log('Click 1');       }}>
+    // (213:4) <Button       size="big"       on:click={() => {         console.log('Click 1');       }}>
     function create_default_slot_2$3(ctx) {
     	let t;
 
@@ -19903,14 +20041,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$3.name,
     		type: "slot",
-    		source: "(201:4) <Button       size=\\\"big\\\"       on:click={() => {         console.log('Click 1');       }}>",
+    		source: "(213:4) <Button       size=\\\"big\\\"       on:click={() => {         console.log('Click 1');       }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (207:4) <Button       size="big"       extension="solid"       initial={true}       on:click={() => {         console.log('Click 2');       }}>
+    // (219:4) <Button       size="big"       extension="solid"       initial={true}       on:click={() => {         console.log('Click 2');       }}>
     function create_default_slot_1$5(ctx) {
     	let t;
 
@@ -19930,14 +20068,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$5.name,
     		type: "slot",
-    		source: "(207:4) <Button       size=\\\"big\\\"       extension=\\\"solid\\\"       initial={true}       on:click={() => {         console.log('Click 2');       }}>",
+    		source: "(219:4) <Button       size=\\\"big\\\"       extension=\\\"solid\\\"       initial={true}       on:click={() => {         console.log('Click 2');       }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (200:2) <ButtonGroup color="Bordeaux">
+    // (212:2) <ButtonGroup color="Bordeaux">
     function create_default_slot$7(ctx) {
     	let button0;
     	let t;
@@ -19953,7 +20091,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button0.$on("click", /*click_handler_15*/ ctx[15]);
+    	button0.$on("click", /*click_handler_17*/ ctx[17]);
 
     	button1 = new Button({
     			props: {
@@ -19966,7 +20104,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button1.$on("click", /*click_handler_16*/ ctx[16]);
+    	button1.$on("click", /*click_handler_18*/ ctx[18]);
 
     	const block = {
     		c: function create() {
@@ -19983,14 +20121,14 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const button0_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
     			button0.$set(button0_changes);
     			const button1_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -20018,7 +20156,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$7.name,
     		type: "slot",
-    		source: "(200:2) <ButtonGroup color=\\\"Bordeaux\\\">",
+    		source: "(212:2) <ButtonGroup color=\\\"Bordeaux\\\">",
     		ctx
     	});
 
@@ -20030,53 +20168,55 @@ var app = (function () {
     	let t1;
     	let prism0;
     	let t2;
+    	let buttongroup0;
+    	let t3;
     	let p0;
-    	let t4;
+    	let t5;
     	let div2;
     	let div0;
-    	let buttongroup0;
-    	let t5;
-    	let div1;
     	let buttongroup1;
     	let t6;
+    	let div1;
+    	let buttongroup2;
+    	let t7;
     	let div3;
     	let prism1;
-    	let t7;
+    	let t8;
     	let div4;
     	let p1;
-    	let t9;
-    	let buttongroup2;
     	let t10;
-    	let prism2;
+    	let buttongroup3;
     	let t11;
+    	let prism2;
+    	let t12;
     	let p2;
-    	let t13;
+    	let t14;
     	let ul;
     	let li0;
-    	let t15;
+    	let t16;
     	let li1;
-    	let t17;
+    	let t18;
     	let li2;
-    	let t19;
+    	let t20;
     	let li3;
-    	let t21;
-    	let div5;
-    	let buttongroup3;
     	let t22;
-    	let div6;
+    	let div5;
     	let buttongroup4;
     	let t23;
-    	let div7;
+    	let div6;
     	let buttongroup5;
     	let t24;
-    	let div8;
+    	let div7;
     	let buttongroup6;
     	let t25;
-    	let p3;
-    	let t27;
-    	let div9;
+    	let div8;
     	let buttongroup7;
+    	let t26;
+    	let p3;
     	let t28;
+    	let div9;
+    	let buttongroup8;
+    	let t29;
     	let prism3;
     	let current;
 
@@ -20091,13 +20231,22 @@ var app = (function () {
 
     	buttongroup0 = new ButtonGroup({
     			props: {
-    				$$slots: { default: [create_default_slot_22] },
+    				className: "buttongroup--solid",
+    				$$slots: { default: [create_default_slot_25] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
     	buttongroup1 = new ButtonGroup({
+    			props: {
+    				$$slots: { default: [create_default_slot_22] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	buttongroup2 = new ButtonGroup({
     			props: {
     				$$slots: { default: [create_default_slot_18] },
     				$$scope: { ctx }
@@ -20131,7 +20280,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	buttongroup2 = new ButtonGroup({
+    	buttongroup3 = new ButtonGroup({
     			props: {
     				$$slots: { default: [create_default_slot_15] },
     				$$scope: { ctx }
@@ -20164,7 +20313,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	buttongroup3 = new ButtonGroup({
+    	buttongroup4 = new ButtonGroup({
     			props: {
     				type: "accept",
     				$$slots: { default: [create_default_slot_12$1] },
@@ -20173,7 +20322,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	buttongroup4 = new ButtonGroup({
+    	buttongroup5 = new ButtonGroup({
     			props: {
     				type: "cancel",
     				$$slots: { default: [create_default_slot_9$1] },
@@ -20182,7 +20331,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	buttongroup5 = new ButtonGroup({
+    	buttongroup6 = new ButtonGroup({
     			props: {
     				type: "primary",
     				$$slots: { default: [create_default_slot_6$2] },
@@ -20191,7 +20340,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	buttongroup6 = new ButtonGroup({
+    	buttongroup7 = new ButtonGroup({
     			props: {
     				type: "secondary",
     				$$slots: { default: [create_default_slot_3$3] },
@@ -20200,7 +20349,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	buttongroup7 = new ButtonGroup({
+    	buttongroup8 = new ButtonGroup({
     			props: {
     				color: "Bordeaux",
     				$$slots: { default: [create_default_slot$7] },
@@ -20241,93 +20390,95 @@ var app = (function () {
     			t1 = space();
     			create_component(prism0.$$.fragment);
     			t2 = space();
+    			create_component(buttongroup0.$$.fragment);
+    			t3 = space();
     			p0 = element("p");
     			p0.textContent = "Default";
-    			t4 = space();
+    			t5 = space();
     			div2 = element("div");
     			div0 = element("div");
-    			create_component(buttongroup0.$$.fragment);
-    			t5 = space();
-    			div1 = element("div");
     			create_component(buttongroup1.$$.fragment);
     			t6 = space();
+    			div1 = element("div");
+    			create_component(buttongroup2.$$.fragment);
+    			t7 = space();
     			div3 = element("div");
     			create_component(prism1.$$.fragment);
-    			t7 = space();
+    			t8 = space();
     			div4 = element("div");
     			p1 = element("p");
     			p1.textContent = "Default Big";
-    			t9 = space();
-    			create_component(buttongroup2.$$.fragment);
     			t10 = space();
-    			create_component(prism2.$$.fragment);
+    			create_component(buttongroup3.$$.fragment);
     			t11 = space();
+    			create_component(prism2.$$.fragment);
+    			t12 = space();
     			p2 = element("p");
     			p2.textContent = "type muligheder";
-    			t13 = space();
+    			t14 = space();
     			ul = element("ul");
     			li0 = element("li");
     			li0.textContent = "accept";
-    			t15 = space();
+    			t16 = space();
     			li1 = element("li");
     			li1.textContent = "cancel";
-    			t17 = space();
+    			t18 = space();
     			li2 = element("li");
     			li2.textContent = "primary";
-    			t19 = space();
+    			t20 = space();
     			li3 = element("li");
     			li3.textContent = "secondary";
-    			t21 = space();
-    			div5 = element("div");
-    			create_component(buttongroup3.$$.fragment);
     			t22 = space();
-    			div6 = element("div");
+    			div5 = element("div");
     			create_component(buttongroup4.$$.fragment);
     			t23 = space();
-    			div7 = element("div");
+    			div6 = element("div");
     			create_component(buttongroup5.$$.fragment);
     			t24 = space();
-    			div8 = element("div");
+    			div7 = element("div");
     			create_component(buttongroup6.$$.fragment);
     			t25 = space();
+    			div8 = element("div");
+    			create_component(buttongroup7.$$.fragment);
+    			t26 = space();
     			p3 = element("p");
     			p3.textContent = "Farve muligheder fra eb-colors";
-    			t27 = space();
-    			div9 = element("div");
-    			create_component(buttongroup7.$$.fragment);
     			t28 = space();
+    			div9 = element("div");
+    			create_component(buttongroup8.$$.fragment);
+    			t29 = space();
     			create_component(prism3.$$.fragment);
     			attr_dev(h1, "class", "color--eb");
     			add_location(h1, file$j, 4, 0, 112);
-    			add_location(p0, file$j, 12, 0, 262);
+    			add_location(p0, file$j, 24, 0, 502);
     			attr_dev(div0, "class", "flex-item margin-l--r");
-    			add_location(div0, file$j, 14, 2, 307);
+    			add_location(div0, file$j, 26, 2, 547);
     			attr_dev(div1, "class", "flex-item margin-l--l");
-    			add_location(div1, file$j, 28, 2, 611);
+    			add_location(div1, file$j, 40, 2, 851);
     			attr_dev(div2, "class", "margin-l flex");
-    			add_location(div2, file$j, 13, 0, 277);
+    			add_location(div2, file$j, 25, 0, 517);
     			attr_dev(div3, "class", "margin-l");
-    			add_location(div3, file$j, 49, 0, 1034);
-    			add_location(p1, file$j, 75, 2, 1451);
+    			add_location(div3, file$j, 61, 0, 1274);
+    			add_location(p1, file$j, 87, 2, 1691);
     			attr_dev(div4, "class", "margin-l");
-    			add_location(div4, file$j, 74, 0, 1426);
-    			add_location(p2, file$j, 116, 0, 2150);
-    			add_location(li0, file$j, 119, 2, 2181);
-    			add_location(li1, file$j, 120, 2, 2199);
-    			add_location(li2, file$j, 121, 2, 2217);
-    			add_location(li3, file$j, 122, 2, 2236);
-    			add_location(ul, file$j, 118, 0, 2174);
+    			add_location(div4, file$j, 86, 0, 1666);
+    			add_location(p2, file$j, 128, 0, 2390);
+    			add_location(li0, file$j, 131, 2, 2421);
+    			add_location(li1, file$j, 132, 2, 2439);
+    			add_location(li2, file$j, 133, 2, 2457);
+    			add_location(li3, file$j, 134, 2, 2476);
+    			add_location(ul, file$j, 130, 0, 2414);
     			attr_dev(div5, "class", "margin-l");
-    			add_location(div5, file$j, 124, 0, 2261);
+    			add_location(div5, file$j, 136, 0, 2501);
     			attr_dev(div6, "class", "margin-l");
-    			add_location(div6, file$j, 142, 0, 2597);
+    			add_location(div6, file$j, 154, 0, 2837);
     			attr_dev(div7, "class", "margin-l");
-    			add_location(div7, file$j, 161, 0, 2953);
+    			add_location(div7, file$j, 173, 0, 3193);
     			attr_dev(div8, "class", "margin-l");
-    			add_location(div8, file$j, 179, 0, 3290);
-    			add_location(p3, file$j, 197, 0, 3629);
+    			add_location(div8, file$j, 191, 0, 3530);
+    			add_location(p3, file$j, 209, 0, 3869);
     			attr_dev(div9, "class", "margin-l");
-    			add_location(div9, file$j, 198, 0, 3667);
+    			add_location(div9, file$j, 210, 0, 3907);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -20337,127 +20488,137 @@ var app = (function () {
     			insert_dev(target, t1, anchor);
     			mount_component(prism0, target, anchor);
     			insert_dev(target, t2, anchor);
+    			mount_component(buttongroup0, target, anchor);
+    			insert_dev(target, t3, anchor);
     			insert_dev(target, p0, anchor);
-    			insert_dev(target, t4, anchor);
+    			insert_dev(target, t5, anchor);
     			insert_dev(target, div2, anchor);
     			append_dev(div2, div0);
-    			mount_component(buttongroup0, div0, null);
-    			append_dev(div2, t5);
+    			mount_component(buttongroup1, div0, null);
+    			append_dev(div2, t6);
     			append_dev(div2, div1);
-    			mount_component(buttongroup1, div1, null);
-    			insert_dev(target, t6, anchor);
+    			mount_component(buttongroup2, div1, null);
+    			insert_dev(target, t7, anchor);
     			insert_dev(target, div3, anchor);
     			mount_component(prism1, div3, null);
-    			insert_dev(target, t7, anchor);
+    			insert_dev(target, t8, anchor);
     			insert_dev(target, div4, anchor);
     			append_dev(div4, p1);
-    			append_dev(div4, t9);
-    			mount_component(buttongroup2, div4, null);
-    			insert_dev(target, t10, anchor);
-    			mount_component(prism2, target, anchor);
+    			append_dev(div4, t10);
+    			mount_component(buttongroup3, div4, null);
     			insert_dev(target, t11, anchor);
+    			mount_component(prism2, target, anchor);
+    			insert_dev(target, t12, anchor);
     			insert_dev(target, p2, anchor);
-    			insert_dev(target, t13, anchor);
+    			insert_dev(target, t14, anchor);
     			insert_dev(target, ul, anchor);
     			append_dev(ul, li0);
-    			append_dev(ul, t15);
+    			append_dev(ul, t16);
     			append_dev(ul, li1);
-    			append_dev(ul, t17);
+    			append_dev(ul, t18);
     			append_dev(ul, li2);
-    			append_dev(ul, t19);
+    			append_dev(ul, t20);
     			append_dev(ul, li3);
-    			insert_dev(target, t21, anchor);
-    			insert_dev(target, div5, anchor);
-    			mount_component(buttongroup3, div5, null);
     			insert_dev(target, t22, anchor);
-    			insert_dev(target, div6, anchor);
-    			mount_component(buttongroup4, div6, null);
+    			insert_dev(target, div5, anchor);
+    			mount_component(buttongroup4, div5, null);
     			insert_dev(target, t23, anchor);
-    			insert_dev(target, div7, anchor);
-    			mount_component(buttongroup5, div7, null);
+    			insert_dev(target, div6, anchor);
+    			mount_component(buttongroup5, div6, null);
     			insert_dev(target, t24, anchor);
-    			insert_dev(target, div8, anchor);
-    			mount_component(buttongroup6, div8, null);
+    			insert_dev(target, div7, anchor);
+    			mount_component(buttongroup6, div7, null);
     			insert_dev(target, t25, anchor);
+    			insert_dev(target, div8, anchor);
+    			mount_component(buttongroup7, div8, null);
+    			insert_dev(target, t26, anchor);
     			insert_dev(target, p3, anchor);
-    			insert_dev(target, t27, anchor);
-    			insert_dev(target, div9, anchor);
-    			mount_component(buttongroup7, div9, null);
     			insert_dev(target, t28, anchor);
+    			insert_dev(target, div9, anchor);
+    			mount_component(buttongroup8, div9, null);
+    			insert_dev(target, t29, anchor);
     			mount_component(prism3, target, anchor);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
     			const buttongroup0_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				buttongroup0_changes.$$scope = { dirty, ctx };
     			}
 
     			buttongroup0.$set(buttongroup0_changes);
     			const buttongroup1_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				buttongroup1_changes.$$scope = { dirty, ctx };
     			}
 
     			buttongroup1.$set(buttongroup1_changes);
     			const buttongroup2_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				buttongroup2_changes.$$scope = { dirty, ctx };
     			}
 
     			buttongroup2.$set(buttongroup2_changes);
     			const buttongroup3_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				buttongroup3_changes.$$scope = { dirty, ctx };
     			}
 
     			buttongroup3.$set(buttongroup3_changes);
     			const buttongroup4_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				buttongroup4_changes.$$scope = { dirty, ctx };
     			}
 
     			buttongroup4.$set(buttongroup4_changes);
     			const buttongroup5_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				buttongroup5_changes.$$scope = { dirty, ctx };
     			}
 
     			buttongroup5.$set(buttongroup5_changes);
     			const buttongroup6_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				buttongroup6_changes.$$scope = { dirty, ctx };
     			}
 
     			buttongroup6.$set(buttongroup6_changes);
     			const buttongroup7_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 524288) {
     				buttongroup7_changes.$$scope = { dirty, ctx };
     			}
 
     			buttongroup7.$set(buttongroup7_changes);
+    			const buttongroup8_changes = {};
+
+    			if (dirty & /*$$scope*/ 524288) {
+    				buttongroup8_changes.$$scope = { dirty, ctx };
+    			}
+
+    			buttongroup8.$set(buttongroup8_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(prism0.$$.fragment, local);
     			transition_in(buttongroup0.$$.fragment, local);
     			transition_in(buttongroup1.$$.fragment, local);
-    			transition_in(prism1.$$.fragment, local);
     			transition_in(buttongroup2.$$.fragment, local);
-    			transition_in(prism2.$$.fragment, local);
+    			transition_in(prism1.$$.fragment, local);
     			transition_in(buttongroup3.$$.fragment, local);
+    			transition_in(prism2.$$.fragment, local);
     			transition_in(buttongroup4.$$.fragment, local);
     			transition_in(buttongroup5.$$.fragment, local);
     			transition_in(buttongroup6.$$.fragment, local);
     			transition_in(buttongroup7.$$.fragment, local);
+    			transition_in(buttongroup8.$$.fragment, local);
     			transition_in(prism3.$$.fragment, local);
     			current = true;
     		},
@@ -20465,14 +20626,15 @@ var app = (function () {
     			transition_out(prism0.$$.fragment, local);
     			transition_out(buttongroup0.$$.fragment, local);
     			transition_out(buttongroup1.$$.fragment, local);
-    			transition_out(prism1.$$.fragment, local);
     			transition_out(buttongroup2.$$.fragment, local);
-    			transition_out(prism2.$$.fragment, local);
+    			transition_out(prism1.$$.fragment, local);
     			transition_out(buttongroup3.$$.fragment, local);
+    			transition_out(prism2.$$.fragment, local);
     			transition_out(buttongroup4.$$.fragment, local);
     			transition_out(buttongroup5.$$.fragment, local);
     			transition_out(buttongroup6.$$.fragment, local);
     			transition_out(buttongroup7.$$.fragment, local);
+    			transition_out(buttongroup8.$$.fragment, local);
     			transition_out(prism3.$$.fragment, local);
     			current = false;
     		},
@@ -20481,41 +20643,43 @@ var app = (function () {
     			if (detaching) detach_dev(t1);
     			destroy_component(prism0, detaching);
     			if (detaching) detach_dev(t2);
+    			destroy_component(buttongroup0, detaching);
+    			if (detaching) detach_dev(t3);
     			if (detaching) detach_dev(p0);
-    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(t5);
     			if (detaching) detach_dev(div2);
-    			destroy_component(buttongroup0);
     			destroy_component(buttongroup1);
-    			if (detaching) detach_dev(t6);
+    			destroy_component(buttongroup2);
+    			if (detaching) detach_dev(t7);
     			if (detaching) detach_dev(div3);
     			destroy_component(prism1);
-    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(t8);
     			if (detaching) detach_dev(div4);
-    			destroy_component(buttongroup2);
-    			if (detaching) detach_dev(t10);
-    			destroy_component(prism2, detaching);
-    			if (detaching) detach_dev(t11);
-    			if (detaching) detach_dev(p2);
-    			if (detaching) detach_dev(t13);
-    			if (detaching) detach_dev(ul);
-    			if (detaching) detach_dev(t21);
-    			if (detaching) detach_dev(div5);
     			destroy_component(buttongroup3);
+    			if (detaching) detach_dev(t11);
+    			destroy_component(prism2, detaching);
+    			if (detaching) detach_dev(t12);
+    			if (detaching) detach_dev(p2);
+    			if (detaching) detach_dev(t14);
+    			if (detaching) detach_dev(ul);
     			if (detaching) detach_dev(t22);
-    			if (detaching) detach_dev(div6);
+    			if (detaching) detach_dev(div5);
     			destroy_component(buttongroup4);
     			if (detaching) detach_dev(t23);
-    			if (detaching) detach_dev(div7);
+    			if (detaching) detach_dev(div6);
     			destroy_component(buttongroup5);
     			if (detaching) detach_dev(t24);
-    			if (detaching) detach_dev(div8);
+    			if (detaching) detach_dev(div7);
     			destroy_component(buttongroup6);
     			if (detaching) detach_dev(t25);
-    			if (detaching) detach_dev(p3);
-    			if (detaching) detach_dev(t27);
-    			if (detaching) detach_dev(div9);
+    			if (detaching) detach_dev(div8);
     			destroy_component(buttongroup7);
+    			if (detaching) detach_dev(t26);
+    			if (detaching) detach_dev(p3);
     			if (detaching) detach_dev(t28);
+    			if (detaching) detach_dev(div9);
+    			destroy_component(buttongroup8);
+    			if (detaching) detach_dev(t29);
     			destroy_component(prism3, detaching);
     		}
     	};
@@ -20549,23 +20713,23 @@ var app = (function () {
     	};
 
     	const click_handler_2 = () => {
-    		console.log("Button 1");
-    	};
-
-    	const click_handler_3 = () => {
-    		console.log("Button 2");
-    	};
-
-    	const click_handler_4 = () => {
-    		console.log("Button 3");
-    	};
-
-    	const click_handler_5 = () => {
     		console.log("Click 1");
     	};
 
-    	const click_handler_6 = () => {
+    	const click_handler_3 = () => {
     		console.log("Click 2");
+    	};
+
+    	const click_handler_4 = () => {
+    		console.log("Button 1");
+    	};
+
+    	const click_handler_5 = () => {
+    		console.log("Button 2");
+    	};
+
+    	const click_handler_6 = () => {
+    		console.log("Button 3");
     	};
 
     	const click_handler_7 = () => {
@@ -20608,6 +20772,14 @@ var app = (function () {
     		console.log("Click 2");
     	};
 
+    	const click_handler_17 = () => {
+    		console.log("Click 1");
+    	};
+
+    	const click_handler_18 = () => {
+    		console.log("Click 2");
+    	};
+
     	$$self.$capture_state = () => ({ Prism: Prism$1, Button, ButtonGroup });
 
     	return [
@@ -20627,7 +20799,9 @@ var app = (function () {
     		click_handler_13,
     		click_handler_14,
     		click_handler_15,
-    		click_handler_16
+    		click_handler_16,
+    		click_handler_17,
+    		click_handler_18
     	];
     }
 

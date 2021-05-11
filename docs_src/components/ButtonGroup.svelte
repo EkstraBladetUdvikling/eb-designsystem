@@ -12,6 +12,18 @@
   source={`import { Button, ButtonGroup } from '@ekstra-bladet/designsystem';
 `}
 />
+<ButtonGroup className="buttongroup--solid">
+  <Button
+    on:click={() => {
+      console.log('Click 1');
+    }}>Toggle 1</Button
+  >
+  <Button
+    on:click={() => {
+      console.log('Click 2');
+    }}>Toggle 2</Button
+  >
+</ButtonGroup>
 
 <p>Default</p>
 <div class="margin-l flex">

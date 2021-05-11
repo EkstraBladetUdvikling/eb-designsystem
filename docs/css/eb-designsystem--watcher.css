@@ -513,7 +513,9 @@ a.badge:hover {
 }
 
 :root {
-  --button-border-radius: var(--button-height);
+  --button-border-radius: 18px;
+  --button-border-radius--big: 25px;
+  --button-border-radius--small: 15px;
   --button-height: 36px;
   --button-height--big: 50px;
   --button-height--small: 30px;
@@ -692,12 +694,14 @@ a.badge:hover {
 }
 
 .button.button--small {
+  border-radius: var(--button-border-radius--small);
   font-size: 12px;
   padding: 0 15px;
   height: var(--button-height--small);
 }
 
 .button.button--big {
+  border-radius: var(--button-border-radius--big);
   font-size: 20px;
   font-weight: bold;
   padding: 0 40px;
@@ -828,6 +832,22 @@ a.badge:hover {
   background: var(--color--accept);
   border-color: var(--color--accept);
   color: var(--fgcolor--accept);
+}
+
+.buttongroup--solid .button,
+.buttongroup--solid .button[data-selected="true"] {
+  background: var(--groupcolor-main);
+  border: 0;
+  border-radius: 3px;
+  color: var(--groupcolor-main-foreground);
+  margin: 1px;
+}
+
+.buttongroup--solid .button:active,
+.buttongroup--solid .button:hover,
+.buttongroup--solid .button:focus {
+  background: var(--color--white);
+  color: var(--groupcolor-main);
 }
 
 :root {

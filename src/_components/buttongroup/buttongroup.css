@@ -105,3 +105,19 @@
   border-color: var(--color--accept);
   color: var(--fgcolor--accept);
 }
+
+.buttongroup--solid .button,
+.buttongroup--solid .button[data-selected="true"] {
+  background: var(--groupcolor-main);
+  border: 0;
+  border-radius: 3px;
+  color: var(--groupcolor-main-foreground);
+  margin: 1px;
+}
+
+.buttongroup--solid .button:active,
+.buttongroup--solid .button:hover,
+.buttongroup--solid .button:focus {
+  background: var(--color--white);
+  color: var(--groupcolor-main);
+}
