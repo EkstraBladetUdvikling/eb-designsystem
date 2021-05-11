@@ -47,28 +47,39 @@
 
   export let className = undefined;
 
-  let baseClass = `buttongroup`;
-
   type TType = 'accept' | 'cancel' | 'primary' | 'secondary';
   export let type: TType = undefined;
+  export let color = undefined;
+  export let colorHover = undefined;
+  export let solid: boolean = false;
+
+  let baseClass = `buttongroup`;
+
+  if (solid) {
+    baseClass = `${baseClass} buttongroup--solid`;
+  }
 
   if (type) {
     baseClass = `${baseClass} buttongroup--${type}`;
-  }
-
-  export let color = undefined;
-
-  if (color) {
-    baseClass = `${baseClass} buttongroup--special`;
   }
 
   const { backgroundColor: colorBackground, color: colorForeground } = Background[color]
     ? Background[color]
     : Background['Bruger'];
 
+  /**
+   * If hovercolor is not specified, use color and utimately fall back to "Bruger"
+   */
+  colorHover = color && !colorHover ? color : colorHover;
+
+  const { backgroundColor: hoverColor, color: hoverColorForeground } = Background[colorHover]
+    ? Background[colorHover]
+    : Background['Bruger'];
+
   $: cssClass = className ? `${className} ${baseClass}` : baseClass;
+  $: style = `--buttongroup-color: ${colorBackground}; --buttongroup-fgcolor: ${colorForeground}; --buttongroup-color--hover: ${hoverColor}; --buttongroup-fgcolor--hover: ${hoverColorForeground};`;
 </script>
 
-<div class={cssClass} style="--groupcolor-main:{colorBackground};--groupcolor-foreground:{colorForeground};">
+<div class={cssClass} {style}>
   <slot />
 </div>

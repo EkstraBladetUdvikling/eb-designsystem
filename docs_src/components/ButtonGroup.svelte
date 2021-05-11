@@ -12,18 +12,6 @@
   source={`import { Button, ButtonGroup } from '@ekstra-bladet/designsystem';
 `}
 />
-<ButtonGroup className="buttongroup--solid">
-  <Button
-    on:click={() => {
-      console.log('Click 1');
-    }}>Toggle 1</Button
-  >
-  <Button
-    on:click={() => {
-      console.log('Click 2');
-    }}>Toggle 2</Button
-  >
-</ButtonGroup>
 
 <p>Default</p>
 <div class="margin-l flex">
@@ -256,12 +244,6 @@
         console.log('Click 1');
       }}>Toggle 1</Button
     >
-  </ButtonGroup>
-</div>
-
-<p>Farve muligheder fra eb-colors</p>
-<div class="margin-l">
-  <ButtonGroup color="Bordeaux">
     <Button
       size="big"
       extension="solid"
@@ -294,3 +276,66 @@
   </ButtonGroup>
   `}
 />
+
+<p>Solid button group</p>
+
+<ButtonGroup solid={true} color="Black" colorHover="Red">
+  <Button
+    on:click={() => {
+      console.log('Click 1');
+    }}>Toggle 1</Button
+  >
+  <Button
+    on:click={() => {
+      console.log('Click 2');
+    }}>Toggle 2</Button
+  >
+  <Button
+    on:click={() => {
+      console.log('Click 3');
+    }}>Toggle 3</Button
+  >
+</ButtonGroup>
+
+<Prism
+  language="svelte"
+  source={`
+    <ButtonGroup solid={true} color="Black" colorHover="Red">
+      <Button
+        on:click={() => {
+          console.log('Click 1');
+        }}>Toggle 1</Button
+      >
+      <Button
+        on:click={() => {
+          console.log('Click 2');
+        }}>Toggle 2</Button
+      >
+      <Button
+        on:click={() => {
+          console.log('Click 3');
+        }}>Toggle 3</Button
+      >
+    </ButtonGroup>
+  `}
+/>
+
+<div class="bg--yellowlight padding-l">
+  <ButtonGroup solid={true} color="Black" colorHover="Red">
+    <Button
+      on:click={() => {
+        console.log('Click 1');
+      }}>Toggle 1</Button
+    >
+    <Button
+      on:click={() => {
+        console.log('Click 2');
+      }}>Toggle 2</Button
+    >
+    <Button
+      on:click={() => {
+        console.log('Click 3');
+      }}>Toggle 3</Button
+    >
+  </ButtonGroup>
+</div>
