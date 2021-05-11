@@ -723,24 +723,8 @@ a.badge:hover {
 }
 
 /**
-* Pillnavigation
+* Buttongroup
 */
-
-/* .buttongroup--special .button {
-  background: var(--color--white);
-border-color: var(--groupcolor-main);
-border-right-width: 0;
-color: var(--groupcolor-main);
-}
-
-.buttongroup--special .button:active,
-.buttongroup--special .button:hover,
-.buttongroup--special .button:focus,
-.buttongroup--special .button[data-selected="true"] {
-  background: var(--groupcolor-main);
-border-color: var(--groupcolor-main);
-color: var(--groupcolor-main-foreground);
-} */
 
 :root {
   --groupcolor-main: var(--color--default);
@@ -753,18 +737,18 @@ color: var(--groupcolor-main-foreground);
 
 .buttongroup .button {
   background: var(--color--white);
-  border-color: var(--color--default);
+  border-color: var(--groupcolor-main);
   border-right-width: 0;
-  color: var(--color--default);
+  color: var(--groupcolor-main);
 }
 
 .buttongroup .button:active,
 .buttongroup .button:hover,
 .buttongroup .button:focus,
 .buttongroup .button[data-selected="true"] {
-  background: var(--color--default);
-  border-color: var(--color--default);
-  color: var(--fgcolor--default);
+  background: var(--groupcolor-main);
+  border-color: var(--groupcolor-main);
+  color: var(--groupcolor-main-foreground);
 }
 
 .buttongroup .button:first-of-type {
