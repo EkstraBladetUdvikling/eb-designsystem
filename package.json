@@ -16,10 +16,9 @@
     "build:css": "node node/build-css.js",
     "build:nonie": "node node/build-css.js --nonie",
     "build:ie": "node node/build-css.js --ie",
-    "build:preview": "postcss preview/css/_index.css -o docs/css/main.css --no-map -u postcss-import",
     "build:snippets": "node node/build-snippets",
-    "build:watch": "onchange 'src/**/*.css' -- yarn build:watcher & onchange 'preview/**/{_*.css,html}' -- yarn build:preview",
-    "build:watcher": "yarn build:css --watcher && yarn build:preview",
+    "build:watch": "onchange 'src/**/*.css' -- yarn build:watcher",
+    "build:watcher": "yarn build:css --watcher",
     "build:svelte": "yarn rollup -c --silent",
     "dev": "yarn rollup -c -w & yarn build:watcher & yarn build:watch",
     "start": "sirv docs",
@@ -33,7 +32,7 @@
     "installsnippets:eb": "node node/install-snippets ../ekstrabladet/ekstrabladet-publication/src/main/.vscode",
     "move_to_eb": "yarn installds:eb",
     "copy_svg": "cpx \"./docs/svg/symbol/icons.svg\" \"./dist\" --update",
-    "start:designsystem": "yarn build:watcher && yarn build:preview && yarn build:watch",
+    "start:designsystem": "yarn build:watcher && yarn build:watch",
     "svgs": "node node/svgs.js && yarn copy_svg"
   },
   "dependencies": {

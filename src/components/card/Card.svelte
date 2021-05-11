@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  import type { TThemes } from '../../_utilities/data-theme/DataTheme';
+  import type { TThemes } from '../../utilities/data-theme/DataTheme';
 
   export let className: string = undefined;
   export let href: string = undefined;

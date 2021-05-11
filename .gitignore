@@ -1,12 +1,4 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
 node_modules
 .DS_Store
 .vscode
-.tempversion
-.ruby-version
-_build-css*
 docs/build/bundle.js.map
