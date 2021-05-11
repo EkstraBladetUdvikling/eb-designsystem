@@ -62,6 +62,43 @@
   </div>
 </div>
 
+<p>Default</p>
+<div class="margin-l flex">
+  <div class="flex-item margin-l--r">
+    <ButtonGroup>
+      <Button
+        on:click={() => {
+          console.log('Click 1');
+        }}>Toggle 1</Button
+      >
+      <Button
+        on:click={() => {
+          console.log('Click 2');
+        }}>Toggle 2</Button
+      >
+    </ButtonGroup>
+  </div>
+  <div class="flex-item margin-l--l">
+    <ButtonGroup>
+      <Button
+        on:click={() => {
+          console.log('Button 1');
+        }}>Button 1</Button
+      >
+      <Button
+        on:click={() => {
+          console.log('Button 2');
+        }}>Button 2</Button
+      >
+      <Button
+        on:click={() => {
+          console.log('Button 3');
+        }}>Button 3</Button
+      >
+    </ButtonGroup>
+  </div>
+</div>
+
 <div class="margin-l">
   <Prism
     language="svelte"
@@ -219,6 +256,12 @@
         console.log('Click 1');
       }}>Toggle 1</Button
     >
+  </ButtonGroup>
+</div>
+
+<p>Farve muligheder fra eb-colors</p>
+<div class="margin-l">
+  <ButtonGroup color="Bordeaux">
     <Button
       size="big"
       extension="solid"
