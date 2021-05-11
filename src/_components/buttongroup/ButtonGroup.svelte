@@ -66,8 +66,6 @@
     ? Background[color]
     : Background['Bruger'];
 
-  console.log(color, colorBackground, colorForeground);
-
   $: cssClass = className ? `${className} ${baseClass}` : baseClass;
 </script>
 
