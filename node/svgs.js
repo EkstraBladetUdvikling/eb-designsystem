@@ -39,10 +39,20 @@ spriter.compile((error, result, _data) => {
 let iconTypes = `
   export type IconTypes =
 `;
+let iconComponents = [];
+let iconComponentNames = [];
 
 svgNames.forEach((svgname, idx) => {
+  // Handle Types
   const divider = idx < svgNames.length - 1 ? '|' : ';';
   iconTypes += `'${svgname}'${divider}`;
+
+  // Handle exporting
+  const exportName = svgname.replace('-', '');
+  iconComponents.push(`export { default as ${exportName} } from './${svgname}.svg'`);
+
+  // Handle name list
+  iconComponentNames.push(`'${exportName}'`);
 });
 
 const definitionFile = `declare module 'Icon.svelte' {
@@ -53,14 +63,11 @@ const definitionFile = `declare module 'Icon.svelte' {
 
 fs.writeFileSync(`./src/types/Icon.d.ts`, definitionFile);
 
-let iconComponents = [];
-
-svgNames.forEach((svgname, idx) => {
-  const exportName = svgname.replace('-', '');
-
-  iconComponents.push(`export { default as ${exportName} } from './${svgname}.svg'`);
-});
-
 const componentFile = iconComponents.join(';');
 
 fs.writeFileSync(`./src/components/icon/svgs/IconComponents.ts`, componentFile);
+
+fs.writeFileSync(
+  `./src/components/icon/svgs/iconnames.ts`,
+  `export const iconnames = [${iconComponentNames.join(',')}];`
+);

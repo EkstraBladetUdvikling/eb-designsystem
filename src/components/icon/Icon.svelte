@@ -15,7 +15,7 @@
 
   const defaultStyle = `width: ${width}px; height: ${width}px;`;
 
-  style = style ? `${defaultStyle} ${style}` : defaultStyle;
+  $: style = style ? `${defaultStyle} ${style}` : defaultStyle;
 
   let baseClass = className ? `icon-svg ${className}` : 'icon-svg';
 </script>
