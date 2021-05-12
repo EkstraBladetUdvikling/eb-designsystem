@@ -895,8 +895,12 @@ a.badge:hover {
 
 /* If background is set */
 
-.card[class*="bg--"] {
-  box-shadow: none; /* Remove border when filled */
+.card[class*="bg--"]:not([class="card--shadow"]) {
+  box-shadow: none; /* Remove box-shadow when filled */
+}
+
+.card--shadow {
+  box-shadow: var(--box-shadow);
 }
 
 .card:not([class*="bg--"]) {
