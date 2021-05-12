@@ -129,8 +129,8 @@
     ],
     "description": "{\n border-radius: 10px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
-  "designsystem card[class*=\"bg \"]": {
-    "description": "Has pseudo styling :not([class=\"card--shadow\"])"
+  "designsystem card shadow)[class*=\"bg \"]": {
+    "description": "Has pseudo styling :not(.card--shadow)[class*=\"bg--\"]"
   },
   "designsystem card shadow": {
     "prefix": "ds-card--shadow",
