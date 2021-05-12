@@ -26,7 +26,7 @@
 }
 
 /* If background is set */
-.card[class*="bg--"]:not([class="card--shadow"]) {
+.card:not(.card--shadow)[class*="bg--"] {
   box-shadow: none; /* Remove box-shadow when filled */
 }
 
