@@ -31,9 +31,7 @@
     delay: 100,
   };
   let observer = new IntersectionObserver((entries) => {
-    const isVisible = entries[0].isVisible ? entries[0].isVisible : entries[0].isIntersecting;
-
-    if (isVisible) {
+    if (entries[0].isIntersecting) {
       const intersectedEvent = new CustomEvent('articleCardInview', {
         detail: intersectionData,
       });
@@ -73,7 +71,7 @@
     {/if}
   </a>
 {:else}
-  <div class={baseClass} {style} data-theme={theme} bind:this={element} on:click>
+  <div class={cssClass} {style} data-theme={theme} bind:this={element} on:click>
     {#if $$slots.header}
       <div class="card-header">
         <slot name="header" />
