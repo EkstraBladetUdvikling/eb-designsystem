@@ -31,7 +31,7 @@
     "installsnippets": "node node/install-snippets",
     "installsnippets:eb": "node node/install-snippets ../ekstrabladet/ekstrabladet-publication/src/main/.vscode",
     "move_to_eb": "yarn installds:eb",
-    "copy_svg": "cpx \"./docs/svg/symbol/icons.svg\" \"./dist\" --update",
+    "copy_svg": "copyfiles -f \"./docs/svg/symbol/icons.svg\" \"./dist\"",
     "start:designsystem": "yarn build:watcher && yarn build:watch",
     "svgs": "node node/svgs.js && yarn copy_svg"
   },
@@ -56,7 +56,7 @@
     "svelte-spa-router": "^3.1.0"
   },
   "devDependencies": {
-    "cpx": "^1.5.0",
+    "copyfiles": "^2.4.1",
     "csscomb": "^4.3.0",
     "normalize.css": "^8.0.1",
     "onchange": "^7.1.0",
