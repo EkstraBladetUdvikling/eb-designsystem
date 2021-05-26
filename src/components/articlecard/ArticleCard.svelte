@@ -36,7 +36,7 @@
   export let intersectionThreshold: number = 0.5;
   export let intersectionData: any = {};
 
-  let baseClass = `card-mode card-mode--article margin-s`;
+  let baseClass = `card-mode card-mode--article`;
 
   let loadingStyle = 'padding-top: 56.25%; width: 100%;';
   if (loading) {
