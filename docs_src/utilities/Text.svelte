@@ -14,9 +14,9 @@
 </Card>
 
 <Prism language="html">
-  {`<p class="text-align--center">Centreret tekst</p>
-<p class="text-align--left">Venstrestillet tekst</p>
-<p class="text-align--right">Højrestillet tekst</p>`}
+  {`<p class="text-align--center"></p>
+<p class="text-align--left"></p>
+<p class="text-align--right"></p>`}
 </Prism>
 
 <h3>Text transform</h3>
@@ -27,6 +27,6 @@
 </Card>
 
 <Prism language="html">
-  {`<p class="text-transform--lowercase">små bogstaver</p>
-<p class="text-transform--uppercase">STORE BOGSTAVER</p>`}
+  {`<p class="text-transform--lowercase"></p>
+<p class="text-transform--uppercase"></p>`}
 </Prism>

@@ -159,7 +159,7 @@
     <div class="bg--graa1 width-1of3 padding-l">Flex item 4</div>
   </div>
   <strong class="margin-m margin-l--t">flex flex-wrap--wrap</strong>
-  <div class="flex flex-wrap--wrap">
+  <div class="flex flex-wrap--wrap bg--eb">
     <div class="bg--graa4 width-1of3 padding-l">Flex item 1</div>
     <div class="bg--graa3 width-1of3 padding-l">Flex item 2</div>
     <div class="bg--graa2 width-1of3 padding-l">Flex item 3</div>
