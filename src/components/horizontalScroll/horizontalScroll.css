@@ -83,16 +83,9 @@
 .horizontal-scroll-items {
   overflow-x: scroll;
   overflow-y: hidden;
-  padding-top: var(--distance-large);
-  padding-bottom: var(--distance-large);
 
   scroll-snap-type: x mandatory;
   scrollbar-width: none; /* Firefox hack to hide scrollbar */
-}
-
-.smartphone .horizontal-scroll-items {
-  padding-top: 0;
-  padding-bottom: 0;
 }
 
 .horizontal-scroll-items::-webkit-scrollbar {

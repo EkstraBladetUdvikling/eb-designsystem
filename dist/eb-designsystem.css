@@ -681,16 +681,6 @@ a.badge:hover {
   margin-left: 10px;
 }
 
-.button.button--link,
-.button.button--link:active,
-.button.button--link:hover,
-.button.button--link:focus {
-  background: none;
-  border: 0;
-  color: inherit;
-  outline: none;
-}
-
 .button.button--small {
   font-size: 12px;
   padding: 0 15px;
@@ -702,6 +692,17 @@ a.badge:hover {
   font-weight: bold;
   padding: 0 40px;
   height: var(--button-height--big);
+}
+
+.button.button--link,
+.button.button--link:active,
+.button.button--link:hover,
+.button.button--link:focus {
+  background: none;
+  border: 0;
+  color: inherit;
+  outline: none;
+  padding: none;
 }
 
 .button.button--icon {
@@ -1406,16 +1407,9 @@ a.card-mode:focus .card-inner {
 .horizontal-scroll-items {
   overflow-x: scroll;
   overflow-y: hidden;
-  padding-top: var(--distance-large);
-  padding-bottom: var(--distance-large);
 
   scroll-snap-type: x mandatory;
   scrollbar-width: none; /* Firefox hack to hide scrollbar */
-}
-
-.smartphone .horizontal-scroll-items {
-  padding-top: 0;
-  padding-bottom: 0;
 }
 
 .horizontal-scroll-items::-webkit-scrollbar {

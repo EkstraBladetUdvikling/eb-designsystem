@@ -164,15 +164,6 @@
   margin-left: 10px;
 }
 
-.button.button--link,
-.button.button--link:active,
-.button.button--link:hover,
-.button.button--link:focus {
-  background: none;
-  border: 0;
-  color: inherit;
-  outline: none;
-}
 
 .button.button--small {
   font-size: 12px;
@@ -185,6 +176,17 @@
   font-weight: bold;
   padding: 0 40px;
   height: var(--button-height--big);
+}
+
+.button.button--link,
+.button.button--link:active,
+.button.button--link:hover,
+.button.button--link:focus {
+  background: none;
+  border: 0;
+  color: inherit;
+  outline: none;
+  padding: none;
 }
 
 .button.button--icon {

@@ -4,7 +4,7 @@
     "body": [
       "<button class=\"button\">$1</button>"
     ],
-    "description": "Standard button design\n This can be extended with:\n .button--primary\n .button--secondary\n .button--accept\n .button--cancel\n .button--link\n .button--small\n .button--big\n .button--icon"
+    "description": "Standard button design\n This can be extended with:\n .button--primary\n .button--secondary\n .button--accept\n .button--cancel\n .button--small\n .button--big\n .button--link\n .button--icon"
   },
   "designsystem form-input HTML": {
     "prefix": "<ds-form-input />",
