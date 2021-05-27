@@ -65,6 +65,7 @@
 
   box-shadow: var(--box-shadow);
   opacity: 0;
+  transform: translateY(-50%);
 }
 
 .horizontal-scroll-container:not([data-atstart="true"]):hover .button-prev {
