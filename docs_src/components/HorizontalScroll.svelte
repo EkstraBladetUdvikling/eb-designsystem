@@ -89,7 +89,7 @@
 <div class="grid-width--small">
   <HorizontalScroll title="Liste med artikler">
     {#each articles as article}
-      <ArticleCard {...article} style="width: 215px;" />
+      <ArticleCard {...article} className="margin-s" style="width: 215px;" />
     {/each}
   </HorizontalScroll>
 </div>
