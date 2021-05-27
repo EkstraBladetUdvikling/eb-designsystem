@@ -1598,7 +1598,7 @@ a.card-mode:focus .card-inner {
   border-radius: var(--border-radius--small);
   box-shadow: var(--box-shadow);
   box-sizing: border-box;
-  font-family: var(--fontfamily--primary);
+  font-family: var(--fontfamily--secondary);
   overflow: hidden;
   padding: var(--tooltip-padding);
   width: 22px;
