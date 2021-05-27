@@ -187,6 +187,7 @@
   color: inherit;
   outline: none;
   padding: 0;
+  height: auto;
 }
 
 .button.button--icon {

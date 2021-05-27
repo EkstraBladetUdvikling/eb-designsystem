@@ -106,7 +106,7 @@
     "body": [
       "button--link"
     ],
-    "description": "NB! This should only be used with button\nThis extends button with: {\n background: none;\nborder: 0;\ncolor: inherit;\noutline: none;\npadding: 0;\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n background: none;\nborder: 0;\ncolor: inherit;\noutline: none;\npadding: 0;\nheight: auto;\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem button icon": {
     "prefix": "ds-button--icon",
