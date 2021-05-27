@@ -4,36 +4,36 @@
   import { ArticleCard } from '../../src';
 
   let article = {
-    href: '#',
+    src: '#',
     media: {
       src: 'https://via.placeholder.com/610x343&text=610x343',
     },
     section: 'Sport',
     colorClass: 'sport',
-    timestamp: 'Thu Mar 18 2021 20:46:32',
+    published: 'Thu Mar 18 2021 20:46:32',
     title: 'List element',
   };
 
   let article1 = {
-    href: '#',
+    src: '#',
     media: {
       src: 'https://via.placeholder.com/610x343&text=610x343',
     },
     section: 'Underholdning',
     colorClass: 'underholdning',
-    timestamp: 'Thu Mar 28 2021 20:46:32',
+    published: 'Thu Mar 28 2021 20:46:32',
     title: 'List element',
   };
 
   let article2 = {
-    href: '#',
+    src: '#',
     isPlus: true,
     media: {
       src: 'https://via.placeholder.com/610x343&text=610x343',
     },
     section: 'Udenlandsk fodbold',
     colorClass: 'sport',
-    timestamp: 'Thu Mar 31 2021 20:46:32',
+    published: 'Thu Mar 31 2021 20:46:32',
     title: `Sag om rockervold: 'Når han er på stoffer, siger han ting, der ikke passer'`,
   };
   document.addEventListener(
@@ -64,18 +64,18 @@
       width: string;
     }
 
+    export let breaking: boolean = false;
     export let className: string = undefined;
     export let colorClass: string = undefined;
-    export let href: string = undefined;
     export let loading: boolean = false;
-    export let isBreaking: boolean = false;
-    export let isPlus: boolean = false;
-    export let media: Partial<IMediaOptions> = undefined;
     export let maxLines: number = undefined;
+    export let media: Partial<IMediaOptions> = undefined;
+    export let premium: boolean = false;
+    export let published: string = undefined;
     export let section: string = undefined;
+    export let src: string = undefined;
     export let style: string = undefined;
     export let theme: TThemes = undefined;
-    export let timestamp: string = undefined;
     export let title: string;
     export let type: TCardType = undefined;
   `}
@@ -91,29 +91,29 @@
     language="js"
     source={`
     let article = {
-      href: '#',
+      src: '#',
       media: {
         src: 'https://via.placeholder.com/610x343&text=610x343',
       },
       section: 'Sport',
       colorClass: 'sport',
-      timestamp: 'Thu Mar 18 2021 20:46:32',
+      published: 'Thu Mar 18 2021 20:46:32',
       title: 'List element',
     };
     `}
   />
   <ArticleCard
     colorClass={article.colorClass}
-    href={article.href}
+    src={article.src}
     media={undefined}
     section={article.section}
-    timestamp={article.timestamp}
+    published={article.published}
     title={article.title}
   />
   <Prism
     language="html"
     source={`
-    <ArticleCard href="{article.href}" media="{{src:'https://via.placeholder.com/610x343&text=610x343'}}" section="{article.section}" timestamp="{article.timestamp}" title="{article.title}" />
+    <ArticleCard src="{article.src}" media="{{src:'https://via.placeholder.com/610x343&text=610x343'}}" section="{article.section}" published="{article.published}" title="{article.title}" />
     <ArticleCard {...article} />
   `}
   />
@@ -168,5 +168,5 @@
     `}
   />
 
-  <ArticleCard isPlus={true} {...article} style="width: 215px;" />
+  <ArticleCard premium={true} {...article} style="width: 215px;" />
 </div>
