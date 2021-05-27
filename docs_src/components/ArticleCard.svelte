@@ -4,36 +4,36 @@
   import { ArticleCard } from '../../src';
 
   let article = {
-    src: '#',
+    href: '#',
     media: {
       src: 'https://via.placeholder.com/610x343&text=610x343',
     },
     section: 'Sport',
     colorClass: 'sport',
-    published: 'Thu Mar 18 2021 20:46:32',
+    timestamp: 'Thu Mar 18 2021 20:46:32',
     title: 'List element',
   };
 
   let article1 = {
-    src: '#',
+    href: '#',
     media: {
       src: 'https://via.placeholder.com/610x343&text=610x343',
     },
     section: 'Underholdning',
     colorClass: 'underholdning',
-    published: 'Thu Mar 28 2021 20:46:32',
+    timestamp: 'Thu Mar 28 2021 20:46:32',
     title: 'List element',
   };
 
   let article2 = {
-    src: '#',
+    href: '#',
     isPlus: true,
     media: {
       src: 'https://via.placeholder.com/610x343&text=610x343',
     },
     section: 'Udenlandsk fodbold',
     colorClass: 'sport',
-    published: 'Thu Mar 31 2021 20:46:32',
+    timestamp: 'Thu Mar 31 2021 20:46:32',
     title: `Sag om rockervold: 'Når han er på stoffer, siger han ting, der ikke passer'`,
   };
   document.addEventListener(
@@ -64,18 +64,18 @@
       width: string;
     }
 
-    export let breaking: boolean = false;
     export let className: string = undefined;
     export let colorClass: string = undefined;
+    export let href: string = undefined;
     export let loading: boolean = false;
-    export let maxLines: number = undefined;
+    export let isBreaking: boolean = false;
+    export let isPlus: boolean = false;
     export let media: Partial<IMediaOptions> = undefined;
-    export let premium: boolean = false;
-    export let published: string = undefined;
+    export let maxLines: number = undefined;
     export let section: string = undefined;
-    export let src: string = undefined;
     export let style: string = undefined;
     export let theme: TThemes = undefined;
+    export let timestamp: string = undefined;
     export let title: string;
     export let type: TCardType = undefined;
   `}
@@ -91,29 +91,29 @@
     language="js"
     source={`
     let article = {
-      src: '#',
+      href: '#',
       media: {
         src: 'https://via.placeholder.com/610x343&text=610x343',
       },
       section: 'Sport',
       colorClass: 'sport',
-      published: 'Thu Mar 18 2021 20:46:32',
+      timestamp: 'Thu Mar 18 2021 20:46:32',
       title: 'List element',
     };
     `}
   />
   <ArticleCard
     colorClass={article.colorClass}
-    src={article.src}
+    href={article.href}
     media={undefined}
     section={article.section}
-    published={article.published}
+    timestamp={article.timestamp}
     title={article.title}
   />
   <Prism
     language="html"
     source={`
-    <ArticleCard src="{article.src}" media="{{src:'https://via.placeholder.com/610x343&text=610x343'}}" section="{article.section}" published="{article.published}" title="{article.title}" />
+    <ArticleCard href="{article.href}" media="{{src:'https://via.placeholder.com/610x343&text=610x343'}}" section="{article.section}" timestamp="{article.timestamp}" title="{article.title}" />
     <ArticleCard {...article} />
   `}
   />
@@ -168,5 +168,5 @@
     `}
   />
 
-  <ArticleCard premium={true} {...article} style="width: 215px;" />
+  <ArticleCard isPlus={true} {...article} style="width: 215px;" />
 </div>

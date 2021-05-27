@@ -16,17 +16,17 @@
 
   export let title: string;
 
-  export let breaking: boolean = false;
   export let className: string = undefined;
   export let colorClass: string = undefined;
+  export let href: string = undefined;
+  export let isBreaking: boolean = false;
+  export let isPlus: boolean = false;
   export let loading: boolean = false;
   export let maxLines: number = undefined;
   export let media: Partial<IMediaOptions> = undefined;
-  export let premium: boolean = false;
-  export let published: string = undefined;
   export let section: string = undefined;
-  export let src: string = undefined;
   export let style: string = '';
+  export let timestamp: string = undefined;
   export let truncateTitle: boolean = false;
   export let type: TCardType = undefined;
 
@@ -73,10 +73,10 @@
 </script>
 
 <Card
-  {src}
+  {href}
   className={cssClass}
   style={styleProp}
-  data-breaking={breaking}
+  data-breaking={isBreaking}
   {intersection}
   {intersectionRoot}
   {intersectionThreshold}
@@ -96,12 +96,12 @@
     {/if}
     <div class="card-content-wrapper">
       <div class="card-icon flex flex-justify--end">
-        {#if premium}
+        {#if isPlus}
           <Icon name="ebplus_icon" width="20" />
         {/if}
       </div>
       <div class="card-content">
-        {#if section || published}
+        {#if section || timestamp}
           <div class="card-meta flex fontsize-xxsmall padding-s--b">
             {#if section}
               <div class="card-meta-item">
@@ -111,10 +111,10 @@
                 </span>
               </div>
             {/if}
-            {#if published}
+            {#if timestamp}
               <div class="card-meta-item">
                 <Icon name="clock" width="12" />
-                <span class="padding-s--l">{parseDate(published)}</span>
+                <span class="padding-s--l">{parseDate(timestamp)}</span>
               </div>
             {/if}
           </div>
