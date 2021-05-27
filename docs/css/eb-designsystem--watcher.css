@@ -702,7 +702,7 @@ a.badge:hover {
   border: 0;
   color: inherit;
   outline: none;
-  padding: none;
+  padding: 0;
 }
 
 .button.button--icon {
