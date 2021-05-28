@@ -1,126 +1,89 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
+  import { sourceType } from '../stores';
+  import { Card, PillNavigation, Pill, PillContent, PillList } from '../../src';
 
-  import { PillNavigation, Pill, PillContent, PillList } from '../../src';
+  let source = '';
+
+  sourceType.subscribe((value) => {
+    source = value;
+  });
 </script>
 
-<h1 class="color--eb">Pill navigation / Toggle buttons</h1>
+<h1 class="color--eb">Pill navigation</h1>
 
-<Prism
-  language="js"
-  source={`import { PillNavigation, Pill, PillContent, PillList } from '@ekstra-bladet/designsystem';`}
-/>
+{#if source === 'svelte'}
+  <Prism language="js">
+    {`import { PillNavigation, Pill, PillContent, PillList } from '@ekstra-bladet/designsystem';`}
+  </Prism>
 
-<div class="margin-xl">
-  <PillNavigation>
+  <PillNavigation className="margin-xl--t">
     <PillList>
-      <Pill>Toggle 1</Pill>
-      <Pill>Toggle 2</Pill>
+      <Pill>Pill 1</Pill>
+      <Pill>Pill 2</Pill>
+      <Pill>Pill 3</Pill>
     </PillList>
-    <PillContent>Content 1</PillContent>
-    <PillContent>Content 2</PillContent>
+    <PillContent>
+      <Card className="margin-m--t">
+        <h2 slot="header">Content 1</h2>
+        <div slot="content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porttitor sagittis metus in efficitur.
+          </p>
+          <p>
+            Phasellus molestie scelerisque commodo. Fusce accumsan efficitur urna eu tristique. Proin semper fermentum
+            ante sed molestie. Sed nec quam orci.
+          </p>
+          <p>Nunc diam neque, blandit a dictum id, posuere in lacus. Nulla rutrum pretium nulla.</p>
+          <p>Curabitur nisi libero, pellentesque ut mi eget, efficitur efficitur sem.</p>
+        </div>
+      </Card>
+    </PillContent>
+    <PillContent>
+      <Card className="margin-m--t">
+        <h2 slot="header">Content 2</h2>
+        <div slot="content">
+          <p>Suspendisse volutpat quis sem vitae auctor. Etiam non sollicitudin nunc. Cras sit amet massa augue.</p>
+          <p>
+            Pellentesque mauris diam, porttitor vel ante in, efficitur vehicula tellus. Nam a auctor augue. Quisque
+            sagittis ultricies imperdiet.
+          </p>
+        </div>
+      </Card>
+    </PillContent>
+    <PillContent>
+      <Card className="margin-m--t">
+        <h2 slot="header">Content 3</h2>
+        <div slot="content">
+          <p>Integer a suscipit dolor. Pellentesque ac ligula sem. Aliquam sit amet diam ut ipsum congue posuere.</p>
+          <p>
+            Praesent eget nibh sit amet nibh accumsan facilisis. Cras purus libero, vehicula eget facilisis a, rhoncus
+            placerat ante.
+          </p>
+          <p>Mauris tristique eget nisl eu lacinia.</p>
+        </div>
+      </Card>
+    </PillContent>
   </PillNavigation>
-</div>
 
-<Prism
-  language="html"
-  source={`
-<PillNavigation>
+  <Prism language="html">
+    {`<PillNavigation>
   <PillList>
-    <Pill>Toggle 1</Pill>
-    <Pill>Toggle 2</Pill>
+    <Pill>Pill 1</Pill>
+    <Pill>Pill 2</Pill>
+    <Pill>Pill 3</Pill>
   </PillList>
-  <PillContent>Content 1</PillContent>
-  <PillContent>Content 2</PillContent>
-</PillNavigation>
-`}
-/>
-
-<div class="margin-xl">
-  <PillNavigation>
-    <PillList>
-      <Pill>Toggle 1</Pill>
-      <Pill>Toggle 2</Pill>
-      <Pill>Toggle 3</Pill>
-    </PillList>
-    <PillContent>
-      <div>
-        <h1>Content 1</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porttitor sagittis metus in efficitur.
-          Phasellus molestie scelerisque commodo. Fusce accumsan efficitur urna eu tristique. Proin semper fermentum
-          ante sed molestie. Sed nec quam orci. Nunc diam neque, blandit a dictum id, posuere in lacus. Nulla rutrum
-          pretium nulla. Aenean sollicitudin, magna et eleifend mollis, tortor turpis varius nibh, non interdum lectus
-          orci ac libero. Curabitur nisi libero, pellentesque ut mi eget, efficitur efficitur sem.
-        </p>
-      </div>
-    </PillContent>
-    <PillContent>
-      <div>
-        <h1>Content 2</h1>
-        <p>
-          Aenean in ipsum varius, facilisis leo nec, aliquam mauris. Nunc sagittis nunc interdum consectetur posuere.
-          Vivamus tempus volutpat orci. Maecenas luctus posuere massa sollicitudin ultrices. Nam venenatis feugiat
-          imperdiet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent efficitur ex vel lacus
-          vehicula convallis. Vivamus a metus facilisis, consequat felis vitae, fringilla nisi. Aliquam maximus nibh eu
-          justo lobortis auctor. In facilisis iaculis sodales. Aliquam vehicula, massa nec eleifend maximus, elit ante
-          convallis eros, ac ultricies justo risus non turpis. Class aptent taciti sociosqu ad litora torquent per
-          conubia nostra, per inceptos himenaeos. Maecenas ornare ex vitae tellus aliquet, a iaculis turpis vehicula.
-          Vestibulum scelerisque metus lectus, id egestas eros dignissim ut. Aenean et nisi vel purus vehicula lacinia
-          ut sit amet ligula. Sed ultrices nisi orci, non pellentesque erat dignissim ac.
-        </p>
-      </div>
-    </PillContent>
-    <PillContent>
-      <div>
-        <h1>Content 3</h1>
-        <p>
-          Donec mattis arcu metus, et accumsan erat consectetur eget. Pellentesque porta sollicitudin lectus, a commodo
-          sem sollicitudin sit amet. Sed pharetra vel nulla id bibendum. In consectetur pulvinar purus non cursus. In
-          hac habitasse platea dictumst. Nullam placerat nunc sem, at auctor massa venenatis nec. Ut at dignissim dolor.
-          Pellentesque vestibulum porta lorem, a iaculis felis accumsan vel. Sed vel orci vehicula dolor congue eleifend
-          et non nibh. Duis a pharetra diam, a dapibus dui. Aenean maximus fringilla nunc, ut sollicitudin erat
-          vulputate tincidunt. Proin nisl ipsum, tristique et varius sit amet, elementum eget magna. Phasellus eu est
-          pretium erat blandit suscipit sed eu nisl.
-        </p>
-      </div>
-    </PillContent>
-  </PillNavigation>
-</div>
-
-<Prism
-  language="html"
-  source={`
-<PillNavigation>
-    <PillList>
-      <Pill>Toggle 1</Pill>
-      <Pill>Toggle 2</Pill>
-      <Pill>Toggle 3</Pill>
-    </PillList>
-    <PillContent>
-      <div>
-        <h1>Content 1</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing...
-        </p>
-      </div>
-    </PillContent>
-    <PillContent>
-      <div>
-        <h1>Content 2</h1>
-        <p>
-          Aenean in ipsum varius, facilisis leo nec...
-        </p>
-      </div>
-    </PillContent>
-    <PillContent>
-      <div>
-        <h1>Content 3</h1>
-        <p>
-          Donec mattis arcu metus, et accumsan erat...
-        </p>
-      </div>
-    </PillContent>
-  </PillNavigation>
-`}
-/>
+  <PillContent>
+    Content 1
+  </PillContent>
+  <PillContent>
+    Content 2
+  </PillContent>
+  <PillContent>
+    Content 3
+  </PillContent>
+</PillNavigation>`}
+  </Prism>
+{:else}
+  <p>PillNavigation er en ren Svelte component.</p>
+{/if}
