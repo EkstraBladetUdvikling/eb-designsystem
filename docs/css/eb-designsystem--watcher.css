@@ -513,7 +513,9 @@ a.badge:hover {
 }
 
 :root {
-  --button-border-radius: var(--button-height);
+  --button-border-radius: 18px;
+  --button-border-radius--big: 25px;
+  --button-border-radius--small: 15px;
   --button-height: 36px;
   --button-height--big: 50px;
   --button-height--small: 30px;
@@ -692,12 +694,14 @@ a.badge:hover {
 }
 
 .button.button--small {
+  border-radius: var(--button-border-radius--small);
   font-size: 12px;
   padding: 0 15px;
   height: var(--button-height--small);
 }
 
 .button.button--big {
+  border-radius: var(--button-border-radius--big);
   font-size: 20px;
   font-weight: bold;
   padding: 0 40px;
@@ -727,8 +731,10 @@ a.badge:hover {
 */
 
 :root {
-  --groupcolor-main: var(--color--default);
-  --groupcolor-main-foreground: var(--fgcolor--default);
+  --buttongroup-color: var(--color--default);
+  --buttongroup-color--hover: var(--buttongroup-color);
+  --buttongroup-fgcolor: var(--fgcolor--default);
+  --buttongroup-fgcolor--hover: var(--buttongroup-fgcolor);
 }
 
 .buttongroup {
@@ -737,18 +743,18 @@ a.badge:hover {
 
 .buttongroup .button {
   background: var(--color--white);
-  border-color: var(--groupcolor-main);
+  border-color: var(--buttongroup-color);
   border-right-width: 0;
-  color: var(--groupcolor-main);
+  color: var(--buttongroup-color);
 }
 
 .buttongroup .button:active,
 .buttongroup .button:hover,
 .buttongroup .button:focus,
 .buttongroup .button[data-selected="true"] {
-  background: var(--groupcolor-main);
-  border-color: var(--groupcolor-main);
-  color: var(--groupcolor-main-foreground);
+  background: var(--buttongroup-color--hover);
+  border-color: var(--buttongroup-color--hover);
+  color: var(--buttongroup-fgcolor--hover);
 }
 
 .buttongroup .button:first-of-type {
@@ -830,6 +836,36 @@ a.badge:hover {
   color: var(--fgcolor--accept);
 }
 
+.buttongroup--solid .button,
+.buttongroup--solid .button[data-selected="true"] {
+  background: var(--buttongroup-color);
+  border: 0;
+  color: var(--buttongroup-fgcolor);
+  margin: 1px;
+}
+
+.buttongroup--solid .button:active,
+.buttongroup--solid .button:hover,
+.buttongroup--solid .button:focus {
+  background: var(--buttongroup-color--hover);
+  color: var(--buttongroup-fgcolor--hover);
+}
+
+.buttongroup--solid .button:first-of-type {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.buttongroup--solid .button:not(:first-of-type):not(:last-of-type) {
+  border-radius: 2px;
+}
+
+.buttongroup--solid .button:last-of-type {
+  border-top-left-radius: 2px;
+  border-right-width: 1px;
+  border-bottom-left-radius: 2px;
+}
+
 :root {
   --card-border-color: var(--color--graa7);
   --card-border-section--color: var(--color--eb);
@@ -859,8 +895,12 @@ a.badge:hover {
 
 /* If background is set */
 
-.card[class*="bg--"] {
-  box-shadow: none; /* Remove border when filled */
+.card:not(.card--shadow)[class*="bg--"] {
+  box-shadow: none; /* Remove box-shadow when filled */
+}
+
+.card--shadow {
+  box-shadow: var(--box-shadow);
 }
 
 .card:not([class*="bg--"]) {

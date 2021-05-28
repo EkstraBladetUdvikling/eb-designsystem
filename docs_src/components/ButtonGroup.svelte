@@ -50,6 +50,43 @@
   </div>
 </div>
 
+<p>Default</p>
+<div class="margin-l flex">
+  <div class="flex-item margin-l--r">
+    <ButtonGroup>
+      <Button
+        on:click={() => {
+          console.log('Click 1');
+        }}>Toggle 1</Button
+      >
+      <Button
+        on:click={() => {
+          console.log('Click 2');
+        }}>Toggle 2</Button
+      >
+    </ButtonGroup>
+  </div>
+  <div class="flex-item margin-l--l">
+    <ButtonGroup>
+      <Button
+        on:click={() => {
+          console.log('Button 1');
+        }}>Button 1</Button
+      >
+      <Button
+        on:click={() => {
+          console.log('Button 2');
+        }}>Button 2</Button
+      >
+      <Button
+        on:click={() => {
+          console.log('Button 3');
+        }}>Button 3</Button
+      >
+    </ButtonGroup>
+  </div>
+</div>
+
 <div class="margin-l">
   <Prism
     language="svelte"
@@ -239,3 +276,66 @@
   </ButtonGroup>
   `}
 />
+
+<p>Solid button group</p>
+
+<ButtonGroup solid={true} color="Black" colorHover="Red">
+  <Button
+    on:click={() => {
+      console.log('Click 1');
+    }}>Toggle 1</Button
+  >
+  <Button
+    on:click={() => {
+      console.log('Click 2');
+    }}>Toggle 2</Button
+  >
+  <Button
+    on:click={() => {
+      console.log('Click 3');
+    }}>Toggle 3</Button
+  >
+</ButtonGroup>
+
+<Prism
+  language="svelte"
+  source={`
+    <ButtonGroup solid={true} color="Black" colorHover="Red">
+      <Button
+        on:click={() => {
+          console.log('Click 1');
+        }}>Toggle 1</Button
+      >
+      <Button
+        on:click={() => {
+          console.log('Click 2');
+        }}>Toggle 2</Button
+      >
+      <Button
+        on:click={() => {
+          console.log('Click 3');
+        }}>Toggle 3</Button
+      >
+    </ButtonGroup>
+  `}
+/>
+
+<div class="bg--yellowlight padding-l">
+  <ButtonGroup solid={true} color="Black" colorHover="Red">
+    <Button
+      on:click={() => {
+        console.log('Click 1');
+      }}>Toggle 1</Button
+    >
+    <Button
+      on:click={() => {
+        console.log('Click 2');
+      }}>Toggle 2</Button
+    >
+    <Button
+      on:click={() => {
+        console.log('Click 3');
+      }}>Toggle 3</Button
+    >
+  </ButtonGroup>
+</div>
