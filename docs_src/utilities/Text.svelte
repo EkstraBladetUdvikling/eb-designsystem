@@ -1,32 +1,32 @@
 <script>
   import Prism from 'svelte-prism';
+  import { Card } from '../../src';
 </script>
 
-<h1>Text</h1>
+<h1 class="color--eb">Text</h1>
 
-## Text alignment Findes som center, left og right
+<h3>Text alignment</h3>
 
-<div class="margin-l--tb">
+<Card className="bg--graa7 padding-m">
   <p class="text-align--center">Centreret tekst</p>
   <p class="text-align--left">Venstrestillet tekst</p>
   <p class="text-align--right">Højrestillet tekst</p>
-</div>
+</Card>
 
-<Prism
-  language="html"
-  source={`
-<p class="text-align--center">Centreret tekst</p>
-<p class="text-align--left">Venstrestillet tekst</p>
-<p class="text-align--right">Højrestillet tekst</p>
-`}
-/>
+<Prism language="html">
+  {`<p class="text-align--center"></p>
+<p class="text-align--left"></p>
+<p class="text-align--right"></p>`}
+</Prism>
 
-## Text transform Findes som lowercase og uppercase
+<h3>Text transform</h3>
 
-<Prism
-  language="html"
-  source={`
-<p class="text-transform--lowercase">små bogstaver</p>
-<p class="text-transform--uppercase">STORE BOGSTAVER</p>
-`}
-/>
+<Card className="bg--graa7 padding-m">
+  <p class="text-transform--lowercase">SMÅ BOGSTAVER</p>
+  <p class="text-transform--uppercase">store bogstaver</p>
+</Card>
+
+<Prism language="html">
+  {`<p class="text-transform--lowercase"></p>
+<p class="text-transform--uppercase"></p>`}
+</Prism>
