@@ -46,19 +46,19 @@
 
 <h3>Variations</h3>
 
-<ButtonGroup type="primary" className="margin-l--b">
+<ButtonGroup type="primary" className="margin-m--b">
   <Button>primary</Button>
   <Button>Button 2</Button>
   <Button>Button 3</Button>
 </ButtonGroup>
 
-<ButtonGroup type="secondary" className="margin-l--b">
+<ButtonGroup type="secondary" className="margin-m--b">
   <Button>secondary</Button>
   <Button>Button 2</Button>
   <Button>Button 3</Button>
 </ButtonGroup>
 
-<ButtonGroup type="accept" className="margin-l--b">
+<ButtonGroup type="accept" className="margin-m--b">
   <Button>accept</Button>
   <Button>Button 2</Button>
   <Button>Button 3</Button>
@@ -88,7 +88,7 @@
 
 <h3>Farve muligheder fra eb-colors</h3>
 
-<ButtonGroup color="Bordeaux">
+<ButtonGroup color="Bordeaux" className="margin-l--b">
   <Button>Button 1</Button>
   <Button>Button 2</Button>
   <Button>Button 3</Button>
@@ -111,7 +111,7 @@
 
 <h3>Solid button group</h3>
 
-<ButtonGroup solid={true} color="Black" colorHover="Red">
+<ButtonGroup solid={true} color="Black" colorHover="Red" className="margin-l--b">
   <Button>Button 1</Button>
   <Button>Button 2</Button>
   <Button>Button 3</Button>
