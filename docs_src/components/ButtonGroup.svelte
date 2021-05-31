@@ -47,25 +47,25 @@
 <h3>Variations</h3>
 
 <ButtonGroup type="primary" className="margin-m--b">
-  <Button>primary</Button>
+  <Button>Primary</Button>
   <Button>Button 2</Button>
   <Button>Button 3</Button>
 </ButtonGroup>
 
 <ButtonGroup type="secondary" className="margin-m--b">
-  <Button>secondary</Button>
+  <Button>Secondary</Button>
   <Button>Button 2</Button>
   <Button>Button 3</Button>
 </ButtonGroup>
 
 <ButtonGroup type="accept" className="margin-m--b">
-  <Button>accept</Button>
+  <Button>Accept</Button>
   <Button>Button 2</Button>
   <Button>Button 3</Button>
 </ButtonGroup>
 
 <ButtonGroup type="cancel" className="margin-l--b">
-  <Button>Button 1</Button>
+  <Button>Cancel</Button>
   <Button>Button 2</Button>
   <Button>Button 3</Button>
 </ButtonGroup>
