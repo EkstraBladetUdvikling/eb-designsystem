@@ -1,6 +1,6 @@
 <script lang="ts">
   type TExtension = 'small';
-  type TType = 'danger' | 'primary' | 'secondary' | 'succes';
+  type TType = 'danger' | 'primary' | 'secondary' | 'success';
 
   export let className: string = undefined;
   export let extension: TExtension | TExtension[] = undefined;
