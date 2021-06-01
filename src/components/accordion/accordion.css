@@ -44,6 +44,10 @@
   font-size: inherit;
 }
 
+.accordion-body p:first-child {
+  margin-top: 0;
+}
+
 /* Lightmode */
 [data-theme="lightmode"] .accordion-tab {
   background: rgb(var(--rgb-color--white));
