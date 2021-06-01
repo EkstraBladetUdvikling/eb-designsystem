@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { afterUpdate } from 'svelte';
+  import { afterUpdate, onMount } from 'svelte';
 
   import { throttle } from '../../misc/throttle';
 
@@ -15,10 +15,10 @@
   /* Horizontial Scroll elements */
   let scrollContainer: HTMLDivElement;
   let scrollItemContainer: HTMLDivElement;
-  let listCurrent = 0;
-  let children;
-  let maxLength;
-  let listLength;
+  let listCurrent: number = 0;
+  let children: HTMLCollection;
+  let maxLength: number;
+  let listLength: number;
 
   function updateDataSet(pos, fromScroll = false) {
     switch (pos) {
@@ -94,6 +94,10 @@
       scroll(listCurrent);
     }
   }
+
+  onMount(() => {
+    updateButtonsThroughScroll();
+  });
 
   afterUpdate(() => {
     if (children) return;
