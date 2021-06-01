@@ -1,7 +1,11 @@
 <script>
   import Prism from 'svelte-prism';
+  import { rdmParagraphs } from '../util';
   import { sourceType } from '../stores';
   import { Tooltip } from '../../src';
+
+  let Content1 = rdmParagraphs(2);
+  let Content2 = rdmParagraphs(2);
 </script>
 
 <h1 class="color--eb">Tooltip</h1>
@@ -16,9 +20,7 @@
 
 <div class="flex margin-l--tb">
   <Tooltip>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    <p>Vestibulum nec felis viverra, aliquam erat vel, ornare ipsum.</p>
-    <p>Aenean a blandit lacus, sed faucibus ante.</p>
+    <div contenteditable="true" bind:innerHTML={Content1} />
   </Tooltip>
 </div>
 
@@ -48,9 +50,7 @@
 <div class="flex flex-justify--between grid-width--small margin-l--tb">
   <h3>Header</h3>
   <Tooltip position="right" className="flex-item--center">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    <p>Vestibulum nec felis viverra, aliquam erat vel, ornare ipsum.</p>
-    <p>Aenean a blandit lacus, sed faucibus ante.</p>
+    <div contenteditable="true" bind:innerHTML={Content2} />
   </Tooltip>
 </div>
 

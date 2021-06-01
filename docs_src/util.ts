@@ -1,5 +1,23 @@
 import { LoremIpsum } from 'lorem-ipsum';
 
+export function rdmParagraphs(num = 3) {
+  const lorem = new LoremIpsum(
+    {
+      sentencesPerParagraph: {
+        max: 8,
+        min: 4,
+      },
+      wordsPerSentence: {
+        max: 12,
+        min: 4,
+      },
+    },
+    'html'
+  );
+
+  return lorem.generateParagraphs(num);
+}
+
 export function rdmArticleData(mediaWidth = 640, mediaHeight = 360) {
   const lorem = new LoremIpsum({
     wordsPerSentence: {

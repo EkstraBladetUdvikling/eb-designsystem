@@ -1,29 +1,15 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
-  import { LoremIpsum } from 'lorem-ipsum';
+  import { rdmParagraphs } from '../util';
   import { sourceType } from '../stores';
   import { Accordion } from '../../src';
-
-  const lorem = new LoremIpsum(
-    {
-      sentencesPerParagraph: {
-        max: 8,
-        min: 4,
-      },
-      wordsPerSentence: {
-        max: 12,
-        min: 4,
-      },
-    },
-    'html'
-  );
 
   const tabs = [];
 
   for (let i = 0; i < 3; i++) {
     tabs.push({
       title: `Tab ${i + 1}`,
-      content: lorem.generateParagraphs(3),
+      content: rdmParagraphs(),
     });
   }
 </script>
