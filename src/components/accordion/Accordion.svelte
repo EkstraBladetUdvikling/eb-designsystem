@@ -38,7 +38,7 @@
         <i class="fas fa-chevron-down" />
       </div>
       <div class="accordion-body padding-m padding-l--rl fontsize-small">
-        <span>{tab.content}</span>
+        <span contenteditable="true" bind:innerHTML={tab.content} />
       </div>
     </div>
   {/each}
