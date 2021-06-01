@@ -26,7 +26,7 @@ export function rdmArticleData(mediaWidth = 640, mediaHeight = 360) {
     },
   });
 
-  const colorClasses = ['sport', 'sex-samliv', 'forbrug', 'underholdning', 'flash', 'nyheder'];
+  const colorClasses = ['flash', 'forbrug', 'leder', 'nationen', 'nyheder', 'sex-samliv', 'sport', 'underholdning'];
   const article = {
     href: '#',
     isPlus: Math.random() < 0.3,
