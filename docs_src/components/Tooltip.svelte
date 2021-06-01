@@ -30,9 +30,7 @@
 
 {#if source === 'svelte'}
   <Prism language="html">
-    {`<Tooltip>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-</Tooltip>`}
+    {`<Tooltip></Tooltip>`}
   </Prism>
 {:else}
   <Prism language="html">
@@ -44,7 +42,7 @@
   <div class="tooltip-on">
     <i class="tooltip-toggle fas fa-times"/>
     <div class="padding-s">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      Content
     </div>
   </div>
 </label>`}
@@ -66,9 +64,7 @@
   <Prism language="html">
     {`<div class="flex flex-justify--between">
   <h3>Header</h3>
-  <Tooltip position="right" className="flex-item--center">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  </Tooltip>
+  <Tooltip position="right" className="flex-item--center"></Tooltip>
 </div>`}
   </Prism>
 {:else}
@@ -83,7 +79,7 @@
     <div class="tooltip-on">
       <i class="tooltip-toggle fas fa-times"/>
       <div class="padding-s">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        Content
       </div>
     </div>
   </label>

@@ -27,7 +27,7 @@
 
 {#if source === 'svelte'}
   <Prism language="html">
-    {`<Toggler on:toggle="{(event) => {}}">
+    {`<Toggler>
   <slot slot="on">on</slot>
   <slot slot="off">off</slot>
 </Toggler>`}
@@ -55,7 +55,7 @@
 
 {#if source === 'svelte'}
   <Prism language="html">
-    {`<Toggler on:toggle="{(event) => {}}">
+    {`<Toggler>
   <slot slot="on">
     <Icon name="angle-down" style="width: 24px; height: 24px;" />
   </slot>
@@ -83,7 +83,7 @@
 
 {#if source === 'svelte'}
   <Prism language="html">
-    {`<Toggler isSwitch={true} on:toggle="{(event) => {}}">
+    {`<Toggler isSwitch={true}>
   <slot slot="on">on</slot>
   <slot slot="off">off</slot>
 </Toggler>`}
@@ -103,7 +103,7 @@
 
 {#if source === 'svelte'}
   <Prism language="html">
-    {`<Toggler defaultState={false} on:toggle="{(event) => {}}">
+    {`<Toggler defaultState={false}>
   <slot slot="on">on</slot>
   <slot slot="off">off</slot>
 </Toggler>`}

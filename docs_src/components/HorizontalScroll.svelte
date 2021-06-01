@@ -65,7 +65,7 @@
 {#if source === 'svelte'}
   <Prism language="html">
     {`<HorizontalScroll title="">
-  <!-- Content -->
+  ...
 </HorizontalScroll>`}
   </Prism>
 {:else}
@@ -78,7 +78,7 @@
     <i class="fa fa-chevron-right"></i>
   </button>
   <div data-horizontallist="itemcontainer" class="horizontal-scroll-items flex">
-    <!-- Content -->
+    ...
   </div>
 </div>
 
