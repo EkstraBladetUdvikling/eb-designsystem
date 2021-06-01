@@ -1,15 +1,6 @@
 /**
 * Pillnavigation
 */
-.pillnavigation .button {
-  border-color: var(--color--primary);
-  border-right-width: 0;
-  color: var(--color--primary);
-}
-
-.pillnavigation .button:active,
-.pillnavigation .button:hover,
-.pillnavigation .button:focus,
 .pillnavigation .button[data-selected="true"] {
   background: var(--color--primary);
   border-color: var(--color--primary);
