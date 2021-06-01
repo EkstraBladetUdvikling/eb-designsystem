@@ -50,6 +50,12 @@
   </div>
 </div>
 
-<script ✂prettier:content✂="CiAgKGZ1bmN0aW9uICgpIHsKICAgIDwlQCBpbmNsdWRlIGZpbGU9Ii9wYXRoL3RvL2hvcml6b250YWxzY3JvbGwuanMiICU+CgogICAgaG9yaXpvbnRhbFNjcm9sbCgnZXhhbXBsZS1pZCcpOwogIH0pKCk7Cg==">{}</script>`}
+<script>
+  (function () {
+    <%@ include file="/path/to/horizontalscroll.js" %>
+
+    horizontalScroll('example-id');
+  })();
+</script>`}
   </Prism>
 {/if}

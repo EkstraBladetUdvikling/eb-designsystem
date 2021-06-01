@@ -2,7 +2,6 @@
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
   import { FormElement } from '../../src';
-  let radio = 1;
 </script>
 
 <h1 class="color--eb">Form Element</h1>
