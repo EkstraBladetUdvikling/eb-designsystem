@@ -1,26 +1,40 @@
-<div class="navmenu-container position-fixed width-1of1 margin-xl--b bg-red">
-  <nav class="navmenu flex flex-align--center padding-xl--rl">
+<script lang="ts">
+  import { Button, ButtonGroup } from '../../src';
+  import { sourceType } from '../stores';
+
+  function changeSourceType(source: string) {
+    sourceType.set(source);
+  }
+</script>
+
+<div class="navmenu-container position-fixed margin-xl--b bg-red">
+  <nav class="navmenu flex flex-justify--between flex-align--center padding-xl--rl">
     <a href="https://github.com/EkstraBladetUdvikling/eb-designsystem" target="_blank" class="flex"
       ><i class="fab fa-github margin-s--r" />Github</a
     >
+    <ButtonGroup type="secondary">
+      <Button size="small" initial={$sourceType === 'svelte'} on:click={() => changeSourceType('svelte')}>Svelte</Button>
+      <Button size="small" initial={$sourceType === 'html'} on:click={() => changeSourceType('html')}>HTML</Button>
+    </ButtonGroup>
   </nav>
 </div>
 
 <style>
-    a {
-      color: var(--color--white);
-      transition: .5s;
-    }
-    .navmenu-container {
+  a {
+    color: var(--color--white);
+    transition: 0.5s;
+  }
+  .navmenu-container {
     top: 0;
     left: 250px; /* Width of sidebar */
+    width: calc(100% - 250px);
     z-index: 9999;
 
     background-color: var(--color--red);
     border-bottom: 1px solid var(--color--graa6);
-    }
-    .navmenu-container .navmenu {
-      height: 60px;
-      max-height: 60px;
-    }
+  }
+  .navmenu-container .navmenu {
+    height: 60px;
+    max-height: 60px;
+  }
 </style>
