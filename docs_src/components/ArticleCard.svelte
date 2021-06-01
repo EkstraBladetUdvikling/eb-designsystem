@@ -1,40 +1,8 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
-  import { LoremIpsum } from 'lorem-ipsum';
+  import { rdmArticleData } from '../util';
   import { sourceType } from '../stores';
   import { ArticleCard } from '../../src';
-
-  const lorem = new LoremIpsum({
-    wordsPerSentence: {
-      max: 12,
-      min: 4,
-    },
-  });
-
-  function rdmArticleData(mediaWidth = 640, mediaHeight = 360) {
-    const colorClasses = ['sport', 'sex-samliv', 'forbrug', 'underholdning', 'flash', 'nyheder'];
-    const article = {
-      href: '#',
-      isPlus: Math.random() < 0.3,
-      isBreaking: Math.random() < 0.1,
-      media: {
-        src: `https://loremflickr.com/${mediaWidth}/${mediaHeight}/city,people,nature,animal?random=${Math.random()}`,
-      },
-      section: lorem.generateWords(1),
-      colorClass: colorClasses[Math.floor(Math.random() * colorClasses.length)],
-      timestamp: randomDate(),
-      title: lorem.generateSentences(1),
-      truncateTitle: false,
-    };
-
-    return article;
-  }
-
-  function randomDate() {
-    const start = new Date(2019, 0, 1);
-    const end = new Date();
-    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-  }
 </script>
 
 <h1 class="color--eb">Article Card</h1>

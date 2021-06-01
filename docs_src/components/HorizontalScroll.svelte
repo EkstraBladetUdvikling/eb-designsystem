@@ -1,40 +1,13 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
-  import { LoremIpsum } from 'lorem-ipsum';
+  import { rdmArticleData } from '../util';
   import { sourceType } from '../stores';
   import { ArticleCard, HorizontalScroll } from '../../src';
-
-  const lorem = new LoremIpsum({
-    wordsPerSentence: {
-      max: 12,
-      min: 4,
-    },
-  });
-
-  const colorClasses = ['sport', 'sex-samliv', 'forbrug', 'underholdning', 'flash', 'nyheder'];
 
   let articles = [];
 
   for (let i = 0; i < 15; i++) {
-    const article = {
-      href: '#',
-      isPlus: Math.random() < 0.3,
-      media: {
-        src: `https://loremflickr.com/640/360/city,people,nature?random=${i}`,
-      },
-      section: lorem.generateWords(1),
-      colorClass: colorClasses[Math.floor(Math.random() * colorClasses.length)],
-      timestamp: randomDate(),
-      title: lorem.generateSentences(1),
-    };
-
-    articles.push(article);
-  }
-
-  function randomDate() {
-    const start = new Date(2019, 0, 1);
-    const end = new Date();
-    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+    articles.push(rdmArticleData(640, 360));
   }
 </script>
 
@@ -77,12 +50,6 @@
   </div>
 </div>
 
-<script>
-  (function () {
-    <%@ include file="/path/to/horizontalscroll.js" %>
-
-    horizontalScroll('example-id');
-  })();
-</script>`}
+<script ✂prettier:content✂="CiAgKGZ1bmN0aW9uICgpIHsKICAgIDwlQCBpbmNsdWRlIGZpbGU9Ii9wYXRoL3RvL2hvcml6b250YWxzY3JvbGwuanMiICU+CgogICAgaG9yaXpvbnRhbFNjcm9sbCgnZXhhbXBsZS1pZCcpOwogIH0pKCk7Cg==">{}</script>`}
   </Prism>
 {/if}
