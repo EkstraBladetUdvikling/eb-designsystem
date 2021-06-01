@@ -437,6 +437,10 @@ custom media queries is the only allowed media queries
   font-size: inherit;
 }
 
+.accordion-body p:first-child {
+  margin-top: 0;
+}
+
 /* Lightmode */
 
 [data-theme="lightmode"] .accordion-tab {
