@@ -1,3 +1,9 @@
 import { Writable, writable } from 'svelte/store';
 
-export const sourceType: Writable<'svelte' | 'html'> = writable('html');
+const localeSourceType: string = localStorage.getItem('sourceType');
+
+export const sourceType: Writable<string> = writable(localeSourceType || 'html');
+
+sourceType.subscribe((value) => {
+  localStorage.setItem('sourceType', value);
+});
