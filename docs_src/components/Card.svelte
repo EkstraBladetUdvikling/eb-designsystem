@@ -2,17 +2,11 @@
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
   import { Card } from '../../src';
-
-  let source = '';
-
-  sourceType.subscribe((value) => {
-    source = value;
-  });
 </script>
 
 <h1 class="color--eb">Card</h1>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="js">
     {`import { Card } from '@ekstra-bladet/designsystem';`}
   </Prism>
@@ -29,7 +23,7 @@
   <div slot="footer">Footer</div>
 </Card>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<Card>
   <div slot="header"></div>
@@ -62,7 +56,7 @@
   <div slot="content">Content</div>
 </Card>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<Card className="card--small-media">
   <div slot="media">

@@ -3,19 +3,13 @@
   import { sourceType } from '../stores';
   import { BluedarkCSSClass, GreenCSSClass, GreendarkCSSClass } from '@ekstra-bladet/eb-colors';
   import { Badge } from '../../src';
-
-  let source = '';
-
-  sourceType.subscribe((value) => {
-    source = value;
-  });
 </script>
 
 <h1 class="color--eb">Badge</h1>
 
 <p>Badges kan benyttes som mærkater eller som indikation af tags. Størrelsen af et badge kan styres vha. font-sizes.</p>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="js">
     {`import { Badge } from '@ekstra-bladet/designsystem';`}
   </Prism>
@@ -27,7 +21,7 @@
   <Badge>Badge</Badge>
 </div>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<Badge></Badge>`}
   </Prism>
@@ -46,7 +40,7 @@
   <Badge className="margin-s" type="danger">Danger</Badge>
 </div>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<Badge type="primary"></Badge>
 <Badge type="secondary"></Badge>
@@ -70,7 +64,7 @@
   <Badge className="margin-s {GreendarkCSSClass}">GreendarkCSSClass</Badge>
 </div>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`import { BluedarkCSSClass, GreenCSSClass, GreendarkCSSClass } from '@ekstra-bladet/eb-colors';
 

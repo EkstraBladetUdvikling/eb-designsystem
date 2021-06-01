@@ -3,17 +3,11 @@
   import { sourceType } from '../stores';
   import { Card, Icon } from '../../src';
   import { iconnames } from '../../src/components/icon/svgs/iconnames';
-
-  let source = '';
-
-  sourceType.subscribe((value) => {
-    source = value;
-  });
 </script>
 
 <h1 class="color--eb">Icon library</h1>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="js">
     {`import { Icon } from '@ekstra-bladet/designsystem';`}
   </Prism>
@@ -30,7 +24,7 @@
   {/each}
 </div>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<Icon name="icon_name" />`}
   </Prism>
@@ -46,7 +40,7 @@
 
 <Icon type="fa" className="fas fa-snowplow" />
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<Icon type="fa" className="fas fa-snowplow" />`}
   </Prism>

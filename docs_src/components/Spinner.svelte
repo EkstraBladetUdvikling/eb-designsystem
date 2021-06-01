@@ -2,17 +2,11 @@
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
   import { Spinner } from '../../src';
-
-  let source = '';
-
-  sourceType.subscribe((value) => {
-    source = value;
-  });
 </script>
 
 <h1 class="color--eb">Spinner</h1>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="js">
     {`import { Spinner } from '@ekstra-bladet/designsystem';`}
   </Prism>
@@ -22,7 +16,7 @@
   <Spinner isLoading={true} />
 </div>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<Spinner isLoading={true}/>`}
   </Prism>

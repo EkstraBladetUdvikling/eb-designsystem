@@ -13,12 +13,7 @@
 
   const colorClasses = ['sport', 'sex-samliv', 'forbrug', 'underholdning', 'flash', 'nyheder'];
 
-  let source = '';
   let articles = [];
-
-  sourceType.subscribe((value) => {
-    source = value;
-  });
 
   for (let i = 0; i < 15; i++) {
     const article = {
@@ -45,7 +40,7 @@
 
 <h1 class="color--eb">Horizontal Scroll</h1>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="js">
     {`import { HorizontalScroll } from '@ekstra-bladet/designsystem';`}
   </Prism>
@@ -62,7 +57,7 @@
   {/each}
 </HorizontalScroll>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<HorizontalScroll title="">
   ...

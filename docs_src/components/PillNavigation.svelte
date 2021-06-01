@@ -2,17 +2,11 @@
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
   import { Card, PillNavigation, Pill, PillContent, PillList } from '../../src';
-
-  let source = '';
-
-  sourceType.subscribe((value) => {
-    source = value;
-  });
 </script>
 
 <h1 class="color--eb">Pill navigation</h1>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="js">
     {`import { PillNavigation, Pill, PillContent, PillList } from '@ekstra-bladet/designsystem';`}
   </Prism>

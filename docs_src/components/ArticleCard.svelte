@@ -11,12 +11,6 @@
     },
   });
 
-  let source = '';
-
-  sourceType.subscribe((value) => {
-    source = value;
-  });
-
   function rdmArticleData(mediaWidth = 640, mediaHeight = 360) {
     const colorClasses = ['sport', 'sex-samliv', 'forbrug', 'underholdning', 'flash', 'nyheder'];
     const article = {
@@ -45,7 +39,7 @@
 
 <h1 class="color--eb">Article Card</h1>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="js">
     {`import { ArticleCard } from '@ekstra-bladet/designsystem';`}
   </Prism>

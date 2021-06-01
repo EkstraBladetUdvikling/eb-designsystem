@@ -2,18 +2,12 @@
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
   import { FormElement } from '../../src';
-
-  let source = '';
   let radio = 1;
-
-  sourceType.subscribe((value) => {
-    source = value;
-  });
 </script>
 
 <h1 class="color--eb">Form Element</h1>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="js">
     {`import { FormElement } from '@ekstra-bladet/designsystem';`}
   </Prism>
@@ -25,7 +19,7 @@
 <FormElement inputtype="text" label="input size medium (standard)" />
 <FormElement inputtype="text" size="large" label="input size large" />
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<FormElement inputtype="text" size="small" label="" />
 <FormElement inputtype="text" label="" />
@@ -41,7 +35,7 @@
 
 <FormElement inputtype="number" label="Noget tal indhold her" />
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<FormElement inputtype="number" label="" />`}
   </Prism>
@@ -58,7 +52,7 @@
   <option value="option2">Option 2</option>
 </FormElement>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<FormElement inputtype="select" label="">
   <option value="option1"></option>
@@ -76,7 +70,7 @@
 <FormElement inputtype="checkbox" label="Checkox" />
 <FormElement inputtype="radio" label="Radio" value={1} />
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<FormElement inputtype="checkbox" label="" />
 <FormElement inputtype="radio" label="" bind:group={group} value={1} />`}
@@ -91,7 +85,7 @@
 
 <FormElement inputtype="textarea" label="Textarea" />
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<FormElement inputtype="textarea" label="" />`}
   </Prism>

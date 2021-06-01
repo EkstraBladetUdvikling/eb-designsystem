@@ -2,12 +2,6 @@
   import { Button, ButtonGroup } from '../../src';
   import { sourceType } from '../stores';
 
-  let source = '';
-
-  sourceType.subscribe((value) => {
-    source = value;
-  });
-
   function changeSourceType(source: string) {
     sourceType.set(source);
   }
@@ -19,8 +13,8 @@
       ><i class="fab fa-github margin-s--r" />Github</a
     >
     <ButtonGroup type="secondary">
-      <Button size="small" initial={source === 'svelte'} on:click={() => changeSourceType('svelte')}>Svelte</Button>
-      <Button size="small" initial={source === 'html'} on:click={() => changeSourceType('html')}>HTML</Button>
+      <Button size="small" initial={$sourceType === 'svelte'} on:click={() => changeSourceType('svelte')}>Svelte</Button>
+      <Button size="small" initial={$sourceType === 'html'} on:click={() => changeSourceType('html')}>HTML</Button>
     </ButtonGroup>
   </nav>
 </div>

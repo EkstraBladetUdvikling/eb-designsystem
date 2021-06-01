@@ -2,17 +2,11 @@
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
   import { Button, ButtonGroup } from '../../src';
-
-  let source = '';
-
-  sourceType.subscribe((value) => {
-    source = value;
-  });
 </script>
 
 <h1 class="color--eb">Button groups</h1>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="js">
     {`import { Button, ButtonGroup } from '@ekstra-bladet/designsystem';`}
   </Prism>
@@ -26,7 +20,7 @@
   <Button>Button 3</Button>
 </ButtonGroup>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<ButtonGroup>
   <Button></Button>
@@ -70,7 +64,7 @@
   <Button>Button 3</Button>
 </ButtonGroup>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<ButtonGroup type="primary">...</ButtonGroup>
 <ButtonGroup type="secondary">...</ButtonGroup>
@@ -94,7 +88,7 @@
   <Button>Button 3</Button>
 </ButtonGroup>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<ButtonGroup color="Bordeaux">...</ButtonGroup>`}
   </Prism>
@@ -117,7 +111,7 @@
   <Button>Button 3</Button>
 </ButtonGroup>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<ButtonGroup solid={true} color="Black" colorHover="Red">...</ButtonGroup>`}
   </Prism>

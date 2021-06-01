@@ -2,17 +2,11 @@
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
   import { Icon, Toggler } from '../../src';
-
-  let source = '';
-
-  sourceType.subscribe((value) => {
-    source = value;
-  });
 </script>
 
 <h1 class="color--eb">Toggler</h1>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="js">
     {`import { Toggler } from '@ekstra-bladet/designsystem';`}
   </Prism>
@@ -25,7 +19,7 @@
   <slot slot="off">off</slot>
 </Toggler>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<Toggler>
   <slot slot="on">on</slot>
@@ -53,7 +47,7 @@
   </slot>
 </Toggler>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<Toggler>
   <slot slot="on">
@@ -81,7 +75,7 @@
   <slot slot="off">off</slot>
 </Toggler>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<Toggler isSwitch={true}>
   <slot slot="on">on</slot>
@@ -101,7 +95,7 @@
   <slot slot="off">off</slot>
 </Toggler>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<Toggler defaultState={false}>
   <slot slot="on">on</slot>

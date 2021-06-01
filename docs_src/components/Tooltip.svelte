@@ -2,17 +2,11 @@
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
   import { Tooltip } from '../../src';
-
-  let source = '';
-
-  sourceType.subscribe((value) => {
-    source = value;
-  });
 </script>
 
 <h1 class="color--eb">Tooltip</h1>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="js">
     {`import { Tooltip } from '@ekstra-bladet/designsystem';`}
   </Prism>
@@ -28,7 +22,7 @@
   </Tooltip>
 </div>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<Tooltip></Tooltip>`}
   </Prism>
@@ -60,7 +54,7 @@
   </Tooltip>
 </div>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<div class="flex flex-justify--between">
   <h3>Header</h3>

@@ -2,17 +2,11 @@
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
   import { Button, Icon } from '../../src';
-
-  let source = '';
-
-  sourceType.subscribe((value) => {
-    source = value;
-  });
 </script>
 
 <h1 class="color--eb">Buttons</h1>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="js">
     {`import { Button } from '@ekstra-bladet/designsystem';`}
   </Prism>
@@ -21,7 +15,7 @@
 <h3>Default</h3>
 <Button>Button</Button>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<Button></Button>`}
   </Prism>
@@ -39,7 +33,7 @@
   <span style="font-size: 30px">&times;</span>
 </Button>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<Button extension="solid"></Button>
 <Button extension="link"></Button>
@@ -63,7 +57,7 @@
 <Button className="margin-m" size="big">Big</Button>
 <Button className="margin-m" size="small">Small</Button>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<Button size="big"></Button>
 <Button size="small"></Button>`}
@@ -82,7 +76,7 @@
 <Button className="margin-m" type="accept">Accept</Button>
 <Button className="margin-m" type="cancel">Cancel</Button>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<Button type="primary"></Button>
 <Button type="secondary"></Button>
@@ -109,7 +103,7 @@
   <span>Icon to the left</span>
 </Button>
 
-{#if source === 'svelte'}
+{#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<Button>
   <span></span>
