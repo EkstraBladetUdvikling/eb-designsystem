@@ -1,5 +1,7 @@
 :root {
-  --button-border-radius: var(--button-height);
+  --button-border-radius: 18px;
+  --button-border-radius--big: 25px;
+  --button-border-radius--small: 15px;
   --button-height: 36px;
   --button-height--big: 50px;
   --button-height--small: 30px;
@@ -166,12 +168,14 @@
 
 
 .button.button--small {
+  border-radius: var(--button-border-radius--small);
   font-size: 12px;
   padding: 0 15px;
   height: var(--button-height--small);
 }
 
 .button.button--big {
+  border-radius: var(--button-border-radius--big);
   font-size: 20px;
   font-weight: bold;
   padding: 0 40px;

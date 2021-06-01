@@ -1,56 +1,81 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
-
+  import { rdmParagraphs } from '../util';
+  import { sourceType } from '../stores';
   import { Accordion } from '../../src';
 
-  let tabs = [
-    {
-      title: 'Tab 1',
-      content:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lobortis porttitor augue sed commodo. Etiam ornare arcu quis turpis pulvinar, ullamcorper ullamcorper nunc ullamcorper. Maecenas porttitor, erat in feugiat faucibus, velit sem luctus leo, nec congue tellus erat sit amet purus.',
-    },
-    {
-      title: 'Tab 2',
-      content:
-        'Nam condimentum, dui sit amet convallis finibus, tellus mi molestie lorem, sed ornare mauris ex nec lectus. Pellentesque gravida molestie felis sit amet interdum.',
-    },
-    {
-      title: 'Tab 3',
-      content:
-        'uspendisse at tincidunt eros, vel convallis nisi. Nam pulvinar viverra augue. Vivamus vitae ligula sit amet tellus interdum dictum. Donec accumsan facilisis urna, condimentum mollis diam gravida ac. Donec sed malesuada odio. ',
-    },
-  ];
+  const tabs = [];
+
+  for (let i = 0; i < 3; i++) {
+    tabs.push({
+      title: `Tab ${i + 1}`,
+      content: rdmParagraphs(),
+    });
+  }
 </script>
 
-<div class="grid-width--small">
-  <h1 class="color--eb">Accordion</h1>
+<h1 class="color--eb">Accordion</h1>
 
-  <Prism
-    language="js"
-    source={`
-    import { Accordion } from '@ekstra-bladet/designsystem';
+{#if $sourceType === 'svelte'}
+  <Prism language="js">
+    {`import { Accordion } from '@ekstra-bladet/designsystem';`}
+  </Prism>
+{/if}
 
-    // Example tabs
-    let tabs = [
-      { title: 'Tab 1', content: 'content 1' },
-      { title: 'Tab 2', content: 'content 2' },
-    ];
-    `}
-  />
+<Accordion {tabs} />
 
-  <h2>Default accordion</h2>
+{#if $sourceType === 'svelte'}
+  <Prism language="html">
+    {`<Accordion {tabs} />`}
+  </Prism>
+{:else}
+  <Prism language="html">
+    {`<div class="accordion card-mode padding-l ff-secondary width-1of1">
+  <div class="accordion-tab margin-m--b">
+    <div class="accordion-header flex flex-justify--between flex-align--center padding-m">
+      <span class="fontweight-bold fontsize-medium">Tab 1</span>
+      <i class="fas fa-chevron-down" />
+    </div>
+    <div class="accordion-body padding-m padding-l--rl fontsize-small">
+      Content 1
+    </div>
+  </div>
+  <div class="accordion-tab margin-m--b">
+    <div class="accordion-header flex flex-justify--between flex-align--center padding-m">
+      <span class="fontweight-bold fontsize-medium">Tab 2</span>
+      <i class="fas fa-chevron-down" />
+    </div>
+    <div class="accordion-body padding-m padding-l--rl fontsize-small">
+      Content 2
+    </div>
+  </div>
+  <div class="accordion-tab margin-m--b">
+    <div class="accordion-header flex flex-justify--between flex-align--center padding-m">
+      <span class="fontweight-bold fontsize-medium">Tab 3</span>
+      <i class="fas fa-chevron-down" />
+    </div>
+    <div class="accordion-body padding-m padding-l--rl fontsize-small">
+      Content 3
+    </div>
+  </div>
+</div>`}
+  </Prism>
 
-  <Accordion {tabs} />
-
-  <Prism language="html" source={`<Accordion {tabs} />`} />
-
-  <h2>Accordion with lightmode</h2>
-  <Accordion dataTheme="lightmode" {tabs} />
-
-  <Prism language="html" source={`<Accordion dataTheme="lightmode" {tabs} />`} />
-
-  <h2>Accordion with darkmode</h2>
-  <Accordion dataTheme="darkmode" {tabs} />
-
-  <Prism language="html" source={`<Accordion dataTheme="darkmode" {tabs} />`} />
-</div>
+  <Prism language="js">
+    {`const accordions = document.querySelectorAll(".accordion");
+for (const accordion of accordions) {
+  const tabs = accordion.querySelectorAll(".accordion-tab");
+  for (const tab of tabs) {
+    const head = tab.querySelector(".accordion-header");
+    head.addEventListener('click', () => {
+      for (const othertab of tabs) {
+        if (othertab !== tab) {
+          othertab.classList.remove('accordion-expanded');
+        }
+      }
+      tab.classList.toggle('accordion-expanded');
+    });
+  }
+}`}
+  </Prism>
+{/if}

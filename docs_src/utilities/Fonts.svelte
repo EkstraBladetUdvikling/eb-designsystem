@@ -1,54 +1,50 @@
-<script lang="ts">
+<script>
   import Prism from 'svelte-prism';
+  import { Card } from '../../src';
 </script>
 
-<h1>Fonts</h1>
-<h2>Font family</h2>
+<h1 class="color--eb">Fonts</h1>
 
-<p>Primary</p>
+<h3>Font family</h3>
 
-<div class="ff-primary">
-  Her er .ff-primary
-  <p>Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz Ææ Øø Åå 1234567890</p>
-</div>
-
-<Prism
-  language="html"
-  source={`
-  <div class="ff-primary">
-    Her er ff-primary
+<Card className="bg--graa7 padding-l--rl">
+  <div class="ff-primary margin-l--tb">
+    <strong>.ff-primary:</strong>
+    <p>Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz Ææ Øø Åå 1234567890</p>
   </div>
-`}
-/>
+  <div class="ff-secondary">
+    <strong>.ff-secondary:</strong>
+    <p>Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz Ææ Øø Åå 1234567890</p>
+  </div>
+</Card>
 
-<p>Secondary</p>
+<Prism language="html">
+  {`<div class="ff-primary"></div>
+<div class="ff-secondary"></div>`}
+</Prism>
 
-<div class="ff-secondary">
-  Her er .ff-secondary
-  <p>Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz Ææ Øø Åå 1234567890</p>
-</div>
+<h3>Font-weight</h3>
 
-<Prism
-  language="html"
-  source={`
-<div class="ff-secondary">
-  Her er ff-secondary
-</div>
-`}
-/>
+<Card className="bg--graa7 padding-l--rl">
+  <p class="fontweight-normal">fontweight-normal</p>
+  <p class="fontweight-bold">fontweight-bold</p>
+  <p class="fontweight-bolder">fontweight-bolder</p>
+</Card>
 
-<p>Font-size</p>
+<Prism language="html">
+  {`<p class="fontweight-normal"></p>
+<p class="fontweight-bold"></p>
+<p class="fontweight-bolder"></p>`}
+</Prism>
 
-<p>
-  Font-size er sat i rem for at understøtte brugerens font-size valg i browseren.
-  <br />
-  rem værdien er udregnet i forhold til en basis font-size på 16px, hvilket er browser-standarden
-  <br />
-  Der er både en _larger_ og en _smaller_ mulighed, der begge er relative til parent fontsize
-</p>
+<h3>Font-size</h3>
 
-<div>
-  <div class="fontsize-xxsmall padding-m--tb">
+<p>Font-size er sat i rem for at understøtte brugerens font-size valg i browseren.</p>
+<p>Rem værdien er udregnet i forhold til en basis font-size på 16px, hvilket er browser-standarden</p>
+<p>Der er både en <u>larger</u> og en <u>smaller</u> mulighed, der begge er relative til parent fontsize</p>
+
+<Card className="bg--graa7 padding-l">
+  <div class="fontsize-xxsmall padding-m--b">
     fontsize-xxsmall = .625rem ~ 10px;
     <div class="fontsize-smaller">fontsize-smaller</div>
     <div class="fontsize-larger">fontsize-larger</div>
@@ -88,77 +84,44 @@
     <div class="fontsize-smaller">fontsize-smaller</div>
     <div class="fontsize-larger">fontsize-larger</div>
   </div>
-  <div class="fontsize-xxxxlarge padding-m--tb">
+  <div class="fontsize-xxxxlarge padding-m--t">
     fontsize-xxxxlarge = 3.125rem ~ 50px;
     <div class="fontsize-smaller">fontsize-smaller</div>
     <div class="fontsize-larger">fontsize-larger</div>
   </div>
-</div>
+</Card>
 
-<Prism
-  language="html"
-  source={`
-<div class="fontsize-xxsmall">
-  fontsize-xxsmall = .625rem ~ 10px;
-  <div class="fontsize-smaller">fontsize-smaller</div>
-  <div class="fontsize-larger">fontsize-larger</div>
-</div>
-<div class="fontsize-xsmall">
-  fontsize-xsmall = .75rem ~ 12px;
-  <div class="fontsize-smaller">fontsize-smaller</div>
-  <div class="fontsize-larger">fontsize-larger</div>
-</div>
-<div class="fontsize-small">
-  fontsize-small = .875rem ~ 14px;
-  <div class="fontsize-smaller">fontsize-smaller</div>
-  <div class="fontsize-larger">fontsize-larger</div>
-</div>
-<div class="fontsize-medium">
-  fontsize-medium = 1rem ~ 16px;
-  <div class="fontsize-smaller">fontsize-smaller</div>
-  <div class="fontsize-larger">fontsize-larger</div>
-</div>
-<div class="fontsize-large">
-  fontsize-large = 1.125rem ~18px;
-  <div class="fontsize-smaller">fontsize-smaller</div>
-  <div class="fontsize-larger">fontsize-larger</div>
-  </div>
-<div class="fontsize-xlarge">
-  fontsize-xlarge = 1.25rem ~20px;
-  <div class="fontsize-smaller">fontsize-smaller</div>
-  <div class="fontsize-larger">fontsize-larger</div>
-  </div>
-<div class="fontsize-xxlarge">
-  fontsize-xxlarge = 1.875rem ~30px;
-  <div class="fontsize-smaller">fontsize-smaller</div>
-  <div class="fontsize-larger">fontsize-larger</div>
-  </div>
-<div class="fontsize-xxxlarge">
-  fontsize-xxxlarge = 2.25rem ~36px;
-  <div class="fontsize-smaller">fontsize-smaller</div>
-  <div class="fontsize-larger">fontsize-larger</div>
-  </div>
-<div class="fontsize-xxxxlarge">
-  fontsize-xxxxlarge = 3.125rem ~50px;
-  <div class="fontsize-smaller">fontsize-smaller</div>
-  <div class="fontsize-larger">fontsize-larger</div>
-  </div>
-`}
-/>
+<Prism language="html">
+  {`<div class="fontsize-xxsmall"></div>
+<div class="fontsize-xsmall"></div>
+<div class="fontsize-small"></div>
+<div class="fontsize-medium"></div>
+<div class="fontsize-large"></div>
+<div class="fontsize-xlarge"></div>
+<div class="fontsize-xxlarge"></div>
+<div class="fontsize-xxxlarge"></div>
+<div class="fontsize-xxxxlarge"></div>
 
-<p>Font-weight</p>
+<div class="fontsize-smaller"></div>
+<div class="fontsize-larger"></div>`}
+</Prism>
 
-<div>
-  <p class="fontweight-normal">fontweight-normal</p>
-  <p class="fontweight-bold">fontweight-bold</p>
-  <p class="fontweight-bolder">fontweight-bolder</p>
-</div>
+<h3>Headers and font aliases</h3>
 
-<Prism
-  language="html"
-  source={`
-<p class="fontweight-normal">fontweight-normal</p>
-<p class="fontweight-bold">fontweight-bold</p>
-<p class="fontweight-bolder">fontweight-bolder</p>
-`}
-/>
+<Card className="bg--graa7 padding-l--rl padding-l--t">
+  <h1>h1</h1>
+  <h2>h2</h2>
+  <h3>h3</h3>
+  <h4>h4</h4>
+  <h5>h5</h5>
+  <h6>h6</h6>
+
+  <p class="fs-ads">fs-ads</p>
+  <p class="fs-bodytext">fs-bodytext</p>
+  <p class="fs-caption">fs-caption</p>
+  <p class="fs-quote">fs-quote</p>
+  <p class="fs-showmore">fs-showmore</p>
+  <p class="fs-subtitle">fs-subtitle</p>
+  <p class="fs-timestamp">fs-timestamp</p>
+  <p class="fs-title">fs-title</p>
+</Card>

@@ -1,6 +1,6 @@
 {
   "name": "@ekstra-bladet/designsystem",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "main": "src/index.ts",
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
@@ -20,7 +20,8 @@
     "build:watch": "onchange 'src/**/*.css' -- yarn build:watcher",
     "build:watcher": "yarn build:css --watcher",
     "build:svelte": "yarn rollup -c --silent",
-    "dev": "yarn rollup -c -w & yarn build:watcher & yarn build:watch",
+    "dev": "yarn build:watcher & yarn build:watch & yarn rollup -c -w",
+    "predev": "yarn svgs",
     "start": "sirv docs",
     "validate": "svelte-check",
     "dist": "yarn build",
@@ -58,6 +59,7 @@
   "devDependencies": {
     "copyfiles": "^2.4.1",
     "csscomb": "^4.3.0",
+    "lorem-ipsum": "^2.0.3",
     "normalize.css": "^8.0.1",
     "onchange": "^7.1.0",
     "postcss": "^8.3.0",

@@ -51,7 +51,7 @@
     "body": [
       "button"
     ],
-    "description": "Standard button design\n {\n align-items: center;\nborder-radius: 36px;\nbox-sizing: border-box;\ncursor: pointer;\ndisplay: flex;\nfont-size: 14px;\npadding: 0 20px;\ntext-align: center;\ntext-decoration: none;\nwhite-space: nowrap;\nheight: 36px;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :disabled\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "Standard button design\n {\n align-items: center;\nborder-radius: 18px;\nbox-sizing: border-box;\ncursor: pointer;\ndisplay: flex;\nfont-size: 14px;\npadding: 0 20px;\ntext-align: center;\ntext-decoration: none;\nwhite-space: nowrap;\nheight: 36px;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :disabled\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem button[class*=\"bg \"]": {
     "description": "Has pseudo styling ]\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
@@ -92,14 +92,14 @@
     "body": [
       "button--small"
     ],
-    "description": "NB! This should only be used with button\nThis extends button with: {\n font-size: 12px;\npadding: 0 15px;\nheight: 30px;\n }"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n border-radius: 15px;\nfont-size: 12px;\npadding: 0 15px;\nheight: 30px;\n }"
   },
   "designsystem button big": {
     "prefix": "ds-button--big",
     "body": [
       "button--big"
     ],
-    "description": "NB! This should only be used with button\nThis extends button with: {\n font-size: 20px;\nfont-weight: bold;\npadding: 0 40px;\nheight: 50px;\n }"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n border-radius: 25px;\nfont-size: 20px;\nfont-weight: bold;\npadding: 0 40px;\nheight: 50px;\n }"
   },
   "designsystem button link": {
     "prefix": "ds-button--link",
@@ -129,8 +129,15 @@
     ],
     "description": "{\n border-radius: 10px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
-  "designsystem card[class*=\"bg \"]": {
-    "description": "Has pseudo styling ]"
+  "designsystem card shadow)[class*=\"bg \"]": {
+    "description": "Has pseudo styling :not(.card--shadow)[class*=\"bg--\"]"
+  },
+  "designsystem card shadow": {
+    "prefix": "ds-card--shadow",
+    "body": [
+      "card--shadow"
+    ],
+    "description": "NB! This should only be used with card\n{\n box-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\n }"
   },
   "designsystem card media": {
     "prefix": "ds-card-media",

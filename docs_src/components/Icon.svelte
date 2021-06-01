@@ -1,60 +1,51 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
-
-  import type { IconTypes } from 'Icon.svelte';
-  import { Icon } from '../../src';
-
-  const icons: IconTypes[] = [
-    'angle-down',
-    'angle-left',
-    'angle-right',
-    'angle-up',
-    'article',
-    'check',
-    'clock',
-    'creditcard',
-    'ebplus_icon',
-    'ebplus_sort',
-    'envelope',
-    'figcaption-pin',
-    'gallery',
-    'headphones',
-    'headset',
-    'history-regular',
-    'lock-old',
-    'lock',
-    'medielogin',
-    'menu-bars',
-    'miteb-regular',
-    'miteb-solid',
-    'newspaper',
-    'play',
-    'smartphone',
-    'star-regular',
-    'tag-regular',
-    'tag-solid',
-    'tags-regular',
-    'tags-solid',
-    'toggle-off',
-    'toggle-on',
-    'video',
-  ];
+  import { sourceType } from '../stores';
+  import { Card, Icon } from '../../src';
+  import { iconnames } from '../../src/components/icon/svgs/iconnames';
 </script>
 
-<div class="grid-width--small">
-  <h1 class="color--eb">Icon library</h1>
-  <p>Der findes følgende svg ikoner</p>
+<h1 class="color--eb">Icon library</h1>
 
-  <div class="flex flex-wrap--wrap">
-    {#each icons as name}
-      <div
-        class="flex flex-column flex-align--center flex-justify--center margin-m padding-m"
-        style="border: 1px solid #111; border-radius: 5px;"
-      >
-        <Icon className="margin-s" style="width: 36px; height: 36px;" {name} />
-        <small>{name}</small>
-      </div>
-    {/each}
-  </div>
-  <Prism language="html" source={`<Icon {name} className="margin-s" style="width: 36px; height: 36px;" />`} />
+{#if $sourceType === 'svelte'}
+  <Prism language="js">
+    {`import { Icon } from '@ekstra-bladet/designsystem';`}
+  </Prism>
+{/if}
+
+<h3>Der findes følgende svg ikoner</h3>
+
+<div class="flex flex-wrap--wrap">
+  {#each iconnames as name}
+    <Card className="flex-align--center flex-justify--center margin-s padding-m">
+      <Icon {name} className="margin-s" style="width: 36px; height: 36px;" />
+      <small>{name}</small>
+    </Card>
+  {/each}
 </div>
+
+{#if $sourceType === 'svelte'}
+  <Prism language="html">
+    {`<Icon name="icon_name" />`}
+  </Prism>
+{:else}
+  <Prism language="html">
+    {`<svg viewBox="0 0 50 50">
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_name"></use>
+</svg>`}
+  </Prism>
+{/if}
+
+<h3>Det er også muligt at bruge ikoner fra <a href="https://fontawesome.com/" target="_blank">Font Awesome</a></h3>
+
+<Icon type="fa" className="fas fa-snowplow" />
+
+{#if $sourceType === 'svelte'}
+  <Prism language="html">
+    {`<Icon type="fa" className="fas fa-snowplow" />`}
+  </Prism>
+{:else}
+  <Prism language="html">
+    {`<i class="fas fa-snowplow"></i>`}
+  </Prism>
+{/if}

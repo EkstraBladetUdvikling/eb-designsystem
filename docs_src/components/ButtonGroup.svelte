@@ -1,241 +1,127 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
-  // import { Bordeaux, PastelDarkgreen } from '@ekstra-bladet/eb-colors/dist/eb-colors';
-
+  import { sourceType } from '../stores';
   import { Button, ButtonGroup } from '../../src';
 </script>
 
 <h1 class="color--eb">Button groups</h1>
 
-<Prism
-  language="js"
-  source={`import { Button, ButtonGroup } from '@ekstra-bladet/designsystem';
-`}
-/>
+{#if $sourceType === 'svelte'}
+  <Prism language="js">
+    {`import { Button, ButtonGroup } from '@ekstra-bladet/designsystem';`}
+  </Prism>
+{/if}
 
-<p>Default</p>
-<div class="margin-l flex">
-  <div class="flex-item margin-l--r">
-    <ButtonGroup>
-      <Button
-        on:click={() => {
-          console.log('Click 1');
-        }}>Toggle 1</Button
-      >
-      <Button
-        on:click={() => {
-          console.log('Click 2');
-        }}>Toggle 2</Button
-      >
-    </ButtonGroup>
-  </div>
-  <div class="flex-item margin-l--l">
-    <ButtonGroup>
-      <Button
-        on:click={() => {
-          console.log('Button 1');
-        }}>Button 1</Button
-      >
-      <Button
-        on:click={() => {
-          console.log('Button 2');
-        }}>Button 2</Button
-      >
-      <Button
-        on:click={() => {
-          console.log('Button 3');
-        }}>Button 3</Button
-      >
-    </ButtonGroup>
-  </div>
-</div>
+<h3>Default</h3>
 
-<div class="margin-l">
-  <Prism
-    language="svelte"
-    source={`
-<ButtonGroup>
-  <Button
-    on:click="{() => {
-      console.log('Button 1');
-    }}">Toggle 1</Button
-  >
-  <Button
-    on:click="{() => {
-      console.log('Button 2');
-    }}">Toggle 2</Button
-  >
-  <Button
-    on:click="{() => {
-      console.log('Button 3');
-    }}">Toggle 3</Button
-  >
+<ButtonGroup className="margin-l--b">
+  <Button>Button 1</Button>
+  <Button>Button 2</Button>
+  <Button>Button 3</Button>
 </ButtonGroup>
-`}
-  />
-</div>
 
-<div class="margin-l">
-  <p>Default Big</p>
-  <ButtonGroup>
-    <Button
-      size="big"
-      initial={true}
-      on:click={() => {
-        console.log('Click 1');
-      }}>Toggle 1</Button
-    >
-    <Button
-      size="big"
-      extension="solid"
-      on:click={() => {
-        console.log('Click 2');
-      }}>Toggle 2</Button
-    >
-  </ButtonGroup>
-</div>
+{#if $sourceType === 'svelte'}
+  <Prism language="html">
+    {`<ButtonGroup>
+  <Button></Button>
+  <Button></Button>
+  <Button></Button>
+</ButtonGroup>`}
+  </Prism>
+{:else}
+  <Prism language="html">
+    {`<div class="buttongroup">
+  <button class="button"></button>
+  <button class="button"></button>
+  <button class="button"></button>
+</div>`}
+  </Prism>
+{/if}
 
-<Prism
-  language="svelte"
-  source={`
-  <ButtonGroup>
-    <Button
-      size="big"
-      initial={true}
-      on:click={() => {
-        console.log('Click 1');
-      }}>Toggle 1</Button
-    >
-    <Button
-      size="big"
-      extension="solid"
-      on:click={() => {
-        console.log('Click 2');
-      }}>Toggle 2</Button
-    >
-  </ButtonGroup>
-  `}
-/>
+<h3>Variations</h3>
 
-<p>type muligheder</p>
+<ButtonGroup type="primary" className="margin-m--b">
+  <Button>Primary</Button>
+  <Button>Button 2</Button>
+  <Button>Button 3</Button>
+</ButtonGroup>
 
-<ul>
-  <li>accept</li>
-  <li>cancel</li>
-  <li>primary</li>
-  <li>secondary</li>
-</ul>
-<div class="margin-l">
-  <ButtonGroup type="accept">
-    <Button
-      size="big"
-      on:click={() => {
-        console.log('Click 1');
-      }}>Toggle 1</Button
-    >
-    <Button
-      size="big"
-      extension="solid"
-      on:click={() => {
-        console.log('Click 2');
-      }}>Toggle 2</Button
-    >
-  </ButtonGroup>
-</div>
+<ButtonGroup type="secondary" className="margin-m--b">
+  <Button>Secondary</Button>
+  <Button>Button 2</Button>
+  <Button>Button 3</Button>
+</ButtonGroup>
 
-<div class="margin-l">
-  <ButtonGroup type="cancel">
-    <Button
-      size="big"
-      on:click={() => {
-        console.log('Click 1');
-      }}>Toggle 1</Button
-    >
-    <Button
-      size="big"
-      extension="solid"
-      type="accept"
-      on:click={() => {
-        console.log('Click 2');
-      }}>Toggle 2</Button
-    >
-  </ButtonGroup>
-</div>
+<ButtonGroup type="accept" className="margin-m--b">
+  <Button>Accept</Button>
+  <Button>Button 2</Button>
+  <Button>Button 3</Button>
+</ButtonGroup>
 
-<div class="margin-l">
-  <ButtonGroup type="primary">
-    <Button
-      size="big"
-      on:click={() => {
-        console.log('Click 1');
-      }}>Toggle 1</Button
-    >
-    <Button
-      size="big"
-      extension="solid"
-      on:click={() => {
-        console.log('Click 2');
-      }}>Toggle 2</Button
-    >
-  </ButtonGroup>
-</div>
+<ButtonGroup type="cancel" className="margin-l--b">
+  <Button>Cancel</Button>
+  <Button>Button 2</Button>
+  <Button>Button 3</Button>
+</ButtonGroup>
 
-<div class="margin-l">
-  <ButtonGroup type="secondary">
-    <Button
-      size="big"
-      on:click={() => {
-        console.log('Click 1');
-      }}>Toggle 1</Button
-    >
-    <Button
-      size="big"
-      extension="solid"
-      on:click={() => {
-        console.log('Click 2');
-      }}>Toggle 2</Button
-    >
-  </ButtonGroup>
-</div>
+{#if $sourceType === 'svelte'}
+  <Prism language="html">
+    {`<ButtonGroup type="primary">...</ButtonGroup>
+<ButtonGroup type="secondary">...</ButtonGroup>
+<ButtonGroup type="accept">...</ButtonGroup>
+<ButtonGroup type="cancel">...</ButtonGroup>`}
+  </Prism>
+{:else}
+  <Prism language="html">
+    {`<div class="buttongroup buttongroup--primary">...</div>
+<div class="buttongroup buttongroup--secondary">...</div>
+<div class="buttongroup buttongroup--accept">...</div>
+<div class="buttongroup buttongroup--cancel">...</div>`}
+  </Prism>
+{/if}
 
-<p>Farve muligheder fra eb-colors</p>
-<div class="margin-l">
-  <ButtonGroup color="Bordeaux">
-    <Button
-      size="big"
-      on:click={() => {
-        console.log('Click 1');
-      }}>Toggle 1</Button
-    >
-    <Button
-      size="big"
-      extension="solid"
-      initial={true}
-      on:click={() => {
-        console.log('Click 2');
-      }}>Toggle 2</Button
-    >
-  </ButtonGroup>
-</div>
+<h3>Farve muligheder fra eb-colors</h3>
 
-<Prism
-  language="svelte"
-  source={`
-<ButtonGroup color="Bordeaux">
-    <Button
-      size="big"
-      on:click={() => {
-        console.log('Click 1');
-      }}>Toggle 1</Button
-    >
-    <Button
-      size="big"
-      extension="solid"
-      initial={true}
-      on:click={() => {
-        console.log('Click 2');
-      }}>Toggle 2</Button
-    >
-  </ButtonGroup>
-  `}
-/>
+<ButtonGroup color="Bordeaux" className="margin-l--b">
+  <Button>Button 1</Button>
+  <Button>Button 2</Button>
+  <Button>Button 3</Button>
+</ButtonGroup>
+
+{#if $sourceType === 'svelte'}
+  <Prism language="html">
+    {`<ButtonGroup color="Bordeaux">...</ButtonGroup>`}
+  </Prism>
+{:else}
+  <Prism language="html">
+    {`<div class="buttongroup" style="
+  --buttongroup-color: #8a0c36;
+  --buttongroup-fgcolor: #fff;
+  --buttongroup-color--hover: #8a0c36;
+  --buttongroup-fgcolor--hover: #fff;
+">...</div>`}
+  </Prism>
+{/if}
+
+<h3>Solid button group</h3>
+
+<ButtonGroup solid={true} color="Black" colorHover="Red" className="margin-l--b">
+  <Button>Button 1</Button>
+  <Button>Button 2</Button>
+  <Button>Button 3</Button>
+</ButtonGroup>
+
+{#if $sourceType === 'svelte'}
+  <Prism language="html">
+    {`<ButtonGroup solid={true} color="Black" colorHover="Red">...</ButtonGroup>`}
+  </Prism>
+{:else}
+  <Prism language="html">
+    {`<div class="buttongroup buttongroup--solid" style="
+  --buttongroup-color: #000;
+  --buttongroup-fgcolor: #fff;
+  --buttongroup-color--hover: #bd1118;
+  --buttongroup-fgcolor--hover: #fff;
+">...</div>`}
+  </Prism>
+{/if}

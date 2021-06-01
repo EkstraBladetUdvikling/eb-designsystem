@@ -3,8 +3,10 @@
 */
 
 :root {
-  --groupcolor-main: var(--color--default);
-  --groupcolor-main-foreground: var(--fgcolor--default);
+  --buttongroup-color: var(--color--default);
+  --buttongroup-color--hover: var(--buttongroup-color);
+  --buttongroup-fgcolor: var(--fgcolor--default);
+  --buttongroup-fgcolor--hover: var(--buttongroup-fgcolor);
 }
 
 .buttongroup {
@@ -13,18 +15,18 @@
 
 .buttongroup .button {
   background: var(--color--white);
-  border-color: var(--groupcolor-main);
+  border-color: var(--buttongroup-color);
   border-right-width: 0;
-  color: var(--groupcolor-main);
+  color: var(--buttongroup-color);
 }
 
 .buttongroup .button:active,
 .buttongroup .button:hover,
 .buttongroup .button:focus,
 .buttongroup .button[data-selected="true"] {
-  background: var(--groupcolor-main);
-  border-color: var(--groupcolor-main);
-  color: var(--groupcolor-main-foreground);
+  background: var(--buttongroup-color--hover);
+  border-color: var(--buttongroup-color--hover);
+  color: var(--buttongroup-fgcolor--hover);
 }
 
 .buttongroup .button:first-of-type {
@@ -104,4 +106,34 @@
   background: var(--color--accept);
   border-color: var(--color--accept);
   color: var(--fgcolor--accept);
+}
+
+.buttongroup--solid .button,
+.buttongroup--solid .button[data-selected="true"] {
+  background: var(--buttongroup-color);
+  border: 0;
+  color: var(--buttongroup-fgcolor);
+  margin: 1px;
+}
+
+.buttongroup--solid .button:active,
+.buttongroup--solid .button:hover,
+.buttongroup--solid .button:focus {
+  background: var(--buttongroup-color--hover);
+  color: var(--buttongroup-fgcolor--hover);
+}
+
+.buttongroup--solid .button:first-of-type {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.buttongroup--solid .button:not(:first-of-type):not(:last-of-type) {
+  border-radius: 2px;
+}
+
+.buttongroup--solid .button:last-of-type {
+  border-top-left-radius: 2px;
+  border-right-width: 1px;
+  border-bottom-left-radius: 2px;
 }

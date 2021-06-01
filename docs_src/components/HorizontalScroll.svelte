@@ -1,95 +1,61 @@
 <script lang="ts">
+  import Prism from 'svelte-prism';
+  import { rdmArticleData } from '../util';
+  import { sourceType } from '../stores';
   import { ArticleCard, HorizontalScroll } from '../../src';
 
-  let articles = [
-    {
-      href: '#',
-      isPlus: true,
-      media: {
-        src: 'https://via.placeholder.com/610x343&text=610x343',
-      },
-      section: 'Udenlandsk fodbold',
-      colorClass: 'sport',
-      timestamp: 'Thu Mar 18 2021 20:46:32',
-      title: `Sag om rockervold: 'Når han er på stoffer, siger han ting, der ikke passer'`,
-    },
-    {
-      href: '#',
-      media: {
-        src: 'https://via.placeholder.com/610x343&text=610x343',
-      },
-      section: 'Landsholds foldbold',
-      colorClass: 'sport',
-      timestamp: 'Thu Mar 18 2021 17:46:32',
-      title: `Sag om rockervold: 'Når han er på stoffer, siger han ting, der ikke passer' - to til tre gange `,
-    },
-    {
-      href: '#',
-      isPlus: true,
-      section: 'Nyheder',
-      colorClass: 'nyheder',
-      timestamp: 'Thu Mar 18 2021 18:46:32',
-      title: `Sag om rockervold: 'Når han er på stoffer, siger han ting, der ikke passer' - to til tre gange`,
-    },
-    {
-      href: '#',
-      isBreaking: true,
-      media: {
-        src: 'https://via.placeholder.com/610x343&text=610x343',
-      },
-      section: 'Sport',
-      colorClass: 'sport',
-      timestamp: 'Thu Mar 17 2021 21:46:32',
-      title: 'List element 4',
-    },
-    {
-      href: '#',
-      isPlus: true,
-      media: {
-        src: 'https://via.placeholder.com/610x343&text=610x343',
-      },
-      section: 'Sport',
-      colorClass: 'sport',
-      timestamp: 'Thu Mar 18 2021 20:46:32',
-      title: 'List element 1',
-    },
-    {
-      href: '#',
-      isPlus: true,
-      section: 'Nyheder',
-      colorClass: 'nyheder',
-      timestamp: 'Thu Mar 18 2021 18:46:32',
-      title: 'Det skal jo altså ikke være for nemt',
-    },
-    {
-      href: '#',
-      isBreaking: true,
-      media: {
-        src: 'https://via.placeholder.com/610x343&text=610x343',
-      },
-      section: 'Sport',
-      colorClass: 'sport',
-      timestamp: 'Thu Mar 18 2021 17:46:32',
-      title: 'List element 3',
-    },
-    {
-      href: '#',
-      media: {
-        src: 'https://via.placeholder.com/610x343&text=610x343',
-      },
-      section: 'Sport',
-      colorClass: 'sport',
-      timestamp: 'Thu Mar 17 2021 21:46:32',
-      title: 'List element 4',
-    },
-  ];
+  let articles = [];
+
+  for (let i = 0; i < 15; i++) {
+    articles.push(rdmArticleData(640, 360));
+  }
 </script>
 
 <h1 class="color--eb">Horizontal Scroll</h1>
-<div class="grid-width--small">
-  <HorizontalScroll title="Liste med artikler">
-    {#each articles as article}
-      <ArticleCard {...article} className="margin-s" style="width: 215px;" />
-    {/each}
-  </HorizontalScroll>
+
+{#if $sourceType === 'svelte'}
+  <Prism language="js">
+    {`import { HorizontalScroll } from '@ekstra-bladet/designsystem';`}
+  </Prism>
+{:else}
+  <p>HorizontalScroll kræver javascript som findes under list-v2 på eb</p>
+  <Prism language="html">
+    {`ekstrabladet/ekstrabladet-publication/src/main/webapp/WEB-INF/jsp/components/list-v2/horizontalscroll.ts`}
+  </Prism>
+{/if}
+
+<HorizontalScroll title="Title">
+  {#each articles as article}
+    <ArticleCard {...article} className="margin-s" style="width: 215px;" />
+  {/each}
+</HorizontalScroll>
+
+{#if $sourceType === 'svelte'}
+  <Prism language="html">
+    {`<HorizontalScroll title="">
+  ...
+</HorizontalScroll>`}
+  </Prism>
+{:else}
+  <Prism language="html">
+    {`<div id="example-id" class="horizontal-scroll-container position-relative">
+  <button data-horizontallist="button-prev" class="horizontal-scroll-nav">
+    <i class="fa fa-chevron-left"></i>
+  </button>
+  <button data-horizontallist="button-next" class="horizontal-scroll-nav">
+    <i class="fa fa-chevron-right"></i>
+  </button>
+  <div data-horizontallist="itemcontainer" class="horizontal-scroll-items flex">
+    ...
+  </div>
 </div>
+
+<script>
+  (function () {
+    <%@ include file="/path/to/horizontalscroll.js" %>
+
+    horizontalScroll('example-id');
+  })();
+</script>`}
+  </Prism>
+{/if}
