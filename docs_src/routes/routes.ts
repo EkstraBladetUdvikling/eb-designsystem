@@ -8,8 +8,8 @@ import Card from '../components/Card.svelte';
 import FormElement from '../components/FormElement.svelte';
 import Icon from '../components/Icon.svelte';
 import HorizontalScroll from '../components/HorizontalScroll.svelte';
-import PillNavigation from '../components/PillNavigation.svelte';
 import Spinner from '../components/Spinner.svelte';
+import Tabs from '../components/Tabs.svelte';
 import Toggler from '../components/Toggler.svelte';
 import Tooltip from '../components/Tooltip.svelte';
 import Animation from '../utilities/Animation.svelte';
@@ -32,7 +32,7 @@ const routes = [
   { link: '/components/form-elements', title: 'Form elements', type: 'component', component: FormElement },
   { link: '/components/icon', title: 'Icon', type: 'component', component: Icon },
   { link: '/components/horizontalscroll', title: 'Horizontal scroll', type: 'component', component: HorizontalScroll },
-  { link: '/components/pillnavigation', title: 'Pill navigation', type: 'component', component: PillNavigation },
+  { link: '/components/tabs', title: 'Tabs', type: 'component', component: Tabs },
   { link: '/components/spinner', title: 'Spinner', type: 'component', component: Spinner },
   { link: '/components/toggler', title: 'Toggler', type: 'component', component: Toggler },
   { link: '/components/tooltip', title: 'Tooltip', type: 'component', component: Tooltip },

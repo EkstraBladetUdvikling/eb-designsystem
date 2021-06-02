@@ -1,7 +1,7 @@
 <script>
   import Prism from 'svelte-prism';
 
-  import { ArticleCard, Badge, PillNavigation, Pill, PillContent, PillList } from '../../src/';
+  import { ArticleCard, Badge, Tabs, Tab, TabContent, TabList } from '../../src/';
 
   let article = {
     href: '#',
@@ -24,14 +24,14 @@
     <code>class="animation-navnPåAnimation"</code>
   </p>
   <h3>Eksempler på animationer</h3>
-  <PillNavigation>
+  <Tabs>
     <div class="flex flex-justify--end width-1of1">
-      <PillList>
-        <Pill><i class="fas fa-cubes" /></Pill>
-        <Pill><i class="fas fa-code" /></Pill>
-      </PillList>
+      <TabList>
+        <Tab><i class="fas fa-cubes" /></Tab>
+        <Tab><i class="fas fa-code" /></Tab>
+      </TabList>
     </div>
-    <PillContent>
+    <TabContent>
       <div class="flex grid-width--small">
         <ArticleCard
           className="animation-fogwave"
@@ -47,8 +47,8 @@
         <Badge href="#" className="margin-s bg--green animation-fogwave">Sport</Badge>
         <Badge href="#" className="margin-s bg--greendark animation-fogwave">Nicklas Bendtner</Badge>
       </div>
-    </PillContent>
-    <PillContent>
+    </TabContent>
+    <TabContent>
       <Prism
         language="html"
         source={`<ArticleCard
@@ -68,8 +68,8 @@
         language="html"
         source={`<a href="#" class="badge badge--primary animation-fogwave margin-s--r">Bandekriminialitet</a>`}
       />
-    </PillContent>
-  </PillNavigation>
+    </TabContent>
+  </Tabs>
 
   <h3>Overblik over animationer</h3>
   <div class="grid-width--large">

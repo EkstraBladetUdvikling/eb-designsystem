@@ -9,12 +9,12 @@ export { default as FormElement } from './components/form-elements/FormElement.s
 export { default as GroupContent } from './components/buttongroup/GroupContent.svelte';
 export { default as HorizontalScroll } from './components/horizontalScroll/HorizontalScroll.svelte';
 export { default as Icon } from './components/icon/Icon.svelte';
-export { default as Pill } from './components/pillnavigation/Pill.svelte';
-export { default as PillContent } from './components/pillnavigation/PillContent.svelte';
-export { default as PillList } from './components/pillnavigation/PillList.svelte';
-export { default as PillNavigation } from './components/pillnavigation/PillNavigation.svelte';
 export { default as Select } from './components/form-elements/Select.svelte';
 export { default as Spinner } from './components/spinner/Spinner.svelte';
+export { default as Tab } from './components/tabs/Tab.svelte';
+export { default as TabContent } from './components/tabs/TabContent.svelte';
+export { default as TabList } from './components/tabs/TabList.svelte';
+export { default as Tabs } from './components/tabs/Tabs.svelte';
 export { default as TextArea } from './components/form-elements/TextArea.svelte';
 export { default as TextInput } from './components/form-elements/TextInput.svelte';
 export { default as Toggler } from './components/toggler/Toggler.svelte';

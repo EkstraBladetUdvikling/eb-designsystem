@@ -1,7 +1,7 @@
 <script>
   import Prism from 'svelte-prism';
 
-  import { Accordion, PillNavigation, Pill, PillContent, PillList } from '../../src/';
+  import { Accordion, Tabs, Tab, TabContent, TabList } from '../../src/';
 
   let tabs = [
     {
@@ -27,14 +27,14 @@
   </p>
 
   <h3>Eksempler på data theme</h3>
-  <PillNavigation>
+  <Tabs>
     <div class="flex flex-justify--end width-1of1 margin-m--b">
-      <PillList>
-        <Pill><i class="fas fa-cubes" /></Pill>
-        <Pill><i class="fas fa-code" /></Pill>
-      </PillList>
+      <TabList>
+        <Tab><i class="fas fa-cubes" /></Tab>
+        <Tab><i class="fas fa-code" /></Tab>
+      </TabList>
     </div>
-    <PillContent>
+    <TabContent>
       <Accordion dataTheme="lightmode" {tabs} />
       <Accordion dataTheme="darkmode" {tabs} />
       <div data-theme="lightmode">
@@ -43,14 +43,14 @@
       <div data-theme="darkmode">
         <p>I'm now in darkmode</p>
       </div>
-    </PillContent>
-    <PillContent>
+    </TabContent>
+    <TabContent>
       <Prism language="html" source={`<Accordion dataTheme="lightmode" {tabs} />`} />
       <Prism language="html" source={`<Accordion dataTheme="darkmode" {tabs} />`} />
       <Prism language="html" source={`<div data-theme="lightmode"><p>I'm now in lightmode</p></div>`} />
       <Prism language="html" source={`<div data-theme="darkmode"><p>I'm now in darkmode</p></div>`} />
-    </PillContent>
-  </PillNavigation>
+    </TabContent>
+  </Tabs>
 
   <h3>Overblik over komponenter der kan anvende data theme</h3>
   <div class="grid-width--large">

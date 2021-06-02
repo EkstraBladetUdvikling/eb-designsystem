@@ -345,6 +345,13 @@
     ],
     "description": "{\n fill: currentColor;\n }"
   },
+  "designsystem tabs": {
+    "prefix": "ds-tabs",
+    "body": [
+      "tabs"
+    ],
+    "description": "{\n align-items: center;\nborder-bottom: 1px solid var(--color--graa4);\nbox-sizing: border-box;\ndisplay: flex;\n-webkit-overflow-scrolling: touch;\n }"
+  },
   "designsystem toggle input": {
     "prefix": "ds-toggle-input",
     "body": [

@@ -1478,6 +1478,57 @@ a.card-mode:focus .card-inner {
   transform: rotate(90deg);
 }
 
+.loader .bounce {
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.loader .bounce1 {
+  animation-delay: -0.32s;
+}
+
+.loader .bounce2 {
+  animation-delay: -0.16s;
+}
+
+@keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+/**
+* Tabs
+*/
+
+.tabs {
+  align-items: center;
+  border-bottom: 1px solid var(--color--graa4);
+  box-sizing: border-box;
+  display: flex;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabs .button {
+  background: var(--color--graa6);
+  border: 1px solid var(--color--graa4);
+  border-radius: 5px 5px 0 0;
+  color: var(--color--black);
+  cursor: pointer;
+  margin: 0 0 -1px 5px;
+  padding: 5px 7px;
+}
+
+.tabs .button[data-selected="true"] {
+  background: var(--color--white);
+  border-bottom-color: var(--color--white);
+}
+
 /**
 * Pillnavigation
 */
@@ -1501,29 +1552,6 @@ a.card-mode:focus .card-inner {
   border-top-left-radius: 0;
   border-right-width: 1px;
   border-bottom-left-radius: 0;
-}
-
-.loader .bounce {
-  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-}
-
-.loader .bounce1 {
-  animation-delay: -0.32s;
-}
-
-.loader .bounce2 {
-  animation-delay: -0.16s;
-}
-
-@keyframes sk-bouncedelay {
-  0%,
-  80%,
-  100% {
-    transform: scale(0);
-  }
-  40% {
-    transform: scale(1);
-  }
 }
 
 .toggle-input,
