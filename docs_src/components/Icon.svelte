@@ -1,7 +1,7 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
-  import { Card, Icon } from '../../src';
+  import { Badge, Card, Icon } from '../../src';
   import { iconnames } from '../../src/components/icon/svgs/iconnames';
 </script>
 
@@ -11,6 +11,55 @@
   <Prism language="js">
     {`import { Icon } from '@ekstra-bladet/designsystem';`}
   </Prism>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Prop name</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>className</td>
+        <td>string</td>
+        <td />
+        <td>Used to select icon if type is set to 'fa'</td>
+      </tr>
+      <tr>
+        <td>name <Badge type="primary" extension="small">required</Badge></td>
+        <td>IconTypes</td>
+        <td />
+        <td>Only names listed beneath are valid</td>
+      </tr>
+      <tr>
+        <td>flipped</td>
+        <td>boolean</td>
+        <td>false</td>
+        <td>Flip the icon horizontally</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>'svg' | 'fa'</td>
+        <td>svg</td>
+        <td>Use EB svg icons or FontAwesome icons</td>
+      </tr>
+      <tr>
+        <td>width</td>
+        <td>number</td>
+        <td>36</td>
+        <td>The widthof the icon in pixels. Only on 'svg' mode</td>
+      </tr>
+      <tr>
+        <td>style</td>
+        <td>string</td>
+        <td />
+        <td>Custom styling. Only on 'svg' mode</td>
+      </tr>
+    </tbody>
+  </table>
 {/if}
 
 <h3>Der findes følgende svg ikoner</h3>
