@@ -12,7 +12,7 @@
 
   if (extension) {
     if (typeof extension === 'string') {
-      baseClass = `${baseClass} button--${extension}`;
+      baseClass = `${baseClass} badge--${extension}`;
     } else if (Array.isArray(extension)) {
       baseClass = `${baseClass} badge--${extension.join(' badge--')}`;
     }

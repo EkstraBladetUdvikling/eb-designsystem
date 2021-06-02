@@ -14,6 +14,43 @@
   <Prism language="js">
     {`import { Tooltip } from '@ekstra-bladet/designsystem';`}
   </Prism>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Prop name</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>className</td>
+        <td>string</td>
+        <td />
+        <td />
+      </tr>
+      <tr>
+        <td>iconOn</td>
+        <td>string</td>
+        <td>'times'</td>
+        <td>FontAwesome icon for when tooltip is open</td>
+      </tr>
+      <tr>
+        <td>iconOff</td>
+        <td>string</td>
+        <td>'question'</td>
+        <td>FontAwesome icon for when tooltip is closed</td>
+      </tr>
+      <tr>
+        <td>position</td>
+        <td>'left' | 'right'</td>
+        <td>'left'</td>
+        <td />
+      </tr>
+    </tbody>
+  </table>
 {/if}
 
 <h3>Default tooltip</h3>

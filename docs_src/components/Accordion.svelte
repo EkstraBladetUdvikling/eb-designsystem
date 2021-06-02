@@ -2,7 +2,7 @@
   import Prism from 'svelte-prism';
   import { rdmParagraphs } from '../util';
   import { sourceType } from '../stores';
-  import { Accordion } from '../../src';
+  import { Accordion, Badge } from '../../src';
 
   const tabs = [];
 
@@ -20,6 +20,46 @@
   <Prism language="js">
     {`import { Accordion } from '@ekstra-bladet/designsystem';`}
   </Prism>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Prop name</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>dataTheme</td>
+        <td>'darkmode' | 'lightmode'</td>
+        <td />
+        <td>See <a href="/#/utilities/datatheme">Data Theme</a> for doc</td>
+      </tr>
+      <tr>
+        <td>tabs</td>
+        <td>ITabsConfig[]</td>
+        <td />
+        <td>Array of tab data. See <Badge type="secondary" extension="small">Tab</Badge> props below for details</td>
+      </tr>
+      <tr>
+        <th colspan="4">Tab</th>
+      </tr>
+      <tr>
+        <td>content</td>
+        <td>string</td>
+        <td />
+        <td />
+      </tr>
+      <tr>
+        <td>title</td>
+        <td>string</td>
+        <td />
+        <td />
+      </tr>
+    </tbody>
+  </table>
 {/if}
 
 <Accordion {tabs} />

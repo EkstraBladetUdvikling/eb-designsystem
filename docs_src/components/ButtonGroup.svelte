@@ -10,6 +10,49 @@
   <Prism language="js">
     {`import { Button, ButtonGroup } from '@ekstra-bladet/designsystem';`}
   </Prism>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Prop name</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>className</td>
+        <td>string</td>
+        <td />
+        <td />
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>'accept' | 'cancel' | 'primary' | 'secondary'</td>
+        <td />
+        <td />
+      </tr>
+      <tr>
+        <td>color</td>
+        <td>EB Background color variable</td>
+        <td />
+        <td />
+      </tr>
+      <tr>
+        <td>colorHover</td>
+        <td>EB Background color variable</td>
+        <td />
+        <td />
+      </tr>
+      <tr>
+        <td>solid</td>
+        <td>boolean</td>
+        <td>false</td>
+        <td />
+      </tr>
+    </tbody>
+  </table>
 {/if}
 
 <h3>Default</h3>

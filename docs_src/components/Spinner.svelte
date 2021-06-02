@@ -10,6 +10,25 @@
   <Prism language="js">
     {`import { Spinner } from '@ekstra-bladet/designsystem';`}
   </Prism>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Prop name</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>isLoading</td>
+        <td>boolean</td>
+        <td>false</td>
+        <td>Will only show if set to 'true'</td>
+      </tr>
+    </tbody>
+  </table>
 {/if}
 
 <div class="padding-l">

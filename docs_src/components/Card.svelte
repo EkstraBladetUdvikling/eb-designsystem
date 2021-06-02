@@ -10,6 +10,70 @@
   <Prism language="js">
     {`import { Card } from '@ekstra-bladet/designsystem';`}
   </Prism>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Prop name</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>className</td>
+        <td>string</td>
+        <td />
+        <td>Card specific calsses: card--small-media & card--small-media--reverse</td>
+      </tr>
+      <tr>
+        <td>href</td>
+        <td>string</td>
+        <td />
+        <td>Converts the Card into a clickable link</td>
+      </tr>
+      <tr>
+        <td>style</td>
+        <td>string</td>
+        <td />
+        <td /></tr
+      >
+      <tr>
+        <td>theme</td>
+        <td>'darkmode' | 'lightmode'</td>
+        <td />
+        <td>See <a href="/#/utilities/datatheme">Data Theme</a> for doc</td>
+      </tr>
+      <tr>
+        <th colspan="4">Intersection observer</th>
+      </tr>
+      <tr>
+        <td>intersection</td>
+        <td>boolean</td>
+        <td>false</td>
+        <td>Enables IntersectionObserver <em>(articleCardInview)</em></td>
+      </tr>
+      <tr>
+        <td>intersectionRoot</td>
+        <td>string | null</td>
+        <td />
+        <td />
+      </tr>
+      <tr>
+        <td>intersectionThreshold</td>
+        <td>number</td>
+        <td>0.5</td>
+        <td />
+      </tr>
+      <tr>
+        <td>intersectionData</td>
+        <td>any</td>
+        <td>&#123;&#125;</td>
+        <td>The data send via the CustomEvent detail property</td>
+      </tr>
+    </tbody>
+  </table>
 {/if}
 
 <h3>Card slots</h3>

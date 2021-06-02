@@ -10,6 +10,55 @@
   <Prism language="js">
     {`import { Button } from '@ekstra-bladet/designsystem';`}
   </Prism>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Prop name</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>className</td>
+        <td>string</td>
+        <td />
+        <td />
+      </tr>
+      <tr>
+        <td>disabled</td>
+        <td>boolean</td>
+        <td>false</td>
+        <td />
+      </tr>
+      <tr>
+        <td>extension</td>
+        <td>'icon' | 'link' | 'solid' | 'icon link' | 'icon solid'</td>
+        <td />
+        <td />
+      </tr>
+      <tr>
+        <td>href</td>
+        <td>string</td>
+        <td />
+        <td>Coverts the Button into a clickable link</td>
+      </tr>
+      <tr>
+        <td>size</td>
+        <td>'big' | 'small'</td>
+        <td />
+        <td />
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>'accept' | 'cancel' | 'primary' | 'secondary'</td>
+        <td />
+        <td />
+      </tr>
+    </tbody>
+  </table>
 {/if}
 
 <h3>Default</h3>
