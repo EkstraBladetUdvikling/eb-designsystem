@@ -34,6 +34,7 @@ export function rdmArticleData(mediaWidth = 640, mediaHeight = 360) {
     media: {
       src: `https://loremflickr.com/${mediaWidth}/${mediaHeight}/city,people,nature,animal?random=${Math.random()}`,
     },
+    saved: Math.random() < 0.5,
     section: lorem.generateWords(1),
     colorClass: colorClasses[Math.floor(Math.random() * colorClasses.length)],
     timestamp: randomDate(),

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { createEventDispatcher } from 'svelte';
   import type { TCardType } from '../../types/Card';
 
   import { Background } from '@ekstra-bladet/eb-colors/dist/eb-colors';
@@ -6,6 +7,7 @@
 
   import Card from '../card/Card.svelte';
   import Icon from '../icon/Icon.svelte';
+  import Toggler from '../toggler/Toggler.svelte';
 
   interface IMediaOptions {
     className: string;
@@ -19,11 +21,13 @@
   export let className: string = undefined;
   export let colorClass: string = undefined;
   export let href: string = undefined;
+  export let id: number = undefined;
   export let isBreaking: boolean = false;
   export let isPlus: boolean = false;
   export let loading: boolean = false;
   export let maxLines: number = undefined;
   export let media: Partial<IMediaOptions> = undefined;
+  export let saved: boolean = undefined;
   export let section: string = undefined;
   export let style: string = '';
   export let timestamp: string = undefined;
@@ -36,6 +40,7 @@
   export let intersectionThreshold: number = 0.5;
   export let intersectionData: any = {};
 
+  const dispatch = createEventDispatcher();
   let baseClass = `card-mode card-mode--article`;
 
   let loadingStyle = 'padding-top: 56.25%; width: 100%;';
@@ -70,6 +75,13 @@
 
   $: styleProp = `${style}; --color--list-hover: var(--color--${colorClass}); --fgcolor--list-hover: var(--fgcolor--${colorClass});`;
   $: cssClass = className ? `${className} ${baseClass}` : baseClass;
+
+  function toggleSave(evt: CustomEvent<any>): void {
+    dispatch('save', {
+      id,
+      save: evt.detail,
+    });
+  }
 </script>
 
 <Card
@@ -101,6 +113,16 @@
         {/if}
       </div>
       <div class="card-content">
+        {#if saved !== undefined}
+          <Toggler className="card-save-toggle" defaultState={saved} on:toggle={toggleSave}>
+            <slot slot="on">
+              <Icon type="fa" className="fas fa-star color--white" />
+            </slot>
+            <slot slot="off">
+              <Icon type="fa" className="far fa-star color--white" />
+            </slot>
+          </Toggler>
+        {/if}
         {#if section || timestamp}
           <div class="card-meta flex fontsize-xxsmall padding-s--b">
             {#if section}

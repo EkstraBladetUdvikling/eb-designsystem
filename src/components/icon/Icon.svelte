@@ -7,7 +7,7 @@
 
 <script lang="ts">
   export let className: string = undefined;
-  export let name: IconTypes;
+  export let name: IconTypes = undefined;
   export let flipped: boolean = false;
   export let type: 'svg' | 'fa' = 'svg';
   export let width: number | string = 36;

@@ -947,6 +947,14 @@ a.card:focus {
   flex: 1 0 auto;
 }
 
+.card-save-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  padding: 5px;
+}
+
 .card-header,
 .card-footer {
   box-sizing: border-box;
@@ -1564,21 +1572,27 @@ a.card-mode:focus .card-inner {
   cursor: pointer;
 }
 
-.toggle,.toggle-button,
-.toggle-button:active,
-.toggle-button:focus {
+.toggle {
   align-content: center;
+  justify-content: center;
+}
+
+.toggle,.toggle-button {
   cursor: pointer;
   display: inline-flex;
-  justify-content: center;
+}
+
+.toggle-button {
+  border: 0;
+  padding: 0;
 }
 
 .toggle-button,
 .toggle-button:active,
 .toggle-button:focus {
+  align-content: center;
   background: none;
-  border: 0;
-  padding: 0;
+  justify-content: center;
   -webkit-appearance: none;
 }
 

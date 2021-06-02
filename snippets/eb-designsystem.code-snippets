@@ -160,6 +160,13 @@
     ],
     "description": "{\n padding: 20px;\nflex: 1 0 auto;\n }"
   },
+  "designsystem card save toggle": {
+    "prefix": "ds-card-save-toggle",
+    "body": [
+      "card-save-toggle"
+    ],
+    "description": "{\n position: absolute;\ntop: 0;\nright: 0;\npadding: 5px;\n }"
+  },
   "designsystem card header": {
     "prefix": "ds-card-header",
     "body": [
@@ -399,7 +406,7 @@
     "body": [
       "toggle-button"
     ],
-    "description": "{\n align-content: center;\nbackground: none;\nborder: 0;\ncursor: pointer;\ndisplay: inline-flex;\njustify-content: center;\npadding: 0;\n-webkit-appearance: none;\n }\n Has pseudo styling :active\n Has pseudo styling :focus"
+    "description": "{\n border: 0;\ncursor: pointer;\ndisplay: inline-flex;\npadding: 0;\n }\n {\n align-content: center;\nbackground: none;\njustify-content: center;\n-webkit-appearance: none;\n }\n Has pseudo styling :active\n Has pseudo styling :focus"
   },
   "designsystem tooltip": {
     "prefix": "ds-tooltip",
