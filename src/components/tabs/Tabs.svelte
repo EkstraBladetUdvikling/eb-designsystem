@@ -44,12 +44,8 @@
   });
 
   export let className = undefined;
-
-  let baseClass = `pillcomponent`;
-
-  if (className) baseClass = `${className} ${baseClass}`;
 </script>
 
-<div class={baseClass}>
+<div class={className}>
   <slot />
 </div>
