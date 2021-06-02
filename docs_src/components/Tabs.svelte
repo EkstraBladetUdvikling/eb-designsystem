@@ -19,7 +19,7 @@
   <h2 class="margin-xl--t margin-m--b">Style: Tabs</h2>
 
   <Tabs>
-    <TabList className="tabs">
+    <TabList>
       <Tab>Tab 1</Tab>
       <Tab>Tab 2 Long Text Bla Bla</Tab>
       <Tab>Tab 3 Long Text Bla Bla</Tab>
@@ -46,7 +46,7 @@
 
   <Prism language="html">
     {`<Tabs>
-  <TabList className="tabs">
+  <TabList>
     <Tab>Tab 1</Tab>
     <Tab>Tab 2</Tab>
     <Tab>Tab 3</Tab>
@@ -66,7 +66,7 @@
   <h2 class="margin-xl--t margin-m--b">Style: Pillnavigation</h2>
 
   <Tabs>
-    <TabList className="pillnavigation toggle toggle--buttons">
+    <TabList type="pillnavigation">
       <Tab>Tab 1</Tab>
       <Tab>Tab 2</Tab>
       <Tab>Tab 3</Tab>
@@ -93,7 +93,7 @@
 
   <Prism language="html">
     {`<Tabs>
-  <TabList className="pillnavigation toggle toggle--buttons">
+  <TabList type="pillnavigation">
     <Tab>Tab 1</Tab>
     <Tab>Tab 2</Tab>
     <Tab>Tab 3</Tab>
