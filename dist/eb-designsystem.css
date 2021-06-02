@@ -947,7 +947,7 @@ a.card:focus {
   flex: 1 0 auto;
 }
 
-.card-save-toggle {
+.card-content .card-save-toggle {
   position: absolute;
   top: 0;
   right: 0;

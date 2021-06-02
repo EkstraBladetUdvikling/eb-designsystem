@@ -160,13 +160,6 @@
     ],
     "description": "{\n padding: 20px;\nflex: 1 0 auto;\n }"
   },
-  "designsystem card save toggle": {
-    "prefix": "ds-card-save-toggle",
-    "body": [
-      "card-save-toggle"
-    ],
-    "description": "{\n position: absolute;\ntop: 0;\nright: 0;\npadding: 5px;\n }"
-  },
   "designsystem card header": {
     "prefix": "ds-card-header",
     "body": [
