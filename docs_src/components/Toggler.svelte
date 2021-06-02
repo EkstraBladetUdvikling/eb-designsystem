@@ -37,7 +37,7 @@
         <td>isSwitch</td>
         <td>boolean</td>
         <td>false</td>
-        <td>Convents into a swicth, see example futher down</td>
+        <td>Convents into a swicth, see example further down</td>
       </tr>
     </tbody>
   </table>

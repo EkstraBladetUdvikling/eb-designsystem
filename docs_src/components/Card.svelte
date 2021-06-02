@@ -25,7 +25,7 @@
         <td>className</td>
         <td>string</td>
         <td />
-        <td>Card specific calsses: card--small-media & card--small-media--reverse</td>
+        <td>Card specific classes: card--small-media & card--small-media--reverse</td>
       </tr>
       <tr>
         <td>href</td>
