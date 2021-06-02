@@ -23,7 +23,7 @@
 
 <style>
   .content-container {
-      margin-top: 60px; /* height of navbar */
+    margin-top: 60px; /* height of navbar */
     margin-left: 250px; /* length of sidebar */
-    }
+  }
 </style>

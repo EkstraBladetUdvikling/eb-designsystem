@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { TCardType } from '../../types/Card';
 
-  import { Background } from '@ekstra-bladet/eb-colors/dist/eb-colors';
   import { parseDate } from '../../misc/parsedate';
 
   import Card from '../card/Card.svelte';
