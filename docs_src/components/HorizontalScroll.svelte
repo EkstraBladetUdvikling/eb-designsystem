@@ -17,6 +17,31 @@
   <Prism language="js">
     {`import { HorizontalScroll } from '@ekstra-bladet/designsystem';`}
   </Prism>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Prop name</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>className</td>
+        <td>string</td>
+        <td />
+        <td />
+      </tr>
+      <tr>
+        <td>title</td>
+        <td>string</td>
+        <td />
+        <td>Adds an h1 title above HorizontalScroll</td>
+      </tr>
+    </tbody>
+  </table>
 {:else}
   <p>HorizontalScroll kræver javascript som findes under list-v2 på eb</p>
   <Prism language="html">
