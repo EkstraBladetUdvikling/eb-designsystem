@@ -109,13 +109,15 @@
     if (listLength === scrollItemContainer.children) return;
     children = scrollItemContainer.children;
     listLength = children.length;
-    const containerRight = scrollContainer.getBoundingClientRect().right;
+    const containerBBox = scrollContainer.getBoundingClientRect();
 
     /**
      * Find how many visible elements we have
      */
     let visibleChildren = Array.from(children).filter(
-      (child: HTMLElement) => child.getBoundingClientRect().right <= containerRight
+      (child: HTMLElement) =>
+        child.getBoundingClientRect().left >= containerBBox.left &&
+        child.getBoundingClientRect().right <= containerBBox.right
     ).length;
     maxLength = listLength - visibleChildren;
 
