@@ -115,10 +115,18 @@
         {#if saved !== undefined}
           <Toggler className="card-save-toggle" defaultState={saved} on:toggle={toggleSave}>
             <slot slot="on">
-              <Icon type="fa" className="fas fa-star color--white" />
+              <Icon
+                type="fa"
+                className="fas fa-star"
+                style="color: var(--fgcolor--{isBreaking ? 'breaking' : colorClass});"
+              />
             </slot>
             <slot slot="off">
-              <Icon type="fa" className="far fa-star color--white" />
+              <Icon
+                type="fa"
+                className="far fa-star"
+                style="color: var(--fgcolor--{isBreaking ? 'breaking' : colorClass});"
+              />
             </slot>
           </Toggler>
         {/if}

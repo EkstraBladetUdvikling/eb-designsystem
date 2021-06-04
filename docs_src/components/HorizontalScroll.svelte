@@ -3,16 +3,26 @@
   import { rdmArticleData } from '../util';
   import { sourceType } from '../stores';
   import { ArticleCard, HorizontalScroll } from '../../src';
+  import { writable } from 'svelte/store';
 
-  let articles = [];
+  let articles = writable([]);
 
-  for (let i = 0; i < 15; i++) {
-    articles.push(rdmArticleData(640, 360));
-  }
+  articles.update((art) => {
+    for (let i = 0; i < 2; i++) {
+      art.push(rdmArticleData(640, 360));
+    }
+    return art;
+  });
+
+  setInterval(() => {
+    articles.update((art) => {
+      art.push(rdmArticleData(640, 360));
+      return art;
+    });
+  }, 3000);
 </script>
 
 <h1 class="color--eb">Horizontal Scroll</h1>
-
 {#if $sourceType === 'svelte'}
   <Prism language="js">
     {`import { HorizontalScroll } from '@ekstra-bladet/designsystem';`}
@@ -34,12 +44,6 @@
         <td />
         <td />
       </tr>
-      <tr>
-        <td>title</td>
-        <td>string</td>
-        <td />
-        <td>Adds an h1 title above HorizontalScroll</td>
-      </tr>
     </tbody>
   </table>
 {:else}
@@ -48,16 +52,15 @@
     {`ekstrabladet/ekstrabladet-publication/src/main/webapp/WEB-INF/jsp/components/list-v2/horizontalscroll.ts`}
   </Prism>
 {/if}
-
-<HorizontalScroll title="Title">
-  {#each articles as article}
+<HorizontalScroll>
+  {#each $articles as article}
     <ArticleCard {...article} className="margin-s" style="width: 215px;" />
   {/each}
 </HorizontalScroll>
 
 {#if $sourceType === 'svelte'}
   <Prism language="html">
-    {`<HorizontalScroll title="">
+    {`<HorizontalScroll>
   ...
 </HorizontalScroll>`}
   </Prism>
@@ -73,14 +76,6 @@
   <div data-horizontallist="itemcontainer" class="horizontal-scroll-items flex">
     ...
   </div>
-</div>
-
-<script>
-  (function () {
-    <%@ include file="/path/to/horizontalscroll.js" %>
-
-    horizontalScroll('example-id');
-  })();
-</script>`}
+</div>`}
   </Prism>
 {/if}

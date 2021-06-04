@@ -1,12 +1,9 @@
 <script lang="ts">
-  import { afterUpdate } from 'svelte';
-
+  import { afterUpdate, onMount } from 'svelte';
   import { throttle } from '../../misc/throttle';
-
   import Button from '../button/Button.svelte';
 
   export let className = undefined;
-  export let title: string = undefined;
 
   let baseClass = `horizontal-scroll-container position-relative`;
 
@@ -36,6 +33,10 @@
         scrollContainer.dataset.atstart = 'true';
         scrollContainer.dataset.atend = 'false';
         listCurrent = 0;
+        break;
+      case 'disabled':
+        scrollContainer.dataset.atstart = 'true';
+        scrollContainer.dataset.atend = 'true';
         break;
     }
   }
@@ -95,11 +96,18 @@
     }
   }
 
+  onMount(() => {
+    scrollItemContainer.addEventListener(
+      'wheel',
+      throttle(() => {
+        updateButtonsThroughScroll();
+      }, 150)
+    );
+  });
+
   afterUpdate(() => {
-    if (children) return;
-
+    if (listLength === scrollItemContainer.children) return;
     children = scrollItemContainer.children;
-
     listLength = children.length;
     const containerRight = scrollContainer.getBoundingClientRect().right;
 
@@ -109,23 +117,17 @@
     let visibleChildren = Array.from(children).filter(
       (child: HTMLElement) => child.getBoundingClientRect().right <= containerRight
     ).length;
-
     maxLength = listLength - visibleChildren;
 
-    scrollItemContainer.addEventListener(
-      'wheel',
-      throttle(() => {
-        updateButtonsThroughScroll();
-      }, 150)
-    );
-
-    updateButtons();
+    if (maxLength) {
+      // Some children not visible - enable scroling
+      updateButtons();
+    } else {
+      updateDataSet('disabled');
+    }
   });
 </script>
 
-{#if title}
-  <h1 class="horizontal-scroll-padding">{title}</h1>
-{/if}
 <div bind:this={scrollContainer} class="horizontal-scroll-container position-relative">
   <Button on:click={prevScroll} className="horizontal-scroll-nav button-prev bg--white" extension="icon">
     <i class="fa fa-chevron-left" />
