@@ -33,12 +33,6 @@
   export let truncateTitle: boolean = false;
   export let type: TCardType = undefined;
 
-  // Intersection observer
-  export let intersection: boolean = false;
-  export let intersectionRoot: string | null = undefined;
-  export let intersectionThreshold: number = 0.5;
-  export let intersectionData: any = {};
-
   const dispatch = createEventDispatcher();
   let baseClass = `card-mode card-mode--article`;
 
@@ -83,17 +77,7 @@
   }
 </script>
 
-<Card
-  {href}
-  className={cssClass}
-  style={styleProp}
-  data-breaking={isBreaking}
-  {intersection}
-  {intersectionRoot}
-  {intersectionThreshold}
-  {intersectionData}
-  on:click
->
+<Card {href} className={cssClass} style={styleProp} data-breaking={isBreaking} on:click>
   <div class={innerClass}>
     {#if loading}
       <div class="card-media">
