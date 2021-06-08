@@ -1766,7 +1766,7 @@ a.card-mode:focus .card-inner {
   animation-iteration-count: infinite;
   animation-name: fogwave;
   animation-timing-function: linear;
-  background: linear-gradient(to right, transparent 3%,rgba(255, 255, 255, .7) 25%, transparent 40%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 3%,rgba(255, 255, 255, .7) 25%, rgba(255, 255, 255, 0) 40%);
   background-size: 1000px 100%;
   content: "";
   width: 100%;
