@@ -18,6 +18,7 @@
   export let title: string;
 
   export let breaking: boolean = false;
+  export let cardType: TCardType = undefined;
   export let className: string = undefined;
   export let colorClass: string = undefined;
   export let id: number = undefined;
@@ -30,7 +31,6 @@
   export let section: string = undefined;
   export let style: string = '';
   export let truncateTitle: boolean = false;
-  export let type: TCardType = undefined;
   export let url: string = undefined;
 
   const dispatch = createEventDispatcher();
@@ -42,7 +42,7 @@
 
     title = 'Loading';
 
-    switch (type) {
+    switch (cardType) {
       case 'small-media':
       case 'small-media--reverse':
         loadingStyle = 'width: 200px;height: 115px;';
@@ -52,7 +52,7 @@
 
   let innerClass = 'card-inner';
 
-  switch (type) {
+  switch (cardType) {
     case 'small-media':
       innerClass = `${innerClass} card--small-media`;
       break;

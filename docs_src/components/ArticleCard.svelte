@@ -95,7 +95,7 @@
         <td />
       </tr>
       <tr>
-        <td>type</td>
+        <td>cardType</td>
         <td>'mode' | 'small-media' | 'small-media--reverse'</td>
         <td />
         <td>Display types. See examples below</td>
