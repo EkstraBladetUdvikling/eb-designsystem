@@ -17,21 +17,21 @@
 
   export let title: string;
 
+  export let breaking: boolean = false;
   export let className: string = undefined;
   export let colorClass: string = undefined;
-  export let href: string = undefined;
   export let id: number = undefined;
-  export let isBreaking: boolean = false;
-  export let isPlus: boolean = false;
   export let loading: boolean = false;
   export let maxLines: number = undefined;
   export let media: Partial<IMediaOptions> = undefined;
+  export let premium: boolean = false;
+  export let published: string = undefined;
   export let saved: boolean = undefined;
   export let section: string = undefined;
   export let style: string = '';
-  export let timestamp: string = undefined;
   export let truncateTitle: boolean = false;
   export let type: TCardType = undefined;
+  export let url: string = undefined;
 
   const dispatch = createEventDispatcher();
   let baseClass = `card-mode card-mode--article`;
@@ -53,9 +53,6 @@
   let innerClass = 'card-inner';
 
   switch (type) {
-    case 'mode':
-      baseClass = `card-mode card-mode--article`;
-      break;
     case 'small-media':
       innerClass = `${innerClass} card--small-media`;
       break;
@@ -77,7 +74,7 @@
   }
 </script>
 
-<Card {href} className={cssClass} style={styleProp} data-breaking={isBreaking} on:click>
+<Card {url} className={cssClass} style={styleProp} data-breaking={breaking} on:click>
   <div class={innerClass}>
     {#if loading}
       <div class="card-media">
@@ -91,7 +88,7 @@
     {/if}
     <div class="card-content-wrapper">
       <div class="card-icon flex flex-justify--end">
-        {#if isPlus}
+        {#if premium}
           <Icon name="ebplus_icon" width="20" />
         {/if}
       </div>
@@ -102,19 +99,19 @@
               <Icon
                 type="fa"
                 className="fas fa-star"
-                style="color: var(--fgcolor--{isBreaking ? 'breaking' : colorClass});"
+                style="color: var(--fgcolor--{breaking ? 'breaking' : colorClass});"
               />
             </slot>
             <slot slot="off">
               <Icon
                 type="fa"
                 className="far fa-star"
-                style="color: var(--fgcolor--{isBreaking ? 'breaking' : colorClass});"
+                style="color: var(--fgcolor--{breaking ? 'breaking' : colorClass});"
               />
             </slot>
           </Toggler>
         {/if}
-        {#if section || timestamp}
+        {#if section || published}
           <div class="card-meta flex fontsize-xxsmall padding-s--b">
             {#if section}
               <div class="card-meta-item">
@@ -124,10 +121,10 @@
                 </span>
               </div>
             {/if}
-            {#if timestamp}
+            {#if published}
               <div class="card-meta-item">
                 <Icon name="clock" width="12" />
-                <span class="padding-s--l">{parseDate(timestamp)}</span>
+                <span class="padding-s--l">{parseDate(published)}</span>
               </div>
             {/if}
           </div>

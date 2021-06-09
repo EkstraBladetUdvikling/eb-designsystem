@@ -2,7 +2,7 @@
   import type { TThemes } from '../../utilities/data-theme/DataTheme';
 
   export let className: string = undefined;
-  export let href: string = undefined;
+  export let src: string = undefined;
   export let style: string = undefined;
   export let theme: TThemes = undefined;
 
@@ -19,8 +19,8 @@
   $: cssClass = `${className} ${baseClass}`;
 </script>
 
-{#if href}
-  <a {href} class={cssClass} {style} data-theme={theme} {...dataProps} on:click>
+{#if src}
+  <a href={src} class={cssClass} {style} data-theme={theme} {...dataProps} on:click>
     {#if $$slots.header}
       <slot name="header" class="card-header" />
     {/if}

@@ -35,19 +35,19 @@
         <td>EB color <em>(e.g. sport)</em></td>
       </tr>
       <tr>
-        <td>href</td>
+        <td>src</td>
         <td>string</td>
         <td />
-        <td>Coverts the ArticleCard into a clickable link</td>
+        <td>Converts the ArticleCard into a clickable link</td>
       </tr>
       <tr>
-        <td>isBreaking</td>
+        <td>breaking</td>
         <td>boolean</td>
         <td>false</td>
         <td />
       </tr>
       <tr>
-        <td>isPlus</td>
+        <td>premium</td>
         <td>boolean</td>
         <td>false</td>
         <td />
@@ -83,7 +83,7 @@
         <td />
       </tr>
       <tr>
-        <td>timestamp</td>
+        <td>published</td>
         <td>date string</td>
         <td />
         <td>Displays relative time meta with a icon</td>
@@ -125,34 +125,7 @@
         <td>width</td>
         <td>string</td>
         <td />
-        <td /></tr
-      >
-      <tr>
-        <th colspan="4">Intersection observer</th>
-      </tr>
-      <tr>
-        <td>intersection</td>
-        <td>boolean</td>
-        <td>false</td>
-        <td>Enables IntersectionObserver <em>(articleCardInview)</em></td>
-      </tr>
-      <tr>
-        <td>intersectionRoot</td>
-        <td>string | null</td>
         <td />
-        <td />
-      </tr>
-      <tr>
-        <td>intersectionThreshold</td>
-        <td>number</td>
-        <td>0.5</td>
-        <td />
-      </tr>
-      <tr>
-        <td>intersectionData</td>
-        <td>any</td>
-        <td>&#123;&#125;</td>
-        <td>The data send via the CustomEvent detail property</td>
       </tr>
     </tbody>
   </table>
@@ -183,12 +156,6 @@
     {`<ArticleCard loading={true} />
 <ArticleCard loading={true} type="small-media" />
 <ArticleCard loading={true} type="small-media--reverse" />`}
-  </Prism>
-
-  <h3>Intersection</h3>
-
-  <Prism language="html">
-    {`<ArticleCard {...article} intersection={true} />`}
   </Prism>
 {:else}
   <p>ArticleCard er en ren Svelte component.</p>
