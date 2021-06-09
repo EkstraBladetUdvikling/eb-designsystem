@@ -28,7 +28,7 @@
         <td>Card specific classes: card--small-media & card--small-media--reverse</td>
       </tr>
       <tr>
-        <td>href</td>
+        <td>url</td>
         <td>string</td>
         <td />
         <td>Converts the Card into a clickable link</td>
