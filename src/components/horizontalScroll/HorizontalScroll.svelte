@@ -12,12 +12,12 @@
   /* Horizontial Scroll elements */
   let scrollContainer: HTMLDivElement;
   let scrollItemContainer: HTMLDivElement;
-  let listCurrent = 0;
-  let children;
-  let maxLength;
-  let listLength;
+  let listCurrent: number = 0;
+  let children: HTMLCollection;
+  let maxLength: number;
+  let listLength: number;
 
-  function updateDataSet(pos, fromScroll = false) {
+  function updateDataSet(pos: 'neutral' | 'end' | 'start' | 'disabled', fromScroll = false) {
     switch (pos) {
       case 'neutral':
         scrollContainer.dataset.atstart = 'false';
@@ -106,7 +106,7 @@
   });
 
   afterUpdate(() => {
-    if (listLength === scrollItemContainer.children) return;
+    if (listLength === scrollItemContainer.children.length) return;
     children = scrollItemContainer.children;
     listLength = children.length;
     const containerBBox = scrollContainer.getBoundingClientRect();
