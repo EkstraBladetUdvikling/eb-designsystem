@@ -148,6 +148,10 @@ a.card:focus {
   max-width: 45%;
 }
 
+.card-media--square .card-image {
+  max-width: 100px;
+}
+
 .card--small-media--reverse {
   flex-direction: row-reverse;
 }
