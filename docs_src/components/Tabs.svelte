@@ -27,19 +27,19 @@
     <TabContent>
       <Card className="margin-m--t">
         <h2 slot="header">Content 1</h2>
-        <div slot="content" contenteditable="true" bind:innerHTML={content1} />
+        {@html content1}
       </Card>
     </TabContent>
     <TabContent>
       <Card className="margin-m--t">
         <h2 slot="header">Content 2</h2>
-        <div slot="content" contenteditable="true" bind:innerHTML={content2} />
+        {@html content2}
       </Card>
     </TabContent>
     <TabContent>
       <Card className="margin-m--t">
         <h2 slot="header">Content 3</h2>
-        <div slot="content" contenteditable="true" bind:innerHTML={content3} />
+        {@html content3}
       </Card>
     </TabContent>
   </Tabs>
