@@ -11,9 +11,9 @@
     title: string;
   }
 
+  export const activeTab: Writable<Number> = writable(undefined);
   export let dataTheme: 'darkmode' | 'lightmode' | undefined = undefined;
   export let tabs: ITabsConfig[];
-  export let activeTab: Writable<Number> = writable(undefined);
 </script>
 
 <div data-theme={dataTheme} class="accordion card-mode padding-l ff-secondary width-1of1">

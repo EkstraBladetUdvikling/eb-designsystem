@@ -48,7 +48,7 @@
       </tr>
       <tr>
         <td>content</td>
-        <td>string</td>
+        <td>string / html</td>
         <td />
         <td />
       </tr>

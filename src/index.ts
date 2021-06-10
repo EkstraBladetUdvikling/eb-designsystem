@@ -6,7 +6,6 @@ export { default as ButtonGroup } from './components/buttongroup/ButtonGroup.sve
 export { default as Card } from './components/card/Card.svelte';
 export { default as Checkbox } from './components/form-elements/Checkbox.svelte';
 export { default as FormElement } from './components/form-elements/FormElement.svelte';
-export { default as GroupContent } from './components/buttongroup/GroupContent.svelte';
 export { default as HorizontalScroll } from './components/horizontalScroll/HorizontalScroll.svelte';
 export { default as Icon } from './components/icon/Icon.svelte';
 export { default as Select } from './components/form-elements/Select.svelte';
