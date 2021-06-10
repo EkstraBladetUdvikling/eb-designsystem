@@ -82,7 +82,7 @@
       </div>
     {/if}
     {#if media}
-      <div class="card-media">
+      <div class="card-media {media.className}">
         <img alt={title} class="card-image" src={media.src} height={media.height} width={media.width} />
       </div>
     {/if}
