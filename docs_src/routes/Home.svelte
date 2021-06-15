@@ -30,7 +30,7 @@
     <div class="text-align--center margin-m--tb padding-m bg--graa7">yarn add @ekstra-bladet/designsystem</div>
     <div class="flex">
       <div class="home-section width-1of1 margin-m">
-        <Card className="padding-m" href={componentsLink}>
+        <Card className="padding-m" url={componentsLink}>
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Components</h2>
             <i class="home-section-icon fas fa-cubes" />
@@ -38,7 +38,7 @@
         </Card>
       </div>
       <div class="home-section width-1of1 margin-m">
-        <Card className="padding-m" href={utilityLink}>
+        <Card className="padding-m" url={utilityLink}>
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Utilities</h2>
             <i class="home-section-icon fab fa-connectdevelop" />
@@ -48,7 +48,7 @@
     </div>
     <div class="flex">
       <div class="home-section width-1of1 margin-m">
-        <Card className="padding-m" href={colorLink}>
+        <Card className="padding-m" url={colorLink}>
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Colors</h2>
             <i class="home-section-icon fas fa-palette" />
@@ -61,9 +61,7 @@
 
 <style>
   .home-section-icon {
-    width: 100px;
-    height: 100px;
-    transition: 0.5s;
+    font-size: 60px;
     padding-top: 20px;
     padding-bottom: 20px;
   }

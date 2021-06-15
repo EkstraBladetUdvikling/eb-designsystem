@@ -1,10 +1,8 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-
   import type { TThemes } from '../../utilities/data-theme/DataTheme';
 
   export let className: string = undefined;
-  export let href: string = undefined;
+  export let url: string = undefined;
   export let style: string = undefined;
   export let theme: TThemes = undefined;
 
@@ -18,40 +16,11 @@
     }
   }
 
-  export let intersection: boolean = false;
-  export let intersectionRoot: string | null = undefined;
-  export let intersectionThreshold: number = 0.5;
-  export let intersectionData: any = {};
-  let element: Element;
-  let options = {
-    root: intersectionRoot ? document.querySelector(intersectionRoot) : null,
-    rootMargin: '0px',
-    threshold: intersectionThreshold,
-    trackVisibility: true,
-    delay: 100,
-  };
-  let observer = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
-      const intersectedEvent = new CustomEvent('articleCardInview', {
-        detail: intersectionData,
-      });
-      document.dispatchEvent(intersectedEvent);
-      observer.unobserve(element);
-    }
-  }, options);
-
-  onMount(() => {
-    if (typeof IntersectionObserver !== 'undefined' && intersection) {
-      observer.observe(element);
-      return () => observer.unobserve(element);
-    }
-  });
-
   $: cssClass = `${className} ${baseClass}`;
 </script>
 
-{#if href}
-  <a {href} class={cssClass} {style} data-theme={theme} {...dataProps} bind:this={element} on:click>
+{#if url}
+  <a href={url} class={cssClass} {style} data-theme={theme} {...dataProps} on:click>
     {#if $$slots.header}
       <slot name="header" class="card-header" />
     {/if}
@@ -71,7 +40,7 @@
     {/if}
   </a>
 {:else}
-  <div class={cssClass} {style} data-theme={theme} bind:this={element} on:click>
+  <div class={cssClass} {style} data-theme={theme} on:click>
     {#if $$slots.header}
       <div class="card-header">
         <slot name="header" />

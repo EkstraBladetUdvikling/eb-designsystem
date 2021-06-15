@@ -1,7 +1,10 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
+  import type { Writable } from 'svelte/store';
   import { sourceType } from '../stores';
   import { Button, ButtonGroup } from '../../src';
+
+  let selectedId: Writable<number>;
 </script>
 
 <h1 class="color--eb">Button groups</h1>
@@ -51,13 +54,20 @@
         <td>false</td>
         <td />
       </tr>
+      <tr>
+        <td>selectedId</td>
+        <td>Writable - number</td>
+        <td>0 (first button)</td>
+        <td>Can be set onMount</td>
+      </tr>
     </tbody>
   </table>
 {/if}
 
 <h3>Default</h3>
+<p>Button-index selected: {$selectedId}</p>
 
-<ButtonGroup className="margin-l--b">
+<ButtonGroup className="margin-l--b" bind:selectedId>
   <Button>Button 1</Button>
   <Button>Button 2</Button>
   <Button>Button 3</Button>
@@ -65,7 +75,7 @@
 
 {#if $sourceType === 'svelte'}
   <Prism language="html">
-    {`<ButtonGroup>
+    {`<ButtonGroup bind:selectedId>
   <Button></Button>
   <Button></Button>
   <Button></Button>

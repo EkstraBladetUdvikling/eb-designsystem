@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getContext } from 'svelte';
-  import { BUTTONS } from './PillNavigation.svelte';
+  import { BUTTONS } from './Tabs.svelte';
 
   const button = {};
   const { registerTab, selectButton, selectedButton } = getContext(BUTTONS);
@@ -11,9 +11,9 @@
 
   let baseClass = `button`;
 
-  if (className) baseClass = `${className} ${baseClass}`;
+  $: cssClass = className ? `${baseClass} ${className}` : baseClass;
 </script>
 
-<button class={baseClass} data-selected={$selectedButton === button} on:click={() => selectButton(button)}>
+<button class={cssClass} data-selected={$selectedButton === button} on:click={() => selectButton(button)}>
   <slot />
 </button>

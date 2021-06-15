@@ -1,12 +1,9 @@
 <script lang="ts">
-  import { afterUpdate } from 'svelte';
-
+  import { afterUpdate, onMount } from 'svelte';
   import { throttle } from '../../misc/throttle';
-
   import Button from '../button/Button.svelte';
 
   export let className = undefined;
-  export let title: string = undefined;
 
   let baseClass = `horizontal-scroll-container position-relative`;
 
@@ -15,12 +12,12 @@
   /* Horizontial Scroll elements */
   let scrollContainer: HTMLDivElement;
   let scrollItemContainer: HTMLDivElement;
-  let listCurrent = 0;
-  let children;
-  let maxLength;
-  let listLength;
+  let listCurrent: number = 0;
+  let children: HTMLCollection;
+  let maxLength: number;
+  let listLength: number;
 
-  function updateDataSet(pos, fromScroll = false) {
+  function updateDataSet(pos: 'neutral' | 'end' | 'start' | 'disabled', fromScroll = false) {
     switch (pos) {
       case 'neutral':
         scrollContainer.dataset.atstart = 'false';
@@ -36,6 +33,10 @@
         scrollContainer.dataset.atstart = 'true';
         scrollContainer.dataset.atend = 'false';
         listCurrent = 0;
+        break;
+      case 'disabled':
+        scrollContainer.dataset.atstart = 'true';
+        scrollContainer.dataset.atend = 'true';
         break;
     }
   }
@@ -95,37 +96,40 @@
     }
   }
 
-  afterUpdate(() => {
-    if (children) return;
-
-    children = scrollItemContainer.children;
-
-    listLength = children.length;
-    const containerRight = scrollContainer.getBoundingClientRect().right;
-
-    /**
-     * Find how many visible elements we have
-     */
-    let visibleChildren = Array.from(children).filter(
-      (child: HTMLElement) => child.getBoundingClientRect().right <= containerRight
-    ).length;
-
-    maxLength = listLength - visibleChildren;
-
+  onMount(() => {
     scrollItemContainer.addEventListener(
       'wheel',
       throttle(() => {
         updateButtonsThroughScroll();
       }, 150)
     );
+  });
 
-    updateButtons();
+  afterUpdate(() => {
+    if (listLength === scrollItemContainer.children.length) return;
+    children = scrollItemContainer.children;
+    listLength = children.length;
+    const containerBBox = scrollContainer.getBoundingClientRect();
+
+    /**
+     * Find how many visible elements we have
+     */
+    let visibleChildren = Array.from(children).filter(
+      (child: HTMLElement) =>
+        child.getBoundingClientRect().left >= containerBBox.left &&
+        child.getBoundingClientRect().right <= containerBBox.right
+    ).length;
+    maxLength = listLength - visibleChildren;
+
+    if (maxLength) {
+      // Some children not visible - enable scroling
+      updateButtons();
+    } else {
+      updateDataSet('disabled');
+    }
   });
 </script>
 
-{#if title}
-  <h1 class="horizontal-scroll-padding">{title}</h1>
-{/if}
 <div bind:this={scrollContainer} class="horizontal-scroll-container position-relative">
   <Button on:click={prevScroll} className="horizontal-scroll-nav button-prev bg--white" extension="icon">
     <i class="fa fa-chevron-left" />

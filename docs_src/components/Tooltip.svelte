@@ -57,7 +57,7 @@
 
 <div class="flex margin-l--tb">
   <Tooltip>
-    <div contenteditable="true" bind:innerHTML={Content1} />
+    {@html Content1}
   </Tooltip>
 </div>
 
@@ -87,7 +87,7 @@
 <div class="flex flex-justify--between grid-width--small margin-l--tb">
   <h3>Header</h3>
   <Tooltip position="right" className="flex-item--center">
-    <div contenteditable="true" bind:innerHTML={Content2} />
+    {@html Content2}
   </Tooltip>
 </div>
 

@@ -5,13 +5,17 @@
 <script lang="ts">
   import { setContext, onDestroy } from 'svelte';
   import { writable } from 'svelte/store';
-
+  import type { Writable } from 'svelte/store';
   import { Background } from '@ekstra-bladet/eb-colors/dist/eb-colors';
 
+  export const selectedId: Writable<number> = writable(0);
+
   const buttons = [];
-  const panels = [];
   const selectedButton = writable(null);
-  const selectedPanel = writable(null);
+
+  selectedId.subscribe((i: number) => {
+    selectedButton.set(buttons[i]);
+  });
 
   setContext(BUTTONS, {
     registerTab: (button) => {
@@ -25,24 +29,11 @@
       });
     },
 
-    registerPanel: (panel) => {
-      panels.push(panel);
-      selectedPanel.update((current) => current || panel);
-
-      onDestroy(() => {
-        const i = panels.indexOf(panel);
-        panels.splice(i, 1);
-        selectedPanel.update((current) => (current === panel ? panels[i] || panels[panels.length - 1] : current));
-      });
-    },
-
     selectButton: (button) => {
       const i = buttons.indexOf(button);
-      selectedButton.set(button);
-      selectedPanel.set(panels[i]);
+      selectedId.set(i);
     },
     selectedButton,
-    selectedPanel,
   });
 
   export let className = undefined;
