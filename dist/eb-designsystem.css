@@ -1439,15 +1439,15 @@ a.card-mode:focus .card-inner {
 }
 
 .horizontal-scroll-nav {
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    z-index: 100;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  z-index: 100;
 
-    box-shadow: var(--box-shadow);
-    opacity: 0;
-    transform: translateY(-50%);
-  }
+  box-shadow: var(--box-shadow);
+  opacity: 0;
+  transform: translateY(-50%);
+}
 
 @media (hover: none) {
   .horizontal-scroll-nav {
