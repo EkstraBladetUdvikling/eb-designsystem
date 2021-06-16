@@ -308,7 +308,7 @@
     "body": [
       "horizontal-scroll-nav"
     ],
-    "description": "{\n position: absolute;\ntop: 50%;\nleft: 5px;\nz-index: 100;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\nopacity: 0;\ntransform: translateY(-50%);\n }"
+    "description": "{\n position: absolute;\ntop: 50%;\nleft: 5px;\nz-index: 100;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\nopacity: 0;\ntransform: translateY(-50%);\n }\n {\n display: none;\n }"
   },
   "designsystem button next": {
     "prefix": "ds-button-next",

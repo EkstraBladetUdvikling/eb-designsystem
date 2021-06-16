@@ -58,9 +58,9 @@
     const childRight = children[listLength - 1].getBoundingClientRect().right;
     const wrapRight = scrollItemContainer.getBoundingClientRect().right;
 
-    if (childLeft - 5 === wrapLeft) {
+    if (childLeft >= wrapLeft) {
       updateDataSet('start', true);
-    } else if (childRight - 10 <= wrapRight) {
+    } else if (childRight <= wrapRight) {
       updateDataSet('end', true);
     } else {
       updateDataSet('neutral', true);
