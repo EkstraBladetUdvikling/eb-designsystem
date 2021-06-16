@@ -1439,12 +1439,6 @@ a.card-mode:focus .card-inner {
 }
 
 .horizontal-scroll-nav {
-  display: none;
-}
-
-@media (hover: hover) {
-  .horizontal-scroll-nav {
-    display: block;
     position: absolute;
     top: 50%;
     left: 5px;
@@ -1453,6 +1447,11 @@ a.card-mode:focus .card-inner {
     box-shadow: var(--box-shadow);
     opacity: 0;
     transform: translateY(-50%);
+  }
+
+@media (hover: none) {
+  .horizontal-scroll-nav {
+    display: none;
   }
 }
 
