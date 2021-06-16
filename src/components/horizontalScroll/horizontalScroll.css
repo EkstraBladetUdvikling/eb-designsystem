@@ -58,14 +58,21 @@
 }
 
 .horizontal-scroll-nav {
-  position: absolute;
-  top: 50%;
-  left: 5px;
-  z-index: 100;
+  display: none;
+}
 
-  box-shadow: var(--box-shadow);
-  opacity: 0;
-  transform: translateY(-50%);
+@media (hover: hover) {
+  .horizontal-scroll-nav {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    z-index: 100;
+
+    box-shadow: var(--box-shadow);
+    opacity: 0;
+    transform: translateY(-50%);
+  }
 }
 
 .horizontal-scroll-container:not([data-atstart="true"]):hover .button-prev {
