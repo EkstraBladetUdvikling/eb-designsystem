@@ -1,0 +1,76 @@
+<script>
+  import Prism from 'svelte-prism';
+  import { Card } from '../../src';
+
+  function moveToAllColors() {
+    document.getElementById('all-colors-section').scrollIntoView();
+  }
+</script>
+
+<h1 class="color--eb">Color</h1>
+
+<h3>Anvendelse af color--</h3>
+<p>color-- sætter farven på elementet</p>
+<p class="color--red" on:click={moveToAllColors} style="cursor: pointer;">Se alle farvemuligheder her</p>
+
+<Card className="bg--graa7">
+  <div class="flex flex-justify--between flex-wrap--wrap" slot="content">
+    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--white color--black">color--black</div>
+    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--black color--white">color--white</div>
+    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--white color--sport">color--sport</div>
+    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--white color--eb">color--eb</div>
+    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--white color--orangedark">
+      color--orangedark
+    </div>
+    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--white color--nyheder">color--nyheder</div>
+    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--white color--section">
+      color--section <br />(arver sektionsfarven f.eks sport)
+    </div>
+  </div>
+</Card>
+
+<Prism language="html">
+  {`<div class="color--black"></div>
+<div class="color--white"></div>
+<div class="color--blue"></div>
+<div class="color--sport"></div>
+<div class="color--orangedark"></div>
+<div class="color--nyheder"></div>
+<div class="color--section"></div>`}
+</Prism>
+
+<h3>Anvendelse af bg--</h3>
+<p>bg-- sætter baggrund farve på elementet</p>
+<p class="color--red" on:click={moveToAllColors} style="cursor: pointer;">Se alle farvemuligheder her</p>
+
+<Card className="bg--graa7">
+  <div class="flex flex-justify--between flex-wrap--wrap" slot="content">
+    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--black">bg--black</div>
+    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--white color--black">bg--white</div>
+    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--underholdning">bg--underholdning</div>
+    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--eb">bg--eb</div>
+    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--orangedark">bg--orangedark</div>
+    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--nyheder">bg--nyheder</div>
+    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--white color--section">
+      bg--section <br />(arver sektionsfarven f.eks nyheder)
+    </div>
+  </div>
+</Card>
+
+<Prism language="html">
+  {`<div class="bg--black"></div>
+<div class="bg--white"></div>
+<div class="bg--underholdning"></div>
+<div class="bg--eb"></div>
+<div class="bg--orangedark"></div>
+<div class="bg--nyheder"></div>
+<div class="bg--section"></div>`}
+</Prism>
+
+<h3 id="all-colors-section">Alle tilgændelige farver på ekstrabladet</h3>
+
+<object data="https://ekstrabladetudvikling.github.io/eb-colors/" width="100%" height="500" title="eb-colors">
+  Error: Embedded data could not be displayed. Visit this link instead: <a
+    href="https://ekstrabladetudvikling.github.io/eb-colors/">eb-colors</a
+  >
+</object>

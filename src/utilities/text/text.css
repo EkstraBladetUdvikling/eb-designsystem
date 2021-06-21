@@ -17,3 +17,7 @@
 .text-transform--uppercase {
   text-transform: uppercase;
 }
+
+.lineheight-m {
+  line-height: 1.5em;
+}
