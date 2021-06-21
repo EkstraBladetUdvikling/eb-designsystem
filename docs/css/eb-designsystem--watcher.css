@@ -1860,15 +1860,6 @@ a.card-mode:focus .card-inner {
   border-right: 1px solid;
 }
 
-/*
-* Fix for smartphone browsers
-*/
-
-[type="button"] {
-  border-radius: 0;
-  -webkit-appearance: none;
-}
-
 [data-theme="lightmode"] {
   background: var(--color--white);
   border-color: var(--color--graa4);

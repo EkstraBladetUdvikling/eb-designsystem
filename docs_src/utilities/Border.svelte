@@ -50,18 +50,17 @@
 <h3>Border colors</h3>
 <p>Tilgændelige farvevalg der kan tilknyttes border-color</p>
 
-<Card className="bg--graa7">
+<Card>
   <div class="flex flex-justify--between flex-wrap--wrap" slot="content">
-    <div class="flex flex-align--center border border--black padding-xl width-1of3 margin-l bg--eb"><span class="bg--black margin-s--r" style="border-radius: 100%; width: 20px; height: 20px;"></span>border--black</div>
-    <div class="flex flex-align--center border border--graa1 padding-xl width-1of3 margin-l bg--eb"><span class="bg--graa1 margin-s--r" style="border-radius: 100%; width: 20px; height: 20px;"></span>border--graa1</div>
-    <div class="flex flex-align--center border border--graa2 padding-xl width-1of3 margin-l bg--eb"><span class="bg--graa2 margin-s--r" style="border-radius: 100%; width: 20px; height: 20px;"></span>border--graa2</div>
-    <div class="flex flex-align--center border border--graa3 padding-xl width-1of3 margin-l bg--eb"><span class="bg--graa3 margin-s--r" style="border-radius: 100%; width: 20px; height: 20px;"></span>border--graa3</div>
-    <div class="flex flex-align--center border border--graa4 padding-xl width-1of3 margin-l bg--eb"><span class="bg--graa4 margin-s--r" style="border-radius: 100%; width: 20px; height: 20px;"></span>border--graa4</div>
-    <div class="flex flex-align--center border border--graa5 padding-xl width-1of3 margin-l bg--eb"><span class="bg--graa5 margin-s--r" style="border-radius: 100%; width: 20px; height: 20px;"></span>border--graa5</div>
-    <div class="flex flex-align--center border border--graa6 padding-xl width-1of3 margin-l bg--eb"><span class="bg--graa6 margin-s--r" style="border-radius: 100%; width: 20px; height: 20px;"></span>border--graa6</div>
-    <div class="flex flex-align--center border border--graa7 padding-xl width-1of3 margin-l bg--eb"><span class="bg--graa7 margin-s--r" style="border-radius: 100%; width: 20px; height: 20px;"></span>border--graa7</div>
-    <div class="flex flex-align--center border border--white padding-xl width-1of3 margin-l bg--eb"><span class="bg--white margin-s--r" style="border-radius: 100%; width: 20px; height: 20px;"></span>border--white</div>
-
+    <div class="flex flex-align--center border border--black padding-xl width-1of3 margin-l">border--black</div>
+    <div class="flex flex-align--center border border--graa1 padding-xl width-1of3 margin-l">border--graa1</div>
+    <div class="flex flex-align--center border border--graa2 padding-xl width-1of3 margin-l">border--graa2</div>
+    <div class="flex flex-align--center border border--graa3 padding-xl width-1of3 margin-l">border--graa3</div>
+    <div class="flex flex-align--center border border--graa4 padding-xl width-1of3 margin-l">border--graa4</div>
+    <div class="flex flex-align--center border border--graa5 padding-xl width-1of3 margin-l">border--graa5</div>
+    <div class="flex flex-align--center border border--graa6 padding-xl width-1of3 margin-l">border--graa6</div>
+    <div class="flex flex-align--center border border--graa7 padding-xl width-1of3 margin-l">border--graa7</div>
+    <div class="flex flex-align--center border border--white padding-xl width-1of3 margin-l">border--white</div>
   </div>
 </Card>
 

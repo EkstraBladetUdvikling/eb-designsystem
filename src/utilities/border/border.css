@@ -53,12 +53,3 @@
 .border--r {
   border-right: 1px solid;
 }
-
-/*
-* Fix for smartphone browsers
-*/
-
-[type="button"] {
-  border-radius: 0;
-  -webkit-appearance: none;
-}

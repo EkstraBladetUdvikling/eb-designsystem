@@ -46,13 +46,13 @@
 </div>
 
 <style>
-  .home-section-icon {
-          font-size: 60px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-        }
-        .home-section:hover .home-section-icon {
-          color: var(--color--red);
-    transition: .5s;
-        }
+.home-section-icon {
+  font-size: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.home-section:hover .home-section-icon {
+  color: var(--color--red);
+  transition: .5s;
+}
 </style>

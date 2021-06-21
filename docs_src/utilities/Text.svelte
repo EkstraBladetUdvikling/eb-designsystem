@@ -34,17 +34,9 @@
 <h3>Line height</h3>
 <p>Default line-height er baseret på browseren normalt 1.2</p>
 <Card className="bg--graa7 padding-m">
-  <p>Denne brødtekst har en line-height på normal (default). <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-</Card>
+  <p class="lineheight-m">Denne brødtekst har en line-height på 1.5. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+  <p>Denne brødtekst har en line-height normal. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
 
-<Prism language="html">
-  {`<div>
-  <p>line-height: normal</p>
-</div>`}
-</Prism>
-
-<Card className="bg--graa7 padding-m lineheight-m">
-  <p>Denne brødtekst har en line-height på 1.5. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
 </Card>
 
 <Prism language="html">

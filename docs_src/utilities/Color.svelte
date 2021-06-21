@@ -9,7 +9,7 @@
 
 <h1 class="color--eb">Color</h1>
 
-<h3>Anvendelse af color--</h3>
+<h3>Text color</h3>
 <p>color-- sætter farven på elementet</p>
 <p class="color--red" on:click={moveToAllColors} style="cursor: pointer;">Se alle farvemuligheder her</p>
 
@@ -39,7 +39,7 @@
 <div class="color--section"></div>`}
 </Prism>
 
-<h3>Anvendelse af bg--</h3>
+<h3>Background color</h3>
 <p>bg-- sætter baggrund farve på elementet</p>
 <p class="color--red" on:click={moveToAllColors} style="cursor: pointer;">Se alle farvemuligheder her</p>
 
