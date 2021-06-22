@@ -68,6 +68,12 @@
   transform: translateY(-50%);
 }
 
+@media (hover: none) {
+  .horizontal-scroll-nav {
+    display: none;
+  }
+}
+
 .horizontal-scroll-container:not([data-atstart="true"]):hover .button-prev {
   opacity: 1;
 }

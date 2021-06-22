@@ -58,12 +58,17 @@
     const childRight = children[listLength - 1].getBoundingClientRect().right;
     const wrapRight = scrollItemContainer.getBoundingClientRect().right;
 
-    if (childLeft - 5 === wrapLeft) {
-      updateDataSet('start', true);
-    } else if (childRight - 10 <= wrapRight) {
-      updateDataSet('end', true);
-    } else {
+    const childrenHiddenLeft = childLeft < wrapLeft;
+    const childrenHiddenRight = childRight > wrapRight;
+
+    if (childrenHiddenLeft && childrenHiddenRight) {
       updateDataSet('neutral', true);
+    } else if (childrenHiddenLeft) {
+      updateDataSet('end', true);
+    } else if (childrenHiddenRight) {
+      updateDataSet('start', true);
+    } else {
+      updateDataSet('disabled', true);
     }
   }
 
