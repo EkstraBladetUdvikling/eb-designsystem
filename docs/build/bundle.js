@@ -17259,7 +17259,7 @@ for (const accordion of accordions) {
     	prism0 = new Prism$1({
     			props: {
     				language: "js",
-    				$$slots: { default: [create_default_slot_5$e] },
+    				$$slots: { default: [create_default_slot_5$d] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -18072,7 +18072,7 @@ for (const accordion of accordions) {
     }
 
     // (10:2) <Prism language="js">
-    function create_default_slot_5$e(ctx) {
+    function create_default_slot_5$d(ctx) {
     	let t_value = `import { ArticleCard } from '@ekstra-bladet/designsystem';` + "";
     	let t;
 
@@ -18091,7 +18091,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$e.name,
+    		id: create_default_slot_5$d.name,
     		type: "slot",
     		source: "(10:2) <Prism language=\\\"js\\\">",
     		ctx
@@ -19021,7 +19021,7 @@ for (const accordion of accordions) {
     	prism = new Prism$1({
     			props: {
     				language: "html",
-    				$$slots: { default: [create_default_slot_5$d] },
+    				$$slots: { default: [create_default_slot_5$c] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -19094,7 +19094,7 @@ for (const accordion of accordions) {
     }
 
     // (86:2) <Prism language="html">
-    function create_default_slot_5$d(ctx) {
+    function create_default_slot_5$c(ctx) {
     	let t_value = `<Badge type="primary"></Badge>
 <Badge type="secondary"></Badge>
 <Badge type="success"></Badge>
@@ -19117,7 +19117,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$d.name,
+    		id: create_default_slot_5$c.name,
     		type: "slot",
     		source: "(86:2) <Prism language=\\\"html\\\">",
     		ctx
@@ -20966,7 +20966,7 @@ for (const accordion of accordions) {
     	prism = new Prism$1({
     			props: {
     				language: "html",
-    				$$slots: { default: [create_default_slot_5$c] },
+    				$$slots: { default: [create_default_slot_5$b] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -21053,7 +21053,7 @@ for (const accordion of accordions) {
     }
 
     // (136:2) <Prism language="html">
-    function create_default_slot_5$c(ctx) {
+    function create_default_slot_5$b(ctx) {
     	let t_value = `<button class="button button--primary"></button>
 <button class="button button--secondary"></button>
 <button class="button button--accept"></button>
@@ -21076,7 +21076,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$c.name,
+    		id: create_default_slot_5$b.name,
     		type: "slot",
     		source: "(136:2) <Prism language=\\\"html\\\">",
     		ctx
@@ -24069,7 +24069,7 @@ for (const accordion of accordions) {
     }
 
     // (160:2) <Button>
-    function create_default_slot_5$b(ctx) {
+    function create_default_slot_5$a(ctx) {
     	let t;
 
     	const block = {
@@ -24086,7 +24086,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$b.name,
+    		id: create_default_slot_5$a.name,
     		type: "slot",
     		source: "(160:2) <Button>",
     		ctx
@@ -24160,7 +24160,7 @@ for (const accordion of accordions) {
 
     	button0 = new Button({
     			props: {
-    				$$slots: { default: [create_default_slot_5$b] },
+    				$$slots: { default: [create_default_slot_5$a] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -25607,7 +25607,7 @@ for (const accordion of accordions) {
     }
 
     // (93:2) 
-    function create_content_slot$4(ctx) {
+    function create_content_slot$5(ctx) {
     	let div;
 
     	const block = {
@@ -25627,7 +25627,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_content_slot$4.name,
+    		id: create_content_slot$5.name,
     		type: "slot",
     		source: "(93:2) ",
     		ctx
@@ -25850,7 +25850,7 @@ for (const accordion of accordions) {
     			props: {
     				className: "card--small-media margin-l--b",
     				$$slots: {
-    					content: [create_content_slot$4],
+    					content: [create_content_slot$5],
     					media: [create_media_slot]
     				},
     				$$scope: { ctx }
@@ -26512,7 +26512,7 @@ for (const accordion of accordions) {
     	prism = new Prism$1({
     			props: {
     				language: "html",
-    				$$slots: { default: [create_default_slot_5$a] },
+    				$$slots: { default: [create_default_slot_5$9] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -26599,7 +26599,7 @@ for (const accordion of accordions) {
     }
 
     // (61:2) <Prism language="html">
-    function create_default_slot_5$a(ctx) {
+    function create_default_slot_5$9(ctx) {
     	let t_value = `FormElement er ikke blevet opdateret til HTML endnu` + "";
     	let t;
 
@@ -26618,7 +26618,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$a.name,
+    		id: create_default_slot_5$9.name,
     		type: "slot",
     		source: "(61:2) <Prism language=\\\"html\\\">",
     		ctx
@@ -27596,7 +27596,7 @@ for (const accordion of accordions) {
     			props: {
     				type: "primary",
     				extension: "small",
-    				$$slots: { default: [create_default_slot_5$9] },
+    				$$slots: { default: [create_default_slot_5$8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -27869,7 +27869,7 @@ for (const accordion of accordions) {
     }
 
     // (31:17) <Badge type="primary" extension="small">
-    function create_default_slot_5$9(ctx) {
+    function create_default_slot_5$8(ctx) {
     	let t;
 
     	const block = {
@@ -27886,7 +27886,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$9.name,
+    		id: create_default_slot_5$8.name,
     		type: "slot",
     		source: "(31:17) <Badge type=\\\"primary\\\" extension=\\\"small\\\">",
     		ctx
@@ -30998,7 +30998,7 @@ for (const accordion of accordions) {
     }
 
     // (67:4) <TabList type="pillnavigation">
-    function create_default_slot_5$8(ctx) {
+    function create_default_slot_5$7(ctx) {
     	let tab0;
     	let t0;
     	let tab1;
@@ -31093,7 +31093,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$8.name,
+    		id: create_default_slot_5$7.name,
     		type: "slot",
     		source: "(67:4) <TabList type=\\\"pillnavigation\\\">",
     		ctx
@@ -31409,7 +31409,7 @@ for (const accordion of accordions) {
     }
 
     // (87:8) 
-    function create_content_slot$3(ctx) {
+    function create_content_slot$4(ctx) {
     	let div;
     	let mounted;
     	let dispose;
@@ -31448,7 +31448,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_content_slot$3.name,
+    		id: create_content_slot$4.name,
     		type: "slot",
     		source: "(87:8) ",
     		ctx
@@ -31466,7 +31466,7 @@ for (const accordion of accordions) {
     			props: {
     				className: "margin-m--t",
     				$$slots: {
-    					content: [create_content_slot$3],
+    					content: [create_content_slot$4],
     					header: [create_header_slot]
     				},
     				$$scope: { ctx }
@@ -31530,7 +31530,7 @@ for (const accordion of accordions) {
     	tablist = new TabList({
     			props: {
     				type: "pillnavigation",
-    				$$slots: { default: [create_default_slot_5$8] },
+    				$$slots: { default: [create_default_slot_5$7] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -32634,7 +32634,7 @@ for (const accordion of accordions) {
     	prism = new Prism$1({
     			props: {
     				language: "html",
-    				$$slots: { default: [create_default_slot_5$7] },
+    				$$slots: { default: [create_default_slot_5$6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -32721,7 +32721,7 @@ for (const accordion of accordions) {
     }
 
     // (92:2) <Prism language="html">
-    function create_default_slot_5$7(ctx) {
+    function create_default_slot_5$6(ctx) {
     	let t_value = `<label class="toggle">
   <input type="checkbox" hidden class="toggle-input" />
   <i class="toggle toggle-on fas fa-angle-down"></i>
@@ -32745,7 +32745,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$7.name,
+    		id: create_default_slot_5$6.name,
     		type: "slot",
     		source: "(92:2) <Prism language=\\\"html\\\">",
     		ctx
@@ -34131,7 +34131,7 @@ for (const accordion of accordions) {
     }
 
     // (59:2) <Tooltip>
-    function create_default_slot_5$6(ctx) {
+    function create_default_slot_5$5(ctx) {
     	let html_tag;
     	let html_anchor;
 
@@ -34153,7 +34153,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$6.name,
+    		id: create_default_slot_5$5.name,
     		type: "slot",
     		source: "(59:2) <Tooltip>",
     		ctx
@@ -34556,7 +34556,7 @@ for (const accordion of accordions) {
 
     	tooltip0 = new Tooltip({
     			props: {
-    				$$slots: { default: [create_default_slot_5$6] },
+    				$$slots: { default: [create_default_slot_5$5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -34978,7 +34978,7 @@ for (const accordion of accordions) {
     }
 
     // (46:8) <Badge href="#" className="margin-s bg--bluedark animation-fogwave">
-    function create_default_slot_5$5(ctx) {
+    function create_default_slot_5$4(ctx) {
     	let t;
 
     	const block = {
@@ -34995,7 +34995,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$5.name,
+    		id: create_default_slot_5$4.name,
     		type: "slot",
     		source: "(46:8) <Badge href=\\\"#\\\" className=\\\"margin-s bg--bluedark animation-fogwave\\\">",
     		ctx
@@ -35089,7 +35089,7 @@ for (const accordion of accordions) {
     			props: {
     				href: "#",
     				className: "margin-s bg--bluedark animation-fogwave",
-    				$$slots: { default: [create_default_slot_5$5] },
+    				$$slots: { default: [create_default_slot_5$4] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -35891,7 +35891,7 @@ for (const accordion of accordions) {
     }
 
     // (54:2) 
-    function create_content_slot$2(ctx) {
+    function create_content_slot$3(ctx) {
     	let div9;
     	let div0;
     	let t1;
@@ -35989,7 +35989,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_content_slot$2.name,
+    		id: create_content_slot$3.name,
     		type: "slot",
     		source: "(54:2) ",
     		ctx
@@ -36098,7 +36098,7 @@ for (const accordion of accordions) {
 
     	card2 = new Card({
     			props: {
-    				$$slots: { content: [create_content_slot$2] },
+    				$$slots: { content: [create_content_slot$3] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -36321,8 +36321,7 @@ for (const accordion of accordions) {
     	let t11;
     	let div6;
     	let t12;
-    	let br;
-    	let t13;
+    	let em;
 
     	const block = {
     		c: function create() {
@@ -36346,24 +36345,24 @@ for (const accordion of accordions) {
     			div5.textContent = "color--nyheder";
     			t11 = space();
     			div6 = element("div");
-    			t12 = text("color--section ");
-    			br = element("br");
-    			t13 = text("(arver sektionsfarven f.eks sport)");
-    			attr_dev(div0, "class", "flex flex-align--center padding-xl width-1of3 margin-l bg--white color--black");
+    			t12 = text("color--section\n      ");
+    			em = element("em");
+    			em.textContent = "(arver sektionsfarven f.eks sport)";
+    			attr_dev(div0, "class", "flex flex-column padding-xl width-1of3 margin-l bg--white color--black");
     			add_location(div0, file$a, 17, 4, 506);
-    			attr_dev(div1, "class", "flex flex-align--center padding-xl width-1of3 margin-l bg--black color--white");
-    			add_location(div1, file$a, 18, 4, 620);
-    			attr_dev(div2, "class", "flex flex-align--center padding-xl width-1of3 margin-l bg--white color--sport");
-    			add_location(div2, file$a, 19, 4, 734);
-    			attr_dev(div3, "class", "flex flex-align--center padding-xl width-1of3 margin-l bg--white color--eb");
-    			add_location(div3, file$a, 20, 4, 848);
-    			attr_dev(div4, "class", "flex flex-align--center padding-xl width-1of3 margin-l bg--white color--orangedark");
-    			add_location(div4, file$a, 21, 4, 956);
-    			attr_dev(div5, "class", "flex flex-align--center padding-xl width-1of3 margin-l bg--white color--nyheder");
-    			add_location(div5, file$a, 24, 4, 1092);
-    			add_location(br, file$a, 26, 21, 1325);
-    			attr_dev(div6, "class", "flex flex-align--center padding-xl width-1of3 margin-l bg--white color--section");
-    			add_location(div6, file$a, 25, 4, 1210);
+    			attr_dev(div1, "class", "flex flex-column padding-xl width-1of3 margin-l bg--black color--white");
+    			add_location(div1, file$a, 18, 4, 613);
+    			attr_dev(div2, "class", "flex flex-column padding-xl width-1of3 margin-l bg--white color--sport");
+    			add_location(div2, file$a, 19, 4, 720);
+    			attr_dev(div3, "class", "flex flex-column padding-xl width-1of3 margin-l bg--white color--eb");
+    			add_location(div3, file$a, 20, 4, 827);
+    			attr_dev(div4, "class", "flex flex-column padding-xl width-1of3 margin-l bg--white color--orangedark");
+    			add_location(div4, file$a, 21, 4, 928);
+    			attr_dev(div5, "class", "flex flex-column padding-xl width-1of3 margin-l bg--white color--nyheder");
+    			add_location(div5, file$a, 24, 4, 1057);
+    			add_location(em, file$a, 27, 6, 1282);
+    			attr_dev(div6, "class", "flex flex-column padding-xl width-1of3 margin-l bg--white color--section");
+    			add_location(div6, file$a, 25, 4, 1168);
     			attr_dev(div7, "class", "flex flex-justify--between flex-wrap--wrap");
     			attr_dev(div7, "slot", "content");
     			add_location(div7, file$a, 16, 2, 430);
@@ -36384,8 +36383,7 @@ for (const accordion of accordions) {
     			append_dev(div7, t11);
     			append_dev(div7, div6);
     			append_dev(div6, t12);
-    			append_dev(div6, br);
-    			append_dev(div6, t13);
+    			append_dev(div6, em);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div7);
@@ -36403,7 +36401,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (32:0) <Prism language="html">
+    // (33:0) <Prism language="html">
     function create_default_slot_1$8(ctx) {
     	let t_value = `<div class="color--black"></div>
 <div class="color--white"></div>
@@ -36432,15 +36430,15 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot_1$8.name,
     		type: "slot",
-    		source: "(32:0) <Prism language=\\\"html\\\">",
+    		source: "(33:0) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (47:2) 
-    function create_content_slot$1(ctx) {
+    // (48:2) 
+    function create_content_slot$2(ctx) {
     	let div7;
     	let div0;
     	let t1;
@@ -36456,8 +36454,7 @@ for (const accordion of accordions) {
     	let t11;
     	let div6;
     	let t12;
-    	let br;
-    	let t13;
+    	let em;
 
     	const block = {
     		c: function create() {
@@ -36481,27 +36478,27 @@ for (const accordion of accordions) {
     			div5.textContent = "bg--nyheder";
     			t11 = space();
     			div6 = element("div");
-    			t12 = text("bg--section ");
-    			br = element("br");
-    			t13 = text("(arver sektionsfarven f.eks nyheder)");
-    			attr_dev(div0, "class", "flex flex-align--center padding-xl width-1of3 margin-l bg--black");
-    			add_location(div0, file$a, 47, 4, 1961);
-    			attr_dev(div1, "class", "flex flex-align--center padding-xl width-1of3 margin-l bg--white color--black");
-    			add_location(div1, file$a, 48, 4, 2059);
-    			attr_dev(div2, "class", "flex flex-align--center padding-xl width-1of3 margin-l bg--underholdning");
-    			add_location(div2, file$a, 49, 4, 2170);
-    			attr_dev(div3, "class", "flex flex-align--center padding-xl width-1of3 margin-l bg--eb");
-    			add_location(div3, file$a, 50, 4, 2284);
-    			attr_dev(div4, "class", "flex flex-align--center padding-xl width-1of3 margin-l bg--orangedark");
-    			add_location(div4, file$a, 51, 4, 2376);
-    			attr_dev(div5, "class", "flex flex-align--center padding-xl width-1of3 margin-l bg--nyheder");
-    			add_location(div5, file$a, 52, 4, 2484);
-    			add_location(br, file$a, 54, 18, 2698);
-    			attr_dev(div6, "class", "flex flex-align--center padding-xl width-1of3 margin-l bg--white color--section");
-    			add_location(div6, file$a, 53, 4, 2586);
+    			t12 = text("bg--section\n      ");
+    			em = element("em");
+    			em.textContent = "(arver sektionsfarven f.eks nyheder)";
+    			attr_dev(div0, "class", "flex flex-column padding-xl width-1of3 margin-l bg--black");
+    			add_location(div0, file$a, 48, 4, 1921);
+    			attr_dev(div1, "class", "flex flex-column padding-xl width-1of3 margin-l bg--white color--black");
+    			add_location(div1, file$a, 49, 4, 2012);
+    			attr_dev(div2, "class", "flex flex-column padding-xl width-1of3 margin-l bg--underholdning");
+    			add_location(div2, file$a, 50, 4, 2116);
+    			attr_dev(div3, "class", "flex flex-column padding-xl width-1of3 margin-l bg--eb");
+    			add_location(div3, file$a, 51, 4, 2223);
+    			attr_dev(div4, "class", "flex flex-column padding-xl width-1of3 margin-l bg--orangedark");
+    			add_location(div4, file$a, 52, 4, 2308);
+    			attr_dev(div5, "class", "flex flex-column padding-xl width-1of3 margin-l bg--nyheder");
+    			add_location(div5, file$a, 53, 4, 2409);
+    			add_location(em, file$a, 56, 6, 2615);
+    			attr_dev(div6, "class", "flex flex-column padding-xl width-1of3 margin-l bg--white color--section");
+    			add_location(div6, file$a, 54, 4, 2504);
     			attr_dev(div7, "class", "flex flex-justify--between flex-wrap--wrap");
     			attr_dev(div7, "slot", "content");
-    			add_location(div7, file$a, 46, 2, 1885);
+    			add_location(div7, file$a, 47, 2, 1845);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div7, anchor);
@@ -36519,8 +36516,7 @@ for (const accordion of accordions) {
     			append_dev(div7, t11);
     			append_dev(div7, div6);
     			append_dev(div6, t12);
-    			append_dev(div6, br);
-    			append_dev(div6, t13);
+    			append_dev(div6, em);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div7);
@@ -36529,16 +36525,16 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_content_slot$1.name,
+    		id: create_content_slot$2.name,
     		type: "slot",
-    		source: "(47:2) ",
+    		source: "(48:2) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (60:0) <Prism language="html">
+    // (62:0) <Prism language="html">
     function create_default_slot$8(ctx) {
     	let t_value = `<div class="bg--black"></div>
 <div class="bg--white"></div>
@@ -36567,7 +36563,7 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot$8.name,
     		type: "slot",
-    		source: "(60:0) <Prism language=\\\"html\\\">",
+    		source: "(62:0) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
@@ -36627,7 +36623,7 @@ for (const accordion of accordions) {
     	card1 = new Card({
     			props: {
     				className: "bg--graa7",
-    				$$slots: { content: [create_content_slot$1] },
+    				$$slots: { content: [create_content_slot$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -36687,20 +36683,20 @@ for (const accordion of accordions) {
     			attr_dev(p1, "class", "color--red");
     			set_style(p1, "cursor", "pointer");
     			add_location(p1, file$a, 13, 0, 292);
-    			add_location(h31, file$a, 41, 0, 1674);
-    			add_location(p2, file$a, 42, 0, 1700);
+    			add_location(h31, file$a, 42, 0, 1634);
+    			add_location(p2, file$a, 43, 0, 1660);
     			attr_dev(p3, "class", "color--red");
     			set_style(p3, "cursor", "pointer");
-    			add_location(p3, file$a, 43, 0, 1747);
+    			add_location(p3, file$a, 44, 0, 1707);
     			attr_dev(h32, "id", "all-colors-section");
-    			add_location(h32, file$a, 69, 0, 3034);
+    			add_location(h32, file$a, 71, 0, 2954);
     			attr_dev(a, "href", "https://ekstrabladetudvikling.github.io/eb-colors/");
-    			add_location(a, file$a, 72, 72, 3292);
+    			add_location(a, file$a, 74, 72, 3212);
     			attr_dev(object, "data", "https://ekstrabladetudvikling.github.io/eb-colors/");
     			attr_dev(object, "width", "100%");
     			attr_dev(object, "height", "500");
     			attr_dev(object, "title", "eb-colors");
-    			add_location(object, file$a, 71, 0, 3109);
+    			add_location(object, file$a, 73, 0, 3029);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -36866,7 +36862,7 @@ for (const accordion of accordions) {
     const file$9 = "docs_src/utilities/DataTheme.svelte";
 
     // (33:8) <Tab>
-    function create_default_slot_5$4(ctx) {
+    function create_default_slot_5$3(ctx) {
     	let i;
 
     	const block = {
@@ -36885,7 +36881,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$4.name,
+    		id: create_default_slot_5$3.name,
     		type: "slot",
     		source: "(33:8) <Tab>",
     		ctx
@@ -36932,7 +36928,7 @@ for (const accordion of accordions) {
 
     	tab0 = new Tab({
     			props: {
-    				$$slots: { default: [create_default_slot_5$4] },
+    				$$slots: { default: [create_default_slot_5$3] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -38545,7 +38541,7 @@ for (const accordion of accordions) {
     }
 
     // (153:0) <Card className="bg--graa7">
-    function create_default_slot_5$3(ctx) {
+    function create_default_slot_5$2(ctx) {
     	let strong0;
     	let t1;
     	let div4;
@@ -38662,7 +38658,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$3.name,
+    		id: create_default_slot_5$2.name,
     		type: "slot",
     		source: "(153:0) <Card className=\\\"bg--graa7\\\">",
     		ctx
@@ -39107,7 +39103,7 @@ for (const accordion of accordions) {
     	card4 = new Card({
     			props: {
     				className: "bg--graa7",
-    				$$slots: { default: [create_default_slot_5$3] },
+    				$$slots: { default: [create_default_slot_5$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -39683,7 +39679,7 @@ for (const accordion of accordions) {
     }
 
     // (21:0) <Prism language="html">
-    function create_default_slot_5$2(ctx) {
+    function create_default_slot_5$1(ctx) {
     	let t_value = `<div class="ff-primary"></div>
 <div class="ff-secondary"></div>` + "";
 
@@ -39704,7 +39700,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$2.name,
+    		id: create_default_slot_5$1.name,
     		type: "slot",
     		source: "(21:0) <Prism language=\\\"html\\\">",
     		ctx
@@ -40325,7 +40321,7 @@ for (const accordion of accordions) {
     	prism0 = new Prism$1({
     			props: {
     				language: "html",
-    				$$slots: { default: [create_default_slot_5$2] },
+    				$$slots: { default: [create_default_slot_5$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -41130,7 +41126,7 @@ for (const accordion of accordions) {
     }
 
     // (45:0) <Card className="bg--graa7">
-    function create_default_slot_5$1(ctx) {
+    function create_default_slot_5(ctx) {
     	let div;
 
     	const block = {
@@ -41150,7 +41146,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$1.name,
+    		id: create_default_slot_5.name,
     		type: "slot",
     		source: "(45:0) <Card className=\\\"bg--graa7\\\">",
     		ctx
@@ -41290,7 +41286,7 @@ for (const accordion of accordions) {
     }
 
     // (93:2) 
-    function create_content_slot(ctx) {
+    function create_content_slot$1(ctx) {
     	let div3;
     	let div0;
     	let t1;
@@ -41333,7 +41329,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_content_slot.name,
+    		id: create_content_slot$1.name,
     		type: "slot",
     		source: "(93:2) ",
     		ctx
@@ -41491,7 +41487,7 @@ for (const accordion of accordions) {
     	card1 = new Card({
     			props: {
     				className: "bg--graa7",
-    				$$slots: { default: [create_default_slot_5$1] },
+    				$$slots: { default: [create_default_slot_5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -41536,7 +41532,7 @@ for (const accordion of accordions) {
     	card2 = new Card({
     			props: {
     				className: "bg--graa7",
-    				$$slots: { content: [create_content_slot] },
+    				$$slots: { content: [create_content_slot$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -42444,7 +42440,7 @@ for (const accordion of accordions) {
     const file$3 = "docs_src/utilities/Text.svelte";
 
     // (10:0) <Card className="bg--graa7 padding-m">
-    function create_default_slot_5(ctx) {
+    function create_default_slot_4(ctx) {
     	let p0;
     	let t1;
     	let p1;
@@ -42486,7 +42482,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5.name,
+    		id: create_default_slot_4.name,
     		type: "slot",
     		source: "(10:0) <Card className=\\\"bg--graa7 padding-m\\\">",
     		ctx
@@ -42496,7 +42492,7 @@ for (const accordion of accordions) {
     }
 
     // (16:0) <Prism language="html">
-    function create_default_slot_4(ctx) {
+    function create_default_slot_3(ctx) {
     	let t_value = `<p class="text-align--center"></p>
 <p class="text-align--left"></p>
 <p class="text-align--right"></p>` + "";
@@ -42518,7 +42514,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4.name,
+    		id: create_default_slot_3.name,
     		type: "slot",
     		source: "(16:0) <Prism language=\\\"html\\\">",
     		ctx
@@ -42528,7 +42524,7 @@ for (const accordion of accordions) {
     }
 
     // (24:0) <Card className="bg--graa7 padding-m">
-    function create_default_slot_3(ctx) {
+    function create_default_slot_2$1(ctx) {
     	let p0;
     	let t1;
     	let p1;
@@ -42559,7 +42555,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3.name,
+    		id: create_default_slot_2$1.name,
     		type: "slot",
     		source: "(24:0) <Card className=\\\"bg--graa7 padding-m\\\">",
     		ctx
@@ -42569,7 +42565,7 @@ for (const accordion of accordions) {
     }
 
     // (29:0) <Prism language="html">
-    function create_default_slot_2$1(ctx) {
+    function create_default_slot_1$1(ctx) {
     	let t_value = `<p class="text-transform--lowercase"></p>
 <p class="text-transform--uppercase"></p>` + "";
 
@@ -42590,7 +42586,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$1.name,
+    		id: create_default_slot_1$1.name,
     		type: "slot",
     		source: "(29:0) <Prism language=\\\"html\\\">",
     		ctx
@@ -42599,65 +42595,76 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (36:0) <Card className="bg--graa7 padding-m">
-    function create_default_slot_1$1(ctx) {
+    // (37:2) 
+    function create_content_slot(ctx) {
+    	let div2;
+    	let div0;
     	let p0;
-    	let t0;
-    	let br0;
     	let t1;
-    	let t2;
     	let p1;
     	let t3;
-    	let br1;
-    	let t4;
+    	let div1;
+    	let p2;
+    	let t5;
+    	let p3;
 
     	const block = {
     		c: function create() {
+    			div2 = element("div");
+    			div0 = element("div");
     			p0 = element("p");
-    			t0 = text("Denne brødtekst har en line-height på 1.5. ");
-    			br0 = element("br");
-    			t1 = text(" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.");
-    			t2 = space();
+    			p0.textContent = "normal line-height";
+    			t1 = space();
     			p1 = element("p");
-    			t3 = text("Denne brødtekst har en line-height normal. ");
-    			br1 = element("br");
-    			t4 = text(" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.");
-    			add_location(br0, file$3, 36, 69, 1006);
-    			attr_dev(p0, "class", "lineheight-m");
-    			add_location(p0, file$3, 36, 2, 939);
-    			add_location(br1, file$3, 37, 48, 1212);
-    			add_location(p1, file$3, 37, 2, 1166);
+    			p1.textContent = "normal line-height";
+    			t3 = space();
+    			div1 = element("div");
+    			p2 = element("p");
+    			p2.textContent = "lineheight-m";
+    			t5 = space();
+    			p3 = element("p");
+    			p3.textContent = "lineheight-m";
+    			add_location(p0, file$3, 38, 6, 1029);
+    			add_location(p1, file$3, 39, 6, 1061);
+    			attr_dev(div0, "class", "width-1of3 margin-l");
+    			add_location(div0, file$3, 37, 4, 989);
+    			add_location(p2, file$3, 42, 6, 1155);
+    			add_location(p3, file$3, 43, 6, 1181);
+    			attr_dev(div1, "class", "width-1of3 margin-l lineheight-m");
+    			add_location(div1, file$3, 41, 4, 1102);
+    			attr_dev(div2, "class", "flex flex-justify--between");
+    			attr_dev(div2, "slot", "content");
+    			add_location(div2, file$3, 36, 2, 929);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, p0, anchor);
-    			append_dev(p0, t0);
-    			append_dev(p0, br0);
-    			append_dev(p0, t1);
-    			insert_dev(target, t2, anchor);
-    			insert_dev(target, p1, anchor);
-    			append_dev(p1, t3);
-    			append_dev(p1, br1);
-    			append_dev(p1, t4);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
+    			append_dev(div0, p0);
+    			append_dev(div0, t1);
+    			append_dev(div0, p1);
+    			append_dev(div2, t3);
+    			append_dev(div2, div1);
+    			append_dev(div1, p2);
+    			append_dev(div1, t5);
+    			append_dev(div1, p3);
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(p0);
-    			if (detaching) detach_dev(t2);
-    			if (detaching) detach_dev(p1);
+    			if (detaching) detach_dev(div2);
     		}
     	};
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$1.name,
+    		id: create_content_slot.name,
     		type: "slot",
-    		source: "(36:0) <Card className=\\\"bg--graa7 padding-m\\\">",
+    		source: "(37:2) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (42:0) <Prism language="html">
+    // (49:0) <Prism language="html">
     function create_default_slot$1(ctx) {
     	let t_value = `<div class="lineheight-m">
   <p>line-height: 1.5em</p>
@@ -42682,7 +42689,7 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(42:0) <Prism language=\\\"html\\\">",
+    		source: "(49:0) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
@@ -42716,7 +42723,7 @@ for (const accordion of accordions) {
     	card0 = new Card({
     			props: {
     				className: "bg--graa7 padding-m",
-    				$$slots: { default: [create_default_slot_5] },
+    				$$slots: { default: [create_default_slot_4] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -42725,7 +42732,7 @@ for (const accordion of accordions) {
     	prism0 = new Prism$1({
     			props: {
     				language: "html",
-    				$$slots: { default: [create_default_slot_4] },
+    				$$slots: { default: [create_default_slot_3] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -42734,7 +42741,7 @@ for (const accordion of accordions) {
     	card1 = new Card({
     			props: {
     				className: "bg--graa7 padding-m",
-    				$$slots: { default: [create_default_slot_3] },
+    				$$slots: { default: [create_default_slot_2$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -42743,7 +42750,7 @@ for (const accordion of accordions) {
     	prism1 = new Prism$1({
     			props: {
     				language: "html",
-    				$$slots: { default: [create_default_slot_2$1] },
+    				$$slots: { default: [create_default_slot_1$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -42751,8 +42758,8 @@ for (const accordion of accordions) {
 
     	card2 = new Card({
     			props: {
-    				className: "bg--graa7 padding-m",
-    				$$slots: { default: [create_default_slot_1$1] },
+    				className: "bg--graa7",
+    				$$slots: { content: [create_content_slot] },
     				$$scope: { ctx }
     			},
     			$$inline: true

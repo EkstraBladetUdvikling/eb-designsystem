@@ -15,16 +15,17 @@
 
 <Card className="bg--graa7">
   <div class="flex flex-justify--between flex-wrap--wrap" slot="content">
-    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--white color--black">color--black</div>
-    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--black color--white">color--white</div>
-    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--white color--sport">color--sport</div>
-    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--white color--eb">color--eb</div>
-    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--white color--orangedark">
+    <div class="flex flex-column padding-xl width-1of3 margin-l bg--white color--black">color--black</div>
+    <div class="flex flex-column padding-xl width-1of3 margin-l bg--black color--white">color--white</div>
+    <div class="flex flex-column padding-xl width-1of3 margin-l bg--white color--sport">color--sport</div>
+    <div class="flex flex-column padding-xl width-1of3 margin-l bg--white color--eb">color--eb</div>
+    <div class="flex flex-column padding-xl width-1of3 margin-l bg--white color--orangedark">
       color--orangedark
     </div>
-    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--white color--nyheder">color--nyheder</div>
-    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--white color--section">
-      color--section <br />(arver sektionsfarven f.eks sport)
+    <div class="flex flex-column padding-xl width-1of3 margin-l bg--white color--nyheder">color--nyheder</div>
+    <div class="flex flex-column padding-xl width-1of3 margin-l bg--white color--section">
+      color--section
+      <em>(arver sektionsfarven f.eks sport)</em>
     </div>
   </div>
 </Card>
@@ -45,14 +46,15 @@
 
 <Card className="bg--graa7">
   <div class="flex flex-justify--between flex-wrap--wrap" slot="content">
-    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--black">bg--black</div>
-    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--white color--black">bg--white</div>
-    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--underholdning">bg--underholdning</div>
-    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--eb">bg--eb</div>
-    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--orangedark">bg--orangedark</div>
-    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--nyheder">bg--nyheder</div>
-    <div class="flex flex-align--center padding-xl width-1of3 margin-l bg--white color--section">
-      bg--section <br />(arver sektionsfarven f.eks nyheder)
+    <div class="flex flex-column padding-xl width-1of3 margin-l bg--black">bg--black</div>
+    <div class="flex flex-column padding-xl width-1of3 margin-l bg--white color--black">bg--white</div>
+    <div class="flex flex-column padding-xl width-1of3 margin-l bg--underholdning">bg--underholdning</div>
+    <div class="flex flex-column padding-xl width-1of3 margin-l bg--eb">bg--eb</div>
+    <div class="flex flex-column padding-xl width-1of3 margin-l bg--orangedark">bg--orangedark</div>
+    <div class="flex flex-column padding-xl width-1of3 margin-l bg--nyheder">bg--nyheder</div>
+    <div class="flex flex-column padding-xl width-1of3 margin-l bg--white color--section">
+      bg--section
+      <em>(arver sektionsfarven f.eks nyheder)</em>
     </div>
   </div>
 </Card>

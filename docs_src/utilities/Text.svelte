@@ -33,10 +33,17 @@
 
 <h3>Line height</h3>
 <p>Default line-height er baseret på browseren normalt 1.2</p>
-<Card className="bg--graa7 padding-m">
-  <p class="lineheight-m">Denne brødtekst har en line-height på 1.5. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-  <p>Denne brødtekst har en line-height normal. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-
+<Card className="bg--graa7">
+  <div class="flex flex-justify--between" slot="content">
+    <div class="width-1of3 margin-l">
+      <p>normal line-height</p>
+      <p>normal line-height</p>
+    </div>
+    <div class="width-1of3 margin-l lineheight-m">
+      <p>lineheight-m</p>
+      <p>lineheight-m</p>
+    </div>
+  </div>
 </Card>
 
 <Prism language="html">
