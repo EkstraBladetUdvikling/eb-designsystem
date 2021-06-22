@@ -33,3 +33,23 @@
   border-bottom-left-radius: var(--border-radius-medium);
   border-bottom-right-radius: var(--border-radius-medium);
 }
+
+.border {
+  border: 1px solid;
+}
+
+.border--t {
+  border-top: 1px solid;
+}
+
+.border--b {
+  border-bottom: 1px solid;
+}
+
+.border--l {
+  border-left: 1px solid;
+}
+
+.border--r {
+  border-right: 1px solid;
+}

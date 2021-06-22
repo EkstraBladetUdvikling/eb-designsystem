@@ -87,24 +87,18 @@
 <div class="margin-l--rl padding-l--rl"></div>`}
 </Prism>
 
-<h3>Border-radius</h3>
+<h3>Box-shadow</h3>
 
 <Card className="bg--graa7">
-  <div class="flex flex-justify--between flex-wrap--wrap" slot="content">
-    <div class="border-radius padding-xl width-1of3 margin-l bg--eb">border-radius</div>
-    <div class="border-radius-s padding-xl width-1of3 margin-l bg--eb">border-radius-s</div>
-    <div class="border-radius--t padding-xl width-1of3 margin-l bg--eb">border-radius--t</div>
-    <div class="border-radius-s--t padding-xl width-1of3 margin-l bg--eb">border-radius-s--t</div>
-    <div class="border-radius--b padding-xl width-1of3 margin-l bg--eb">border-radius--b</div>
-    <div class="border-radius-s--b padding-xl width-1of3 margin-l bg--eb">border-radius-s--b</div>
+  <div slot="content">
+    <div class="border-radius box-shadow--small padding-xl margin-l bg--eb">box-shadow--small</div>
+    <div class="border-radius box-shadow padding-xl margin-l bg--eb">box-shadow</div>
+    <div class="border-radius box-shadow--large padding-xl margin-l bg--eb">box-shadow--large</div>
   </div>
 </Card>
 
 <Prism language="html">
-  {`<div class="border-radius"></div>
-<div class="border-radius-s"></div>
-<div class="border-radius--t"></div>
-<div class="border-radius-s--t"></div>
-<div class="border-radius--b"></div>
-<div class="border-radius-s--b"></div>`}
+  {`<div class="box-shadow--small"></div>
+<div class="box-shadow"></div>
+<div class="box-shadow--large"></div>`}
 </Prism>

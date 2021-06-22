@@ -30,3 +30,24 @@
   {`<p class="text-transform--lowercase"></p>
 <p class="text-transform--uppercase"></p>`}
 </Prism>
+
+<h3>Line height</h3>
+<p>Default line-height er baseret på browseren normalt 1.2</p>
+<Card className="bg--graa7">
+  <div class="flex flex-justify--between" slot="content">
+    <div class="width-1of3 margin-l">
+      <p>normal line-height</p>
+      <p>normal line-height</p>
+    </div>
+    <div class="width-1of3 margin-l lineheight-m">
+      <p>lineheight-m</p>
+      <p>lineheight-m</p>
+    </div>
+  </div>
+</Card>
+
+<Prism language="html">
+  {`<div class="lineheight-m">
+  <p>line-height: 1.5em</p>
+</div>`}
+</Prism>
