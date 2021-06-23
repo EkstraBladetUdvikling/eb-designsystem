@@ -3,9 +3,9 @@
 
   // import Check from './svgs/check.svg';
   import * as IconSVGS from './svgs/IconComponents';
-  import * as EmojiSVGS from './emojis/EmojiComponents';
+  import * as GraphicSVGS from './graphics/GraphicComponents';
 
-  const allSVGs = { ...EmojiSVGS, ...IconSVGS };
+  const allSVGs = { ...GraphicSVGS, ...IconSVGS };
 </script>
 
 <script lang="ts">

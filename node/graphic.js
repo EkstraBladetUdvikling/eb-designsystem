@@ -13,7 +13,7 @@ const spriter = new SVGSpriter({
   },
 });
 
-const iconPath = './src/components/icon/emojis';
+const iconPath = './src/components/icon/graphics';
 
 const svgs = fs.readdirSync(iconPath).filter((fileName) => fileName.indexOf('.svg') !== -1);
 
@@ -61,13 +61,13 @@ const definitionFile = `declare module 'Icon.svelte' {
 }
 `;
 
-fs.writeFileSync(`./src/types/Emoji.d.ts`, definitionFile);
+fs.writeFileSync(`./src/types/Graphic.d.ts`, definitionFile);
 
 const componentFile = iconComponents.join(';');
 
-fs.writeFileSync(`./src/components/icon/emojis/EmojiComponents.ts`, componentFile);
+fs.writeFileSync(`./src/components/icon/graphics/GraphicComponents.ts`, componentFile);
 
 fs.writeFileSync(
-  `./src/components/icon/emojis/emojinames.ts`,
-  `export const emojinames = [${iconComponentNames.join(',')}];`
+  `./src/components/icon/graphics/graphicnames.ts`,
+  `export const graphicnames = [${iconComponentNames.join(',')}];`
 );

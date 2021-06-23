@@ -3,7 +3,7 @@
   import { sourceType } from '../stores';
   import { Badge, Card, Icon } from '../../src';
   import { iconnames } from '../../src/components/icon/svgs/iconnames';
-  import { emojinames } from '../../src/components/icon/emojis/emojinames';
+  import { graphicnames } from '../../src/components/icon/graphics/graphicnames';
 
 </script>
 
@@ -64,8 +64,8 @@
   </table>
 {/if}
 
-<h3>Piktogrammer</h3>
-<p>Piktogrammer er simple ikoner, der kun er udført med fill ligesom <a href="https://fontawesome.com/" target="_blank">Font Awesome</a> ikoner. Fill på disse ikoner er sat til currentColor, så ikonerne kan modtage ønsket farve.</p>
+<h3>Icons</h3>
+<p>Icons are simple and dynamic only made with fill like <a href="https://fontawesome.com/" target="_blank">Font Awesome</a> icons. Fill has the value currentColor and makes it possible to add the desired color to the icon.</p>
 <div class="flex flex-wrap--wrap">
   {#each iconnames as name}
     <Card className="flex-align--center flex-justify--center margin-s padding-m">
@@ -87,11 +87,11 @@
   </Prism>
 {/if}
 
-<h3>Emojis</h3>
-<p>Emojis er grafikker der har flere lag pålagt med statiske farver - f.eks. vejrikoner eller EB logo. Emojis må gerne indeholde statiske farver på stroke og fill.</p>
+<h3>Graphics</h3>
+<p>Graphics are capable of containing more layers i.e static colors on stroke and fill.</p>
 
 <div class="flex flex-wrap--wrap">
-  {#each emojinames as name}
+  {#each graphicnames as name}
     <Card className="flex-align--center flex-justify--center margin-s padding-m">
       <Icon {name} className="margin-s" style="width: 36px; height: 36px;" />
       <small>{name}</small>
@@ -111,7 +111,7 @@
   </Prism>
 {/if}
 
-<h3><a href="https://fontawesome.com/" target="_blank">Font Awesome</a> ikoner</h3>
+<h3><a href="https://fontawesome.com/" target="_blank">Font Awesome</a> icons</h3>
 <Icon type="fa" className="fas fa-snowplow" />
 
 {#if $sourceType === 'svelte'}
