@@ -3,6 +3,8 @@
   import { sourceType } from '../stores';
   import { Badge, Card, Icon } from '../../src';
   import { iconnames } from '../../src/components/icon/svgs/iconnames';
+  import { emojinames } from '../../src/components/icon/emojis/emojinames';
+
 </script>
 
 <h1 class="color--eb">Icon library</h1>
@@ -62,8 +64,8 @@
   </table>
 {/if}
 
-<h3>Der findes følgende svg ikoner</h3>
-
+<h3>Piktogrammer</h3>
+<p>Piktogrammer er simple ikoner, der kun er udført med fill ligesom <a href="https://fontawesome.com/" target="_blank">Font Awesome</a> ikoner. Fill på disse ikoner er sat til currentColor, så ikonerne kan modtage ønsket farve.</p>
 <div class="flex flex-wrap--wrap">
   {#each iconnames as name}
     <Card className="flex-align--center flex-justify--center margin-s padding-m">
@@ -85,8 +87,31 @@
   </Prism>
 {/if}
 
-<h3>Det er også muligt at bruge ikoner fra <a href="https://fontawesome.com/" target="_blank">Font Awesome</a></h3>
+<h3>Emojis</h3>
+<p>Emojis er grafikker der har flere lag pålagt med statiske farver - f.eks. vejrikoner eller EB logo. Emojis må gerne indeholde statiske farver på stroke og fill</p>
 
+<div class="flex flex-wrap--wrap">
+  {#each emojinames as name}
+    <Card className="flex-align--center flex-justify--center margin-s padding-m">
+      <Icon {name} className="margin-s" style="width: 36px; height: 36px;" />
+      <small>{name}</small>
+    </Card>
+  {/each}
+</div>
+
+{#if $sourceType === 'svelte'}
+  <Prism language="html">
+    {`<Icon name="icon_name" />`}
+  </Prism>
+{:else}
+  <Prism language="html">
+    {`<svg viewBox="0 0 50 50">
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_name"></use>
+</svg>`}
+  </Prism>
+{/if}
+
+<h3><a href="https://fontawesome.com/" target="_blank">Font Awesome</a> ikoner</h3>
 <Icon type="fa" className="fas fa-snowplow" />
 
 {#if $sourceType === 'svelte'}
