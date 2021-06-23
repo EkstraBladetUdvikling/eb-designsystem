@@ -38073,7 +38073,7 @@ for (const accordion of accordions) {
     			div10.textContent = "Flex item 3";
     			t23 = space();
     			strong3 = element("strong");
-    			strong3.textContent = "flex flex-align--strech";
+    			strong3.textContent = "flex flex-align--stretch";
     			t25 = space();
     			div15 = element("div");
     			div12 = element("div");
@@ -38120,14 +38120,14 @@ for (const accordion of accordions) {
     			attr_dev(strong3, "class", "margin-m margin-l--t");
     			add_location(strong3, file$8, 79, 2, 3153);
     			attr_dev(div12, "class", "bg--graa4 padding-l");
-    			add_location(div12, file$8, 81, 4, 3296);
+    			add_location(div12, file$8, 81, 4, 3298);
     			attr_dev(div13, "class", "bg--graa3 padding-l");
-    			add_location(div13, file$8, 82, 4, 3351);
+    			add_location(div13, file$8, 82, 4, 3353);
     			attr_dev(div14, "class", "bg--graa2 padding-l");
-    			add_location(div14, file$8, 83, 4, 3406);
-    			attr_dev(div15, "class", "flex flex-align--strech bg--eb");
+    			add_location(div14, file$8, 83, 4, 3408);
+    			attr_dev(div15, "class", "flex flex-align--stretch bg--eb");
     			set_style(div15, "height", "100px");
-    			add_location(div15, file$8, 80, 2, 3225);
+    			add_location(div15, file$8, 80, 2, 3226);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, strong0, anchor);
@@ -38201,7 +38201,7 @@ for (const accordion of accordions) {
     	let t_value = `<div class="flex flex-align--start"></div>
 <div class="flex flex-align--end"></div>
 <div class="flex flex-align--center"></div>
-<div class="flex flex-align--strech"></div>` + "";
+<div class="flex flex-align--stretch"></div>` + "";
 
     	let t;
 
@@ -38250,14 +38250,14 @@ for (const accordion of accordions) {
     			div2 = element("div");
     			div2.textContent = "Flex item 3";
     			attr_dev(div0, "class", "bg--graa4 padding-l");
-    			add_location(div0, file$8, 99, 4, 3898);
+    			add_location(div0, file$8, 99, 4, 3901);
     			attr_dev(div1, "class", "bg--graa3 padding-l");
-    			add_location(div1, file$8, 100, 4, 3953);
+    			add_location(div1, file$8, 100, 4, 3956);
     			attr_dev(div2, "class", "bg--graa2 padding-l");
-    			add_location(div2, file$8, 101, 4, 4008);
+    			add_location(div2, file$8, 101, 4, 4011);
     			attr_dev(div3, "class", "flex flex--center bg--eb");
     			set_style(div3, "height", "100px");
-    			add_location(div3, file$8, 98, 2, 3833);
+    			add_location(div3, file$8, 98, 2, 3836);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
@@ -38404,45 +38404,45 @@ for (const accordion of accordions) {
     			div14 = element("div");
     			div14.textContent = "Flex item 3";
     			attr_dev(strong0, "class", "margin-m");
-    			add_location(strong0, file$8, 113, 2, 4279);
+    			add_location(strong0, file$8, 113, 2, 4282);
     			attr_dev(div0, "class", "bg--graa4 padding-l");
-    			add_location(div0, file$8, 115, 4, 4367);
+    			add_location(div0, file$8, 115, 4, 4370);
     			attr_dev(div1, "class", "bg--graa3 padding-l");
-    			add_location(div1, file$8, 116, 4, 4422);
+    			add_location(div1, file$8, 116, 4, 4425);
     			attr_dev(div2, "class", "bg--graa2 padding-l");
-    			add_location(div2, file$8, 117, 4, 4477);
+    			add_location(div2, file$8, 117, 4, 4480);
     			attr_dev(div3, "class", "flex flex-column");
-    			add_location(div3, file$8, 114, 2, 4332);
+    			add_location(div3, file$8, 114, 2, 4335);
     			attr_dev(strong1, "class", "margin-m margin-l--t");
-    			add_location(strong1, file$8, 119, 2, 4539);
+    			add_location(strong1, file$8, 119, 2, 4542);
     			attr_dev(div4, "class", "bg--graa4 padding-l");
-    			add_location(div4, file$8, 121, 4, 4657);
+    			add_location(div4, file$8, 121, 4, 4660);
     			attr_dev(div5, "class", "bg--graa3 padding-l");
-    			add_location(div5, file$8, 122, 4, 4712);
+    			add_location(div5, file$8, 122, 4, 4715);
     			attr_dev(div6, "class", "bg--graa2 padding-l");
-    			add_location(div6, file$8, 123, 4, 4767);
+    			add_location(div6, file$8, 123, 4, 4770);
     			attr_dev(div7, "class", "flex flex-column--reverse");
-    			add_location(div7, file$8, 120, 2, 4613);
+    			add_location(div7, file$8, 120, 2, 4616);
     			attr_dev(strong2, "class", "margin-m margin-l--t");
-    			add_location(strong2, file$8, 125, 2, 4829);
+    			add_location(strong2, file$8, 125, 2, 4832);
     			attr_dev(div8, "class", "bg--graa4 padding-l");
-    			add_location(div8, file$8, 127, 4, 4912);
+    			add_location(div8, file$8, 127, 4, 4915);
     			attr_dev(div9, "class", "bg--graa3 padding-l");
-    			add_location(div9, file$8, 128, 4, 4967);
+    			add_location(div9, file$8, 128, 4, 4970);
     			attr_dev(div10, "class", "bg--graa2 padding-l");
-    			add_location(div10, file$8, 129, 4, 5022);
+    			add_location(div10, file$8, 129, 4, 5025);
     			attr_dev(div11, "class", "flex bg--eb");
-    			add_location(div11, file$8, 126, 2, 4882);
+    			add_location(div11, file$8, 126, 2, 4885);
     			attr_dev(strong3, "class", "margin-m margin-l--t");
-    			add_location(strong3, file$8, 131, 2, 5084);
+    			add_location(strong3, file$8, 131, 2, 5087);
     			attr_dev(div12, "class", "bg--graa4 padding-l");
-    			add_location(div12, file$8, 133, 4, 5203);
+    			add_location(div12, file$8, 133, 4, 5206);
     			attr_dev(div13, "class", "bg--graa3 padding-l");
-    			add_location(div13, file$8, 134, 4, 5258);
+    			add_location(div13, file$8, 134, 4, 5261);
     			attr_dev(div14, "class", "bg--graa2 padding-l");
-    			add_location(div14, file$8, 135, 4, 5313);
+    			add_location(div14, file$8, 135, 4, 5316);
     			attr_dev(div15, "class", "flex flex-row--reverse bg--eb");
-    			add_location(div15, file$8, 132, 2, 5155);
+    			add_location(div15, file$8, 132, 2, 5158);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, strong0, anchor);
@@ -38602,29 +38602,29 @@ for (const accordion of accordions) {
     			div8 = element("div");
     			div8.textContent = "Flex item 4";
     			attr_dev(strong0, "class", "margin-m");
-    			add_location(strong0, file$8, 153, 2, 5773);
+    			add_location(strong0, file$8, 153, 2, 5776);
     			attr_dev(div0, "class", "bg--graa4 width-1of3 padding-l");
-    			add_location(div0, file$8, 155, 4, 5837);
+    			add_location(div0, file$8, 155, 4, 5840);
     			attr_dev(div1, "class", "bg--graa3 width-1of3 padding-l");
-    			add_location(div1, file$8, 156, 4, 5903);
+    			add_location(div1, file$8, 156, 4, 5906);
     			attr_dev(div2, "class", "bg--graa2 width-1of3 padding-l");
-    			add_location(div2, file$8, 157, 4, 5969);
+    			add_location(div2, file$8, 157, 4, 5972);
     			attr_dev(div3, "class", "bg--graa1 width-1of3 padding-l");
-    			add_location(div3, file$8, 158, 4, 6035);
+    			add_location(div3, file$8, 158, 4, 6038);
     			attr_dev(div4, "class", "flex");
-    			add_location(div4, file$8, 154, 2, 5814);
+    			add_location(div4, file$8, 154, 2, 5817);
     			attr_dev(strong1, "class", "margin-m margin-l--t");
-    			add_location(strong1, file$8, 160, 2, 6108);
+    			add_location(strong1, file$8, 160, 2, 6111);
     			attr_dev(div5, "class", "bg--graa4 width-1of3 padding-l");
-    			add_location(div5, file$8, 162, 4, 6223);
+    			add_location(div5, file$8, 162, 4, 6226);
     			attr_dev(div6, "class", "bg--graa3 width-1of3 padding-l");
-    			add_location(div6, file$8, 163, 4, 6289);
+    			add_location(div6, file$8, 163, 4, 6292);
     			attr_dev(div7, "class", "bg--graa2 width-1of3 padding-l");
-    			add_location(div7, file$8, 164, 4, 6355);
+    			add_location(div7, file$8, 164, 4, 6358);
     			attr_dev(div8, "class", "bg--graa1 width-1of3 padding-l");
-    			add_location(div8, file$8, 165, 4, 6421);
+    			add_location(div8, file$8, 165, 4, 6424);
     			attr_dev(div9, "class", "flex flex-wrap--wrap bg--eb");
-    			add_location(div9, file$8, 161, 2, 6177);
+    			add_location(div9, file$8, 161, 2, 6180);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, strong0, anchor);
@@ -38728,16 +38728,16 @@ for (const accordion of accordions) {
     			div3 = element("div");
     			div3.textContent = "flex-item--stretch";
     			attr_dev(div0, "class", "flex-item--start bg--graa4 width-1of3 padding-l");
-    			add_location(div0, file$8, 180, 4, 6732);
+    			add_location(div0, file$8, 180, 4, 6735);
     			attr_dev(div1, "class", "flex-item--end bg--graa2 width-1of3 padding-l");
-    			add_location(div1, file$8, 181, 4, 6820);
+    			add_location(div1, file$8, 181, 4, 6823);
     			attr_dev(div2, "class", "flex-item--center bg--graa3 width-1of3 padding-l");
-    			add_location(div2, file$8, 182, 4, 6904);
+    			add_location(div2, file$8, 182, 4, 6907);
     			attr_dev(div3, "class", "flex-item--stretch bg--graa1 width-1of3 padding-l");
-    			add_location(div3, file$8, 183, 4, 6994);
+    			add_location(div3, file$8, 183, 4, 6997);
     			attr_dev(div4, "class", "flex bg--eb");
     			set_style(div4, "height", "100px");
-    			add_location(div4, file$8, 179, 2, 6680);
+    			add_location(div4, file$8, 179, 2, 6683);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div4, anchor);
@@ -38848,25 +38848,25 @@ for (const accordion of accordions) {
     			div6 = element("div");
     			div6.textContent = "width-1of3";
     			attr_dev(strong0, "class", "margin-m margin-l--t");
-    			add_location(strong0, file$8, 203, 2, 7626);
+    			add_location(strong0, file$8, 203, 2, 7629);
     			attr_dev(div0, "class", "flex-item--grow bg--graa4 padding-l");
-    			add_location(div0, file$8, 205, 4, 7709);
+    			add_location(div0, file$8, 205, 4, 7712);
     			attr_dev(div1, "class", "bg--graa3 padding-l");
-    			add_location(div1, file$8, 206, 4, 7784);
+    			add_location(div1, file$8, 206, 4, 7787);
     			attr_dev(div2, "class", "bg--graa2 padding-l");
-    			add_location(div2, file$8, 207, 4, 7839);
+    			add_location(div2, file$8, 207, 4, 7842);
     			attr_dev(div3, "class", "flex bg--eb");
-    			add_location(div3, file$8, 204, 2, 7679);
+    			add_location(div3, file$8, 204, 2, 7682);
     			attr_dev(strong1, "class", "margin-m margin-l--t");
-    			add_location(strong1, file$8, 209, 2, 7901);
+    			add_location(strong1, file$8, 209, 2, 7904);
     			attr_dev(div4, "class", "flex-item--noshrink width-2of3 bg--graa4 padding-l");
-    			add_location(div4, file$8, 211, 4, 7989);
+    			add_location(div4, file$8, 211, 4, 7992);
     			attr_dev(div5, "class", "bg--graa3 width-1of3 padding-l");
-    			add_location(div5, file$8, 212, 4, 8094);
+    			add_location(div5, file$8, 212, 4, 8097);
     			attr_dev(div6, "class", "bg--graa2 width-1of3 padding-l");
-    			add_location(div6, file$8, 213, 4, 8159);
+    			add_location(div6, file$8, 213, 4, 8162);
     			attr_dev(div7, "class", "flex bg--eb");
-    			add_location(div7, file$8, 210, 2, 7959);
+    			add_location(div7, file$8, 210, 2, 7962);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, strong0, anchor);
@@ -39265,21 +39265,21 @@ for (const accordion of accordions) {
     			add_location(h32, file$8, 57, 0, 2097);
     			add_location(i1, file$8, 58, 28, 2146);
     			add_location(p1, file$8, 58, 0, 2118);
-    			add_location(h33, file$8, 94, 0, 3687);
-    			add_location(i2, file$8, 95, 50, 3758);
-    			add_location(i3, file$8, 95, 72, 3780);
-    			add_location(p2, file$8, 95, 0, 3708);
-    			add_location(h34, file$8, 109, 0, 4155);
-    			add_location(p3, file$8, 110, 0, 4175);
-    			add_location(h35, file$8, 146, 0, 5573);
-    			add_location(p4, file$8, 147, 0, 5587);
-    			add_location(h2, file$8, 174, 0, 6607);
-    			add_location(h36, file$8, 176, 0, 6628);
-    			add_location(h37, file$8, 196, 0, 7323);
-    			add_location(code0, file$8, 197, 3, 7350);
-    			add_location(p5, file$8, 197, 0, 7347);
-    			add_location(code1, file$8, 199, 2, 7471);
-    			add_location(p6, file$8, 198, 0, 7465);
+    			add_location(h33, file$8, 94, 0, 3690);
+    			add_location(i2, file$8, 95, 50, 3761);
+    			add_location(i3, file$8, 95, 72, 3783);
+    			add_location(p2, file$8, 95, 0, 3711);
+    			add_location(h34, file$8, 109, 0, 4158);
+    			add_location(p3, file$8, 110, 0, 4178);
+    			add_location(h35, file$8, 146, 0, 5576);
+    			add_location(p4, file$8, 147, 0, 5590);
+    			add_location(h2, file$8, 174, 0, 6610);
+    			add_location(h36, file$8, 176, 0, 6631);
+    			add_location(h37, file$8, 196, 0, 7326);
+    			add_location(code0, file$8, 197, 3, 7353);
+    			add_location(p5, file$8, 197, 0, 7350);
+    			add_location(code1, file$8, 199, 2, 7474);
+    			add_location(p6, file$8, 198, 0, 7468);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
