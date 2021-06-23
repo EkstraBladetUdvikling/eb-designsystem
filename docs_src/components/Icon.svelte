@@ -88,7 +88,7 @@
 {/if}
 
 <h3>Emojis</h3>
-<p>Emojis er grafikker der har flere lag pålagt med statiske farver - f.eks. vejrikoner eller EB logo. Emojis må gerne indeholde statiske farver på stroke og fill</p>
+<p>Emojis er grafikker der har flere lag pålagt med statiske farver - f.eks. vejrikoner eller EB logo. Emojis må gerne indeholde statiske farver på stroke og fill.</p>
 
 <div class="flex flex-wrap--wrap">
   {#each emojinames as name}

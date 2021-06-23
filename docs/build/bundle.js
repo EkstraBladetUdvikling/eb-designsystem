@@ -28518,7 +28518,7 @@ for (const accordion of accordions) {
     			small = element("small");
     			t1 = text(t1_value);
     			t2 = space();
-    			add_location(small, file$g, 94, 6, 2844);
+    			add_location(small, file$g, 94, 6, 2845);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -29046,7 +29046,7 @@ for (const accordion of accordions) {
     			h31.textContent = "Emojis";
     			t12 = space();
     			p1 = element("p");
-    			p1.textContent = "Emojis er grafikker der har flere lag pålagt med statiske farver - f.eks. vejrikoner eller EB logo. Emojis må gerne indeholde statiske farver på stroke og fill";
+    			p1.textContent = "Emojis er grafikker der har flere lag pålagt med statiske farver - f.eks. vejrikoner eller EB logo. Emojis må gerne indeholde statiske farver på stroke og fill.";
     			t14 = space();
     			div1 = element("div");
 
@@ -29078,11 +29078,11 @@ for (const accordion of accordions) {
     			add_location(h31, file$g, 87, 0, 2430);
     			add_location(p1, file$g, 88, 0, 2446);
     			attr_dev(div1, "class", "flex flex-wrap--wrap");
-    			add_location(div1, file$g, 90, 0, 2614);
+    			add_location(div1, file$g, 90, 0, 2615);
     			attr_dev(a1, "href", "https://fontawesome.com/");
     			attr_dev(a1, "target", "_blank");
-    			add_location(a1, file$g, 111, 4, 3176);
-    			add_location(h32, file$g, 111, 0, 3172);
+    			add_location(a1, file$g, 111, 4, 3177);
+    			add_location(h32, file$g, 111, 0, 3173);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

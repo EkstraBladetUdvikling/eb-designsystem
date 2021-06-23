@@ -1,1 +1,1 @@
-export { default as ekstrabladet } from './ekstrabladet.svg';
+export { default as ekstrabladet } from './ekstrabladet.svg'
