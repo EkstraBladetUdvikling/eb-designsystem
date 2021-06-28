@@ -34,7 +34,7 @@
     "move_to_eb": "yarn installds:eb",
     "copy_svg": "copyfiles -f \"./docs/svg/symbol/icons.svg\" \"./dist\"",
     "start:designsystem": "yarn build:watcher && yarn build:watch",
-    "svgs": "node node/svgs.js && yarn copy_svg"
+    "svgs": "node node/svgs.js && node node/graphic.js && yarn copy_svg"
   },
   "dependencies": {
     "@ekstra-bladet/eb-colors": "^3.0.0",

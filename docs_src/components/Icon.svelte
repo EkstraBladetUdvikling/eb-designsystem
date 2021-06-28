@@ -3,6 +3,8 @@
   import { sourceType } from '../stores';
   import { Badge, Card, Icon } from '../../src';
   import { iconnames } from '../../src/components/icon/svgs/iconnames';
+  import { graphicnames } from '../../src/components/icon/graphics/graphicnames';
+
 </script>
 
 <h1 class="color--eb">Icon library</h1>
@@ -62,8 +64,8 @@
   </table>
 {/if}
 
-<h3>Der findes følgende svg ikoner</h3>
-
+<h3>Icons</h3>
+<p>Icons are simple and dynamic only made with fill. Fill has the value currentColor and makes it possible to add the desired color to the icon.</p>
 <div class="flex flex-wrap--wrap">
   {#each iconnames as name}
     <Card className="flex-align--center flex-justify--center margin-s padding-m">
@@ -85,8 +87,31 @@
   </Prism>
 {/if}
 
-<h3>Det er også muligt at bruge ikoner fra <a href="https://fontawesome.com/" target="_blank">Font Awesome</a></h3>
+<h3>Graphics</h3>
+<p>Graphics are capable of containing more layers i.e static colors on stroke and fill.</p>
 
+<div class="flex flex-wrap--wrap">
+  {#each graphicnames as name}
+    <Card className="flex-align--center flex-justify--center margin-s padding-m">
+      <Icon {name} className="margin-s" style="width: 36px; height: 36px;" />
+      <small>{name}</small>
+    </Card>
+  {/each}
+</div>
+
+{#if $sourceType === 'svelte'}
+  <Prism language="html">
+    {`<Icon name="icon_name" />`}
+  </Prism>
+{:else}
+  <Prism language="html">
+    {`<svg viewBox="0 0 50 50">
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_name"></use>
+</svg>`}
+  </Prism>
+{/if}
+
+<h3><a href="https://fontawesome.com/" target="_blank">Font Awesome</a> icons</h3>
 <Icon type="fa" className="fas fa-snowplow" />
 
 {#if $sourceType === 'svelte'}
