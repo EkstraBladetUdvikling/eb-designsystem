@@ -65,7 +65,7 @@
 {/if}
 
 <h3>Icons</h3>
-<p>Icons are simple and dynamic only made with fill like <a href="https://fontawesome.com/" target="_blank">Font Awesome</a> icons. Fill has the value currentColor and makes it possible to add the desired color to the icon.</p>
+<p>Icons are simple and dynamic only made with fill. Fill has the value currentColor and makes it possible to add the desired color to the icon.</p>
 <div class="flex flex-wrap--wrap">
   {#each iconnames as name}
     <Card className="flex-align--center flex-justify--center margin-s padding-m">

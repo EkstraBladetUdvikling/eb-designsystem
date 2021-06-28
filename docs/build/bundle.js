@@ -28242,7 +28242,7 @@ for (const accordion of accordions) {
     			small = element("small");
     			t1 = text(t1_value);
     			t2 = space();
-    			add_location(small, file$g, 70, 6, 2096);
+    			add_location(small, file$g, 70, 6, 2017);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -28518,7 +28518,7 @@ for (const accordion of accordions) {
     			small = element("small");
     			t1 = text(t1_value);
     			t2 = space();
-    			add_location(small, file$g, 94, 6, 2767);
+    			add_location(small, file$g, 94, 6, 2688);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -28927,30 +28927,27 @@ for (const accordion of accordions) {
     	let h30;
     	let t4;
     	let p0;
-    	let t5;
-    	let a0;
-    	let t7;
-    	let t8;
+    	let t6;
     	let div0;
-    	let t9;
+    	let t7;
     	let current_block_type_index;
     	let if_block1;
-    	let t10;
+    	let t8;
     	let h31;
-    	let t12;
+    	let t10;
     	let p1;
-    	let t14;
+    	let t12;
     	let div1;
-    	let t15;
+    	let t13;
     	let current_block_type_index_1;
     	let if_block2;
-    	let t16;
+    	let t14;
     	let h32;
-    	let a1;
-    	let t18;
-    	let t19;
+    	let a;
+    	let t16;
+    	let t17;
     	let icon;
-    	let t20;
+    	let t18;
     	let current_block_type_index_2;
     	let if_block3;
     	let if_block3_anchor;
@@ -29028,61 +29025,55 @@ for (const accordion of accordions) {
     			h30.textContent = "Icons";
     			t4 = space();
     			p0 = element("p");
-    			t5 = text("Icons are simple and dynamic only made with fill like ");
-    			a0 = element("a");
-    			a0.textContent = "Font Awesome";
-    			t7 = text(" icons. Fill has the value currentColor and makes it possible to add the desired color to the icon.");
-    			t8 = space();
+    			p0.textContent = "Icons are simple and dynamic only made with fill. Fill has the value currentColor and makes it possible to add the desired color to the icon.";
+    			t6 = space();
     			div0 = element("div");
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].c();
     			}
 
-    			t9 = space();
+    			t7 = space();
     			if_block1.c();
-    			t10 = space();
+    			t8 = space();
     			h31 = element("h3");
     			h31.textContent = "Graphics";
-    			t12 = space();
+    			t10 = space();
     			p1 = element("p");
     			p1.textContent = "Graphics are capable of containing more layers i.e static colors on stroke and fill.";
-    			t14 = space();
+    			t12 = space();
     			div1 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t15 = space();
+    			t13 = space();
     			if_block2.c();
-    			t16 = space();
+    			t14 = space();
     			h32 = element("h3");
-    			a1 = element("a");
-    			a1.textContent = "Font Awesome";
-    			t18 = text(" icons");
-    			t19 = space();
+    			a = element("a");
+    			a.textContent = "Font Awesome";
+    			t16 = text(" icons");
+    			t17 = space();
     			create_component(icon.$$.fragment);
-    			t20 = space();
+    			t18 = space();
     			if_block3.c();
     			if_block3_anchor = empty();
     			attr_dev(h1, "class", "color--eb");
     			add_location(h1, file$g, 7, 0, 300);
     			add_location(h30, file$g, 64, 0, 1624);
-    			attr_dev(a0, "href", "https://fontawesome.com/");
-    			attr_dev(a0, "target", "_blank");
-    			add_location(a0, file$g, 65, 57, 1696);
     			add_location(p0, file$g, 65, 0, 1639);
     			attr_dev(div0, "class", "flex flex-wrap--wrap");
-    			add_location(div0, file$g, 66, 0, 1867);
-    			add_location(h31, file$g, 87, 0, 2424);
-    			add_location(p1, file$g, 88, 0, 2442);
+    			add_location(div0, file$g, 66, 0, 1788);
+    			add_location(h31, file$g, 87, 0, 2345);
+    			add_location(p1, file$g, 88, 0, 2363);
     			attr_dev(div1, "class", "flex flex-wrap--wrap");
-    			add_location(div1, file$g, 90, 0, 2535);
-    			attr_dev(a1, "href", "https://fontawesome.com/");
-    			attr_dev(a1, "target", "_blank");
-    			add_location(a1, file$g, 111, 4, 3099);
-    			add_location(h32, file$g, 111, 0, 3095);
+    			add_location(div1, file$g, 90, 0, 2456);
+    			attr_dev(a, "href", "https://fontawesome.com/");
+    			attr_dev(a, "target", "_blank");
+    			add_location(a, file$g, 111, 4, 3020);
+    			add_location(h32, file$g, 111, 0, 3016);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -29095,38 +29086,35 @@ for (const accordion of accordions) {
     			insert_dev(target, h30, anchor);
     			insert_dev(target, t4, anchor);
     			insert_dev(target, p0, anchor);
-    			append_dev(p0, t5);
-    			append_dev(p0, a0);
-    			append_dev(p0, t7);
-    			insert_dev(target, t8, anchor);
+    			insert_dev(target, t6, anchor);
     			insert_dev(target, div0, anchor);
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].m(div0, null);
     			}
 
-    			insert_dev(target, t9, anchor);
+    			insert_dev(target, t7, anchor);
     			if_blocks[current_block_type_index].m(target, anchor);
-    			insert_dev(target, t10, anchor);
+    			insert_dev(target, t8, anchor);
     			insert_dev(target, h31, anchor);
-    			insert_dev(target, t12, anchor);
+    			insert_dev(target, t10, anchor);
     			insert_dev(target, p1, anchor);
-    			insert_dev(target, t14, anchor);
+    			insert_dev(target, t12, anchor);
     			insert_dev(target, div1, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(div1, null);
     			}
 
-    			insert_dev(target, t15, anchor);
+    			insert_dev(target, t13, anchor);
     			if_blocks_1[current_block_type_index_1].m(target, anchor);
-    			insert_dev(target, t16, anchor);
+    			insert_dev(target, t14, anchor);
     			insert_dev(target, h32, anchor);
-    			append_dev(h32, a1);
-    			append_dev(h32, t18);
-    			insert_dev(target, t19, anchor);
+    			append_dev(h32, a);
+    			append_dev(h32, t16);
+    			insert_dev(target, t17, anchor);
     			mount_component(icon, target, anchor);
-    			insert_dev(target, t20, anchor);
+    			insert_dev(target, t18, anchor);
     			if_blocks_2[current_block_type_index_2].m(target, anchor);
     			insert_dev(target, if_block3_anchor, anchor);
     			current = true;
@@ -29200,7 +29188,7 @@ for (const accordion of accordions) {
     				}
 
     				transition_in(if_block1, 1);
-    				if_block1.m(t10.parentNode, t10);
+    				if_block1.m(t8.parentNode, t8);
     			}
 
     			if (dirty & /*graphicnames*/ 0) {
@@ -29250,7 +29238,7 @@ for (const accordion of accordions) {
     				}
 
     				transition_in(if_block2, 1);
-    				if_block2.m(t16.parentNode, t16);
+    				if_block2.m(t14.parentNode, t14);
     			}
 
     			let previous_block_index_2 = current_block_type_index_2;
@@ -29322,25 +29310,25 @@ for (const accordion of accordions) {
     			if (detaching) detach_dev(h30);
     			if (detaching) detach_dev(t4);
     			if (detaching) detach_dev(p0);
-    			if (detaching) detach_dev(t8);
+    			if (detaching) detach_dev(t6);
     			if (detaching) detach_dev(div0);
     			destroy_each(each_blocks_1, detaching);
-    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(t7);
     			if_blocks[current_block_type_index].d(detaching);
-    			if (detaching) detach_dev(t10);
+    			if (detaching) detach_dev(t8);
     			if (detaching) detach_dev(h31);
-    			if (detaching) detach_dev(t12);
+    			if (detaching) detach_dev(t10);
     			if (detaching) detach_dev(p1);
-    			if (detaching) detach_dev(t14);
+    			if (detaching) detach_dev(t12);
     			if (detaching) detach_dev(div1);
     			destroy_each(each_blocks, detaching);
-    			if (detaching) detach_dev(t15);
+    			if (detaching) detach_dev(t13);
     			if_blocks_1[current_block_type_index_1].d(detaching);
-    			if (detaching) detach_dev(t16);
+    			if (detaching) detach_dev(t14);
     			if (detaching) detach_dev(h32);
-    			if (detaching) detach_dev(t19);
+    			if (detaching) detach_dev(t17);
     			destroy_component(icon, detaching);
-    			if (detaching) detach_dev(t20);
+    			if (detaching) detach_dev(t18);
     			if_blocks_2[current_block_type_index_2].d(detaching);
     			if (detaching) detach_dev(if_block3_anchor);
     		}
