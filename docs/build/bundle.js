@@ -2289,7 +2289,7 @@ var app = (function () {
     	let if_block1 = /*$$slots*/ ctx[5].media && create_if_block_3$6(ctx);
     	const default_slot_template = /*#slots*/ ctx[8].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[7], null);
-    	let if_block2 = /*$$slots*/ ctx[5].content && create_if_block_2$9(ctx);
+    	let if_block2 = /*$$slots*/ ctx[5].content && create_if_block_2$a(ctx);
     	let if_block3 = /*$$slots*/ ctx[5].footer && create_if_block_1$d(ctx);
 
     	let a_levels = [
@@ -2404,7 +2404,7 @@ var app = (function () {
     						transition_in(if_block2, 1);
     					}
     				} else {
-    					if_block2 = create_if_block_2$9(ctx);
+    					if_block2 = create_if_block_2$a(ctx);
     					if_block2.c();
     					transition_in(if_block2, 1);
     					if_block2.m(a, t3);
@@ -2813,7 +2813,7 @@ var app = (function () {
     }
 
     // (25:4) {#if $$slots.content}
-    function create_if_block_2$9(ctx) {
+    function create_if_block_2$a(ctx) {
     	let div;
     	let current;
     	const content_slot_template = /*#slots*/ ctx[8].content;
@@ -2859,7 +2859,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$9.name,
+    		id: create_if_block_2$a.name,
     		type: "if",
     		source: "(25:4) {#if $$slots.content}",
     		ctx
@@ -7256,7 +7256,7 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	const if_block_creators = [create_if_block_1$c, create_else_block_1$9];
+    	const if_block_creators = [create_if_block_1$c, create_else_block_1$a];
     	const if_blocks = [];
 
     	function select_block_type_1(ctx, dirty) {
@@ -7501,7 +7501,7 @@ var app = (function () {
     }
 
     // (37:4) {:else}
-    function create_else_block_1$9(ctx) {
+    function create_else_block_1$a(ctx) {
     	let current;
     	const off_slot_template = /*#slots*/ ctx[8].off;
     	const off_slot = create_slot(off_slot_template, ctx, /*$$scope*/ ctx[7], get_off_slot_context_1);
@@ -7540,7 +7540,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_1$9.name,
+    		id: create_else_block_1$a.name,
     		type: "else",
     		source: "(37:4) {:else}",
     		ctx
@@ -8244,7 +8244,7 @@ var app = (function () {
     	let div;
     	let t;
     	let current;
-    	let if_block0 = /*section*/ ctx[8] && create_if_block_2$8(ctx);
+    	let if_block0 = /*section*/ ctx[8] && create_if_block_2$9(ctx);
     	let if_block1 = /*published*/ ctx[6] && create_if_block_1$b(ctx);
 
     	const block = {
@@ -8272,7 +8272,7 @@ var app = (function () {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_2$8(ctx);
+    					if_block0 = create_if_block_2$9(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(div, t);
@@ -8340,7 +8340,7 @@ var app = (function () {
     }
 
     // (95:12) {#if section}
-    function create_if_block_2$8(ctx) {
+    function create_if_block_2$9(ctx) {
     	let div;
     	let span1;
     	let icon;
@@ -8402,7 +8402,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$8.name,
+    		id: create_if_block_2$9.name,
     		type: "if",
     		source: "(95:12) {#if section}",
     		ctx
@@ -12175,7 +12175,7 @@ var app = (function () {
 
     const file$w = "src/components/spinner/Spinner.svelte";
 
-    // (4:0) {#if isLoading}
+    // (5:0) {#if isLoading}
     function create_if_block$f(ctx) {
     	let div;
     	let i0;
@@ -12183,6 +12183,7 @@ var app = (function () {
     	let i1;
     	let t1;
     	let i2;
+    	let div_class_value;
 
     	const block = {
     		c: function create() {
@@ -12193,13 +12194,13 @@ var app = (function () {
     			t1 = space();
     			i2 = element("i");
     			attr_dev(i0, "class", "fas fa-circle bounce bounce1");
-    			add_location(i0, file$w, 5, 4, 120);
+    			add_location(i0, file$w, 6, 4, 192);
     			attr_dev(i1, "class", "fas fa-circle bounce bounce2");
-    			add_location(i1, file$w, 6, 4, 167);
+    			add_location(i1, file$w, 7, 4, 239);
     			attr_dev(i2, "class", "fas fa-circle bounce bounce3");
-    			add_location(i2, file$w, 7, 4, 214);
-    			attr_dev(div, "class", "loader flex flex--center");
-    			add_location(div, file$w, 4, 2, 77);
+    			add_location(i2, file$w, 8, 4, 286);
+    			attr_dev(div, "class", div_class_value = "loader " + (/*fullScreen*/ ctx[1] ? "full-screen-loader " : "") + "flex flex--center");
+    			add_location(div, file$w, 5, 2, 108);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -12208,6 +12209,11 @@ var app = (function () {
     			append_dev(div, i1);
     			append_dev(div, t1);
     			append_dev(div, i2);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*fullScreen*/ 2 && div_class_value !== (div_class_value = "loader " + (/*fullScreen*/ ctx[1] ? "full-screen-loader " : "") + "flex flex--center")) {
+    				attr_dev(div, "class", div_class_value);
+    			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -12218,7 +12224,7 @@ var app = (function () {
     		block,
     		id: create_if_block$f.name,
     		type: "if",
-    		source: "(4:0) {#if isLoading}",
+    		source: "(5:0) {#if isLoading}",
     		ctx
     	});
 
@@ -12243,7 +12249,9 @@ var app = (function () {
     		},
     		p: function update(ctx, [dirty]) {
     			if (/*isLoading*/ ctx[0]) {
-    				if (if_block) ; else {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
     					if_block = create_if_block$f(ctx);
     					if_block.c();
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -12276,7 +12284,8 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Spinner", slots, []);
     	let { isLoading = false } = $$props;
-    	const writable_props = ["isLoading"];
+    	let { fullScreen = false } = $$props;
+    	const writable_props = ["isLoading", "fullScreen"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Spinner> was created with unknown prop '${key}'`);
@@ -12284,25 +12293,27 @@ var app = (function () {
 
     	$$self.$$set = $$props => {
     		if ("isLoading" in $$props) $$invalidate(0, isLoading = $$props.isLoading);
+    		if ("fullScreen" in $$props) $$invalidate(1, fullScreen = $$props.fullScreen);
     	};
 
-    	$$self.$capture_state = () => ({ isLoading });
+    	$$self.$capture_state = () => ({ isLoading, fullScreen });
 
     	$$self.$inject_state = $$props => {
     		if ("isLoading" in $$props) $$invalidate(0, isLoading = $$props.isLoading);
+    		if ("fullScreen" in $$props) $$invalidate(1, fullScreen = $$props.fullScreen);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [isLoading];
+    	return [isLoading, fullScreen];
     }
 
     class Spinner extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$x, create_fragment$x, safe_not_equal, { isLoading: 0 });
+    		init(this, options, instance$x, create_fragment$x, safe_not_equal, { isLoading: 0, fullScreen: 1 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -12317,6 +12328,14 @@ var app = (function () {
     	}
 
     	set isLoading(value) {
+    		throw new Error("<Spinner>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get fullScreen() {
+    		throw new Error("<Spinner>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set fullScreen(value) {
     		throw new Error("<Spinner>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -16320,7 +16339,7 @@ var app = (function () {
     	prism = new Prism$1({
     			props: {
     				language: "js",
-    				$$slots: { default: [create_default_slot_4$h] },
+    				$$slots: { default: [create_default_slot_4$i] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -16330,7 +16349,7 @@ var app = (function () {
     			props: {
     				type: "secondary",
     				extension: "small",
-    				$$slots: { default: [create_default_slot_3$i] },
+    				$$slots: { default: [create_default_slot_3$j] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -16537,7 +16556,7 @@ var app = (function () {
     }
 
     // (17:2) <Prism language="js">
-    function create_default_slot_4$h(ctx) {
+    function create_default_slot_4$i(ctx) {
     	let t_value = `import { Accordion } from '@ekstra-bladet/designsystem';` + "";
     	let t;
 
@@ -16556,7 +16575,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$h.name,
+    		id: create_default_slot_4$i.name,
     		type: "slot",
     		source: "(17:2) <Prism language=\\\"js\\\">",
     		ctx
@@ -16566,7 +16585,7 @@ var app = (function () {
     }
 
     // (41:35) <Badge type="secondary" extension="small">
-    function create_default_slot_3$i(ctx) {
+    function create_default_slot_3$j(ctx) {
     	let t;
 
     	const block = {
@@ -16583,7 +16602,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$i.name,
+    		id: create_default_slot_3$j.name,
     		type: "slot",
     		source: "(41:35) <Badge type=\\\"secondary\\\" extension=\\\"small\\\">",
     		ctx
@@ -17273,7 +17292,7 @@ for (const accordion of accordions) {
     			props: {
     				type: "secondary",
     				extension: "small",
-    				$$slots: { default: [create_default_slot_4$g] },
+    				$$slots: { default: [create_default_slot_4$h] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -17283,7 +17302,7 @@ for (const accordion of accordions) {
     			props: {
     				type: "primary",
     				extension: "small",
-    				$$slots: { default: [create_default_slot_3$h] },
+    				$$slots: { default: [create_default_slot_3$i] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -18105,7 +18124,7 @@ for (const accordion of accordions) {
     }
 
     // (70:30) <Badge type="secondary" extension="small">
-    function create_default_slot_4$g(ctx) {
+    function create_default_slot_4$h(ctx) {
     	let t;
 
     	const block = {
@@ -18122,7 +18141,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$g.name,
+    		id: create_default_slot_4$h.name,
     		type: "slot",
     		source: "(70:30) <Badge type=\\\"secondary\\\" extension=\\\"small\\\">",
     		ctx
@@ -18132,7 +18151,7 @@ for (const accordion of accordions) {
     }
 
     // (118:16) <Badge type="primary" extension="small">
-    function create_default_slot_3$h(ctx) {
+    function create_default_slot_3$i(ctx) {
     	let t;
 
     	const block = {
@@ -18149,7 +18168,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$h.name,
+    		id: create_default_slot_3$i.name,
     		type: "slot",
     		source: "(118:16) <Badge type=\\\"primary\\\" extension=\\\"small\\\">",
     		ctx
@@ -18758,7 +18777,7 @@ for (const accordion of accordions) {
     }
 
     // (66:0) {#if $sourceType === 'svelte'}
-    function create_if_block_2$7(ctx) {
+    function create_if_block_2$8(ctx) {
     	let prism;
     	let current;
 
@@ -18795,7 +18814,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$7.name,
+    		id: create_if_block_2$8.name,
     		type: "if",
     		source: "(66:0) {#if $sourceType === 'svelte'}",
     		ctx
@@ -18971,7 +18990,7 @@ for (const accordion of accordions) {
     }
 
     // (92:0) {:else}
-    function create_else_block_1$8(ctx) {
+    function create_else_block_1$9(ctx) {
     	let prism;
     	let current;
 
@@ -19008,7 +19027,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_1$8.name,
+    		id: create_else_block_1$9.name,
     		type: "else",
     		source: "(92:0) {:else}",
     		ctx
@@ -19131,7 +19150,7 @@ for (const accordion of accordions) {
     }
 
     // (104:2) <Badge className="margin-s {BluedarkCSSClass}">
-    function create_default_slot_4$f(ctx) {
+    function create_default_slot_4$g(ctx) {
     	let t;
 
     	const block = {
@@ -19148,7 +19167,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$f.name,
+    		id: create_default_slot_4$g.name,
     		type: "slot",
     		source: "(104:2) <Badge className=\\\"margin-s {BluedarkCSSClass}\\\">",
     		ctx
@@ -19158,7 +19177,7 @@ for (const accordion of accordions) {
     }
 
     // (105:2) <Badge className="margin-s {GreenCSSClass}">
-    function create_default_slot_3$g(ctx) {
+    function create_default_slot_3$h(ctx) {
     	let t;
 
     	const block = {
@@ -19175,7 +19194,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$g.name,
+    		id: create_default_slot_3$h.name,
     		type: "slot",
     		source: "(105:2) <Badge className=\\\"margin-s {GreenCSSClass}\\\">",
     		ctx
@@ -19422,7 +19441,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	const if_block_creators = [create_if_block_2$7, create_else_block_2$4];
+    	const if_block_creators = [create_if_block_2$8, create_else_block_2$4];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -19473,7 +19492,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	const if_block_creators_1 = [create_if_block_1$9, create_else_block_1$8];
+    	const if_block_creators_1 = [create_if_block_1$9, create_else_block_1$9];
     	const if_blocks_1 = [];
 
     	function select_block_type_1(ctx, dirty) {
@@ -19487,7 +19506,7 @@ for (const accordion of accordions) {
     	badge5 = new Badge({
     			props: {
     				className: "margin-s " + BluedarkCSSClass,
-    				$$slots: { default: [create_default_slot_4$f] },
+    				$$slots: { default: [create_default_slot_4$g] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -19496,7 +19515,7 @@ for (const accordion of accordions) {
     	badge6 = new Badge({
     			props: {
     				className: "margin-s " + GreenCSSClass,
-    				$$slots: { default: [create_default_slot_3$g] },
+    				$$slots: { default: [create_default_slot_3$h] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -20746,7 +20765,7 @@ for (const accordion of accordions) {
     }
 
     // (109:0) {#if $sourceType === 'svelte'}
-    function create_if_block_2$6(ctx) {
+    function create_if_block_2$7(ctx) {
     	let prism;
     	let current;
 
@@ -20783,7 +20802,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$6.name,
+    		id: create_if_block_2$7.name,
     		type: "if",
     		source: "(109:0) {#if $sourceType === 'svelte'}",
     		ctx
@@ -20963,7 +20982,7 @@ for (const accordion of accordions) {
     }
 
     // (135:0) {:else}
-    function create_else_block_1$7(ctx) {
+    function create_else_block_1$8(ctx) {
     	let prism;
     	let current;
 
@@ -21000,7 +21019,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_1$7.name,
+    		id: create_else_block_1$8.name,
     		type: "else",
     		source: "(135:0) {:else}",
     		ctx
@@ -21017,7 +21036,7 @@ for (const accordion of accordions) {
     	prism = new Prism$1({
     			props: {
     				language: "html",
-    				$$slots: { default: [create_default_slot_4$e] },
+    				$$slots: { default: [create_default_slot_4$f] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -21090,7 +21109,7 @@ for (const accordion of accordions) {
     }
 
     // (129:2) <Prism language="html">
-    function create_default_slot_4$e(ctx) {
+    function create_default_slot_4$f(ctx) {
     	let t_value = `<Button type="primary"></Button>
 <Button type="secondary"></Button>
 <Button type="accept"></Button>
@@ -21113,7 +21132,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$e.name,
+    		id: create_default_slot_4$f.name,
     		type: "slot",
     		source: "(129:2) <Prism language=\\\"html\\\">",
     		ctx
@@ -21123,7 +21142,7 @@ for (const accordion of accordions) {
     }
 
     // (146:0) <Button className="margin-m">
-    function create_default_slot_3$f(ctx) {
+    function create_default_slot_3$g(ctx) {
     	let span;
     	let t1;
     	let icon;
@@ -21171,7 +21190,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$f.name,
+    		id: create_default_slot_3$g.name,
     		type: "slot",
     		source: "(146:0) <Button className=\\\"margin-m\\\">",
     		ctx
@@ -21552,7 +21571,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	const if_block_creators_2 = [create_if_block_2$6, create_else_block_2$3];
+    	const if_block_creators_2 = [create_if_block_2$7, create_else_block_2$3];
     	const if_blocks_2 = [];
 
     	function select_block_type_2(ctx, dirty) {
@@ -21603,7 +21622,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	const if_block_creators_3 = [create_if_block_1$8, create_else_block_1$7];
+    	const if_block_creators_3 = [create_if_block_1$8, create_else_block_1$8];
     	const if_blocks_3 = [];
 
     	function select_block_type_3(ctx, dirty) {
@@ -21617,7 +21636,7 @@ for (const accordion of accordions) {
     	button10 = new Button({
     			props: {
     				className: "margin-m",
-    				$$slots: { default: [create_default_slot_3$f] },
+    				$$slots: { default: [create_default_slot_3$g] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -23616,7 +23635,7 @@ for (const accordion of accordions) {
     }
 
     // (118:0) {#if $sourceType === 'svelte'}
-    function create_if_block_2$5(ctx) {
+    function create_if_block_2$6(ctx) {
     	let prism;
     	let current;
 
@@ -23653,7 +23672,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$5.name,
+    		id: create_if_block_2$6.name,
     		type: "if",
     		source: "(118:0) {#if $sourceType === 'svelte'}",
     		ctx
@@ -23915,7 +23934,7 @@ for (const accordion of accordions) {
     }
 
     // (146:0) {:else}
-    function create_else_block_1$6(ctx) {
+    function create_else_block_1$7(ctx) {
     	let prism;
     	let current;
 
@@ -23952,7 +23971,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_1$6.name,
+    		id: create_else_block_1$7.name,
     		type: "else",
     		source: "(146:0) {:else}",
     		ctx
@@ -24100,7 +24119,7 @@ for (const accordion of accordions) {
     }
 
     // (161:2) <Button>
-    function create_default_slot_4$d(ctx) {
+    function create_default_slot_4$e(ctx) {
     	let t;
 
     	const block = {
@@ -24117,7 +24136,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$d.name,
+    		id: create_default_slot_4$e.name,
     		type: "slot",
     		source: "(161:2) <Button>",
     		ctx
@@ -24127,7 +24146,7 @@ for (const accordion of accordions) {
     }
 
     // (162:2) <Button>
-    function create_default_slot_3$e(ctx) {
+    function create_default_slot_3$f(ctx) {
     	let t;
 
     	const block = {
@@ -24144,7 +24163,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$e.name,
+    		id: create_default_slot_3$f.name,
     		type: "slot",
     		source: "(162:2) <Button>",
     		ctx
@@ -24172,7 +24191,7 @@ for (const accordion of accordions) {
 
     	button1 = new Button({
     			props: {
-    				$$slots: { default: [create_default_slot_4$d] },
+    				$$slots: { default: [create_default_slot_4$e] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -24180,7 +24199,7 @@ for (const accordion of accordions) {
 
     	button2 = new Button({
     			props: {
-    				$$slots: { default: [create_default_slot_3$e] },
+    				$$slots: { default: [create_default_slot_3$f] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -24533,7 +24552,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	const if_block_creators_1 = [create_if_block_2$5, create_else_block_2$2];
+    	const if_block_creators_1 = [create_if_block_2$6, create_else_block_2$2];
     	const if_blocks_1 = [];
 
     	function select_block_type_1(ctx, dirty) {
@@ -24554,7 +24573,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	const if_block_creators_2 = [create_if_block_1$7, create_else_block_1$6];
+    	const if_block_creators_2 = [create_if_block_1$7, create_else_block_1$7];
     	const if_blocks_2 = [];
 
     	function select_block_type_2(ctx, dirty) {
@@ -24997,7 +25016,7 @@ for (const accordion of accordions) {
     const file$k = "docs_src/components/Card.svelte";
 
     // (8:0) {#if $sourceType === 'svelte'}
-    function create_if_block_2$4(ctx) {
+    function create_if_block_2$5(ctx) {
     	let prism;
     	let t0;
     	let table;
@@ -25057,7 +25076,7 @@ for (const accordion of accordions) {
     	prism = new Prism$1({
     			props: {
     				language: "js",
-    				$$slots: { default: [create_default_slot_4$c] },
+    				$$slots: { default: [create_default_slot_4$d] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -25242,7 +25261,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$4.name,
+    		id: create_if_block_2$5.name,
     		type: "if",
     		source: "(8:0) {#if $sourceType === 'svelte'}",
     		ctx
@@ -25252,7 +25271,7 @@ for (const accordion of accordions) {
     }
 
     // (9:2) <Prism language="js">
-    function create_default_slot_4$c(ctx) {
+    function create_default_slot_4$d(ctx) {
     	let t_value = `import { Card } from '@ekstra-bladet/designsystem';` + "";
     	let t;
 
@@ -25271,7 +25290,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$c.name,
+    		id: create_default_slot_4$d.name,
     		type: "slot",
     		source: "(9:2) <Prism language=\\\"js\\\">",
     		ctx
@@ -25407,14 +25426,14 @@ for (const accordion of accordions) {
     }
 
     // (74:0) {:else}
-    function create_else_block_1$5(ctx) {
+    function create_else_block_1$6(ctx) {
     	let prism;
     	let current;
 
     	prism = new Prism$1({
     			props: {
     				language: "html",
-    				$$slots: { default: [create_default_slot_3$d] },
+    				$$slots: { default: [create_default_slot_3$e] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -25444,7 +25463,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_1$5.name,
+    		id: create_else_block_1$6.name,
     		type: "else",
     		source: "(74:0) {:else}",
     		ctx
@@ -25501,7 +25520,7 @@ for (const accordion of accordions) {
     }
 
     // (75:2) <Prism language="html">
-    function create_default_slot_3$d(ctx) {
+    function create_default_slot_3$e(ctx) {
     	let t_value = `<div class="card">
   <div class="card-header"></div>
   <div class="card-media">
@@ -25528,7 +25547,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$d.name,
+    		id: create_default_slot_3$e.name,
     		type: "slot",
     		source: "(75:2) <Prism language=\\\"html\\\">",
     		ctx
@@ -25823,7 +25842,7 @@ for (const accordion of accordions) {
     	let if_block2;
     	let if_block2_anchor;
     	let current;
-    	let if_block0 = /*$sourceType*/ ctx[0] === "svelte" && create_if_block_2$4(ctx);
+    	let if_block0 = /*$sourceType*/ ctx[0] === "svelte" && create_if_block_2$5(ctx);
 
     	card0 = new Card({
     			props: {
@@ -25839,7 +25858,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	const if_block_creators = [create_if_block_1$6, create_else_block_1$5];
+    	const if_block_creators = [create_if_block_1$6, create_else_block_1$6];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -25928,7 +25947,7 @@ for (const accordion of accordions) {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_2$4(ctx);
+    					if_block0 = create_if_block_2$5(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(t2.parentNode, t2);
@@ -26556,14 +26575,14 @@ for (const accordion of accordions) {
     }
 
     // (53:0) {#if $sourceType === 'svelte'}
-    function create_if_block_2$3(ctx) {
+    function create_if_block_2$4(ctx) {
     	let prism;
     	let current;
 
     	prism = new Prism$1({
     			props: {
     				language: "html",
-    				$$slots: { default: [create_default_slot_4$b] },
+    				$$slots: { default: [create_default_slot_4$c] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -26593,7 +26612,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$3.name,
+    		id: create_if_block_2$4.name,
     		type: "if",
     		source: "(53:0) {#if $sourceType === 'svelte'}",
     		ctx
@@ -26632,7 +26651,7 @@ for (const accordion of accordions) {
     }
 
     // (54:2) <Prism language="html">
-    function create_default_slot_4$b(ctx) {
+    function create_default_slot_4$c(ctx) {
     	let t_value = `<FormElement inputtype="select" label="">
   <option value="option1"></option>
   <option value="option2"></option>
@@ -26655,7 +26674,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$b.name,
+    		id: create_default_slot_4$c.name,
     		type: "slot",
     		source: "(54:2) <Prism language=\\\"html\\\">",
     		ctx
@@ -26665,14 +26684,14 @@ for (const accordion of accordions) {
     }
 
     // (76:0) {:else}
-    function create_else_block_1$4(ctx) {
+    function create_else_block_1$5(ctx) {
     	let prism;
     	let current;
 
     	prism = new Prism$1({
     			props: {
     				language: "html",
-    				$$slots: { default: [create_default_slot_3$c] },
+    				$$slots: { default: [create_default_slot_3$d] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -26702,7 +26721,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_1$4.name,
+    		id: create_else_block_1$5.name,
     		type: "else",
     		source: "(76:0) {:else}",
     		ctx
@@ -26759,7 +26778,7 @@ for (const accordion of accordions) {
     }
 
     // (77:2) <Prism language="html">
-    function create_default_slot_3$c(ctx) {
+    function create_default_slot_3$d(ctx) {
     	let t_value = `FormElement er ikke blevet opdateret til HTML endnu` + "";
     	let t;
 
@@ -26778,7 +26797,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$c.name,
+    		id: create_default_slot_3$d.name,
     		type: "slot",
     		source: "(77:2) <Prism language=\\\"html\\\">",
     		ctx
@@ -27084,7 +27103,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	const if_block_creators_2 = [create_if_block_2$3, create_else_block_2$1];
+    	const if_block_creators_2 = [create_if_block_2$4, create_else_block_2$1];
     	const if_blocks_2 = [];
 
     	function select_block_type_2(ctx, dirty) {
@@ -27109,7 +27128,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	const if_block_creators_3 = [create_if_block_1$5, create_else_block_1$4];
+    	const if_block_creators_3 = [create_if_block_1$5, create_else_block_1$5];
     	const if_blocks_3 = [];
 
     	function select_block_type_3(ctx, dirty) {
@@ -27515,7 +27534,7 @@ for (const accordion of accordions) {
     }
 
     // (9:0) {#if $sourceType === 'svelte'}
-    function create_if_block_2$2(ctx) {
+    function create_if_block_2$3(ctx) {
     	let prism;
     	let t0;
     	let table;
@@ -27834,7 +27853,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$2.name,
+    		id: create_if_block_2$3.name,
     		type: "if",
     		source: "(9:0) {#if $sourceType === 'svelte'}",
     		ctx
@@ -27900,7 +27919,7 @@ for (const accordion of accordions) {
     }
 
     // (68:4) <Card className="flex-align--center flex-justify--center margin-s padding-m">
-    function create_default_slot_4$a(ctx) {
+    function create_default_slot_4$b(ctx) {
     	let icon;
     	let t0;
     	let small;
@@ -27955,7 +27974,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$a.name,
+    		id: create_default_slot_4$b.name,
     		type: "slot",
     		source: "(68:4) <Card className=\\\"flex-align--center flex-justify--center margin-s padding-m\\\">",
     		ctx
@@ -27972,7 +27991,7 @@ for (const accordion of accordions) {
     	card = new Card({
     			props: {
     				className: "flex-align--center flex-justify--center margin-s padding-m",
-    				$$slots: { default: [create_default_slot_4$a] },
+    				$$slots: { default: [create_default_slot_4$b] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -28021,14 +28040,14 @@ for (const accordion of accordions) {
     }
 
     // (79:0) {:else}
-    function create_else_block_1$3(ctx) {
+    function create_else_block_1$4(ctx) {
     	let prism;
     	let current;
 
     	prism = new Prism$1({
     			props: {
     				language: "html",
-    				$$slots: { default: [create_default_slot_3$b] },
+    				$$slots: { default: [create_default_slot_3$c] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -28058,7 +28077,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_1$3.name,
+    		id: create_else_block_1$4.name,
     		type: "else",
     		source: "(79:0) {:else}",
     		ctx
@@ -28115,7 +28134,7 @@ for (const accordion of accordions) {
     }
 
     // (80:2) <Prism language="html">
-    function create_default_slot_3$b(ctx) {
+    function create_default_slot_3$c(ctx) {
     	let t_value = `<svg viewBox="0 0 50 50">
   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_name"></use>
 </svg>` + "";
@@ -28137,7 +28156,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$b.name,
+    		id: create_default_slot_3$c.name,
     		type: "slot",
     		source: "(80:2) <Prism language=\\\"html\\\">",
     		ctx
@@ -28348,7 +28367,7 @@ for (const accordion of accordions) {
     	let if_block2;
     	let if_block2_anchor;
     	let current;
-    	let if_block0 = /*$sourceType*/ ctx[0] === "svelte" && create_if_block_2$2(ctx);
+    	let if_block0 = /*$sourceType*/ ctx[0] === "svelte" && create_if_block_2$3(ctx);
     	let each_value = iconnames;
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -28361,7 +28380,7 @@ for (const accordion of accordions) {
     		each_blocks[i] = null;
     	});
 
-    	const if_block_creators = [create_if_block_1$4, create_else_block_1$3];
+    	const if_block_creators = [create_if_block_1$4, create_else_block_1$4];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -28462,7 +28481,7 @@ for (const accordion of accordions) {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_2$2(ctx);
+    					if_block0 = create_if_block_2$3(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(t2.parentNode, t2);
@@ -28656,7 +28675,7 @@ for (const accordion of accordions) {
     }
 
     // (45:0) {:else}
-    function create_else_block_1$2(ctx) {
+    function create_else_block_1$3(ctx) {
     	let p;
     	let t1;
     	let prism;
@@ -28665,7 +28684,7 @@ for (const accordion of accordions) {
     	prism = new Prism$1({
     			props: {
     				language: "html",
-    				$$slots: { default: [create_default_slot_4$9] },
+    				$$slots: { default: [create_default_slot_4$a] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -28703,7 +28722,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_1$2.name,
+    		id: create_else_block_1$3.name,
     		type: "else",
     		source: "(45:0) {:else}",
     		ctx
@@ -28741,7 +28760,7 @@ for (const accordion of accordions) {
     	prism = new Prism$1({
     			props: {
     				language: "js",
-    				$$slots: { default: [create_default_slot_3$a] },
+    				$$slots: { default: [create_default_slot_3$b] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -28845,7 +28864,7 @@ for (const accordion of accordions) {
     }
 
     // (47:2) <Prism language="html">
-    function create_default_slot_4$9(ctx) {
+    function create_default_slot_4$a(ctx) {
     	let t_value = `ekstrabladet/ekstrabladet-publication/src/main/webapp/WEB-INF/jsp/components/list-v2/horizontalscroll.ts` + "";
     	let t;
 
@@ -28864,7 +28883,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$9.name,
+    		id: create_default_slot_4$a.name,
     		type: "slot",
     		source: "(47:2) <Prism language=\\\"html\\\">",
     		ctx
@@ -28874,7 +28893,7 @@ for (const accordion of accordions) {
     }
 
     // (23:2) <Prism language="js">
-    function create_default_slot_3$a(ctx) {
+    function create_default_slot_3$b(ctx) {
     	let t_value = `import { HorizontalScroll } from '@ekstra-bladet/designsystem';` + "";
     	let t;
 
@@ -28893,7 +28912,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$a.name,
+    		id: create_default_slot_3$b.name,
     		type: "slot",
     		source: "(23:2) <Prism language=\\\"js\\\">",
     		ctx
@@ -29233,7 +29252,7 @@ for (const accordion of accordions) {
     	let if_block1;
     	let if_block1_anchor;
     	let current;
-    	const if_block_creators = [create_if_block_1$3, create_else_block_1$2];
+    	const if_block_creators = [create_if_block_1$3, create_else_block_1$3];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -29455,7 +29474,7 @@ for (const accordion of accordions) {
     const file$g = "docs_src/components/Spinner.svelte";
 
     // (8:0) {#if $sourceType === 'svelte'}
-    function create_if_block_1$2(ctx) {
+    function create_if_block_2$2(ctx) {
     	let prism;
     	let t0;
     	let table;
@@ -29469,7 +29488,7 @@ for (const accordion of accordions) {
     	let t6;
     	let th3;
     	let t8;
-    	let tbody;
+    	let tbody0;
     	let tr1;
     	let td0;
     	let t10;
@@ -29478,12 +29497,22 @@ for (const accordion of accordions) {
     	let td2;
     	let t14;
     	let td3;
+    	let t16;
+    	let tbody1;
+    	let tr2;
+    	let td4;
+    	let t18;
+    	let td5;
+    	let t20;
+    	let td6;
+    	let t22;
+    	let td7;
     	let current;
 
     	prism = new Prism$1({
     			props: {
     				language: "js",
-    				$$slots: { default: [create_default_slot_2$d] },
+    				$$slots: { default: [create_default_slot_4$9] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -29508,7 +29537,7 @@ for (const accordion of accordions) {
     			th3 = element("th");
     			th3.textContent = "Description";
     			t8 = space();
-    			tbody = element("tbody");
+    			tbody0 = element("tbody");
     			tr1 = element("tr");
     			td0 = element("td");
     			td0.textContent = "isLoading";
@@ -29521,6 +29550,20 @@ for (const accordion of accordions) {
     			t14 = space();
     			td3 = element("td");
     			td3.textContent = "Will only show if set to 'true'";
+    			t16 = space();
+    			tbody1 = element("tbody");
+    			tr2 = element("tr");
+    			td4 = element("td");
+    			td4.textContent = "fullScreen";
+    			t18 = space();
+    			td5 = element("td");
+    			td5.textContent = "boolean";
+    			t20 = space();
+    			td6 = element("td");
+    			td6.textContent = "false";
+    			t22 = space();
+    			td7 = element("td");
+    			td7.textContent = "Enables the loader to cover the whole page. Centers the loader in the middle of the screen";
     			add_location(th0, file$g, 15, 8, 361);
     			add_location(th1, file$g, 16, 8, 388);
     			add_location(th2, file$g, 17, 8, 410);
@@ -29532,7 +29575,13 @@ for (const accordion of accordions) {
     			add_location(td2, file$g, 25, 8, 570);
     			add_location(td3, file$g, 26, 8, 593);
     			add_location(tr1, file$g, 22, 6, 505);
-    			add_location(tbody, file$g, 21, 4, 491);
+    			add_location(tbody0, file$g, 21, 4, 491);
+    			add_location(td4, file$g, 31, 8, 690);
+    			add_location(td5, file$g, 32, 8, 718);
+    			add_location(td6, file$g, 33, 8, 743);
+    			add_location(td7, file$g, 34, 8, 766);
+    			add_location(tr2, file$g, 30, 6, 677);
+    			add_location(tbody1, file$g, 29, 4, 663);
     			attr_dev(table, "class", "table");
     			add_location(table, file$g, 12, 2, 308);
     		},
@@ -29550,8 +29599,8 @@ for (const accordion of accordions) {
     			append_dev(tr0, t6);
     			append_dev(tr0, th3);
     			append_dev(table, t8);
-    			append_dev(table, tbody);
-    			append_dev(tbody, tr1);
+    			append_dev(table, tbody0);
+    			append_dev(tbody0, tr1);
     			append_dev(tr1, td0);
     			append_dev(tr1, t10);
     			append_dev(tr1, td1);
@@ -29559,6 +29608,16 @@ for (const accordion of accordions) {
     			append_dev(tr1, td2);
     			append_dev(tr1, t14);
     			append_dev(tr1, td3);
+    			append_dev(table, t16);
+    			append_dev(table, tbody1);
+    			append_dev(tbody1, tr2);
+    			append_dev(tr2, td4);
+    			append_dev(tr2, t18);
+    			append_dev(tr2, td5);
+    			append_dev(tr2, t20);
+    			append_dev(tr2, td6);
+    			append_dev(tr2, t22);
+    			append_dev(tr2, td7);
     			current = true;
     		},
     		i: function intro(local) {
@@ -29579,7 +29638,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$2.name,
+    		id: create_if_block_2$2.name,
     		type: "if",
     		source: "(8:0) {#if $sourceType === 'svelte'}",
     		ctx
@@ -29589,8 +29648,165 @@ for (const accordion of accordions) {
     }
 
     // (9:2) <Prism language="js">
-    function create_default_slot_2$d(ctx) {
+    function create_default_slot_4$9(ctx) {
     	let t_value = `import { Spinner } from '@ekstra-bladet/designsystem';` + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text(t_value);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_4$9.name,
+    		type: "slot",
+    		source: "(9:2) <Prism language=\\\"js\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (49:0) {:else}
+    function create_else_block_1$2(ctx) {
+    	let prism;
+    	let current;
+
+    	prism = new Prism$1({
+    			props: {
+    				language: "html",
+    				$$slots: { default: [create_default_slot_3$a] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(prism.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(prism, target, anchor);
+    			current = true;
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(prism.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(prism.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(prism, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block_1$2.name,
+    		type: "else",
+    		source: "(49:0) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (45:0) {#if $sourceType === 'svelte'}
+    function create_if_block_1$2(ctx) {
+    	let prism;
+    	let current;
+
+    	prism = new Prism$1({
+    			props: {
+    				language: "html",
+    				$$slots: { default: [create_default_slot_2$d] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(prism.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(prism, target, anchor);
+    			current = true;
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(prism.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(prism.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(prism, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$2.name,
+    		type: "if",
+    		source: "(45:0) {#if $sourceType === 'svelte'}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (50:2) <Prism language="html">
+    function create_default_slot_3$a(ctx) {
+    	let t_value = `<div class="loader flex flex--center">
+  <i class="fas fa-circle bounce bounce1" />
+  <i class="fas fa-circle bounce bounce2" />
+  <i class="fas fa-circle bounce bounce3" />
+</div>` + "";
+
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text(t_value);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_3$a.name,
+    		type: "slot",
+    		source: "(50:2) <Prism language=\\\"html\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (46:2) <Prism language="html">
+    function create_default_slot_2$d(ctx) {
+    	let t_value = `<Spinner isLoading={true}/>` + "";
     	let t;
 
     	const block = {
@@ -29610,14 +29826,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot_2$d.name,
     		type: "slot",
-    		source: "(9:2) <Prism language=\\\"js\\\">",
+    		source: "(46:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (41:0) {:else}
+    // (67:0) {:else}
     function create_else_block$3(ctx) {
     	let prism;
     	let current;
@@ -29657,14 +29873,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_else_block$3.name,
     		type: "else",
-    		source: "(41:0) {:else}",
+    		source: "(67:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (37:0) {#if $sourceType === 'svelte'}
+    // (63:0) {#if $sourceType === 'svelte'}
     function create_if_block$3(ctx) {
     	let prism;
     	let current;
@@ -29704,16 +29920,16 @@ for (const accordion of accordions) {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(37:0) {#if $sourceType === 'svelte'}",
+    		source: "(63:0) {#if $sourceType === 'svelte'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (42:2) <Prism language="html">
+    // (68:2) <Prism language="html">
     function create_default_slot_1$e(ctx) {
-    	let t_value = `<div class="loader flex flex--center">
+    	let t_value = `<div class="loader full-screen-loader flex flex--center">
   <i class="fas fa-circle bounce bounce1" />
   <i class="fas fa-circle bounce bounce2" />
   <i class="fas fa-circle bounce bounce3" />
@@ -29738,16 +29954,16 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot_1$e.name,
     		type: "slot",
-    		source: "(42:2) <Prism language=\\\"html\\\">",
+    		source: "(68:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (38:2) <Prism language="html">
+    // (64:2) <Prism language="html">
     function create_default_slot$e(ctx) {
-    	let t_value = `<Spinner isLoading={true}/>` + "";
+    	let t_value = `<Spinner isLoading={true} fullScreen={true}/>` + "";
     	let t;
 
     	const block = {
@@ -29767,7 +29983,7 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot$e.name,
     		type: "slot",
-    		source: "(38:2) <Prism language=\\\"html\\\">",
+    		source: "(64:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
@@ -29778,21 +29994,29 @@ for (const accordion of accordions) {
     	let h1;
     	let t1;
     	let t2;
-    	let div;
-    	let spinner;
+    	let div0;
+    	let spinner0;
     	let t3;
     	let current_block_type_index;
     	let if_block1;
-    	let if_block1_anchor;
+    	let t4;
+    	let p;
+    	let t6;
+    	let div1;
+    	let spinner1;
+    	let t7;
+    	let current_block_type_index_1;
+    	let if_block2;
+    	let if_block2_anchor;
     	let current;
-    	let if_block0 = /*$sourceType*/ ctx[0] === "svelte" && create_if_block_1$2(ctx);
+    	let if_block0 = /*$sourceType*/ ctx[0] === "svelte" && create_if_block_2$2(ctx);
 
-    	spinner = new Spinner({
+    	spinner0 = new Spinner({
     			props: { isLoading: true },
     			$$inline: true
     		});
 
-    	const if_block_creators = [create_if_block$3, create_else_block$3];
+    	const if_block_creators = [create_if_block_1$2, create_else_block_1$2];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -29803,6 +30027,22 @@ for (const accordion of accordions) {
     	current_block_type_index = select_block_type(ctx);
     	if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
 
+    	spinner1 = new Spinner({
+    			props: { isLoading: true, fullScreen: true },
+    			$$inline: true
+    		});
+
+    	const if_block_creators_1 = [create_if_block$3, create_else_block$3];
+    	const if_blocks_1 = [];
+
+    	function select_block_type_1(ctx, dirty) {
+    		if (/*$sourceType*/ ctx[0] === "svelte") return 0;
+    		return 1;
+    	}
+
+    	current_block_type_index_1 = select_block_type_1(ctx);
+    	if_block2 = if_blocks_1[current_block_type_index_1] = if_block_creators_1[current_block_type_index_1](ctx);
+
     	const block = {
     		c: function create() {
     			h1 = element("h1");
@@ -29810,15 +30050,26 @@ for (const accordion of accordions) {
     			t1 = space();
     			if (if_block0) if_block0.c();
     			t2 = space();
-    			div = element("div");
-    			create_component(spinner.$$.fragment);
+    			div0 = element("div");
+    			create_component(spinner0.$$.fragment);
     			t3 = space();
     			if_block1.c();
-    			if_block1_anchor = empty();
+    			t4 = space();
+    			p = element("p");
+    			p.textContent = "It is also possible to enable the loader to cover the whole page.";
+    			t6 = space();
+    			div1 = element("div");
+    			create_component(spinner1.$$.fragment);
+    			t7 = space();
+    			if_block2.c();
+    			if_block2_anchor = empty();
     			attr_dev(h1, "class", "color--eb");
     			add_location(h1, file$g, 5, 0, 140);
-    			attr_dev(div, "class", "padding-l");
-    			add_location(div, file$g, 32, 0, 677);
+    			attr_dev(div0, "class", "padding-l");
+    			add_location(div0, file$g, 40, 0, 909);
+    			add_location(p, file$g, 58, 0, 1317);
+    			attr_dev(div1, "class", "padding-l");
+    			add_location(div1, file$g, 59, 0, 1390);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -29828,11 +30079,18 @@ for (const accordion of accordions) {
     			insert_dev(target, t1, anchor);
     			if (if_block0) if_block0.m(target, anchor);
     			insert_dev(target, t2, anchor);
-    			insert_dev(target, div, anchor);
-    			mount_component(spinner, div, null);
+    			insert_dev(target, div0, anchor);
+    			mount_component(spinner0, div0, null);
     			insert_dev(target, t3, anchor);
     			if_blocks[current_block_type_index].m(target, anchor);
-    			insert_dev(target, if_block1_anchor, anchor);
+    			insert_dev(target, t4, anchor);
+    			insert_dev(target, p, anchor);
+    			insert_dev(target, t6, anchor);
+    			insert_dev(target, div1, anchor);
+    			mount_component(spinner1, div1, null);
+    			insert_dev(target, t7, anchor);
+    			if_blocks_1[current_block_type_index_1].m(target, anchor);
+    			insert_dev(target, if_block2_anchor, anchor);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -29842,7 +30100,7 @@ for (const accordion of accordions) {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_1$2(ctx);
+    					if_block0 = create_if_block_2$2(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(t2.parentNode, t2);
@@ -29876,20 +30134,46 @@ for (const accordion of accordions) {
     				}
 
     				transition_in(if_block1, 1);
-    				if_block1.m(if_block1_anchor.parentNode, if_block1_anchor);
+    				if_block1.m(t4.parentNode, t4);
+    			}
+
+    			let previous_block_index_1 = current_block_type_index_1;
+    			current_block_type_index_1 = select_block_type_1(ctx);
+
+    			if (current_block_type_index_1 !== previous_block_index_1) {
+    				group_outros();
+
+    				transition_out(if_blocks_1[previous_block_index_1], 1, 1, () => {
+    					if_blocks_1[previous_block_index_1] = null;
+    				});
+
+    				check_outros();
+    				if_block2 = if_blocks_1[current_block_type_index_1];
+
+    				if (!if_block2) {
+    					if_block2 = if_blocks_1[current_block_type_index_1] = if_block_creators_1[current_block_type_index_1](ctx);
+    					if_block2.c();
+    				}
+
+    				transition_in(if_block2, 1);
+    				if_block2.m(if_block2_anchor.parentNode, if_block2_anchor);
     			}
     		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(if_block0);
-    			transition_in(spinner.$$.fragment, local);
+    			transition_in(spinner0.$$.fragment, local);
     			transition_in(if_block1);
+    			transition_in(spinner1.$$.fragment, local);
+    			transition_in(if_block2);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(if_block0);
-    			transition_out(spinner.$$.fragment, local);
+    			transition_out(spinner0.$$.fragment, local);
     			transition_out(if_block1);
+    			transition_out(spinner1.$$.fragment, local);
+    			transition_out(if_block2);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -29897,11 +30181,18 @@ for (const accordion of accordions) {
     			if (detaching) detach_dev(t1);
     			if (if_block0) if_block0.d(detaching);
     			if (detaching) detach_dev(t2);
-    			if (detaching) detach_dev(div);
-    			destroy_component(spinner);
+    			if (detaching) detach_dev(div0);
+    			destroy_component(spinner0);
     			if (detaching) detach_dev(t3);
     			if_blocks[current_block_type_index].d(detaching);
-    			if (detaching) detach_dev(if_block1_anchor);
+    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(t6);
+    			if (detaching) detach_dev(div1);
+    			destroy_component(spinner1);
+    			if (detaching) detach_dev(t7);
+    			if_blocks_1[current_block_type_index_1].d(detaching);
+    			if (detaching) detach_dev(if_block2_anchor);
     		}
     	};
 

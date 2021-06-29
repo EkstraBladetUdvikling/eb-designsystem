@@ -1496,6 +1496,14 @@ a.card-mode:focus .card-inner {
   transform: rotate(90deg);
 }
 
+.loader.full-screen-loader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .loader .bounce {
   animation: sk-bouncedelay 1.4s infinite ease-in-out both;
 }
