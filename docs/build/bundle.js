@@ -30028,7 +30028,7 @@ for (const accordion of accordions) {
     	if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
 
     	spinner1 = new Spinner({
-    			props: { isLoading: true, fullScreen: true },
+    			props: { isLoading: true },
     			$$inline: true
     		});
 

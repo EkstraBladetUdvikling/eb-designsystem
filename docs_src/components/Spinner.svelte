@@ -59,7 +59,7 @@
 
 <p>It is also possible to enable the loader to cover the whole page.</p>
 <div class="padding-l">
-  <Spinner isLoading={true} fullScreen={true} />
+  <Spinner isLoading={true} />
 </div>
 {#if $sourceType === 'svelte'}
   <Prism language="html">
