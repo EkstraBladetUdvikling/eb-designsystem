@@ -29833,7 +29833,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (67:0) {:else}
+    // (64:0) {:else}
     function create_else_block$3(ctx) {
     	let prism;
     	let current;
@@ -29873,14 +29873,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_else_block$3.name,
     		type: "else",
-    		source: "(67:0) {:else}",
+    		source: "(64:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (63:0) {#if $sourceType === 'svelte'}
+    // (60:0) {#if $sourceType === 'svelte'}
     function create_if_block$3(ctx) {
     	let prism;
     	let current;
@@ -29920,14 +29920,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(63:0) {#if $sourceType === 'svelte'}",
+    		source: "(60:0) {#if $sourceType === 'svelte'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (68:2) <Prism language="html">
+    // (65:2) <Prism language="html">
     function create_default_slot_1$e(ctx) {
     	let t_value = `<div class="loader full-screen-loader flex flex--center">
   <i class="fas fa-circle bounce bounce1" />
@@ -29954,14 +29954,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot_1$e.name,
     		type: "slot",
-    		source: "(68:2) <Prism language=\\\"html\\\">",
+    		source: "(65:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (64:2) <Prism language="html">
+    // (61:2) <Prism language="html">
     function create_default_slot$e(ctx) {
     	let t_value = `<Spinner isLoading={true} fullScreen={true}/>` + "";
     	let t;
@@ -29983,7 +29983,7 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot$e.name,
     		type: "slot",
-    		source: "(64:2) <Prism language=\\\"html\\\">",
+    		source: "(61:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
@@ -29994,24 +29994,21 @@ for (const accordion of accordions) {
     	let h1;
     	let t1;
     	let t2;
-    	let div0;
-    	let spinner0;
+    	let div;
+    	let spinner;
     	let t3;
     	let current_block_type_index;
     	let if_block1;
     	let t4;
     	let p;
     	let t6;
-    	let div1;
-    	let spinner1;
-    	let t7;
     	let current_block_type_index_1;
     	let if_block2;
     	let if_block2_anchor;
     	let current;
     	let if_block0 = /*$sourceType*/ ctx[0] === "svelte" && create_if_block_2$2(ctx);
 
-    	spinner0 = new Spinner({
+    	spinner = new Spinner({
     			props: { isLoading: true },
     			$$inline: true
     		});
@@ -30026,12 +30023,6 @@ for (const accordion of accordions) {
 
     	current_block_type_index = select_block_type(ctx);
     	if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-
-    	spinner1 = new Spinner({
-    			props: { isLoading: true },
-    			$$inline: true
-    		});
-
     	const if_block_creators_1 = [create_if_block$3, create_else_block$3];
     	const if_blocks_1 = [];
 
@@ -30050,26 +30041,21 @@ for (const accordion of accordions) {
     			t1 = space();
     			if (if_block0) if_block0.c();
     			t2 = space();
-    			div0 = element("div");
-    			create_component(spinner0.$$.fragment);
+    			div = element("div");
+    			create_component(spinner.$$.fragment);
     			t3 = space();
     			if_block1.c();
     			t4 = space();
     			p = element("p");
     			p.textContent = "It is also possible to enable the loader to cover the whole page.";
     			t6 = space();
-    			div1 = element("div");
-    			create_component(spinner1.$$.fragment);
-    			t7 = space();
     			if_block2.c();
     			if_block2_anchor = empty();
     			attr_dev(h1, "class", "color--eb");
     			add_location(h1, file$g, 5, 0, 140);
-    			attr_dev(div0, "class", "padding-l");
-    			add_location(div0, file$g, 40, 0, 909);
+    			attr_dev(div, "class", "padding-l");
+    			add_location(div, file$g, 40, 0, 909);
     			add_location(p, file$g, 58, 0, 1317);
-    			attr_dev(div1, "class", "padding-l");
-    			add_location(div1, file$g, 59, 0, 1390);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -30079,16 +30065,13 @@ for (const accordion of accordions) {
     			insert_dev(target, t1, anchor);
     			if (if_block0) if_block0.m(target, anchor);
     			insert_dev(target, t2, anchor);
-    			insert_dev(target, div0, anchor);
-    			mount_component(spinner0, div0, null);
+    			insert_dev(target, div, anchor);
+    			mount_component(spinner, div, null);
     			insert_dev(target, t3, anchor);
     			if_blocks[current_block_type_index].m(target, anchor);
     			insert_dev(target, t4, anchor);
     			insert_dev(target, p, anchor);
     			insert_dev(target, t6, anchor);
-    			insert_dev(target, div1, anchor);
-    			mount_component(spinner1, div1, null);
-    			insert_dev(target, t7, anchor);
     			if_blocks_1[current_block_type_index_1].m(target, anchor);
     			insert_dev(target, if_block2_anchor, anchor);
     			current = true;
@@ -30162,17 +30145,15 @@ for (const accordion of accordions) {
     		i: function intro(local) {
     			if (current) return;
     			transition_in(if_block0);
-    			transition_in(spinner0.$$.fragment, local);
+    			transition_in(spinner.$$.fragment, local);
     			transition_in(if_block1);
-    			transition_in(spinner1.$$.fragment, local);
     			transition_in(if_block2);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(if_block0);
-    			transition_out(spinner0.$$.fragment, local);
+    			transition_out(spinner.$$.fragment, local);
     			transition_out(if_block1);
-    			transition_out(spinner1.$$.fragment, local);
     			transition_out(if_block2);
     			current = false;
     		},
@@ -30181,16 +30162,13 @@ for (const accordion of accordions) {
     			if (detaching) detach_dev(t1);
     			if (if_block0) if_block0.d(detaching);
     			if (detaching) detach_dev(t2);
-    			if (detaching) detach_dev(div0);
-    			destroy_component(spinner0);
+    			if (detaching) detach_dev(div);
+    			destroy_component(spinner);
     			if (detaching) detach_dev(t3);
     			if_blocks[current_block_type_index].d(detaching);
     			if (detaching) detach_dev(t4);
     			if (detaching) detach_dev(p);
     			if (detaching) detach_dev(t6);
-    			if (detaching) detach_dev(div1);
-    			destroy_component(spinner1);
-    			if (detaching) detach_dev(t7);
     			if_blocks_1[current_block_type_index_1].d(detaching);
     			if (detaching) detach_dev(if_block2_anchor);
     		}
