@@ -4,7 +4,7 @@
 </script>
 
 {#if isLoading}
-  <div class="loader {fullScreen ? "full-screen-loader " : ""}flex flex--center">
+  <div class="loader {fullScreen ? "loader--full-screen " : ""}flex flex--center">
     <i class="fas fa-circle bounce bounce1" />
     <i class="fas fa-circle bounce bounce2" />
     <i class="fas fa-circle bounce bounce3" />

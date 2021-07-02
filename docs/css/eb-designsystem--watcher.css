@@ -1496,7 +1496,7 @@ a.card-mode:focus .card-inner {
   transform: rotate(90deg);
 }
 
-.loader.full-screen-loader {
+.loader.loader--full-screen {
   position: absolute;
   top: 0;
   right: 0;

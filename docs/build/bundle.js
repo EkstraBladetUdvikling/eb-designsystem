@@ -12194,12 +12194,12 @@ var app = (function () {
     			t1 = space();
     			i2 = element("i");
     			attr_dev(i0, "class", "fas fa-circle bounce bounce1");
-    			add_location(i0, file$w, 6, 4, 192);
+    			add_location(i0, file$w, 6, 4, 193);
     			attr_dev(i1, "class", "fas fa-circle bounce bounce2");
-    			add_location(i1, file$w, 7, 4, 239);
+    			add_location(i1, file$w, 7, 4, 240);
     			attr_dev(i2, "class", "fas fa-circle bounce bounce3");
-    			add_location(i2, file$w, 8, 4, 286);
-    			attr_dev(div, "class", div_class_value = "loader " + (/*fullScreen*/ ctx[1] ? "full-screen-loader " : "") + "flex flex--center");
+    			add_location(i2, file$w, 8, 4, 287);
+    			attr_dev(div, "class", div_class_value = "loader " + (/*fullScreen*/ ctx[1] ? "loader--full-screen " : "") + "flex flex--center");
     			add_location(div, file$w, 5, 2, 108);
     		},
     		m: function mount(target, anchor) {
@@ -12211,7 +12211,7 @@ var app = (function () {
     			append_dev(div, i2);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*fullScreen*/ 2 && div_class_value !== (div_class_value = "loader " + (/*fullScreen*/ ctx[1] ? "full-screen-loader " : "") + "flex flex--center")) {
+    			if (dirty & /*fullScreen*/ 2 && div_class_value !== (div_class_value = "loader " + (/*fullScreen*/ ctx[1] ? "loader--full-screen " : "") + "flex flex--center")) {
     				attr_dev(div, "class", div_class_value);
     			}
     		},
@@ -29929,7 +29929,7 @@ for (const accordion of accordions) {
 
     // (65:2) <Prism language="html">
     function create_default_slot_1$e(ctx) {
-    	let t_value = `<div class="loader full-screen-loader flex flex--center">
+    	let t_value = `<div class="loader loader--full-screen flex flex--center">
   <i class="fas fa-circle bounce bounce1" />
   <i class="fas fa-circle bounce bounce2" />
   <i class="fas fa-circle bounce bounce3" />

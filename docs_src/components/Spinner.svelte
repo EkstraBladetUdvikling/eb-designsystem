@@ -64,7 +64,7 @@
   </Prism>
 {:else}
   <Prism language="html">
-    {`<div class="loader full-screen-loader flex flex--center">
+    {`<div class="loader loader--full-screen flex flex--center">
   <i class="fas fa-circle bounce bounce1" />
   <i class="fas fa-circle bounce bounce2" />
   <i class="fas fa-circle bounce bounce3" />
