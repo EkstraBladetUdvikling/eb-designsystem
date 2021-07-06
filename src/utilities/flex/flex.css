@@ -2,11 +2,12 @@
   display: flex;
 }
 
-.flex--column {
+.flex-column {
+  display: flex;
   flex-direction: column;
 }
 
-.flex--column-reverse {
+.flex-column--reverse {
   flex-direction: column-reverse;
 }
 

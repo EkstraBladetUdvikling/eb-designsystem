@@ -111,14 +111,14 @@
 <p>Directions bestemmer rækkefølgen for visning af child elementer.</p>
 
 <Card className="bg--graa7">
-  <strong class="margin-m">flex flex--column</strong>
-  <div class="flex flex--column">
+  <strong class="margin-m">flex flex-column</strong>
+  <div class="flex flex-column">
     <div class="bg--graa4 padding-l">Flex item 1</div>
     <div class="bg--graa3 padding-l">Flex item 2</div>
     <div class="bg--graa2 padding-l">Flex item 3</div>
   </div>
-  <strong class="margin-m margin-l--t">flex flex--column-reverse</strong>
-  <div class="flex flex--column-reverse">
+  <strong class="margin-m margin-l--t">flex flex-column--reverse</strong>
+  <div class="flex flex-column--reverse">
     <div class="bg--graa4 padding-l">Flex item 1</div>
     <div class="bg--graa3 padding-l">Flex item 2</div>
     <div class="bg--graa2 padding-l">Flex item 3</div>
