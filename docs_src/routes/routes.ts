@@ -13,6 +13,8 @@ import Tabs from '../components/Tabs.svelte';
 import Toggler from '../components/Toggler.svelte';
 import Tooltip from '../components/Tooltip.svelte';
 import Animation from '../utilities/Animation.svelte';
+import Border from '../utilities/Border.svelte';
+import Color from '../utilities/Color.svelte';
 import DataTheme from '../utilities/DataTheme.svelte';
 import Flex from '../utilities/Flex.svelte';
 import Fonts from '../utilities/Fonts.svelte';
@@ -37,6 +39,8 @@ const routes = [
   { link: '/components/toggler', title: 'Toggler', type: 'component', component: Toggler },
   { link: '/components/tooltip', title: 'Tooltip', type: 'component', component: Tooltip },
   { link: '/utilities/animation', title: 'Animation', type: 'utility', component: Animation },
+  { link: '/utilities/border', title: 'Border', type: 'utility', component: Border },
+  { link: '/utilities/color', title: 'Color', type: 'utility', component: Color },
   { link: '/utilities/datatheme', title: 'Data theme', type: 'utility', component: DataTheme },
   { link: '/utilities/flex', title: 'Flex', type: 'utility', component: Flex },
   { link: '/utilities/fonts', title: 'Fonts', type: 'utility', component: Fonts },
