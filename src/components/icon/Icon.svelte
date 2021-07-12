@@ -3,6 +3,9 @@
 
   // import Check from './svgs/check.svg';
   import * as IconSVGS from './svgs/IconComponents';
+  import * as GraphicSVGS from './graphics/GraphicComponents';
+
+  const allSVGs = { ...GraphicSVGS, ...IconSVGS };
 </script>
 
 <script lang="ts">
@@ -21,7 +24,7 @@
 </script>
 
 {#if type === 'svg'}
-  <svelte:component this={IconSVGS[name.replace('-', '')]} {style} class={baseClass} on:click data-flipped={flipped} />
+  <svelte:component this={allSVGs[name.replace('-', '')]} {style} class={baseClass} on:click data-flipped={flipped} />
 {:else}
   <i class={className} {style} aria-hidden="true" />
 {/if}
