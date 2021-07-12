@@ -10,8 +10,7 @@
 <h1 class="color--eb">Color</h1>
 
 <h3>Text color</h3>
-<p>color-- sætter farven på elementet</p>
-<p class="color--red" on:click={moveToAllColors} style="cursor: pointer;">Se alle farvemuligheder her</p>
+<p class="color--red" on:click={moveToAllColors} style="cursor: pointer;">View all colors available</p>
 
 <Card className="bg--graa7">
   <div class="flex flex-justify--between flex-wrap--wrap" slot="content">
@@ -25,7 +24,7 @@
     <div class="flex flex-column padding-xl width-1of3 margin-l bg--white color--nyheder">color--nyheder</div>
     <div class="flex flex-column padding-xl width-1of3 margin-l bg--white color--section">
       color--section
-      <em>(arver sektionsfarven f.eks sport)</em>
+      <em>(inherit the color of the section i.e sport)</em>
     </div>
   </div>
 </Card>
@@ -41,8 +40,7 @@
 </Prism>
 
 <h3>Background color</h3>
-<p>bg-- sætter baggrund farve på elementet</p>
-<p class="color--red" on:click={moveToAllColors} style="cursor: pointer;">Se alle farvemuligheder her</p>
+<p class="color--red" on:click={moveToAllColors} style="cursor: pointer;">View all colors available</p>
 
 <Card className="bg--graa7">
   <div class="flex flex-justify--between flex-wrap--wrap" slot="content">
@@ -54,7 +52,7 @@
     <div class="flex flex-column padding-xl width-1of3 margin-l bg--nyheder">bg--nyheder</div>
     <div class="flex flex-column padding-xl width-1of3 margin-l bg--white color--section">
       bg--section
-      <em>(arver sektionsfarven f.eks nyheder)</em>
+      <em>(inherit the color of the section i.e sport)</em>
     </div>
   </div>
 </Card>
@@ -69,7 +67,7 @@
 <div class="bg--section"></div>`}
 </Prism>
 
-<h3 id="all-colors-section">Alle tilgændelige farver på ekstrabladet</h3>
+<h3 id="all-colors-section">All colors available on ekstrabladet</h3>
 
 <object data="https://ekstrabladetudvikling.github.io/eb-colors/" width="100%" height="500" title="eb-colors">
   Error: Embedded data could not be displayed. Visit this link instead: <a

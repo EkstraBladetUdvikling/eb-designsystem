@@ -48,7 +48,7 @@
 </Prism>
 
 <h3>Border colors</h3>
-<p>Tilgændelige farvevalg der kan tilknyttes border-color</p>
+<p>All border colors available</p>
 
 <Card>
   <div class="flex flex-justify--between flex-wrap--wrap" slot="content">
