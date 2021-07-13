@@ -4,7 +4,6 @@
 
   let componentsLink = '#/';
   let utilityLink = '#/';
-  let colorLink = '#/';
   // Adds dynamic links to home-section cards. It finds the first element for each type.
   Routes.forEach((route) => {
     if (componentsLink === '#/' && route.type === 'component') {
@@ -12,9 +11,6 @@
     }
     if (utilityLink === '#/' && route.type === 'utility') {
       utilityLink = `#${route.link}`;
-    }
-    if (colorLink === '#/' && route.type === 'color') {
-      colorLink = `#${route.link}`;
     }
   });
 </script>
@@ -46,27 +42,17 @@
         </Card>
       </div>
     </div>
-    <div class="flex">
-      <div class="home-section width-1of1 margin-m">
-        <Card className="padding-m" url={colorLink}>
-          <div class="flex-item flex-item--center text-align--center">
-            <h2 class="color--graa1">Colors</h2>
-            <i class="home-section-icon fas fa-palette" />
-          </div>
-        </Card>
-      </div>
-    </div>
   </div>
 </div>
 
 <style>
-  .home-section-icon {
-    font-size: 60px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  .home-section:hover .home-section-icon {
-    color: var(--color--red);
-    transition: 0.5s;
-  }
+.home-section-icon {
+  font-size: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.home-section:hover .home-section-icon {
+  color: var(--color--red);
+  transition: .5s;
+}
 </style>
