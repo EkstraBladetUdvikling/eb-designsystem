@@ -450,6 +450,83 @@
     ],
     "description": "{\n position: relative;\n }\n Has pseudo styling :before\n Has pseudo styling :before"
   },
+  "designsystem border radius s": {
+    "prefix": "ds-border-radius-s",
+    "body": [
+      "border-radius-s"
+    ],
+    "description": "{\n border-radius: 5px;\n }"
+  },
+  "designsystem border radius": {
+    "prefix": "ds-border-radius",
+    "body": [
+      "border-radius"
+    ],
+    "description": "{\n border-radius: 10px;\n }"
+  },
+  "designsystem border radius s t": {
+    "prefix": "ds-border-radius-s--t",
+    "body": [
+      "border-radius-s--t"
+    ],
+    "description": "NB! This should only be used with border-radius-s\n{\n border-top-left-radius: 5px;\nborder-top-right-radius: 5px;\n }"
+  },
+  "designsystem border radius t": {
+    "prefix": "ds-border-radius--t",
+    "body": [
+      "border-radius--t"
+    ],
+    "description": "NB! This should only be used with border-radius\n{\n border-top-left-radius: 10px;\nborder-top-right-radius: 10px;\n }"
+  },
+  "designsystem border radius s b": {
+    "prefix": "ds-border-radius-s--b",
+    "body": [
+      "border-radius-s--b"
+    ],
+    "description": "NB! This should only be used with border-radius-s\n{\n border-bottom-left-radius: 5px;\nborder-bottom-right-radius: 5px;\n }"
+  },
+  "designsystem border radius b": {
+    "prefix": "ds-border-radius--b",
+    "body": [
+      "border-radius--b"
+    ],
+    "description": "NB! This should only be used with border-radius\n{\n border-bottom-left-radius: 10px;\nborder-bottom-right-radius: 10px;\n }"
+  },
+  "designsystem border": {
+    "prefix": "ds-border",
+    "body": [
+      "border"
+    ],
+    "description": "{\n border: 1px solid;\n }"
+  },
+  "designsystem border t": {
+    "prefix": "ds-border--t",
+    "body": [
+      "border--t"
+    ],
+    "description": "NB! This should only be used with border\n{\n border-top: 1px solid;\n }"
+  },
+  "designsystem border b": {
+    "prefix": "ds-border--b",
+    "body": [
+      "border--b"
+    ],
+    "description": "NB! This should only be used with border\n{\n border-bottom: 1px solid;\n }"
+  },
+  "designsystem border l": {
+    "prefix": "ds-border--l",
+    "body": [
+      "border--l"
+    ],
+    "description": "NB! This should only be used with border\n{\n border-left: 1px solid;\n }"
+  },
+  "designsystem border r": {
+    "prefix": "ds-border--r",
+    "body": [
+      "border--r"
+    ],
+    "description": "NB! This should only be used with border\n{\n border-right: 1px solid;\n }"
+  },
   "designsystem flex": {
     "prefix": "ds-flex",
     "body": [
@@ -786,47 +863,26 @@
     ],
     "description": "NB! This should only be used with grid-width\n{\n width: 930px;\n }"
   },
-  "designsystem border radius s": {
-    "prefix": "ds-border-radius-s",
+  "designsystem box shadow": {
+    "prefix": "ds-box-shadow",
     "body": [
-      "border-radius-s"
+      "box-shadow"
     ],
-    "description": "{\n border-radius: 5px;\n }"
+    "description": "{\n box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);\n }"
   },
-  "designsystem border radius": {
-    "prefix": "ds-border-radius",
+  "designsystem box shadow small": {
+    "prefix": "ds-box-shadow--small",
     "body": [
-      "border-radius"
+      "box-shadow--small"
     ],
-    "description": "{\n border-radius: 10px;\n }"
+    "description": "NB! This should only be used with box-shadow\n{\n box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);\n }"
   },
-  "designsystem border radius s t": {
-    "prefix": "ds-border-radius-s--t",
+  "designsystem box shadow large": {
+    "prefix": "ds-box-shadow--large",
     "body": [
-      "border-radius-s--t"
+      "box-shadow--large"
     ],
-    "description": "NB! This should only be used with border-radius-s\n{\n border-top-left-radius: 5px;\nborder-top-right-radius: 5px;\n }"
-  },
-  "designsystem border radius t": {
-    "prefix": "ds-border-radius--t",
-    "body": [
-      "border-radius--t"
-    ],
-    "description": "NB! This should only be used with border-radius\n{\n border-top-left-radius: 10px;\nborder-top-right-radius: 10px;\n }"
-  },
-  "designsystem border radius s b": {
-    "prefix": "ds-border-radius-s--b",
-    "body": [
-      "border-radius-s--b"
-    ],
-    "description": "NB! This should only be used with border-radius-s\n{\n border-bottom-left-radius: 5px;\nborder-bottom-right-radius: 5px;\n }"
-  },
-  "designsystem border radius b": {
-    "prefix": "ds-border-radius--b",
-    "body": [
-      "border-radius--b"
-    ],
-    "description": "NB! This should only be used with border-radius\n{\n border-bottom-left-radius: 10px;\nborder-bottom-right-radius: 10px;\n }"
+    "description": "NB! This should only be used with box-shadow\n{\n box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);\n }"
   },
   "designsystem hidden": {
     "prefix": "ds-hidden",
@@ -1597,5 +1653,12 @@
       "text-transform--uppercase"
     ],
     "description": "NB! This should only be used with text-transform\n{\n text-transform: uppercase;\n }"
+  },
+  "designsystem lineheight m": {
+    "prefix": "ds-lineheight-m",
+    "body": [
+      "lineheight-m"
+    ],
+    "description": "{\n line-height: 1.5em;\n }"
   }
 }
