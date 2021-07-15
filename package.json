@@ -1,6 +1,6 @@
 {
   "name": "@ekstra-bladet/designsystem",
-  "version": "0.9.2",
+  "version": "0.9.4",
   "main": "src/index.ts",
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
@@ -34,7 +34,7 @@
     "move_to_eb": "yarn installds:eb",
     "copy_svg": "copyfiles -f \"./docs/svg/symbol/icons.svg\" \"./dist\"",
     "start:designsystem": "yarn build:watcher && yarn build:watch",
-    "svgs": "node node/svgs.js && yarn copy_svg"
+    "svgs": "node node/svgs.js && node node/graphic.js && yarn copy_svg"
   },
   "dependencies": {
     "@ekstra-bladet/eb-colors": "^3.0.0",
@@ -42,7 +42,7 @@
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-typescript": "^8.2.1",
     "@tsconfig/svelte": "^1.0.10",
-    "prismjs": "^1.23.0",
+    "prismjs": "^1.24.0",
     "rollup": "^2.50.0",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",

@@ -32,14 +32,16 @@
 </Prism>
 
 <h3>Line height</h3>
-<p>Default line-height er baseret på browseren normalt 1.2</p>
+<p>Default line-height will be based on the browser usually around 1.2</p>
 <Card className="bg--graa7">
   <div class="flex flex-justify--between" slot="content">
-    <div class="width-1of3 margin-l">
+    <div class="width-1of3 margin-m">
+      <p>normal line-height</p>
       <p>normal line-height</p>
       <p>normal line-height</p>
     </div>
-    <div class="width-1of3 margin-l lineheight-m">
+    <div class="width-1of3 margin-m lineheight-m">
+      <p>lineheight-m</p>
       <p>lineheight-m</p>
       <p>lineheight-m</p>
     </div>
