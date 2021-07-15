@@ -1,21 +1,13 @@
-.loader.loader--full-screen {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
 .loader .bounce {
   animation: sk-bouncedelay 1.4s infinite ease-in-out both;
 }
 
 .loader .bounce1 {
-  animation-delay: -0.32s;
+  animation-delay: -.32s;
 }
 
 .loader .bounce2 {
-  animation-delay: -0.16s;
+  animation-delay: -.16s;
 }
 
 @keyframes sk-bouncedelay {
