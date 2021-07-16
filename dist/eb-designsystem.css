@@ -1881,15 +1881,15 @@ a.card-mode:focus .card-inner {
   color: currentColor;
 }
 
-.flex,.flex-column {
+.flex {
   display: flex;
 }
 
-.flex-column {
+.flex--column {
   flex-direction: column;
 }
 
-.flex-column--reverse {
+.flex--column-reverse {
   flex-direction: column-reverse;
 }
 
