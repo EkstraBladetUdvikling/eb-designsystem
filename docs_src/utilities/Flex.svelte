@@ -138,8 +138,8 @@
 </Card>
 
 <Prism language="html">
-  {`<div class="flex flex-column"></div>
-<div class="flex flex-column--reverse"></div>
+  {`<div class="flex flex--column"></div>
+<div class="flex flex--column--reverse"></div>
 <div class="flex"></div>
 <div class="flex flex-row--reverse"></div>`}
 </Prism>

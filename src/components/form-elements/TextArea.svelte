@@ -28,7 +28,7 @@
   });
 </script>
 
-<div class={`form-input-container flex flex-column border-radius padding-m--rl ${size}`}>
+<div class={`form-input-container flex flex--column border-radius padding-m--rl ${size}`}>
   {#if label}
     <span bind:this={textareaLabelEl} class="hidden">{label}:</span>
   {/if}
