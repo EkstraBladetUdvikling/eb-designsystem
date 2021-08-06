@@ -15,7 +15,7 @@
   menuItemList.forEach((v) => (tempObject[v.group || 0] || (tempObject[v.group || 0] = [])).push(v));
   const groupedMenuItems = Object.keys(tempObject).map((v) => tempObject[v] as typeof menuItemList);
 
-  export function titleCase(input: string) {
+  function titleCase(input: string) {
     return input[0].toUpperCase() + input.substr(1).toLowerCase();
   }
 
