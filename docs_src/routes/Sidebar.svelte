@@ -2,16 +2,22 @@
   import { link } from 'svelte-spa-router';
   import { onMount } from 'svelte';
 
-  export let menuItemList = [];
+  export let menuItemList: {
+    component: any;
+    group?: string;
+    link: string;
+    title: string;
+  }[] = [];
+
   let url = window.location.hash.substr(1);
-  let menuItems = [];
-  let componentMenuItems = [];
-  let utilityMenuItems = [];
-  menuItemList.forEach((menuItem) => {
-    if (menuItem.type === 'component') componentMenuItems.push(menuItem);
-    if (menuItem.type === 'utility') utilityMenuItems.push(menuItem);
-    if (!menuItem.type) menuItems.push(menuItem);
-  });
+
+  const tempObject = {};
+  menuItemList.forEach((v) => (tempObject[v.group || 0] || (tempObject[v.group || 0] = [])).push(v));
+  const groupedMenuItems = Object.keys(tempObject).map((v) => tempObject[v] as typeof menuItemList);
+
+  export function titleCase(input: string) {
+    return input[0].toUpperCase() + input.substr(1).toLowerCase();
+  }
 
   // Chance URL on menu-click
   onMount(() => {
@@ -39,45 +45,25 @@
       <p class="flex--grow width-1of1 color--graa1 fontweight-bold">Design system</p>
     </div>
   </div>
-  {#each menuItems as menuItem}
+  {#each groupedMenuItems as group}
     <div class="sidebar-menuitem-container padding-l">
-      <a
-        class="sidebar-item {`${menuItem.link === url ? 'active-item' : ''}`} width-1of1 padding-m--t fontsize-large"
-        href={menuItem.link}
-        use:link
-      >
-        {menuItem.title}
-      </a>
+      {#if group.length && group[0].group}
+        <div class="sidebar-submenu-title fontsize-small">{titleCase(group[0].group)}</div>
+      {/if}
+      <div class="sidebar-submenu-items">
+        {#each group as menuItem}
+          <a
+            class="sidebar-item width-1of1 padding-m--t padding-m--rl"
+            class:active-item={menuItem.link === url}
+            href={menuItem.link}
+            use:link
+          >
+            {menuItem.title}
+          </a>
+        {/each}
+      </div>
     </div>
   {/each}
-  <div class="sidebar-menuitem-container padding-l">
-    <div class="sidebar-submenu-title fontsize-small">Components</div>
-    <div class="sidebar-submenu-items">
-      {#each componentMenuItems as menuItem}
-        <a
-          class="sidebar-item {`${menuItem.link === url ? 'active-item' : ''}`} width-1of1 padding-m--t padding-m--rl"
-          href={menuItem.link}
-          use:link
-        >
-          {menuItem.title}
-        </a>
-      {/each}
-    </div>
-  </div>
-  <div class="sidebar-menuitem-container padding-l">
-    <div class="sidebar-submenu-title fontsize-small">Utilities</div>
-    <div class="sidebar-submenu-items">
-      {#each utilityMenuItems as menuItem}
-        <a
-          class="sidebar-item {`${menuItem.link === url ? 'active-item' : ''}`} width-1of1 padding-m--t padding-m--rl"
-          href={menuItem.link}
-          use:link
-        >
-          {menuItem.title}
-        </a>
-      {/each}
-    </div>
-  </div>
 </div>
 
 <style>
