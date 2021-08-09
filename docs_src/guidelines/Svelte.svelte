@@ -1,5 +1,9 @@
-<h1 class="color--eb">Svelte</h1>
+<script lang="ts">
+  import Prism from 'svelte-prism';
+</script>
 
+<h1 class="color--eb">Svelte</h1>
+<h3>Rules</h3>
 <ol>
   <li>There must be a rigorous division of logic (script-part) and views (template, class selection, etc.)</li>
   <li>
@@ -19,6 +23,12 @@
   </li>
   <li>Writables may only be updated using actions (functions) and may not be exported directly.</li>
 </ol>
+
+<h3>Create Svelte App</h3>
+<p>The recommended way to start new apps with Svelte is by using our Svelte Template:</p>
+<Prism language="js">
+  {`npx degit EkstraBladetUdvikling/sveltetemplate my-svelte-project`}
+</Prism>
 
 <style>
   li {
