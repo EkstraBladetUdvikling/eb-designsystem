@@ -59,6 +59,8 @@ const definitionFile = `declare module 'Icon.svelte' {
   export { SvelteComponentDev as default } from 'svelte/internal';
   ${iconTypes}
 }
+
+declare module '*.svg';
 `;
 
 fs.writeFileSync(`./src/types/Icon.d.ts`, definitionFile);
