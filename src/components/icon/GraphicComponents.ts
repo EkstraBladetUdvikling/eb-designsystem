@@ -1,0 +1,1 @@
+export { default as ekstrabladet } from './graphics/ekstrabladet.svg'

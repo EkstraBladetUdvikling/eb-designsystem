@@ -1,9 +1,8 @@
 <script lang="ts" context="module">
   import type { IconTypes } from 'Icon.svelte';
 
-  // import Check from './svgs/check.svg';
-  import * as IconSVGS from './svgs/IconComponents';
-  import * as GraphicSVGS from './graphics/GraphicComponents';
+  import * as IconSVGS from './IconComponents';
+  import * as GraphicSVGS from './GraphicComponents';
 
   const allSVGs = { ...GraphicSVGS, ...IconSVGS };
 </script>

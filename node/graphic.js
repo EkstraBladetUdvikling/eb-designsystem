@@ -49,7 +49,7 @@ svgNames.forEach((svgname, idx) => {
 
   // Handle exporting
   const exportName = svgname.replace('-', '');
-  iconComponents.push(`export { default as ${exportName} } from './${svgname}.svg'`);
+  iconComponents.push(`export { default as ${exportName} } from './graphics/${svgname}.svg'`);
 
   // Handle name list
   iconComponentNames.push(`'${exportName}'`);
@@ -65,9 +65,9 @@ fs.writeFileSync(`./src/types/Graphic.d.ts`, definitionFile);
 
 const componentFile = iconComponents.join(';');
 
-fs.writeFileSync(`./src/components/icon/graphics/GraphicComponents.ts`, componentFile);
+fs.writeFileSync(`./src/components/icon/GraphicComponents.ts`, componentFile);
 
 fs.writeFileSync(
-  `./src/components/icon/graphics/graphicnames.ts`,
+  `./src/components/icon/graphicnames.ts`,
   `export const graphicnames = [${iconComponentNames.join(',')}];`
 );
