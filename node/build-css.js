@@ -51,8 +51,9 @@ const buildCSS = async (args) => {
     const { build } = getOptions(args);
 
     const srcFolder = build === 'utilities' ? `./src/utilities` : './src';
-    console.log('srcFolder', srcFolder);
+
     const cssFilesToRead = importFrom;
+
     const postcssPlugins = [postcssImport];
     let outFolder = build ? 'docs_src/css' : 'dist';
 
