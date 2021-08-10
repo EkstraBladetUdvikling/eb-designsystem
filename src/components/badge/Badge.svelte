@@ -4,7 +4,7 @@
   type TExtension = 'small';
   type TType = 'danger' | 'primary' | 'secondary' | 'success';
 
-  export let className: string = undefined;
+  export let className: string = '';
   export let extension: TExtension | TExtension[] = undefined;
   export let href: string = undefined;
   export let style: string = undefined;

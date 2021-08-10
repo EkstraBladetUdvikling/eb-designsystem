@@ -12,6 +12,7 @@ const mergeRules = require('postcss-merge-rules')();
 const runtimeArguments = process.argv.slice(2);
 
 const importFrom = [
+  './node_modules/normalize.css/normalize.css',
   './node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-vars-rgb.css',
   './node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-css-vars.css',
   './src/_variables.css',
