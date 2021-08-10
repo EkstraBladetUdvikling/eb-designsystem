@@ -535,18 +535,18 @@
     "description": "{\n display: flex;\n }"
   },
   "designsystem flex column": {
-    "prefix": "ds-flex-column",
+    "prefix": "ds-flex--column",
     "body": [
-      "flex-column"
+      "flex--column"
     ],
-    "description": "{\n display: flex;\nflex-direction: column;\n }"
+    "description": "NB! This should only be used with flex\n{\n flex-direction: column;\n }"
   },
   "designsystem flex column reverse": {
-    "prefix": "ds-flex-column--reverse",
+    "prefix": "ds-flex--column-reverse",
     "body": [
-      "flex-column--reverse"
+      "flex--column-reverse"
     ],
-    "description": "NB! This should only be used with flex-column\n{\n flex-direction: column-reverse;\n }"
+    "description": "NB! This should only be used with flex\n{\n flex-direction: column-reverse;\n }"
   },
   "designsystem flex center": {
     "prefix": "ds-flex--center",

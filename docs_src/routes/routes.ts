@@ -1,4 +1,5 @@
 import Home from './Home.svelte';
+
 import Accordion from '../components/Accordion.svelte';
 import ArticleCard from '../components/ArticleCard.svelte';
 import Badge from '../components/Badge.svelte';
@@ -12,6 +13,7 @@ import Spinner from '../components/Spinner.svelte';
 import Tabs from '../components/Tabs.svelte';
 import Toggler from '../components/Toggler.svelte';
 import Tooltip from '../components/Tooltip.svelte';
+
 import Animation from '../utilities/Animation.svelte';
 import Border from '../utilities/Border.svelte';
 import Color from '../utilities/Color.svelte';
@@ -23,31 +25,34 @@ import Helpers from '../utilities/Helpers.svelte';
 import Sizing from '../utilities/Sizing.svelte';
 import Text from '../utilities/Text.svelte';
 
+import Svelte from '../guidelines/Svelte.svelte';
+
 const routes = [
   { link: '/', title: 'Overblik', component: Home },
-  { link: '/components/accordion', title: 'Accordion', type: 'component', component: Accordion },
-  { link: '/components/articlecard', title: 'Article card', type: 'component', component: ArticleCard },
-  { link: '/components/badge', title: 'Badge', type: 'component', component: Badge },
-  { link: '/components/button', title: 'Button', type: 'component', component: Button },
-  { link: '/components/buttongroup', title: 'Button group', type: 'component', component: ButtonGroup },
-  { link: '/components/card', title: 'Card', type: 'component', component: Card },
-  { link: '/components/form-elements', title: 'Form elements', type: 'component', component: FormElement },
-  { link: '/components/icon', title: 'Icon', type: 'component', component: Icon },
-  { link: '/components/horizontalscroll', title: 'Horizontal scroll', type: 'component', component: HorizontalScroll },
-  { link: '/components/tabs', title: 'Tabs', type: 'component', component: Tabs },
-  { link: '/components/spinner', title: 'Spinner', type: 'component', component: Spinner },
-  { link: '/components/toggler', title: 'Toggler', type: 'component', component: Toggler },
-  { link: '/components/tooltip', title: 'Tooltip', type: 'component', component: Tooltip },
-  { link: '/utilities/animation', title: 'Animation', type: 'utility', component: Animation },
-  { link: '/utilities/border', title: 'Border', type: 'utility', component: Border },
-  { link: '/utilities/color', title: 'Color', type: 'utility', component: Color },
-  { link: '/utilities/datatheme', title: 'Data theme', type: 'utility', component: DataTheme },
-  { link: '/utilities/flex', title: 'Flex', type: 'utility', component: Flex },
-  { link: '/utilities/fonts', title: 'Fonts', type: 'utility', component: Fonts },
-  { link: '/utilities/grid', title: 'Grid', type: 'utility', component: Grid },
-  { link: '/utilities/helpers', title: 'Helpers', type: 'utility', component: Helpers },
-  { link: '/utilities/sizing', title: 'Sizing', type: 'utility', component: Sizing },
-  { link: '/utilities/text', title: 'Text', type: 'utility', component: Text },
+  { link: '/components/accordion', title: 'Accordion', group: 'components', component: Accordion },
+  { link: '/components/articlecard', title: 'Article card', group: 'components', component: ArticleCard },
+  { link: '/components/badge', title: 'Badge', group: 'components', component: Badge },
+  { link: '/components/button', title: 'Button', group: 'components', component: Button },
+  { link: '/components/buttongroup', title: 'Button group', group: 'components', component: ButtonGroup },
+  { link: '/components/card', title: 'Card', group: 'components', component: Card },
+  { link: '/components/form-elements', title: 'Form elements', group: 'components', component: FormElement },
+  { link: '/components/icon', title: 'Icon', group: 'components', component: Icon },
+  { link: '/components/horizontalscroll', title: 'Horizontal scroll', group: 'components', component: HorizontalScroll },
+  { link: '/components/tabs', title: 'Tabs', group: 'components', component: Tabs },
+  { link: '/components/spinner', title: 'Spinner', group: 'components', component: Spinner },
+  { link: '/components/toggler', title: 'Toggler', group: 'components', component: Toggler },
+  { link: '/components/tooltip', title: 'Tooltip', group: 'components', component: Tooltip },
+  { link: '/utilities/animation', title: 'Animation', group: 'utilities', component: Animation },
+  { link: '/utilities/border', title: 'Border', group: 'utilities', component: Border },
+  { link: '/utilities/color', title: 'Color', group: 'utilities', component: Color },
+  { link: '/utilities/datatheme', title: 'Data theme', group: 'utilities', component: DataTheme },
+  { link: '/utilities/flex', title: 'Flex', group: 'utilities', component: Flex },
+  { link: '/utilities/fonts', title: 'Fonts', group: 'utilities', component: Fonts },
+  { link: '/utilities/grid', title: 'Grid', group: 'utilities', component: Grid },
+  { link: '/utilities/helpers', title: 'Helpers', group: 'utilities', component: Helpers },
+  { link: '/utilities/sizing', title: 'Sizing', group: 'utilities', component: Sizing },
+  { link: '/utilities/text', title: 'Text', group: 'utilities', component: Text },
+  { link: '/guidelines/svelte', title: 'Svelte', group: 'guidelines', component: Svelte },
 ];
 
 export default routes;
