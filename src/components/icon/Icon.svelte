@@ -1,4 +1,6 @@
 <script lang="ts" context="module">
+  import './icon.css';
+
   import type { IconTypes } from 'Icon.svelte';
 
   // import Check from './svgs/check.svg';

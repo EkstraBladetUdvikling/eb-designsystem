@@ -1,4 +1,6 @@
 <script lang="ts">
+  import './tooltip.css';
+
   export let iconOn: string = 'times';
   export let iconOff: string = 'question';
   export let position: 'left' | 'right' = 'left';

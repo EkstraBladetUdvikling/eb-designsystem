@@ -3,6 +3,8 @@
 </script>
 
 <script lang="ts">
+  import './buttongroup.css';
+
   import { setContext, onDestroy } from 'svelte';
   import { writable } from 'svelte/store';
   import type { Writable } from 'svelte/store';
