@@ -13,7 +13,7 @@
   "scripts": {
     "build": "yarn build:designsystem && yarn svgs && yarn build:svelte",
     "build:designsystem": "yarn build:css && yarn build:utilities && yarn build:snippets",
-    "build:css": "node node/build-css.js --folder=src",
+    "build:css": "node node/build-css.js",
     "build:utilities": "node node/build-css.js --folder=src/utilities --build=utilities",
     "build:snippets": "node node/build-snippets",
     "build:watch": "onchange 'src/**/*.css' -- yarn build:utilities",
