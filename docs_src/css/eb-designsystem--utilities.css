@@ -1615,6 +1615,10 @@ h6,p {
   width: 83.333%;
 }
 
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
 .text-align--left {
   text-align: left;
 }
