@@ -1,4 +1,6 @@
 <script lang="ts">
+  import './card.css';
+
   import type { TThemes } from '../../utilities/data-theme/DataTheme';
 
   export let className: string = undefined;

@@ -59,7 +59,13 @@ const getOptions = (args) => {
     watching: false,
   };
   args.forEach((arg) => {
-    if (arg.indexOf('--ie') !== -1 || arg.indexOf('--nonie') !== -1 || arg.indexOf('--watcher') !== -1) {
+    if (arg.indexOf('--build') !== -1) {
+      options.build = `--${arg.split('--build=')[1]}`;
+    }
+    if (arg.indexOf('--folder') !== -1) {
+      options.folder = arg.split('--folder=')[1];
+    }
+    if (arg.indexOf('--watcher') !== -1) {
       options.build = arg;
     }
   });
@@ -71,21 +77,12 @@ const buildCSS = async (args) => {
     const startTime = new Date().getTime();
 
     const options = getOptions(args);
-    const srcFolder = './src';
+    console.log(options.folder);
+    const srcFolder = options.folder ? `./${options.folder}` : './src';
     const cssFilesToRead = options.build === '--ie' ? [] : importFrom;
     const postcssPlugins = [postcssImport];
-    let outFolder = 'dist';
-    switch (options.build) {
-      case '--ie':
-        postcssPlugins.push(presetEnv(cssnextObject));
-        break;
-      case '--watcher':
-        outFolder = 'docs/css';
-        // postcssPlugins.push(postcssCustomMedia(customMediaOptions));
-        break;
-      default:
-        break;
-    }
+    let outFolder = options.build ? 'docs_src/css' : 'dist';
+
     const fileTypeToFind = '.css';
 
     /**

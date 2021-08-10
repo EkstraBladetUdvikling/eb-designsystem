@@ -1,4 +1,6 @@
 <script lang="ts">
+  import './button.css';
+
   type TExtension = 'icon' | 'link' | 'solid' | 'icon link' | 'icon solid';
   type TSize = 'big' | 'small';
   type TType = 'accept' | 'cancel' | 'primary' | 'secondary';
