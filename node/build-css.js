@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const postcss = require('postcss');
-const { getOutputFileNames } = require('typescript');
+
 const postcssImport = require('postcss-import')({
   skipDuplicates: true,
 });
