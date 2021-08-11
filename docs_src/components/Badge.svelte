@@ -102,9 +102,9 @@
 <h3>Farve muligheder fra eb-colors</h3>
 
 <div class="flex">
-  <Badge className="margin-s {bluedarkBGClass}">bluedarkCSSClass</Badge>
-  <Badge className="margin-s {greenBGClass}">greenCSSClass</Badge>
-  <Badge className="margin-s {greendarkBGClass}">greendarkCSSClass</Badge>
+  <Badge className="margin-s {bluedarkBGClass}">bluedarkBGClass</Badge>
+  <Badge className="margin-s {greenBGClass}">greenBGClass</Badge>
+  <Badge className="margin-s {greendarkBGClass}">greendarkBGClass</Badge>
 </div>
 
 {#if $sourceType === 'svelte'}
