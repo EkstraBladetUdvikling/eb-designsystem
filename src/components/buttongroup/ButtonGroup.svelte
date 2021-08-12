@@ -56,18 +56,18 @@
     baseClass = `${baseClass} buttongroup--${type}`;
   }
 
-  const { backgroundColor: colorBackground, color: colorForeground } = Background[color]
+  const { background: colorBackground, color: colorForeground } = Background[color]
     ? Background[color]
-    : Background['Bruger'];
+    : Background['bruger'];
 
   /**
    * If hovercolor is not specified, use color and utimately fall back to "Bruger"
    */
   colorHover = color && !colorHover ? color : colorHover;
 
-  const { backgroundColor: hoverColor, color: hoverColorForeground } = Background[colorHover]
+  const { background: hoverColor, color: hoverColorForeground } = Background[colorHover]
     ? Background[colorHover]
-    : Background['Bruger'];
+    : Background['bruger'];
 
   $: cssClass = className ? `${className} ${baseClass}` : baseClass;
   $: style = `--buttongroup-color: ${colorBackground}; --buttongroup-fgcolor: ${colorForeground}; --buttongroup-color--hover: ${hoverColor}; --buttongroup-fgcolor--hover: ${hoverColorForeground};`;
