@@ -51,12 +51,11 @@ const buildCSS = async (args) => {
 
     const { build } = getOptions(args);
 
-    const srcFolder = build === 'utilities' ? `./src/utilities` : './src';
+    const srcFolder = './src';
 
     const cssFilesToRead = importFrom;
 
     const postcssPlugins = [postcssImport];
-    let outFolder = build ? 'docs_src/css' : 'dist';
 
     const fileTypeToFind = '.css';
 
@@ -67,15 +66,7 @@ const buildCSS = async (args) => {
     cssFilesToRead.push('./node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-classes.css');
 
     const outputFileName = build ? `eb-designsystem--${build}.css` : `eb-designsystem.css`;
-    const outputFiles = [`${outFolder}/${outputFileName}`];
-
-    if (build === 'utilities') {
-      outputFiles.push(`dist/${outputFileName}`);
-    }
-
-    if (!fs.existsSync(outFolder)) {
-      fs.mkdirSync(outFolder);
-    }
+    const outputFiles = [`docs_src/css/${outputFileName}`, `dist/${outputFileName}`];
 
     const readFileContent = [];
 

@@ -1,6 +1,4 @@
 <script lang="ts">
-  import './spinner.css';
-
   export let isLoading = false;
 </script>
 

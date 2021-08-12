@@ -13,13 +13,13 @@ const spriter = new SVGSpriter({
   },
 });
 
-const iconPath = './src/components/icon/graphics';
+const graphicPath = './src/components/icon/graphics';
 
-const svgs = fs.readdirSync(iconPath).filter((fileName) => fileName.indexOf('.svg') !== -1);
+const svgs = fs.readdirSync(graphicPath).filter((fileName) => fileName.indexOf('.svg') !== -1);
 
 const svgNames = [];
 svgs.forEach((svgFileName) => {
-  const svgFilePath = `${iconPath}/${svgFileName}`;
+  const svgFilePath = `${graphicPath}/${svgFileName}`;
 
   spriter.add(path.resolve(svgFilePath), svgFileName, fs.readFileSync(svgFilePath, { encoding: 'utf-8' }));
 
@@ -36,38 +36,38 @@ spriter.compile((error, result, _data) => {
   }
 });
 
-let iconTypes = `
-  export type IconTypes =
+let graphicTypes = `
+  export type GraphicTypes =
 `;
-let iconComponents = [];
-let iconComponentNames = [];
+let graphicComponents = [];
+let graphicComponentNames = [];
 
 svgNames.forEach((svgname, idx) => {
   // Handle Types
   const divider = idx < svgNames.length - 1 ? '|' : ';';
-  iconTypes += `'${svgname}'${divider}`;
+  graphicTypes += `'${svgname}'${divider}`;
 
   // Handle exporting
   const exportName = svgname.replace('-', '');
-  iconComponents.push(`export { default as ${exportName} } from './${svgname}.svg'`);
+  graphicComponents.push(`export { default as ${exportName} } from './${svgname}.svg'`);
 
   // Handle name list
-  iconComponentNames.push(`'${exportName}'`);
+  graphicComponentNames.push(`'${exportName}'`);
 });
 
 const definitionFile = `declare module 'Icon.svelte' {
   export { SvelteComponentDev as default } from 'svelte/internal';
-  ${iconTypes}
+  ${graphicTypes}
 }
 `;
 
 fs.writeFileSync(`./src/types/Graphic.d.ts`, definitionFile);
 
-const componentFile = iconComponents.join(';');
+const componentFile = graphicComponents.join(';');
 
 fs.writeFileSync(`./src/components/icon/graphics/GraphicComponents.ts`, componentFile);
 
 fs.writeFileSync(
   `./src/components/icon/graphics/graphicnames.ts`,
-  `export const graphicnames = [${iconComponentNames.join(',')}];`
+  `export const graphicnames = [${graphicComponentNames.join(',')}];`
 );

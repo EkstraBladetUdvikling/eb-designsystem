@@ -1,5 +1,5 @@
 <script lang="ts">
-  import './css/eb-designsystem--utilities.css';
+  import './css/eb-designsystem.css';
 
   import Router from 'svelte-spa-router';
   import Routes from './routes/routes';
@@ -25,7 +25,7 @@
 
 <style>
   .content-container {
-      margin-top: 60px; /* height of navbar */
+    margin-top: 60px; /* height of navbar */
     margin-left: 250px; /* length of sidebar */
-    }
+  }
 </style>

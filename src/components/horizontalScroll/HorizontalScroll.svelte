@@ -1,6 +1,4 @@
 <script lang="ts">
-  import './horizontalScroll.css';
-
   import { afterUpdate, onMount } from 'svelte';
   import { throttle } from '../../misc/throttle';
   import Button from '../button/Button.svelte';

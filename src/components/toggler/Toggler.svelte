@@ -1,6 +1,4 @@
 <script lang="ts">
-  import './toggle.css';
-
   import { createEventDispatcher } from 'svelte';
 
   import Icon from '../icon/Icon.svelte';
