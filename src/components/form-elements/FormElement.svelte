@@ -1,6 +1,4 @@
 <script lang="ts">
-  import './form-elements.css';
-
   import Checkbox from './Checkbox.svelte';
 
   import Select from './Select.svelte';

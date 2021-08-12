@@ -1,6 +1,4 @@
 <script lang="ts">
-  import './badge.css';
-
   type TExtension = 'small';
   type TType = 'danger' | 'primary' | 'secondary' | 'success';
 
