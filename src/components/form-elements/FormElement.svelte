@@ -13,7 +13,7 @@
   export let inputtype = 'text';
   export let label = undefined;
   export let value;
-  export let size = "medium";
+  export let size = 'medium';
 
   let component = TextInput;
   switch (inputtype) {
@@ -29,7 +29,7 @@
       break;
   }
 
-  switch(size) {
+  switch (size) {
     case 'small': {
       size = 'padding-s--tb';
       break;

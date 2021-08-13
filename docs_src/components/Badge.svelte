@@ -1,7 +1,7 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
-  import { BluedarkCSSClass, GreenCSSClass, GreendarkCSSClass } from '@ekstra-bladet/eb-colors';
+  import { bluedarkBGClass, greenBGClass, greendarkBGClass } from '@ekstra-bladet/eb-colors';
   import { Badge } from '../../src';
 </script>
 
@@ -102,18 +102,18 @@
 <h3>Farve muligheder fra eb-colors</h3>
 
 <div class="flex">
-  <Badge className="margin-s {BluedarkCSSClass}">BluedarkCSSClass</Badge>
-  <Badge className="margin-s {GreenCSSClass}">GreenCSSClass</Badge>
-  <Badge className="margin-s {GreendarkCSSClass}">GreendarkCSSClass</Badge>
+  <Badge className="margin-s {bluedarkBGClass}">bluedarkBGClass</Badge>
+  <Badge className="margin-s {greenBGClass}">greenBGClass</Badge>
+  <Badge className="margin-s {greendarkBGClass}">greendarkBGClass</Badge>
 </div>
 
 {#if $sourceType === 'svelte'}
   <Prism language="html">
-    {`import { BluedarkCSSClass, GreenCSSClass, GreendarkCSSClass } from '@ekstra-bladet/eb-colors';
+    {`import { bluedarkBGClass, greenBGClass, greendarkBGClass } from '@ekstra-bladet/eb-colors';
 
-<Badge {BluedarkCSSClass}"></Badge>
-<Badge {GreenCSSClass}"></Badge>
-<Badge {GreendarkCSSClass}"></Badge>`}
+<Badge {bluedarkBGClass}">bluedarkBGClass</Badge>
+<Badge {greenBGClass}">greenBGClass</Badge>
+<Badge {greendarkBGClass}">greendarkBGClass</Badge>`}
   </Prism>
 {:else}
   <Prism language="html">

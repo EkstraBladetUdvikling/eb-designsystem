@@ -1,4 +1,6 @@
 <script lang="ts">
+  import './css/eb-designsystem.css';
+
   import Router from 'svelte-spa-router';
   import Routes from './routes/routes';
   import Sidebar from './routes/Sidebar.svelte';
