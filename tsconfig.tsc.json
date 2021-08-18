@@ -2,7 +2,7 @@
   "compilerOptions": {
     "allowJs": true,
     "declaration": true,
-    "declarationDir": "./types",
+    "declarationDir": "./dist",
     "module": "commonjs",
     "noUnusedLocals": true,
     "noUnusedParameters": true,

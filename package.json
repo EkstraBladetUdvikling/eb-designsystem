@@ -10,11 +10,11 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "yarn build:designsystem && yarn svgs && yarn build:svelte",
+    "build": "yarn build:designsystem && yarn svgs && yarn build:svelte && yarn build:typescript",
     "build:designsystem": "yarn build:css && yarn build:snippets",
     "build:css": "node node/build-css.js",
     "build:snippets": "node node/build-snippets",
-    "build:typescript": "yarn tsc --project tsconfig.tsc.json",
+    "build:typescript": "yarn tsc --project tsconfig.tsc.json && node node/move-svelte",
     "build:watch": "onchange 'src/**/*.css' -- yarn build:css",
     "build:svelte": "yarn rollup -c",
     "dev": "yarn build:css & yarn build:watch & yarn rollup -c -w",
