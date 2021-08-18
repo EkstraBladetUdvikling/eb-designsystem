@@ -44,7 +44,13 @@
         <td>breaking</td>
         <td>boolean</td>
         <td>false</td>
-        <td />
+        <td>Force breaking color</td>
+      </tr>
+      <tr>
+        <td>update</td>
+        <td>boolean</td>
+        <td>false</td>
+        <td>Add update icon to media</td>
       </tr>
       <tr>
         <td>premium</td>
