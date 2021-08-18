@@ -40,6 +40,7 @@ export function rdmArticleData(mediaWidth = 640, mediaHeight = 360) {
     section: lorem.generateWords(1),
     title: lorem.generateSentences(1),
     truncateTitle: false,
+    update: Math.random() < 0.5,
   };
 
   return article;
