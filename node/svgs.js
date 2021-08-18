@@ -14,16 +14,29 @@ const spriter = new SVGSpriter({
 });
 
 const iconPath = './src/components/icon/svgs';
+const graphicPath = './src/components/icon/graphics';
 
-const svgs = fs.readdirSync(iconPath).filter((fileName) => fileName.indexOf('.svg') !== -1);
+const icons = fs.readdirSync(iconPath).filter((fileName) => fileName.indexOf('.svg') !== -1);
+const graphics = fs.readdirSync(graphicPath).filter((fileName) => fileName.indexOf('.svg') !== -1);
 
-const svgNames = [];
-svgs.forEach((svgFileName) => {
+// Add icons to symbol
+const iconNames = [];
+icons.forEach((svgFileName) => {
   const svgFilePath = `${iconPath}/${svgFileName}`;
 
   spriter.add(path.resolve(svgFilePath), svgFileName, fs.readFileSync(svgFilePath, { encoding: 'utf-8' }));
 
-  svgNames.push(svgFileName.replace('.svg', ''));
+  iconNames.push(svgFileName.replace('.svg', ''));
+});
+
+// Add graphics to symbol
+const graphicNames = [];
+graphics.forEach((svgFileName) => {
+  const svgFilePath = `${graphicPath}/${svgFileName}`;
+
+  spriter.add(path.resolve(svgFilePath), svgFileName, fs.readFileSync(svgFilePath, { encoding: 'utf-8' }));
+
+  graphicNames.push(svgFileName.replace('.svg', ''));
 });
 
 spriter.compile((error, result, _data) => {
@@ -39,25 +52,47 @@ spriter.compile((error, result, _data) => {
 let iconTypes = `
   export type IconTypes =
 `;
+
 let iconComponents = [];
 let iconComponentNames = [];
 
-svgNames.forEach((svgname, idx) => {
+iconNames.forEach((svgname, idx) => {
   // Handle Types
-  const divider = idx < svgNames.length - 1 ? '|' : ';';
+  const divider = idx < iconNames.length - 1 ? '|' : ';';
   iconTypes += `'${svgname}'${divider}`;
 
   // Handle exporting
   const exportName = svgname.replace('-', '');
-  iconComponents.push(`export { default as ${exportName} } from './${svgname}.svg'`);
+  iconComponents.push(`export { default as ${exportName} } from './svgs/${svgname}.svg'`);
 
   // Handle name list
   iconComponentNames.push(`'${exportName}'`);
 });
 
+let graphicTypes = `
+  export type GraphicTypes =
+`;
+let graphicComponents = [];
+let graphicComponentNames = [];
+
+graphicNames.forEach((gfxName, idx) => {
+  // Handle Types
+  const divider = idx < graphicNames.length - 1 ? '|' : ';';
+
+  // Handle exporting
+  const exportName = gfxName.replace('-', '');
+  graphicTypes += `'${exportName}'${divider}`;
+  graphicComponents.push(`export { default as ${exportName} } from './graphics/${gfxName}.svg'`);
+
+  // Handle name list
+  graphicComponentNames.push(`'${exportName}'`);
+});
+
 const definitionFile = `declare module 'Icon.svelte' {
   export { SvelteComponentDev as default } from 'svelte/internal';
   ${iconTypes}
+
+  ${graphicTypes}
 }
 
 declare module '*.svg';
@@ -65,11 +100,16 @@ declare module '*.svg';
 
 fs.writeFileSync(`./src/types/Icon.d.ts`, definitionFile);
 
-const componentFile = iconComponents.join(';');
+const componentFile = `${iconComponents.join(';')};${graphicComponents.join(';')}`;
 
-fs.writeFileSync(`./src/components/icon/svgs/IconComponents.ts`, componentFile);
+fs.writeFileSync(`./src/components/icon/IconComponents.ts`, componentFile);
 
 fs.writeFileSync(
   `./src/components/icon/svgs/iconnames.ts`,
   `export const iconnames = [${iconComponentNames.join(',')}];`
+);
+
+fs.writeFileSync(
+  `./src/components/icon/graphics/graphicnames.ts`,
+  `export const graphicnames = [${graphicComponentNames.join(',')}];`
 );

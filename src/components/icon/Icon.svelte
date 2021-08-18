@@ -1,16 +1,13 @@
 <script lang="ts" context="module">
-  import type { GraphicTypes, IconTypes } from 'Icon.svelte';
+  import type { IconTypes } from 'Icon.svelte';
 
   // import Check from './svgs/check.svg';
-  import * as IconSVGS from './svgs/IconComponents';
-  import * as GraphicSVGS from './graphics/GraphicComponents';
-
-  const allSVGs = { ...GraphicSVGS, ...IconSVGS };
+  import * as IconSVGS from './IconComponents';
 </script>
 
 <script lang="ts">
   export let className: string = undefined;
-  export let name: GraphicTypes | IconTypes = undefined;
+  export let name: IconTypes = undefined;
   export let flipped: boolean = false;
   export let type: 'svg' | 'fa' = 'svg';
   export let width: number | string = 36;
@@ -24,7 +21,7 @@
 </script>
 
 {#if type === 'svg'}
-  <svelte:component this={allSVGs[name.replace('-', '')]} {style} class={baseClass} on:click data-flipped={flipped} />
+  <svelte:component this={IconSVGS[name.replace('-', '')]} {style} class={baseClass} on:click data-flipped={flipped} />
 {:else}
   <i class={className} {style} aria-hidden="true" />
 {/if}

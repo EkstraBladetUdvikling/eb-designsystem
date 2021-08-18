@@ -16,7 +16,7 @@
     "build:css": "node node/build-css.js",
     "build:snippets": "node node/build-snippets",
     "build:watch": "onchange 'src/**/*.css' -- yarn build:css",
-    "build:svelte": "yarn rollup -c --silent",
+    "build:svelte": "yarn rollup -c",
     "dev": "yarn build:css & yarn build:watch & yarn rollup -c -w",
     "predev": "yarn svgs",
     "start": "sirv docs",
@@ -26,7 +26,7 @@
     "installsnippets": "node node/install-snippets",
     "installsnippets:eb": "node node/install-snippets ../ekstrabladet/ekstrabladet-publication/src/main/.vscode",
     "copy_svg": "copyfiles -f \"./docs/svg/symbol/icons.svg\" \"./dist\"",
-    "svgs": "node node/svgs.js && node node/graphic.js && yarn copy_svg"
+    "svgs": "node node/svgs.js && yarn copy_svg"
   },
   "dependencies": {
     "@ekstra-bladet/eb-colors": "^4.0.2",

@@ -63,8 +63,8 @@ export default {
     }),
     commonjs(),
     typescript({
-      sourceMap: false,
       inlineSources: false,
+      sourceMap: false,
     }),
 
     // In dev mode, call `npm run start` once
