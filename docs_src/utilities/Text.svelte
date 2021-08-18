@@ -1,6 +1,6 @@
 <script>
   import Prism from 'svelte-prism';
-  import { Card } from '../../src';
+  import { Card } from '../../dist';
 </script>
 
 <h1 class="color--eb">Text</h1>

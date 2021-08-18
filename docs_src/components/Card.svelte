@@ -1,7 +1,7 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
-  import { Card } from '../../src';
+  import { Card } from '../../dist';
 </script>
 
 <h1 class="color--eb">Card</h1>

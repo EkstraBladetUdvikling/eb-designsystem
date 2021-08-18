@@ -1,1 +1,0 @@
-export { default as ebupdate } from './ebupdate.svg';export { default as ekstrabladet } from './ekstrabladet.svg'

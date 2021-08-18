@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, ButtonGroup } from '../../src';
+  import { Button, ButtonGroup } from '../../dist';
   import { sourceType } from '../stores';
 
   function changeSourceType(source: string) {
@@ -13,7 +13,8 @@
       ><i class="fab fa-github margin-s--r" />Github</a
     >
     <ButtonGroup type="secondary">
-      <Button size="small" initial={$sourceType === 'svelte'} on:click={() => changeSourceType('svelte')}>Svelte</Button>
+      <Button size="small" initial={$sourceType === 'svelte'} on:click={() => changeSourceType('svelte')}>Svelte</Button
+      >
       <Button size="small" initial={$sourceType === 'html'} on:click={() => changeSourceType('html')}>HTML</Button>
     </ButtonGroup>
   </nav>
