@@ -23,6 +23,7 @@
   export let colorClass: string = undefined;
   export let id: number = undefined;
   export let loading: boolean = false;
+  export let update: boolean = false;
   export let maxLines: number = undefined;
   export let media: Partial<IMediaOptions> = undefined;
   export let premium: boolean = false;
@@ -83,6 +84,9 @@
     {/if}
     {#if media}
       <div class="card-media {media.className}">
+        {#if update}
+          <Icon className="card-icon" name="ebupdate" width="80" style="height: 25px;" />
+        {/if}
         <img alt={title} class="card-image" src={media.src} height={media.height} width={media.width} />
       </div>
     {/if}
