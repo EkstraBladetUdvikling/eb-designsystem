@@ -98,7 +98,7 @@ const definitionFile = `declare module 'Icon.svelte' {
 declare module '*.svg';
 `;
 
-fs.writeFileSync(`./types/Icon.d.ts`, definitionFile);
+fs.writeFileSync(`./dist/Icon.d.ts`, definitionFile);
 
 const componentFile = `${iconComponents.join(';')};${graphicComponents.join(';')}`;
 
