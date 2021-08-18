@@ -2,7 +2,7 @@
   import Prism from 'svelte-prism';
   import { rdmArticleData } from '../util';
   import { sourceType } from '../stores';
-  import { ArticleCard, Badge } from '../../src';
+  import { ArticleCard, Badge } from '../../dist';
 </script>
 
 <h1 class="color--eb">Article Card</h1>

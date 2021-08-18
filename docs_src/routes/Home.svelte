@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Card } from '../../src';
+  import { Card } from '../../dist';
   import Routes from './routes';
 
   let componentsLink = '#/';

@@ -2,7 +2,7 @@
   import Prism from 'svelte-prism';
   import { rdmArticleData } from '../util';
   import { sourceType } from '../stores';
-  import { ArticleCard, HorizontalScroll } from '../../src';
+  import { ArticleCard, HorizontalScroll } from '../../dist';
   import { writable } from 'svelte/store';
 
   let articles = writable([]);
@@ -49,7 +49,7 @@
 {:else}
   <p>HorizontalScroll kræver javascript som findes under list-v2 på eb</p>
   <Prism language="html">
-    {`ekstrabladet/ekstrabladet-publication/src/main/webapp/WEB-INF/jsp/components/list-v2/horizontalscroll.ts`}
+    {`ekstrabladet/ekstrabladet-publication/dist/main/webapp/WEB-INF/jsp/components/list-v2/horizontalscroll.ts`}
   </Prism>
 {/if}
 <HorizontalScroll>

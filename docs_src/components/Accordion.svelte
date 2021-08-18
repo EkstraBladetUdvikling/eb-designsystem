@@ -2,7 +2,7 @@
   import Prism from 'svelte-prism';
   import { rdmParagraphs } from '../util';
   import { sourceType } from '../stores';
-  import { Accordion, Badge } from '../../src';
+  import { Accordion, Badge } from '../../dist';
 
   const tabs = [];
 

@@ -1,7 +1,7 @@
 <script>
   import Prism from 'svelte-prism';
 
-  import { ArticleCard, Badge, Tabs, Tab, TabContent, TabList } from '../../src/';
+  import { ArticleCard, Badge, Tabs, Tab, TabContent, TabList } from '../../dist/';
 
   let article = {
     href: '#',

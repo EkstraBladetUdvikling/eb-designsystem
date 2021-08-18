@@ -2,7 +2,7 @@
   import Prism from 'svelte-prism';
   import { rdmParagraphs } from '../util';
   import { sourceType } from '../stores';
-  import { Tooltip } from '../../src';
+  import { Tooltip } from '../../dist';
 
   let Content1 = rdmParagraphs(2);
   let Content2 = rdmParagraphs(2);

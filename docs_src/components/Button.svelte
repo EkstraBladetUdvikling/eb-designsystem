@@ -1,7 +1,7 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
-  import { Button, Icon } from '../../src';
+  import { Button, Icon } from '../../dist';
 </script>
 
 <h1 class="color--eb">Buttons</h1>

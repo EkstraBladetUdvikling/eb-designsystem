@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "declaration": true,
+    "declarationDir": "./types",
     "module": "commonjs",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
