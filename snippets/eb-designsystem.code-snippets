@@ -345,6 +345,13 @@
     ],
     "description": "{\n fill: currentColor;\n }"
   },
+  "designsystem icon gradient": {
+    "prefix": "ds-icon-gradient",
+    "body": [
+      "icon-gradient"
+    ],
+    "description": "{\n fill: url(#header-shape-gradient);\n }"
+  },
   "designsystem tabs": {
     "prefix": "ds-tabs",
     "body": [
