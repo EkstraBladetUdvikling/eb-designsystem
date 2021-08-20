@@ -26,9 +26,7 @@ icons.forEach((svgFileName) => {
 
   spriter.add(path.resolve(svgFilePath), svgFileName, fs.readFileSync(svgFilePath, { encoding: 'utf-8' }));
 
-  // if (svgFileName.indexOf('gradient') === -1) {
   iconNames.push(svgFileName.replace('.svg', ''));
-  // }
 });
 
 // Add graphics to symbol
