@@ -70,7 +70,9 @@ iconNames.forEach((svgname, idx) => {
   iconComponents.push(`export { default as ${exportName} } from './svgs/${svgname}.svg'`);
 
   // Handle name list
-  iconComponentNames.push(`'${exportName}'`);
+  if (exportName !== 'gradient') {
+    iconComponentNames.push(`'${exportName}'`);
+  }
 });
 
 let graphicTypes = `
