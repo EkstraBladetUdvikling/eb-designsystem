@@ -81,6 +81,21 @@
   <Prism language="html">
     {`<Icon name="icon_name" />`}
   </Prism>
+
+  <div class="flex flex-wrap--wrap">
+    <Card className="flex-align--center flex-justify--center margin-s padding-m">
+      <Icon name="lightning" gradient="true" className="margin-s" style="width: 36px; height: 36px;" />
+      <small>lightning with gradient</small>
+    </Card>
+    <Card className="flex-align--center flex-justify--center margin-s padding-m">
+      <Icon name="tagsolid" gradient="true" className="margin-s" style="width: 36px; height: 36px;" />
+      <small>tagsolid with gradient</small>
+    </Card>
+  </div>
+
+  <Prism language="html">
+    {`<Icon name="icon_name" gradient={true} />`}
+  </Prism>
 {:else}
   <Prism language="html">
     {`<svg viewBox="0 0 50 50">

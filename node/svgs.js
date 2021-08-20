@@ -26,7 +26,9 @@ icons.forEach((svgFileName) => {
 
   spriter.add(path.resolve(svgFilePath), svgFileName, fs.readFileSync(svgFilePath, { encoding: 'utf-8' }));
 
+  // if (svgFileName.indexOf('gradient') === -1) {
   iconNames.push(svgFileName.replace('.svg', ''));
+  // }
 });
 
 // Add graphics to symbol
@@ -59,7 +61,9 @@ let iconComponentNames = [];
 iconNames.forEach((svgname, idx) => {
   // Handle Types
   const divider = idx < iconNames.length - 1 ? '|' : ';';
-  iconTypes += `'${svgname}'${divider}`;
+  if (svgname !== 'gradient') {
+    iconTypes += `'${svgname}'${divider}`;
+  }
 
   // Handle exporting
   const exportName = svgname.replace('-', '');

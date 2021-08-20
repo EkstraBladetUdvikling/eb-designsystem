@@ -5,3 +5,13 @@
 [data-flipped="true"] {
   transform: rotate(90deg);
 }
+
+.icon-gradient {
+  fill: url(#header-shape-gradient);
+}
+
+#header-shape-gradient {
+  --gradient: var(--rgb-color--bruger);
+  --gradient-main: rgb(var(--gradient));
+  --gradient-base: rgb(var(--gradient), 0.5);
+}

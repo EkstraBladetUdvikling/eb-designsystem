@@ -1,0 +1,9 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="shape">
+  <defs>
+    <linearGradient id="header-shape-gradient" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--gradient-main)" />
+      <stop offset="30%" stop-color="var(--gradient-main)" />
+      <stop offset="100%" stop-color="var(--gradient-base)" />
+    </linearGradient>
+  </defs>
+</svg>
