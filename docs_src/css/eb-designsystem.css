@@ -932,7 +932,9 @@ custom media queries is the only allowed media queries
 }
 
 .badge {
+  align-items: center;
   border-radius: var(--border-radius--small);
+  display: flex;
   padding: 5px 7px;
   white-space: nowrap;
 }

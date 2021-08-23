@@ -4,6 +4,7 @@
 
   import { parseDate } from '../../misc/parsedate';
 
+  import Badge from '../badge/Badge.svelte';
   import Card from '../card/Card.svelte';
   import Icon from '../icon/Icon.svelte';
   import Toggler from '../toggler/Toggler.svelte';
@@ -85,7 +86,17 @@
     {#if media}
       <div class="card-media {media.className}">
         {#if update}
-          <Icon className="card-icon" name="ebupdate" width="80" style="height: 25px;" />
+          <Badge
+            className="margin-s position-absolute padding-none padding-s--r card--shadow bg--black fontsize-small"
+            style="bottom: 5px;  left: 5px;"
+          >
+            <Icon
+              name="lightning"
+              className="bg--white color--{colorClass} border-radius-s padding-s margin-s--r"
+              style="position: relative; margin-left: -1px; width: 15px; height: 15px;"
+            />
+            UPDATE
+          </Badge>
         {/if}
         <img alt={title} class="card-image" src={media.src} height={media.height} width={media.width} />
       </div>
