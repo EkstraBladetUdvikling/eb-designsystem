@@ -1,1 +1,1 @@
-export const graphicnames = ['ebupdate','ekstrabladet'];
+export const graphicnames = ['ekstrabladet'];
