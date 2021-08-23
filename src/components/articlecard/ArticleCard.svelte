@@ -93,7 +93,8 @@
             <Icon
               name="lightning"
               className="bg--white color--{colorClass} border-radius-s padding-s margin-s--r"
-              style="position: relative; margin-left: -1px; width: 15px; height: 15px;"
+              style="margin-left: -1px;"
+              width="15"
             />
             UPDATE
           </Badge>

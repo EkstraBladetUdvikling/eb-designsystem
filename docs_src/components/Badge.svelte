@@ -130,7 +130,8 @@
     <Icon
       name="lightning"
       className="bg--white color--flash border-radius-s padding-s margin-s--r"
-      style="position: relative; margin-left: -1px; width: 15px; height: 15px;"
+      style="margin-left: -1px;"
+      width="15"
     />
     UPDATE
   </Badge>
@@ -143,7 +144,8 @@
     <Icon
       name="lightning"
       className="icon-svg bg--white color--flash border-radius-s padding-s margin-s--r"
-      style="position: relative; margin-left: -1px; width: 15px; height: 15px;"/>
+      style="margin-left: -1px;"
+      width="15"/>
     UPDATE
 </Badge>`}
   </Prism>
@@ -153,7 +155,7 @@
 <span class="badge margin-s padding-none padding-s--r card--shadow bg--black fontsize-small">
   <svg viewBox="0 0 10 16"
     className="icon-svg bg--white color--flash border-radius-s padding-s margin-s--r"
-    style="position: relative; margin-left: -1px; width: 15px; height: 15px;"/>
+    style="margin-left: -1px; width: 15px; height: 15px;"/>
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lightning"></use>
   </svg>
 UPDATE</span>
