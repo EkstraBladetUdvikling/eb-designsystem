@@ -141,12 +141,12 @@
   <Prism language="html">
     {`
 <Badge className="margin-s padding-none padding-s--r card--shadow bg--black fontsize-small">
-    <Icon
-      name="lightning"
-      className="icon-svg bg--white color--flash border-radius-s padding-s margin-s--r"
-      style="margin-left: -1px;"
-      width="15"/>
-    UPDATE
+  <Icon
+    name="lightning"
+    className="icon-svg bg--white color--flash border-radius-s padding-s margin-s--r"
+    style="margin-left: -1px;"
+    width="15"/>
+  UPDATE
 </Badge>`}
   </Prism>
 {:else}
