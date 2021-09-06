@@ -1,10 +1,9 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
-  import { Badge, Card, Icon } from '../../src';
-  import { iconnames } from '../../src/components/icon/svgs/iconnames';
-  import { graphicnames } from '../../src/components/icon/graphics/graphicnames';
-
+  import { Badge, Card, Icon } from '../../dist';
+  import { iconnames } from '../../dist/components/icon/svgs/iconnames';
+  import { graphicnames } from '../../dist/components/icon/graphics/graphicnames';
 </script>
 
 <h1 class="color--eb">Icon library</h1>
@@ -65,7 +64,10 @@
 {/if}
 
 <h3>Icons</h3>
-<p>Icons are simple and dynamic only made with fill. Fill has the value currentColor and makes it possible to add the desired color to the icon.</p>
+<p>
+  Icons are simple and dynamic only made with fill. Fill has the value currentColor and makes it possible to add the
+  desired color to the icon.
+</p>
 <div class="flex flex-wrap--wrap">
   {#each iconnames as name}
     <Card className="flex-align--center flex-justify--center margin-s padding-m">

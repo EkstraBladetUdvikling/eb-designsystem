@@ -2,7 +2,7 @@
   import Prism from 'svelte-prism';
   import { rdmArticleData } from '../util';
   import { sourceType } from '../stores';
-  import { ArticleCard, Badge } from '../../src';
+  import { ArticleCard, Badge } from '../../dist';
 </script>
 
 <h1 class="color--eb">Article Card</h1>
@@ -44,7 +44,13 @@
         <td>breaking</td>
         <td>boolean</td>
         <td>false</td>
-        <td />
+        <td>Force breaking color</td>
+      </tr>
+      <tr>
+        <td>update</td>
+        <td>boolean</td>
+        <td>false</td>
+        <td>Add update icon to media</td>
       </tr>
       <tr>
         <td>premium</td>

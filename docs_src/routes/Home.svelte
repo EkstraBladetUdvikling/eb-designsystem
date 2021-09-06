@@ -1,16 +1,20 @@
 <script lang="ts">
-  import { Card } from '../../src';
+  import { Card } from '../../dist';
   import Routes from './routes';
 
   let componentsLink = '#/';
   let utilityLink = '#/';
+  let guidelineLink = '#/';
   // Adds dynamic links to home-section cards. It finds the first element for each type.
   Routes.forEach((route) => {
-    if (componentsLink === '#/' && route.type === 'component') {
+    if (componentsLink === '#/' && route.group === 'components') {
       componentsLink = `#${route.link}`;
     }
-    if (utilityLink === '#/' && route.type === 'utility') {
+    if (utilityLink === '#/' && route.group === 'utilities') {
       utilityLink = `#${route.link}`;
+    }
+    if (guidelineLink === '#/' && route.group === 'guidelines') {
+      guidelineLink = `#${route.link}`;
     }
   });
 </script>
@@ -41,18 +45,26 @@
           </div>
         </Card>
       </div>
+      <div class="home-section width-1of1 margin-m">
+        <Card className="padding-m" url={guidelineLink}>
+          <div class="flex-item flex-item--center text-align--center">
+            <h2 class="color--graa1">Guidelines</h2>
+            <i class="home-section-icon fas fa-quran" />
+          </div>
+        </Card>
+      </div>
     </div>
   </div>
 </div>
 
 <style>
-.home-section-icon {
-  font-size: 60px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.home-section:hover .home-section-icon {
-  color: var(--color--red);
-  transition: .5s;
-}
+  .home-section-icon {
+    font-size: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .home-section:hover .home-section-icon {
+    color: var(--color--red);
+    transition: 0.5s;
+  }
 </style>

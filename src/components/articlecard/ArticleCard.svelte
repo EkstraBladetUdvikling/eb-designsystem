@@ -4,6 +4,7 @@
 
   import { parseDate } from '../../misc/parsedate';
 
+  import Badge from '../badge/Badge.svelte';
   import Card from '../card/Card.svelte';
   import Icon from '../icon/Icon.svelte';
   import Toggler from '../toggler/Toggler.svelte';
@@ -23,6 +24,7 @@
   export let colorClass: string = undefined;
   export let id: number = undefined;
   export let loading: boolean = false;
+  export let update: boolean = false;
   export let maxLines: number = undefined;
   export let media: Partial<IMediaOptions> = undefined;
   export let premium: boolean = false;
@@ -83,6 +85,20 @@
     {/if}
     {#if media}
       <div class="card-media {media.className}">
+        {#if update}
+          <Badge
+            className="margin-s position-absolute padding-none padding-s--r card--shadow bg--black fontsize-small"
+            style="bottom: 5px;  left: 5px;"
+          >
+            <Icon
+              name="lightning"
+              className="bg--white color--{colorClass} border-radius-s padding-s margin-s--r"
+              style="margin-left: -1px;"
+              width="15"
+            />
+            UPDATE
+          </Badge>
+        {/if}
         <img alt={title} class="card-image" src={media.src} height={media.height} width={media.width} />
       </div>
     {/if}

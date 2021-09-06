@@ -2,7 +2,7 @@
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
   import { bluedarkBGClass, greenBGClass, greendarkBGClass } from '@ekstra-bladet/eb-colors';
-  import { Badge } from '../../src';
+  import { Badge, Icon } from '../../dist';
 </script>
 
 <h1 class="color--eb">Badge</h1>
@@ -120,5 +120,43 @@
     {`<span class="badge bg--bluedark"></span>
 <span class="badge bg--green"></span>
 <span class="badge bg--greendark"></span>`}
+  </Prism>
+{/if}
+
+<h3>Advanced examples</h3>
+
+<div class="flex">
+  <Badge className="margin-s padding-none padding-s--r card--shadow bg--black fontsize-small">
+    <Icon
+      name="lightning"
+      className="bg--white color--flash border-radius-s padding-s margin-s--r"
+      style="margin-left: -1px;"
+      width="15"
+    />
+    UPDATE
+  </Badge>
+</div>
+
+{#if $sourceType === 'svelte'}
+  <Prism language="html">
+    {`<Badge className="margin-s padding-none padding-s--r card--shadow bg--black fontsize-small">
+  <Icon
+    name="lightning"
+    className="icon-svg bg--white color--flash border-radius-s padding-s margin-s--r"
+    style="margin-left: -1px;"
+    width="15"/>
+  UPDATE
+</Badge>`}
+  </Prism>
+{:else}
+  <Prism language="html">
+    {`<span class="badge margin-s padding-none padding-s--r card--shadow bg--black fontsize-small">
+  <svg viewBox="0 0 10 16"
+    className="icon-svg bg--white color--flash border-radius-s padding-s margin-s--r"
+    style="margin-left: -1px; width: 15px; height: 15px;"/>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lightning"></use>
+  </svg>
+  UPDATE
+</span>`}
   </Prism>
 {/if}

@@ -1,7 +1,7 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
-  import { Icon, Toggler } from '../../src';
+  import { Icon, Toggler } from '../../dist';
 </script>
 
 <h1 class="color--eb">Toggler</h1>

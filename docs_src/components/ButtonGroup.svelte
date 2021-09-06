@@ -2,7 +2,7 @@
   import Prism from 'svelte-prism';
   import type { Writable } from 'svelte/store';
   import { sourceType } from '../stores';
-  import { Button, ButtonGroup } from '../../src';
+  import { Button, ButtonGroup } from '../../dist';
 
   let selectedId: Writable<number>;
 </script>
