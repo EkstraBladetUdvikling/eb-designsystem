@@ -13865,7 +13865,7 @@ var app = (function () {
     	let current;
 
     	icon = new Icon({
-    			props: { name: "ebplus_icon", width: "20" },
+    			props: { name: "ebpluscirclesolid", width: "20" },
     			$$inline: true
     		});
 
@@ -14210,7 +14210,7 @@ var app = (function () {
     			t = space();
     			if (if_block1) if_block1.c();
     			attr_dev(div, "class", "card-meta flex fontsize-xxsmall padding-s--b");
-    			add_location(div, file$G, 109, 10, 3694);
+    			add_location(div, file$G, 109, 10, 3700);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -14306,11 +14306,7 @@ var app = (function () {
     	let current;
 
     	icon = new Icon({
-    			props: {
-    				flipped: true,
-    				name: "tag-regular",
-    				width: "12"
-    			},
+    			props: { name: "tag", width: "14" },
     			$$inline: true
     		});
 
@@ -14323,11 +14319,11 @@ var app = (function () {
     			span0 = element("span");
     			t1 = text(/*section*/ ctx[9]);
     			attr_dev(span0, "class", "padding-s--l");
-    			add_location(span0, file$G, 114, 18, 3969);
-    			attr_dev(span1, "class", "flex flex-justify--center");
-    			add_location(span1, file$G, 112, 16, 3838);
+    			add_location(span0, file$G, 114, 18, 3971);
+    			attr_dev(span1, "class", "flex flex-justify--center flex-align--center");
+    			add_location(span1, file$G, 112, 16, 3844);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$G, 111, 14, 3793);
+    			add_location(div, file$G, 111, 14, 3799);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -14378,7 +14374,7 @@ var app = (function () {
     	let current;
 
     	icon = new Icon({
-    			props: { name: "clock", width: "12" },
+    			props: { name: "clock", width: "14" },
     			$$inline: true
     		});
 
@@ -14390,9 +14386,9 @@ var app = (function () {
     			span = element("span");
     			t1 = text(t1_value);
     			attr_dev(span, "class", "padding-s--l");
-    			add_location(span, file$G, 121, 16, 4212);
+    			add_location(span, file$G, 121, 16, 4214);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$G, 119, 14, 4118);
+    			add_location(div, file$G, 119, 14, 4120);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -14474,9 +14470,9 @@ var app = (function () {
     			add_location(div0, file$G, 84, 6, 2834);
     			attr_dev(h2, "class", h2_class_value = "card-title " + (/*truncateTitle*/ ctx[10] ? 'card-title--truncated' : ''));
     			attr_dev(h2, "style", /*titleStyle*/ ctx[16]);
-    			add_location(h2, file$G, 126, 8, 4347);
+    			add_location(h2, file$G, 126, 8, 4349);
     			attr_dev(div1, "class", "card-content");
-    			add_location(div1, file$G, 89, 6, 2985);
+    			add_location(div1, file$G, 89, 6, 2991);
     			attr_dev(div2, "class", "card-content-wrapper");
     			add_location(div2, file$G, 83, 4, 2793);
     			attr_dev(div3, "class", /*innerClass*/ ctx[13]);
