@@ -692,7 +692,7 @@ var app = (function () {
      * 2. Adding route pre-conditions (e.g. `{conditions: [...]}`)
      * 3. Adding static props that are passed to the component
      * 4. Adding custom userData, which is passed to route events (e.g. route loaded events) or to route pre-conditions (e.g. `{userData: {foo: 'bar}}`)
-     * 
+     *
      * @param {WrapOptions} args - Arguments object
      * @returns {WrappedComponent} Wrapped component
      */
@@ -1454,7 +1454,7 @@ var app = (function () {
      */
     		/**
      * Executes all conditions (if any) to control whether the route can be shown. Conditions are executed in the order they are defined, and if a condition fails, the following ones aren't executed.
-     * 
+     *
      * @param {RouteDetail} detail - Route detail
      * @returns {boolean} Returns true if all the conditions succeeded
      */
@@ -2002,7 +2002,7 @@ var app = (function () {
     	$$self.$$.on_destroy.push(() => $$unsubscribe_activeTab());
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Accordion', slots, []);
-    	
+
     	const activeTab = writable(undefined);
     	validate_store(activeTab, 'activeTab');
     	$$subscribe_activeTab();
@@ -3619,7 +3619,7 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Card', slots, ['header','media','default','content','footer']);
     	const $$slots = compute_slots(slots);
-    	
+
     	let { className = undefined } = $$props;
     	let { url = undefined } = $$props;
     	let { style = undefined } = $$props;
@@ -13950,7 +13950,7 @@ var app = (function () {
     	return block;
     }
 
-    // (93:28)                
+    // (93:28)
     function fallback_block_1$1(ctx) {
     	let icon;
     	let current;
@@ -14002,7 +14002,7 @@ var app = (function () {
     	return block;
     }
 
-    // (93:12) 
+    // (93:12)
     function create_on_slot$1(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[24].default;
@@ -14065,7 +14065,7 @@ var app = (function () {
     	return block;
     }
 
-    // (100:29)                
+    // (100:29)
     function fallback_block$1(ctx) {
     	let icon;
     	let current;
@@ -14117,7 +14117,7 @@ var app = (function () {
     	return block;
     }
 
-    // (100:12) 
+    // (100:12)
     function create_off_slot$1(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[24].default;
@@ -14704,7 +14704,7 @@ var app = (function () {
     	let cssClass;
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('ArticleCard', slots, ['default']);
-    	
+
     	let { title } = $$props;
     	let { breaking = false } = $$props;
     	let { cardType = undefined } = $$props;
@@ -15243,7 +15243,7 @@ var app = (function () {
     	let style;
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('ButtonGroup', slots, ['default']);
-    	
+
     	const selectedId = writable(0);
     	const buttons = [];
     	const selectedButton = writable(null);
@@ -18099,7 +18099,7 @@ var app = (function () {
     function instance$x($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Tabs', slots, ['default']);
-    	
+
     	const selectedId = writable(0);
     	const buttons = [];
     	const panels = [];
@@ -31281,7 +31281,7 @@ for (const accordion of accordions) {
     	$$self.$$.on_destroy.push(() => $$unsubscribe_selectedId());
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('ButtonGroup', slots, []);
-    	
+
     	let selectedId;
     	const writable_props = [];
 
@@ -31616,7 +31616,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (55:2) 
+    // (55:2)
     function create_header_slot$1(ctx) {
     	let div;
 
@@ -31646,7 +31646,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (56:2) 
+    // (56:2)
     function create_media_slot_1(ctx) {
     	let div;
     	let img;
@@ -31682,7 +31682,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (59:2) 
+    // (59:2)
     function create_content_slot_1$3(ctx) {
     	let div;
 
@@ -31712,7 +31712,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (60:2) 
+    // (60:2)
     function create_footer_slot$1(ctx) {
     	let div;
 
@@ -31910,7 +31910,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (90:2) 
+    // (90:2)
     function create_media_slot(ctx) {
     	let div;
     	let img;
@@ -31946,7 +31946,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (93:2) 
+    // (93:2)
     function create_content_slot$5(ctx) {
     	let div;
 
@@ -37149,7 +37149,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (27:8) 
+    // (27:8)
     function create_header_slot_5(ctx) {
     	let h2;
 
@@ -37273,7 +37273,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (33:8) 
+    // (33:8)
     function create_header_slot_4(ctx) {
     	let h2;
 
@@ -37397,7 +37397,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (39:8) 
+    // (39:8)
     function create_header_slot_3(ctx) {
     	let h2;
 
@@ -37847,7 +37847,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (74:8) 
+    // (74:8)
     function create_header_slot_2(ctx) {
     	let h2;
 
@@ -37877,7 +37877,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (75:8) 
+    // (75:8)
     function create_content_slot_2$1(ctx) {
     	let div;
     	let mounted;
@@ -37985,7 +37985,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (80:8) 
+    // (80:8)
     function create_header_slot_1(ctx) {
     	let h2;
 
@@ -38015,7 +38015,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (81:8) 
+    // (81:8)
     function create_content_slot_1$2(ctx) {
     	let div;
     	let mounted;
@@ -38123,7 +38123,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (86:8) 
+    // (86:8)
     function create_header_slot(ctx) {
     	let h2;
 
@@ -38153,7 +38153,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (87:8) 
+    // (87:8)
     function create_content_slot$4(ctx) {
     	let div;
     	let mounted;
@@ -38889,7 +38889,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (48:2) 
+    // (48:2)
     function create_on_slot_3(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[1].default;
@@ -38975,7 +38975,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (49:2) 
+    // (49:2)
     function create_off_slot_3(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[1].default;
@@ -39195,7 +39195,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (72:18)      
+    // (72:18)
     function fallback_block_5(ctx) {
     	let icon;
     	let current;
@@ -39242,7 +39242,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (72:2) 
+    // (72:2)
     function create_on_slot_2(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[1].default;
@@ -39301,7 +39301,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (75:19)      
+    // (75:19)
     function fallback_block_4(ctx) {
     	let icon;
     	let current;
@@ -39348,7 +39348,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (75:2) 
+    // (75:2)
     function create_off_slot_2(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[1].default;
@@ -39599,7 +39599,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (104:2) 
+    // (104:2)
     function create_on_slot_1(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[1].default;
@@ -39685,7 +39685,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (105:2) 
+    // (105:2)
     function create_off_slot_1(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[1].default;
@@ -39927,7 +39927,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (124:2) 
+    // (124:2)
     function create_on_slot(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[1].default;
@@ -40013,7 +40013,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (125:2) 
+    // (125:2)
     function create_off_slot(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[1].default;
@@ -42487,7 +42487,7 @@ for (const accordion of accordions) {
     /* docs_src/utilities/Border.svelte generated by Svelte v3.42.1 */
     const file$c = "docs_src/utilities/Border.svelte";
 
-    // (11:2) 
+    // (11:2)
     function create_content_slot_2(ctx) {
     	let div5;
     	let div0;
@@ -42593,7 +42593,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (31:2) 
+    // (31:2)
     function create_content_slot_1$1(ctx) {
     	let div6;
     	let div0;
@@ -42709,7 +42709,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (54:2) 
+    // (54:2)
     function create_content_slot$3(ctx) {
     	let div9;
     	let div0;
@@ -43123,7 +43123,7 @@ for (const accordion of accordions) {
     /* docs_src/utilities/Color.svelte generated by Svelte v3.42.1 */
     const file$b = "docs_src/utilities/Color.svelte";
 
-    // (16:2) 
+    // (16:2)
     function create_content_slot_1(ctx) {
     	let div7;
     	let div0;
@@ -43256,7 +43256,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (44:2) 
+    // (44:2)
     function create_content_slot$2(ctx) {
     	let div7;
     	let div0;
@@ -48084,7 +48084,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (93:2) 
+    // (93:2)
     function create_content_slot$1(ctx) {
     	let div3;
     	let div0;
@@ -48972,7 +48972,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (46:2) 
+    // (46:2)
     function create_footer_slot(ctx) {
     	let div;
     	let p;
@@ -49394,7 +49394,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (37:2) 
+    // (37:2)
     function create_content_slot(ctx) {
     	let div2;
     	let div0;
