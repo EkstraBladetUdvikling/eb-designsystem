@@ -59,11 +59,6 @@
   version "4.0.2"
   resolved "https://codeload.github.com/EkstraBladetUdvikling/eb-colors/tar.gz/2760c4c65951013d1292cd7336ec4dc782f46d69"
 
-"@ekstra-bladet/eb-colors@^4.0.2":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@ekstra-bladet/eb-colors/-/eb-colors-4.0.2.tgz#37c8fadf3185c01a2c205d13d3433757027f684a"
-  integrity sha512-HZa4BI6uZGcI5wjKvVUB4sJCiJIrEXkJWSlyYEYImBLwY+ZtsHxAGeyKTW1yYt7o8YxHKVTm1MbKxCNn3em4Sg==
-
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
