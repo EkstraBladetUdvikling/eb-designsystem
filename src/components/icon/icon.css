@@ -1,3 +1,7 @@
 .icon-svg {
   fill: currentColor;
 }
+
+[data-flipped="true"] {
+  transform: rotate(90deg);
+}
