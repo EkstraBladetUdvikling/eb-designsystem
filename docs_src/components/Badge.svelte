@@ -111,9 +111,9 @@
   <Prism language="html">
     {`import { bluedarkBGClass, greenBGClass, greendarkBGClass } from '@ekstra-bladet/eb-colors';
 
-<Badge {bluedarkBGClass}">bluedarkBGClass</Badge>
-<Badge {greenBGClass}">greenBGClass</Badge>
-<Badge {greendarkBGClass}">greendarkBGClass</Badge>`}
+<Badge className="margin-s {bluedarkBGClass}">bluedarkBGClass</Badge>
+<Badge className="margin-s {greenBGClass}">greenBGClass</Badge>
+<Badge className="margin-s {greendarkBGClass}">greendarkBGClass</Badge>`}
   </Prism>
 {:else}
   <Prism language="html">
