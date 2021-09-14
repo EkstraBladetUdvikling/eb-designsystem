@@ -36,12 +36,6 @@
         <td>Only names listed beneath are valid</td>
       </tr>
       <tr>
-        <td>flipped</td>
-        <td>boolean</td>
-        <td>false</td>
-        <td>Flip the icon horizontally</td>
-      </tr>
-      <tr>
         <td>type</td>
         <td>'svg' | 'fa'</td>
         <td>svg</td>
