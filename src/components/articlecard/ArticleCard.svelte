@@ -105,7 +105,7 @@
     <div class="card-content-wrapper">
       <div class="card-icon flex flex-justify--end">
         {#if premium}
-          <Icon name="ebplus_icon" width="20" />
+          <Icon name="ebpluscirclesolid" width="20" />
         {/if}
       </div>
       <div class="card-content">
@@ -131,15 +131,15 @@
           <div class="card-meta flex fontsize-xxsmall padding-s--b">
             {#if section}
               <div class="card-meta-item">
-                <span class="flex flex-justify--center">
-                  <Icon flipped={true} name="tagregular" width="12" />
+                <span class="flex flex-justify--center flex-align--center">
+                  <Icon name="tag" width="16" />
                   <span class="padding-s--l">{section}</span>
                 </span>
               </div>
             {/if}
             {#if published}
               <div class="card-meta-item">
-                <Icon name="clock" width="12" />
+                <Icon name="clock" width="14" />
                 <span class="padding-s--l">{parseDate(published)}</span>
               </div>
             {/if}
