@@ -1,10 +1,7 @@
 <script lang="ts">
-  import type { TThemes } from '../../utilities/data-theme/DataTheme';
-
   export let className: string = undefined;
   export let url: string = undefined;
   export let style: string = undefined;
-  export let theme: TThemes = undefined;
 
   let baseClass = 'card';
 
@@ -20,7 +17,7 @@
 </script>
 
 {#if url}
-  <a href={url} class={cssClass} {style} data-theme={theme} {...dataProps} on:click>
+  <a href={url} class={cssClass} {style} {...dataProps} on:click>
     {#if $$slots.header}
       <slot name="header" class="card-header" />
     {/if}
@@ -40,7 +37,7 @@
     {/if}
   </a>
 {:else}
-  <div class={cssClass} {style} data-theme={theme} on:click>
+  <div class={cssClass} {style} on:click>
     {#if $$slots.header}
       <div class="card-header">
         <slot name="header" />

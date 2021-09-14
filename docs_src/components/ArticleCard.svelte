@@ -2,7 +2,7 @@
   import Prism from 'svelte-prism';
   import { rdmArticleData } from '../util';
   import { sourceType } from '../stores';
-  import { ArticleCard, Badge } from '../../dist';
+  import { ArticleCard, Badge } from '../../src';
 </script>
 
 <h1 class="color--eb">Article Card</h1>
@@ -144,8 +144,8 @@
 
   <h3>Small-media</h3>
 
-  <ArticleCard className="margin-m--b" type="small-media" {...rdmArticleData(250, 120)} />
-  <ArticleCard type="small-media--reverse" {...rdmArticleData(250, 120)} />
+  <ArticleCard className="margin-m--b" cardType="small-media" {...rdmArticleData(250, 120)} />
+  <ArticleCard cardType="small-media--reverse" {...rdmArticleData(250, 120)} />
 
   <Prism language="html">
     {`<ArticleCard className="small-media" {...article} />
@@ -154,14 +154,14 @@
 
   <h3>Loading placeholder</h3>
 
-  <ArticleCard loading={true} />
-  <ArticleCard loading={true} type="small-media" />
-  <ArticleCard loading={true} type="small-media--reverse" />
+  <ArticleCard loading={true} title="" />
+  <ArticleCard loading={true} cardType="small-media" title="" />
+  <ArticleCard loading={true} cardType="small-media--reverse" title="" />
 
   <Prism language="html">
     {`<ArticleCard loading={true} />
-<ArticleCard loading={true} type="small-media" />
-<ArticleCard loading={true} type="small-media--reverse" />`}
+<ArticleCard loading={true} cardType="small-media" />
+<ArticleCard loading={true} cardType="small-media--reverse" />`}
   </Prism>
 {:else}
   <p>ArticleCard er en ren Svelte component.</p>

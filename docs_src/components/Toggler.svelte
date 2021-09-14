@@ -1,7 +1,7 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
-  import { Icon, Toggler } from '../../dist';
+  import { Icon, Toggler } from '../../src';
 </script>
 
 <h1 class="color--eb">Toggler</h1>
@@ -71,10 +71,10 @@
 
 <Toggler>
   <slot slot="on">
-    <Icon name="angle-down" style="width: 24px; height: 24px;" />
+    <Icon name="angledown" style="width: 24px; height: 24px;" />
   </slot>
   <slot slot="off">
-    <Icon name="angle-up" style="width: 24px; height: 24px;" />
+    <Icon name="angleup" style="width: 24px; height: 24px;" />
   </slot>
 </Toggler>
 
@@ -82,10 +82,10 @@
   <Prism language="html">
     {`<Toggler>
   <slot slot="on">
-    <Icon name="angle-down" style="width: 24px; height: 24px;" />
+    <Icon name="angledown" style="width: 24px; height: 24px;" />
   </slot>
   <slot slot="off">
-    <Icon name="angle-up" style="width: 24px; height: 24px;" />
+    <Icon name="angleup" style="width: 24px; height: 24px;" />
   </slot>
 </Toggler>`}
   </Prism>

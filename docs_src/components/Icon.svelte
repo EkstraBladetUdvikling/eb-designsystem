@@ -1,9 +1,9 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
-  import { Badge, Card, Icon } from '../../dist';
-  import { iconnames } from '../../dist/components/icon/svgs/iconnames';
-  import { graphicnames } from '../../dist/components/icon/graphics/graphicnames';
+  import { Badge, Card, Icon } from '../../src';
+  import { iconnames } from '../../src/components/icon/svgs/iconnames';
+  import { graphicnames } from '../../src/components/icon/graphics/graphicnames';
 </script>
 
 <h1 class="color--eb">Icon library</h1>

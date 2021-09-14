@@ -1,6 +1,6 @@
 <script>
   import Prism from 'svelte-prism';
-  import { Card } from '../../dist';
+  import { Card } from '../../src';
 
   function moveToAllColors() {
     document.getElementById('all-colors-section').scrollIntoView();

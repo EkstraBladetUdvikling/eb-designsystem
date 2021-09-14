@@ -75,7 +75,7 @@
   /**
    * Advance scroll to make next or previous element visible
    */
-  function scroll(listCurrent) {
+  function scroll(listCurrent: number) {
     const newPos = children[listCurrent] as HTMLElement;
 
     scrollItemContainer.scrollTo({

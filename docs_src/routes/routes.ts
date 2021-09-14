@@ -17,7 +17,6 @@ import Tooltip from '../components/Tooltip.svelte';
 import Animation from '../utilities/Animation.svelte';
 import Border from '../utilities/Border.svelte';
 import Color from '../utilities/Color.svelte';
-import DataTheme from '../utilities/DataTheme.svelte';
 import Flex from '../utilities/Flex.svelte';
 import Fonts from '../utilities/Fonts.svelte';
 import Grid from '../utilities/Grid.svelte';
@@ -37,7 +36,12 @@ const routes = [
   { link: '/components/card', title: 'Card', group: 'components', component: Card },
   { link: '/components/form-elements', title: 'Form elements', group: 'components', component: FormElement },
   { link: '/components/icon', title: 'Icon', group: 'components', component: Icon },
-  { link: '/components/horizontalscroll', title: 'Horizontal scroll', group: 'components', component: HorizontalScroll },
+  {
+    link: '/components/horizontalscroll',
+    title: 'Horizontal scroll',
+    group: 'components',
+    component: HorizontalScroll,
+  },
   { link: '/components/tabs', title: 'Tabs', group: 'components', component: Tabs },
   { link: '/components/spinner', title: 'Spinner', group: 'components', component: Spinner },
   { link: '/components/toggler', title: 'Toggler', group: 'components', component: Toggler },
@@ -45,7 +49,7 @@ const routes = [
   { link: '/utilities/animation', title: 'Animation', group: 'utilities', component: Animation },
   { link: '/utilities/border', title: 'Border', group: 'utilities', component: Border },
   { link: '/utilities/color', title: 'Color', group: 'utilities', component: Color },
-  { link: '/utilities/datatheme', title: 'Data theme', group: 'utilities', component: DataTheme },
+
   { link: '/utilities/flex', title: 'Flex', group: 'utilities', component: Flex },
   { link: '/utilities/fonts', title: 'Fonts', group: 'utilities', component: Fonts },
   { link: '/utilities/grid', title: 'Grid', group: 'utilities', component: Grid },

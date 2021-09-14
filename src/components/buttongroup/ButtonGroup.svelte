@@ -1,4 +1,13 @@
 <script lang="ts" context="module">
+  import type { TButton, TRegisterButton, TSelectButton, TSelectedButton } from '../../types/ButtonGroup';
+
+  export interface IButtonContext {
+    createContextButton: () => TButton;
+    registerButton: TRegisterButton;
+    selectButton: TSelectButton;
+    selectedButton: TSelectedButton;
+  }
+
   export const BUTTONS = {};
 </script>
 
@@ -10,15 +19,18 @@
 
   export const selectedId: Writable<number> = writable(0);
 
-  const buttons = [];
   const selectedButton = writable(null);
-
+  const buttons: TButton[] = [];
   selectedId.subscribe((i: number) => {
     selectedButton.set(buttons[i]);
   });
 
   setContext(BUTTONS, {
-    registerTab: (button) => {
+    createContextButton: () => {
+      return { button: buttons.length };
+    },
+    registerButton: (button: TButton) => {
+      console.log('registerTab', button);
       buttons.push(button);
       selectedButton.update((current) => current || button);
 
@@ -29,7 +41,8 @@
       });
     },
 
-    selectButton: (button) => {
+    selectButton: (button: TButton) => {
+      console.log('selectButton', button);
       const i = buttons.indexOf(button);
       selectedId.set(i);
     },

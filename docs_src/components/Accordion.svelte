@@ -2,7 +2,7 @@
   import Prism from 'svelte-prism';
   import { rdmParagraphs } from '../util';
   import { sourceType } from '../stores';
-  import { Accordion, Badge } from '../../dist';
+  import { Accordion, Badge } from '../../src';
 
   const tabs = [];
 
@@ -31,12 +31,6 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>dataTheme</td>
-        <td>'darkmode' | 'lightmode'</td>
-        <td />
-        <td>See <a href="/#/utilities/datatheme">Data Theme</a> for doc</td>
-      </tr>
       <tr>
         <td>tabs</td>
         <td>ITabsConfig[]</td>

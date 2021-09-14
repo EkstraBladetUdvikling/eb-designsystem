@@ -2,24 +2,35 @@
   import Prism from 'svelte-prism';
   import { rdmArticleData } from '../util';
   import { sourceType } from '../stores';
-  import { ArticleCard, HorizontalScroll } from '../../dist';
+  import { ArticleCard, HorizontalScroll } from '../../src';
   import { writable } from 'svelte/store';
 
-  let articles = writable([]);
+  let articles = writable([rdmArticleData(640, 360), rdmArticleData(640, 360)]);
 
-  articles.update((art) => {
-    for (let i = 0; i < 2; i++) {
-      art.push(rdmArticleData(640, 360));
+  const max = 20;
+  let count = 2;
+
+  const addingInterval = setInterval(() => {
+    if (count < max) {
+      articles.update((art) => {
+        art.push(rdmArticleData(640, 360));
+        return art;
+      });
+    } else {
+      clearInterval(addingInterval);
     }
-    return art;
-  });
-
-  setInterval(() => {
-    articles.update((art) => {
-      art.push(rdmArticleData(640, 360));
-      return art;
-    });
+    count++;
   }, 3000);
+
+  const singleArt = rdmArticleData(640, 360);
+  const doubleArt = [rdmArticleData(640, 360), rdmArticleData(640, 360)];
+  const threeArt = [rdmArticleData(640, 360), rdmArticleData(640, 360), rdmArticleData(640, 360)];
+  const fourArt = [
+    rdmArticleData(640, 360),
+    rdmArticleData(640, 360),
+    rdmArticleData(640, 360),
+    rdmArticleData(640, 360),
+  ];
 </script>
 
 <h1 class="color--eb">Horizontal Scroll</h1>
@@ -49,9 +60,32 @@
 {:else}
   <p>HorizontalScroll kræver javascript som findes under list-v2 på eb</p>
   <Prism language="html">
-    {`ekstrabladet/ekstrabladet-publication/dist/main/webapp/WEB-INF/jsp/components/list-v2/horizontalscroll.ts`}
+    {`ekstrabladet/ekstrabladet-publication/src/main/webapp/WEB-INF/jsp/components/list-v2/horizontalscroll.ts`}
   </Prism>
 {/if}
+
+<HorizontalScroll>
+  <ArticleCard {...singleArt} className="margin-s" style="width: 215px;" />
+</HorizontalScroll>
+
+<HorizontalScroll>
+  {#each doubleArt as article}
+    <ArticleCard {...article} className="margin-s" style="width: 215px;" />
+  {/each}
+</HorizontalScroll>
+
+<HorizontalScroll>
+  {#each threeArt as article}
+    <ArticleCard {...article} className="margin-s" style="width: 215px;" />
+  {/each}
+</HorizontalScroll>
+
+<HorizontalScroll>
+  {#each fourArt as article}
+    <ArticleCard {...article} className="margin-s" style="width: 215px;" />
+  {/each}
+</HorizontalScroll>
+
 <HorizontalScroll>
   {#each $articles as article}
     <ArticleCard {...article} className="margin-s" style="width: 215px;" />

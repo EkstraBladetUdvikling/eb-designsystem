@@ -1,3 +1,5 @@
+import { colorNames } from '@ekstra-bladet/eb-colors';
+
 import { LoremIpsum } from 'lorem-ipsum';
 
 export function rdmParagraphs(num = 3) {
@@ -26,7 +28,20 @@ export function rdmArticleData(mediaWidth = 640, mediaHeight = 360) {
     },
   });
 
-  const colorClasses = ['flash', 'forbrug', 'leder', 'nationen', 'nyheder', 'sex-samliv', 'sport', 'underholdning'];
+  const colorClasses = [
+    colorNames.breaking,
+    colorNames.bruger,
+    colorNames.eb,
+    colorNames.flash,
+    colorNames.forbrug,
+    colorNames.livescore,
+    colorNames.native,
+    colorNames.nyheder,
+    colorNames.sexsamliv,
+    colorNames.sport,
+    colorNames.underholdning,
+  ];
+
   const article = {
     breaking: Math.random() < 0.1,
     premium: Math.random() < 0.3,

@@ -34,28 +34,34 @@
    */
   import { getContext, onMount } from 'svelte';
   import { BUTTONS } from '../buttongroup/ButtonGroup.svelte';
+  import type { TButton, TRegisterButton, TSelectButton, TSelectedButton } from '../../types/ButtonGroup';
 
   export let initial = false;
 
-  let registerTab, selectButton, selectedButton;
+  let contextButton: TButton;
 
-  const button = {};
+  let selectButton: TSelectButton;
+  let selectedButton: TSelectedButton;
+
   const contextButtons: any = getContext(BUTTONS);
+
   if (contextButtons) {
-    registerTab = contextButtons.registerTab;
+    const registerButton: TRegisterButton = contextButtons.registerButton;
+
+    contextButton = contextButtons.createContextButton();
     selectButton = contextButtons.selectButton;
     selectedButton = contextButtons.selectedButton;
 
-    registerTab(button);
+    registerButton(contextButton);
 
     if (initial) {
-      selectButton(button);
+      selectButton(contextButton);
     }
   }
 
   onMount(() => {
     if (typeof selectButton !== 'undefined') {
-      buttonEl.addEventListener('click', () => selectButton(button));
+      buttonEl.addEventListener('click', () => selectButton(contextButton));
     }
   });
 
@@ -63,11 +69,11 @@
 </script>
 
 {#if href}
-  <a {href} bind:this={buttonEl} class={cssClass} on:click {disabled} data-selected={$selectedButton === button}>
+  <a {href} bind:this={buttonEl} class={cssClass} on:click {disabled} data-selected={$selectedButton === contextButton}>
     <slot />
   </a>
 {:else}
-  <button bind:this={buttonEl} class={cssClass} on:click {disabled} data-selected={$selectedButton === button}>
+  <button bind:this={buttonEl} class={cssClass} on:click {disabled} data-selected={$selectedButton === contextButton}>
     <slot />
   </button>
 {/if}
