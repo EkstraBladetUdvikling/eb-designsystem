@@ -105,7 +105,7 @@
     <div class="card-content-wrapper">
       <div class="card-icon flex flex-justify--end">
         {#if premium}
-          <Icon name="ebplus_icon" width="20" />
+          <Icon name="ebpluscirclesolid" width="20" />
         {/if}
       </div>
       <div class="card-content">
