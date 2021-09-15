@@ -14,7 +14,7 @@
     "build:designsystem": "yarn build:css && yarn build:snippets",
     "build:css": "node node/build-css.js",
     "build:snippets": "node node/build-snippets",
-    "build:typescript": "yarn tsc --project tsconfig.tsc.json && node node/move-svelte",
+    "build:typescript": "node node/move-svelte && yarn tsc --project tsconfig.tsc.json",
     "build:watch": "onchange 'src/**/*.css' -- yarn build:css",
     "build:svelte": "yarn rollup -c",
     "dev": "yarn build:typescript && yarn build:css & yarn build:watch & yarn rollup -c -w",

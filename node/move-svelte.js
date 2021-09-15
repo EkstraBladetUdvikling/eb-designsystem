@@ -19,15 +19,20 @@ const readFolder = (folderName, filesToFind, array, lvl = 0) => {
   });
 };
 
+const distFolder = 'dist';
 const filesToMove = [];
 const filesToFind = ['.svelte', '.svg'];
 readFolder('./src', filesToFind, filesToMove);
 
+if (fs.existsSync(distFolder)) {
+  fs.rmSync(distFolder, { recursive: true });
+}
+
 filesToMove.forEach((svelteFile) => {
   const { file, folderName } = svelteFile;
 
-  const destFolder = folderName.replace('./src', './dist');
-  const destFile = file.replace('./src', './dist');
+  const destFolder = folderName.replace('./src', distFolder);
+  const destFile = file.replace('./src', distFolder);
 
   if (!fs.existsSync(destFolder)) {
     fs.mkdirSync(destFolder, { recursive: true });
