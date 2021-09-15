@@ -62,7 +62,7 @@ iconNames.forEach((svgname, idx) => {
   iconTypes += `'${svgname}'${divider}`;
 
   // Handle exporting
-  const exportName = svgname.replace(/-/g, '');
+  const exportName = svgname.replace('-', '');
   iconComponents.push(`export { default as ${exportName} } from './svgs/${svgname}.svg'`);
 
   // Handle name list
@@ -80,7 +80,7 @@ graphicNames.forEach((gfxName, idx) => {
   const divider = idx < graphicNames.length - 1 ? '|' : ';';
 
   // Handle exporting
-  const exportName = gfxName.replace(/-/g, '');
+  const exportName = gfxName.replace('-', '');
   graphicTypes += `'${exportName}'${divider}`;
   graphicComponents.push(`export { default as ${exportName} } from './graphics/${gfxName}.svg'`);
 
