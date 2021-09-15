@@ -107,7 +107,7 @@
   </Prism>
 {/if}
 
-<h3><a href="https://fontawesome.com/" target="_blank">Font Awesome</a> icons</h3>
+<h3><a href="https://fontawesome.com/" target="_blank">FontAwesome</a> icons</h3>
 <Icon type="fa" className="fas fa-snowplow" />
 
 {#if $sourceType === 'svelte'}
