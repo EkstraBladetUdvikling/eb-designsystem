@@ -10,7 +10,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "yarn build:designsystem && yarn build:typescript && yarn svgs && yarn build:svelte",
+    "build": "yarn build:typescript && yarn build:designsystem && yarn svgs && yarn build:svelte",
     "build:designsystem": "yarn build:css && yarn build:snippets",
     "build:css": "node node/build-css.js",
     "build:snippets": "node node/build-snippets",
