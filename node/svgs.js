@@ -81,7 +81,7 @@ graphicNames.forEach((gfxName, idx) => {
   const divider = idx < graphicNames.length - 1 ? '|' : ';';
 
   // Handle exporting
-  const exportName = gfxName.replace(/-/g, '');
+  const exportName = gfxName.replace('-', '');
   graphicTypes += `'${exportName}'${divider}`;
   graphicComponents.push(`export { default as ${exportName} } from './graphics/${gfxName}.svg'`);
 
