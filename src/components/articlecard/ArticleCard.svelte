@@ -132,7 +132,7 @@
             {#if section}
               <div class="card-meta-item">
                 <span class="flex flex-justify--center">
-                  <Icon flipped={true} name="tag-regular" width="12" />
+                  <Icon flipped={true} name="tag" width="12" />
                   <span class="padding-s--l">{section}</span>
                 </span>
               </div>
