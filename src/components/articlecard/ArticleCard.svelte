@@ -1,6 +1,5 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  import type { TCardType } from '../../types/Card';
 
   import { parseDate } from '../../misc/parsedate';
 
@@ -10,19 +9,14 @@
   import Toggler from '../toggler/Toggler.svelte';
   import { colorNames } from '@ekstra-bladet/eb-colors';
 
-  interface IMediaOptions {
-    className: string;
-    height: string;
-    src: string;
-    width: string;
-  }
+  import type { TCardType } from '../../types/Card';
+  import type { IMediaOptions } from './ArticleCard';
 
   export let title: string;
-
   export let breaking: boolean = false;
   export let cardType: TCardType = undefined;
   export let className: string = undefined;
-  export let colorName: typeof colorNames = undefined;
+  export let colorName: string = undefined;
   export let id: number = undefined;
   export let loading: boolean = false;
   export let update: boolean = false;

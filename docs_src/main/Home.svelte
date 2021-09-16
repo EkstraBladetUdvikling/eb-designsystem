@@ -1,9 +1,9 @@
 <script lang="ts">
   import { Card } from '../../src';
 
-  let componentsLink = '#/components/home';
-  let utilityLink = '#/utilities/home';
-  let guidelineLink = '#/guidelines/home';
+  let componentsLink = '#/components';
+  let utilityLink = '#/utilities';
+  let guidelineLink = '#/guidelines';
 </script>
 
 <div class="flex flex-justify--around width-1of1">

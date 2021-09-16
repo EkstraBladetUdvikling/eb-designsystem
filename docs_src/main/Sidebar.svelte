@@ -1,7 +1,7 @@
 <script lang="ts">
   import { link, location } from 'svelte-spa-router';
 
-  import { menuItems } from './routes';
+  import { menuItems } from '../routes/routes';
 </script>
 
 <div id="sidebar-menu" class="sidebar-container height-100vh bg--white margin-l--r">
@@ -23,13 +23,17 @@
         href="#a11y"
         use:link={{ disabled: false, href: '/' }}
       >
-        Overblik
+        Overview
       </a>
     </div>
   </div>
   {#each menuItems as group}
     <div class="sidebar-menuitem-container padding-l">
-      <div class="sidebar-submenu-title fontsize-small">{group.title}</div>
+      <div class="sidebar-submenu-title fontsize-small">
+        <a class:active-item={group.href === $location} href="#a11y" use:link={{ disabled: false, href: group.href }}>
+          {group.title}
+        </a>
+      </div>
 
       <div class="sidebar-submenu-items">
         {#each group.routes as menuItem}
@@ -81,7 +85,7 @@
   .sidebar-submenu-title {
     color: var(--color--graa3);
   }
-  .sidebar-item.active-item {
+  .active-item {
     color: var(--color--red);
   }
 </style>
