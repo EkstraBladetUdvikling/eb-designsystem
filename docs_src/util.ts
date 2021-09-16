@@ -28,7 +28,7 @@ export function rdmArticleData(mediaWidth = 640, mediaHeight = 360) {
     },
   });
 
-  const colorClasses = [
+  const colorNamesForUse = [
     colorNames.breaking,
     colorNames.bruger,
     colorNames.eb,
@@ -46,7 +46,7 @@ export function rdmArticleData(mediaWidth = 640, mediaHeight = 360) {
     breaking: Math.random() < 0.1,
     premium: Math.random() < 0.3,
     src: '#',
-    colorClass: colorClasses[Math.floor(Math.random() * colorClasses.length)],
+    colorName: colorNamesForUse[Math.floor(Math.random() * colorNamesForUse.length)],
     media: {
       src: `https://loremflickr.com/${mediaWidth}/${mediaHeight}/city,people,nature,animal?random=${Math.random()}`,
     },

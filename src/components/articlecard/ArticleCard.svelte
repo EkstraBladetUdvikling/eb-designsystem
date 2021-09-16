@@ -8,6 +8,7 @@
   import Card from '../card/Card.svelte';
   import Icon from '../icon/Icon.svelte';
   import Toggler from '../toggler/Toggler.svelte';
+  import { colorNames } from '@ekstra-bladet/eb-colors';
 
   interface IMediaOptions {
     className: string;
@@ -21,7 +22,7 @@
   export let breaking: boolean = false;
   export let cardType: TCardType = undefined;
   export let className: string = undefined;
-  export let colorClass: string = undefined;
+  export let colorName: typeof colorNames = undefined;
   export let id: number = undefined;
   export let loading: boolean = false;
   export let update: boolean = false;
@@ -65,7 +66,7 @@
 
   const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
 
-  $: styleProp = `${style}; --color--list-hover: var(--color--${colorClass}); --fgcolor--list-hover: var(--fgcolor--${colorClass});`;
+  $: styleProp = `${style}; --color--list-hover: var(--color--${colorName}); --fgcolor--list-hover: var(--fgcolor--${colorName});`;
   $: cssClass = className ? `${className} ${baseClass}` : baseClass;
 
   function toggleSave(evt: CustomEvent<any>): void {
@@ -92,7 +93,7 @@
           >
             <Icon
               name="lightning"
-              className="bg--white color--{colorClass} border-radius-s padding-s margin-s--r"
+              className="bg--white color--{colorName} border-radius-s padding-s margin-s--r"
               style="margin-left: -1px;"
               width="15"
             />
@@ -115,14 +116,14 @@
               <Icon
                 type="fa"
                 className="fas fa-star"
-                style="color: var(--fgcolor--{breaking ? 'breaking' : colorClass});"
+                style="color: var(--fgcolor--{breaking ? colorNames.breaking : colorName});"
               />
             </slot>
             <slot slot="off">
               <Icon
                 type="fa"
                 className="far fa-star"
-                style="color: var(--fgcolor--{breaking ? 'breaking' : colorClass});"
+                style="color: var(--fgcolor--{breaking ? colorNames.breaking : colorName});"
               />
             </slot>
           </Toggler>
@@ -132,7 +133,7 @@
             {#if section}
               <div class="card-meta-item">
                 <span class="flex flex-justify--center">
-                  <Icon flipped={true} name="tag-regular" width="12" />
+                  <Icon name="tagregular" width="12" />
                   <span class="padding-s--l">{section}</span>
                 </span>
               </div>

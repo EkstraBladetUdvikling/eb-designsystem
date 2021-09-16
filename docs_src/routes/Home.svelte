@@ -1,22 +1,9 @@
 <script lang="ts">
   import { Card } from '../../src';
-  import Routes from './routes';
 
-  let componentsLink = '#/';
-  let utilityLink = '#/';
-  let guidelineLink = '#/';
-  // Adds dynamic links to home-section cards. It finds the first element for each type.
-  Routes.forEach((route) => {
-    if (componentsLink === '#/' && route.group === 'components') {
-      componentsLink = `#${route.link}`;
-    }
-    if (utilityLink === '#/' && route.group === 'utilities') {
-      utilityLink = `#${route.link}`;
-    }
-    if (guidelineLink === '#/' && route.group === 'guidelines') {
-      guidelineLink = `#${route.link}`;
-    }
-  });
+  let componentsLink = '#/components/home';
+  let utilityLink = '#/utilities/home';
+  let guidelineLink = '#/guidelines/home';
 </script>
 
 <div class="flex flex-justify--around width-1of1">

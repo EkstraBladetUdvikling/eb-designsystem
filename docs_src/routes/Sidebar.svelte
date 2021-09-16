@@ -1,37 +1,7 @@
 <script lang="ts">
-  import { link } from 'svelte-spa-router';
-  import { onMount } from 'svelte';
+  import { link, location } from 'svelte-spa-router';
 
-  export let menuItemList: {
-    component: any;
-    group?: string;
-    link: string;
-    title: string;
-  }[] = [];
-
-  let url = window.location.hash.substr(1);
-
-  const tempObject = {};
-  menuItemList.forEach((v) => (tempObject[v.group || 0] || (tempObject[v.group || 0] = [])).push(v));
-  const groupedMenuItems = Object.keys(tempObject).map((v) => tempObject[v] as typeof menuItemList);
-
-  function titleCase(input: string) {
-    return input[0].toUpperCase() + input.substr(1).toLowerCase();
-  }
-
-  // Chance URL on menu-click
-  onMount(() => {
-    const m = document.querySelectorAll('#sidebar-menu .sidebar-item');
-    m.forEach((item) => {
-      item.addEventListener('click', () => {
-        url = window.location.hash.substr(1);
-      });
-    });
-  });
-  // Listener to check whenever the hash URL changes make sure to match the menu
-  window.addEventListener('hashchange', () => {
-    url = window.location.hash.substr(1);
-  });
+  import { menuItems } from './routes';
 </script>
 
 <div id="sidebar-menu" class="sidebar-container height-100vh bg--white margin-l--r">
@@ -45,18 +15,29 @@
       <p class="flex--grow width-1of1 color--graa1 fontweight-bold">Design system</p>
     </div>
   </div>
-  {#each groupedMenuItems as group}
+  <div class="sidebar-menuitem-container padding-l">
+    <div class="sidebar-submenu-items">
+      <a
+        class="sidebar-item width-1of1 padding-m--t padding-m--rl"
+        class:active-item={'/' === $location}
+        href="#a11y"
+        use:link={{ disabled: false, href: '/' }}
+      >
+        Overblik
+      </a>
+    </div>
+  </div>
+  {#each menuItems as group}
     <div class="sidebar-menuitem-container padding-l">
-      {#if group.length && group[0].group}
-        <div class="sidebar-submenu-title fontsize-small">{titleCase(group[0].group)}</div>
-      {/if}
+      <div class="sidebar-submenu-title fontsize-small">{group.title}</div>
+
       <div class="sidebar-submenu-items">
-        {#each group as menuItem}
+        {#each group.routes as menuItem}
           <a
             class="sidebar-item width-1of1 padding-m--t padding-m--rl"
-            class:active-item={menuItem.link === url}
-            href={menuItem.link}
-            use:link
+            class:active-item={menuItem.href === $location}
+            href="#a11y"
+            use:link={{ disabled: menuItem.disabled, href: menuItem.href }}
           >
             {menuItem.title}
           </a>

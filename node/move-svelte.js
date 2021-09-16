@@ -24,10 +24,6 @@ const filesToMove = [];
 const filesToFind = ['.svelte', '.svg'];
 readFolder('./src', filesToFind, filesToMove);
 
-if (fs.existsSync(distFolder)) {
-  fs.rmSync(distFolder, { recursive: true });
-}
-
 filesToMove.forEach((svelteFile) => {
   const { file, folderName } = svelteFile;
 

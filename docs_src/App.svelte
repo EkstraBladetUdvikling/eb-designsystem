@@ -2,23 +2,22 @@
   import './css/eb-designsystem.css';
 
   import Router from 'svelte-spa-router';
-  import Routes from './routes/routes';
+
+  import { routes as Routes } from './routes/routes';
+
   import Sidebar from './routes/Sidebar.svelte';
   import Navbar from './routes/Navbar.svelte';
 
-  const routeList = Routes;
-
   // Fills the object to create a SPA routing
   let routes = {};
-  let menuItemList = [];
-  routeList.forEach((route) => {
-    routes[route.link] = route.component;
-    menuItemList.push(route);
+
+  Routes.forEach((route) => {
+    routes[route.href] = route.component;
   });
 </script>
 
 <Navbar />
-<Sidebar {menuItemList} />
+<Sidebar menuItems={Routes} />
 <div class="content-container padding-xl">
   <Router {routes} />
 </div>
