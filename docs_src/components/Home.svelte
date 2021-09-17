@@ -7,7 +7,7 @@
 <h1>Components</h1>
 
 <div class="grid-width--small">
-  <p>Components mainly consists of svelte components, but must can be used as straight HTML components</p>
+  <p>Components mainly consists of svelte components but can be used as straight HTML components if it's a must</p>
 </div>
 
 <ul>
