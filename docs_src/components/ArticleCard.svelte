@@ -154,9 +154,9 @@
 
   <h3>Loading placeholder</h3>
 
-  <ArticleCard loading={false} />
-  <ArticleCard loading={true} cardType="small-media" title="" />
-  <ArticleCard loading={true} cardType="small-media--reverse" title="" />
+  <ArticleCard loading={true} />
+  <ArticleCard loading={true} cardType="small-media" />
+  <ArticleCard loading={true} cardType="small-media--reverse" />
 
   <Prism language="html">
     {`<ArticleCard loading={true} />
