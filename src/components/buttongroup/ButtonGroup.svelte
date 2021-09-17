@@ -30,7 +30,6 @@
       return { button: buttons.length };
     },
     registerButton: (button: TButton) => {
-      console.log('registerTab', button);
       buttons.push(button);
       selectedButton.update((current) => current || button);
 
@@ -42,7 +41,6 @@
     },
 
     selectButton: (button: TButton) => {
-      console.log('selectButton', button);
       const i = buttons.indexOf(button);
       selectedId.set(i);
     },

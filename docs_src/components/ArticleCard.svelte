@@ -154,7 +154,7 @@
 
   <h3>Loading placeholder</h3>
 
-  <ArticleCard loading={true} title="" />
+  <ArticleCard loading={false} />
   <ArticleCard loading={true} cardType="small-media" title="" />
   <ArticleCard loading={true} cardType="small-media--reverse" title="" />
 
