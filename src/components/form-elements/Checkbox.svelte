@@ -3,7 +3,7 @@
   export let group = undefined;
   export let label = undefined;
   export let inputtype = 'checkbox';
-  export let value;
+  export let value: string = '';
 
   export let className = undefined;
 

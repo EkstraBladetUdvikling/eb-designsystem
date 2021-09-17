@@ -2,7 +2,7 @@
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
   import { bluedarkBGClass, greenBGClass, greendarkBGClass } from '@ekstra-bladet/eb-colors';
-  import { Badge, Icon } from '../../dist';
+  import { Badge, Icon } from '../../src';
 </script>
 
 <h1 class="color--eb">Badge</h1>

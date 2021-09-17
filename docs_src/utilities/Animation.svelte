@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
   import Prism from 'svelte-prism';
 
-  import { ArticleCard, Badge, Tabs, Tab, TabContent, TabList } from '../../dist/';
+  import { ArticleCard, Badge, Tabs, Tab, TabContent, TabList } from '../../src/';
 
   let article = {
     href: '#',
@@ -35,11 +35,11 @@
       <div class="flex grid-width--small">
         <ArticleCard
           className="animation-fogwave"
-          href={article.href}
           media={{ src: 'https://via.placeholder.com/610x343&text=610x343' }}
+          published={article.timestamp}
           section={article.section}
-          timestamp={article.timestamp}
           title={article.title}
+          url={article.href}
         />
       </div>
       <div class="flex grid-width--small">

@@ -1,6 +1,6 @@
 import { Writable, writable } from 'svelte/store';
 
-type SourceTyping = 'svelte' | 'html';
+export type SourceTyping = 'svelte' | 'html';
 
 const localeSourceType = localStorage.getItem('sourceType') as SourceTyping;
 

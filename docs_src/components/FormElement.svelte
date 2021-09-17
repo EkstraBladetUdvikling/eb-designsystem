@@ -1,7 +1,8 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
+
   import { sourceType } from '../stores';
-  import { FormElement } from '../../dist';
+  import { FormElement } from '../../src';
 </script>
 
 <h1 class="color--eb">Form Element</h1>
@@ -66,7 +67,7 @@
 
 <h3>Checkbox and radio</h3>
 
-<FormElement inputtype="checkbox" label="Checkox" />
+<FormElement inputtype="checkbox" label="Checkbox" />
 <FormElement inputtype="radio" label="Radio" value={1} />
 
 {#if $sourceType === 'svelte'}

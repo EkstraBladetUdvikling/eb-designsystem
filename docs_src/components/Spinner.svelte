@@ -1,7 +1,7 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
-  import { Spinner } from '../../dist';
+  import { Spinner } from '../../src';
 </script>
 
 <h1 class="color--eb">Spinner</h1>

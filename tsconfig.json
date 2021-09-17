@@ -2,8 +2,9 @@
   "extends": "@tsconfig/svelte/tsconfig.json",
 
   "include": ["templates/**/*", "src", "docs_src"],
-  "exclude": ["node_modules/*", "__sapper__/*", "../docs/*"],
+  "exclude": ["node_modules/*", "__sapper__/*", "../docs/*", "../dist/*"],
   "compileOptions": {
+    "moduleResolution": "node",
     "typeRoots": ["./src/types"]
   }
 }

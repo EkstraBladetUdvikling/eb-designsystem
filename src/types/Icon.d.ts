@@ -2,11 +2,11 @@ declare module 'Icon.svelte' {
   export { SvelteComponentDev as default } from 'svelte/internal';
   
   export type IconTypes =
-'angle-down'|'angle-left'|'angle-right'|'angle-up'|'article'|'at'|'check'|'clock'|'creditcard'|'ebplus_icon'|'ebplus_sort'|'envelope'|'figcaption-pin'|'gallery'|'headphones'|'headset'|'history-regular'|'lightning'|'lock'|'medielogin'|'menu-bars'|'miteb-regular'|'miteb-solid'|'newspaper'|'phone'|'play'|'rss'|'smartphone'|'star-regular'|'tag-regular'|'tag-solid'|'tags-regular'|'tags-solid'|'toggle-off'|'toggle-on'|'video';
+'angledown'|'angleleft'|'angleright'|'angleup'|'article'|'at'|'check'|'clock'|'creditcard'|'ebplus_icon'|'ebplus_sort'|'envelope'|'figcaptionpin'|'gallery'|'headphones'|'headset'|'historyregular'|'lightning'|'lock'|'medielogin'|'menubars'|'mitebregular'|'mitebsolid'|'newspaper'|'phone'|'play'|'rss'|'smartphone'|'starregular'|'tagregular'|'tagsolid'|'tagsregular'|'tagssolid'|'toggleoff'|'toggleon'|'video';
 
   
   export type GraphicTypes =
-'ebupdate'|'ekstrabladet';
+'ekstrabladet';
 }
 
 declare module '*.svg';

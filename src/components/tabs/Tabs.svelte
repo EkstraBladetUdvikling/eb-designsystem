@@ -3,14 +3,15 @@
 </script>
 
 <script lang="ts">
-  import { setContext, onDestroy } from 'svelte';
+  import { setContext, onDestroy, SvelteComponent } from 'svelte';
   import { writable } from 'svelte/store';
   import type { Writable } from 'svelte/store';
 
   export const selectedId: Writable<number> = writable(0);
 
-  const buttons = [];
-  const panels = [];
+  type TButton = HTMLElement | typeof SvelteComponent;
+  const buttons: TButton[] = [];
+  const panels: HTMLElement[] = [];
   const selectedButton = writable(null);
   const selectedPanel = writable(null);
 
@@ -20,7 +21,7 @@
   });
 
   setContext(BUTTONS, {
-    registerTab: (button) => {
+    registerTab: (button: TButton) => {
       buttons.push(button);
       selectedButton.update((current) => current || button);
 
@@ -31,7 +32,7 @@
       });
     },
 
-    registerPanel: (panel) => {
+    registerPanel: (panel: HTMLElement) => {
       panels.push(panel);
       selectedPanel.update((current) => current || panel);
 
@@ -42,7 +43,7 @@
       });
     },
 
-    selectButton: (button) => {
+    selectButton: (button: TButton) => {
       const i = buttons.indexOf(button);
       selectedId.set(i);
     },

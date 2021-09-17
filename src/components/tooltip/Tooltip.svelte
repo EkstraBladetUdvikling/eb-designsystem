@@ -3,7 +3,7 @@
   export let iconOff: string = 'question';
   export let position: 'left' | 'right' = 'left';
 
-  export let className: string;
+  export let className: string = undefined;
 
   let cssClass = `tooltip tooltip--${position}`;
 
