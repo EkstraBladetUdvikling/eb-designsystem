@@ -1,7 +1,7 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
 
-  import { rdmParagraphs } from '../util';
+  import { rdmParagraphs } from '../lipsum';
   import { sourceType } from '../stores';
   import { Accordion, Badge } from '../../src';
 
