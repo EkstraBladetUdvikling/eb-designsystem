@@ -74,6 +74,7 @@ export default {
     // Watch the `docs` directory and refresh the
     // browser on changes when not in production
     !production && livereload('docs'),
+    !production && livereload('src'),
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify

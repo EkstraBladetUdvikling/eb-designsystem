@@ -10,8 +10,8 @@
 @media (--smartphone) {
   :root {
     --card-fs-title: 20px;
-  --card-fs-title--small: 16px;
-  --card-padding: 10px;
+    --card-fs-title--small: 16px;
+    --card-padding: 10px;
   }
 }
 
@@ -223,6 +223,15 @@ a.card:focus {
   flex-direction: column;
   overflow: hidden;
   height: 100%;
+}
+
+.card-content--row .card-inner {
+  align-items: stretch;
+  flex-direction: row;
+}
+
+.card-content--row .card-inner > div {
+  max-width: 50%;
 }
 
 .card-inner.card--small-media {

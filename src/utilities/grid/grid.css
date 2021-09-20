@@ -8,9 +8,9 @@
 @media (--smartphone) {
   :root {
     --grid-large: 100%;
-  --grid-medium: 100%;
-  --grid-small: 100;
-  --grid-xlarge: 100%;
+    --grid-medium: 100%;
+    --grid-small: 100;
+    --grid-xlarge: 100%;
   }
 }
 
@@ -28,4 +28,8 @@
 
 .grid-width--xlarge {
   width: var(--grid-xlarge);
+}
+
+.grid {
+  display: grid;
 }

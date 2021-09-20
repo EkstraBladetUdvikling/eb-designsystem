@@ -1342,8 +1342,8 @@ a.badge:hover {
 @media (--smartphone) {
   :root {
     --card-fs-title: 20px;
-  --card-fs-title--small: 16px;
-  --card-padding: 10px;
+    --card-fs-title--small: 16px;
+    --card-padding: 10px;
   }
 }
 
@@ -1560,6 +1560,15 @@ a.card:focus {
 .card-inner {
   overflow: hidden;
   height: 100%;
+}
+
+.card-content--row .card-inner {
+  align-items: stretch;
+  flex-direction: row;
+}
+
+.card-content--row .card-inner > div {
+  max-width: 50%;
 }
 
 .card-inner.card--small-media {
@@ -2561,9 +2570,9 @@ h6,p {
 @media (--smartphone) {
   :root {
     --grid-large: 100%;
-  --grid-medium: 100%;
-  --grid-small: 100;
-  --grid-xlarge: 100%;
+    --grid-medium: 100%;
+    --grid-small: 100;
+    --grid-xlarge: 100%;
   }
 }
 
@@ -2581,6 +2590,10 @@ h6,p {
 
 .grid-width--xlarge {
   width: var(--grid-xlarge);
+}
+
+.grid {
+  display: grid;
 }
 
 .box-shadow {
