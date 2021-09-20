@@ -40,7 +40,6 @@
     childrenLength.set(childrenCount);
 
     updateType();
-    console.log('afterupdate');
   });
 
   let titleFs: string;
