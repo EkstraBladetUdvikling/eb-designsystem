@@ -32,7 +32,7 @@ export function rdmArticleData(mediaWidth = 640, mediaHeight = 360): IArticleCar
     title: getSentence(),
     truncateTitle: false,
     update: Math.random() < 0.5,
-    url: '#',
+    url: '',
   };
 
   return article;

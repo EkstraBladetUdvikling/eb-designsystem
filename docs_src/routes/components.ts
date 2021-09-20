@@ -16,45 +16,44 @@ import Tooltip from '../components/Tooltip.svelte';
 export const components = {
   href: '/components',
   routes: [
-    { href: '/components/accordion', title: 'Accordion', group: 'components', component: Accordion },
+    { href: '/components/accordion', title: 'Accordion', component: Accordion },
     {
       href: '/components/articlecard',
       title: 'Article card',
-      group: 'components',
       component: ArticleCard,
     },
     {
       href: '/components/articlelist',
       title: 'Article list',
-      group: 'components',
+
       component: ArticleList,
     },
-    { href: '/components/badge', title: 'Badge', group: 'components', component: Badge },
-    { href: '/components/button', title: 'Button', group: 'components', component: Button },
+    { href: '/components/badge', title: 'Badge', component: Badge },
+    { href: '/components/button', title: 'Button', component: Button },
     {
       href: '/components/buttongroup',
       title: 'Button group',
-      group: 'components',
+
       component: ButtonGroup,
     },
-    { href: '/components/card', title: 'Card', group: 'components', component: Card },
+    { href: '/components/card', title: 'Card', component: Card },
     {
       href: '/components/form-elements',
       title: 'Form elements',
-      group: 'components',
+
       component: FormElement,
     },
-    { href: '/components/icon', title: 'Icon', group: 'components', component: Icon },
+    { href: '/components/icon', title: 'Icon', component: Icon },
     {
       href: '/components/horizontalscroll',
       title: 'Horizontal scroll',
-      group: 'components',
+
       component: HorizontalScroll,
     },
-    { href: '/components/tabs', title: 'Tabs', group: 'components', component: Tabs },
-    { href: '/components/spinner', title: 'Spinner', group: 'components', component: Spinner },
-    { href: '/components/toggler', title: 'Toggler', group: 'components', component: Toggler },
-    { href: '/components/tooltip', title: 'Tooltip', group: 'components', component: Tooltip },
+    { href: '/components/tabs', title: 'Tabs', component: Tabs },
+    { href: '/components/spinner', title: 'Spinner', component: Spinner },
+    { href: '/components/toggler', title: 'Toggler', component: Toggler },
+    { href: '/components/tooltip', title: 'Tooltip', component: Tooltip },
   ],
   title: 'Components',
 };

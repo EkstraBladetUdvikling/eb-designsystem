@@ -11,7 +11,6 @@ import type { SvelteComponent } from 'svelte';
 
 interface IRoute {
   component: typeof SvelteComponent;
-  group?: string;
   href: string;
   title: string;
 }
