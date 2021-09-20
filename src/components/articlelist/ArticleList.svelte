@@ -43,7 +43,7 @@
     console.log('afterupdate');
   });
 
-  let titleFs;
+  let titleFs: string;
   $: titleFs = fontsizes[$childrenLength - 1] ?? fontsizes[fontsizes.length - 1];
 </script>
 
