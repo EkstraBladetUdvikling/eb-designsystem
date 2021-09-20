@@ -1,11 +1,12 @@
 <script lang="ts">
+  import { Icon } from '../../../dist';
   export let isLoading = false;
 </script>
 
 {#if isLoading}
   <div class="loader flex flex--center">
-    <i class="fas fa-circle bounce bounce1" />
-    <i class="fas fa-circle bounce bounce2" />
-    <i class="fas fa-circle bounce bounce3" />
+    <Icon className="bounce bounce1" name="circlesolid" style="width: 18px; height: 18px;" />
+    <Icon className="bounce bounce2" name="circlesolid" style="width: 18px; height: 18px;" />
+    <Icon className="bounce bounce3" name="circlesolid" style="width: 18px; height: 18px;" />
   </div>
 {/if}

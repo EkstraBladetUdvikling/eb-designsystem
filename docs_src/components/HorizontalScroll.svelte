@@ -102,10 +102,14 @@
   <Prism language="html">
     {`<div id="example-id" class="horizontal-scroll-container position-relative">
   <button data-horizontallist="button-prev" class="horizontal-scroll-nav">
-    <i class="fa fa-chevron-left"></i>
+    <svg viewBox="0 0 50 50">
+      <use xlink:href="#chrevron-left"></use>
+    </svg>
   </button>
   <button data-horizontallist="button-next" class="horizontal-scroll-nav">
-    <i class="fa fa-chevron-right"></i>
+    <svg viewBox="0 0 50 50">
+      <use xlink:href="#chrevron-left"></use>
+    </svg>
   </button>
   <div data-horizontallist="itemcontainer" class="horizontal-scroll-items flex">
     ...
