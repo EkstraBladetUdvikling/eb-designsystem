@@ -19,35 +19,26 @@
 
   let articleCardClass = '';
 
-  switch (list.length) {
-    case 1:
-      articleCardClass = 'card-content--row';
-    case 2:
-    case 3:
-      writableType.set(LISTTYPE.columns);
-      break;
-  }
-
   let articleListContainer: HTMLDivElement;
 
-  beforeUpdate(() => {
-    if (articleListContainer) {
-      console.log('beforeUpdate', list.length, Math.round(articleListContainer.clientWidth / itemWidth));
-      if (list.length <= Math.round(articleListContainer.clientWidth / itemWidth) && type === LISTTYPE.horizontal) {
-        writableType.set(LISTTYPE.columns);
-      } else {
-        writableType.set(LISTTYPE.horizontal);
-      }
-    }
-  });
-
-  onMount(() => {
+  function updateType() {
+    console.log('updateType', list.length, Math.round(articleListContainer.clientWidth / itemWidth));
     if (list.length <= Math.round(articleListContainer.clientWidth / itemWidth) && type === LISTTYPE.horizontal) {
       writableType.set(LISTTYPE.columns);
     } else {
       writableType.set(LISTTYPE.horizontal);
     }
-    console.log('also here?');
+    articleCardClass = list.length === 1 ? 'card-content--row' : '';
+  }
+
+  beforeUpdate(() => {
+    if (articleListContainer) {
+      updateType();
+    }
+  });
+
+  onMount(() => {
+    updateType();
   });
 </script>
 
@@ -61,7 +52,7 @@
   {:else}
     <div class="articlelist" style="--columns: {list.length}">
       {#each list as articleItem}
-        <ArticleCard {...articleItem} className={articleCardClass} />
+        <ArticleCard {...articleItem} className={articleCardClass} truncateTitle={true} />
       {/each}
     </div>
   {/if}

@@ -14075,17 +14075,17 @@ var app = (function () {
 
     function get_each_context_1$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[10] = list[i];
     	return child_ctx;
     }
 
     function get_each_context$6(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[10] = list[i];
     	return child_ctx;
     }
 
-    // (53:2) {:else}
+    // (43:2) {:else}
     function create_else_block$e(ctx) {
     	let div;
     	let current;
@@ -14111,7 +14111,7 @@ var app = (function () {
 
     			attr_dev(div, "class", "articlelist svelte-ogrhzs");
     			set_style(div, "--columns", /*list*/ ctx[0].length);
-    			add_location(div, file$F, 53, 4, 1830);
+    			add_location(div, file$F, 43, 4, 1507);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -14183,14 +14183,14 @@ var app = (function () {
     		block,
     		id: create_else_block$e.name,
     		type: "else",
-    		source: "(53:2) {:else}",
+    		source: "(43:2) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (47:2) {#if $writableType === LISTTYPE.horizontal}
+    // (37:2) {#if $writableType === LISTTYPE.horizontal}
     function create_if_block$i(ctx) {
     	let horizontalscroll;
     	let current;
@@ -14214,7 +14214,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const horizontalscroll_changes = {};
 
-    			if (dirty & /*$$scope, list, itemWidth*/ 16387) {
+    			if (dirty & /*$$scope, list, itemWidth*/ 32771) {
     				horizontalscroll_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14238,18 +14238,24 @@ var app = (function () {
     		block,
     		id: create_if_block$i.name,
     		type: "if",
-    		source: "(47:2) {#if $writableType === LISTTYPE.horizontal}",
+    		source: "(37:2) {#if $writableType === LISTTYPE.horizontal}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (55:6) {#each list as articleItem}
+    // (45:6) {#each list as articleItem}
     function create_each_block_1$3(ctx) {
     	let articlecard;
     	let current;
-    	const articlecard_spread_levels = [/*articleItem*/ ctx[9], { className: /*articleCardClass*/ ctx[3] }];
+
+    	const articlecard_spread_levels = [
+    		/*articleItem*/ ctx[10],
+    		{ className: /*articleCardClass*/ ctx[3] },
+    		{ truncateTitle: true }
+    	];
+
     	let articlecard_props = {};
 
     	for (let i = 0; i < articlecard_spread_levels.length; i += 1) {
@@ -14269,8 +14275,9 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const articlecard_changes = (dirty & /*list, articleCardClass*/ 9)
     			? get_spread_update(articlecard_spread_levels, [
-    					dirty & /*list*/ 1 && get_spread_object(/*articleItem*/ ctx[9]),
-    					dirty & /*articleCardClass*/ 8 && { className: /*articleCardClass*/ ctx[3] }
+    					dirty & /*list*/ 1 && get_spread_object(/*articleItem*/ ctx[10]),
+    					dirty & /*articleCardClass*/ 8 && { className: /*articleCardClass*/ ctx[3] },
+    					articlecard_spread_levels[2]
     				])
     			: {};
 
@@ -14294,20 +14301,20 @@ var app = (function () {
     		block,
     		id: create_each_block_1$3.name,
     		type: "each",
-    		source: "(55:6) {#each list as articleItem}",
+    		source: "(45:6) {#each list as articleItem}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (49:6) {#each list as articleItem}
+    // (39:6) {#each list as articleItem}
     function create_each_block$6(ctx) {
     	let articlecard;
     	let current;
 
     	const articlecard_spread_levels = [
-    		/*articleItem*/ ctx[9],
+    		/*articleItem*/ ctx[10],
     		{
     			style: "width: " + /*itemWidth*/ ctx[1] + "px;"
     		},
@@ -14333,7 +14340,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const articlecard_changes = (dirty & /*list, itemWidth*/ 3)
     			? get_spread_update(articlecard_spread_levels, [
-    					dirty & /*list*/ 1 && get_spread_object(/*articleItem*/ ctx[9]),
+    					dirty & /*list*/ 1 && get_spread_object(/*articleItem*/ ctx[10]),
     					dirty & /*itemWidth*/ 2 && {
     						style: "width: " + /*itemWidth*/ ctx[1] + "px;"
     					},
@@ -14361,14 +14368,14 @@ var app = (function () {
     		block,
     		id: create_each_block$6.name,
     		type: "each",
-    		source: "(49:6) {#each list as articleItem}",
+    		source: "(39:6) {#each list as articleItem}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (48:4) <HorizontalScroll>
+    // (38:4) <HorizontalScroll>
     function create_default_slot$q(ctx) {
     	let each_1_anchor;
     	let current;
@@ -14457,7 +14464,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$q.name,
     		type: "slot",
-    		source: "(48:4) <HorizontalScroll>",
+    		source: "(38:4) <HorizontalScroll>",
     		ctx
     	});
 
@@ -14485,7 +14492,7 @@ var app = (function () {
     			div = element("div");
     			if_block.c();
     			attr_dev(div, "class", "margin-l--tb");
-    			add_location(div, file$F, 45, 0, 1523);
+    			add_location(div, file$F, 35, 0, 1200);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -14568,38 +14575,28 @@ var app = (function () {
     	component_subscribe($$self, writableType, value => $$invalidate(5, $writableType = value));
     	let { itemWidth = 240 } = $$props;
     	let articleCardClass = '';
-
-    	switch (list.length) {
-    		case 1:
-    			articleCardClass = 'card-content--row';
-    		case 2:
-    		case 3:
-    			writableType.set(LISTTYPE.columns);
-    			break;
-    	}
-
     	let articleListContainer;
 
-    	beforeUpdate(() => {
-    		if (articleListContainer) {
-    			console.log('beforeUpdate', list.length, Math.round(articleListContainer.clientWidth / itemWidth));
+    	function updateType() {
+    		console.log('updateType', list.length, Math.round(articleListContainer.clientWidth / itemWidth));
 
-    			if (list.length <= Math.round(articleListContainer.clientWidth / itemWidth) && type === LISTTYPE.horizontal) {
-    				writableType.set(LISTTYPE.columns);
-    			} else {
-    				writableType.set(LISTTYPE.horizontal);
-    			}
-    		}
-    	});
-
-    	onMount(() => {
     		if (list.length <= Math.round(articleListContainer.clientWidth / itemWidth) && type === LISTTYPE.horizontal) {
     			writableType.set(LISTTYPE.columns);
     		} else {
     			writableType.set(LISTTYPE.horizontal);
     		}
 
-    		console.log('also here?');
+    		$$invalidate(3, articleCardClass = list.length === 1 ? 'card-content--row' : '');
+    	}
+
+    	beforeUpdate(() => {
+    		if (articleListContainer) {
+    			updateType();
+    		}
+    	});
+
+    	onMount(() => {
+    		updateType();
     	});
 
     	const writable_props = ['list', 'type', 'itemWidth'];
@@ -14634,6 +14631,7 @@ var app = (function () {
     		itemWidth,
     		articleCardClass,
     		articleListContainer,
+    		updateType,
     		$writableType
     	});
 
@@ -19353,7 +19351,7 @@ for (const accordion of accordions) {
     			create_component(articlelist.$$.fragment);
     			attr_dev(div, "class", "grid-width--xlarge");
     			set_style(div, "overflow", "hidden");
-    			add_location(div, file$s, 36, 0, 1060);
+    			add_location(div, file$s, 36, 0, 1049);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -19398,7 +19396,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    const max$1 = 20;
+    const max$1 = 13;
 
     function instance$s($$self, $$props, $$invalidate) {
     	let $articles;
@@ -19423,10 +19421,10 @@ for (const accordion of accordions) {
     		rdmArticleData(640, 360)
     	];
 
-    	let articles = writable([rdmArticleData(640, 360), rdmArticleData(640, 360)]);
+    	let articles = writable([rdmArticleData(640, 360)]);
     	validate_store(articles, 'articles');
     	component_subscribe($$self, articles, value => $$invalidate(0, $articles = value));
-    	let count = 2;
+    	let count = $articles.length;
 
     	const addingInterval = setInterval(
     		() => {

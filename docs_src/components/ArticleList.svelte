@@ -21,10 +21,10 @@
     rdmArticleData(640, 360),
   ];
 
-  let articles = writable([rdmArticleData(640, 360), rdmArticleData(640, 360)]);
+  let articles = writable([rdmArticleData(640, 360)]);
 
-  const max = 20;
-  let count = 2;
+  const max = 13;
+  let count = $articles.length;
 
   const addingInterval = setInterval(() => {
     if (count < max) {
