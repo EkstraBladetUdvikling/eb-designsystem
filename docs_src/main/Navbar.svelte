@@ -1,8 +1,9 @@
 <script lang="ts">
-  import { Button, ButtonGroup } from '../../dist';
+  import { Button, ButtonGroup } from '../../src';
   import { sourceType } from '../stores';
+  import type { SourceTyping } from '../stores';
 
-  function changeSourceType(source: string) {
+  function changeSourceType(source: SourceTyping) {
     sourceType.set(source);
   }
 </script>

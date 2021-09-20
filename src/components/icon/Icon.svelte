@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-  import type { IconTypes } from 'Icon.svelte';
+  import type { GraphicTypes, IconTypes } from 'Icon.svelte';
 
   // import Check from './svgs/check.svg';
   import * as IconSVGS from './IconComponents';
@@ -7,7 +7,7 @@
 
 <script lang="ts">
   export let className: string = undefined;
-  export let name: IconTypes = undefined;
+  export let name: GraphicTypes | IconTypes = undefined;
   export let type: 'svg' | 'fa' = 'svg';
   export let width: number | string = 36;
   export let style: string = undefined;

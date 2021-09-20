@@ -1,8 +1,9 @@
-<script>
+<script lang="ts">
   import Prism from 'svelte-prism';
+
   import { rdmParagraphs } from '../util';
   import { sourceType } from '../stores';
-  import { Tooltip } from '../../dist';
+  import { Tooltip } from '../../src';
 
   let Content1 = rdmParagraphs(2);
   let Content2 = rdmParagraphs(2);

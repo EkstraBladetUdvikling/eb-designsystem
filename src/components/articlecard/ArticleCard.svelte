@@ -1,6 +1,5 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  import type { TCardType } from '../../types/Card';
 
   import { parseDate } from '../../misc/parsedate';
 
@@ -8,22 +7,20 @@
   import Card from '../card/Card.svelte';
   import Icon from '../icon/Icon.svelte';
   import Toggler from '../toggler/Toggler.svelte';
+  import { colorNames } from '@ekstra-bladet/eb-colors';
 
-  interface IMediaOptions {
-    className: string;
-    height: string;
-    src: string;
-    width: string;
-  }
+  import type { TCardType } from '../../types/Card';
+  import type { IMediaOptions } from './ArticleCard';
 
-  export let title: string;
+  export let loading: boolean = false;
+
+  export let title: string = '';
 
   export let breaking: boolean = false;
   export let cardType: TCardType = undefined;
   export let className: string = undefined;
-  export let colorClass: string = undefined;
+  export let colorName: string = undefined;
   export let id: number = undefined;
-  export let loading: boolean = false;
   export let update: boolean = false;
   export let maxLines: number = undefined;
   export let media: Partial<IMediaOptions> = undefined;
@@ -65,7 +62,7 @@
 
   const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
 
-  $: styleProp = `${style}; --color--list-hover: var(--color--${colorClass}); --fgcolor--list-hover: var(--fgcolor--${colorClass});`;
+  $: styleProp = `${style}; --color--list-hover: var(--color--${colorName}); --fgcolor--list-hover: var(--fgcolor--${colorName});`;
   $: cssClass = className ? `${className} ${baseClass}` : baseClass;
 
   function toggleSave(evt: CustomEvent<any>): void {
@@ -120,9 +117,10 @@
             </slot>
             <slot slot="off">
               <Icon
-                type="fa"
-                className="far fa-star"
-                style="color: var(--fgcolor--{breaking ? 'breaking' : colorClass});"
+                name="lightning"
+                className="bg--white color--{colorName} border-radius-s padding-s margin-s--r"
+                style="margin-left: -1px;"
+                width="15"
               />
             </slot>
           </Toggler>
@@ -148,5 +146,5 @@
         <h2 class="card-title {truncateTitle ? 'card-title--truncated' : ''}" style={titleStyle}>{title}</h2>
       </div>
     </div>
-  </div>
-</Card>
+  </Card>
+{/if}

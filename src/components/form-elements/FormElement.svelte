@@ -1,21 +1,20 @@
 <script lang="ts">
   import Checkbox from './Checkbox.svelte';
-
   import Select from './Select.svelte';
-
   import TextInput from './TextInput.svelte';
-
   import TextArea from './TextArea.svelte';
+
+  import type { SvelteComponent } from 'svelte';
 
   export let className = undefined;
   export let fieldName = undefined;
   export let group = undefined;
   export let inputtype = 'text';
   export let label = undefined;
-  export let value;
+  export let value: number | string = '';
   export let size = 'medium';
 
-  let component = TextInput;
+  let component: typeof SvelteComponent = TextInput;
   switch (inputtype) {
     case 'select':
       component = Select;

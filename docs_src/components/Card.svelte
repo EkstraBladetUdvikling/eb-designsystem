@@ -1,7 +1,7 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
-  import { Card } from '../../dist';
+  import { Card } from '../../src';
 </script>
 
 <h1 class="color--eb">Card</h1>
@@ -37,16 +37,10 @@
         <td>style</td>
         <td>string</td>
         <td />
-        <td /></tr
-      >
-      <tr>
-        <td>theme</td>
-        <td>'darkmode' | 'lightmode'</td>
         <td />
-        <td>See <a href="/#/utilities/datatheme">Data Theme</a> for doc</td>
       </tr>
-      <tr /></tbody
-    >
+      <tr />
+    </tbody>
   </table>
 {/if}
 
