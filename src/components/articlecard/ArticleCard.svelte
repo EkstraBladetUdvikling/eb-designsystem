@@ -31,7 +31,7 @@
   export let style: string = '';
   export let truncateTitle: boolean = false;
   export let url: string = undefined;
-  export let width: string = '240px';
+  export let width: string = '100%';
 
   const dispatch = createEventDispatcher();
   let baseClass = `card-mode card-mode--article`;

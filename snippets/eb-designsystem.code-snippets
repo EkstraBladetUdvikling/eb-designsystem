@@ -20,6 +20,13 @@
     ],
     "description": "This extends accordion-tab with: {\n border: 1px solid var(--color--graa5);\n }"
   },
+  "designsystem articlelist columns": {
+    "prefix": "ds-articlelist--columns",
+    "body": [
+      "articlelist--columns"
+    ],
+    "description": "NB! This should only be used with articlelist\n{\n display: grid;\ngrid-template-columns: repeat(var(--articlelist-columns), 1fr);\n }"
+  },
   "designsystem badge": {
     "prefix": "ds-badge",
     "body": [

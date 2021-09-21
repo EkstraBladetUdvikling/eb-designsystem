@@ -931,6 +931,24 @@ custom media queries is the only allowed media queries
   color: var(--color--graa3);
 }
 
+.articlelist--columns {
+  display: grid;
+  grid-template-columns: repeat(var(--articlelist-columns), 1fr);
+}
+
+.articlelist--columns[data-items="1"] .card-inner {
+  align-items: stretch;
+  flex-direction: row;
+}
+
+.articlelist--columns[data-items="1"] .card-inner > div {
+  max-width: 50%;
+}
+
+.articlelist--columns .card-mode--article {
+  width: auto;
+}
+
 .badge {
   align-items: center;
   border-radius: var(--border-radius--small);
@@ -1562,21 +1580,8 @@ a.card:focus {
   height: 100%;
 }
 
-.articlelist--columns[data-items="1"] .card-inner {
-  align-items: stretch;
-  flex-direction: row;
-}
-
-.articlelist--columns[data-items="1"] .card-inner > div {
-  max-width: 50%;
-}
-
 .card-mode--article {
   width: var(--card-width);
-}
-
-.articlelist--columns .card-mode--article {
-  width: auto;
 }
 
 .card-inner.card--small-media {
