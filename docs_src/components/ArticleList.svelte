@@ -53,6 +53,7 @@
   </ArticleList>
 
   <h3>Different amounts of items in list</h3>
+  <h4>1</h4>
   <ArticleList>
     {#each singleArt as article}
       <ArticleCard {...article} className="margin-s" width="240px" truncateTitle={true} />
