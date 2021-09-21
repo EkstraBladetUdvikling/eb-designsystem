@@ -52,15 +52,12 @@
       <slot />
     </HorizontalScroll>
   {:else}
-    <div class="articlelist articlelist--columns" data-items={$childrenLength} style="--columns: {$childrenLength}">
+    <div
+      class="articlelist articlelist--columns"
+      data-items={$childrenLength}
+      style="--articlelist-columns: {$childrenLength}"
+    >
       <slot />
     </div>
   {/if}
 </div>
-
-<style>
-  .articlelist--columns {
-    display: grid;
-    grid-template-columns: repeat(var(--columns), 1fr);
-  }
-</style>

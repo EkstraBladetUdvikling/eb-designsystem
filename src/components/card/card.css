@@ -225,21 +225,8 @@ a.card:focus {
   height: 100%;
 }
 
-.articlelist--columns[data-items="1"] .card-inner {
-  align-items: stretch;
-  flex-direction: row;
-}
-
-.articlelist--columns[data-items="1"] .card-inner > div {
-  max-width: 50%;
-}
-
 .card-mode--article {
   width: var(--card-width);
-}
-
-.articlelist--columns .card-mode--article {
-  width: auto;
 }
 
 .card-inner.card--small-media {

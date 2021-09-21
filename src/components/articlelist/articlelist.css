@@ -1,0 +1,17 @@
+.articlelist--columns {
+  display: grid;
+  grid-template-columns: repeat(var(--articlelist-columns), 1fr);
+}
+
+.articlelist--columns[data-items="1"] .card-inner {
+  align-items: stretch;
+  flex-direction: row;
+}
+
+.articlelist--columns[data-items="1"] .card-inner > div {
+  max-width: 50%;
+}
+
+.articlelist--columns .card-mode--article {
+  width: auto;
+}
