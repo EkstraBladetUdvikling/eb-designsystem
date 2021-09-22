@@ -71,10 +71,14 @@
     {`<label class="tooltip">
   <input type="checkbox" hidden class="tooltip-input"/>
   <div class="tooltip-off">
-    <i class="tooltip-toggle fas fa-question"/>
+    <svg class="tooltip-toggle" viewBox="0 0 50 50">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#question-circle"></use>
+    </svg>
   </div>
   <div class="tooltip-on">
-    <i class="tooltip-toggle fas fa-times"/>
+    <svg class="tooltip-toggle" viewBox="0 0 50 50">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#times-circle"></use>
+    </svg>
     <div class="padding-s">
       Content
     </div>
@@ -106,10 +110,14 @@
   <label class="tooltip tooltip--right flex-item--center">
     <input type="checkbox" hidden class="tooltip-input"/>
     <div class="tooltip-off">
-      <i class="tooltip-toggle fas fa-question"/>
+      <svg class="tooltip-toggle" viewBox="0 0 50 50">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#question-circle"></use>
+      </svg>
     </div>
     <div class="tooltip-on">
-      <i class="tooltip-toggle fas fa-times"/>
+      <svg class="tooltip-toggle" viewBox="0 0 50 50">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#times-circle"></use>
+      </svg>
       <div class="padding-s">
         Content
       </div>

@@ -2143,7 +2143,7 @@ a.card-mode:focus .card-inner {
   font-family: var(--fontfamily--secondary);
   overflow: hidden;
   padding: var(--tooltip-padding);
-  width: 22px;
+  width: 25px;
   height: var(--tooltip-height);
 }
 
