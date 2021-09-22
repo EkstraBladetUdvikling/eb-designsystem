@@ -2,6 +2,8 @@
   import Prism from 'svelte-prism';
 
   import { ArticleCard, Badge, Tabs, Tab, TabContent, TabList } from '../../src/';
+  import CodeIcon from '../assets/icons/code.svg';
+  import ComponentsIcon from '../assets/icons/components.svg';
 
   let article = {
     href: '#',
@@ -27,8 +29,8 @@
   <Tabs>
     <div class="flex flex-justify--end width-1of1">
       <TabList>
-        <Tab><i class="fas fa-cubes" /></Tab>
-        <Tab><i class="fas fa-code" /></Tab>
+        <Tab><ComponentsIcon width={16} /></Tab>
+        <Tab><CodeIcon width={16} /></Tab>
       </TabList>
     </div>
     <TabContent>

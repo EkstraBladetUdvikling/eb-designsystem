@@ -1,8 +1,8 @@
 <script lang="ts">
   import { Card } from '../../src';
-  import Components from '../assets/icons/components.svg';
-  import Utility from '../assets/icons/utility.svg';
-  import Guideline from '../assets/icons/guideline.svg';
+  import ComponentsIcon from '../assets/icons/components.svg';
+  import UtilityIcon from '../assets/icons/utility.svg';
+  import GuidelineIcon from '../assets/icons/guideline.svg';
 
   let componentsLink = '#/components';
   let utilityLink = '#/utilities';
@@ -23,7 +23,7 @@
         <Card className="padding-m" url={componentsLink}>
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Components</h2>
-            <Components width="60" height="60" />
+            <ComponentsIcon width="60" height="60" />
           </div>
         </Card>
       </div>
@@ -31,7 +31,7 @@
         <Card className="padding-m" url={utilityLink}>
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Utilities</h2>
-            <Utility width="60" height="60" />
+            <UtilityIcon width="60" height="60" />
           </div>
         </Card>
       </div>
@@ -39,7 +39,7 @@
         <Card className="padding-m" url={guidelineLink}>
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Guidelines</h2>
-            <Guideline width="45" height="60" />
+            <GuidelineIcon width="45" height="60" />
           </div>
         </Card>
       </div>
