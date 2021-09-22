@@ -10,23 +10,27 @@
   }
 
   export let fontsizes = ['xxlarge', 'xlarge', 'large'];
-
   export let type: LISTTYPE = LISTTYPE.horizontal;
 
   const writableType: Writable<LISTTYPE> = writable(type);
-
-  export let itemWidth: number = 240; // Only used when list is horizontal scroll
-
-  let childrenLength: Writable<number> = writable(0);
+  const childrenLength: Writable<number> = writable(0);
 
   let articleListContainer: HTMLDivElement;
+  let itemWidth: number; // Only used when list is horizontal scroll
 
-  const getChildrenCount = () =>
+  const getChildrenWidth = (): number =>
+    articleListContainer.querySelector('[data-horizontallist="horizontallist"]')
+      ? articleListContainer.querySelector('[data-horizontallist="horizontallist"]').children[0].clientWidth
+      : articleListContainer.children[0].children[0].clientWidth;
+
+  const getChildrenCount = (): number =>
     articleListContainer.querySelector('[data-horizontallist="horizontallist"]')
       ? articleListContainer.querySelector('[data-horizontallist="horizontallist"]').children.length
       : articleListContainer.children[0].children.length;
 
   function updateType() {
+    itemWidth = itemWidth ?? getChildrenWidth();
+
     if ($childrenLength <= Math.round(articleListContainer.clientWidth / itemWidth) && type === LISTTYPE.horizontal) {
       writableType.set(LISTTYPE.columns);
     } else {
