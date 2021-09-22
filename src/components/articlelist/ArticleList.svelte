@@ -4,19 +4,22 @@
 
   import HorizontalScroll from '../horizontalScroll/HorizontalScroll.svelte';
 
+  type TListTypes = keyof typeof LISTTYPE;
+
   enum LISTTYPE {
-    columns,
-    horizontal,
+    columns = 'columns',
+    horizontal = 'horizontal',
+    vertical = 'vertical',
   }
 
   export let fontsizes = ['xxlarge', 'xlarge', 'large'];
-  export let type: LISTTYPE = LISTTYPE.horizontal;
+  export let type: TListTypes = LISTTYPE.horizontal;
 
-  const writableType: Writable<LISTTYPE> = writable(type);
+  const writableType: Writable<TListTypes> = writable(type);
   const childrenLength: Writable<number> = writable(0);
 
   let articleListContainer: HTMLDivElement;
-  let itemWidth: number; // Only used when list is horizontal scroll
+  let itemWidth: number;
 
   const getChildrenWidth = (): number =>
     articleListContainer.querySelector('[data-horizontallist="horizontallist"]')
