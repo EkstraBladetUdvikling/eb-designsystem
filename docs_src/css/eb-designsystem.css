@@ -1950,10 +1950,6 @@ a.card-mode:focus .card-inner {
   fill: currentColor;
 }
 
-[data-flipped="true"] {
-  transform: rotate(90deg);
-}
-
 .loader .bounce {
   animation: sk-bouncedelay 1.4s infinite ease-in-out both;
 }

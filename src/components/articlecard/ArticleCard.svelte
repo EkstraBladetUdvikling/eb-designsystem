@@ -103,7 +103,7 @@
       <div class="card-content-wrapper">
         <div class="card-icon flex flex-justify--end">
           {#if premium}
-            <Icon name="ebplus_icon" width="20" />
+            <Icon name="ebpluscirclesolid" width="20" />
           {/if}
         </div>
         <div class="card-content">
@@ -130,7 +130,7 @@
               {#if section}
                 <div class="card-meta-item">
                   <span class="flex flex-justify--center">
-                    <Icon name="tagregular" width="12" />
+                    <Icon name="tag" width="12" />
                     <span class="padding-s--l">{section}</span>
                   </span>
                 </div>
