@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Icon } from '../../../dist';
+  import { Icon } from '../../../src';
   export let isLoading = false;
 </script>
 

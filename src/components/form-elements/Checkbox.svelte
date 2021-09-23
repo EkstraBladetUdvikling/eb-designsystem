@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Icon } from '../../';
+  import { Icon } from '../../../src';
   export let fieldName = undefined;
   export let group = undefined;
   export let label = undefined;

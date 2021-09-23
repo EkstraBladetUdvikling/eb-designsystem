@@ -1,7 +1,7 @@
 <script lang="ts">
   import { afterUpdate, onMount } from 'svelte';
   import { throttle } from '../../misc/throttle';
-  import { Button, Icon } from '../../';
+  import { Button, Icon } from '../../../src';
 
   export let className = undefined;
 

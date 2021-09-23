@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Icon } from '../../';
+  import { Icon } from '../../../src';
   export let position: 'left' | 'right' = 'left';
 
   export let className: string = undefined;
