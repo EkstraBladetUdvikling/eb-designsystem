@@ -406,7 +406,7 @@
     "body": [
       "tooltip"
     ],
-    "description": "{\n position: relative;\ndisplay: inline-block;\nheight: 25px;\n }"
+    "description": "{\n position: relative;\ndisplay: inline-block;\nheight: var(--tooltip-height);\n }"
   },
   "designsystem tooltip input": {
     "prefix": "ds-tooltip-input",
@@ -427,14 +427,14 @@
     "body": [
       "tooltip-off"
     ],
-    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\nbox-sizing: border-box;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\nwidth: 25px;\nheight: 25px;\n }"
+    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\nbox-sizing: border-box;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\n }"
   },
   "designsystem tooltip on": {
     "prefix": "ds-tooltip-on",
     "body": [
       "tooltip-on"
     ],
-    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\nbox-sizing: border-box;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\nwidth: 25px;\nheight: 25px;\n }"
+    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\nbox-sizing: border-box;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\n }"
   },
   "designsystem screen reader text": {
     "prefix": "ds-screen-reader-text",

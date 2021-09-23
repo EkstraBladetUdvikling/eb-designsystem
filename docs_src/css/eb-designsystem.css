@@ -2105,7 +2105,6 @@ a.card-mode:focus .card-inner {
 
 :root {
   --tooltip-border-color: var(--card-border-color);
-  --tooltip-height: 25px;
   --tooltip-padding: 5px 5px;
 }
 
@@ -2138,8 +2137,6 @@ a.card-mode:focus .card-inner {
   font-family: var(--fontfamily--secondary);
   overflow: hidden;
   padding: var(--tooltip-padding);
-  width: 25px;
-  height: var(--tooltip-height);
 }
 
 .tooltip-input:checked ~ .tooltip-on {
