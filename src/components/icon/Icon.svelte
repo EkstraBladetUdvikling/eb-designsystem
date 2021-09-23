@@ -18,4 +18,6 @@
   let baseClass = className ? `icon-svg ${className}` : 'icon-svg';
 </script>
 
-<svelte:component this={IconSVGS[name.replace('-', '')]} {style} class={baseClass} on:click />
+{#if name}
+  <svelte:component this={IconSVGS[name.replace('-', '')]} {style} class={baseClass} on:click />
+{/if}

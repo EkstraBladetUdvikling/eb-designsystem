@@ -79,11 +79,11 @@
 </p>
 <div class="flex flex-row flex-justify--center flex-align--center">
   <Button className="margin-m--r" type="cancel" on:click={decrement}>
-    <Icon name="chevronleft" style="width: 18px; height: 18px;" />
+    <Icon name="angleleft" style="width: 18px; height: 18px;" />
   </Button>
   <p>Size: {size}px</p>
   <Button className="margin-m--l" type="cancel" on:click={increment}>
-    <Icon name="chevronright" style="width: 18px; height: 18px;" />
+    <Icon name="angleright" style="width: 18px; height: 18px;" />
   </Button>
 </div>
 <div class="flex flex-wrap--wrap">

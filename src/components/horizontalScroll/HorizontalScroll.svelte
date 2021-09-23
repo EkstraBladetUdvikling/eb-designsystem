@@ -137,10 +137,10 @@
 
 <div bind:this={scrollContainer} class="horizontal-scroll-container position-relative">
   <Button on:click={prevScroll} className="horizontal-scroll-nav button-prev bg--white" extension="icon">
-    <Icon name="chevronleft" width="14" />
+    <Icon name="angleleft" width="14" />
   </Button>
   <Button on:click={nextScroll} className="horizontal-scroll-nav button-next bg--white" extension="icon">
-    <Icon name="chevronright" width="14" />
+    <Icon name="angleright" width="14" />
   </Button>
   <div
     bind:this={scrollItemContainer}

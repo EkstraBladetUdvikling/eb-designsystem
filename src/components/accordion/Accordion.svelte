@@ -27,7 +27,7 @@
         }}
       >
         <span class="fontweight-bold fontsize-medium">{tab.title}</span>
-        <Icon name="chevrondown" width="14" />
+        <Icon name="angledown" width="14" />
       </div>
       <div class="accordion-body padding-m padding-l--rl fontsize-small">
         {@html tab.content}
