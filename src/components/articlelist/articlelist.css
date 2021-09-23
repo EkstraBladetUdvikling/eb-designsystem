@@ -1,6 +1,7 @@
 .articlelist--columns {
   display: grid;
   grid-template-columns: repeat(var(--articlelist-columns), 1fr);
+  gap: var(--articlelist-gap, 10px);
 }
 
 .articlelist--columns[data-items="1"] .card-inner {
@@ -13,5 +14,5 @@
 }
 
 .articlelist--columns .card-mode--article {
-  width: auto;
+  width: 100%;
 }

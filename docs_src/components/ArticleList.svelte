@@ -74,7 +74,9 @@
   <h4>4</h4>
   <ArticleList
     >{#each fourArt as article}
-      <ArticleCard {...article} className="margin-s" width="240px" truncateTitle={true} />
+      <div>
+        <ArticleCard {...article} className="margin-s" width="240px" truncateTitle={false} />
+      </div>
     {/each}
   </ArticleList>
   <h4>5</h4>

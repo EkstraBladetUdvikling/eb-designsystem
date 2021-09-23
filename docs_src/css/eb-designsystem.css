@@ -934,6 +934,7 @@ custom media queries is the only allowed media queries
 .articlelist--columns {
   display: grid;
   grid-template-columns: repeat(var(--articlelist-columns), 1fr);
+  gap: var(--articlelist-gap, 10px);
 }
 
 .articlelist--columns[data-items="1"] .card-inner {
@@ -946,7 +947,7 @@ custom media queries is the only allowed media queries
 }
 
 .articlelist--columns .card-mode--article {
-  width: auto;
+  width: 100%;
 }
 
 .badge {
