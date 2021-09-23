@@ -33,18 +33,6 @@
         <td />
       </tr>
       <tr>
-        <td>iconOn</td>
-        <td>string</td>
-        <td>'times'</td>
-        <td>FontAwesome icon for when tooltip is open</td>
-      </tr>
-      <tr>
-        <td>iconOff</td>
-        <td>string</td>
-        <td>'question'</td>
-        <td>FontAwesome icon for when tooltip is closed</td>
-      </tr>
-      <tr>
         <td>position</td>
         <td>'left' | 'right'</td>
         <td>'left'</td>
