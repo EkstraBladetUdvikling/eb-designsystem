@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Icon } from '../../../src';
+  import Icon from '../icon/Icon.svelte';
   export let position: 'left' | 'right' = 'left';
 
   export let className: string = undefined;

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Icon } from '../../../src';
+  import Icon from '../icon/Icon.svelte';
   export let isLoading = false;
 </script>
 

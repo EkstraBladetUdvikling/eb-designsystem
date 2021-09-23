@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Icon } from '../../../src';
+  import Icon from '../icon/Icon.svelte';
   export let fieldName = undefined;
   export let group = undefined;
   export let label = undefined;

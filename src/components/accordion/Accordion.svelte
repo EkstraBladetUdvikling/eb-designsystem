@@ -1,7 +1,7 @@
 <script lang="ts">
   import { writable } from 'svelte/store';
   import type { Writable } from 'svelte/store';
-  import { Icon } from '../../../src';
+  import Icon from '../icon/Icon.svelte';
 
   /**
    * dataTheme: string - Adds a theme to the accordion (optional)
