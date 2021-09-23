@@ -103,12 +103,12 @@
     {`<div id="example-id" class="horizontal-scroll-container position-relative">
   <button data-horizontallist="button-prev" class="horizontal-scroll-nav">
     <svg viewBox="0 0 50 50">
-      <use xlink:href="#chrevron-left"></use>
+      <use xlink:href="#angle-left"></use>
     </svg>
   </button>
   <button data-horizontallist="button-next" class="horizontal-scroll-nav">
     <svg viewBox="0 0 50 50">
-      <use xlink:href="#chrevron-left"></use>
+      <use xlink:href="#angle-left"></use>
     </svg>
   </button>
   <div data-horizontallist="itemcontainer" class="horizontal-scroll-items flex">

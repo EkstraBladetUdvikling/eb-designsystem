@@ -70,7 +70,7 @@
     <div class="accordion-header flex flex-justify--between flex-align--center padding-m">
       <span class="fontweight-bold fontsize-medium">Tab 1</span>
       <svg viewBox="0 0 50 50">
-        <use xlink:href="#chrevron-down"></use>
+        <use xlink:href="#angle-down"></use>
       </svg>
     </div>
     <div class="accordion-body padding-m padding-l--rl fontsize-small">
@@ -81,7 +81,7 @@
     <div class="accordion-header flex flex-justify--between flex-align--center padding-m">
       <span class="fontweight-bold fontsize-medium">Tab 2</span>
       <svg viewBox="0 0 50 50">
-        <use xlink:href="#chrevron-down"></use>
+        <use xlink:href="#angle-down"></use>
       </svg>
     </div>
     <div class="accordion-body padding-m padding-l--rl fontsize-small">
@@ -92,7 +92,7 @@
     <div class="accordion-header flex flex-justify--between flex-align--center padding-m">
       <span class="fontweight-bold fontsize-medium">Tab 3</span>
       <svg viewBox="0 0 50 50">
-        <use xlink:href="#chrevron-down"></use>
+        <use xlink:href="#angle-down"></use>
       </svg>
     </div>
     <div class="accordion-body padding-m padding-l--rl fontsize-small">
