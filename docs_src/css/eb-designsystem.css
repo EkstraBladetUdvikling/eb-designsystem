@@ -937,13 +937,15 @@ custom media queries is the only allowed media queries
   gap: var(--articlelist-gap, 10px);
 }
 
-.articlelist--columns[data-items="1"] .card-inner {
-  align-items: stretch;
-  flex-direction: row;
-}
+@media (--desktop) {
+  .articlelist--columns[data-items="1"] .card-inner {
+    align-items: stretch;
+    flex-direction: row;
+  }
 
-.articlelist--columns[data-items="1"] .card-inner > div {
-  max-width: 50%;
+  .articlelist--columns[data-items="1"] .card-inner > div {
+    width: 50%;
+  }
 }
 
 .articlelist--columns .card-mode--article {
