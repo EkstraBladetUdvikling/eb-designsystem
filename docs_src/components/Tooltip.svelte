@@ -44,7 +44,7 @@
 
 <h3>Default tooltip</h3>
 
-<div class="flex margin-l--tb">
+<div class="flex margin-m--tb">
   <Tooltip>
     {@html Content1}
   </Tooltip>
@@ -77,7 +77,7 @@
 
 <h3>Tooltip i højre side</h3>
 
-<div class="flex flex-justify--between grid-width--small margin-l--tb">
+<div class="flex flex-justify--between grid-width--small margin-m--tb">
   <h3>Header</h3>
   <Tooltip position="right" className="flex-item--center">
     {@html Content2}
