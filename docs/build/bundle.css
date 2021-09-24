@@ -950,7 +950,8 @@ custom media queries is the only allowed media queries
 
 @media (--smartphone) {
   .articlelist--columns[data-items="1"] .card-mode--article {
-    margin: 0;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
@@ -1860,10 +1861,6 @@ a.card-mode:focus .card-inner {
   }
 }
 
-.smartphone .horizontal-scroll-padding {
-  padding: 0 var(--distance-medium);
-}
-
 .horizontal-scroll-container::before,
 .horizontal-scroll-container::after {
   position: absolute;
@@ -1871,7 +1868,7 @@ a.card-mode:focus .card-inner {
   right: calc(var(--right-pos) * -1);
   z-index: 1;
 
-  box-shadow: -20px 0 20px -20px rgba(0, 0, 0, .4);
+  box-shadow: -20px 0 20px -20px rgba(0, 0, 0, 0.4);
   content: " ";
   opacity: 1;
   transition: opacity 200ms, height 200ms;
@@ -1887,7 +1884,7 @@ a.card-mode:focus .card-inner {
   right: auto;
   left: calc(var(--right-pos) * -1);
 
-  box-shadow: 20px 0 20px -20px rgba(0, 0, 0, .4);
+  box-shadow: 20px 0 20px -20px rgba(0, 0, 0, 0.4);
 }
 
 .smartphone .horizontal-scroll-container::before {

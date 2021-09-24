@@ -17,7 +17,8 @@
 
 @media (--smartphone) {
   .articlelist--columns[data-items="1"] .card-mode--article {
-    margin: 0;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
