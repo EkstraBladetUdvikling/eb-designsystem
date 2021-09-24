@@ -15,6 +15,12 @@
   }
 }
 
+@media (--smartphone) {
+  .articlelist--columns[data-items="1"] .card-mode--article {
+    margin: 0;
+  }
+}
+
 .articlelist--columns .card-mode--article {
   width: 100%;
 }
