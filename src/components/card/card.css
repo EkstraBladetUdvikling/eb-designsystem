@@ -10,8 +10,8 @@
 @media (--smartphone) {
   :root {
     --card-fs-title: 20px;
-  --card-fs-title--small: 16px;
-  --card-padding: 10px;
+    --card-fs-title--small: 16px;
+    --card-padding: 10px;
   }
 }
 
@@ -199,7 +199,7 @@ a.card:focus {
   * Card-mode (mutation of .card - new design)
   */
 :root {
-  --card-mode--title: 18px;
+  --card-mode--title: var(--fs-large);
   --card-mode-icon--height: 20px;
   --card-mode-padding: 15px;
 }
@@ -223,6 +223,10 @@ a.card:focus {
   flex-direction: column;
   overflow: hidden;
   height: 100%;
+}
+
+.card-mode--article {
+  width: var(--card-width);
 }
 
 .card-inner.card--small-media {
@@ -327,25 +331,4 @@ a.card-mode:focus .card-inner {
   --lh: 1.2em;
   -webkit-line-clamp: var(--max-lines);
   --max-lines: 9;
-}
-
-/* card-mode: lightmode */
-.card-mode[data-theme="lightmode"]:hover,
-[data-theme="lightmode"]:not([class*="bg--"]):not([class*="card-mode--article"]) {
-  background: var(--color--white);
-  color: var(--color--black);
-}
-
-/* card-mode: darkmode */
-.card-mode[data-theme="darkmode"]:hover,
-[data-theme="darkmode"]:not([class*="bg--"]):not([class*="card-mode--article"]) {
-  background: var(--color--black);
-  color: var(--color--white);
-}
-
-.card-mode[data-breaking="true"] .card-inner,
-.card-mode[data-breaking="true"]:hover,
-[data-breaking="true"]:not([class*="bg--"]):not([class*="card-mode--article"]) {
-  background: var(--color--breaking);
-  color: var(--fgcolor--breaking);
 }

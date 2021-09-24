@@ -41,7 +41,7 @@
             class="sidebar-item width-1of1 padding-m--t padding-m--rl"
             class:active-item={menuItem.href === $location}
             href="#a11y"
-            use:link={{ disabled: menuItem.disabled, href: menuItem.href }}
+            use:link={{ disabled: false, href: menuItem.href }}
           >
             {menuItem.title}
           </a>

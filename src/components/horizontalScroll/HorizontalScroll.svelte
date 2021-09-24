@@ -7,8 +7,6 @@
 
   let baseClass = `horizontal-scroll-container position-relative`;
 
-  if (className) baseClass = `${className} ${baseClass}`;
-
   /* Horizontial Scroll elements */
   let scrollContainer: HTMLDivElement;
   let scrollItemContainer: HTMLDivElement;
@@ -133,9 +131,11 @@
       updateDataSet('disabled');
     }
   });
+
+  $: cssClass = className ? `${className} ${baseClass}` : baseClass;
 </script>
 
-<div bind:this={scrollContainer} class="horizontal-scroll-container position-relative">
+<div bind:this={scrollContainer} class={cssClass}>
   <Button on:click={prevScroll} className="horizontal-scroll-nav button-prev bg--white" extension="icon">
     <i class="fa fa-chevron-left" />
   </Button>

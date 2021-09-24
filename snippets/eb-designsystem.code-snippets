@@ -20,6 +20,13 @@
     ],
     "description": "This extends accordion-tab with: {\n border: 1px solid var(--color--graa5);\n }"
   },
+  "designsystem articlelist columns": {
+    "prefix": "ds-articlelist--columns",
+    "body": [
+      "articlelist--columns"
+    ],
+    "description": "NB! This should only be used with articlelist\n{\n display: grid;\ngrid-template-columns: repeat(var(--articlelist-columns), 1fr);\n }"
+  },
   "designsystem badge": {
     "prefix": "ds-badge",
     "body": [
@@ -222,6 +229,13 @@
     ],
     "description": "{\n border-radius: 10px;\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
   },
+  "designsystem card mode article": {
+    "prefix": "ds-card-mode--article",
+    "body": [
+      "card-mode--article"
+    ],
+    "description": "NB! This should only be used with card-mode\n{\n width: var(--card-width);\n }"
+  },
   "designsystem card content wrapper": {
     "prefix": "ds-card-content-wrapper",
     "body": [
@@ -235,15 +249,6 @@
       "card-title--truncated"
     ],
     "description": "NB! This should only be used with card-title\n{\n position: relative;\ndisplay: -webkit-box;\nline-height: var(--lh);\noverflow: hidden;\nmin-height: calc(var(--lh) * var(--max-lines));\nmax-height: calc(var(--lh) * var(--max-lines));\n-webkit-box-orient: vertical;\n--lh: 1.2em;\n-webkit-line-clamp: var(--max-lines);\n--max-lines: 9;\n }"
-  },
-  "designsystem card mode[data theme=\"lightmode\"]": {
-    "description": "Has pseudo styling :hover"
-  },
-  "designsystem card mode[data theme=\"darkmode\"]": {
-    "description": "Has pseudo styling :hover"
-  },
-  "designsystem card mode[data breaking=\"true\"]": {
-    "description": "Has pseudo styling :hover"
   },
   "designsystem form element": {
     "prefix": "ds-form-element",
@@ -862,6 +867,13 @@
       "grid-width--xlarge"
     ],
     "description": "NB! This should only be used with grid-width\n{\n width: 930px;\n }"
+  },
+  "designsystem grid": {
+    "prefix": "ds-grid",
+    "body": [
+      "grid"
+    ],
+    "description": "{\n display: grid;\n }"
   },
   "designsystem box shadow": {
     "prefix": "ds-box-shadow",

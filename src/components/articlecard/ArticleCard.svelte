@@ -31,6 +31,7 @@
   export let style: string = '';
   export let truncateTitle: boolean = false;
   export let url: string = undefined;
+  export let width: string = '100%';
 
   const dispatch = createEventDispatcher();
   let baseClass = `card-mode card-mode--article`;
@@ -62,7 +63,8 @@
 
   const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
 
-  $: styleProp = `${style}; --color--list-hover: var(--color--${colorName}); --fgcolor--list-hover: var(--fgcolor--${colorName});`;
+  $: styleProp = `${style}; --color--list-hover: var(--color--${colorName}); --fgcolor--list-hover: var(--fgcolor--${colorName}); --card-width: ${width};`;
+
   $: cssClass = className ? `${className} ${baseClass}` : baseClass;
 
   function toggleSave(evt: CustomEvent<any>): void {
@@ -82,11 +84,11 @@
         </div>
       {/if}
       {#if media}
-        <div class="card-media {media.className}">
+        <div class="card-media {media.className ?? ''}">
           {#if update}
             <Badge
               className="margin-s position-absolute padding-none padding-s--r card--shadow bg--black fontsize-small"
-              style="bottom: 5px;  left: 5px;"
+              style="bottom: 5px; left: 5px;"
             >
               <Icon
                 name="lightning"
