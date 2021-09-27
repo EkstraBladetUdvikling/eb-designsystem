@@ -1,6 +1,9 @@
+:root {
+  --icon-size: 14px;
+}
 .icon-svg {
-  width: 14px;
-  height: 14px;
+  width: var(--icon-size);
+  height: var(--icon-size);
 
   fill: currentColor;
 }

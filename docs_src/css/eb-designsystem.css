@@ -1941,8 +1941,20 @@ a.card-mode:focus .card-inner {
   height: 84px;
 }
 
+:root {
+  --icon-size: 14px;
+}
+
 .icon-svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+
   fill: currentColor;
+}
+
+.icon-svg--small {
+  width: 12px;
+  height: 12px;
 }
 
 .loader .bounce {

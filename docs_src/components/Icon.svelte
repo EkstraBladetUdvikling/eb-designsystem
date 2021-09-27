@@ -5,7 +5,7 @@
   import { iconnames } from '../../dist/components/icon/svgs/iconnames';
   import { graphicnames } from '../../dist/components/icon/graphics/graphicnames';
 
-  let size = 34;
+  let size = 14;
 
   const decrement = () => {
     return --size;
@@ -79,11 +79,11 @@
 </p>
 <div class="flex flex-row flex-justify--center flex-align--center">
   <Button className="margin-m--r" type="cancel" on:click={decrement}>
-    <Icon name="angleleft" style="width: 18px; height: 18px;" />
+    <Icon name="angleleft" width={18} />
   </Button>
   <p>Size: {size}px</p>
   <Button className="margin-m--l" type="cancel" on:click={increment}>
-    <Icon name="angleright" style="width: 18px; height: 18px;" />
+    <Icon name="angleright" width={18} />
   </Button>
 </div>
 <div class="flex flex-wrap--wrap">
@@ -101,7 +101,7 @@
   </Prism>
 {:else}
   <Prism language="html">
-    {`<svg viewBox="0 0 50 50">
+    {`<svg class="icon-svg" viewBox="0 0 50 50">
   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_name"></use>
 </svg>`}
   </Prism>
@@ -125,7 +125,7 @@
   </Prism>
 {:else}
   <Prism language="html">
-    {`<svg viewBox="0 0 50 50">
+    {`<svg class="icon-svg" viewBox="0 0 50 50">
   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_name"></use>
 </svg>`}
   </Prism>

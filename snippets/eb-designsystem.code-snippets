@@ -343,7 +343,14 @@
     "body": [
       "icon-svg"
     ],
-    "description": "{\n fill: currentColor;\n }"
+    "description": "{\n width: 14px;\nheight: 14px;\nfill: currentColor;\n }"
+  },
+  "designsystem icon svg small": {
+    "prefix": "ds-icon-svg--small",
+    "body": [
+      "icon-svg--small"
+    ],
+    "description": "NB! This should only be used with icon-svg\n{\n width: 12px;\nheight: 12px;\n }"
   },
   "designsystem tabs": {
     "prefix": "ds-tabs",
@@ -406,7 +413,7 @@
     "body": [
       "tooltip"
     ],
-    "description": "{\n position: relative;\ndisplay: inline-block;\nheight: var(--tooltip-height);\n }"
+    "description": "{\n position: relative;\ndisplay: inline-block;\nheight: 28px;\n }"
   },
   "designsystem tooltip input": {
     "prefix": "ds-tooltip-input",
@@ -427,14 +434,14 @@
     "body": [
       "tooltip-off"
     ],
-    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\nbox-sizing: border-box;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\n }"
+    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\nbox-sizing: border-box;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\nheight: 28px;\n }"
   },
   "designsystem tooltip on": {
     "prefix": "ds-tooltip-on",
     "body": [
       "tooltip-on"
     ],
-    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\nbox-sizing: border-box;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\n }"
+    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\nbox-sizing: border-box;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\nheight: 28px;\n }"
   },
   "designsystem screen reader text": {
     "prefix": "ds-screen-reader-text",

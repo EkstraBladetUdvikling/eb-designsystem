@@ -15196,9 +15196,9 @@ var app = (function () {
     	validate_slots('Icon', slots, []);
     	let { className = undefined } = $$props;
     	let { name = undefined } = $$props;
-    	let { width = 36 } = $$props;
+    	let { width = 14 } = $$props;
     	let { style = undefined } = $$props;
-    	const defaultStyle = `width: ${width}px; height: ${width}px;`;
+    	const defaultStyle = `--icon-size: ${width}px;`;
     	let baseClass = className ? `icon-svg ${className}` : 'icon-svg';
     	const writable_props = ['className', 'name', 'width', 'style'];
 
@@ -17348,7 +17348,7 @@ var app = (function () {
 
     	let icon_props = {
     		className: "margin-s--rl",
-    		width: "20",
+    		width: "30",
     		style: "cursor: pointer;"
     	};
 
@@ -46032,9 +46032,9 @@ for (const accordion of accordions) {
     	validate_slots('Icon', slots, []);
     	let { className = undefined } = $$props;
     	let { name = undefined } = $$props;
-    	let { width = 36 } = $$props;
+    	let { width = 14 } = $$props;
     	let { style = undefined } = $$props;
-    	const defaultStyle = `width: ${width}px; height: ${width}px;`;
+    	const defaultStyle = `--icon-size: ${width}px;`;
     	let baseClass = className ? `icon-svg ${className}` : 'icon-svg';
     	const writable_props = ['className', 'name', 'width', 'style'];
 
@@ -54677,10 +54677,7 @@ for (const accordion of accordions) {
     	let current;
 
     	icon = new dist.Icon({
-    			props: {
-    				name: "angleleft",
-    				style: "width: 18px; height: 18px;"
-    			},
+    			props: { name: "angleleft", width: 18 },
     			$$inline: true
     		});
 
@@ -54724,10 +54721,7 @@ for (const accordion of accordions) {
     	let current;
 
     	icon = new dist.Icon({
-    			props: {
-    				name: "angleright",
-    				style: "width: 18px; height: 18px;"
-    			},
+    			props: { name: "angleright", width: 18 },
     			$$inline: true
     		});
 
@@ -54791,7 +54785,7 @@ for (const accordion of accordions) {
     			small = element("small");
     			t1 = text(t1_value);
     			t2 = space();
-    			add_location(small, file$r, 88, 6, 2479);
+    			add_location(small, file$r, 88, 6, 2431);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -54986,7 +54980,7 @@ for (const accordion of accordions) {
 
     // (99:2) <Prism language="html">
     function create_default_slot_4$9(ctx) {
-    	let t_value = `<svg viewBox="0 0 50 50">
+    	let t_value = `<svg class="icon-svg" viewBox="0 0 50 50">
   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_name"></use>
 </svg>` + "";
 
@@ -55071,7 +55065,7 @@ for (const accordion of accordions) {
     			small = element("small");
     			t1 = text(t1_value);
     			t2 = space();
-    			add_location(small, file$r, 112, 6, 3150);
+    			add_location(small, file$r, 112, 6, 3119);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -55262,7 +55256,7 @@ for (const accordion of accordions) {
 
     // (123:2) <Prism language="html">
     function create_default_slot_1$g(ctx) {
-    	let t_value = `<svg viewBox="0 0 50 50">
+    	let t_value = `<svg class="icon-svg" viewBox="0 0 50 50">
   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_name"></use>
 </svg>` + "";
 
@@ -55502,15 +55496,15 @@ for (const accordion of accordions) {
     			add_location(b0, file$r, 72, 2, 1803);
     			add_location(b1, file$r, 73, 5, 1821);
     			add_location(p1, file$r, 70, 0, 1685);
-    			add_location(p2, file$r, 79, 2, 2065);
+    			add_location(p2, file$r, 79, 2, 2041);
     			attr_dev(div0, "class", "flex flex-row flex-justify--center flex-align--center");
     			add_location(div0, file$r, 75, 0, 1848);
     			attr_dev(div1, "class", "flex flex-wrap--wrap");
-    			add_location(div1, file$r, 84, 0, 2242);
-    			add_location(h31, file$r, 105, 0, 2807);
-    			add_location(p3, file$r, 106, 0, 2825);
+    			add_location(div1, file$r, 84, 0, 2194);
+    			add_location(h31, file$r, 105, 0, 2776);
+    			add_location(p3, file$r, 106, 0, 2794);
     			attr_dev(div2, "class", "flex flex-wrap--wrap");
-    			add_location(div2, file$r, 108, 0, 2918);
+    			add_location(div2, file$r, 108, 0, 2887);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -55793,7 +55787,7 @@ for (const accordion of accordions) {
     	component_subscribe($$self, sourceType, $$value => $$invalidate(1, $sourceType = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Icon', slots, []);
-    	let size = 34;
+    	let size = 14;
 
     	const decrement = () => {
     		return $$invalidate(0, --size);
