@@ -1957,6 +1957,11 @@ a.card-mode:focus .card-inner {
   height: 12px;
 }
 
+.icon-svg.figure-caption-pin {
+  width: 34px;
+  height: 16px;
+}
+
 .loader .bounce {
   animation: sk-bouncedelay 1.4s infinite ease-in-out both;
 }

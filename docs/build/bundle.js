@@ -48221,7 +48221,7 @@ for (const accordion of accordions) {
 
     	let icon_props = {
     		className: "margin-s--rl",
-    		width: "20",
+    		width: "30",
     		style: "cursor: pointer;"
     	};
 
