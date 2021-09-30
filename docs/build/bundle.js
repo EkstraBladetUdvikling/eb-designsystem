@@ -46192,7 +46192,7 @@ for (const accordion of accordions) {
     			add_location(span, file$J, 16, 8, 621);
     			attr_dev(div0, "class", "accordion-header flex flex-justify--between flex-align--center padding-m");
     			add_location(div0, file$J, 10, 6, 417);
-    			attr_dev(div1, "class", "accordion-body padding-m padding-l--rl fontsize-medium");
+    			attr_dev(div1, "class", "accordion-body padding-m padding-l--rl");
     			add_location(div1, file$J, 19, 6, 750);
     			attr_dev(div2, "class", "accordion-tab margin-m--b");
     			toggle_class(div2, "accordion-expanded", /*$activeTab*/ ctx[3] === /*i*/ ctx[7]);
