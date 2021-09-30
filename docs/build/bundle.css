@@ -890,7 +890,7 @@ custom media queries is the only allowed media queries
 }
 
 .accordion-body p {
-  font-size: inherit;
+  font-size: var(--fs-medium);
 }
 
 .accordion-body p:first-child {
@@ -1955,6 +1955,11 @@ a.card-mode:focus .card-inner {
 .icon-svg--small {
   width: 12px;
   height: 12px;
+}
+
+.icon-svg.figure-caption-pin {
+  width: 34px;
+  height: 16px;
 }
 
 .loader .bounce {

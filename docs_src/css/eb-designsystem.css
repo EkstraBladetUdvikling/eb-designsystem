@@ -890,7 +890,7 @@ custom media queries is the only allowed media queries
 }
 
 .accordion-body p {
-  font-size: inherit;
+  font-size: var(--fs-medium);
 }
 
 .accordion-body p:first-child {
