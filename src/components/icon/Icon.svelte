@@ -19,7 +19,5 @@
 </script>
 
 {#if name}
-  <div on:click>
-    <svelte:component this={IconSVGS[name.replace('-', '')]} {style} class={baseClass} />
-  </div>
+  <svelte:component this={IconSVGS[name.replace('-', '')]} {style} class={baseClass} />
 {/if}
