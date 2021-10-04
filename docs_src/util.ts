@@ -1,35 +1,10 @@
 import { colorNames } from '@ekstra-bladet/eb-colors';
 
-import { LoremIpsum } from 'lorem-ipsum';
-
 import type { IArticleCardProps } from '../src/components/articlecard/ArticleCard';
 
-export function rdmParagraphs(num = 3) {
-  const lorem = new LoremIpsum(
-    {
-      sentencesPerParagraph: {
-        max: 8,
-        min: 4,
-      },
-      wordsPerSentence: {
-        max: 12,
-        min: 4,
-      },
-    },
-    'html'
-  );
-
-  return lorem.generateParagraphs(num);
-}
+import { getSentence, getWord } from './lipsum';
 
 export function rdmArticleData(mediaWidth = 640, mediaHeight = 360): IArticleCardProps {
-  const lorem = new LoremIpsum({
-    wordsPerSentence: {
-      max: 12,
-      min: 4,
-    },
-  });
-
   const colorNamesForUse = [
     colorNames.breaking,
     colorNames.bruger,
@@ -53,11 +28,11 @@ export function rdmArticleData(mediaWidth = 640, mediaHeight = 360): IArticleCar
     premium: Math.random() < 0.3,
     published: randomDate().toString(),
     saved: Math.random() < 0.5,
-    section: lorem.generateWords(1),
-    title: lorem.generateSentences(1),
+    section: getWord(),
+    title: getSentence(),
     truncateTitle: false,
     update: Math.random() < 0.5,
-    url: '#',
+    url: '',
   };
 
   return article;

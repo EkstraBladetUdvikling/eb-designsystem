@@ -1,0 +1,27 @@
+.articlelist--columns {
+  display: grid;
+  grid-template-columns: repeat(var(--articlelist-columns), 1fr);
+  gap: var(--articlelist-gap, 10px);
+}
+
+@media (--desktop) {
+  .articlelist--columns[data-items="1"] .card-inner {
+    align-items: stretch;
+    flex-direction: row;
+  }
+
+  .articlelist--columns[data-items="1"] .card-inner > div {
+    width: 50%;
+  }
+}
+
+@media (--smartphone) {
+  .articlelist--columns[data-items="1"] .card-mode--article {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.articlelist--columns .card-mode--article {
+  width: 100%;
+}
