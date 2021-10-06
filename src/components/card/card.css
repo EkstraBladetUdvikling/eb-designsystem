@@ -47,8 +47,6 @@ a.card:focus {
 
 .card-media {
   position: relative;
-
-  min-height: 1px; /* IE11 fix */
 }
 
 .card-image {
