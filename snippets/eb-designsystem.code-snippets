@@ -446,14 +446,14 @@
     "body": [
       "tooltip-off"
     ],
-    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\nbox-sizing: border-box;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\nheight: 28px;\n }"
+    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-sizing: border-box;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\nheight: 28px;\n }"
   },
   "designsystem tooltip on": {
     "prefix": "ds-tooltip-on",
     "body": [
       "tooltip-on"
     ],
-    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\nbox-sizing: border-box;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\nheight: 28px;\n }"
+    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-sizing: border-box;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\nheight: 28px;\n }\n {\n box-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\n }"
   },
   "designsystem screen reader text": {
     "prefix": "ds-screen-reader-text",

@@ -55,6 +55,7 @@ let iconTypes = `
 
 let iconComponents = [];
 let iconComponentNames = [];
+let iconComponentNamesHTML = [];
 
 iconNames.forEach((svgname, idx) => {
   const exportName = svgname.replace(/-/g, '');
@@ -68,6 +69,7 @@ iconNames.forEach((svgname, idx) => {
 
   // Handle name list
   iconComponentNames.push(`'${exportName}'`);
+  iconComponentNamesHTML.push(`'${svgname}'`);
 });
 
 let graphicTypes = `
@@ -75,6 +77,7 @@ let graphicTypes = `
 `;
 let graphicComponents = [];
 let graphicComponentNames = [];
+let graphicComponentNamesHTML = [];
 
 graphicNames.forEach((gfxName, idx) => {
   // Handle Types
@@ -87,6 +90,7 @@ graphicNames.forEach((gfxName, idx) => {
 
   // Handle name list
   graphicComponentNames.push(`'${exportName}'`);
+  graphicComponentNamesHTML.push(`'${gfxName}'`);
 });
 
 const definitionFile = `declare module 'Icon.svelte' {
@@ -110,6 +114,7 @@ fs.writeFileSync(
   `
   import type { IconTypes } from 'Icon.svelte';
   export const iconnames: IconTypes[] = [${iconComponentNames.join(',')}];
+  export const iconnameshtml: string[] = [${iconComponentNamesHTML.join(',')}];
   `
 );
 
@@ -117,5 +122,7 @@ fs.writeFileSync(
   `./src/components/icon/graphics/graphicnames.ts`,
   `
   import type { GraphicTypes } from 'Icon.svelte';
-  export const graphicnames: GraphicTypes[] = [${graphicComponentNames.join(',')}];`
+  export const graphicnames: GraphicTypes[] = [${graphicComponentNames.join(',')}];
+  export const graphicnameshtml: string[] = [${graphicComponentNamesHTML.join(',')}];
+  `
 );

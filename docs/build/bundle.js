@@ -16018,8 +16018,8 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block0 = /*$$slots*/ ctx[4].header && create_if_block_4$8(ctx);
-    	let if_block1 = /*$$slots*/ ctx[4].media && create_if_block_3$8(ctx);
+    	let if_block0 = /*$$slots*/ ctx[4].header && create_if_block_4$9(ctx);
+    	let if_block1 = /*$$slots*/ ctx[4].media && create_if_block_3$9(ctx);
     	const default_slot_template = /*#slots*/ ctx[7].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[6], null);
     	let if_block2 = /*$$slots*/ ctx[4].content && create_if_block_2$b(ctx);
@@ -16084,7 +16084,7 @@ var app = (function () {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_4$8(ctx);
+    					if_block0 = create_if_block_4$9(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(a, t0);
@@ -16107,7 +16107,7 @@ var app = (function () {
     						transition_in(if_block1, 1);
     					}
     				} else {
-    					if_block1 = create_if_block_3$8(ctx);
+    					if_block1 = create_if_block_3$9(ctx);
     					if_block1.c();
     					transition_in(if_block1, 1);
     					if_block1.m(a, t1);
@@ -16491,7 +16491,7 @@ var app = (function () {
     }
 
     // (16:4) {#if $$slots.header}
-    function create_if_block_4$8(ctx) {
+    function create_if_block_4$9(ctx) {
     	let current;
     	const header_slot_template = /*#slots*/ ctx[7].header;
     	const header_slot = create_slot(header_slot_template, ctx, /*$$scope*/ ctx[6], get_header_slot_context$1);
@@ -16539,7 +16539,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_4$8.name,
+    		id: create_if_block_4$9.name,
     		type: "if",
     		source: "(16:4) {#if $$slots.header}",
     		ctx
@@ -16549,7 +16549,7 @@ var app = (function () {
     }
 
     // (19:4) {#if $$slots.media}
-    function create_if_block_3$8(ctx) {
+    function create_if_block_3$9(ctx) {
     	let current;
     	const media_slot_template = /*#slots*/ ctx[7].media;
     	const media_slot = create_slot(media_slot_template, ctx, /*$$scope*/ ctx[6], get_media_slot_context$1);
@@ -16597,7 +16597,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_3$8.name,
+    		id: create_if_block_3$9.name,
     		type: "if",
     		source: "(19:4) {#if $$slots.media}",
     		ctx
@@ -17926,7 +17926,7 @@ var app = (function () {
     }
 
     // (93:10) {#if saved !== undefined}
-    function create_if_block_4$7(ctx) {
+    function create_if_block_4$8(ctx) {
     	let toggler;
     	let current;
 
@@ -17979,7 +17979,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_4$7.name,
+    		id: create_if_block_4$8.name,
     		type: "if",
     		source: "(93:10) {#if saved !== undefined}",
     		ctx
@@ -18235,7 +18235,7 @@ var app = (function () {
     	let div;
     	let t;
     	let current;
-    	let if_block0 = /*section*/ ctx[9] && create_if_block_3$7(ctx);
+    	let if_block0 = /*section*/ ctx[9] && create_if_block_3$8(ctx);
     	let if_block1 = /*published*/ ctx[7] && create_if_block_2$a(ctx);
 
     	const block = {
@@ -18263,7 +18263,7 @@ var app = (function () {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_3$7(ctx);
+    					if_block0 = create_if_block_3$8(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(div, t);
@@ -18331,7 +18331,7 @@ var app = (function () {
     }
 
     // (113:14) {#if section}
-    function create_if_block_3$7(ctx) {
+    function create_if_block_3$8(ctx) {
     	let div;
     	let span1;
     	let icon;
@@ -18389,7 +18389,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_3$7.name,
+    		id: create_if_block_3$8.name,
     		type: "if",
     		source: "(113:14) {#if section}",
     		ctx
@@ -18480,7 +18480,7 @@ var app = (function () {
     	let if_block0 = /*loading*/ ctx[1] && create_if_block_8$2(ctx);
     	let if_block1 = /*media*/ ctx[5] && create_if_block_6$2(ctx);
     	let if_block2 = /*premium*/ ctx[6] && create_if_block_5$4(ctx);
-    	let if_block3 = /*saved*/ ctx[8] !== undefined && create_if_block_4$7(ctx);
+    	let if_block3 = /*saved*/ ctx[8] !== undefined && create_if_block_4$8(ctx);
     	let if_block4 = (/*section*/ ctx[9] || /*published*/ ctx[7]) && create_if_block_1$e(ctx);
 
     	const block = {
@@ -18598,7 +18598,7 @@ var app = (function () {
     						transition_in(if_block3, 1);
     					}
     				} else {
-    					if_block3 = create_if_block_4$7(ctx);
+    					if_block3 = create_if_block_4$8(ctx);
     					if_block3.c();
     					transition_in(if_block3, 1);
     					if_block3.m(div1, t3);
@@ -26980,7 +26980,7 @@ for (const accordion of accordions) {
     const file$2g = "docs_src/components/Badge.svelte";
 
     // (11:0) {#if $sourceType === 'svelte'}
-    function create_if_block_4$6(ctx) {
+    function create_if_block_4$7(ctx) {
     	let prism;
     	let t0;
     	let table;
@@ -27240,7 +27240,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_4$6.name,
+    		id: create_if_block_4$7.name,
     		type: "if",
     		source: "(11:0) {#if $sourceType === 'svelte'}",
     		ctx
@@ -27306,7 +27306,7 @@ for (const accordion of accordions) {
     }
 
     // (70:0) {:else}
-    function create_else_block_3$4(ctx) {
+    function create_else_block_3$5(ctx) {
     	let prism;
     	let current;
 
@@ -27343,7 +27343,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_3$4.name,
+    		id: create_else_block_3$5.name,
     		type: "else",
     		source: "(70:0) {:else}",
     		ctx
@@ -27353,7 +27353,7 @@ for (const accordion of accordions) {
     }
 
     // (66:0) {#if $sourceType === 'svelte'}
-    function create_if_block_3$6(ctx) {
+    function create_if_block_3$7(ctx) {
     	let prism;
     	let current;
 
@@ -27390,7 +27390,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_3$6.name,
+    		id: create_if_block_3$7.name,
     		type: "if",
     		source: "(66:0) {#if $sourceType === 'svelte'}",
     		ctx
@@ -27566,7 +27566,7 @@ for (const accordion of accordions) {
     }
 
     // (92:0) {:else}
-    function create_else_block_2$4(ctx) {
+    function create_else_block_2$5(ctx) {
     	let prism;
     	let current;
 
@@ -27603,7 +27603,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_2$4.name,
+    		id: create_else_block_2$5.name,
     		type: "else",
     		source: "(92:0) {:else}",
     		ctx
@@ -28236,7 +28236,7 @@ for (const accordion of accordions) {
     	let if_block4;
     	let if_block4_anchor;
     	let current;
-    	let if_block0 = /*$sourceType*/ ctx[0] === 'svelte' && create_if_block_4$6(ctx);
+    	let if_block0 = /*$sourceType*/ ctx[0] === 'svelte' && create_if_block_4$7(ctx);
 
     	badge0 = new Badge$2({
     			props: {
@@ -28246,7 +28246,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	const if_block_creators = [create_if_block_3$6, create_else_block_3$4];
+    	const if_block_creators = [create_if_block_3$7, create_else_block_3$5];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -28297,7 +28297,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	const if_block_creators_1 = [create_if_block_2$9, create_else_block_2$4];
+    	const if_block_creators_1 = [create_if_block_2$9, create_else_block_2$5];
     	const if_blocks_1 = [];
 
     	function select_block_type_1(ctx, dirty) {
@@ -28491,7 +28491,7 @@ for (const accordion of accordions) {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_4$6(ctx);
+    					if_block0 = create_if_block_4$7(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(t4.parentNode, t4);
@@ -29197,7 +29197,7 @@ for (const accordion of accordions) {
     }
 
     // (67:0) {#if $sourceType === 'svelte'}
-    function create_if_block_4$5(ctx) {
+    function create_if_block_4$6(ctx) {
     	let prism;
     	let current;
 
@@ -29234,7 +29234,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_4$5.name,
+    		id: create_if_block_4$6.name,
     		type: "if",
     		source: "(67:0) {#if $sourceType === 'svelte'}",
     		ctx
@@ -29386,7 +29386,7 @@ for (const accordion of accordions) {
     }
 
     // (93:0) {:else}
-    function create_else_block_3$3(ctx) {
+    function create_else_block_3$4(ctx) {
     	let prism;
     	let current;
 
@@ -29423,7 +29423,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_3$3.name,
+    		id: create_else_block_3$4.name,
     		type: "else",
     		source: "(93:0) {:else}",
     		ctx
@@ -29433,7 +29433,7 @@ for (const accordion of accordions) {
     }
 
     // (85:0) {#if $sourceType === 'svelte'}
-    function create_if_block_3$5(ctx) {
+    function create_if_block_3$6(ctx) {
     	let prism;
     	let current;
 
@@ -29470,7 +29470,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_3$5.name,
+    		id: create_if_block_3$6.name,
     		type: "if",
     		source: "(85:0) {#if $sourceType === 'svelte'}",
     		ctx
@@ -29602,7 +29602,7 @@ for (const accordion of accordions) {
     }
 
     // (114:0) {:else}
-    function create_else_block_2$3(ctx) {
+    function create_else_block_2$4(ctx) {
     	let prism;
     	let current;
 
@@ -29639,7 +29639,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_2$3.name,
+    		id: create_else_block_2$4.name,
     		type: "else",
     		source: "(114:0) {:else}",
     		ctx
@@ -30383,7 +30383,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	const if_block_creators = [create_if_block_4$5, create_else_block_4$1];
+    	const if_block_creators = [create_if_block_4$6, create_else_block_4$1];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -30424,7 +30424,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	const if_block_creators_1 = [create_if_block_3$5, create_else_block_3$3];
+    	const if_block_creators_1 = [create_if_block_3$6, create_else_block_3$4];
     	const if_blocks_1 = [];
 
     	function select_block_type_1(ctx, dirty) {
@@ -30455,7 +30455,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	const if_block_creators_2 = [create_if_block_2$8, create_else_block_2$3];
+    	const if_block_creators_2 = [create_if_block_2$8, create_else_block_2$4];
     	const if_blocks_2 = [];
 
     	function select_block_type_2(ctx, dirty) {
@@ -31046,7 +31046,7 @@ for (const accordion of accordions) {
     const file$2e = "docs_src/components/ButtonGroup.svelte";
 
     // (9:0) {#if $sourceType === 'svelte'}
-    function create_if_block_4$4(ctx) {
+    function create_if_block_4$5(ctx) {
     	let prism;
     	let t0;
     	let table;
@@ -31341,7 +31341,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_4$4.name,
+    		id: create_if_block_4$5.name,
     		type: "if",
     		source: "(9:0) {#if $sourceType === 'svelte'}",
     		ctx
@@ -31566,7 +31566,7 @@ for (const accordion of accordions) {
     }
 
     // (81:0) {:else}
-    function create_else_block_3$2(ctx) {
+    function create_else_block_3$3(ctx) {
     	let prism;
     	let current;
 
@@ -31603,7 +31603,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_3$2.name,
+    		id: create_else_block_3$3.name,
     		type: "else",
     		source: "(81:0) {:else}",
     		ctx
@@ -31613,7 +31613,7 @@ for (const accordion of accordions) {
     }
 
     // (73:0) {#if $sourceType === 'svelte'}
-    function create_if_block_3$4(ctx) {
+    function create_if_block_3$5(ctx) {
     	let prism;
     	let current;
 
@@ -31650,7 +31650,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_3$4.name,
+    		id: create_if_block_3$5.name,
     		type: "if",
     		source: "(73:0) {#if $sourceType === 'svelte'}",
     		ctx
@@ -32472,7 +32472,7 @@ for (const accordion of accordions) {
     }
 
     // (124:0) {:else}
-    function create_else_block_2$2(ctx) {
+    function create_else_block_2$3(ctx) {
     	let prism;
     	let current;
 
@@ -32509,7 +32509,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_2$2.name,
+    		id: create_else_block_2$3.name,
     		type: "else",
     		source: "(124:0) {:else}",
     		ctx
@@ -33363,7 +33363,7 @@ for (const accordion of accordions) {
     	let if_block4;
     	let if_block4_anchor;
     	let current;
-    	let if_block0 = /*$sourceType*/ ctx[1] === 'svelte' && create_if_block_4$4(ctx);
+    	let if_block0 = /*$sourceType*/ ctx[1] === 'svelte' && create_if_block_4$5(ctx);
 
     	function buttongroup0_selectedId_binding(value) {
     		/*buttongroup0_selectedId_binding*/ ctx[3](value);
@@ -33385,7 +33385,7 @@ for (const accordion of accordions) {
     		});
 
     	binding_callbacks.push(() => bind(buttongroup0, 'selectedId', buttongroup0_selectedId_binding));
-    	const if_block_creators = [create_if_block_3$4, create_else_block_3$2];
+    	const if_block_creators = [create_if_block_3$5, create_else_block_3$3];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -33436,7 +33436,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	const if_block_creators_1 = [create_if_block_2$7, create_else_block_2$2];
+    	const if_block_creators_1 = [create_if_block_2$7, create_else_block_2$3];
     	const if_blocks_1 = [];
 
     	function select_block_type_1(ctx, dirty) {
@@ -33595,7 +33595,7 @@ for (const accordion of accordions) {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_4$4(ctx);
+    					if_block0 = create_if_block_4$5(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(t2.parentNode, t2);
@@ -35062,7 +35062,7 @@ for (const accordion of accordions) {
     }
 
     // (20:0) {#if $sourceType === 'svelte'}
-    function create_if_block_4$3(ctx) {
+    function create_if_block_4$4(ctx) {
     	let prism;
     	let current;
 
@@ -35099,7 +35099,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_4$3.name,
+    		id: create_if_block_4$4.name,
     		type: "if",
     		source: "(20:0) {#if $sourceType === 'svelte'}",
     		ctx
@@ -35170,7 +35170,7 @@ for (const accordion of accordions) {
     }
 
     // (40:0) {:else}
-    function create_else_block_3$1(ctx) {
+    function create_else_block_3$2(ctx) {
     	let prism;
     	let current;
 
@@ -35207,7 +35207,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_3$1.name,
+    		id: create_else_block_3$2.name,
     		type: "else",
     		source: "(40:0) {:else}",
     		ctx
@@ -35217,7 +35217,7 @@ for (const accordion of accordions) {
     }
 
     // (36:0) {#if $sourceType === 'svelte'}
-    function create_if_block_3$3(ctx) {
+    function create_if_block_3$4(ctx) {
     	let prism;
     	let current;
 
@@ -35254,7 +35254,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_3$3.name,
+    		id: create_if_block_3$4.name,
     		type: "if",
     		source: "(36:0) {#if $sourceType === 'svelte'}",
     		ctx
@@ -35365,7 +35365,7 @@ for (const accordion of accordions) {
     }
 
     // (60:0) {:else}
-    function create_else_block_2$1(ctx) {
+    function create_else_block_2$2(ctx) {
     	let prism;
     	let current;
 
@@ -35402,7 +35402,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_2$1.name,
+    		id: create_else_block_2$2.name,
     		type: "else",
     		source: "(60:0) {:else}",
     		ctx
@@ -35900,7 +35900,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	const if_block_creators = [create_if_block_4$3, create_else_block_4];
+    	const if_block_creators = [create_if_block_4$4, create_else_block_4];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -35919,7 +35919,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	const if_block_creators_1 = [create_if_block_3$3, create_else_block_3$1];
+    	const if_block_creators_1 = [create_if_block_3$4, create_else_block_3$2];
     	const if_blocks_1 = [];
 
     	function select_block_type_1(ctx, dirty) {
@@ -35940,7 +35940,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	const if_block_creators_2 = [create_if_block_2$5, create_else_block_2$1];
+    	const if_block_creators_2 = [create_if_block_2$5, create_else_block_2$2];
     	const if_blocks_2 = [];
 
     	function select_block_type_2(ctx, dirty) {
@@ -49023,8 +49023,8 @@ for (const accordion of accordions) {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block0 = /*$$slots*/ ctx[4].header && create_if_block_4$2(ctx);
-    	let if_block1 = /*$$slots*/ ctx[4].media && create_if_block_3$2(ctx);
+    	let if_block0 = /*$$slots*/ ctx[4].header && create_if_block_4$3(ctx);
+    	let if_block1 = /*$$slots*/ ctx[4].media && create_if_block_3$3(ctx);
     	const default_slot_template = /*#slots*/ ctx[7].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[6], null);
     	let if_block2 = /*$$slots*/ ctx[4].content && create_if_block_2$4(ctx);
@@ -49089,7 +49089,7 @@ for (const accordion of accordions) {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_4$2(ctx);
+    					if_block0 = create_if_block_4$3(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(a, t0);
@@ -49112,7 +49112,7 @@ for (const accordion of accordions) {
     						transition_in(if_block1, 1);
     					}
     				} else {
-    					if_block1 = create_if_block_3$2(ctx);
+    					if_block1 = create_if_block_3$3(ctx);
     					if_block1.c();
     					transition_in(if_block1, 1);
     					if_block1.m(a, t1);
@@ -49496,7 +49496,7 @@ for (const accordion of accordions) {
     }
 
     // (16:4) {#if $$slots.header}
-    function create_if_block_4$2(ctx) {
+    function create_if_block_4$3(ctx) {
     	let current;
     	const header_slot_template = /*#slots*/ ctx[7].header;
     	const header_slot = create_slot(header_slot_template, ctx, /*$$scope*/ ctx[6], get_header_slot_context);
@@ -49544,7 +49544,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_4$2.name,
+    		id: create_if_block_4$3.name,
     		type: "if",
     		source: "(16:4) {#if $$slots.header}",
     		ctx
@@ -49554,7 +49554,7 @@ for (const accordion of accordions) {
     }
 
     // (19:4) {#if $$slots.media}
-    function create_if_block_3$2(ctx) {
+    function create_if_block_3$3(ctx) {
     	let current;
     	const media_slot_template = /*#slots*/ ctx[7].media;
     	const media_slot = create_slot(media_slot_template, ctx, /*$$scope*/ ctx[6], get_media_slot_context);
@@ -49602,7 +49602,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_3$2.name,
+    		id: create_if_block_3$3.name,
     		type: "if",
     		source: "(19:4) {#if $$slots.media}",
     		ctx
@@ -50932,7 +50932,7 @@ for (const accordion of accordions) {
     }
 
     // (93:10) {#if saved !== undefined}
-    function create_if_block_4$1(ctx) {
+    function create_if_block_4$2(ctx) {
     	let toggler;
     	let current;
 
@@ -50985,7 +50985,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_4$1.name,
+    		id: create_if_block_4$2.name,
     		type: "if",
     		source: "(93:10) {#if saved !== undefined}",
     		ctx
@@ -51241,7 +51241,7 @@ for (const accordion of accordions) {
     	let div;
     	let t;
     	let current;
-    	let if_block0 = /*section*/ ctx[9] && create_if_block_3$1(ctx);
+    	let if_block0 = /*section*/ ctx[9] && create_if_block_3$2(ctx);
     	let if_block1 = /*published*/ ctx[7] && create_if_block_2$3(ctx);
 
     	const block = {
@@ -51269,7 +51269,7 @@ for (const accordion of accordions) {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_3$1(ctx);
+    					if_block0 = create_if_block_3$2(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(div, t);
@@ -51337,7 +51337,7 @@ for (const accordion of accordions) {
     }
 
     // (113:14) {#if section}
-    function create_if_block_3$1(ctx) {
+    function create_if_block_3$2(ctx) {
     	let div;
     	let span1;
     	let icon;
@@ -51395,7 +51395,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_3$1.name,
+    		id: create_if_block_3$2.name,
     		type: "if",
     		source: "(113:14) {#if section}",
     		ctx
@@ -51486,7 +51486,7 @@ for (const accordion of accordions) {
     	let if_block0 = /*loading*/ ctx[1] && create_if_block_8(ctx);
     	let if_block1 = /*media*/ ctx[5] && create_if_block_6(ctx);
     	let if_block2 = /*premium*/ ctx[6] && create_if_block_5(ctx);
-    	let if_block3 = /*saved*/ ctx[8] !== undefined && create_if_block_4$1(ctx);
+    	let if_block3 = /*saved*/ ctx[8] !== undefined && create_if_block_4$2(ctx);
     	let if_block4 = (/*section*/ ctx[9] || /*published*/ ctx[7]) && create_if_block_1$5(ctx);
 
     	const block = {
@@ -51604,7 +51604,7 @@ for (const accordion of accordions) {
     						transition_in(if_block3, 1);
     					}
     				} else {
-    					if_block3 = create_if_block_4$1(ctx);
+    					if_block3 = create_if_block_4$2(ctx);
     					if_block3.c();
     					transition_in(if_block3, 1);
     					if_block3.m(div1, t3);
@@ -56628,32 +56628,37 @@ for (const accordion of accordions) {
     var iconnames = {};
 
     Object.defineProperty(iconnames, "__esModule", { value: true });
-    var iconnames_1 = iconnames.iconnames = void 0;
-    iconnames_1 = iconnames.iconnames = ['angledown', 'angleleft', 'angleright', 'angleup', 'arrowdown', 'arrowleft', 'arrowright', 'arrowup', 'article', 'at', 'calendar', 'camerasolid', 'camera', 'checkcirclesolid', 'checkcircle', 'checksquaresolid', 'checksquare', 'check', 'circlenotch', 'circlesolid', 'circle', 'clock', 'cogsolid', 'cog', 'commentsolid', 'comment', 'creditcardsolid', 'creditcard', 'desktop', 'dotcircle', 'ebpluscirclesolid', 'ebplus', 'edit', 'envelope', 'exclamationcirclesolid', 'exclamationcircle', 'exclamationtrianglesolid', 'exclamationtriangle', 'expand', 'externallink', 'facebook', 'figcaptionpin', 'filtersolid', 'gallery', 'headphones', 'headset', 'hearthalfsolid', 'heartsolid', 'heart', 'history', 'infocirclesolid', 'infocircle', 'lightning', 'linkedin', 'lock', 'mappinsolid', 'medielogin', 'menubarssolid', 'menubars', 'mitebsolid', 'miteb', 'newspaper', 'phone', 'pinsolid', 'playcircle', 'questioncircle', 'rsssymbol', 'rss', 'search', 'smartphone', 'square', 'starhalfsolid', 'starsolid', 'star', 'sync', 'tablet', 'tagsolid', 'tag', 'tagssolid', 'tags', 'timescirclesolid', 'timescircle', 'times', 'toggleoff', 'toggleon', 'twitter', 'usercirclesolid', 'usercircle', 'usersolid', 'video', 'volumemutedsolid', 'volumeupsolid'];
+    var iconnameshtml = iconnames.iconnameshtml = iconnames_1 = iconnames.iconnames = void 0;
+    var iconnames_1 = iconnames.iconnames = ['angledown', 'angleleft', 'angleright', 'angleup', 'arrowdown', 'arrowleft', 'arrowright', 'arrowup', 'article', 'at', 'calendar', 'camerasolid', 'camera', 'checkcirclesolid', 'checkcircle', 'checksquaresolid', 'checksquare', 'check', 'circlenotch', 'circlesolid', 'circle', 'clock', 'cogsolid', 'cog', 'commentsolid', 'comment', 'creditcardsolid', 'creditcard', 'desktop', 'dotcircle', 'ebpluscirclesolid', 'ebplus', 'edit', 'envelope', 'exclamationcirclesolid', 'exclamationcircle', 'exclamationtrianglesolid', 'exclamationtriangle', 'expand', 'externallink', 'facebook', 'figcaptionpin', 'filtersolid', 'gallery', 'headphones', 'headset', 'hearthalfsolid', 'heartsolid', 'heart', 'history', 'infocirclesolid', 'infocircle', 'lightning', 'linkedin', 'lock', 'mappinsolid', 'medielogin', 'menubarssolid', 'menubars', 'mitebsolid', 'miteb', 'newspaper', 'phone', 'pinsolid', 'playcircle', 'questioncircle', 'rsssymbol', 'rss', 'search', 'smartphone', 'square', 'starhalfsolid', 'starsolid', 'star', 'sync', 'tablet', 'tagsolid', 'tag', 'tagssolid', 'tags', 'timescirclesolid', 'timescircle', 'times', 'toggleoff', 'toggleon', 'twitter', 'usercirclesolid', 'usercircle', 'usersolid', 'video', 'volumemutedsolid', 'volumeupsolid'];
+    iconnameshtml = iconnames.iconnameshtml = ['angle-down', 'angle-left', 'angle-right', 'angle-up', 'arrow-down', 'arrow-left', 'arrow-right', 'arrow-up', 'article', 'at', 'calendar', 'camera-solid', 'camera', 'check-circle-solid', 'check-circle', 'check-square-solid', 'check-square', 'check', 'circle-notch', 'circle-solid', 'circle', 'clock', 'cog-solid', 'cog', 'comment-solid', 'comment', 'creditcard-solid', 'creditcard', 'desktop', 'dot-circle', 'ebplus-circle-solid', 'ebplus', 'edit', 'envelope', 'exclamation-circle-solid', 'exclamation-circle', 'exclamation-triangle-solid', 'exclamation-triangle', 'expand', 'external-link', 'facebook', 'figcaption-pin', 'filter-solid', 'gallery', 'headphones', 'headset', 'heart-half-solid', 'heart-solid', 'heart', 'history', 'info-circle-solid', 'info-circle', 'lightning', 'linkedin', 'lock', 'mappin-solid', 'medielogin', 'menubars-solid', 'menubars', 'miteb-solid', 'miteb', 'newspaper', 'phone', 'pin-solid', 'play-circle', 'question-circle', 'rss-symbol', 'rss', 'search', 'smartphone', 'square', 'star-half-solid', 'star-solid', 'star', 'sync', 'tablet', 'tag-solid', 'tag', 'tags-solid', 'tags', 'times-circle-solid', 'times-circle', 'times', 'toggle-off', 'toggle-on', 'twitter', 'user-circle-solid', 'user-circle', 'user-solid', 'video', 'volume-muted-solid', 'volume-up-solid'];
 
     var graphicnames = {};
 
     Object.defineProperty(graphicnames, "__esModule", { value: true });
-    var graphicnames_1 = graphicnames.graphicnames = void 0;
-    graphicnames_1 = graphicnames.graphicnames = ['ekstrabladet'];
+    var graphicnameshtml = graphicnames.graphicnameshtml = graphicnames_1 = graphicnames.graphicnames = void 0;
+    var graphicnames_1 = graphicnames.graphicnames = ['ekstrabladet'];
+    graphicnameshtml = graphicnames.graphicnameshtml = ['ekstrabladet'];
 
     /* docs_src/components/Icon.svelte generated by Svelte v3.42.6 */
+
     const file$r = "docs_src/components/Icon.svelte";
 
     function get_each_context$5(ctx, list, i) {
     	const child_ctx = ctx.slice();
     	child_ctx[4] = list[i];
+    	child_ctx[6] = i;
     	return child_ctx;
     }
 
     function get_each_context_1$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
     	child_ctx[4] = list[i];
+    	child_ctx[6] = i;
     	return child_ctx;
     }
 
     // (17:0) {#if $sourceType === 'svelte'}
-    function create_if_block_2$2(ctx) {
+    function create_if_block_4$1(ctx) {
     	let prism;
     	let t0;
     	let table;
@@ -56817,40 +56822,40 @@ for (const accordion of accordions) {
     			t43 = space();
     			td19 = element("td");
     			td19.textContent = "Custom styling";
-    			add_location(th0, file$r, 24, 8, 645);
-    			add_location(th1, file$r, 25, 8, 672);
-    			add_location(th2, file$r, 26, 8, 694);
-    			add_location(th3, file$r, 27, 8, 725);
-    			add_location(tr0, file$r, 23, 6, 632);
-    			add_location(thead, file$r, 22, 4, 618);
-    			add_location(td0, file$r, 32, 8, 802);
-    			add_location(td1, file$r, 33, 8, 829);
-    			add_location(td2, file$r, 34, 8, 853);
-    			add_location(td3, file$r, 35, 8, 868);
-    			add_location(tr1, file$r, 31, 6, 789);
-    			add_location(td4, file$r, 38, 8, 927);
-    			add_location(td5, file$r, 39, 8, 1006);
-    			add_location(td6, file$r, 40, 8, 1033);
-    			add_location(td7, file$r, 41, 8, 1048);
-    			add_location(tr2, file$r, 37, 6, 914);
-    			add_location(td8, file$r, 44, 8, 1124);
-    			add_location(td9, file$r, 45, 8, 1146);
-    			add_location(td10, file$r, 46, 8, 1169);
-    			add_location(td11, file$r, 47, 8, 1190);
-    			add_location(tr3, file$r, 43, 6, 1111);
-    			add_location(td12, file$r, 50, 8, 1247);
-    			add_location(td13, file$r, 51, 8, 1270);
-    			add_location(td14, file$r, 52, 8, 1294);
-    			add_location(td15, file$r, 53, 8, 1314);
-    			add_location(tr4, file$r, 49, 6, 1234);
-    			add_location(td16, file$r, 56, 8, 1386);
-    			add_location(td17, file$r, 57, 8, 1409);
-    			add_location(td18, file$r, 58, 8, 1433);
-    			add_location(td19, file$r, 59, 8, 1448);
-    			add_location(tr5, file$r, 55, 6, 1373);
-    			add_location(tbody, file$r, 30, 4, 775);
+    			add_location(th0, file$r, 24, 8, 678);
+    			add_location(th1, file$r, 25, 8, 705);
+    			add_location(th2, file$r, 26, 8, 727);
+    			add_location(th3, file$r, 27, 8, 758);
+    			add_location(tr0, file$r, 23, 6, 665);
+    			add_location(thead, file$r, 22, 4, 651);
+    			add_location(td0, file$r, 32, 8, 835);
+    			add_location(td1, file$r, 33, 8, 862);
+    			add_location(td2, file$r, 34, 8, 886);
+    			add_location(td3, file$r, 35, 8, 901);
+    			add_location(tr1, file$r, 31, 6, 822);
+    			add_location(td4, file$r, 38, 8, 960);
+    			add_location(td5, file$r, 39, 8, 1039);
+    			add_location(td6, file$r, 40, 8, 1066);
+    			add_location(td7, file$r, 41, 8, 1081);
+    			add_location(tr2, file$r, 37, 6, 947);
+    			add_location(td8, file$r, 44, 8, 1157);
+    			add_location(td9, file$r, 45, 8, 1179);
+    			add_location(td10, file$r, 46, 8, 1202);
+    			add_location(td11, file$r, 47, 8, 1223);
+    			add_location(tr3, file$r, 43, 6, 1144);
+    			add_location(td12, file$r, 50, 8, 1280);
+    			add_location(td13, file$r, 51, 8, 1303);
+    			add_location(td14, file$r, 52, 8, 1327);
+    			add_location(td15, file$r, 53, 8, 1347);
+    			add_location(tr4, file$r, 49, 6, 1267);
+    			add_location(td16, file$r, 56, 8, 1419);
+    			add_location(td17, file$r, 57, 8, 1442);
+    			add_location(td18, file$r, 58, 8, 1466);
+    			add_location(td19, file$r, 59, 8, 1481);
+    			add_location(tr5, file$r, 55, 6, 1406);
+    			add_location(tbody, file$r, 30, 4, 808);
     			attr_dev(table, "class", "table");
-    			add_location(table, file$r, 21, 2, 592);
+    			add_location(table, file$r, 21, 2, 625);
     		},
     		m: function mount(target, anchor) {
     			mount_component(prism, target, anchor);
@@ -56936,7 +56941,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$2.name,
+    		id: create_if_block_4$1.name,
     		type: "if",
     		source: "(17:0) {#if $sourceType === 'svelte'}",
     		ctx
@@ -57089,14 +57094,77 @@ for (const accordion of accordions) {
     	return block;
     }
 
+    // (91:6) {:else}
+    function create_else_block_3$1(ctx) {
+    	let small;
+    	let t_value = iconnameshtml[/*i*/ ctx[6]] + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			small = element("small");
+    			t = text(t_value);
+    			add_location(small, file$r, 91, 8, 2550);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, small, anchor);
+    			append_dev(small, t);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(small);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block_3$1.name,
+    		type: "else",
+    		source: "(91:6) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (89:6) {#if $sourceType === 'svelte'}
+    function create_if_block_3$1(ctx) {
+    	let small;
+    	let t_value = /*name*/ ctx[4] + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			small = element("small");
+    			t = text(t_value);
+    			add_location(small, file$r, 89, 8, 2506);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, small, anchor);
+    			append_dev(small, t);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(small);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_3$1.name,
+    		type: "if",
+    		source: "(89:6) {#if $sourceType === 'svelte'}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
     // (87:4) <Card className="flex-align--center flex-justify--center margin-s padding-m">
     function create_default_slot_5$8(ctx) {
     	let icon;
     	let t0;
-    	let small;
-    	let t1_value = /*name*/ ctx[4] + "";
     	let t1;
-    	let t2;
     	let current;
 
     	icon = new dist.Icon({
@@ -57108,27 +57176,44 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
+    	function select_block_type(ctx, dirty) {
+    		if (/*$sourceType*/ ctx[1] === 'svelte') return create_if_block_3$1;
+    		return create_else_block_3$1;
+    	}
+
+    	let current_block_type = select_block_type(ctx);
+    	let if_block = current_block_type(ctx);
+
     	const block = {
     		c: function create() {
     			create_component(icon.$$.fragment);
     			t0 = space();
-    			small = element("small");
-    			t1 = text(t1_value);
-    			t2 = space();
-    			add_location(small, file$r, 88, 6, 2431);
+    			if_block.c();
+    			t1 = space();
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
     			insert_dev(target, t0, anchor);
-    			insert_dev(target, small, anchor);
-    			append_dev(small, t1);
-    			insert_dev(target, t2, anchor);
+    			if_block.m(target, anchor);
+    			insert_dev(target, t1, anchor);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
     			const icon_changes = {};
     			if (dirty & /*size*/ 1) icon_changes.style = "width: " + /*size*/ ctx[0] + "px; height: " + /*size*/ ctx[0] + "px;";
     			icon.$set(icon_changes);
+
+    			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
+    				if_block.p(ctx, dirty);
+    			} else {
+    				if_block.d(1);
+    				if_block = current_block_type(ctx);
+
+    				if (if_block) {
+    					if_block.c();
+    					if_block.m(t1.parentNode, t1);
+    				}
+    			}
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -57142,8 +57227,8 @@ for (const accordion of accordions) {
     		d: function destroy(detaching) {
     			destroy_component(icon, detaching);
     			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(small);
-    			if (detaching) detach_dev(t2);
+    			if_block.d(detaching);
+    			if (detaching) detach_dev(t1);
     		}
     	};
 
@@ -57158,7 +57243,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (86:2) {#each iconnames as name}
+    // (86:2) {#each iconnames as name, i}
     function create_each_block_1$2(ctx) {
     	let card;
     	let current;
@@ -57183,7 +57268,7 @@ for (const accordion of accordions) {
     		p: function update(ctx, dirty) {
     			const card_changes = {};
 
-    			if (dirty & /*$$scope, size*/ 513) {
+    			if (dirty & /*$$scope, $sourceType, size*/ 259) {
     				card_changes.$$scope = { dirty, ctx };
     			}
 
@@ -57207,15 +57292,15 @@ for (const accordion of accordions) {
     		block,
     		id: create_each_block_1$2.name,
     		type: "each",
-    		source: "(86:2) {#each iconnames as name}",
+    		source: "(86:2) {#each iconnames as name, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (98:0) {:else}
-    function create_else_block_1$3(ctx) {
+    // (102:0) {:else}
+    function create_else_block_2$1(ctx) {
     	let prism;
     	let current;
 
@@ -57252,17 +57337,17 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block_1$3.name,
+    		id: create_else_block_2$1.name,
     		type: "else",
-    		source: "(98:0) {:else}",
+    		source: "(102:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (94:0) {#if $sourceType === 'svelte'}
-    function create_if_block_1$4(ctx) {
+    // (98:0) {#if $sourceType === 'svelte'}
+    function create_if_block_2$2(ctx) {
     	let prism;
     	let current;
 
@@ -57299,19 +57384,19 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$4.name,
+    		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(94:0) {#if $sourceType === 'svelte'}",
+    		source: "(98:0) {#if $sourceType === 'svelte'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (99:2) <Prism language="html">
+    // (103:2) <Prism language="html">
     function create_default_slot_4$9(ctx) {
     	let t_value = `<svg class="icon-svg" viewBox="0 0 50 50">
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_name"></use>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-name"></use>
 </svg>` + "";
 
     	let t;
@@ -57333,16 +57418,16 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot_4$9.name,
     		type: "slot",
-    		source: "(99:2) <Prism language=\\\"html\\\">",
+    		source: "(103:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (95:2) <Prism language="html">
+    // (99:2) <Prism language="html">
     function create_default_slot_3$a(ctx) {
-    	let t_value = `<Icon name="icon_name" />` + "";
+    	let t_value = `<Icon name="iconname" />` + "";
     	let t;
 
     	const block = {
@@ -57362,21 +57447,84 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot_3$a.name,
     		type: "slot",
-    		source: "(95:2) <Prism language=\\\"html\\\">",
+    		source: "(99:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (111:4) <Card className="flex-align--center flex-justify--center margin-s padding-m">
+    // (119:6) {:else}
+    function create_else_block_1$3(ctx) {
+    	let small;
+    	let t_value = graphicnameshtml[/*i*/ ctx[6]] + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			small = element("small");
+    			t = text(t_value);
+    			add_location(small, file$r, 119, 8, 3347);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, small, anchor);
+    			append_dev(small, t);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(small);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block_1$3.name,
+    		type: "else",
+    		source: "(119:6) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (117:6) {#if $sourceType === 'svelte'}
+    function create_if_block_1$4(ctx) {
+    	let small;
+    	let t_value = /*name*/ ctx[4] + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			small = element("small");
+    			t = text(t_value);
+    			add_location(small, file$r, 117, 8, 3303);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, small, anchor);
+    			append_dev(small, t);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(small);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$4.name,
+    		type: "if",
+    		source: "(117:6) {#if $sourceType === 'svelte'}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (115:4) <Card className="flex-align--center flex-justify--center margin-s padding-m">
     function create_default_slot_2$f(ctx) {
     	let icon;
     	let t0;
-    	let small;
-    	let t1_value = /*name*/ ctx[4] + "";
     	let t1;
-    	let t2;
     	let current;
 
     	icon = new dist.Icon({
@@ -57388,24 +57536,41 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
+    	function select_block_type_2(ctx, dirty) {
+    		if (/*$sourceType*/ ctx[1] === 'svelte') return create_if_block_1$4;
+    		return create_else_block_1$3;
+    	}
+
+    	let current_block_type = select_block_type_2(ctx);
+    	let if_block = current_block_type(ctx);
+
     	const block = {
     		c: function create() {
     			create_component(icon.$$.fragment);
     			t0 = space();
-    			small = element("small");
-    			t1 = text(t1_value);
-    			t2 = space();
-    			add_location(small, file$r, 112, 6, 3119);
+    			if_block.c();
+    			t1 = space();
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
     			insert_dev(target, t0, anchor);
-    			insert_dev(target, small, anchor);
-    			append_dev(small, t1);
-    			insert_dev(target, t2, anchor);
+    			if_block.m(target, anchor);
+    			insert_dev(target, t1, anchor);
     			current = true;
     		},
-    		p: noop,
+    		p: function update(ctx, dirty) {
+    			if (current_block_type === (current_block_type = select_block_type_2(ctx)) && if_block) {
+    				if_block.p(ctx, dirty);
+    			} else {
+    				if_block.d(1);
+    				if_block = current_block_type(ctx);
+
+    				if (if_block) {
+    					if_block.c();
+    					if_block.m(t1.parentNode, t1);
+    				}
+    			}
+    		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(icon.$$.fragment, local);
@@ -57418,8 +57583,8 @@ for (const accordion of accordions) {
     		d: function destroy(detaching) {
     			destroy_component(icon, detaching);
     			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(small);
-    			if (detaching) detach_dev(t2);
+    			if_block.d(detaching);
+    			if (detaching) detach_dev(t1);
     		}
     	};
 
@@ -57427,14 +57592,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot_2$f.name,
     		type: "slot",
-    		source: "(111:4) <Card className=\\\"flex-align--center flex-justify--center margin-s padding-m\\\">",
+    		source: "(115:4) <Card className=\\\"flex-align--center flex-justify--center margin-s padding-m\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (110:2) {#each graphicnames as name}
+    // (114:2) {#each graphicnames as name, i}
     function create_each_block$5(ctx) {
     	let card;
     	let current;
@@ -57459,7 +57624,7 @@ for (const accordion of accordions) {
     		p: function update(ctx, dirty) {
     			const card_changes = {};
 
-    			if (dirty & /*$$scope*/ 512) {
+    			if (dirty & /*$$scope, $sourceType*/ 258) {
     				card_changes.$$scope = { dirty, ctx };
     			}
 
@@ -57483,14 +57648,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_each_block$5.name,
     		type: "each",
-    		source: "(110:2) {#each graphicnames as name}",
+    		source: "(114:2) {#each graphicnames as name, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (122:0) {:else}
+    // (130:0) {:else}
     function create_else_block$5(ctx) {
     	let prism;
     	let current;
@@ -57530,14 +57695,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_else_block$5.name,
     		type: "else",
-    		source: "(122:0) {:else}",
+    		source: "(130:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (118:0) {#if $sourceType === 'svelte'}
+    // (126:0) {#if $sourceType === 'svelte'}
     function create_if_block$5(ctx) {
     	let prism;
     	let current;
@@ -57577,17 +57742,17 @@ for (const accordion of accordions) {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(118:0) {#if $sourceType === 'svelte'}",
+    		source: "(126:0) {#if $sourceType === 'svelte'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (123:2) <Prism language="html">
+    // (131:2) <Prism language="html">
     function create_default_slot_1$g(ctx) {
     	let t_value = `<svg class="icon-svg" viewBox="0 0 50 50">
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_name"></use>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-name"></use>
 </svg>` + "";
 
     	let t;
@@ -57609,16 +57774,16 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot_1$g.name,
     		type: "slot",
-    		source: "(123:2) <Prism language=\\\"html\\\">",
+    		source: "(131:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (119:2) <Prism language="html">
+    // (127:2) <Prism language="html">
     function create_default_slot$h(ctx) {
-    	let t_value = `<Icon name="icon_name" />` + "";
+    	let t_value = `<Icon name="iconname" />` + "";
     	let t;
 
     	const block = {
@@ -57638,7 +57803,7 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot$h.name,
     		type: "slot",
-    		source: "(119:2) <Prism language=\\\"html\\\">",
+    		source: "(127:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
@@ -57687,7 +57852,7 @@ for (const accordion of accordions) {
     	let if_block2;
     	let if_block2_anchor;
     	let current;
-    	let if_block0 = /*$sourceType*/ ctx[1] === 'svelte' && create_if_block_2$2(ctx);
+    	let if_block0 = /*$sourceType*/ ctx[1] === 'svelte' && create_if_block_4$1(ctx);
 
     	button0 = new dist.Button({
     			props: {
@@ -57724,15 +57889,15 @@ for (const accordion of accordions) {
     		each_blocks_1[i] = null;
     	});
 
-    	const if_block_creators = [create_if_block_1$4, create_else_block_1$3];
+    	const if_block_creators = [create_if_block_2$2, create_else_block_2$1];
     	const if_blocks = [];
 
-    	function select_block_type(ctx, dirty) {
+    	function select_block_type_1(ctx, dirty) {
     		if (/*$sourceType*/ ctx[1] === 'svelte') return 0;
     		return 1;
     	}
 
-    	current_block_type_index = select_block_type(ctx);
+    	current_block_type_index = select_block_type_1(ctx);
     	if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
     	let each_value = graphicnames_1;
     	validate_each_argument(each_value);
@@ -57749,12 +57914,12 @@ for (const accordion of accordions) {
     	const if_block_creators_1 = [create_if_block$5, create_else_block$5];
     	const if_blocks_1 = [];
 
-    	function select_block_type_1(ctx, dirty) {
+    	function select_block_type_3(ctx, dirty) {
     		if (/*$sourceType*/ ctx[1] === 'svelte') return 0;
     		return 1;
     	}
 
-    	current_block_type_index_1 = select_block_type_1(ctx);
+    	current_block_type_index_1 = select_block_type_3(ctx);
     	if_block2 = if_blocks_1[current_block_type_index_1] = if_block_creators_1[current_block_type_index_1](ctx);
 
     	const block = {
@@ -57817,24 +57982,24 @@ for (const accordion of accordions) {
     			if_block2.c();
     			if_block2_anchor = empty();
     			attr_dev(h1, "class", "color--eb");
-    			add_location(h1, file$r, 14, 0, 422);
-    			add_location(h30, file$r, 65, 0, 1515);
-    			add_location(p0, file$r, 66, 0, 1530);
+    			add_location(h1, file$r, 14, 0, 455);
+    			add_location(h30, file$r, 65, 0, 1548);
+    			add_location(p0, file$r, 66, 0, 1563);
     			attr_dev(a, "href", "https://fontawesome.com/");
     			attr_dev(a, "target", "_blank");
-    			add_location(a, file$r, 71, 30, 1719);
-    			add_location(b0, file$r, 72, 2, 1803);
-    			add_location(b1, file$r, 73, 5, 1821);
-    			add_location(p1, file$r, 70, 0, 1685);
-    			add_location(p2, file$r, 79, 2, 2041);
+    			add_location(a, file$r, 71, 30, 1752);
+    			add_location(b0, file$r, 72, 2, 1836);
+    			add_location(b1, file$r, 73, 5, 1854);
+    			add_location(p1, file$r, 70, 0, 1718);
+    			add_location(p2, file$r, 79, 2, 2074);
     			attr_dev(div0, "class", "flex flex-row flex-justify--center flex-align--center");
-    			add_location(div0, file$r, 75, 0, 1848);
+    			add_location(div0, file$r, 75, 0, 1881);
     			attr_dev(div1, "class", "flex flex-wrap--wrap");
-    			add_location(div1, file$r, 84, 0, 2194);
-    			add_location(h31, file$r, 105, 0, 2776);
-    			add_location(p3, file$r, 106, 0, 2794);
+    			add_location(div1, file$r, 84, 0, 2227);
+    			add_location(h31, file$r, 109, 0, 2918);
+    			add_location(p3, file$r, 110, 0, 2936);
     			attr_dev(div2, "class", "flex flex-wrap--wrap");
-    			add_location(div2, file$r, 108, 0, 2887);
+    			add_location(div2, file$r, 112, 0, 3029);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -57898,7 +58063,7 @@ for (const accordion of accordions) {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_2$2(ctx);
+    					if_block0 = create_if_block_4$1(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(t2.parentNode, t2);
@@ -57915,7 +58080,7 @@ for (const accordion of accordions) {
 
     			const button0_changes = {};
 
-    			if (dirty & /*$$scope*/ 512) {
+    			if (dirty & /*$$scope*/ 256) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
@@ -57923,13 +58088,13 @@ for (const accordion of accordions) {
     			if (!current || dirty & /*size*/ 1) set_data_dev(t17, /*size*/ ctx[0]);
     			const button1_changes = {};
 
-    			if (dirty & /*$$scope*/ 512) {
+    			if (dirty & /*$$scope*/ 256) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
     			button1.$set(button1_changes);
 
-    			if (dirty & /*iconnames, size*/ 1) {
+    			if (dirty & /*iconnames, $sourceType, iconnameshtml, size*/ 3) {
     				each_value_1 = iconnames_1;
     				validate_each_argument(each_value_1);
     				let i;
@@ -57958,7 +58123,7 @@ for (const accordion of accordions) {
     			}
 
     			let previous_block_index = current_block_type_index;
-    			current_block_type_index = select_block_type(ctx);
+    			current_block_type_index = select_block_type_1(ctx);
 
     			if (current_block_type_index !== previous_block_index) {
     				group_outros();
@@ -57979,7 +58144,7 @@ for (const accordion of accordions) {
     				if_block1.m(t22.parentNode, t22);
     			}
 
-    			if (dirty & /*graphicnames*/ 0) {
+    			if (dirty & /*graphicnames, $sourceType, graphicnameshtml*/ 2) {
     				each_value = graphicnames_1;
     				validate_each_argument(each_value);
     				let i;
@@ -58008,7 +58173,7 @@ for (const accordion of accordions) {
     			}
 
     			let previous_block_index_1 = current_block_type_index_1;
-    			current_block_type_index_1 = select_block_type_1(ctx);
+    			current_block_type_index_1 = select_block_type_3(ctx);
 
     			if (current_block_type_index_1 !== previous_block_index_1) {
     				group_outros();
@@ -58141,7 +58306,9 @@ for (const accordion of accordions) {
     		Icon: dist.Icon,
     		Button: dist.Button,
     		iconnames: iconnames_1,
+    		iconnameshtml,
     		graphicnames: graphicnames_1,
+    		graphicnameshtml,
     		size,
     		decrement,
     		increment,

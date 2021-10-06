@@ -2,8 +2,8 @@
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
   import { Badge, Card, Icon, Button } from '../../dist';
-  import { iconnames } from '../../dist/components/icon/svgs/iconnames';
-  import { graphicnames } from '../../dist/components/icon/graphics/graphicnames';
+  import { iconnames, iconnameshtml } from '../../dist/components/icon/svgs/iconnames';
+  import { graphicnames, graphicnameshtml } from '../../dist/components/icon/graphics/graphicnames';
 
   let size = 14;
 
@@ -87,22 +87,26 @@
   </Button>
 </div>
 <div class="flex flex-wrap--wrap">
-  {#each iconnames as name}
+  {#each iconnames as name, i}
     <Card className="flex-align--center flex-justify--center margin-s padding-m">
       <Icon {name} className="margin-s" style="width: {size}px; height: {size}px;" />
-      <small>{name}</small>
+      {#if $sourceType === 'svelte'}
+        <small>{name}</small>
+      {:else}
+        <small>{iconnameshtml[i]}</small>
+      {/if}
     </Card>
   {/each}
 </div>
 
 {#if $sourceType === 'svelte'}
   <Prism language="html">
-    {`<Icon name="icon_name" />`}
+    {`<Icon name="iconname" />`}
   </Prism>
 {:else}
   <Prism language="html">
     {`<svg class="icon-svg" viewBox="0 0 50 50">
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_name"></use>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-name"></use>
 </svg>`}
   </Prism>
 {/if}
@@ -111,22 +115,26 @@
 <p>Graphics are capable of containing more layers i.e static colors on stroke and fill.</p>
 
 <div class="flex flex-wrap--wrap">
-  {#each graphicnames as name}
+  {#each graphicnames as name, i}
     <Card className="flex-align--center flex-justify--center margin-s padding-m">
       <Icon {name} className="margin-s" style="width: 36px; height: 36px;" />
-      <small>{name}</small>
+      {#if $sourceType === 'svelte'}
+        <small>{name}</small>
+      {:else}
+        <small>{graphicnameshtml[i]}</small>
+      {/if}
     </Card>
   {/each}
 </div>
 
 {#if $sourceType === 'svelte'}
   <Prism language="html">
-    {`<Icon name="icon_name" />`}
+    {`<Icon name="iconname" />`}
   </Prism>
 {:else}
   <Prism language="html">
     {`<svg class="icon-svg" viewBox="0 0 50 50">
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_name"></use>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-name"></use>
 </svg>`}
   </Prism>
 {/if}
