@@ -7394,16 +7394,20 @@ var app = (function () {
     	let path;
 
     	let svg_levels = [
-    		{ "aria-hidden": "true" },
+    		{ version: "1.1" },
+    		{ id: "Lag_1" },
     		{ focusable: "false" },
-    		{ "data-prefix": "fal" },
-    		{ "data-icon": "dot-circle" },
-    		{
-    			class: "svg-inline--fa fa-dot-circle fa-w-16"
-    		},
-    		{ role: "img" },
     		{ xmlns: "http://www.w3.org/2000/svg" },
+    		{
+    			"xmlns:xlink": "http://www.w3.org/1999/xlink"
+    		},
+    		{ x: "0px" },
+    		{ y: "0px" },
     		{ viewBox: "0 0 512 512" },
+    		{
+    			style: "enable-background:new 0 0 512 512;"
+    		},
+    		{ "xml:space": "preserve" },
     		/*$$props*/ ctx[0]
     	];
 
@@ -7417,9 +7421,8 @@ var app = (function () {
     		c: function create() {
     			svg = svg_element("svg");
     			path = svg_element("path");
-    			attr_dev(path, "fill", "currentColor");
-    			attr_dev(path, "d", "M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.663 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.663 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm0-296c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80zm0 128c-26.467 0-48-21.533-48-48s21.533-48 48-48 48 21.533 48 48-21.533 48-48 48z");
-    			add_location(path, file$3C, 0, 210, 210);
+    			attr_dev(path, "d", "M256,8C119,8,8,119,8,256s111,248,248,248s248-111,248-248S393,8,256,8z M256,472c-118.7,0-216-96.1-216-216\n\tc0-118.7,96.1-216,216-216c118.7,0,216,96.1,216,216C472,374.7,375.9,472,256,472z M256,176c-44.2,0-80,35.8-80,80s35.8,80,80,80\n\ts80-35.8,80-80S300.2,176,256,176z");
+    			add_location(path, file$3C, 2, 0, 245);
     			set_svg_attributes(svg, svg_data);
     			add_location(svg, file$3C, 0, 0, 0);
     		},
@@ -7432,16 +7435,20 @@ var app = (function () {
     		},
     		p: function update(ctx, [dirty]) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [
-    				{ "aria-hidden": "true" },
+    				{ version: "1.1" },
+    				{ id: "Lag_1" },
     				{ focusable: "false" },
-    				{ "data-prefix": "fal" },
-    				{ "data-icon": "dot-circle" },
-    				{
-    					class: "svg-inline--fa fa-dot-circle fa-w-16"
-    				},
-    				{ role: "img" },
     				{ xmlns: "http://www.w3.org/2000/svg" },
+    				{
+    					"xmlns:xlink": "http://www.w3.org/1999/xlink"
+    				},
+    				{ x: "0px" },
+    				{ y: "0px" },
     				{ viewBox: "0 0 512 512" },
+    				{
+    					style: "enable-background:new 0 0 512 512;"
+    				},
+    				{ "xml:space": "preserve" },
     				dirty & /*$$props*/ 1 && /*$$props*/ ctx[0]
     			]));
     		},
@@ -39818,16 +39825,20 @@ for (const accordion of accordions) {
     	let path;
 
     	let svg_levels = [
-    		{ "aria-hidden": "true" },
+    		{ version: "1.1" },
+    		{ id: "Lag_1" },
     		{ focusable: "false" },
-    		{ "data-prefix": "fal" },
-    		{ "data-icon": "dot-circle" },
-    		{
-    			class: "svg-inline--fa fa-dot-circle fa-w-16"
-    		},
-    		{ role: "img" },
     		{ xmlns: "http://www.w3.org/2000/svg" },
+    		{
+    			"xmlns:xlink": "http://www.w3.org/1999/xlink"
+    		},
+    		{ x: "0px" },
+    		{ y: "0px" },
     		{ viewBox: "0 0 512 512" },
+    		{
+    			style: "enable-background:new 0 0 512 512;"
+    		},
+    		{ "xml:space": "preserve" },
     		/*$$props*/ ctx[0]
     	];
 
@@ -39841,9 +39852,8 @@ for (const accordion of accordions) {
     		c: function create() {
     			svg = svg_element("svg");
     			path = svg_element("path");
-    			attr_dev(path, "fill", "currentColor");
-    			attr_dev(path, "d", "M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.663 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.663 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm0-296c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80zm0 128c-26.467 0-48-21.533-48-48s21.533-48 48-48 48 21.533 48 48-21.533 48-48 48z");
-    			add_location(path, file$1K, 0, 210, 210);
+    			attr_dev(path, "d", "M256,8C119,8,8,119,8,256s111,248,248,248s248-111,248-248S393,8,256,8z M256,472c-118.7,0-216-96.1-216-216\n\tc0-118.7,96.1-216,216-216c118.7,0,216,96.1,216,216C472,374.7,375.9,472,256,472z M256,176c-44.2,0-80,35.8-80,80s35.8,80,80,80\n\ts80-35.8,80-80S300.2,176,256,176z");
+    			add_location(path, file$1K, 2, 0, 245);
     			set_svg_attributes(svg, svg_data);
     			add_location(svg, file$1K, 0, 0, 0);
     		},
@@ -39856,16 +39866,20 @@ for (const accordion of accordions) {
     		},
     		p: function update(ctx, [dirty]) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [
-    				{ "aria-hidden": "true" },
+    				{ version: "1.1" },
+    				{ id: "Lag_1" },
     				{ focusable: "false" },
-    				{ "data-prefix": "fal" },
-    				{ "data-icon": "dot-circle" },
-    				{
-    					class: "svg-inline--fa fa-dot-circle fa-w-16"
-    				},
-    				{ role: "img" },
     				{ xmlns: "http://www.w3.org/2000/svg" },
+    				{
+    					"xmlns:xlink": "http://www.w3.org/1999/xlink"
+    				},
+    				{ x: "0px" },
+    				{ y: "0px" },
     				{ viewBox: "0 0 512 512" },
+    				{
+    					style: "enable-background:new 0 0 512 512;"
+    				},
+    				{ "xml:space": "preserve" },
     				dirty & /*$$props*/ 1 && /*$$props*/ ctx[0]
     			]));
     		},
