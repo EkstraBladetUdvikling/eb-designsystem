@@ -1408,8 +1408,6 @@ a.card:focus {
 
 .card-media {
   position: relative;
-
-  min-height: 1px; /* IE11 fix */
 }
 
 .card-image {
@@ -1663,14 +1661,37 @@ a.card-mode:focus .card-inner {
 
 .card-mode .card-media {
   position: relative;
-
-  min-height: 1px; /* IE11 fix */
 }
 
 .card-mode .card-image {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.card-mode .card-media--landscape {
+  position: relative;
+
+  background: var(--color--graa5);
+  color: var(--fgcolor--graa5);
+  display: block;
+  overflow: hidden;
+  padding-top: 56.25%;
+  width: 100%;
+  height: 0;
+}
+
+.card-mode .card-media--landscape .card-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
 }
 
 .card-mode .card-title:not([class*="fs-"]):not([class*="fontsize-"]) {
