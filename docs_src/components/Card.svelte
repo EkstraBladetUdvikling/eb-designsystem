@@ -107,3 +107,8 @@
 </div>`}
   </Prism>
 {/if}
+
+{#if $sourceType !== 'svelte'}
+  <h3>Force landscape image</h3>
+  <p>To force the image in a card to landscape view, use class <em>card-media--landscape</em></p>
+{/if}

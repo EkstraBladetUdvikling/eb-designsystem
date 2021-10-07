@@ -1408,8 +1408,6 @@ a.card:focus {
 
 .card-media {
   position: relative;
-
-  min-height: 1px; /* IE11 fix */
 }
 
 .card-image {
@@ -1663,8 +1661,6 @@ a.card-mode:focus .card-inner {
 
 .card-mode .card-media {
   position: relative;
-
-  min-height: 1px; /* IE11 fix */
 }
 
 .card-mode .card-image {
