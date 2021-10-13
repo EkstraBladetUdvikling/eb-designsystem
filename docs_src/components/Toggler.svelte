@@ -93,8 +93,12 @@
   <Prism language="html">
     {`<label class="toggle">
   <input type="checkbox" hidden class="toggle-input" />
-  <i class="toggle toggle-on fas fa-angle-down"></i>
-  <i class="toggle toggle-off fas fa-angle-up"></i>
+  <svg viewBox="0 0 18 18" class="toggle toggle-on">
+    <use xlink:href="#angle-down"></use>
+  </svg>
+  <svg viewBox="0 0 18 18" class="toggle toggle-off">
+    <use xlink:href="#angle-up"></use>
+  </svg>
 </label>`}
   </Prism>
 {/if}

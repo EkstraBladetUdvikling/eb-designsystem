@@ -1,6 +1,5 @@
 <script lang="ts">
-  export let iconOn: string = 'times';
-  export let iconOff: string = 'question';
+  import Icon from '../icon/Icon.svelte';
   export let position: 'left' | 'right' = 'left';
 
   export let className: string = undefined;
@@ -13,10 +12,10 @@
 <label class={cssClass}>
   <input type="checkbox" hidden class="tooltip-input" />
   <div class="tooltip-off">
-    <i class="tooltip-toggle fas fa-{iconOff}" />
+    <Icon className="tooltip-toggle" name="questioncircle" width="18" />
   </div>
   <div class="tooltip-on">
-    <i class="tooltip-toggle fas fa-{iconOn}" />
+    <Icon className="tooltip-toggle" name="timescircle" width="18" />
     <div class="padding-s">
       <slot />
     </div>

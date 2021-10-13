@@ -2,6 +2,7 @@
   import { afterUpdate, onMount } from 'svelte';
   import { throttle } from '../../misc/throttle';
   import Button from '../button/Button.svelte';
+  import Icon from '../icon/Icon.svelte';
 
   export let className = undefined;
 
@@ -137,10 +138,10 @@
 
 <div bind:this={scrollContainer} class={cssClass}>
   <Button on:click={prevScroll} className="horizontal-scroll-nav button-prev bg--white" extension="icon">
-    <i class="fa fa-chevron-left" />
+    <Icon name="angleleft" width="14" />
   </Button>
   <Button on:click={nextScroll} className="horizontal-scroll-nav button-next bg--white" extension="icon">
-    <i class="fa fa-chevron-right" />
+    <Icon name="angleright" width="14" />
   </Button>
   <div
     bind:this={scrollItemContainer}

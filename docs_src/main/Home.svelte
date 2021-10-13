@@ -1,5 +1,8 @@
 <script lang="ts">
   import { Card } from '../../src';
+  import ComponentsIcon from '../assets/icons/components.svg';
+  import UtilityIcon from '../assets/icons/utility.svg';
+  import GuidelineIcon from '../assets/icons/guideline.svg';
 
   let componentsLink = '#/components';
   let utilityLink = '#/utilities';
@@ -20,7 +23,7 @@
         <Card className="padding-m" url={componentsLink}>
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Components</h2>
-            <i class="home-section-icon fas fa-cubes" />
+            <ComponentsIcon width="60" height="60" />
           </div>
         </Card>
       </div>
@@ -28,7 +31,7 @@
         <Card className="padding-m" url={utilityLink}>
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Utilities</h2>
-            <i class="home-section-icon fab fa-connectdevelop" />
+            <UtilityIcon width="60" height="60" />
           </div>
         </Card>
       </div>
@@ -36,7 +39,7 @@
         <Card className="padding-m" url={guidelineLink}>
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Guidelines</h2>
-            <i class="home-section-icon fas fa-quran" />
+            <GuidelineIcon width="45" height="60" />
           </div>
         </Card>
       </div>
@@ -45,12 +48,11 @@
 </div>
 
 <style>
-  .home-section-icon {
-    font-size: 60px;
+  .home-section :global(svg) {
     padding-top: 20px;
     padding-bottom: 20px;
   }
-  .home-section:hover .home-section-icon {
+  .home-section:hover :global(svg) {
     color: var(--color--red);
     transition: 0.5s;
   }

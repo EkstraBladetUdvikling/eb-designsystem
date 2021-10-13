@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Icon from '../icon/Icon.svelte';
   export let fieldName = undefined;
   export let group = undefined;
   export let label = undefined;
@@ -14,14 +15,14 @@
 
 <label>
   <input type={inputtype} class={baseClass} name={fieldName} {group} {value} />
-  <span class="form-label">
+  <span class="flex form-label">
     {label}
     {#if inputtype === 'checkbox'}
-      <i class="far fa-check-square form-checkbox-toggle--on" aria-hidden="true" />
-      <i class="far fa-square form-checkbox-toggle--off" aria-hidden="true" />
+      <Icon className="form-checkbox-toggle--on margin-s--l" name="checksquare" width="16" />
+      <Icon className="form-checkbox-toggle--off margin-s--l" name="square" width="16" />
     {:else}
-      <i class="far fa-check-circle form-checkbox-toggle--on" aria-hidden="true" />
-      <i class="far fa-circle form-checkbox-toggle--off" aria-hidden="true" />
+      <Icon className="form-checkbox-toggle--on margin-s--l" name="checkcircle" width="16" />
+      <Icon className="form-checkbox-toggle--off margin-s--l" name="circle" width="16" />
     {/if}
   </span>
 </label>

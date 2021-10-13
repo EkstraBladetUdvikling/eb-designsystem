@@ -33,18 +33,6 @@
         <td />
       </tr>
       <tr>
-        <td>iconOn</td>
-        <td>string</td>
-        <td>'times'</td>
-        <td>FontAwesome icon for when tooltip is open</td>
-      </tr>
-      <tr>
-        <td>iconOff</td>
-        <td>string</td>
-        <td>'question'</td>
-        <td>FontAwesome icon for when tooltip is closed</td>
-      </tr>
-      <tr>
         <td>position</td>
         <td>'left' | 'right'</td>
         <td>'left'</td>
@@ -56,7 +44,7 @@
 
 <h3>Default tooltip</h3>
 
-<div class="flex margin-l--tb">
+<div class="flex margin-m--tb">
   <Tooltip>
     {@html Content1}
   </Tooltip>
@@ -71,10 +59,14 @@
     {`<label class="tooltip">
   <input type="checkbox" hidden class="tooltip-input"/>
   <div class="tooltip-off">
-    <i class="tooltip-toggle fas fa-question"/>
+    <svg class="tooltip-toggle" viewBox="0 0 50 50">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#question-circle"></use>
+    </svg>
   </div>
   <div class="tooltip-on">
-    <i class="tooltip-toggle fas fa-times"/>
+    <svg class="tooltip-toggle" viewBox="0 0 50 50">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#times-circle"></use>
+    </svg>
     <div class="padding-s">
       Content
     </div>
@@ -85,7 +77,7 @@
 
 <h3>Tooltip i højre side</h3>
 
-<div class="flex flex-justify--between grid-width--small margin-l--tb">
+<div class="flex flex-justify--between grid-width--small margin-m--tb">
   <h3>Header</h3>
   <Tooltip position="right" className="flex-item--center">
     {@html Content2}
@@ -106,10 +98,14 @@
   <label class="tooltip tooltip--right flex-item--center">
     <input type="checkbox" hidden class="tooltip-input"/>
     <div class="tooltip-off">
-      <i class="tooltip-toggle fas fa-question"/>
+      <svg class="tooltip-toggle" viewBox="0 0 50 50">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#question-circle"></use>
+      </svg>
     </div>
     <div class="tooltip-on">
-      <i class="tooltip-toggle fas fa-times"/>
+      <svg class="tooltip-toggle" viewBox="0 0 50 50">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#times-circle"></use>
+      </svg>
       <div class="padding-s">
         Content
       </div>

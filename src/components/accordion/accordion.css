@@ -40,8 +40,8 @@
   border: 1px solid var(--color--graa5);
 }
 
-.accordion-body p {
-  font-size: inherit;
+.accordion-body > p {
+  font-size: var(--fs-medium);
 }
 
 .accordion-body p:first-child {

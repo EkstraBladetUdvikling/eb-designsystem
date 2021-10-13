@@ -44,7 +44,7 @@
   top: 0;
   left: 5px;
 
-  font-size: 0.7em;
+  font-size: .7em;
   transform: translate(0, -110%);
 }
 
@@ -102,10 +102,10 @@
 
 .form-input-container input,
 .form-input-container textarea {
+  border: none;
   line-height: normal;
   padding: 1px 2px;
   height: auto;
-  border: none;
 }
 .form-input-container input:focus,
 .form-input-container textarea:focus {
@@ -126,7 +126,7 @@
   left: 3px;
   z-index: -1;
 
-  transform: scale(0.1);
+  transform: scale(.1);
 }
 
 .form-checkbox--icon ~ .form-label {
