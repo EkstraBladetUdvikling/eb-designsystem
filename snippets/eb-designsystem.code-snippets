@@ -151,7 +151,7 @@
     "body": [
       "card-media"
     ],
-    "description": "{\n position: relative;\nmin-height: 1px;\n }"
+    "description": "{\n position: relative;\n }"
   },
   "designsystem card image": {
     "prefix": "ds-card-image",
