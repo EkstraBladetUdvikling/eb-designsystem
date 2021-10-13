@@ -297,7 +297,7 @@
     "body": [
       "form-checkbox--icon"
     ],
-    "description": "NB! This should only be used with form-checkbox\n{\n position: absolute;\ntop: 2px;\nleft: 3px;\nz-index: -1;\ntransform: scale(0.1);\n }"
+    "description": "NB! This should only be used with form-checkbox\n{\n position: absolute;\ntop: 2px;\nleft: 3px;\nz-index: -1;\ntransform: scale(.1);\n }"
   },
   "designsystem horizontal scroll container": {
     "description": "Has pseudo styling ::before\n Has pseudo styling ::after\n Has pseudo styling ::before"
