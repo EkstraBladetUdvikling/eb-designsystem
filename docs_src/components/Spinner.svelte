@@ -42,9 +42,15 @@
 {:else}
   <Prism language="html">
     {`<div class="loader flex flex--center">
-  <i class="fas fa-circle bounce bounce1" />
-  <i class="fas fa-circle bounce bounce2" />
-  <i class="fas fa-circle bounce bounce3" />
+    <svg viewBox="0 0 18 18" class="bounce bounce1">
+      <use xlink:href="#circle-solid"></use>
+    </svg>
+    <svg viewBox="0 0 18 18" class="bounce bounce2">
+      <use xlink:href="#circle-solid"></use>
+    </svg>
+    <svg viewBox="0 0 18 18" class="bounce bounce3">
+      <use xlink:href="#circle-solid"></use>
+    </svg>
 </div>`}
   </Prism>
 {/if}

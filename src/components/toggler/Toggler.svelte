@@ -33,7 +33,7 @@
     <button data-status={itsOn} class="toggle--switch {baseClass}" on:click={(evt) => toggle(evt, true)}>
       <slot name="on" />
     </button>
-    <Icon className="margin-s--rl" bind:name width="20" on:click={toggle} style="cursor: pointer;" />
+    <Icon className="margin-s--rl" bind:name width="30" on:click={toggle} style="cursor: pointer;" />
     <button data-status={itsOn} class="toggle--switch {baseClass}" on:click={(evt) => toggle(evt, false)}>
       <slot name="off" />
     </button>

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { writable } from 'svelte/store';
   import type { Writable } from 'svelte/store';
+  import Icon from '../icon/Icon.svelte';
 
   /**
    * dataTheme: string - Adds a theme to the accordion (optional)
@@ -26,9 +27,9 @@
         }}
       >
         <span class="fontweight-bold fontsize-medium">{tab.title}</span>
-        <i class="fas fa-chevron-down" />
+        <Icon name="angledown" width="14" />
       </div>
-      <div class="accordion-body padding-m padding-l--rl fontsize-small">
+      <div class="accordion-body padding-m padding-l--rl">
         {@html tab.content}
       </div>
     </div>

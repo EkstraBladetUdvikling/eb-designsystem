@@ -1,6 +1,6 @@
 :root {
   --tooltip-border-color: var(--card-border-color);
-  --tooltip-height: 25px;
+  --tooltip-height: 28px;
   --tooltip-padding: 5px 5px;
 }
 
@@ -28,13 +28,15 @@
 
   background: var(--color--white);
   border-radius: var(--border-radius--small);
-  box-shadow: var(--box-shadow);
   box-sizing: border-box;
   font-family: var(--fontfamily--secondary);
   overflow: hidden;
   padding: var(--tooltip-padding);
-  width: 22px;
   height: var(--tooltip-height);
+}
+
+.tooltip-on {
+  box-shadow: var(--box-shadow);
 }
 
 .tooltip-input:checked ~ .tooltip-on {

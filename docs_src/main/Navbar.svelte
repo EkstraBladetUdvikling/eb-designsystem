@@ -2,6 +2,7 @@
   import { Button, ButtonGroup } from '../../src';
   import { sourceType } from '../stores';
   import type { SourceTyping } from '../stores';
+  import GithubIcon from '../assets/icons/github.svg';
 
   function changeSourceType(source: SourceTyping) {
     sourceType.set(source);
@@ -10,9 +11,10 @@
 
 <div class="navmenu-container position-fixed margin-xl--b bg-red">
   <nav class="navmenu flex flex-justify--between flex-align--center padding-xl--rl">
-    <a href="https://github.com/EkstraBladetUdvikling/eb-designsystem" target="_blank" class="flex"
-      ><i class="fab fa-github margin-s--r" />Github</a
-    >
+    <a href="https://github.com/EkstraBladetUdvikling/eb-designsystem" target="_blank" class="flex">
+      <GithubIcon width={20} />
+      <span class="flex flex-align--end padding-s--l">Github</span>
+    </a>
     <ButtonGroup type="secondary">
       <Button size="small" initial={$sourceType === 'svelte'} on:click={() => changeSourceType('svelte')}>Svelte</Button
       >
@@ -29,11 +31,11 @@
   .navmenu-container {
     top: 0;
     left: 250px; /* Width of sidebar */
-    width: calc(100% - 250px);
     z-index: 9999;
 
     background-color: var(--color--red);
     border-bottom: 1px solid var(--color--graa6);
+    width: calc(100% - 250px);
   }
   .navmenu-container .navmenu {
     height: 60px;

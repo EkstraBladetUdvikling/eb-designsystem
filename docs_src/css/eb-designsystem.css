@@ -889,8 +889,8 @@ custom media queries is the only allowed media queries
   border: 1px solid var(--color--graa5);
 }
 
-.accordion-body p {
-  font-size: inherit;
+.accordion-body > p {
+  font-size: var(--fs-medium);
 }
 
 .accordion-body p:first-child {
@@ -1765,7 +1765,7 @@ a.card-mode:focus .card-inner {
   top: 0;
   left: 5px;
 
-  font-size: 0.7em;
+  font-size: .7em;
   transform: translate(0, -110%);
 }
 
@@ -1823,10 +1823,10 @@ a.card-mode:focus .card-inner {
 
 .form-input-container input,
 .form-input-container textarea {
+  border: none;
   line-height: normal;
   padding: 1px 2px;
   height: auto;
-  border: none;
 }
 
 .form-input-container input:focus,
@@ -1849,7 +1849,7 @@ a.card-mode:focus .card-inner {
   left: 3px;
   z-index: -1;
 
-  transform: scale(0.1);
+  transform: scale(.1);
 }
 
 .form-checkbox--icon ~ .form-label {
@@ -1972,8 +1972,25 @@ a.card-mode:focus .card-inner {
   height: 84px;
 }
 
+:root {
+  --icon-size: 14px;
+}
+
 .icon-svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+
   fill: currentColor;
+}
+
+.icon-svg--small {
+  width: 12px;
+  height: 12px;
+}
+
+.icon-svg.figure-caption-pin {
+  width: 34px;
+  height: 16px;
 }
 
 .loader .bounce {
@@ -2136,7 +2153,7 @@ a.card-mode:focus .card-inner {
 
 :root {
   --tooltip-border-color: var(--card-border-color);
-  --tooltip-height: 25px;
+  --tooltip-height: 28px;
   --tooltip-padding: 5px 5px;
 }
 
@@ -2164,13 +2181,15 @@ a.card-mode:focus .card-inner {
 
   background: var(--color--white);
   border-radius: var(--border-radius--small);
-  box-shadow: var(--box-shadow);
   box-sizing: border-box;
   font-family: var(--fontfamily--secondary);
   overflow: hidden;
   padding: var(--tooltip-padding);
-  width: 22px;
   height: var(--tooltip-height);
+}
+
+.tooltip-on {
+  box-shadow: var(--box-shadow);
 }
 
 .tooltip-input:checked ~ .tooltip-on {
