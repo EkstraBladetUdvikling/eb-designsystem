@@ -113,16 +113,16 @@
             <Toggler className="card-save-toggle" defaultState={saved} on:toggle={toggleSave}>
               <slot slot="on">
                 <Icon
-                  type="fa"
-                  className="fas fa-star"
+                  name="bookmarksolid"
                   style="color: var(--fgcolor--{breaking ? colorNames.breaking : colorName});"
+                  width={14}
                 />
               </slot>
               <slot slot="off">
                 <Icon
-                  type="fa"
-                  className="far fa-star"
+                  name="bookmark"
                   style="color: var(--fgcolor--{breaking ? colorNames.breaking : colorName});"
+                  width={14}
                 />
               </slot>
             </Toggler>
