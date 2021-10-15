@@ -4,7 +4,7 @@
     "body": [
       "accordion-tab"
     ],
-    "description": "{\n background: rgb(var(--rgb-color--white));\nborder: 1px solid transparent;\nborder-radius: 10px;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\nuser-select: none;\n }"
+    "description": "{\n background: rgb(var(--rgb-color--white));\nborder: 1px solid transparent;\nborder-radius: var(--border-radius);\nbox-shadow: var(--box-shadow);\nuser-select: none;\n }"
   },
   "designsystem accordion header": {
     "prefix": "ds-accordion-header",
@@ -25,14 +25,14 @@
     "body": [
       "articlelist--columns"
     ],
-    "description": "NB! This should only be used with articlelist\n{\n display: grid;\ngrid-template-columns: repeat(var(--articlelist-columns), 1fr);\ngap: 10px;\n }"
+    "description": "NB! This should only be used with articlelist\n{\n display: grid;\ngrid-template-columns: repeat(var(--articlelist-columns), 1fr);\ngap: var(--articlelist-gap, 10px);\n }"
   },
   "designsystem badge": {
     "prefix": "ds-badge",
     "body": [
       "badge"
     ],
-    "description": "{\n align-items: center;\nborder-radius: 5px;\ndisplay: flex;\npadding: 5px 7px;\nwhite-space: nowrap;\n }\n Has pseudo styling :not([class*=\"bg--\"]):not([data-type])\n Has pseudo styling :focus\n Has pseudo styling :hover"
+    "description": "{\n align-items: center;\nborder-radius: var(--border-radius--small);\ndisplay: flex;\npadding: 5px 7px;\nwhite-space: nowrap;\n }\n Has pseudo styling :not([class*=\"bg--\"]):not([data-type])\n Has pseudo styling :focus\n Has pseudo styling :hover"
   },
   "designsystem badge small": {
     "prefix": "ds-badge--small",
@@ -58,7 +58,7 @@
     "body": [
       "button"
     ],
-    "description": "Standard button design\n {\n align-items: center;\nborder-radius: 18px;\nbox-sizing: border-box;\ncursor: pointer;\ndisplay: flex;\nfont-size: 14px;\npadding: 0 20px;\ntext-align: center;\ntext-decoration: none;\nwhite-space: nowrap;\nheight: 36px;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :disabled\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "Standard button design\n {\n align-items: center;\nborder-radius: var(--button-border-radius);\nbox-sizing: border-box;\ncursor: pointer;\ndisplay: flex;\nfont-size: 14px;\npadding: 0 20px;\ntext-align: center;\ntext-decoration: none;\nwhite-space: nowrap;\nheight: var(--button-height);\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :disabled\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem button[class*=\"bg \"]": {
     "description": "Has pseudo styling ]\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
@@ -71,42 +71,42 @@
     "body": [
       "button--primary"
     ],
-    "description": "NB! This should only be used with button\nThis extends button with: {\n border-color: var(--color--bruger);\ncolor: var(--color--bruger);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus\n NB! This should only be used with button--solid\nThis extends button--solid with: {\n background: var(--color--bruger);\ncolor: var(--fgcolor--bruger);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n border-color: var(--color--primary);\ncolor: var(--color--primary);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus\n NB! This should only be used with button--solid\nThis extends button--solid with: {\n background: var(--color--primary);\ncolor: var(--fgcolor--primary);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem button secondary": {
     "prefix": "ds-button--secondary",
     "body": [
       "button--secondary"
     ],
-    "description": "NB! This should only be used with button\nThis extends button with: {\n border-color: var(--color--graa3);\ncolor: var(--color--graa3);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus\n NB! This should only be used with button--solid\nThis extends button--solid with: {\n background: var(--color--graa3);\ncolor: var(--fgcolor--graa3);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n border-color: var(--color--secondary);\ncolor: var(--color--secondary);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus\n NB! This should only be used with button--solid\nThis extends button--solid with: {\n background: var(--color--secondary);\ncolor: var(--fgcolor--secondary);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem button accept": {
     "prefix": "ds-button--accept",
     "body": [
       "button--accept"
     ],
-    "description": "NB! This should only be used with button\nThis extends button with: {\n border-color: var(--color--green);\ncolor: var(--color--green);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus\n NB! This should only be used with button--solid\nThis extends button--solid with: {\n background: var(--color--green);\ncolor: var(--fgcolor--green);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n border-color: var(--color--accept);\ncolor: var(--color--accept);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus\n NB! This should only be used with button--solid\nThis extends button--solid with: {\n background: var(--color--accept);\ncolor: var(--fgcolor--accept);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem button cancel": {
     "prefix": "ds-button--cancel",
     "body": [
       "button--cancel"
     ],
-    "description": "NB! This should only be used with button\nThis extends button with: {\n border-color: var(--color--red);\ncolor: var(--color--red);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus\n NB! This should only be used with button--solid\nThis extends button--solid with: {\n background: var(--color--red);\ncolor: var(--fgcolor--red);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n border-color: var(--color--cancel);\ncolor: var(--color--cancel);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus\n NB! This should only be used with button--solid\nThis extends button--solid with: {\n background: var(--color--cancel);\ncolor: var(--fgcolor--cancel);\n }\n Has pseudo styling :active\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem button small": {
     "prefix": "ds-button--small",
     "body": [
       "button--small"
     ],
-    "description": "NB! This should only be used with button\nThis extends button with: {\n border-radius: 15px;\nfont-size: 12px;\npadding: 0 15px;\nheight: 30px;\n }"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n border-radius: var(--button-border-radius--small);\nfont-size: 12px;\npadding: 0 15px;\nheight: var(--button-height--small);\n }"
   },
   "designsystem button big": {
     "prefix": "ds-button--big",
     "body": [
       "button--big"
     ],
-    "description": "NB! This should only be used with button\nThis extends button with: {\n border-radius: 25px;\nfont-size: 20px;\nfont-weight: bold;\npadding: 0 40px;\nheight: 50px;\n }"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n border-radius: var(--button-border-radius--big);\nfont-size: 20px;\nfont-weight: bold;\npadding: 0 40px;\nheight: var(--button-height--big);\n }"
   },
   "designsystem button link": {
     "prefix": "ds-button--link",
@@ -120,7 +120,7 @@
     "body": [
       "button--icon"
     ],
-    "description": "NB! This should only be used with button\nThis extends button with: {\n justify-content: center;\npadding: 0;\nmin-width: 36px;\n }\n NB! This should only be used with button--big\nThis extends button--big with: {\n min-width: 50px;\n }\n NB! This should only be used with button--small\nThis extends button--small with: {\n min-width: 30px;\n }"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n justify-content: center;\npadding: 0;\nmin-width: var(--button-height);\n }\n NB! This should only be used with button--big\nThis extends button--big with: {\n min-width: var(--button-height--big);\n }\n NB! This should only be used with button--small\nThis extends button--small with: {\n min-width: var(--button-height--small);\n }"
   },
   "designsystem buttongroup": {
     "prefix": "ds-buttongroup",
@@ -134,7 +134,7 @@
     "body": [
       "card"
     ],
-    "description": "{\n border-radius: 10px;\nbox-shadow: inset 0 0 0 1px var(--color--graa7);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: \"Work Sans\", Arial, Helvetica, sans-serif;\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "{\n border-radius: var(--border-radius);\nbox-shadow: inset 0 0 0 1px var(--card-border-color);\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: var(--fontfamily--primary);\noverflow: hidden;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem card shadow)[class*=\"bg \"]": {
     "description": "Has pseudo styling :not(.card--shadow)[class*=\"bg--\"]"
@@ -144,7 +144,7 @@
     "body": [
       "card--shadow"
     ],
-    "description": "NB! This should only be used with card\n{\n box-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\n }"
+    "description": "NB! This should only be used with card\n{\n box-shadow: var(--box-shadow);\n }"
   },
   "designsystem card media": {
     "prefix": "ds-card-media",
@@ -165,21 +165,21 @@
     "body": [
       "card-content"
     ],
-    "description": "{\n padding: 20px;\nflex: 1 0 auto;\n }"
+    "description": "{\n padding: var(--card-padding);\nflex: 1 0 auto;\n }"
   },
   "designsystem card header": {
     "prefix": "ds-card-header",
     "body": [
       "card-header"
     ],
-    "description": "{\n box-sizing: border-box;\nmargin: 0;\npadding: calc(20px / 2) 20px;\nwidth: 100%;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
+    "description": "{\n box-sizing: border-box;\nmargin: 0;\npadding: calc(var(--card-padding) / 2) var(--card-padding);\nwidth: 100%;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
   },
   "designsystem card footer": {
     "prefix": "ds-card-footer",
     "body": [
       "card-footer"
     ],
-    "description": "{\n box-sizing: border-box;\nmargin: 0;\npadding: calc(20px / 2) 20px;\nwidth: 100%;\n }\n {\n align-self: flex-end;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
+    "description": "{\n box-sizing: border-box;\nmargin: 0;\npadding: calc(var(--card-padding) / 2) var(--card-padding);\nwidth: 100%;\n }\n {\n align-self: flex-end;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
   },
   "designsystem card meta": {
     "prefix": "ds-card-meta",
@@ -193,7 +193,7 @@
     "body": [
       "card-meta-item"
     ],
-    "description": "{\n align-items: center;\ndisplay: flex;\npadding-right: 10px;\nwhite-space: nowrap;\n }"
+    "description": "{\n align-items: center;\ndisplay: flex;\npadding-right: var(--distance-medium);\nwhite-space: nowrap;\n }"
   },
   "designsystem card title": {
     "description": "Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])"
@@ -220,14 +220,14 @@
     "body": [
       "card-mode"
     ],
-    "description": "This extends card with: {\n border-radius: 10px;\nbox-shadow: none;\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: unset;\npadding: 2px;\nflex-shrink: 0;\n }\n Has pseudo styling :not([class*=\"bg--\"]):hover\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "This extends card with: {\n border-radius: var(--border-radius-medium);\nbox-shadow: none;\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: var(--fontfamily--secondary);\noverflow: unset;\npadding: 2px;\nflex-shrink: 0;\n }\n Has pseudo styling :not([class*=\"bg--\"]):hover\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem card inner": {
     "prefix": "ds-card-inner",
     "body": [
       "card-inner"
     ],
-    "description": "{\n border-radius: 10px;\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
+    "description": "{\n border-radius: var(--border-radius-medium);\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
   },
   "designsystem card mode article": {
     "prefix": "ds-card-mode--article",
@@ -262,7 +262,7 @@
     "body": [
       "form-input"
     ],
-    "description": "Form input, dependent on the surrounding form-element\n {\n border: 1px solid;\nborder-radius: 5px;\nbox-sizing: border-box;\nline-height: 30px;\npadding: 5px;\nheight: 30px;\n }"
+    "description": "Form input, dependent on the surrounding form-element\n {\n border: 1px solid;\nborder-radius: var(--form-border-radius);\nbox-sizing: border-box;\nline-height: 30px;\npadding: 5px;\nheight: 30px;\n }"
   },
   "designsystem form input big": {
     "prefix": "ds-form-input--big",
@@ -313,7 +313,7 @@
     "body": [
       "horizontal-scroll-nav"
     ],
-    "description": "{\n position: absolute;\ntop: 50%;\nleft: 5px;\nz-index: 100;\nbox-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\nopacity: 0;\ntransform: translateY(-50%);\n }\n {\n display: none;\n }"
+    "description": "{\n position: absolute;\ntop: 50%;\nleft: 5px;\nz-index: 100;\nbox-shadow: var(--box-shadow);\nopacity: 0;\ntransform: translateY(-50%);\n }\n {\n display: none;\n }"
   },
   "designsystem button next": {
     "prefix": "ds-button-next",
@@ -348,7 +348,7 @@
     "body": [
       "icon-svg"
     ],
-    "description": "{\n width: 14px;\nheight: 14px;\nfill: currentColor;\n }"
+    "description": "{\n width: var(--icon-size);\nheight: var(--icon-size);\nfill: currentColor;\n }"
   },
   "designsystem icon svg small": {
     "prefix": "ds-icon-svg--small",
@@ -425,7 +425,7 @@
     "body": [
       "tooltip"
     ],
-    "description": "{\n position: relative;\ndisplay: inline-block;\nheight: 28px;\n }"
+    "description": "{\n position: relative;\ndisplay: inline-block;\nheight: var(--tooltip-height);\n }"
   },
   "designsystem tooltip input": {
     "prefix": "ds-tooltip-input",
@@ -446,14 +446,14 @@
     "body": [
       "tooltip-off"
     ],
-    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-sizing: border-box;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\nheight: 28px;\n }"
+    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: var(--border-radius--small);\nbox-sizing: border-box;\nfont-family: var(--fontfamily--secondary);\noverflow: hidden;\npadding: var(--tooltip-padding);\nheight: var(--tooltip-height);\n }"
   },
   "designsystem tooltip on": {
     "prefix": "ds-tooltip-on",
     "body": [
       "tooltip-on"
     ],
-    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: 5px;\nbox-sizing: border-box;\nfont-family: Arial, Helvetica, sans-serif;\noverflow: hidden;\npadding: 5px 5px;\nheight: 28px;\n }\n {\n box-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);\n }"
+    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: var(--border-radius--small);\nbox-sizing: border-box;\nfont-family: var(--fontfamily--secondary);\noverflow: hidden;\npadding: var(--tooltip-padding);\nheight: var(--tooltip-height);\n }\n {\n box-shadow: var(--box-shadow);\n }"
   },
   "designsystem screen reader text": {
     "prefix": "ds-screen-reader-text",
@@ -474,42 +474,42 @@
     "body": [
       "border-radius-s"
     ],
-    "description": "{\n border-radius: 5px;\n }"
+    "description": "{\n border-radius: var(--border-radius-small);\n }"
   },
   "designsystem border radius": {
     "prefix": "ds-border-radius",
     "body": [
       "border-radius"
     ],
-    "description": "{\n border-radius: 10px;\n }"
+    "description": "{\n border-radius: var(--border-radius-medium);\n }"
   },
   "designsystem border radius s t": {
     "prefix": "ds-border-radius-s--t",
     "body": [
       "border-radius-s--t"
     ],
-    "description": "NB! This should only be used with border-radius-s\n{\n border-top-left-radius: 5px;\nborder-top-right-radius: 5px;\n }"
+    "description": "NB! This should only be used with border-radius-s\n{\n border-top-left-radius: var(--border-radius-small);\nborder-top-right-radius: var(--border-radius-small);\n }"
   },
   "designsystem border radius t": {
     "prefix": "ds-border-radius--t",
     "body": [
       "border-radius--t"
     ],
-    "description": "NB! This should only be used with border-radius\n{\n border-top-left-radius: 10px;\nborder-top-right-radius: 10px;\n }"
+    "description": "NB! This should only be used with border-radius\n{\n border-top-left-radius: var(--border-radius-medium);\nborder-top-right-radius: var(--border-radius-medium);\n }"
   },
   "designsystem border radius s b": {
     "prefix": "ds-border-radius-s--b",
     "body": [
       "border-radius-s--b"
     ],
-    "description": "NB! This should only be used with border-radius-s\n{\n border-bottom-left-radius: 5px;\nborder-bottom-right-radius: 5px;\n }"
+    "description": "NB! This should only be used with border-radius-s\n{\n border-bottom-left-radius: var(--border-radius-small);\nborder-bottom-right-radius: var(--border-radius-small);\n }"
   },
   "designsystem border radius b": {
     "prefix": "ds-border-radius--b",
     "body": [
       "border-radius--b"
     ],
-    "description": "NB! This should only be used with border-radius\n{\n border-bottom-left-radius: 10px;\nborder-bottom-right-radius: 10px;\n }"
+    "description": "NB! This should only be used with border-radius\n{\n border-bottom-left-radius: var(--border-radius-medium);\nborder-bottom-right-radius: var(--border-radius-medium);\n }"
   },
   "designsystem border": {
     "prefix": "ds-border",
@@ -691,133 +691,133 @@
     "body": [
       "fs-ads"
     ],
-    "description": "{\n font-size: .625rem;\nline-height: normal;\n }"
+    "description": "{\n font-size: var(--fs-ads);\nline-height: normal;\n }"
   },
   "designsystem fs bodytext": {
     "prefix": "ds-fs-bodytext",
     "body": [
       "fs-bodytext"
     ],
-    "description": "{\n font-size: 1.125rem;\nline-height: normal;\n }"
+    "description": "{\n font-size: var(--fs-bodytext);\nline-height: normal;\n }"
   },
   "designsystem fs caption": {
     "prefix": "ds-fs-caption",
     "body": [
       "fs-caption"
     ],
-    "description": "{\n font-size: .875rem;\nline-height: normal;\n }"
+    "description": "{\n font-size: var(--fs-caption);\nline-height: normal;\n }"
   },
   "designsystem fs quote": {
     "prefix": "ds-fs-quote",
     "body": [
       "fs-quote"
     ],
-    "description": "{\n font-size: 1.875rem;\nline-height: normal;\n }"
+    "description": "{\n font-size: var(--fs-quote);\nline-height: normal;\n }"
   },
   "designsystem fs showmore": {
     "prefix": "ds-fs-showmore",
     "body": [
       "fs-showmore"
     ],
-    "description": "{\n font-size: 1rem;\nline-height: normal;\n }"
+    "description": "{\n font-size: var(--fs-showmore);\nline-height: normal;\n }"
   },
   "designsystem fs subtitle": {
     "prefix": "ds-fs-subtitle",
     "body": [
       "fs-subtitle"
     ],
-    "description": "{\n font-size: 1.25rem;\nline-height: normal;\n }"
+    "description": "{\n font-size: var(--fs-subtitle);\nline-height: normal;\n }"
   },
   "designsystem fs timestamp": {
     "prefix": "ds-fs-timestamp",
     "body": [
       "fs-timestamp"
     ],
-    "description": "{\n font-size: .75rem;\nline-height: normal;\n }"
+    "description": "{\n font-size: var(--fs-timestamp);\nline-height: normal;\n }"
   },
   "designsystem fs title": {
     "prefix": "ds-fs-title",
     "body": [
       "fs-title"
     ],
-    "description": "{\n font-size: 3.125rem;\nline-height: normal;\n }"
+    "description": "{\n font-size: var(--fs-title);\nline-height: normal;\n }"
   },
   "designsystem ff primary": {
     "prefix": "ds-ff-primary",
     "body": [
       "ff-primary"
     ],
-    "description": "{\n font-family: \"Work Sans\", Arial, Helvetica, sans-serif;\n }"
+    "description": "{\n font-family: var(--fontfamily--primary);\n }"
   },
   "designsystem ff secondary": {
     "prefix": "ds-ff-secondary",
     "body": [
       "ff-secondary"
     ],
-    "description": "{\n font-family: Arial, Helvetica, sans-serif;\n }"
+    "description": "{\n font-family: var(--fontfamily--secondary);\n }"
   },
   "designsystem fontsize xxsmall": {
     "prefix": "ds-fontsize-xxsmall",
     "body": [
       "fontsize-xxsmall"
     ],
-    "description": "Matches 10px\n {\n font-size: .625rem;\n }"
+    "description": "Matches 10px\n {\n font-size: var(--fs-rem-xxsmall);\n }"
   },
   "designsystem fontsize xsmall": {
     "prefix": "ds-fontsize-xsmall",
     "body": [
       "fontsize-xsmall"
     ],
-    "description": "Matches 12px\n {\n font-size: .75rem;\n }"
+    "description": "Matches 12px\n {\n font-size: var(--fs-rem-xsmall);\n }"
   },
   "designsystem fontsize small": {
     "prefix": "ds-fontsize-small",
     "body": [
       "fontsize-small"
     ],
-    "description": "Matches 14px\n {\n font-size: .875rem;\n }"
+    "description": "Matches 14px\n {\n font-size: var(--fs-rem-small);\n }"
   },
   "designsystem fontsize medium": {
     "prefix": "ds-fontsize-medium",
     "body": [
       "fontsize-medium"
     ],
-    "description": "Matches 16px\n {\n font-size: 1rem;\n }"
+    "description": "Matches 16px\n {\n font-size: var(--fs-rem-medium);\n }"
   },
   "designsystem fontsize large": {
     "prefix": "ds-fontsize-large",
     "body": [
       "fontsize-large"
     ],
-    "description": "Matches 18px\n {\n font-size: 1.125rem;\n }"
+    "description": "Matches 18px\n {\n font-size: var(--fs-rem-large);\n }"
   },
   "designsystem fontsize xlarge": {
     "prefix": "ds-fontsize-xlarge",
     "body": [
       "fontsize-xlarge"
     ],
-    "description": "Matches 20px\n {\n font-size: 1.25rem;\n }"
+    "description": "Matches 20px\n {\n font-size: var(--fs-rem-xlarge);\n }"
   },
   "designsystem fontsize xxlarge": {
     "prefix": "ds-fontsize-xxlarge",
     "body": [
       "fontsize-xxlarge"
     ],
-    "description": "Matches 30px\n {\n font-size: 1.875rem;\n }"
+    "description": "Matches 30px\n {\n font-size: var(--fs-rem-xxlarge);\n }"
   },
   "designsystem fontsize xxxlarge": {
     "prefix": "ds-fontsize-xxxlarge",
     "body": [
       "fontsize-xxxlarge"
     ],
-    "description": "Matches 36px\n {\n font-size: 2.25rem;\n }"
+    "description": "Matches 36px\n {\n font-size: var(--fs-rem-xxxlarge);\n }"
   },
   "designsystem fontsize xxxxlarge": {
     "prefix": "ds-fontsize-xxxxlarge",
     "body": [
       "fontsize-xxxxlarge"
     ],
-    "description": "Matches 50px\n {\n font-size: 3.125rem;\n }"
+    "description": "Matches 50px\n {\n font-size: var(--fs-rem-xxxxlarge);\n }"
   },
   "designsystem fontsize smaller": {
     "prefix": "ds-fontsize-smaller",
@@ -859,28 +859,28 @@
     "body": [
       "grid-width--small"
     ],
-    "description": "NB! This should only be used with grid-width\n{\n width: 610px;\n }"
+    "description": "NB! This should only be used with grid-width\n{\n width: var(--grid-small);\n }"
   },
   "designsystem grid width medium": {
     "prefix": "ds-grid-width--medium",
     "body": [
       "grid-width--medium"
     ],
-    "description": "NB! This should only be used with grid-width\n{\n width: 730px;\n }"
+    "description": "NB! This should only be used with grid-width\n{\n width: var(--grid-medium);\n }"
   },
   "designsystem grid width large": {
     "prefix": "ds-grid-width--large",
     "body": [
       "grid-width--large"
     ],
-    "description": "NB! This should only be used with grid-width\n{\n width: 910px;\n }"
+    "description": "NB! This should only be used with grid-width\n{\n width: var(--grid-large);\n }"
   },
   "designsystem grid width xlarge": {
     "prefix": "ds-grid-width--xlarge",
     "body": [
       "grid-width--xlarge"
     ],
-    "description": "NB! This should only be used with grid-width\n{\n width: 930px;\n }"
+    "description": "NB! This should only be used with grid-width\n{\n width: var(--grid-xlarge);\n }"
   },
   "designsystem grid": {
     "prefix": "ds-grid",
@@ -1013,245 +1013,245 @@
     "body": [
       "margin-s"
     ],
-    "description": "{\n margin: 5px;\n }"
+    "description": "{\n margin: var(--distance-small);\n }"
   },
   "designsystem margin s tb": {
     "prefix": "ds-margin-s--tb",
     "body": [
       "margin-s--tb"
     ],
-    "description": "NB! This should only be used with margin-s\n{\n margin-top: 5px;\nmargin-bottom: 5px;\n }"
+    "description": "NB! This should only be used with margin-s\n{\n margin-top: var(--distance-small);\nmargin-bottom: var(--distance-small);\n }"
   },
   "designsystem margin s rl": {
     "prefix": "ds-margin-s--rl",
     "body": [
       "margin-s--rl"
     ],
-    "description": "NB! This should only be used with margin-s\n{\n margin-right: 5px;\nmargin-left: 5px;\n }"
+    "description": "NB! This should only be used with margin-s\n{\n margin-right: var(--distance-small);\nmargin-left: var(--distance-small);\n }"
   },
   "designsystem margin s t": {
     "prefix": "ds-margin-s--t",
     "body": [
       "margin-s--t"
     ],
-    "description": "NB! This should only be used with margin-s\n{\n margin-top: 5px;\n }"
+    "description": "NB! This should only be used with margin-s\n{\n margin-top: var(--distance-small);\n }"
   },
   "designsystem margin s r": {
     "prefix": "ds-margin-s--r",
     "body": [
       "margin-s--r"
     ],
-    "description": "NB! This should only be used with margin-s\n{\n margin-right: 5px;\n }"
+    "description": "NB! This should only be used with margin-s\n{\n margin-right: var(--distance-small);\n }"
   },
   "designsystem margin s b": {
     "prefix": "ds-margin-s--b",
     "body": [
       "margin-s--b"
     ],
-    "description": "NB! This should only be used with margin-s\n{\n margin-bottom: 5px;\n }"
+    "description": "NB! This should only be used with margin-s\n{\n margin-bottom: var(--distance-small);\n }"
   },
   "designsystem margin s l": {
     "prefix": "ds-margin-s--l",
     "body": [
       "margin-s--l"
     ],
-    "description": "NB! This should only be used with margin-s\n{\n margin-left: 5px;\n }"
+    "description": "NB! This should only be used with margin-s\n{\n margin-left: var(--distance-small);\n }"
   },
   "designsystem margin m": {
     "prefix": "ds-margin-m",
     "body": [
       "margin-m"
     ],
-    "description": "{\n margin: 10px;\n }"
+    "description": "{\n margin: var(--distance-medium);\n }"
   },
   "designsystem margin m tb": {
     "prefix": "ds-margin-m--tb",
     "body": [
       "margin-m--tb"
     ],
-    "description": "NB! This should only be used with margin-m\n{\n margin-top: 10px;\nmargin-bottom: 10px;\n }"
+    "description": "NB! This should only be used with margin-m\n{\n margin-top: var(--distance-medium);\nmargin-bottom: var(--distance-medium);\n }"
   },
   "designsystem margin m rl": {
     "prefix": "ds-margin-m--rl",
     "body": [
       "margin-m--rl"
     ],
-    "description": "NB! This should only be used with margin-m\n{\n margin-right: 10px;\nmargin-left: 10px;\n }"
+    "description": "NB! This should only be used with margin-m\n{\n margin-right: var(--distance-medium);\nmargin-left: var(--distance-medium);\n }"
   },
   "designsystem margin m t": {
     "prefix": "ds-margin-m--t",
     "body": [
       "margin-m--t"
     ],
-    "description": "NB! This should only be used with margin-m\n{\n margin-top: 10px;\n }"
+    "description": "NB! This should only be used with margin-m\n{\n margin-top: var(--distance-medium);\n }"
   },
   "designsystem margin m r": {
     "prefix": "ds-margin-m--r",
     "body": [
       "margin-m--r"
     ],
-    "description": "NB! This should only be used with margin-m\n{\n margin-right: 10px;\n }"
+    "description": "NB! This should only be used with margin-m\n{\n margin-right: var(--distance-medium);\n }"
   },
   "designsystem margin m b": {
     "prefix": "ds-margin-m--b",
     "body": [
       "margin-m--b"
     ],
-    "description": "NB! This should only be used with margin-m\n{\n margin-bottom: 10px;\n }"
+    "description": "NB! This should only be used with margin-m\n{\n margin-bottom: var(--distance-medium);\n }"
   },
   "designsystem margin m l": {
     "prefix": "ds-margin-m--l",
     "body": [
       "margin-m--l"
     ],
-    "description": "NB! This should only be used with margin-m\n{\n margin-left: 10px;\n }"
+    "description": "NB! This should only be used with margin-m\n{\n margin-left: var(--distance-medium);\n }"
   },
   "designsystem margin l": {
     "prefix": "ds-margin-l",
     "body": [
       "margin-l"
     ],
-    "description": "{\n margin: 20px;\n }"
+    "description": "{\n margin: var(--distance-large);\n }"
   },
   "designsystem margin l tb": {
     "prefix": "ds-margin-l--tb",
     "body": [
       "margin-l--tb"
     ],
-    "description": "NB! This should only be used with margin-l\n{\n margin-top: 20px;\nmargin-bottom: 20px;\n }"
+    "description": "NB! This should only be used with margin-l\n{\n margin-top: var(--distance-large);\nmargin-bottom: var(--distance-large);\n }"
   },
   "designsystem margin l rl": {
     "prefix": "ds-margin-l--rl",
     "body": [
       "margin-l--rl"
     ],
-    "description": "NB! This should only be used with margin-l\n{\n margin-right: 20px;\nmargin-left: 20px;\n }"
+    "description": "NB! This should only be used with margin-l\n{\n margin-right: var(--distance-large);\nmargin-left: var(--distance-large);\n }"
   },
   "designsystem margin l t": {
     "prefix": "ds-margin-l--t",
     "body": [
       "margin-l--t"
     ],
-    "description": "NB! This should only be used with margin-l\n{\n margin-top: 20px;\n }"
+    "description": "NB! This should only be used with margin-l\n{\n margin-top: var(--distance-large);\n }"
   },
   "designsystem margin l r": {
     "prefix": "ds-margin-l--r",
     "body": [
       "margin-l--r"
     ],
-    "description": "NB! This should only be used with margin-l\n{\n margin-right: 20px;\n }"
+    "description": "NB! This should only be used with margin-l\n{\n margin-right: var(--distance-large);\n }"
   },
   "designsystem margin l b": {
     "prefix": "ds-margin-l--b",
     "body": [
       "margin-l--b"
     ],
-    "description": "NB! This should only be used with margin-l\n{\n margin-bottom: 20px;\n }"
+    "description": "NB! This should only be used with margin-l\n{\n margin-bottom: var(--distance-large);\n }"
   },
   "designsystem margin l l": {
     "prefix": "ds-margin-l--l",
     "body": [
       "margin-l--l"
     ],
-    "description": "NB! This should only be used with margin-l\n{\n margin-left: 20px;\n }"
+    "description": "NB! This should only be used with margin-l\n{\n margin-left: var(--distance-large);\n }"
   },
   "designsystem margin xl": {
     "prefix": "ds-margin-xl",
     "body": [
       "margin-xl"
     ],
-    "description": "{\n margin: 30px;\n }"
+    "description": "{\n margin: var(--distance-xlarge);\n }"
   },
   "designsystem margin xl tb": {
     "prefix": "ds-margin-xl--tb",
     "body": [
       "margin-xl--tb"
     ],
-    "description": "NB! This should only be used with margin-xl\n{\n margin-top: 30px;\nmargin-bottom: 30px;\n }"
+    "description": "NB! This should only be used with margin-xl\n{\n margin-top: var(--distance-xlarge);\nmargin-bottom: var(--distance-xlarge);\n }"
   },
   "designsystem margin xl rl": {
     "prefix": "ds-margin-xl--rl",
     "body": [
       "margin-xl--rl"
     ],
-    "description": "NB! This should only be used with margin-xl\n{\n margin-right: 30px;\nmargin-left: 30px;\n }"
+    "description": "NB! This should only be used with margin-xl\n{\n margin-right: var(--distance-xlarge);\nmargin-left: var(--distance-xlarge);\n }"
   },
   "designsystem margin xl t": {
     "prefix": "ds-margin-xl--t",
     "body": [
       "margin-xl--t"
     ],
-    "description": "NB! This should only be used with margin-xl\n{\n margin-top: 30px;\n }"
+    "description": "NB! This should only be used with margin-xl\n{\n margin-top: var(--distance-xlarge);\n }"
   },
   "designsystem margin xl r": {
     "prefix": "ds-margin-xl--r",
     "body": [
       "margin-xl--r"
     ],
-    "description": "NB! This should only be used with margin-xl\n{\n margin-right: 30px;\n }"
+    "description": "NB! This should only be used with margin-xl\n{\n margin-right: var(--distance-xlarge);\n }"
   },
   "designsystem margin xl b": {
     "prefix": "ds-margin-xl--b",
     "body": [
       "margin-xl--b"
     ],
-    "description": "NB! This should only be used with margin-xl\n{\n margin-bottom: 30px;\n }"
+    "description": "NB! This should only be used with margin-xl\n{\n margin-bottom: var(--distance-xlarge);\n }"
   },
   "designsystem margin xl l": {
     "prefix": "ds-margin-xl--l",
     "body": [
       "margin-xl--l"
     ],
-    "description": "NB! This should only be used with margin-xl\n{\n margin-left: 30px;\n }"
+    "description": "NB! This should only be used with margin-xl\n{\n margin-left: var(--distance-xlarge);\n }"
   },
   "designsystem margin xxl": {
     "prefix": "ds-margin-xxl",
     "body": [
       "margin-xxl"
     ],
-    "description": "{\n margin: 30px;\n }"
+    "description": "{\n margin: var(--distance-xlarge);\n }"
   },
   "designsystem margin xxl tb": {
     "prefix": "ds-margin-xxl--tb",
     "body": [
       "margin-xxl--tb"
     ],
-    "description": "NB! This should only be used with margin-xxl\n{\n margin-top: 50px;\nmargin-bottom: 50px;\n }"
+    "description": "NB! This should only be used with margin-xxl\n{\n margin-top: var(--distance-xxlarge);\nmargin-bottom: var(--distance-xxlarge);\n }"
   },
   "designsystem margin xxl rl": {
     "prefix": "ds-margin-xxl--rl",
     "body": [
       "margin-xxl--rl"
     ],
-    "description": "NB! This should only be used with margin-xxl\n{\n margin-right: 50px;\nmargin-left: 50px;\n }"
+    "description": "NB! This should only be used with margin-xxl\n{\n margin-right: var(--distance-xxlarge);\nmargin-left: var(--distance-xxlarge);\n }"
   },
   "designsystem margin xxl t": {
     "prefix": "ds-margin-xxl--t",
     "body": [
       "margin-xxl--t"
     ],
-    "description": "NB! This should only be used with margin-xxl\n{\n margin-top: 50px;\n }"
+    "description": "NB! This should only be used with margin-xxl\n{\n margin-top: var(--distance-xxlarge);\n }"
   },
   "designsystem margin xxl r": {
     "prefix": "ds-margin-xxl--r",
     "body": [
       "margin-xxl--r"
     ],
-    "description": "NB! This should only be used with margin-xxl\n{\n margin-right: 50px;\n }"
+    "description": "NB! This should only be used with margin-xxl\n{\n margin-right: var(--distance-xxlarge);\n }"
   },
   "designsystem margin xxl b": {
     "prefix": "ds-margin-xxl--b",
     "body": [
       "margin-xxl--b"
     ],
-    "description": "NB! This should only be used with margin-xxl\n{\n margin-bottom: 50px;\n }"
+    "description": "NB! This should only be used with margin-xxl\n{\n margin-bottom: var(--distance-xxlarge);\n }"
   },
   "designsystem margin xxl l": {
     "prefix": "ds-margin-xxl--l",
     "body": [
       "margin-xxl--l"
     ],
-    "description": "NB! This should only be used with margin-xxl\n{\n margin-left: 50px;\n }"
+    "description": "NB! This should only be used with margin-xxl\n{\n margin-left: var(--distance-xxlarge);\n }"
   },
   "designsystem margin l auto": {
     "prefix": "ds-margin-l--auto",
@@ -1307,245 +1307,245 @@
     "body": [
       "padding-s"
     ],
-    "description": "{\n padding: 5px;\n }"
+    "description": "{\n padding: var(--distance-small);\n }"
   },
   "designsystem padding s tb": {
     "prefix": "ds-padding-s--tb",
     "body": [
       "padding-s--tb"
     ],
-    "description": "NB! This should only be used with padding-s\n{\n padding-top: 5px;\npadding-bottom: 5px;\n }"
+    "description": "NB! This should only be used with padding-s\n{\n padding-top: var(--distance-small);\npadding-bottom: var(--distance-small);\n }"
   },
   "designsystem padding s rl": {
     "prefix": "ds-padding-s--rl",
     "body": [
       "padding-s--rl"
     ],
-    "description": "NB! This should only be used with padding-s\n{\n padding-right: 5px;\npadding-left: 5px;\n }"
+    "description": "NB! This should only be used with padding-s\n{\n padding-right: var(--distance-small);\npadding-left: var(--distance-small);\n }"
   },
   "designsystem padding s t": {
     "prefix": "ds-padding-s--t",
     "body": [
       "padding-s--t"
     ],
-    "description": "NB! This should only be used with padding-s\n{\n padding-top: 5px;\n }"
+    "description": "NB! This should only be used with padding-s\n{\n padding-top: var(--distance-small);\n }"
   },
   "designsystem padding s r": {
     "prefix": "ds-padding-s--r",
     "body": [
       "padding-s--r"
     ],
-    "description": "NB! This should only be used with padding-s\n{\n padding-right: 5px;\n }"
+    "description": "NB! This should only be used with padding-s\n{\n padding-right: var(--distance-small);\n }"
   },
   "designsystem padding s b": {
     "prefix": "ds-padding-s--b",
     "body": [
       "padding-s--b"
     ],
-    "description": "NB! This should only be used with padding-s\n{\n padding-bottom: 5px;\n }"
+    "description": "NB! This should only be used with padding-s\n{\n padding-bottom: var(--distance-small);\n }"
   },
   "designsystem padding s l": {
     "prefix": "ds-padding-s--l",
     "body": [
       "padding-s--l"
     ],
-    "description": "NB! This should only be used with padding-s\n{\n padding-left: 5px;\n }"
+    "description": "NB! This should only be used with padding-s\n{\n padding-left: var(--distance-small);\n }"
   },
   "designsystem padding m": {
     "prefix": "ds-padding-m",
     "body": [
       "padding-m"
     ],
-    "description": "{\n padding: 10px;\n }"
+    "description": "{\n padding: var(--distance-medium);\n }"
   },
   "designsystem padding m tb": {
     "prefix": "ds-padding-m--tb",
     "body": [
       "padding-m--tb"
     ],
-    "description": "NB! This should only be used with padding-m\n{\n padding-top: 10px;\npadding-bottom: 10px;\n }"
+    "description": "NB! This should only be used with padding-m\n{\n padding-top: var(--distance-medium);\npadding-bottom: var(--distance-medium);\n }"
   },
   "designsystem padding m rl": {
     "prefix": "ds-padding-m--rl",
     "body": [
       "padding-m--rl"
     ],
-    "description": "NB! This should only be used with padding-m\n{\n padding-right: 10px;\npadding-left: 10px;\n }"
+    "description": "NB! This should only be used with padding-m\n{\n padding-right: var(--distance-medium);\npadding-left: var(--distance-medium);\n }"
   },
   "designsystem padding m t": {
     "prefix": "ds-padding-m--t",
     "body": [
       "padding-m--t"
     ],
-    "description": "NB! This should only be used with padding-m\n{\n padding-top: 10px;\n }"
+    "description": "NB! This should only be used with padding-m\n{\n padding-top: var(--distance-medium);\n }"
   },
   "designsystem padding m r": {
     "prefix": "ds-padding-m--r",
     "body": [
       "padding-m--r"
     ],
-    "description": "NB! This should only be used with padding-m\n{\n padding-right: 10px;\n }"
+    "description": "NB! This should only be used with padding-m\n{\n padding-right: var(--distance-medium);\n }"
   },
   "designsystem padding m b": {
     "prefix": "ds-padding-m--b",
     "body": [
       "padding-m--b"
     ],
-    "description": "NB! This should only be used with padding-m\n{\n padding-bottom: 10px;\n }"
+    "description": "NB! This should only be used with padding-m\n{\n padding-bottom: var(--distance-medium);\n }"
   },
   "designsystem padding m l": {
     "prefix": "ds-padding-m--l",
     "body": [
       "padding-m--l"
     ],
-    "description": "NB! This should only be used with padding-m\n{\n padding-left: 10px;\n }"
+    "description": "NB! This should only be used with padding-m\n{\n padding-left: var(--distance-medium);\n }"
   },
   "designsystem padding l": {
     "prefix": "ds-padding-l",
     "body": [
       "padding-l"
     ],
-    "description": "{\n padding: 20px;\n }"
+    "description": "{\n padding: var(--distance-large);\n }"
   },
   "designsystem padding l tb": {
     "prefix": "ds-padding-l--tb",
     "body": [
       "padding-l--tb"
     ],
-    "description": "NB! This should only be used with padding-l\n{\n padding-top: 20px;\npadding-bottom: 20px;\n }"
+    "description": "NB! This should only be used with padding-l\n{\n padding-top: var(--distance-large);\npadding-bottom: var(--distance-large);\n }"
   },
   "designsystem padding l rl": {
     "prefix": "ds-padding-l--rl",
     "body": [
       "padding-l--rl"
     ],
-    "description": "NB! This should only be used with padding-l\n{\n padding-right: 20px;\npadding-left: 20px;\n }"
+    "description": "NB! This should only be used with padding-l\n{\n padding-right: var(--distance-large);\npadding-left: var(--distance-large);\n }"
   },
   "designsystem padding l t": {
     "prefix": "ds-padding-l--t",
     "body": [
       "padding-l--t"
     ],
-    "description": "NB! This should only be used with padding-l\n{\n padding-top: 20px;\n }"
+    "description": "NB! This should only be used with padding-l\n{\n padding-top: var(--distance-large);\n }"
   },
   "designsystem padding l r": {
     "prefix": "ds-padding-l--r",
     "body": [
       "padding-l--r"
     ],
-    "description": "NB! This should only be used with padding-l\n{\n padding-right: 20px;\n }"
+    "description": "NB! This should only be used with padding-l\n{\n padding-right: var(--distance-large);\n }"
   },
   "designsystem padding l b": {
     "prefix": "ds-padding-l--b",
     "body": [
       "padding-l--b"
     ],
-    "description": "NB! This should only be used with padding-l\n{\n padding-bottom: 20px;\n }"
+    "description": "NB! This should only be used with padding-l\n{\n padding-bottom: var(--distance-large);\n }"
   },
   "designsystem padding l l": {
     "prefix": "ds-padding-l--l",
     "body": [
       "padding-l--l"
     ],
-    "description": "NB! This should only be used with padding-l\n{\n padding-left: 20px;\n }"
+    "description": "NB! This should only be used with padding-l\n{\n padding-left: var(--distance-large);\n }"
   },
   "designsystem padding xl": {
     "prefix": "ds-padding-xl",
     "body": [
       "padding-xl"
     ],
-    "description": "{\n padding: 30px;\n }"
+    "description": "{\n padding: var(--distance-xlarge);\n }"
   },
   "designsystem padding xl tb": {
     "prefix": "ds-padding-xl--tb",
     "body": [
       "padding-xl--tb"
     ],
-    "description": "NB! This should only be used with padding-xl\n{\n padding-top: 30px;\npadding-bottom: 30px;\n }"
+    "description": "NB! This should only be used with padding-xl\n{\n padding-top: var(--distance-xlarge);\npadding-bottom: var(--distance-xlarge);\n }"
   },
   "designsystem padding xl rl": {
     "prefix": "ds-padding-xl--rl",
     "body": [
       "padding-xl--rl"
     ],
-    "description": "NB! This should only be used with padding-xl\n{\n padding-right: 30px;\npadding-left: 30px;\n }"
+    "description": "NB! This should only be used with padding-xl\n{\n padding-right: var(--distance-xlarge);\npadding-left: var(--distance-xlarge);\n }"
   },
   "designsystem padding xl t": {
     "prefix": "ds-padding-xl--t",
     "body": [
       "padding-xl--t"
     ],
-    "description": "NB! This should only be used with padding-xl\n{\n padding-top: 30px;\n }"
+    "description": "NB! This should only be used with padding-xl\n{\n padding-top: var(--distance-xlarge);\n }"
   },
   "designsystem padding xl r": {
     "prefix": "ds-padding-xl--r",
     "body": [
       "padding-xl--r"
     ],
-    "description": "NB! This should only be used with padding-xl\n{\n padding-right: 30px;\n }"
+    "description": "NB! This should only be used with padding-xl\n{\n padding-right: var(--distance-xlarge);\n }"
   },
   "designsystem padding xl b": {
     "prefix": "ds-padding-xl--b",
     "body": [
       "padding-xl--b"
     ],
-    "description": "NB! This should only be used with padding-xl\n{\n padding-bottom: 30px;\n }"
+    "description": "NB! This should only be used with padding-xl\n{\n padding-bottom: var(--distance-xlarge);\n }"
   },
   "designsystem padding xl l": {
     "prefix": "ds-padding-xl--l",
     "body": [
       "padding-xl--l"
     ],
-    "description": "NB! This should only be used with padding-xl\n{\n padding-left: 30px;\n }"
+    "description": "NB! This should only be used with padding-xl\n{\n padding-left: var(--distance-xlarge);\n }"
   },
   "designsystem padding xxl": {
     "prefix": "ds-padding-xxl",
     "body": [
       "padding-xxl"
     ],
-    "description": "{\n padding: 50px;\n }"
+    "description": "{\n padding: var(--distance-xxlarge);\n }"
   },
   "designsystem padding xxl tb": {
     "prefix": "ds-padding-xxl--tb",
     "body": [
       "padding-xxl--tb"
     ],
-    "description": "NB! This should only be used with padding-xxl\n{\n padding-top: 50px;\npadding-bottom: 50px;\n }"
+    "description": "NB! This should only be used with padding-xxl\n{\n padding-top: var(--distance-xxlarge);\npadding-bottom: var(--distance-xxlarge);\n }"
   },
   "designsystem padding xxl rl": {
     "prefix": "ds-padding-xxl--rl",
     "body": [
       "padding-xxl--rl"
     ],
-    "description": "NB! This should only be used with padding-xxl\n{\n padding-right: 50px;\npadding-left: 50px;\n }"
+    "description": "NB! This should only be used with padding-xxl\n{\n padding-right: var(--distance-xxlarge);\npadding-left: var(--distance-xxlarge);\n }"
   },
   "designsystem padding xxl t": {
     "prefix": "ds-padding-xxl--t",
     "body": [
       "padding-xxl--t"
     ],
-    "description": "NB! This should only be used with padding-xxl\n{\n padding-top: 50px;\n }"
+    "description": "NB! This should only be used with padding-xxl\n{\n padding-top: var(--distance-xxlarge);\n }"
   },
   "designsystem padding xxl r": {
     "prefix": "ds-padding-xxl--r",
     "body": [
       "padding-xxl--r"
     ],
-    "description": "NB! This should only be used with padding-xxl\n{\n padding-right: 50px;\n }"
+    "description": "NB! This should only be used with padding-xxl\n{\n padding-right: var(--distance-xxlarge);\n }"
   },
   "designsystem padding xxl b": {
     "prefix": "ds-padding-xxl--b",
     "body": [
       "padding-xxl--b"
     ],
-    "description": "NB! This should only be used with padding-xxl\n{\n padding-bottom: 50px;\n }"
+    "description": "NB! This should only be used with padding-xxl\n{\n padding-bottom: var(--distance-xxlarge);\n }"
   },
   "designsystem padding xxl l": {
     "prefix": "ds-padding-xxl--l",
     "body": [
       "padding-xxl--l"
     ],
-    "description": "NB! This should only be used with padding-xxl\n{\n padding-left: 50px;\n }"
+    "description": "NB! This should only be used with padding-xxl\n{\n padding-left: var(--distance-xxlarge);\n }"
   },
   "designsystem height auto": {
     "prefix": "ds-height-auto",
