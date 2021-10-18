@@ -67,7 +67,7 @@
 
   $: cssClass = className ? `${className} ${baseClass}` : baseClass;
 
-  $: mediaCssClass = media.className ? `${media.className} card-media` : 'card-media';
+  $: mediaCssClass = media && media.className ? `${media.className} card-media` : 'card-media';
 
   function toggleSave(evt: CustomEvent<any>): void {
     dispatch('save', {
