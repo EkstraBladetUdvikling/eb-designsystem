@@ -1,3 +1,4 @@
+// Components
 export { default as Accordion } from './components/accordion/Accordion.svelte';
 export { default as ArticleCard } from './components/articlecard/ArticleCard.svelte';
 export { default as ArticleList } from './components/articlelist/ArticleList.svelte';
@@ -20,5 +21,8 @@ export { default as TextInput } from './components/form-elements/TextInput.svelt
 export { default as Toggler } from './components/toggler/Toggler.svelte';
 export { default as Tooltip } from './components/tooltip/Tooltip.svelte';
 
-export { parseDate } from './misc/parsedate';
-export { throttle } from './misc/throttle';
+// Functions
+export { default as tooltipAction } from './functions/tooltipAction';
+export { parseDate } from './functions/parsedate';
+export { throttle } from './functions/throttle';
+export { tooltipStore } from './functions/tooltipStore';

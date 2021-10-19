@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
 
-  import { parseDate } from '../../misc/parsedate';
+  import { parseDate } from '../../functions/parsedate';
 
   import Badge from '../badge/Badge.svelte';
   import Card from '../card/Card.svelte';

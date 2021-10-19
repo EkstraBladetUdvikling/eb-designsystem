@@ -16,8 +16,6 @@
   </div>
   <div class="tooltip-on">
     <Icon className="tooltip-toggle" name="timescircle" width="18" />
-    <div class="padding-s">
-      <slot />
-    </div>
+    <slot />
   </div>
 </label>

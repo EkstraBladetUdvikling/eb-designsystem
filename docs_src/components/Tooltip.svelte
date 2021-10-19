@@ -4,9 +4,14 @@
   import { rdmParagraphs } from '../lipsum';
   import { sourceType } from '../stores';
   import { Tooltip } from '../../src';
+  import { tooltipStore } from '../../src/functions/tooltipStore';
 
   let Content1 = rdmParagraphs(2);
   let Content2 = rdmParagraphs(2);
+
+  import tooltip from '../../src/functions/tooltipAction';
+  import Icon from '../../src/components/icon/Icon.svelte';
+  import Button from '../../src/components/button/Button.svelte';
 </script>
 
 <h1 class="color--eb">Tooltip</h1>
@@ -67,9 +72,7 @@
     <svg class="tooltip-toggle" viewBox="0 0 50 50">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#times-circle"></use>
     </svg>
-    <div class="padding-s">
-      Content
-    </div>
+    Content
   </div>
 </label>`}
   </Prism>
@@ -106,11 +109,48 @@
       <svg class="tooltip-toggle" viewBox="0 0 50 50">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#times-circle"></use>
       </svg>
-      <div class="padding-s">
-        Content
-      </div>
+      Content
     </div>
   </label>
 </div>`}
+  </Prism>
+{/if}
+
+{#if $sourceType === 'svelte'}
+  <h3>Dynamic tooltip</h3>
+  <div
+    id="test-anchor"
+    style="display: inline-block;"
+    use:tooltip={{
+      content: 'String or SvelteTemplate',
+    }}
+  >
+    <Icon className="tooltip-toggle" name="questioncircle" width="18" />
+  </div>
+  <br />
+  <Button
+    on:click={(e) => {
+      $tooltipStore['test-anchor'].show();
+    }}>Show tooltip</Button
+  >
+  <Prism language="js">
+    {`import { tooltipAction } from '@ekstra-bladet/designsystem';
+import { tooltipStore } from '@ekstra-bladet/designsystem'; // Optional`}
+  </Prism>
+
+  <Prism language="html">
+    {`<div id="optional-for-programmatic-access"
+  use:tooltipAction={{
+    content: 'String or SvelteTemplate',
+    props: {optionalPropToSvelteTemplate: "xxx"},
+    tippyOptions: {optionalTippyOption: "xxx"}
+  }}>
+  <Icon className="tooltip-toggle" name="questioncircle" width="18" />
+</div>
+
+<!-- Optional -->
+<Button on:click={(e) => {$tooltipStore['optional-for-programmatic-access'].show();}}>Show tooltip</Button>
+
+  `}
   </Prism>
 {/if}
