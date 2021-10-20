@@ -19,7 +19,6 @@ export { default as Tabs } from './components/tabs/Tabs.svelte';
 export { default as TextArea } from './components/form-elements/TextArea.svelte';
 export { default as TextInput } from './components/form-elements/TextInput.svelte';
 export { default as Toggler } from './components/toggler/Toggler.svelte';
-export { default as Tooltip } from './components/tooltip/Tooltip.svelte';
 
 // Functions
 export { default as tooltipAction } from './functions/tooltipAction';

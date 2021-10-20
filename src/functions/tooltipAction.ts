@@ -1,16 +1,9 @@
-import type { Props, RenderProps } from 'tippy.js/headless';
-import type { SvelteComponent } from 'svelte';
+import type { ITooltipOptions } from '../types/tooltipAction';
 
 // @ts-ignore
-import Tooltip from '../components/tooltip/TooltipDynamic.svelte';
+import Tooltip from '../components/tooltip/Tooltip.svelte';
 
-interface TooltipOptions {
-  content: string | typeof SvelteComponent;
-  props?: {};
-  tippyOptions?: Partial<Omit<Props, keyof RenderProps>>;
-}
-
-export default function (anchorNode: HTMLElement, options: TooltipOptions) {
+export default function (anchorNode: HTMLElement, options: ITooltipOptions) {
   const target = document.createElement('div');
   const instance = new Tooltip({
     target,
@@ -18,7 +11,7 @@ export default function (anchorNode: HTMLElement, options: TooltipOptions) {
   });
 
   return {
-    update(newProps: TooltipOptions) {
+    update(newProps: ITooltipOptions) {
       Object.assign(instance, newProps);
     },
     destroy() {
