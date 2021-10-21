@@ -24,4 +24,5 @@ export { default as Toggler } from './components/toggler/Toggler.svelte';
 export { default as tooltipAction } from './functions/tooltipAction';
 export { parseDate } from './functions/parsedate';
 export { throttle } from './functions/throttle';
+export { tooltipRender } from './functions/tooltipRender';
 export { tooltipStore } from './functions/tooltipStore';
