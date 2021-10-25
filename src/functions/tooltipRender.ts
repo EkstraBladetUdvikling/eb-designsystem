@@ -3,7 +3,7 @@ import type { TTippyCustomOptions, TTooltipInstance } from '../types/tooltipActi
 
 export function tooltipRender(
   anchorNode: HTMLElement,
-  tooltipNode: HTMLDivElement,
+  tooltipNode: HTMLElement,
   tippyOptions: TTippyCustomOptions = {}
 ): TTooltipInstance {
   return tippy(anchorNode, {

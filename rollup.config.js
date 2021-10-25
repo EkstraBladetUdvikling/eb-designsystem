@@ -2,8 +2,8 @@ import { svelteSVG } from 'rollup-plugin-svelte-svg';
 import { terser } from 'rollup-plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
 import css from 'rollup-plugin-css-only';
-import injectProcessEnv from 'rollup-plugin-inject-process-env';
 import livereload from 'rollup-plugin-livereload';
+import replace from '@rollup/plugin-replace';
 import resolve from '@rollup/plugin-node-resolve';
 import svelte from 'rollup-plugin-svelte';
 import sveltePreprocess from 'svelte-preprocess';
@@ -67,8 +67,9 @@ export default {
       inlineSources: false,
       sourceMap: false,
     }),
-    injectProcessEnv({
-      NODE_ENV: production ? 'production' : 'development',
+    replace({
+      preventAssignment: true,
+      'process.env.NODE_ENV': JSON.stringify(production ? 'production' : 'development'),
     }),
 
     // In dev mode, call `npm run start` once
