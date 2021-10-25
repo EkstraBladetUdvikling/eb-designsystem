@@ -9,9 +9,9 @@
   import { tooltipStore } from '../../src/functions/tooltipStore';
 </script>
 
-<h1 class="color--eb">Tooltip (Action)</h1>
-
 {#if $sourceType === 'svelte'}
+  <h1 class="color--eb">Tooltip (Action)</h1>
+
   <Prism language="js">
     {`import { tooltipAction } from '@ekstra-bladet/designsystem';`}
   </Prism>
@@ -130,5 +130,37 @@
 </div>
 
 <Button on:click={(e) => {$tooltipStore['uniqueid'].show();}}>Show tooltip</Button>`}
+  </Prism>
+{:else}
+  <h1 class="color--eb">Tooltip (Ekstrabladet)</h1>
+
+  <p>Tooltips are available global on ekstrabladet.dk by using data-tooltip attribute</p>
+
+  <h3>Simple tooltip</h3>
+  <Prism language="html">
+    {`<div data-tooltip="Simple text tooltip">Hover</div>`}
+  </Prism>
+
+  <h3>HTML tooltip</h3>
+  <p>Content should be HTML Entity encoded if possible</p>
+  <Prism language="html">
+    {`<div data-tooltip="Simple text<br>tooltip" data-tooltip-allowhtml="true">Hover</div>`}
+  </Prism>
+
+  <h3>Custom tooltip</h3>
+  <Prism language="html">
+    {`<div
+  data-tooltip="#testid"
+  data-tooltip-interactive="true"
+  data-tooltip-placement="bottom"
+  data-tooltip-trigger="click">
+    Click
+</div>
+
+<div id="testid" class="hidden">
+  <p>Custom input</p>
+  <button>Test</button>
+</div>
+    `}
   </Prism>
 {/if}
