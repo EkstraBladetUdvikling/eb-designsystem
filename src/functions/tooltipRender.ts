@@ -21,6 +21,7 @@ export function tooltipRender(
         popper: popperElem,
       };
     },
+    zIndex: 9999999,
     ...tippyOptions,
   });
 }
