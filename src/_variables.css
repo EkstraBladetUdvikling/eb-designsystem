@@ -3,6 +3,7 @@
   --box-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);
 
   --border-radius--small: 5px;
+  --box-shadow--dark: 0 5px 18px rgba(var(--rgb-color--black), .6);
   --color--accept: var(--color--green);
   --color--cancel: var(--color--red);
   --color--default: var(--color--bluedark);
