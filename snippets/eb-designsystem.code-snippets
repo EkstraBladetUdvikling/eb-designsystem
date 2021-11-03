@@ -420,40 +420,26 @@
     ],
     "description": "{\n border: 0;\ncursor: pointer;\ndisplay: inline-flex;\npadding: 0;\n }\n {\n align-content: center;\nbackground: none;\njustify-content: center;\n-webkit-appearance: none;\n }\n Has pseudo styling :active\n Has pseudo styling :focus"
   },
-  "designsystem tooltip": {
-    "prefix": "ds-tooltip",
+  "designsystem tooltip container": {
+    "prefix": "ds-tooltip-container",
     "body": [
-      "tooltip"
+      "tooltip-container"
     ],
-    "description": "{\n position: relative;\ndisplay: inline-block;\nheight: var(--tooltip-height);\n }"
+    "description": "{\n position: relative;\nbackground: var(--tooltip-bgcolor);\nborder-radius: var(--border-radius--small);\nbox-shadow: var(--box-shadow--dark);\nbox-sizing: border-box;\ncolor: var(--tooltip-fgcolor);\nfont-family: var(--fontfamily--secondary);\noutline: 0;\npadding: var(--tooltip-padding);\nwhite-space: normal;\nmax-width: calc(100vw - 10px);\nheight: auto;\n }"
   },
-  "designsystem tooltip input": {
-    "prefix": "ds-tooltip-input",
+  "designsystem tooltip arrow": {
+    "prefix": "ds-tooltip-arrow",
     "body": [
-      "tooltip-input"
+      "tooltip-arrow"
     ],
-    "description": "{\n display: none;\n }"
+    "description": "{\n color: var(--tooltip-bgcolor);\nwidth: calc(var(--tooltip-arrow-size) * 2);\nheight: calc(var(--tooltip-arrow-size) * 2);\n }\n Has pseudo styling :before"
   },
-  "designsystem tooltip toggle": {
-    "prefix": "ds-tooltip-toggle",
+  "designsystem tooltip textonly": {
+    "prefix": "ds-tooltip-textonly",
     "body": [
-      "tooltip-toggle"
+      "tooltip-textonly"
     ],
-    "description": "{\n cursor: pointer;\n }"
-  },
-  "designsystem tooltip off": {
-    "prefix": "ds-tooltip-off",
-    "body": [
-      "tooltip-off"
-    ],
-    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: var(--border-radius--small);\nbox-sizing: border-box;\nfont-family: var(--fontfamily--secondary);\noverflow: hidden;\npadding: var(--tooltip-padding);\nheight: var(--tooltip-height);\n }"
-  },
-  "designsystem tooltip on": {
-    "prefix": "ds-tooltip-on",
-    "body": [
-      "tooltip-on"
-    ],
-    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: var(--border-radius--small);\nbox-sizing: border-box;\nfont-family: var(--fontfamily--secondary);\noverflow: hidden;\npadding: var(--tooltip-padding);\nheight: var(--tooltip-height);\n }\n {\n box-shadow: var(--box-shadow);\n }"
+    "description": "{\n max-width: 400px;\n }"
   },
   "designsystem screen reader text": {
     "prefix": "ds-screen-reader-text",
