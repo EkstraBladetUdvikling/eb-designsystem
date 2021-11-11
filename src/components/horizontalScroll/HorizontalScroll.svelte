@@ -137,10 +137,18 @@
 </script>
 
 <div bind:this={scrollContainer} class={cssClass}>
-  <Button on:click={prevScroll} className="horizontal-scroll-nav button-prev bg--white" extension="icon">
+  <Button
+    on:click|stopPropagation={prevScroll}
+    className="horizontal-scroll-nav button-prev bg--white"
+    extension="icon"
+  >
     <Icon name="angleleft" width="14" />
   </Button>
-  <Button on:click={nextScroll} className="horizontal-scroll-nav button-next bg--white" extension="icon">
+  <Button
+    on:click|stopPropagation={nextScroll}
+    className="horizontal-scroll-nav button-next bg--white"
+    extension="icon"
+  >
     <Icon name="angleright" width="14" />
   </Button>
   <div

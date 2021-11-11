@@ -31,16 +31,24 @@
 
 {#if isSwitch}
   <div class="flex flex-align--center">
-    <button data-status={defaultState} class="toggle--switch {baseClass}" on:click={(evt) => toggle(evt, true)}>
+    <button
+      data-status={defaultState}
+      class="toggle--switch {baseClass}"
+      on:click|stopPropagation={(evt) => toggle(evt, true)}
+    >
       <slot name="on" />
     </button>
-    <Icon className="margin-s--rl" bind:name width="30" on:click={toggle} style="cursor: pointer;" />
-    <button data-status={defaultState} class="toggle--switch {baseClass}" on:click={(evt) => toggle(evt, false)}>
+    <Icon className="margin-s--rl" bind:name width="30" on:click|stopPropagation={toggle} style="cursor: pointer;" />
+    <button
+      data-status={defaultState}
+      class="toggle--switch {baseClass}"
+      on:click|stopPropagation={(evt) => toggle(evt, false)}
+    >
       <slot name="off" />
     </button>
   </div>
 {:else}
-  <button class={baseClass} on:click={toggle}>
+  <button class={baseClass} on:click|stopPropagation={toggle}>
     {#if defaultState}
       <slot name="on" />
     {:else}

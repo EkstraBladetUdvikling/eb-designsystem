@@ -22,7 +22,7 @@
     <div class:accordion-expanded={$activeTab === i} class="accordion-tab margin-m--b">
       <div
         class="accordion-header flex flex-justify--between flex-align--center padding-m"
-        on:click={() => {
+        on:click|stopPropagation={() => {
           $activeTab = $activeTab !== i ? i : undefined;
         }}
       >
