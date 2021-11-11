@@ -38,7 +38,7 @@
     >
       <slot name="on" />
     </button>
-    <Icon className="margin-s--rl" bind:name width="30" on:click|stopPropagation={toggle} style="cursor: pointer;" />
+    <Icon className="margin-s--rl" bind:name width="30" on:click={toggle} style="cursor: pointer;" />
     <button
       data-status={defaultState}
       class="toggle--switch {baseClass}"
