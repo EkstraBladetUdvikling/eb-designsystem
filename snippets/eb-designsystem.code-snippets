@@ -1533,10 +1533,10 @@
     ],
     "description": "NB! This should only be used with padding-xxl\n{\n padding-left: var(--distance-xxlarge);\n }"
   },
-  "designsystem seperator": {
-    "prefix": "ds-seperator",
+  "designsystem separator": {
+    "prefix": "ds-separator",
     "body": [
-      "seperator"
+      "separator"
     ],
     "description": "{\n border-radius: 0;\nborder-bottom: 1px solid var(--color--graa6);\n }"
   },

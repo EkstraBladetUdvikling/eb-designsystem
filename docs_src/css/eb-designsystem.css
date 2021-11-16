@@ -3055,7 +3055,7 @@ h6,p {
   padding-left: var(--distance-xxlarge);
 }
 
-.seperator {
+.separator {
   border-radius: 0;
   border-bottom: 1px solid var(--color--graa6);
 }
