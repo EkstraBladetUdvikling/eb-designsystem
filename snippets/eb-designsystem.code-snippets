@@ -106,7 +106,7 @@
     "body": [
       "button--big"
     ],
-    "description": "NB! This should only be used with button\nThis extends button with: {\n border-radius: var(--button-border-radius--big);\nfont-size: 20px;\nfont-weight: bold;\npadding: 0 40px;\nheight: var(--button-height--big);\n }"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n border-radius: var(--button-border-radius--big);\nfont-size: 18px;\nfont-weight: bold;\npadding: 0 30px;\nheight: var(--button-height--big);\n }\n NB! This should only be used with button\nThis extends button with: {\n font-size: 16px;\nheight: 42px;\n }"
   },
   "designsystem button link": {
     "prefix": "ds-button--link",
@@ -1532,6 +1532,13 @@
       "padding-xxl--l"
     ],
     "description": "NB! This should only be used with padding-xxl\n{\n padding-left: var(--distance-xxlarge);\n }"
+  },
+  "designsystem separator": {
+    "prefix": "ds-separator",
+    "body": [
+      "separator"
+    ],
+    "description": "{\n border-radius: 0;\nborder-bottom: 1px solid var(--color--graa6);\n }"
   },
   "designsystem height auto": {
     "prefix": "ds-height-auto",

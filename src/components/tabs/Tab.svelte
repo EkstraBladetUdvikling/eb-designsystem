@@ -14,6 +14,10 @@
   $: cssClass = className ? `${baseClass} ${className}` : baseClass;
 </script>
 
-<button class={cssClass} data-selected={$selectedButton === button} on:click={() => selectButton(button)}>
+<button
+  class={cssClass}
+  data-selected={$selectedButton === button}
+  on:click|stopPropagation={() => selectButton(button)}
+>
   <slot />
 </button>
