@@ -1008,7 +1008,7 @@ a.badge:hover {
   --button-border-radius--big: 25px;
   --button-border-radius--small: 15px;
   --button-height: 36px;
-  --button-height--big: 50px;
+  --button-height--big: 45px;
   --button-height--small: 30px;
 }
 
@@ -1183,10 +1183,17 @@ a.badge:hover {
 
 .button.button--big {
   border-radius: var(--button-border-radius--big);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
-  padding: 0 40px;
+  padding: 0 30px;
   height: var(--button-height--big);
+}
+
+@media (--smartphone) {
+  .button.button--big {
+    font-size: 16px;
+    height: 42px;
+  }
 }
 
 .button.button--link,
@@ -3053,6 +3060,11 @@ h6,p {
 
 .padding-xxl--l {
   padding-left: var(--distance-xxlarge);
+}
+
+.separator {
+  border-radius: 0;
+  border-bottom: 1px solid var(--color--graa6);
 }
 
 .height-auto {

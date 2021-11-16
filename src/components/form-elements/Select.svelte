@@ -2,6 +2,7 @@
   export let inputtype = 'text';
   export let label = undefined;
   export let className = undefined;
+  export let selected = undefined;
 
   let baseClass = `form-input form-input--${inputtype}`;
 
@@ -9,6 +10,6 @@
 </script>
 
 <label class="form-label" for="select">{label}</label>
-<select classname={baseClass} id="select">
+<select bind:value={selected} classname={baseClass} id="select">
   <slot />
 </select>
