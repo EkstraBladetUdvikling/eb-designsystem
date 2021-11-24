@@ -420,6 +420,13 @@
     ],
     "description": "{\n border: 0;\ncursor: pointer;\ndisplay: inline-flex;\npadding: 0;\n }\n {\n align-content: center;\nbackground: none;\njustify-content: center;\n-webkit-appearance: none;\n }\n Has pseudo styling :active\n Has pseudo styling :focus"
   },
+  "designsystem toggle disabled": {
+    "prefix": "ds-toggle-disabled",
+    "body": [
+      "toggle-disabled"
+    ],
+    "description": "{\n opacity: .5;\npointer-events: none;\n }"
+  },
   "designsystem tooltip container": {
     "prefix": "ds-tooltip-container",
     "body": [
