@@ -2159,6 +2159,12 @@ a.card-mode:focus .card-inner {
   border-bottom-left-radius: 0;
 }
 
+.toggle-disabled {
+  opacity: .5;
+
+  pointer-events: none;
+}
+
 :root {
   --tooltip-arrow-size: 7px;
   --tooltip-bgcolor: var(--color--white);

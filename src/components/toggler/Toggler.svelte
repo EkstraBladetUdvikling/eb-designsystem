@@ -8,6 +8,7 @@
   export let className = undefined;
   export let defaultState = true;
   export let isSwitch = false;
+  export let disabled = false;
 
   let baseClass = `toggle-button`;
 
@@ -35,6 +36,8 @@
       data-status={defaultState}
       class="toggle--switch {baseClass}"
       on:click|stopPropagation={(evt) => toggle(evt, true)}
+      {disabled}
+      class:toggle-disabled={disabled}
     >
       <slot name="on" />
     </button>
@@ -43,16 +46,19 @@
       data-status={defaultState}
       class="toggle--switch {baseClass}"
       on:click|stopPropagation={(evt) => toggle(evt, false)}
+      {disabled}
+      class:toggle-disabled={disabled}
     >
       <slot name="off" />
     </button>
   </div>
 {:else}
-  <button class={baseClass} on:click|stopPropagation={toggle}>
+  <button class={baseClass} on:click|stopPropagation={toggle} {disabled} class:toggle-disabled={disabled}>
     {#if defaultState}
       <slot name="on" />
     {:else}
       <slot name="off" />
     {/if}
+    <slot />
   </button>
 {/if}

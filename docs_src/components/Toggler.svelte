@@ -39,6 +39,12 @@
         <td>false</td>
         <td>Convents into a swicth, see example further down</td>
       </tr>
+      <tr>
+        <td>disabled</td>
+        <td>boolean</td>
+        <td>false</td>
+        <td>Disable the toggle</td>
+      </tr>
     </tbody>
   </table>
 {/if}
