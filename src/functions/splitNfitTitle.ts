@@ -1,6 +1,6 @@
 import fitty from 'fitty';
 
-import { splitTitle } from './splitTitle';
+import { splitTitle } from './splittitle';
 
 function fit(titleParts: HTMLSpanElement[]): void {
   titleParts.forEach((titlePart) => {
