@@ -1,10 +1,12 @@
 import { components } from './components';
+import { cssvariables } from './cssvariables';
 import { exportedfunctions } from './exportedfunctions';
 import { guidelines } from './guidelines';
 import { utilities } from './utilities';
 
 import Home from '../main/Home.svelte';
 import ComponentsHome from '../components/Home.svelte';
+import CssVariablesHome from '../cssvariables/Home.svelte';
 import FunctionsHome from '../exportedfunctions/Home.svelte';
 import UtilitiesHome from '../utilities/Home.svelte';
 import GuidelinesHome from '../guidelines/Home.svelte';
@@ -32,6 +34,7 @@ let spaRoutes = {
   [components.href]: ComponentsHome,
   [utilities.href]: UtilitiesHome,
   [exportedfunctions.href]: FunctionsHome,
+  [cssvariables.href]: CssVariablesHome,
 };
 
 [...guidelines.routes, ...components.routes, ...utilities.routes, ...exportedfunctions.routes].forEach((route) => {
@@ -40,4 +43,4 @@ let spaRoutes = {
 
 export const routes = spaRoutes;
 
-export const menuItems: IMenuGroups[] = [guidelines, components, utilities, exportedfunctions];
+export const menuItems: IMenuGroups[] = [guidelines, components, utilities, exportedfunctions, cssvariables];

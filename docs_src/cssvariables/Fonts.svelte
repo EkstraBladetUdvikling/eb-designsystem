@@ -1,0 +1,114 @@
+<script lang="ts">
+  import Prism from 'svelte-prism';
+</script>
+
+<h1>Fonts</h1>
+
+<Prism language="css">
+  {`--box-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);`}
+  {`--box-shadow--dark: 0 5px 18px rgba(var(--rgb-color--black), .6);`}
+</Prism>
+
+<!-- /* Systemwide variables - default + desktop */
+:root {
+  --box-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);
+
+  --border-radius--small: 5px;
+  --box-shadow--dark: 0 5px 18px rgba(var(--rgb-color--black), .6);
+  --color--accept: var(--color--green);
+  --color--cancel: var(--color--red);
+  --color--default: var(--color--bluedark);
+  --color--primary: var(--color--bruger);
+  --color--secondary: var(--color--graa3);
+  /* distance - desktop & tablet */
+  --distance-large: 20px;
+  --distance-medium: 10px;
+  --distance-small: 5px;
+  --distance-standard: 10px;
+  --distance-xlarge: 30px;
+  --distance-xxlarge: 50px;
+  --fgcolor--accept: var(--fgcolor--green);
+  --fgcolor--cancel: var(--fgcolor--red);
+  --fgcolor--default: var(--fgcolor--bluedark);
+  --fgcolor--primary: var(--fgcolor--bruger);
+  --fgcolor--secondary: var(--fgcolor--graa3);
+  --fontfamily--primary: "Work Sans", var(--fontfamily--secondary);
+  --fontfamily--secondary: Arial, Helvetica, sans-serif;
+  --fs-rem-large: 1.125rem; /* 18px */
+  --fs-rem-medium: 1rem; /* 16px */
+  --fs-rem-small: .875rem; /* 14px */
+  --fs-rem-xlarge: 1.25rem; /* 20px */
+  --fs-rem-xsmall: .75rem; /* 12px */
+  --fs-rem-xxlarge: 1.875rem; /* 30px */
+  --fs-rem-xxsmall: .625rem; /* 10px */
+  --fs-rem-xxxlarge: 2.25rem; /* 36px */
+  --fs-rem-xxxsmall: .4375rem; /* 7px */
+  --fs-rem-xxxxlarge: 3.125rem; /* 50px */
+}
+
+/**
+* Device corrected fontsize names
+*/
+:root {
+  --fs-large: var(--fs-rem-large);
+  --fs-medium: var(--fs-rem-medium);
+  --fs-small: var(--fs-rem-small);
+  --fs-xlarge: var(--fs-rem-xlarge);
+  --fs-xsmall: var(--fs-rem-xsmall);
+  --fs-xxlarge: var(--fs-rem-xxlarge);
+  --fs-xxsmall: var(--fs-rem-xxsmall);
+  --fs-xxxlarge: var(--fs-rem-xxxxlarge);
+}
+
+/**
+  * Aliased Fontsizes
+  */
+:root {
+  --fs-ads: var(--fs-xxsmall);
+  --fs-bodytext: var(--fs-large);
+  --fs-caption: var(--fs-small);
+  --fs-quote: var(--fs-xxlarge);
+  --fs-showmore: var(--fs-medium);
+  --fs-subtitle: var(--fs-xlarge);
+  --fs-timestamp: var(--fs-xsmall);
+  --fs-title: var(--fs-xxxlarge);
+}
+
+@media (--smartphone) {
+  :root {
+    --distance-large: 15px;
+  --distance-medium: 10px;
+  --distance-small: 5px;
+  --distance-standard: 10px;
+  --distance-xlarge: 20px;
+  --distance-xxlarge: 30px;
+  }
+
+  /**
+  * SMARTPHONE Fontsizes pixel
+  */
+  :root {
+    --fs-large: var(--fs-rem-medium);
+  --fs-medium: var(--fs-rem-medium);
+  --fs-small: var(--fs-rem-xsmall);
+  --fs-xlarge: var(--fs-rem-xlarge);
+  --fs-xsmall: var(--fs-rem-xxsmall);
+  --fs-xxlarge: var(--fs-rem-xxlarge);
+  --fs-xxsmall: var(--fs-rem-xxxsmall);
+  --fs-xxxlarge: var(--fs-rem-xxxlarge);
+  }
+
+  /**
+  * SMARTPHONE Aliased Fontsizes
+  */
+  :root {
+    --fs-ads: var(--fs-xxsmall);
+  --fs-bodytext: var(--fs-large);
+  --fs-caption: var(--fs-small);
+  --fs-quote: var(--fs-xxlarge);
+  --fs-showmore: var(--fs-medium);
+  --fs-subtitle: var(--fs-xlarge);
+  --fs-timestamp: var(--fs-xsmall);
+  --fs-title: var(--fs-xxxlarge);
+  }
+} -->
