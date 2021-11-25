@@ -1,12 +1,19 @@
 <script lang="ts">
-  import { Card } from '../../src';
-  import ComponentsIcon from '../assets/icons/components.svg';
-  import UtilityIcon from '../assets/icons/utility.svg';
-  import GuidelineIcon from '../assets/icons/guideline.svg';
+  import { link } from 'svelte-spa-router';
 
-  let componentsLink = '#/components';
-  let utilityLink = '#/utilities';
-  let guidelineLink = '#/guidelines';
+  import { Card } from '../../src';
+
+  import ComponentsIcon from '../assets/icons/components.svg';
+  import CssVarsIcon from '../assets/icons/css-vars.svg';
+  import GuidelineIcon from '../assets/icons/guideline.svg';
+  import JSFunctionsIcon from '../assets/icons/js-functions.svg';
+  import UtilityIcon from '../assets/icons/utility.svg';
+
+  import { components } from '../routes/components';
+  import { cssvariables } from '../routes/cssvariables';
+  import { exportedfunctions } from '../routes/exportedfunctions';
+  import { guidelines } from '../routes/guidelines';
+  import { utilities } from '../routes/utilities';
 </script>
 
 <div class="flex flex-justify--around width-1of1">
@@ -18,42 +25,81 @@
       <h1>Design system</h1>
     </div>
     <div class="text-align--center margin-m--tb padding-m bg--graa7">yarn add @ekstra-bladet/designsystem</div>
-    <div class="flex">
-      <div class="home-section width-1of1 margin-m">
-        <Card className="padding-m" url={componentsLink}>
+    <div class="grid home-section">
+      <a href="#a11y" use:link={{ disabled: false, href: components.href }} class="home-section-item components">
+        <Card className="padding-m">
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Components</h2>
             <ComponentsIcon width="60" height="60" />
           </div>
         </Card>
-      </div>
-      <div class="home-section width-1of1 margin-m">
-        <Card className="padding-m" url={utilityLink}>
+      </a>
+      <a href="#a11y" use:link={{ disabled: false, href: utilities.href }} class="home-section-item utilities">
+        <Card className="padding-m">
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Utilities</h2>
             <UtilityIcon width="60" height="60" />
           </div>
         </Card>
-      </div>
-      <div class="home-section width-1of1 margin-m">
-        <Card className="padding-m" url={guidelineLink}>
+      </a>
+      <a href="#a11y" use:link={{ disabled: false, href: guidelines.href }} class="home-section-item guidelines">
+        <Card className="padding-m">
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Guidelines</h2>
             <GuidelineIcon width="45" height="60" />
           </div>
         </Card>
-      </div>
+      </a>
+      <a
+        href="#a11y"
+        use:link={{ disabled: false, href: exportedfunctions.href }}
+        class="home-section-item exportedfunctions"
+      >
+        <Card className="padding-m">
+          <div class="flex-item flex-item--center text-align--center">
+            <h2 class="color--graa1">JS Functions</h2>
+            <JSFunctionsIcon width="60" height="60" />
+          </div>
+        </Card>
+      </a>
+      <a href="#a11y" use:link={{ disabled: false, href: cssvariables.href }} class="home-section-item cssvariables">
+        <Card className="padding-m">
+          <div class="flex-item flex-item--center text-align--center">
+            <h2 class="color--graa1">CSS Variables</h2>
+            <CssVarsIcon width="45" height="60" />
+          </div>
+        </Card>
+      </a>
     </div>
   </div>
 </div>
 
 <style>
-  .home-section :global(svg) {
+  .home-section-item :global(svg) {
     padding-top: 20px;
     padding-bottom: 20px;
   }
-  .home-section:hover :global(svg) {
+  .home-section-item:hover :global(svg) {
     color: var(--color--red);
     transition: 0.5s;
+  }
+
+  .home-section {
+    gap: 10px;
+  }
+  .components {
+    grid-column: 1 / span 2;
+  }
+  .utilities {
+    grid-column: 3 / span 2;
+  }
+  .guidelines {
+    grid-column: 5 / span 2;
+  }
+  .exportedfunctions {
+    grid-column: 2 / span 2;
+  }
+  .cssvariables {
+    grid-column: 4 / span 2;
   }
 </style>

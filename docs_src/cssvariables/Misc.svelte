@@ -19,4 +19,6 @@
 
 <Prism language="css">
   {`--border-radius--small: 5px;`}
+  {`--border-radius: 10px;`}
+  {`--border-radius--medium: var(--border-radius);`}
 </Prism>
