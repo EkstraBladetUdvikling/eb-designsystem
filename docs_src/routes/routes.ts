@@ -37,7 +37,13 @@ let spaRoutes = {
   [cssvariables.href]: CssVariablesHome,
 };
 
-[...guidelines.routes, ...components.routes, ...utilities.routes, ...exportedfunctions.routes].forEach((route) => {
+[
+  ...guidelines.routes,
+  ...components.routes,
+  ...utilities.routes,
+  ...exportedfunctions.routes,
+  ...cssvariables.routes,
+].forEach((route) => {
   spaRoutes[route.href] = route.component;
 });
 

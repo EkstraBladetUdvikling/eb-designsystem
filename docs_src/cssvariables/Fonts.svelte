@@ -4,36 +4,19 @@
 
 <h1>Fonts</h1>
 
+<h2>Font families</h2>
+
 <Prism language="css">
-  {`--box-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);`}
-  {`--box-shadow--dark: 0 5px 18px rgba(var(--rgb-color--black), .6);`}
-</Prism>
-
-<!-- /* Systemwide variables - default + desktop */
-:root {
-  --box-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);
-
-  --border-radius--small: 5px;
-  --box-shadow--dark: 0 5px 18px rgba(var(--rgb-color--black), .6);
-  --color--accept: var(--color--green);
-  --color--cancel: var(--color--red);
-  --color--default: var(--color--bluedark);
-  --color--primary: var(--color--bruger);
-  --color--secondary: var(--color--graa3);
-  /* distance - desktop & tablet */
-  --distance-large: 20px;
-  --distance-medium: 10px;
-  --distance-small: 5px;
-  --distance-standard: 10px;
-  --distance-xlarge: 30px;
-  --distance-xxlarge: 50px;
-  --fgcolor--accept: var(--fgcolor--green);
-  --fgcolor--cancel: var(--fgcolor--red);
-  --fgcolor--default: var(--fgcolor--bluedark);
-  --fgcolor--primary: var(--fgcolor--bruger);
-  --fgcolor--secondary: var(--fgcolor--graa3);
+  {`
   --fontfamily--primary: "Work Sans", var(--fontfamily--secondary);
   --fontfamily--secondary: Arial, Helvetica, sans-serif;
+  `}
+</Prism>
+
+<h2>Fontsizes</h2>
+
+<Prism language="css">
+  {`
   --fs-rem-large: 1.125rem; /* 18px */
   --fs-rem-medium: 1rem; /* 16px */
   --fs-rem-small: .875rem; /* 14px */
@@ -44,12 +27,6 @@
   --fs-rem-xxxlarge: 2.25rem; /* 36px */
   --fs-rem-xxxsmall: .4375rem; /* 7px */
   --fs-rem-xxxxlarge: 3.125rem; /* 50px */
-}
-
-/**
-* Device corrected fontsize names
-*/
-:root {
   --fs-large: var(--fs-rem-large);
   --fs-medium: var(--fs-rem-medium);
   --fs-small: var(--fs-rem-small);
@@ -58,12 +35,13 @@
   --fs-xxlarge: var(--fs-rem-xxlarge);
   --fs-xxsmall: var(--fs-rem-xxsmall);
   --fs-xxxlarge: var(--fs-rem-xxxxlarge);
-}
+  `}
+</Prism>
 
-/**
-  * Aliased Fontsizes
-  */
-:root {
+<h2>Aliased Fontsizes</h2>
+
+<Prism language="css">
+  {`
   --fs-ads: var(--fs-xxsmall);
   --fs-bodytext: var(--fs-large);
   --fs-caption: var(--fs-small);
@@ -72,23 +50,14 @@
   --fs-subtitle: var(--fs-xlarge);
   --fs-timestamp: var(--fs-xsmall);
   --fs-title: var(--fs-xxxlarge);
-}
+  `}
+</Prism>
 
-@media (--smartphone) {
-  :root {
-    --distance-large: 15px;
-  --distance-medium: 10px;
-  --distance-small: 5px;
-  --distance-standard: 10px;
-  --distance-xlarge: 20px;
-  --distance-xxlarge: 30px;
-  }
+<h2>SMARTPHONE Fontsizes</h2>
 
-  /**
-  * SMARTPHONE Fontsizes pixel
-  */
-  :root {
-    --fs-large: var(--fs-rem-medium);
+<Prism language="css">
+  {`
+  --fs-large: var(--fs-rem-medium);
   --fs-medium: var(--fs-rem-medium);
   --fs-small: var(--fs-rem-xsmall);
   --fs-xlarge: var(--fs-rem-xlarge);
@@ -96,13 +65,14 @@
   --fs-xxlarge: var(--fs-rem-xxlarge);
   --fs-xxsmall: var(--fs-rem-xxxsmall);
   --fs-xxxlarge: var(--fs-rem-xxxlarge);
-  }
+  `}
+</Prism>
 
-  /**
-  * SMARTPHONE Aliased Fontsizes
-  */
-  :root {
-    --fs-ads: var(--fs-xxsmall);
+<h2>SMARTPHONE Aliased Fontsizes</h2>
+
+<Prism language="css">
+  {`
+  --fs-ads: var(--fs-xxsmall);
   --fs-bodytext: var(--fs-large);
   --fs-caption: var(--fs-small);
   --fs-quote: var(--fs-xxlarge);
@@ -110,5 +80,5 @@
   --fs-subtitle: var(--fs-xlarge);
   --fs-timestamp: var(--fs-xsmall);
   --fs-title: var(--fs-xxxlarge);
-  }
-} -->
+`}
+</Prism>

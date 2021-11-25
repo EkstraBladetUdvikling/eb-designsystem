@@ -11,14 +11,18 @@
 <h2>Box shadow</h2>
 
 <Prism language="css">
-  {`--box-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);`}
-  {`--box-shadow--dark: 0 5px 18px rgba(var(--rgb-color--black), .6);`}
+  {`
+  --box-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);
+  --box-shadow--dark: 0 5px 18px rgba(var(--rgb-color--black), .6);
+  `}
 </Prism>
 
 <h2>Border radius</h2>
 
 <Prism language="css">
-  {`--border-radius--small: 5px;`}
-  {`--border-radius: 10px;`}
-  {`--border-radius--medium: var(--border-radius);`}
+  {`
+  --border-radius--small: 5px;
+  --border-radius: 10px;
+  --border-radius--medium: var(--border-radius);
+  `}
 </Prism>
