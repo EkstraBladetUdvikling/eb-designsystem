@@ -84,6 +84,14 @@
     transition: 0.5s;
   }
 
+  .cssvariables:hover :global(svg) {
+    color: #2965f1;
+  }
+
+  .exportedfunctions:hover :global(svg) {
+    color: #f0db4f;
+  }
+
   .home-section {
     gap: 10px;
   }
