@@ -10,7 +10,9 @@ interface FittyOptions {
 }
 
 function fit(titleParts: HTMLSpanElement[], fittyOptions?: FittyOptions): void {
-  let cleanFittyOptions = Object.fromEntries(Object.entries(fittyOptions).filter(([_, v]) => v != null));
+  let cleanFittyOptions = Object.fromEntries(
+    Object.entries(fittyOptions).filter(([_fittyOptionsKey, fittyOptionsVal]) => fittyOptionsVal != null)
+  );
 
   titleParts.forEach((titlePart) => {
     const fitEl = fitty(titlePart, cleanFittyOptions);
