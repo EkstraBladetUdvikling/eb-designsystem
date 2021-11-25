@@ -2,9 +2,20 @@ import fitty from 'fitty';
 
 import { splitTitle } from './splitTitle';
 
-function fit(titleParts: HTMLSpanElement[]): void {
+interface FittyOptions {
+  maxSize?: number;
+  minSize?: number;
+  multiLine?: boolean;
+  observeMutations?: MutationObserverInit;
+}
+
+function fit(titleParts: HTMLSpanElement[], fittyOptions?: FittyOptions): void {
+  let cleanFittyOptions = Object.fromEntries(
+    Object.entries(fittyOptions).filter(([_fittyOptionsKey, fittyOptionsVal]) => fittyOptionsVal != null)
+  );
+
   titleParts.forEach((titlePart) => {
-    const fitEl = fitty(titlePart);
+    const fitEl = fitty(titlePart, cleanFittyOptions);
     fitEl.fit();
   });
 }
@@ -16,16 +27,19 @@ function fit(titleParts: HTMLSpanElement[]): void {
  * er en indikator på om man bruger custom-font og derfor er nødt til
  * at vente på document.fonts.ready
  */
-export async function splitNfitTitle(
-  title: string,
-  minLines: number,
-  maxLines: number,
-  safe = false
-): Promise<DocumentFragment> {
+interface ISplitNfitOptions extends FittyOptions {
+  maxLines?: number;
+  minLines?: number;
+  safe?: boolean;
+}
+export async function splitNfitTitle(title: string, options?: ISplitNfitOptions): Promise<DocumentFragment> {
+  const { maxLines = 10, maxSize, minLines = 1, minSize, multiLine, observeMutations, safe = false } = options;
+
   const titleSplit: string[] = splitTitle(title, minLines, maxLines);
 
   const titleFrag = document.createDocumentFragment();
   const titleSpans = [];
+
   titleSplit.forEach((txt: string) => {
     const titleSpan = document.createElement('span');
     titleSpan.classList.add('fitty-line');
@@ -35,10 +49,20 @@ export async function splitNfitTitle(
   });
 
   if (safe) {
-    fit(titleSpans);
+    fit(titleSpans, {
+      minSize,
+      maxSize,
+      multiLine,
+      observeMutations,
+    });
   } else {
     await document.fonts.ready.then(() => {
-      fit(titleSpans);
+      fit(titleSpans, {
+        minSize,
+        maxSize,
+        multiLine,
+        observeMutations,
+      });
     });
   }
 
