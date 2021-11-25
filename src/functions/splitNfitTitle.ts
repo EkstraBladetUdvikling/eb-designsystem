@@ -33,9 +33,7 @@ interface ISplitNfitOptions extends FittyOptions {
   safe?: boolean;
 }
 export async function splitNfitTitle(title: string, options?: ISplitNfitOptions): Promise<DocumentFragment> {
-  const safe = options.safe ?? false;
-
-  const { maxLines = 10, maxSize, minLines = 1, minSize, multiLine, observeMutations } = options;
+  const { maxLines = 10, maxSize, minLines = 1, minSize, multiLine, observeMutations, safe = false } = options;
 
   const titleSplit: string[] = splitTitle(title, minLines, maxLines);
 
