@@ -1,6 +1,6 @@
 {
   "name": "@ekstra-bladet/designsystem",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "main": "dist/index.js",
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
@@ -34,6 +34,7 @@
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@rollup/plugin-typescript": "^8.3.0",
     "@tsconfig/svelte": "^2.0.1",
+    "fitty": "^2.3.5",
     "prismjs": "^1.25.0",
     "rollup": "^2.60.0",
     "rollup-plugin-css-only": "^3.1.0",
