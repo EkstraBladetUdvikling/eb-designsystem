@@ -21,7 +21,6 @@ export { default as TextInput } from './components/form-elements/TextInput.svelt
 export { default as Toggler } from './components/toggler/Toggler.svelte';
 
 // Functions
-export { asyncForEach } from './functions/asyncForEach';
 export { default as tooltipAction } from './functions/tooltipAction';
 export { parseDate } from './functions/parsedate';
 export { splitNfitTitle } from './functions/splitNfitTitle';
