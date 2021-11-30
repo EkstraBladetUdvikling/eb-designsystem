@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
 
-  import { parseDate } from '../../misc/parsedate';
+  import { parseDate } from '../../functions/parsedate';
 
   import Badge from '../badge/Badge.svelte';
   import Card from '../card/Card.svelte';
@@ -67,6 +67,8 @@
 
   $: cssClass = className ? `${className} ${baseClass}` : baseClass;
 
+  $: mediaCssClass = media && media.className ? `${media.className} card-media` : 'card-media';
+
   function toggleSave(evt: CustomEvent<any>): void {
     dispatch('save', {
       id,
@@ -84,7 +86,7 @@
         </div>
       {/if}
       {#if media}
-        <div class="card-media {media.className ?? ''}">
+        <div class={mediaCssClass}>
           {#if update}
             <Badge
               className="margin-s position-absolute padding-none padding-s--r card--shadow bg--black fontsize-small"

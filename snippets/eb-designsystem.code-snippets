@@ -106,7 +106,7 @@
     "body": [
       "button--big"
     ],
-    "description": "NB! This should only be used with button\nThis extends button with: {\n border-radius: var(--button-border-radius--big);\nfont-size: 20px;\nfont-weight: bold;\npadding: 0 40px;\nheight: var(--button-height--big);\n }"
+    "description": "NB! This should only be used with button\nThis extends button with: {\n border-radius: var(--button-border-radius--big);\nfont-size: 18px;\nfont-weight: bold;\npadding: 0 30px;\nheight: var(--button-height--big);\n }\n NB! This should only be used with button\nThis extends button with: {\n font-size: 16px;\nheight: 42px;\n }"
   },
   "designsystem button link": {
     "prefix": "ds-button--link",
@@ -420,40 +420,33 @@
     ],
     "description": "{\n border: 0;\ncursor: pointer;\ndisplay: inline-flex;\npadding: 0;\n }\n {\n align-content: center;\nbackground: none;\njustify-content: center;\n-webkit-appearance: none;\n }\n Has pseudo styling :active\n Has pseudo styling :focus"
   },
-  "designsystem tooltip": {
-    "prefix": "ds-tooltip",
+  "designsystem toggle disabled": {
+    "prefix": "ds-toggle-disabled",
     "body": [
-      "tooltip"
+      "toggle-disabled"
     ],
-    "description": "{\n position: relative;\ndisplay: inline-block;\nheight: var(--tooltip-height);\n }"
+    "description": "{\n opacity: .5;\npointer-events: none;\n }"
   },
-  "designsystem tooltip input": {
-    "prefix": "ds-tooltip-input",
+  "designsystem tooltip container": {
+    "prefix": "ds-tooltip-container",
     "body": [
-      "tooltip-input"
+      "tooltip-container"
     ],
-    "description": "{\n display: none;\n }"
+    "description": "{\n position: relative;\nbackground: var(--tooltip-bgcolor);\nborder-radius: var(--border-radius--small);\nbox-shadow: var(--box-shadow--dark);\nbox-sizing: border-box;\ncolor: var(--tooltip-fgcolor);\nfont-family: var(--fontfamily--secondary);\noutline: 0;\npadding: var(--tooltip-padding);\nwhite-space: normal;\nmax-width: calc(100vw - 10px);\nheight: auto;\n }"
   },
-  "designsystem tooltip toggle": {
-    "prefix": "ds-tooltip-toggle",
+  "designsystem tooltip arrow": {
+    "prefix": "ds-tooltip-arrow",
     "body": [
-      "tooltip-toggle"
+      "tooltip-arrow"
     ],
-    "description": "{\n cursor: pointer;\n }"
+    "description": "{\n color: var(--tooltip-bgcolor);\nwidth: calc(var(--tooltip-arrow-size) * 2);\nheight: calc(var(--tooltip-arrow-size) * 2);\n }\n Has pseudo styling :before"
   },
-  "designsystem tooltip off": {
-    "prefix": "ds-tooltip-off",
+  "designsystem tooltip textonly": {
+    "prefix": "ds-tooltip-textonly",
     "body": [
-      "tooltip-off"
+      "tooltip-textonly"
     ],
-    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: var(--border-radius--small);\nbox-sizing: border-box;\nfont-family: var(--fontfamily--secondary);\noverflow: hidden;\npadding: var(--tooltip-padding);\nheight: var(--tooltip-height);\n }"
-  },
-  "designsystem tooltip on": {
-    "prefix": "ds-tooltip-on",
-    "body": [
-      "tooltip-on"
-    ],
-    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 100;\nbackground: var(--color--white);\nborder-radius: var(--border-radius--small);\nbox-sizing: border-box;\nfont-family: var(--fontfamily--secondary);\noverflow: hidden;\npadding: var(--tooltip-padding);\nheight: var(--tooltip-height);\n }\n {\n box-shadow: var(--box-shadow);\n }"
+    "description": "{\n max-width: 400px;\n }"
   },
   "designsystem screen reader text": {
     "prefix": "ds-screen-reader-text",
@@ -1546,6 +1539,13 @@
       "padding-xxl--l"
     ],
     "description": "NB! This should only be used with padding-xxl\n{\n padding-left: var(--distance-xxlarge);\n }"
+  },
+  "designsystem separator": {
+    "prefix": "ds-separator",
+    "body": [
+      "separator"
+    ],
+    "description": "{\n border-radius: 0;\nborder-bottom: 1px solid var(--color--graa6);\n }"
   },
   "designsystem height auto": {
     "prefix": "ds-height-auto",

@@ -8,6 +8,7 @@
   export let className = undefined;
   export let defaultState = true;
   export let isSwitch = false;
+  export let disabled = false;
 
   let baseClass = `toggle-button`;
 
@@ -16,34 +17,48 @@
   /**
    * Handle user click on toggle element
    */
-  let itsOn = defaultState;
-  let name: IconTypes = itsOn ? 'toggleon' : 'toggleoff';
+  let name: IconTypes = defaultState ? 'toggleon' : 'toggleoff';
   const dispatch = createEventDispatcher();
   function toggle(evt: Event, status?: boolean) {
     evt.preventDefault();
-    itsOn = status ?? !itsOn;
+    defaultState = status ?? !defaultState;
 
-    name = itsOn ? 'toggleon' : 'toggleoff';
-    dispatch('toggle', itsOn);
+    name = defaultState ? 'toggleon' : 'toggleoff';
+    dispatch('toggle', defaultState);
   }
+
+  $: defaultState;
 </script>
 
 {#if isSwitch}
   <div class="flex flex-align--center">
-    <button data-status={itsOn} class="toggle--switch {baseClass}" on:click={(evt) => toggle(evt, true)}>
+    <button
+      data-status={defaultState}
+      class="toggle--switch {baseClass}"
+      on:click|stopPropagation={(evt) => toggle(evt, true)}
+      {disabled}
+      class:toggle-disabled={disabled}
+    >
       <slot name="on" />
     </button>
     <Icon className="margin-s--rl" bind:name width="30" on:click={toggle} style="cursor: pointer;" />
-    <button data-status={itsOn} class="toggle--switch {baseClass}" on:click={(evt) => toggle(evt, false)}>
+    <button
+      data-status={defaultState}
+      class="toggle--switch {baseClass}"
+      on:click|stopPropagation={(evt) => toggle(evt, false)}
+      {disabled}
+      class:toggle-disabled={disabled}
+    >
       <slot name="off" />
     </button>
   </div>
 {:else}
-  <button class={baseClass} on:click={toggle}>
-    {#if itsOn}
+  <button class={baseClass} on:click|stopPropagation={toggle} {disabled} class:toggle-disabled={disabled}>
+    {#if defaultState}
       <slot name="on" />
     {:else}
       <slot name="off" />
     {/if}
+    <slot />
   </button>
 {/if}

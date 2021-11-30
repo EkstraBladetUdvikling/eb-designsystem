@@ -1,6 +1,6 @@
 <script lang="ts">
   import { afterUpdate, onMount } from 'svelte';
-  import { throttle } from '../../misc/throttle';
+  import { throttle } from '../../functions/throttle';
   import Button from '../button/Button.svelte';
   import Icon from '../icon/Icon.svelte';
 

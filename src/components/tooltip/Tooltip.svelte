@@ -1,23 +1,49 @@
 <script lang="ts">
-  import Icon from '../icon/Icon.svelte';
-  export let position: 'left' | 'right' = 'left';
+  import type { TTooltipInstance, TTippyCustomOptions } from '../../types/tooltipAction';
+  import { afterUpdate, onMount, onDestroy, SvelteComponent } from 'svelte';
+  import { tooltipRender } from '../../functions/tooltipRender';
+  import { tooltipStore } from '../../functions/tooltipStore';
 
-  export let className: string = undefined;
+  export let allowHTML: boolean = false; // Allow HTML
+  export let anchorNode: HTMLElement;
+  export let content: string | typeof SvelteComponent; // Text or Svelte Component
+  export let props = {}; // Props passed to chosen component
+  export let tippyOptions: TTippyCustomOptions = {}; // Additional TippyJS props
 
-  let cssClass = `tooltip tooltip--${position}`;
+  let tooltipNode: HTMLDivElement;
+  let instance: TTooltipInstance = null;
+  $: textOnly = typeof content === 'string' || content instanceof String;
 
-  if (className) cssClass = `${cssClass} ${className}`;
+  onMount(() => {
+    instance = tooltipRender(anchorNode, tooltipNode, tippyOptions);
+
+    // Add to store for programmatic access, if anchor has unique id
+    if (anchorNode.hasAttribute('id')) {
+      const id = anchorNode.getAttribute('id');
+      $tooltipStore[id] = instance;
+    }
+  });
+
+  afterUpdate(() => {
+    instance.setProps(tippyOptions);
+  });
+
+  onDestroy(() => {
+    // Remove tooltip instance and store entry
+    instance.destroy();
+    if (anchorNode.hasAttribute('id')) {
+      const id = anchorNode.getAttribute('id');
+      delete $tooltipStore[id];
+    }
+  });
 </script>
 
-<label class={cssClass}>
-  <input type="checkbox" hidden class="tooltip-input" />
-  <div class="tooltip-off">
-    <Icon className="tooltip-toggle" name="questioncircle" width="18" />
-  </div>
-  <div class="tooltip-on">
-    <Icon className="tooltip-toggle" name="timescircle" width="18" />
-    <div class="padding-s">
-      <slot />
-    </div>
-  </div>
-</label>
+<div bind:this={tooltipNode} class:tooltip-textonly={textOnly}>
+  {#if !textOnly}
+    <svelte:component this={content} {...props} />
+  {:else if allowHTML}
+    {@html content}
+  {:else}
+    {content}
+  {/if}
+</div>
