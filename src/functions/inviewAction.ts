@@ -2,6 +2,7 @@
 import type { IInviewOptions, IInviewPosition, IInviewScrollDirection } from '../types/inviewAction';
 
 const defaultOptions: IInviewOptions = {
+  minIntersectingTime: 0,
   root: null,
   rootMargin: '0px',
   threshold: 0,
@@ -24,6 +25,7 @@ export default function inview(node: HTMLElement, options: IInviewOptions): { de
     vertical: undefined,
   };
 
+  let timeoutIntersecting: ReturnType<typeof setTimeout> = undefined;
   let inView = false;
   let observer: IntersectionObserver;
 
@@ -68,19 +70,21 @@ export default function inview(node: HTMLElement, options: IInviewOptions): { de
           if (entry.isIntersecting) {
             inView = true;
 
-            node.dispatchEvent(
-              new CustomEvent('enter', {
-                detail: {
-                  entry,
-                  inView,
-                  observe,
-                  scrollDirection,
-                  unobserve,
-                },
-              })
-            );
+            timeoutIntersecting = setTimeout(() => {
+              node.dispatchEvent(
+                new CustomEvent('enter', {
+                  detail: {
+                    entry,
+                    inView,
+                    observe,
+                    scrollDirection,
+                    unobserve,
+                  },
+                })
+              );
 
-            options.unobserveOnEnter && observeInstance.unobserve(node);
+              options.unobserveOnEnter && observeInstance.unobserve(node);
+            }, options.minIntersectingTime);
           } else {
             inView = false;
             node.dispatchEvent(
@@ -94,6 +98,8 @@ export default function inview(node: HTMLElement, options: IInviewOptions): { de
                 },
               })
             );
+
+            clearTimeout(timeoutIntersecting);
           }
         });
       },

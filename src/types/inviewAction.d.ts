@@ -1,4 +1,5 @@
 export interface IInviewOptions {
+  minIntersectingTime?: number;
   root?: HTMLElement | null;
   rootMargin?: string;
   threshold?: number | number[];
