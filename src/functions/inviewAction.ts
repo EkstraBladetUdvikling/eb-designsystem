@@ -1,8 +1,40 @@
-/* Modified version of https://github.com/maciekgrzybek/svelte-inview */
 import type { IInviewOptions, IInviewPosition, IInviewScrollDirection } from '../types/inviewAction';
 
+class Timer {
+  private timeout: ReturnType<typeof setTimeout>;
+  private startDate: Date;
+  private delay: number;
+
+  constructor(delay: number) {
+    this.delay = delay;
+  }
+
+  public reset() {
+    clearTimeout(this.timeout);
+  }
+
+  public pause() {
+    if (this.startDate) {
+      this.reset();
+      this.delay -= Number(new Date()) - Number(this.startDate);
+    }
+  }
+
+  public resume<T>(callback: (args: T[]) => any, ...args: T[]) {
+    if (this.delay) {
+      this.startDate = new Date();
+      this.timeout = setTimeout(() => {
+        callback.apply(this, Array.prototype.slice.call(args, 2, args.length));
+      }, this.delay);
+    } else {
+      callback.apply(this, Array.prototype.slice.call(args, 2, args.length));
+    }
+  }
+}
+
 const defaultOptions: IInviewOptions = {
-  minIntersectingTime: 0,
+  accumulateIntersectingTime: true, // Acculmulate time in viewport
+  minIntersectingTime: 0, // Require element to be visible x ms
   root: null,
   rootMargin: '0px',
   threshold: 0,
@@ -25,7 +57,7 @@ export default function inview(node: HTMLElement, options: IInviewOptions): { de
     vertical: undefined,
   };
 
-  let timeoutIntersecting: ReturnType<typeof setTimeout> = undefined;
+  const intersectionTimer: Timer = new Timer(actionOptions.minIntersectingTime);
   let inView = false;
   let observer: IntersectionObserver;
 
@@ -70,7 +102,7 @@ export default function inview(node: HTMLElement, options: IInviewOptions): { de
           if (entry.isIntersecting) {
             inView = true;
 
-            timeoutIntersecting = setTimeout(() => {
+            intersectionTimer.resume(() => {
               node.dispatchEvent(
                 new CustomEvent('enter', {
                   detail: {
@@ -84,7 +116,7 @@ export default function inview(node: HTMLElement, options: IInviewOptions): { de
               );
 
               options.unobserveOnEnter && observeInstance.unobserve(node);
-            }, options.minIntersectingTime);
+            });
           } else {
             inView = false;
             node.dispatchEvent(
@@ -99,7 +131,11 @@ export default function inview(node: HTMLElement, options: IInviewOptions): { de
               })
             );
 
-            clearTimeout(timeoutIntersecting);
+            if (actionOptions.accumulateIntersectingTime) {
+              intersectionTimer.pause();
+            } else {
+              intersectionTimer.reset();
+            }
           }
         });
       },
