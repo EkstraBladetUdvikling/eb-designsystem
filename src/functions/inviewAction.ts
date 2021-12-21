@@ -33,7 +33,7 @@ class Timer {
 }
 
 const defaultOptions: IInviewOptions = {
-  accumulateIntersectingTime: true, // Acculmulate time in viewport
+  accumulateIntersectingTime: true, // Accumulate time in viewport
   minIntersectingTime: 0, // Require element to be visible x ms
   root: null,
   rootMargin: '0px',
