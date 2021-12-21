@@ -63,7 +63,9 @@
 
   const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
 
-  $: styleProp = `${style}; --color--list-hover: var(--color--${colorName}); --fgcolor--list-hover: var(--fgcolor--${colorName}); --card-width: ${width};`;
+  $: styleProp = `${style}; --color--list-hover: var(--color--${
+    breaking ? colorNames.breaking : colorName
+  }); --fgcolor--list-hover: var(--fgcolor--${breaking ? colorNames.breaking : colorName}); --card-width: ${width};`;
 
   $: cssClass = className ? `${className} ${baseClass}` : baseClass;
 
@@ -114,18 +116,10 @@
           {#if saved !== undefined}
             <Toggler className="card-save-toggle" defaultState={saved} on:toggle={toggleSave}>
               <slot slot="on">
-                <Icon
-                  name="bookmarksolid"
-                  style="color: var(--fgcolor--{breaking ? colorNames.breaking : colorName});"
-                  width={14}
-                />
+                <Icon name="bookmarksolid" style="color: var(--fgcolor--list-hover);" width={14} />
               </slot>
               <slot slot="off">
-                <Icon
-                  name="bookmark"
-                  style="color: var(--fgcolor--{breaking ? colorNames.breaking : colorName});"
-                  width={14}
-                />
+                <Icon name="bookmark" style="color: var(--fgcolor--list-hover);" width={14} />
               </slot>
             </Toggler>
           {/if}
