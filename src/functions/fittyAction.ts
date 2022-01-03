@@ -1,7 +1,9 @@
 import fitty from 'fitty';
 
-export function fittyaction(node: HTMLElement): any {
-  const fittyInstance = fitty(node);
+export function fittyaction(node: HTMLElement, _targetWidth: number): any {
+  const fittyInstance = fitty(node, {
+    minSize: 14,
+  });
 
   document.fonts.ready.then(() => {
     // Check if fitty needs to refit after loading fonts
@@ -13,6 +15,9 @@ export function fittyaction(node: HTMLElement): any {
   return {
     destroy() {
       fittyInstance.unsubscribe();
+    },
+    update() {
+      fittyInstance.fit();
     },
   };
 }
