@@ -70,14 +70,6 @@ a.card:focus {
   flex: 1 0 auto;
 }
 
-.card-content .card-save-toggle {
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  padding: 5px;
-}
-
 .card-header,
 .card-footer {
   box-sizing: border-box;

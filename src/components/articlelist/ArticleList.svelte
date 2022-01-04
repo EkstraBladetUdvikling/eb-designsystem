@@ -12,6 +12,7 @@
     vertical = 'vertical',
   }
 
+  export let className: string = 'margin-l--tb';
   export let fontsizes = ['xxlarge', 'xlarge', 'large'];
   export let type: TListTypes = LISTTYPE.horizontal;
 
@@ -53,7 +54,7 @@
   $: titleFs = fontsizes[$childrenLength - 1] ?? fontsizes[fontsizes.length - 1];
 </script>
 
-<div class="margin-l--tb" bind:this={articleListContainer} style="--card-mode--title: var(--fs-{titleFs});">
+<div class={className} bind:this={articleListContainer} style="--card-mode--title: var(--fs-{titleFs});">
   {#if $writableType === LISTTYPE.horizontal}
     <HorizontalScroll>
       <slot />

@@ -113,16 +113,6 @@
           {/if}
         </div>
         <div class="card-content">
-          {#if saved !== undefined}
-            <Toggler className="card-save-toggle" defaultState={saved} on:toggle={toggleSave}>
-              <slot slot="on">
-                <Icon name="bookmarksolid" style="color: var(--fgcolor--list-hover);" width={14} />
-              </slot>
-              <slot slot="off">
-                <Icon name="bookmark" style="color: var(--fgcolor--list-hover);" width={14} />
-              </slot>
-            </Toggler>
-          {/if}
           {#if section || published}
             <div class="card-meta flex fontsize-xxsmall padding-s--b">
               {#if section}
@@ -138,6 +128,18 @@
                   <Icon name="clock" width="12" />
                   <span class="padding-s--l">{parseDate(published)}</span>
                 </div>
+              {/if}
+              {#if saved !== undefined}
+                <Toggler className="card-meta-item" defaultState={saved} on:toggle={toggleSave}>
+                  <slot slot="on">
+                    <Icon name="bookmarksolid" style="color: var(--fgcolor--list-hover);" width={12} />
+                    <span class="padding-s--l" style="color: var(--fgcolor--list-hover);">Gemt</span>
+                  </slot>
+                  <slot slot="off">
+                    <Icon name="bookmark" style="color: var(--fgcolor--list-hover);" width={12} />
+                    <span class="padding-s--l" style="color: var(--fgcolor--list-hover);">Gem</span>
+                  </slot>
+                </Toggler>
               {/if}
             </div>
           {/if}
