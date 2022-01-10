@@ -35,6 +35,10 @@
   flex-wrap: wrap;
 }
 
+.flex-wrap--nowrap {
+  flex-wrap: nowrap;
+}
+
 .flex-row--reverse {
   flex-direction: row-reverse;
 }
