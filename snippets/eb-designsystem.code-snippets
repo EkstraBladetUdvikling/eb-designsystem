@@ -602,6 +602,13 @@
     ],
     "description": "NB! This should only be used with flex-wrap\n{\n flex-wrap: wrap;\n }"
   },
+  "designsystem flex wrap nowrap": {
+    "prefix": "ds-flex-wrap--nowrap",
+    "body": [
+      "flex-wrap--nowrap"
+    ],
+    "description": "NB! This should only be used with flex-wrap\n{\n flex-wrap: nowrap;\n }"
+  },
   "designsystem flex row reverse": {
     "prefix": "ds-flex-row--reverse",
     "body": [
