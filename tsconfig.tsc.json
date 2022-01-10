@@ -7,7 +7,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "./dist",
-    "target": "esnext"
+    "target": "es6"
   },
   "indent": [true, "spaces", 2],
   "exclude": ["./node_modules"],
