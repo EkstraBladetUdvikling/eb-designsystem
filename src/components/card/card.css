@@ -213,6 +213,27 @@ a.card:focus {
   flex-direction: column;
   overflow: hidden;
   height: 100%;
+  position: relative;
+}
+
+.card-premium {
+  position: absolute;
+  padding: 10px 0 0 10px;
+  line-height: 0;
+  z-index: 1;
+}
+
+.card-premium::after {
+  content: " ";
+  background: var(--color--eb);
+  position: absolute;
+  display: block;
+  width: 71px;
+  height: 71px;
+  top: -1px;
+  left: -1px;
+  z-index: -1;
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
 }
 
 .card-mode--article {

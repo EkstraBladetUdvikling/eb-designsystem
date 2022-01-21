@@ -48,7 +48,7 @@
 
   <ArticleList>
     {#each $articles as article}
-      <ArticleCard {...article} className="margin-s" width="240px" truncateTitle={true} />
+      <ArticleCard {...article} width="240px" truncateTitle={true} />
     {/each}
   </ArticleList>
 
@@ -56,33 +56,33 @@
   <h4>1</h4>
   <ArticleList>
     {#each singleArt as article}
-      <ArticleCard {...article} className="margin-s" width="240px" truncateTitle={true} />
+      <ArticleCard {...article} width="240px" truncateTitle={true} />
     {/each}
   </ArticleList>
   <h4>2</h4>
   <ArticleList
     >{#each doubleArt as article}
-      <ArticleCard {...article} className="margin-s" width="240px" truncateTitle={true} />
+      <ArticleCard {...article} width="240px" truncateTitle={true} />
     {/each}
   </ArticleList>
   <h4>3</h4>
   <ArticleList
     >{#each threeArt as article}
-      <ArticleCard {...article} className="margin-s" width="240px" truncateTitle={true} />
+      <ArticleCard {...article} width="240px" truncateTitle={true} />
     {/each}
   </ArticleList>
   <h4>4</h4>
   <ArticleList
     >{#each fourArt as article}
       <div>
-        <ArticleCard {...article} className="margin-s" width="240px" truncateTitle={false} />
+        <ArticleCard {...article} width="240px" truncateTitle={false} />
       </div>
     {/each}
   </ArticleList>
   <h4>5</h4>
   <ArticleList
     >{#each fiveArt as article}
-      <ArticleCard {...article} className="margin-s" width="240px" truncateTitle={true} />
+      <ArticleCard {...article} width="240px" truncateTitle={true} />
     {/each}
   </ArticleList>
 </div>

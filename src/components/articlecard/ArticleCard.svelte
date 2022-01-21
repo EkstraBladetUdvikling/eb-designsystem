@@ -82,6 +82,11 @@
 {#if loading || (!loading && title)}
   <Card {url} className={cssClass} style={styleProp} data-breaking={breaking} on:click>
     <div class={innerClass}>
+      {#if premium}
+        <div class="card-premium">
+          <Icon className="color--white" name="ebplus" width="20" />
+        </div>
+      {/if}
       {#if loading}
         <div class="card-media">
           <div class="card-image bg--graa4" style={loadingStyle} />
@@ -107,11 +112,6 @@
         </div>
       {/if}
       <div class="card-content-wrapper">
-        <div class="card-icon flex flex-justify--end">
-          {#if premium}
-            <Icon name="ebpluscirclesolid" width="20" />
-          {/if}
-        </div>
         <div class="card-content">
           {#if section || published}
             <div class="card-meta flex fontsize-xxsmall padding-s--b">

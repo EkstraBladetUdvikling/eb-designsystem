@@ -1586,6 +1586,27 @@ a.card:focus {
 .card-inner {
   overflow: hidden;
   height: 100%;
+  position: relative;
+}
+
+.card-premium {
+  position: absolute;
+  padding: 10px 0 0 10px;
+  line-height: 0;
+  z-index: 1;
+}
+
+.card-premium::after {
+  content: " ";
+  background: var(--color--eb);
+  position: absolute;
+  display: block;
+  width: 70px;
+  height: 70px;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
 }
 
 .card-mode--article {
