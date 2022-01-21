@@ -114,7 +114,7 @@
         </div>
         <div class="card-content">
           {#if section || published}
-            <div class="card-meta flex fontsize-xxsmall padding-s--b">
+            <div class="card-meta flex flex-wrap--wrap fontsize-xxsmall">
               {#if section}
                 <div class="card-meta-item">
                   <span class="flex flex-justify--center">
@@ -130,7 +130,11 @@
                 </div>
               {/if}
               {#if saved !== undefined}
-                <Toggler className="card-meta-item" defaultState={saved} on:toggle={toggleSave}>
+                <Toggler
+                  className="card-meta-item padding-m--r padding-s--b"
+                  defaultState={saved}
+                  on:toggle={toggleSave}
+                >
                   <slot slot="on">
                     <Icon name="bookmarksolid" style="color: var(--fgcolor--list-hover);" width={12} />
                     <span class="padding-s--l" style="color: var(--fgcolor--list-hover);">Gemt</span>
