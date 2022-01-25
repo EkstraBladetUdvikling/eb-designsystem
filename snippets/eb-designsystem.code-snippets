@@ -229,12 +229,12 @@
     ],
     "description": "{\n border-radius: var(--border-radius-medium);\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\nposition: relative;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
   },
-  "designsystem card premium": {
-    "prefix": "ds-card-premium",
+  "designsystem premium dogear": {
+    "prefix": "ds-premium-dogear",
     "body": [
-      "card-premium"
+      "premium-dogear"
     ],
-    "description": "{\n position: absolute;\npadding: 10px 0 0 10px;\nline-height: 0;\nz-index: 1;\n }\n Has pseudo styling ::after"
+    "description": "{\n position: absolute;\npadding: 10px 0 0 10px;\nline-height: 0;\nz-index: 1;\n--dogear-size: 71px;\n }\n Has pseudo styling ::after"
   },
   "designsystem card mode article": {
     "prefix": "ds-card-mode--article",

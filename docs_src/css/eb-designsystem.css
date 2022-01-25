@@ -1589,22 +1589,23 @@ a.card:focus {
   position: relative;
 }
 
-.card-premium {
+.premium-dogear {
   position: absolute;
   padding: 10px 0 0 10px;
   line-height: 0;
   z-index: 1;
+  --dogear-size: 71px;
 }
 
-.card-premium::after {
+.premium-dogear::after {
   content: " ";
   background: var(--color--eb);
   position: absolute;
   display: block;
-  width: 70px;
-  height: 70px;
-  top: 0;
-  left: 0;
+  width: var(--dogear-size);
+  height: var(--dogear-size);
+  top: -1px;
+  left: -1px;
   z-index: -1;
   clip-path: polygon(0 0, 0% 100%, 100% 0);
 }

@@ -83,7 +83,7 @@
   <Card {url} className={cssClass} style={styleProp} data-breaking={breaking} on:click>
     <div class={innerClass}>
       {#if premium}
-        <div class="card-premium">
+        <div class="premium-dogear">
           <Icon className="color--white" name="ebplus" width="20" />
         </div>
       {/if}
