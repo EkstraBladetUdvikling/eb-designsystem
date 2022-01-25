@@ -99,6 +99,7 @@ a.card:focus {
   align-items: center;
   display: flex;
   padding-right: var(--distance-medium);
+  padding-bottom: var(--distance-small);
   white-space: nowrap;
 }
 

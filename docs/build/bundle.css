@@ -1461,12 +1461,14 @@ a.card:focus {
 
 .card-meta {
   font-weight: normal;
+  padding-top: var(--distance-small);
 }
 
 .card-meta-item {
   align-items: center;
   display: flex;
   padding-right: var(--distance-medium);
+  padding-bottom: var(--distance-small);
   white-space: nowrap;
 }
 
@@ -1587,27 +1589,6 @@ a.card:focus {
   overflow: hidden;
   height: 100%;
   position: relative;
-}
-
-.premium-dogear {
-  position: absolute;
-  padding: 10px 0 0 10px;
-  line-height: 0;
-  z-index: 1;
-  --dogear-size: 71px;
-}
-
-.premium-dogear::after {
-  content: " ";
-  background: var(--color--eb);
-  position: absolute;
-  display: block;
-  width: var(--dogear-size);
-  height: var(--dogear-size);
-  top: -1px;
-  left: -1px;
-  z-index: -1;
-  clip-path: polygon(0 0, 0% 100%, 100% 0);
 }
 
 .card-mode--article {
@@ -1739,6 +1720,61 @@ a.card-mode:focus .card-inner {
   --lh: 1.2em;
   -webkit-line-clamp: var(--max-lines);
   --max-lines: 9;
+}
+
+.premium-dogear {
+  --dogear-size: 61px;
+  --dogear-padding: 7px;
+  --dogear-icon: 18px;
+  --icon-size: var(--dogear-icon);
+  position: absolute;
+  padding: var(--dogear-padding) 0 0 var(--dogear-padding);
+  line-height: 0;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.premium-dogear::after {
+  content: " ";
+  background: var(--color--eb);
+  position: absolute;
+  display: block;
+  width: var(--dogear-size);
+  height: var(--dogear-size);
+  top: -1px;
+  left: -1px;
+  z-index: -1;
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
+}
+
+.card--small-media--reverse .premium-dogear {
+  left: auto;
+  right: 0;
+  padding: var(--dogear-padding) var(--dogear-padding) 0 0;
+}
+
+.card--small-media--reverse .premium-dogear::after {
+  right: -1px;
+  left: auto;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.article-top .premium-dogear {
+  --dogear-size: 81px;
+  --dogear-icon: 25px;
+}
+
+.premium-dogear ~ .article-meta {
+  padding-left: 40px;
+}
+
+.premium-dogear + .card-content .save-list-item {
+  padding-left: 25px;
+}
+
+.premium-dogear + .card-content-wrapper .card-meta {
+  padding-left: 15px;
 }
 
 :root {

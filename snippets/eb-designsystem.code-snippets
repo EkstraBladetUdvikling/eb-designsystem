@@ -186,14 +186,14 @@
     "body": [
       "card-meta"
     ],
-    "description": "{\n font-weight: normal;\n }"
+    "description": "{\n font-weight: normal;\npadding-top: var(--distance-small);\n }"
   },
   "designsystem card meta item": {
     "prefix": "ds-card-meta-item",
     "body": [
       "card-meta-item"
     ],
-    "description": "{\n align-items: center;\ndisplay: flex;\npadding-right: var(--distance-medium);\nwhite-space: nowrap;\n }"
+    "description": "{\n align-items: center;\ndisplay: flex;\npadding-right: var(--distance-medium);\npadding-bottom: var(--distance-small);\nwhite-space: nowrap;\n }"
   },
   "designsystem card title": {
     "description": "Has pseudo styling :not([class*=\"fs-\"]):not([class*=\"fontsize-\"])"
@@ -229,13 +229,6 @@
     ],
     "description": "{\n border-radius: var(--border-radius-medium);\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\nposition: relative;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
   },
-  "designsystem premium dogear": {
-    "prefix": "ds-premium-dogear",
-    "body": [
-      "premium-dogear"
-    ],
-    "description": "{\n position: absolute;\npadding: 10px 0 0 10px;\nline-height: 0;\nz-index: 1;\n--dogear-size: 71px;\n }\n Has pseudo styling ::after"
-  },
   "designsystem card mode article": {
     "prefix": "ds-card-mode--article",
     "body": [
@@ -256,6 +249,13 @@
       "card-title--truncated"
     ],
     "description": "NB! This should only be used with card-title\n{\n position: relative;\ndisplay: -webkit-box;\nline-height: var(--lh);\noverflow: hidden;\nmin-height: calc(var(--lh) * var(--max-lines));\nmax-height: calc(var(--lh) * var(--max-lines));\n-webkit-box-orient: vertical;\n--lh: 1.2em;\n-webkit-line-clamp: var(--max-lines);\n--max-lines: 9;\n }"
+  },
+  "designsystem premium dogear": {
+    "prefix": "ds-premium-dogear",
+    "body": [
+      "premium-dogear"
+    ],
+    "description": "{\n --dogear-size: 61px;\n--dogear-padding: 7px;\n--dogear-icon: 18px;\n--icon-size: var(--dogear-icon);\nposition: absolute;\npadding: var(--dogear-padding) 0 0 var(--dogear-padding);\nline-height: 0;\nz-index: 1;\ntop: 0;\nleft: 0;\n }\n Has pseudo styling ::after"
   },
   "designsystem form element": {
     "prefix": "ds-form-element",
