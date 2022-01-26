@@ -1760,11 +1760,6 @@ a.card-mode:focus .card-inner {
   clip-path: polygon(100% 0, 0 0, 100% 100%);
 }
 
-.article-top .premium-dogear {
-  --dogear-size: 81px;
-  --dogear-icon: 25px;
-}
-
 .premium-dogear ~ .article-meta {
   padding-left: 40px;
 }

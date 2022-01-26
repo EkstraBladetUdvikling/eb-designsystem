@@ -6,7 +6,7 @@ declare module 'Icon.svelte' {
 
   
   export type GraphicTypes =
-'ekstrabladet';
+'ebplusred'|'ebpluswhite'|'ekstrabladet';
 }
 
 declare module '*.svg';
