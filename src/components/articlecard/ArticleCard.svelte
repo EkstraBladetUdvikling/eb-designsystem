@@ -84,7 +84,7 @@
     <div class={innerClass}>
       {#if premium}
         <div class="premium-dogear">
-          <Icon className="color--white" name="ebplus" width="20" />
+          <Icon className="color--white" name="ebplusred" width="20" />
         </div>
       {/if}
       {#if loading}

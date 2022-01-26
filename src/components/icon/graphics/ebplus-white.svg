@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 365 365">
+  <g id="shadow1">
+    <rect x="52.76668" y="166.47114" width="100.60557" height="190.91883" transform="translate(361.16346 374.26232) rotate(135)" style="fill: #900000"/>
+  </g>
+  <g id="leg">
+    <rect x="135.00003" width="95" height="365" style="fill: #fff"/>
+  </g>
+  <g id="shadow2">
+    <polygon points="135 230 135 263.493 230 230 135 230" style="fill: #690000"/>
+  </g>
+  <g id="arm">
+    <rect x="135.00003" width="95" height="365" transform="translate(365.00003 -0.00003) rotate(90)" style="fill: #fff"/>
+  </g>
+</svg>
