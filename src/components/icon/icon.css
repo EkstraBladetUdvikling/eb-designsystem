@@ -1,6 +1,8 @@
 :root {
   --icon-size: 14px;
+  --ebds-figcaption-bg: var(--color--white);
 }
+
 .icon-svg {
   width: var(--icon-size);
   height: var(--icon-size);

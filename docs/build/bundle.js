@@ -212,8 +212,14 @@ var app = (function () {
             attr(node, key, attributes[key]);
         }
     }
+    function to_number(value) {
+        return value === '' ? null : +value;
+    }
     function children(element) {
         return Array.from(element.childNodes);
+    }
+    function set_input_value(input, value) {
+        input.value = value == null ? '' : value;
     }
     function set_style(node, key, value, important) {
         node.style.setProperty(key, value, important ? 'important' : '');
@@ -9340,10 +9346,10 @@ var app = (function () {
     			path0 = svg_element("path");
     			path1 = svg_element("path");
     			attr_dev(path0, "d", "M15.6.8c.8-.8 2-.8 2.8 0l6.7 6.7c1.9 1.9 4.4 2.9 7.1 2.9H34v6H0v-6h1.9c2.7 0 5.2-1.1 7.1-2.9L15.6.8z");
-    			attr_dev(path0, "fill", "#fff");
-    			add_location(path0, file$3O, 0, 76, 76);
+    			attr_dev(path0, "fill", "var(--ebds-figcaption-bg)");
+    			add_location(path0, file$3O, 1, 0, 77);
     			attr_dev(path1, "d", "M9.7 12.9l6.6-6.6c.4-.4 1-.4 1.4 0l6.6 6.6c.6.6.2 1.7-.7 1.7H10.4c-.9 0-1.3-1-.7-1.7z");
-    			add_location(path1, file$3O, 0, 201, 201);
+    			add_location(path1, file$3O, 2, 0, 224);
     			set_svg_attributes(svg, svg_data);
     			add_location(svg, file$3O, 0, 0, 0);
     		},
@@ -48183,10 +48189,10 @@ for (const accordion of accordions) {
     			path0 = svg_element("path");
     			path1 = svg_element("path");
     			attr_dev(path0, "d", "M15.6.8c.8-.8 2-.8 2.8 0l6.7 6.7c1.9 1.9 4.4 2.9 7.1 2.9H34v6H0v-6h1.9c2.7 0 5.2-1.1 7.1-2.9L15.6.8z");
-    			attr_dev(path0, "fill", "#fff");
-    			add_location(path0, file$1I, 0, 76, 76);
+    			attr_dev(path0, "fill", "var(--ebds-figcaption-bg)");
+    			add_location(path0, file$1I, 1, 0, 77);
     			attr_dev(path1, "d", "M9.7 12.9l6.6-6.6c.4-.4 1-.4 1.4 0l6.6 6.6c.6.6.2 1.7-.7 1.7H10.4c-.9 0-1.3-1-.7-1.7z");
-    			add_location(path1, file$1I, 0, 201, 201);
+    			add_location(path1, file$1I, 2, 0, 224);
     			set_svg_attributes(svg, svg_data);
     			add_location(svg, file$1I, 0, 0, 0);
     		},
@@ -67557,15 +67563,15 @@ for (const accordion of accordions) {
 
     function get_each_context$5(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[4] = list[i];
-    	child_ctx[6] = i;
+    	child_ctx[5] = list[i];
+    	child_ctx[7] = i;
     	return child_ctx;
     }
 
     function get_each_context_1$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[4] = list[i];
-    	child_ctx[6] = i;
+    	child_ctx[5] = list[i];
+    	child_ctx[7] = i;
     	return child_ctx;
     }
 
@@ -68009,14 +68015,14 @@ for (const accordion of accordions) {
     // (91:6) {:else}
     function create_else_block_3$1(ctx) {
     	let small;
-    	let t_value = iconnameshtml[/*i*/ ctx[6]] + "";
+    	let t_value = iconnameshtml[/*i*/ ctx[7]] + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			small = element("small");
     			t = text(t_value);
-    			add_location(small, file$s, 91, 8, 2550);
+    			add_location(small, file$s, 91, 8, 2585);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, small, anchor);
@@ -68042,14 +68048,14 @@ for (const accordion of accordions) {
     // (89:6) {#if $sourceType === 'svelte'}
     function create_if_block_3$1(ctx) {
     	let small;
-    	let t_value = /*name*/ ctx[4] + "";
+    	let t_value = /*name*/ ctx[5] + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			small = element("small");
     			t = text(t_value);
-    			add_location(small, file$s, 89, 8, 2506);
+    			add_location(small, file$s, 89, 8, 2541);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, small, anchor);
@@ -68081,7 +68087,7 @@ for (const accordion of accordions) {
 
     	icon = new dist.Icon({
     			props: {
-    				name: /*name*/ ctx[4],
+    				name: /*name*/ ctx[5],
     				className: "margin-s",
     				style: "width: " + /*size*/ ctx[0] + "px; height: " + /*size*/ ctx[0] + "px;"
     			},
@@ -68180,7 +68186,7 @@ for (const accordion of accordions) {
     		p: function update(ctx, dirty) {
     			const card_changes = {};
 
-    			if (dirty & /*$$scope, $sourceType, size*/ 259) {
+    			if (dirty & /*$$scope, $sourceType, size*/ 515) {
     				card_changes.$$scope = { dirty, ctx };
     			}
 
@@ -68369,14 +68375,14 @@ for (const accordion of accordions) {
     // (119:6) {:else}
     function create_else_block_1$2(ctx) {
     	let small;
-    	let t_value = graphicnameshtml[/*i*/ ctx[6]] + "";
+    	let t_value = graphicnameshtml[/*i*/ ctx[7]] + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			small = element("small");
     			t = text(t_value);
-    			add_location(small, file$s, 119, 8, 3347);
+    			add_location(small, file$s, 119, 8, 3382);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, small, anchor);
@@ -68402,14 +68408,14 @@ for (const accordion of accordions) {
     // (117:6) {#if $sourceType === 'svelte'}
     function create_if_block_1$3(ctx) {
     	let small;
-    	let t_value = /*name*/ ctx[4] + "";
+    	let t_value = /*name*/ ctx[5] + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			small = element("small");
     			t = text(t_value);
-    			add_location(small, file$s, 117, 8, 3303);
+    			add_location(small, file$s, 117, 8, 3338);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, small, anchor);
@@ -68441,7 +68447,7 @@ for (const accordion of accordions) {
 
     	icon = new dist.Icon({
     			props: {
-    				name: /*name*/ ctx[4],
+    				name: /*name*/ ctx[5],
     				className: "margin-s",
     				style: "width: 36px; height: 36px;"
     			},
@@ -68536,7 +68542,7 @@ for (const accordion of accordions) {
     		p: function update(ctx, dirty) {
     			const card_changes = {};
 
-    			if (dirty & /*$$scope, $sourceType*/ 258) {
+    			if (dirty & /*$$scope, $sourceType*/ 514) {
     				card_changes.$$scope = { dirty, ctx };
     			}
 
@@ -68744,26 +68750,28 @@ for (const accordion of accordions) {
     	let t15;
     	let p2;
     	let t16;
+    	let input;
     	let t17;
     	let t18;
-    	let t19;
     	let button1;
-    	let t20;
+    	let t19;
     	let div1;
-    	let t21;
+    	let t20;
     	let current_block_type_index;
     	let if_block1;
-    	let t22;
+    	let t21;
     	let h31;
-    	let t24;
+    	let t23;
     	let p3;
-    	let t26;
+    	let t25;
     	let div2;
-    	let t27;
+    	let t26;
     	let current_block_type_index_1;
     	let if_block2;
     	let if_block2_anchor;
     	let current;
+    	let mounted;
+    	let dispose;
     	let if_block0 = /*$sourceType*/ ctx[1] === 'svelte' && create_if_block_4$1(ctx);
 
     	button0 = new dist.Button({
@@ -68864,33 +68872,33 @@ for (const accordion of accordions) {
     			t15 = space();
     			p2 = element("p");
     			t16 = text("Size: ");
-    			t17 = text(/*size*/ ctx[0]);
-    			t18 = text("px");
-    			t19 = space();
+    			input = element("input");
+    			t17 = text("px");
+    			t18 = space();
     			create_component(button1.$$.fragment);
-    			t20 = space();
+    			t19 = space();
     			div1 = element("div");
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].c();
     			}
 
-    			t21 = space();
+    			t20 = space();
     			if_block1.c();
-    			t22 = space();
+    			t21 = space();
     			h31 = element("h3");
     			h31.textContent = "Graphics";
-    			t24 = space();
+    			t23 = space();
     			p3 = element("p");
     			p3.textContent = "Graphics are capable of containing more layers i.e static colors on stroke and fill.";
-    			t26 = space();
+    			t25 = space();
     			div2 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t27 = space();
+    			t26 = space();
     			if_block2.c();
     			if_block2_anchor = empty();
     			attr_dev(h1, "class", "color--eb");
@@ -68903,15 +68911,17 @@ for (const accordion of accordions) {
     			add_location(b0, file$s, 72, 2, 1836);
     			add_location(b1, file$s, 73, 5, 1854);
     			add_location(p1, file$s, 70, 0, 1718);
+    			attr_dev(input, "type", "number");
+    			add_location(input, file$s, 79, 11, 2083);
     			add_location(p2, file$s, 79, 2, 2074);
     			attr_dev(div0, "class", "flex flex-row flex-justify--center flex-align--center");
     			add_location(div0, file$s, 75, 0, 1881);
     			attr_dev(div1, "class", "flex flex-wrap--wrap");
-    			add_location(div1, file$s, 84, 0, 2227);
-    			add_location(h31, file$s, 109, 0, 2918);
-    			add_location(p3, file$s, 110, 0, 2936);
+    			add_location(div1, file$s, 84, 0, 2262);
+    			add_location(h31, file$s, 109, 0, 2953);
+    			add_location(p3, file$s, 110, 0, 2971);
     			attr_dev(div2, "class", "flex flex-wrap--wrap");
-    			add_location(div2, file$s, 112, 0, 3029);
+    			add_location(div2, file$s, 112, 0, 3064);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -68939,34 +68949,40 @@ for (const accordion of accordions) {
     			append_dev(div0, t15);
     			append_dev(div0, p2);
     			append_dev(p2, t16);
+    			append_dev(p2, input);
+    			set_input_value(input, /*size*/ ctx[0]);
     			append_dev(p2, t17);
-    			append_dev(p2, t18);
-    			append_dev(div0, t19);
+    			append_dev(div0, t18);
     			mount_component(button1, div0, null);
-    			insert_dev(target, t20, anchor);
+    			insert_dev(target, t19, anchor);
     			insert_dev(target, div1, anchor);
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].m(div1, null);
     			}
 
-    			insert_dev(target, t21, anchor);
+    			insert_dev(target, t20, anchor);
     			if_blocks[current_block_type_index].m(target, anchor);
-    			insert_dev(target, t22, anchor);
+    			insert_dev(target, t21, anchor);
     			insert_dev(target, h31, anchor);
-    			insert_dev(target, t24, anchor);
+    			insert_dev(target, t23, anchor);
     			insert_dev(target, p3, anchor);
-    			insert_dev(target, t26, anchor);
+    			insert_dev(target, t25, anchor);
     			insert_dev(target, div2, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(div2, null);
     			}
 
-    			insert_dev(target, t27, anchor);
+    			insert_dev(target, t26, anchor);
     			if_blocks_1[current_block_type_index_1].m(target, anchor);
     			insert_dev(target, if_block2_anchor, anchor);
     			current = true;
+
+    			if (!mounted) {
+    				dispose = listen_dev(input, "input", /*input_input_handler*/ ctx[4]);
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, [dirty]) {
     			if (/*$sourceType*/ ctx[1] === 'svelte') {
@@ -68992,15 +69008,19 @@ for (const accordion of accordions) {
 
     			const button0_changes = {};
 
-    			if (dirty & /*$$scope*/ 256) {
+    			if (dirty & /*$$scope*/ 512) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
     			button0.$set(button0_changes);
-    			if (!current || dirty & /*size*/ 1) set_data_dev(t17, /*size*/ ctx[0]);
+
+    			if (dirty & /*size*/ 1 && to_number(input.value) !== /*size*/ ctx[0]) {
+    				set_input_value(input, /*size*/ ctx[0]);
+    			}
+
     			const button1_changes = {};
 
-    			if (dirty & /*$$scope*/ 256) {
+    			if (dirty & /*$$scope*/ 512) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -69053,7 +69073,7 @@ for (const accordion of accordions) {
     				}
 
     				transition_in(if_block1, 1);
-    				if_block1.m(t22.parentNode, t22);
+    				if_block1.m(t21.parentNode, t21);
     			}
 
     			if (dirty & /*graphicnames, $sourceType, graphicnameshtml*/ 2) {
@@ -69159,21 +69179,23 @@ for (const accordion of accordions) {
     			if (detaching) detach_dev(div0);
     			destroy_component(button0);
     			destroy_component(button1);
-    			if (detaching) detach_dev(t20);
+    			if (detaching) detach_dev(t19);
     			if (detaching) detach_dev(div1);
     			destroy_each(each_blocks_1, detaching);
-    			if (detaching) detach_dev(t21);
+    			if (detaching) detach_dev(t20);
     			if_blocks[current_block_type_index].d(detaching);
-    			if (detaching) detach_dev(t22);
+    			if (detaching) detach_dev(t21);
     			if (detaching) detach_dev(h31);
-    			if (detaching) detach_dev(t24);
+    			if (detaching) detach_dev(t23);
     			if (detaching) detach_dev(p3);
-    			if (detaching) detach_dev(t26);
+    			if (detaching) detach_dev(t25);
     			if (detaching) detach_dev(div2);
     			destroy_each(each_blocks, detaching);
-    			if (detaching) detach_dev(t27);
+    			if (detaching) detach_dev(t26);
     			if_blocks_1[current_block_type_index_1].d(detaching);
     			if (detaching) detach_dev(if_block2_anchor);
+    			mounted = false;
+    			dispose();
     		}
     	};
 
@@ -69210,6 +69232,11 @@ for (const accordion of accordions) {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Icon> was created with unknown prop '${key}'`);
     	});
 
+    	function input_input_handler() {
+    		size = to_number(this.value);
+    		$$invalidate(0, size);
+    	}
+
     	$$self.$capture_state = () => ({
     		Prism: Prism$1,
     		sourceType,
@@ -69235,7 +69262,7 @@ for (const accordion of accordions) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [size, $sourceType, decrement, increment];
+    	return [size, $sourceType, decrement, increment, input_input_handler];
     }
 
     class Icon_1 extends SvelteComponentDev {

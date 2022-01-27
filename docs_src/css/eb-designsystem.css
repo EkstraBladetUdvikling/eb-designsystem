@@ -2027,6 +2027,7 @@ a.card-mode:focus .card-inner {
 
 :root {
   --icon-size: 14px;
+  --ebds-figcaption-bg: var(--color--white);
 }
 
 .icon-svg {

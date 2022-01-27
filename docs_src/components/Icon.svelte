@@ -81,7 +81,7 @@
   <Button className="margin-m--r" type="cancel" on:click={decrement}>
     <Icon name="angleleft" width={18} />
   </Button>
-  <p>Size: {size}px</p>
+  <p>Size: <input type="number" bind:value={size} style="width: 45px;" />px</p>
   <Button className="margin-m--l" type="cancel" on:click={increment}>
     <Icon name="angleright" width={18} />
   </Button>
