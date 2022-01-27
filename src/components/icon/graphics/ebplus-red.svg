@@ -1,7 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 365 365">
-  <g id="shadow1">
-    <rect x="52.76668" y="166.47114" width="100.60557" height="190.91883" transform="translate(361.16346 374.26232) rotate(135)" style="fill: #900000"/>
-  </g>
   <g id="leg">
     <rect x="135.00003" width="95" height="365" style="fill: #c60000"/>
   </g>
