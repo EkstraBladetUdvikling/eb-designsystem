@@ -3,7 +3,7 @@
     <rect x="135.00003" width="95" height="365" style="fill: #c60000"/>
   </g>
   <g id="shadow2">
-    <polygon points="135 230 135 263.493 230 230 135 230" style="fill: #000"/>
+    <polygon points="135 230 135 263.493 230 230 135 230" style="fill: #010101"/>
   </g>
   <g id="arm">
     <rect x="135.00003" width="95" height="365" transform="translate(365.00003 -0.00003) rotate(90)" style="fill: #c60000"/>

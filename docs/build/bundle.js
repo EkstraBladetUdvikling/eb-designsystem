@@ -15812,7 +15812,7 @@ var app = (function () {
     			attr_dev(g0, "id", "leg");
     			add_location(g0, file$2U, 1, 2, 79);
     			attr_dev(polygon, "points", "135 230 135 263.493 230 230 135 230");
-    			set_style(polygon, "fill", "#000");
+    			set_style(polygon, "fill", "#010101");
     			add_location(polygon, file$2U, 5, 4, 194);
     			attr_dev(g1, "id", "shadow2");
     			add_location(g1, file$2U, 4, 2, 173);
@@ -15821,9 +15821,9 @@ var app = (function () {
     			attr_dev(rect1, "height", "365");
     			attr_dev(rect1, "transform", "translate(365.00003 -0.00003) rotate(90)");
     			set_style(rect1, "fill", "#c60000");
-    			add_location(rect1, file$2U, 8, 4, 295);
+    			add_location(rect1, file$2U, 8, 4, 298);
     			attr_dev(g2, "id", "arm");
-    			add_location(g2, file$2U, 7, 2, 278);
+    			add_location(g2, file$2U, 7, 2, 281);
     			set_svg_attributes(svg, svg_data);
     			add_location(svg, file$2U, 0, 0, 0);
     		},
@@ -15907,11 +15907,9 @@ var app = (function () {
     	let g0;
     	let rect0;
     	let g1;
-    	let rect1;
-    	let g2;
     	let polygon;
-    	let g3;
-    	let rect2;
+    	let g2;
+    	let rect1;
 
     	let svg_levels = [
     		{ xmlns: "http://www.w3.org/2000/svg" },
@@ -15931,40 +15929,29 @@ var app = (function () {
     			g0 = svg_element("g");
     			rect0 = svg_element("rect");
     			g1 = svg_element("g");
-    			rect1 = svg_element("rect");
-    			g2 = svg_element("g");
     			polygon = svg_element("polygon");
-    			g3 = svg_element("g");
-    			rect2 = svg_element("rect");
-    			attr_dev(rect0, "x", "52.76668");
-    			attr_dev(rect0, "y", "166.47114");
-    			attr_dev(rect0, "width", "100.60557");
-    			attr_dev(rect0, "height", "190.91883");
-    			attr_dev(rect0, "transform", "translate(361.16346 374.26232) rotate(135)");
-    			set_style(rect0, "fill", "#900000");
-    			add_location(rect0, file$2T, 2, 4, 100);
-    			attr_dev(g0, "id", "shadow1");
+    			g2 = svg_element("g");
+    			rect1 = svg_element("rect");
+    			attr_dev(rect0, "x", "135.00003");
+    			attr_dev(rect0, "width", "95");
+    			attr_dev(rect0, "height", "365");
+    			set_style(rect0, "fill", "#fff");
+    			add_location(rect0, file$2T, 2, 4, 96);
+    			attr_dev(g0, "id", "leg");
     			add_location(g0, file$2T, 1, 2, 79);
+    			attr_dev(polygon, "points", "135 230 135 263.493 230 230 135 230");
+    			set_style(polygon, "fill", "#690000");
+    			add_location(polygon, file$2T, 5, 4, 191);
+    			attr_dev(g1, "id", "shadow2");
+    			add_location(g1, file$2T, 4, 2, 170);
     			attr_dev(rect1, "x", "135.00003");
     			attr_dev(rect1, "width", "95");
     			attr_dev(rect1, "height", "365");
+    			attr_dev(rect1, "transform", "translate(365.00003 -0.00003) rotate(90)");
     			set_style(rect1, "fill", "#fff");
-    			add_location(rect1, file$2T, 5, 4, 275);
-    			attr_dev(g1, "id", "leg");
-    			add_location(g1, file$2T, 4, 2, 258);
-    			attr_dev(polygon, "points", "135 230 135 263.493 230 230 135 230");
-    			set_style(polygon, "fill", "#690000");
-    			add_location(polygon, file$2T, 8, 4, 370);
-    			attr_dev(g2, "id", "shadow2");
-    			add_location(g2, file$2T, 7, 2, 349);
-    			attr_dev(rect2, "x", "135.00003");
-    			attr_dev(rect2, "width", "95");
-    			attr_dev(rect2, "height", "365");
-    			attr_dev(rect2, "transform", "translate(365.00003 -0.00003) rotate(90)");
-    			set_style(rect2, "fill", "#fff");
-    			add_location(rect2, file$2T, 11, 4, 474);
-    			attr_dev(g3, "id", "arm");
-    			add_location(g3, file$2T, 10, 2, 457);
+    			add_location(rect1, file$2T, 8, 4, 295);
+    			attr_dev(g2, "id", "arm");
+    			add_location(g2, file$2T, 7, 2, 278);
     			set_svg_attributes(svg, svg_data);
     			add_location(svg, file$2T, 0, 0, 0);
     		},
@@ -15976,11 +15963,9 @@ var app = (function () {
     			append_dev(svg, g0);
     			append_dev(g0, rect0);
     			append_dev(svg, g1);
-    			append_dev(g1, rect1);
+    			append_dev(g1, polygon);
     			append_dev(svg, g2);
-    			append_dev(g2, polygon);
-    			append_dev(svg, g3);
-    			append_dev(g3, rect2);
+    			append_dev(g2, rect1);
     		},
     		p: function update(ctx, [dirty]) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [
@@ -55076,7 +55061,7 @@ for (const accordion of accordions) {
     			attr_dev(g0, "id", "leg");
     			add_location(g0, file$O, 1, 2, 79);
     			attr_dev(polygon, "points", "135 230 135 263.493 230 230 135 230");
-    			set_style(polygon, "fill", "#000");
+    			set_style(polygon, "fill", "#010101");
     			add_location(polygon, file$O, 5, 4, 194);
     			attr_dev(g1, "id", "shadow2");
     			add_location(g1, file$O, 4, 2, 173);
@@ -55085,9 +55070,9 @@ for (const accordion of accordions) {
     			attr_dev(rect1, "height", "365");
     			attr_dev(rect1, "transform", "translate(365.00003 -0.00003) rotate(90)");
     			set_style(rect1, "fill", "#c60000");
-    			add_location(rect1, file$O, 8, 4, 295);
+    			add_location(rect1, file$O, 8, 4, 298);
     			attr_dev(g2, "id", "arm");
-    			add_location(g2, file$O, 7, 2, 278);
+    			add_location(g2, file$O, 7, 2, 281);
     			set_svg_attributes(svg, svg_data);
     			add_location(svg, file$O, 0, 0, 0);
     		},
@@ -55178,11 +55163,9 @@ for (const accordion of accordions) {
     	let g0;
     	let rect0;
     	let g1;
-    	let rect1;
-    	let g2;
     	let polygon;
-    	let g3;
-    	let rect2;
+    	let g2;
+    	let rect1;
 
     	let svg_levels = [
     		{ xmlns: "http://www.w3.org/2000/svg" },
@@ -55202,40 +55185,29 @@ for (const accordion of accordions) {
     			g0 = svg_element("g");
     			rect0 = svg_element("rect");
     			g1 = svg_element("g");
-    			rect1 = svg_element("rect");
-    			g2 = svg_element("g");
     			polygon = svg_element("polygon");
-    			g3 = svg_element("g");
-    			rect2 = svg_element("rect");
-    			attr_dev(rect0, "x", "52.76668");
-    			attr_dev(rect0, "y", "166.47114");
-    			attr_dev(rect0, "width", "100.60557");
-    			attr_dev(rect0, "height", "190.91883");
-    			attr_dev(rect0, "transform", "translate(361.16346 374.26232) rotate(135)");
-    			set_style(rect0, "fill", "#900000");
-    			add_location(rect0, file$N, 2, 4, 100);
-    			attr_dev(g0, "id", "shadow1");
+    			g2 = svg_element("g");
+    			rect1 = svg_element("rect");
+    			attr_dev(rect0, "x", "135.00003");
+    			attr_dev(rect0, "width", "95");
+    			attr_dev(rect0, "height", "365");
+    			set_style(rect0, "fill", "#fff");
+    			add_location(rect0, file$N, 2, 4, 96);
+    			attr_dev(g0, "id", "leg");
     			add_location(g0, file$N, 1, 2, 79);
+    			attr_dev(polygon, "points", "135 230 135 263.493 230 230 135 230");
+    			set_style(polygon, "fill", "#690000");
+    			add_location(polygon, file$N, 5, 4, 191);
+    			attr_dev(g1, "id", "shadow2");
+    			add_location(g1, file$N, 4, 2, 170);
     			attr_dev(rect1, "x", "135.00003");
     			attr_dev(rect1, "width", "95");
     			attr_dev(rect1, "height", "365");
+    			attr_dev(rect1, "transform", "translate(365.00003 -0.00003) rotate(90)");
     			set_style(rect1, "fill", "#fff");
-    			add_location(rect1, file$N, 5, 4, 275);
-    			attr_dev(g1, "id", "leg");
-    			add_location(g1, file$N, 4, 2, 258);
-    			attr_dev(polygon, "points", "135 230 135 263.493 230 230 135 230");
-    			set_style(polygon, "fill", "#690000");
-    			add_location(polygon, file$N, 8, 4, 370);
-    			attr_dev(g2, "id", "shadow2");
-    			add_location(g2, file$N, 7, 2, 349);
-    			attr_dev(rect2, "x", "135.00003");
-    			attr_dev(rect2, "width", "95");
-    			attr_dev(rect2, "height", "365");
-    			attr_dev(rect2, "transform", "translate(365.00003 -0.00003) rotate(90)");
-    			set_style(rect2, "fill", "#fff");
-    			add_location(rect2, file$N, 11, 4, 474);
-    			attr_dev(g3, "id", "arm");
-    			add_location(g3, file$N, 10, 2, 457);
+    			add_location(rect1, file$N, 8, 4, 295);
+    			attr_dev(g2, "id", "arm");
+    			add_location(g2, file$N, 7, 2, 278);
     			set_svg_attributes(svg, svg_data);
     			add_location(svg, file$N, 0, 0, 0);
     		},
@@ -55247,11 +55219,9 @@ for (const accordion of accordions) {
     			append_dev(svg, g0);
     			append_dev(g0, rect0);
     			append_dev(svg, g1);
-    			append_dev(g1, rect1);
+    			append_dev(g1, polygon);
     			append_dev(svg, g2);
-    			append_dev(g2, polygon);
-    			append_dev(svg, g3);
-    			append_dev(g3, rect2);
+    			append_dev(g2, rect1);
     		},
     		p: function update(ctx, [dirty]) {
     			set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [
