@@ -17,7 +17,6 @@
   const increment = () => {
     return ++size;
   };
-  console.log(Object.keys(colorNames));
 </script>
 
 <h1 class="color--eb">Icon library</h1>
