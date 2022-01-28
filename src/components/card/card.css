@@ -103,6 +103,10 @@ a.card:focus {
   white-space: nowrap;
 }
 
+.premium-dogear + .card-content-wrapper .card-meta {
+  padding-left: 15px;
+}
+
 /* Legacy - remove when not used in Escenic */
 .card-meta .card-badge {
   border-radius: 5px;
@@ -385,16 +389,4 @@ a.card-mode:focus .card-inner {
   right: -1px;
   left: auto;
   clip-path: polygon(100% 0, 0 0, 100% 100%);
-}
-
-.premium-dogear ~ .article-meta {
-  padding-left: 40px;
-}
-
-.premium-dogear + .card-content .save-list-item {
-  padding-left: 25px;
-}
-
-.premium-dogear + .card-content-wrapper .card-meta {
-  padding-left: 15px;
 }

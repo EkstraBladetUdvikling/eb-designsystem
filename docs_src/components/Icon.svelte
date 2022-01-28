@@ -4,6 +4,9 @@
   import { Badge, Card, Icon, Button } from '../../dist';
   import { iconnames, iconnameshtml } from '../../dist/components/icon/svgs/iconnames';
   import { graphicnames, graphicnameshtml } from '../../dist/components/icon/graphics/graphicnames';
+  import { colorNames } from '@ekstra-bladet/eb-colors';
+
+  let iconColor = 'black';
 
   let size = 14;
 
@@ -14,6 +17,7 @@
   const increment = () => {
     return ++size;
   };
+  console.log(Object.keys(colorNames));
 </script>
 
 <h1 class="color--eb">Icon library</h1>
@@ -69,15 +73,25 @@
 
 <h3>Icons</h3>
 <p>
-  Icons are simple and dynamic only made with fill. Fill has the value currentColor and makes it possible to add the
-  desired color to the icon.
+  Icons are simple and dynamic only made with fill. When using the class <em>icon-svg</em>, fill is set to the css
+  variable <em>--icon-fill</em> which defaults to <em>currentColor</em>. This means that the icon will inherit the color
+  from the nearest parent where color is defined.
 </p>
+<p>But by changing the css variable, the color can be handled separately from any set color.</p>
 <p>
   Most icons are derived from <a href="https://fontawesome.com/" target="_blank">FontAwesome</a> using only the
   <b>light</b>
   or <b>solid</b> library!
 </p>
 <div class="flex flex-row flex-justify--center flex-align--center">
+  <div class="margin-m--r">
+    Change icon color <select bind:value={iconColor}>
+      <option>black</option>
+      {#each Object.keys(colorNames) as colorName}
+        <option>{colorName}</option>
+      {/each}
+    </select>
+  </div>
   <Button className="margin-m--r" type="cancel" on:click={decrement}>
     <Icon name="angleleft" width={18} />
   </Button>
@@ -86,10 +100,10 @@
     <Icon name="angleright" width={18} />
   </Button>
 </div>
-<div class="flex flex-wrap--wrap">
+<div class="flex flex-wrap--wrap" style="--icon-fill: var(--color--{iconColor});">
   {#each iconnames as name, i}
-    <Card className="flex-align--center flex-justify--center margin-s padding-m">
-      <Icon {name} className="margin-s" style="width: {size}px; height: {size}px;" />
+    <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
+      <Icon {name} className="margin-s" width={size} />
       {#if $sourceType === 'svelte'}
         <small>{name}</small>
       {:else}
@@ -116,8 +130,8 @@
 
 <div class="flex flex-wrap--wrap">
   {#each graphicnames as name, i}
-    <Card className="flex-align--center flex-justify--center margin-s padding-m">
-      <Icon {name} className="margin-s" style="width: 36px; height: 36px;" />
+    <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
+      <Icon {name} className="margin-s" width={86} />
       {#if $sourceType === 'svelte'}
         <small>{name}</small>
       {:else}
@@ -138,3 +152,17 @@
 </svg>`}
   </Prism>
 {/if}
+
+<h3>* Figcaption pin background</h3>
+
+<p>The "background" of figcaption-pin can be changed through the css variable <em>--ebds-figcaption-bg</em></p>
+<div class="flex flex-wrap--wrap">
+  <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
+    <Icon name="figcaptionpin" className="margin-s" width={36} />
+    {#if $sourceType === 'svelte'}
+      <small>figcaptionpin</small>
+    {:else}
+      <small>figcaption-pin</small>
+    {/if}
+  </Card>
+</div>

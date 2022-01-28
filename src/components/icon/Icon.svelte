@@ -11,13 +11,11 @@
   export let width: number | string = 14;
   export let style: string = undefined;
 
-  const defaultStyle = `--icon-size: ${width}px;`;
-
-  $: style = style ? `${defaultStyle} ${style}` : defaultStyle;
+  $: styleAttr = style ? `--icon-size: ${width}px; ${style}` : `--icon-size: ${width}px;`;
 
   let baseClass = className ? `icon-svg ${className}` : 'icon-svg';
 </script>
 
 {#if name}
-  <svelte:component this={IconSVGS[name.replace('-', '')]} {style} class={baseClass} />
+  <svelte:component this={IconSVGS[name.replace('-', '')]} style={styleAttr} class={baseClass} />
 {/if}
