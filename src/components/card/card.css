@@ -109,7 +109,12 @@ a.card:focus {
 .card--small-media .premium-dogear + .card-content-wrapper .card-meta,
 .horizontal-scroll-items .premium-dogear + .card-content-wrapper .card-meta {
   padding-left: 25px;
-  padding-top: 20px;
+}
+
+.card--small-media .premium-dogear + .card-content-wrapper .card-content,
+.horizontal-scroll-items .premium-dogear + .card-content-wrapper .card-content {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 /* Legacy - remove when not used in Escenic */
