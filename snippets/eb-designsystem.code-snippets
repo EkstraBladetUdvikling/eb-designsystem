@@ -186,7 +186,7 @@
     "body": [
       "card-meta"
     ],
-    "description": "{\n font-weight: normal;\npadding-top: var(--distance-small);\n }"
+    "description": "{\n font-weight: normal;\n }"
   },
   "designsystem card meta item": {
     "prefix": "ds-card-meta-item",
@@ -256,6 +256,13 @@
       "premium-dogear"
     ],
     "description": "{\n --dogear-size: 61px;\n--dogear-padding: 7px;\n--dogear-icon: 18px;\n--icon-size: var(--dogear-icon);\nposition: absolute;\npadding: var(--dogear-padding) 0 0 var(--dogear-padding);\nline-height: 0;\nz-index: 1;\ntop: 0;\nleft: 0;\n }\n Has pseudo styling ::after"
+  },
+  "designsystem premium dogear small": {
+    "prefix": "ds-premium-dogear--small",
+    "body": [
+      "premium-dogear--small"
+    ],
+    "description": "NB! This should only be used with premium-dogear\n{\n --dogear-size: 41px;\n--dogear-padding: 5px;\n--dogear-icon: 14px;\n }"
   },
   "designsystem form element": {
     "prefix": "ds-form-element",
@@ -355,7 +362,7 @@
     "body": [
       "icon-svg"
     ],
-    "description": "{\n width: var(--icon-size);\nheight: var(--icon-size);\nfill: currentColor;\n }"
+    "description": "{\n width: var(--icon-size);\nheight: var(--icon-size);\nfill: var(--icon-fill);\n }"
   },
   "designsystem icon svg small": {
     "prefix": "ds-icon-svg--small",

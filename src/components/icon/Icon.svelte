@@ -8,10 +8,11 @@
 <script lang="ts">
   export let className: string = undefined;
   export let name: GraphicTypes | IconTypes = undefined;
-  export let width: number | string = 14;
+  export let width: number | string = undefined;
   export let style: string = undefined;
 
-  $: styleAttr = style ? `--icon-size: ${width}px; ${style}` : `--icon-size: ${width}px;`;
+  $: cssWidth = width ? '--icon-size: ${width}px;' : '';
+  $: styleAttr = style ? `${cssWidth} ${style}` : cssWidth;
 
   let baseClass = className ? `icon-svg ${className}` : 'icon-svg';
 </script>

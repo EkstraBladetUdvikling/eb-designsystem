@@ -377,6 +377,12 @@ a.card-mode:focus .card-inner {
   left: 0;
 }
 
+.premium-dogear--small {
+  --dogear-size: 41px;
+  --dogear-padding: 5px;
+  --dogear-icon: 14px;
+}
+
 .premium-dogear::after {
   content: " ";
   background: var(--color--eb);

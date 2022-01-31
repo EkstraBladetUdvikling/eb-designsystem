@@ -1461,7 +1461,6 @@ a.card:focus {
 
 .card-meta {
   font-weight: normal;
-  padding-top: var(--distance-small);
 }
 
 .card-meta-item {
@@ -1473,6 +1472,18 @@ a.card:focus {
 }
 
 .premium-dogear + .card-content-wrapper .card-meta {
+  padding-left: 15px;
+}
+
+.card--small-media .premium-dogear + .card-content-wrapper .card-meta,
+.horizontal-scroll-items .premium-dogear + .card-content-wrapper .card-meta {
+  padding-left: 25px;
+}
+
+.card--small-media .premium-dogear + .card-content-wrapper .card-content,
+.horizontal-scroll-items .premium-dogear + .card-content-wrapper .card-content {
+  padding-top: 30px;
+  padding-bottom: 30px;
   padding-left: 15px;
 }
 
@@ -1507,7 +1518,7 @@ a.card:focus {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 10px 5px 0 10px;
+  padding: 10px 5px 10px 10px;
 }
 
 .card--small-media .card-media {
@@ -1737,6 +1748,12 @@ a.card-mode:focus .card-inner {
   z-index: 1;
   top: 0;
   left: 0;
+}
+
+.premium-dogear--small {
+  --dogear-size: 41px;
+  --dogear-padding: 5px;
+  --dogear-icon: 14px;
 }
 
 .premium-dogear::after {
