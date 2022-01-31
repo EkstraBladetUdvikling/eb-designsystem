@@ -20,6 +20,7 @@
   export let cardType: TCardType = undefined;
   export let className: string = undefined;
   export let colorName: string = undefined;
+  export let premiumMarkerSize: 'small' = undefined;
   export let id: number = undefined;
   export let update: boolean = false;
   export let maxLines: number = undefined;
@@ -82,6 +83,11 @@
 {#if loading || (!loading && title)}
   <Card {url} className={cssClass} style={styleProp} data-breaking={breaking} on:click>
     <div class={innerClass}>
+      {#if premium}
+        <div class="premium-dogear {premiumMarkerSize ? `premium-dogear--${premiumMarkerSize}` : ''}">
+          <Icon className="color--white" name="ebpluswhite" />
+        </div>
+      {/if}
       {#if loading}
         <div class="card-media">
           <div class="card-image bg--graa4" style={loadingStyle} />
@@ -107,11 +113,6 @@
         </div>
       {/if}
       <div class="card-content-wrapper">
-        <div class="card-icon flex flex-justify--end">
-          {#if premium}
-            <Icon name="ebpluscirclesolid" width="20" />
-          {/if}
-        </div>
         <div class="card-content">
           {#if section || published}
             <div class="card-meta flex flex-wrap--wrap fontsize-xxsmall">

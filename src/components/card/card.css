@@ -131,7 +131,7 @@ a.card:focus {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 10px 5px 0 10px;
+  padding: 10px 5px 10px 10px;
 }
 
 .card--small-media .card-media {
@@ -214,6 +214,7 @@ a.card:focus {
   flex-direction: column;
   overflow: hidden;
   height: 100%;
+  position: relative;
 }
 
 .card-mode--article {
@@ -345,4 +346,76 @@ a.card-mode:focus .card-inner {
   --lh: 1.2em;
   -webkit-line-clamp: var(--max-lines);
   --max-lines: 9;
+}
+
+.premium-dogear {
+  --dogear-size: 61px;
+  --dogear-padding: 7px;
+  --dogear-icon: 18px;
+  --icon-size: var(--dogear-icon);
+  position: absolute;
+  padding: var(--dogear-padding) 0 0 var(--dogear-padding);
+  line-height: 0;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.premium-dogear--small {
+  --dogear-size: 41px;
+  --dogear-padding: 5px;
+  --dogear-icon: 14px;
+}
+
+.premium-dogear::after {
+  content: " ";
+  background: var(--color--eb);
+  position: absolute;
+  display: block;
+  width: var(--dogear-size);
+  height: var(--dogear-size);
+  top: -1px;
+  left: -1px;
+  z-index: -1;
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
+}
+
+.card--small-media--reverse .premium-dogear {
+  left: auto;
+  right: 0;
+  padding: var(--dogear-padding) var(--dogear-padding) 0 0;
+}
+
+.card--small-media--reverse .premium-dogear::after {
+  right: -1px;
+  left: auto;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.premium-dogear + .card-content-wrapper .card-meta {
+  padding-left: 15px;
+}
+
+.card--small-media .premium-dogear + .card-content-wrapper .card-meta,
+.horizontal-scroll-items .premium-dogear + .card-content-wrapper .card-meta {
+  padding-left: 25px;
+}
+
+.card--small-media .premium-dogear--small + .card-content-wrapper .card-meta,
+.horizontal-scroll-items .premium-dogear--small + .card-content-wrapper .card-meta {
+  padding-left: 15px;
+}
+
+.card--small-media .premium-dogear + .card-content-wrapper .card-content,
+.horizontal-scroll-items .premium-dogear + .card-content-wrapper .card-content {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 15px;
+}
+
+.card--small-media .premium-dogear--small + .card-content-wrapper .card-content,
+.horizontal-scroll-items .premium-dogear--small + .card-content-wrapper .card-content {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
 }
