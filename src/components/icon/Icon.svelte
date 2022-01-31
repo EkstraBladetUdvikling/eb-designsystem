@@ -11,7 +11,7 @@
   export let width: number | string = undefined;
   export let style: string = undefined;
 
-  $: cssWidth = width ? '--icon-size: ${width}px;' : '';
+  $: cssWidth = width ? `--icon-size: ${width}px;` : '';
   $: styleAttr = style ? `${cssWidth} ${style}` : cssWidth;
 
   let baseClass = className ? `icon-svg ${className}` : 'icon-svg';
