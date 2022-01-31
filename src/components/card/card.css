@@ -92,7 +92,6 @@ a.card:focus {
 
 .card-meta {
   font-weight: normal;
-  padding-top: var(--distance-small);
 }
 
 .card-meta-item {
