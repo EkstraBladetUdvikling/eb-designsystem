@@ -1471,22 +1471,6 @@ a.card:focus {
   white-space: nowrap;
 }
 
-.premium-dogear + .card-content-wrapper .card-meta {
-  padding-left: 15px;
-}
-
-.card--small-media .premium-dogear + .card-content-wrapper .card-meta,
-.horizontal-scroll-items .premium-dogear + .card-content-wrapper .card-meta {
-  padding-left: 25px;
-}
-
-.card--small-media .premium-dogear + .card-content-wrapper .card-content,
-.horizontal-scroll-items .premium-dogear + .card-content-wrapper .card-content {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 15px;
-}
-
 /* Legacy - remove when not used in Escenic */
 
 .card-meta .card-badge {
@@ -1779,6 +1763,29 @@ a.card-mode:focus .card-inner {
   right: -1px;
   left: auto;
   clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.premium-dogear + .card-content-wrapper .card-meta {
+  padding-left: 15px;
+}
+
+.card--small-media .premium-dogear + .card-content-wrapper .card-meta,
+.horizontal-scroll-items .premium-dogear + .card-content-wrapper .card-meta {
+  padding-left: 25px;
+}
+
+.card--small-media .premium-dogear + .card-content-wrapper .card-content,
+.horizontal-scroll-items .premium-dogear + .card-content-wrapper .card-content {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 15px;
+}
+
+.card--small-media .premium-dogear--small + .card-content-wrapper .card-content,
+.horizontal-scroll-items .premium-dogear--small + .card-content-wrapper .card-content {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
 }
 
 :root {
