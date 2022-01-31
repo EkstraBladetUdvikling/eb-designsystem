@@ -115,6 +115,7 @@ a.card:focus {
 .horizontal-scroll-items .premium-dogear + .card-content-wrapper .card-content {
   padding-top: 30px;
   padding-bottom: 30px;
+  padding-left: 15px;
 }
 
 /* Legacy - remove when not used in Escenic */
