@@ -108,7 +108,7 @@ a.card:focus {
 
 .card--small-media .premium-dogear + .card-content-wrapper .card-meta,
 .horizontal-scroll-items .premium-dogear + .card-content-wrapper .card-meta {
-  padding-left: 20px;
+  padding-left: 25px;
   padding-top: 20px;
 }
 
@@ -141,7 +141,7 @@ a.card:focus {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 10px 5px 0 10px;
+  padding: 10px 5px 10px 10px;
 }
 
 .card--small-media .card-media {
