@@ -1774,6 +1774,11 @@ a.card-mode:focus .card-inner {
   padding-left: 25px;
 }
 
+.card--small-media .premium-dogear--small + .card-content-wrapper .card-meta,
+.horizontal-scroll-items .premium-dogear--small + .card-content-wrapper .card-meta {
+  padding-left: 15px;
+}
+
 .card--small-media .premium-dogear + .card-content-wrapper .card-content,
 .horizontal-scroll-items .premium-dogear + .card-content-wrapper .card-content {
   padding-top: 30px;
