@@ -83,6 +83,11 @@
 {#if loading || (!loading && title)}
   <Card {url} className={cssClass} style={styleProp} data-breaking={breaking} on:click>
     <div class={innerClass}>
+      {#if premium}
+        <div class="premium-dogear {premiumMarkerSize ? `premium-dogear--${premiumMarkerSize}` : ''}">
+          <Icon className="color--white" name="ebpluswhite" />
+        </div>
+      {/if}
       {#if loading}
         <div class="card-media">
           <div class="card-image bg--graa4" style={loadingStyle} />
@@ -105,11 +110,6 @@
             </Badge>
           {/if}
           <img alt={title} class="card-image" src={media.src} height={media.height} width={media.width} />
-        </div>
-      {/if}
-      {#if premium}
-        <div class="premium-dogear {premiumMarkerSize ? `premium-dogear--${premiumMarkerSize}` : ''}">
-          <Icon className="color--white" name="ebpluswhite" />
         </div>
       {/if}
       <div class="card-content-wrapper">
