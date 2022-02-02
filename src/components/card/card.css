@@ -238,13 +238,13 @@ a.card:focus {
 }
 
 :root {
-  --color--list-hover: var(--color--white);
-  --fgcolor--list-hover: var(--fgcolor--white);
+  --color--list: var(--color--white);
+  --fgcolor--list: var(--fgcolor--white);
 }
 
 .card-inner:not([class*="bg--"]) {
-  background: var(--color--list-hover);
-  color: var(--fgcolor--list-hover);
+  background: var(--color--list);
+  color: var(--fgcolor--list);
 }
 
 .card-mode:not([class*="bg--"]) {
