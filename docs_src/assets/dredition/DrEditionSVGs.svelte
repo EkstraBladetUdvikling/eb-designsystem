@@ -15,7 +15,7 @@
         <td>Hvidt plus med sort skygge (Kan bruges på alle baggrunde, der ikke er røde)</td>
         <td>eb-plus-white-onblack-anim.svg</td>
         <td style="background-color: black">
-          <img src="./svg/dredition/eb-plus-white-onblack-anim.svg" height="50" alt="B+_White_onBlack_anim" />
+          <img src="./svg/dredition/eb-plus-white-onblack-anim.svg" height="50" />
         </td>
       </tr>
       <tr>
