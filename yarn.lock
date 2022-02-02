@@ -55,6 +55,10 @@
     enabled "2.0.x"
     kuler "^2.0.0"
 
+"@ekstra-bladet/eb-colors@EkstraBladetUdvikling/eb-colors#35/head":
+  version "4.0.3"
+  resolved "https://codeload.github.com/EkstraBladetUdvikling/eb-colors/tar.gz/9a9c501a294492b1e3a8387ed2526086f8a0cb27"
+
 "@ekstra-bladet/eb-colors@^4.0.3":
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/@ekstra-bladet/eb-colors/-/eb-colors-4.0.3.tgz#d66b8f23e7612a35bd930e8bd2c297065667d64d"

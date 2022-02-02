@@ -29,7 +29,7 @@
     "svgs": "node node/svgs.js && yarn copy_svg"
   },
   "dependencies": {
-    "@ekstra-bladet/eb-colors": "^4.0.3",
+    "@ekstra-bladet/eb-colors": "EkstraBladetUdvikling/eb-colors#35/head",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@rollup/plugin-typescript": "^8.3.0",
