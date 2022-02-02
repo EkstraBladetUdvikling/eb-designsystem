@@ -1,0 +1,11 @@
+<svg class="live-video-opaque" viewBox="0 0 75 26" fill="none" xmlns="http://www.w3.org/2000/svg" style="box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.12); border-radius: 4px;">
+	<path opacity="0.6" d="M0 4C0 1.79086 1.79086 0 4 0H71C73.2091 0 75 1.79086 75 4V22C75 24.2091 73.2091 26 71 26H4C1.79086 26 0 24.2091 0 22V4Z" fill="black" />
+	<path d="M35.5732 18.25V8.31055H37.5967V16.5615H42.6279V18.25H35.5732Z" fill="white" />
+	<path d="M44.0156 18.25V8.22852H46.0391V18.25H44.0156Z" fill="white" />
+	<path d="M50.5303 18.25L46.9482 8.22852H49.1426L51.6787 15.6455L54.1328 8.22852H56.2793L52.6904 18.25H50.5303Z" fill="white" />
+	<path d="M57.3115 18.25V8.22852H64.7422V9.92383H59.335V12.1455H64.3662V13.834H59.335V16.5615H64.9336V18.25H57.3115Z" fill="white" />
+	<rect width="26" height="26" rx="4" fill="white" />
+	<path fill="#F12D2D" fill-rule="evenodd" clip-rule="evenodd" d="M8 8.58703C8 7.36401 9.34875 6.60201 10.4227 7.21825L18.2007 11.6812C19.2664 12.2927 19.2664 13.8073 18.2007 14.4188L10.4227 18.8818C9.34874 19.498 8 18.736 8 17.513L8 8.58703Z" style="opacity: 1;">
+		<animate attributeName="opacity" keyTimes="0;0.3;1" values="1;0.25;1;" dur="1.5s" repeatCount="indefinite" />
+	</path>
+</svg>

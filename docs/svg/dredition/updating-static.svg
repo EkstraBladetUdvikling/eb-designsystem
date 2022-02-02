@@ -1,0 +1,7 @@
+<svg class="updating-static" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"
+     style="box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.12); border-radius: 4px;">
+    <rect fill="white" width="26" height="26" rx="4"/>
+    <circle id="one" fill="black" cx="6.5" cy="13" r="2"/>
+    <circle id="two" fill="black" cx="13" cy="13" r="2"/>
+    <circle id="three" fill="black" cx="19.5" cy="13" r="2"/>
+</svg>

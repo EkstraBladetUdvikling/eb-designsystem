@@ -1,0 +1,52 @@
+<svg class="ligenu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 28">
+  <defs>
+    <style>
+      .ligenu-cls-1 {
+        fill: #ff0;
+      }
+
+      .ligenu-cls-2 {
+        isolation: isolate;
+        font-size: 15px;
+        font-family: Arial-BoldMT, Arial;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+
+  <g>
+    <g>
+      <rect class="ligenu-cls-1" width="100" height="28" rx="5">
+        	<animate
+            attributeName="width"
+            attributeType="XML"
+            keyTimes="0; 0.85; 0.86; 0.94; 1"
+            values="100; 100; 10; 10; 100;"
+            dur="4s"
+            repeatCount="indefinite"
+          />
+		      <animate
+            attributeName="opacity"
+            keyTimes="0; 0.86; 0.88; 0.90; 0.92; 0.94; 1"
+            values="1;1;0;1;0;1;1"
+            dur="4s"
+            repeatCount="indefinite"
+          />
+      </rect>
+    </g>
+    <g>
+      <text class="ligenu-cls-2" transform="translate(19 20)">LIGE NU</text>
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="translate"
+        keyTimes="0; 0.10; 0.70; 0.73; 0.83; 1"
+        values="0 -60; 0 0; 0 0; 0 -5; 0 60; 0 60"
+        dur="4s"
+        repeatCount="indefinite"
+        additive="sum"
+      />
+    </g>
+  </g>
+
+</svg>
