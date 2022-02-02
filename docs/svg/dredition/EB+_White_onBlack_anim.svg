@@ -1,0 +1,35 @@
+<svg id="eb-plus-white-on-black-eH5nQgoj6TX1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 365 365" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+	<style>
+		<![CDATA[#eb-plus-white-on-black-eH5nQgoj6TX4_to {animation: eb-plus-white-on-black-eH5nQgoj6TX4_to__to 3000ms linear infinite normal forwards}@keyframes eb-plus-white-on-black-eH5nQgoj6TX4_to__to { 0% {transform: translate(486.856667px,533.375369px)} 10.666667% {transform: translate(486.856667px,533.375369px)} 20.333333% {transform: translate(167.817832px,214.336532px)} 20.666667% {transform: translate(115.86707px,162.385768px)} 100% {transform: translate(115.86707px,162.385768px)}} #eb-plus-white-on-black-eH5nQgoj6TX7_ts {animation: eb-plus-white-on-black-eH5nQgoj6TX7_ts__ts 3000ms linear infinite normal forwards}@keyframes eb-plus-white-on-black-eH5nQgoj6TX7_ts__ts { 0% {transform: translate(182.500031px,0px) scale(1,0);animation-timing-function: cubic-bezier(0.55,0.055,0.675,0.19)} 11% {transform: translate(182.500031px,0px) scale(1,1)} 100% {transform: translate(182.500031px,0px) scale(1,1)}} #eb-plus-white-on-black-eH5nQgoj6TX11_to {animation: eb-plus-white-on-black-eH5nQgoj6TX11_to__to 3000ms linear infinite normal forwards}@keyframes eb-plus-white-on-black-eH5nQgoj6TX11_to__to { 0% {transform: translate(87.500031px,246.746506px)} 19% {transform: translate(87.500031px,246.746506px)} 21% {transform: translate(182.5px,246.746506px)} 100% {transform: translate(182.5px,246.746506px)}} #eb-plus-white-on-black-eH5nQgoj6TX14_ts {animation: eb-plus-white-on-black-eH5nQgoj6TX14_ts__ts 3000ms linear infinite normal forwards}@keyframes eb-plus-white-on-black-eH5nQgoj6TX14_ts__ts { 0% {transform: translate(0px,182.5px) scale(0,1)} 16.666667% {transform: translate(0px,182.5px) scale(0,1);animation-timing-function: cubic-bezier(0.215,0.61,0.355,1)} 33.333333% {transform: translate(0px,182.5px) scale(1,1)} 100% {transform: translate(0px,182.5px) scale(1,1)}}]]>
+	</style>
+	<g>
+		<g clip-path="url(#eb-plus-white-on-black-eH5nQgoj6TX5)">
+			<g id="eb-plus-white-on-black-eH5nQgoj6TX4_to" transform="translate(486.856667,533.375369)">
+				<rect width="100.605568" height="257.758545" rx="0" ry="0" transform="rotate(135) translate(29.135269,109.419868)" fill="#666" />
+			</g>
+			<clipPath id="eb-plus-white-on-black-eH5nQgoj6TX5">
+				<rect width="135" height="230" rx="0" ry="0" transform="translate(.00003 135)" fill="none" />
+			</clipPath>
+		</g>
+	</g>
+	<g id="eb-plus-white-on-black-eH5nQgoj6TX7_ts" transform="translate(182.500031,0) scale(1,0)">
+		<g transform="translate(-182.500031,0)">
+			<rect width="95" height="365" rx="0" ry="0" transform="translate(135.000031 0)" fill="#fff" />
+		</g>
+	</g>
+	<g>
+		<g clip-path="url(#eb-plus-white-on-black-eH5nQgoj6TX12)">
+			<g id="eb-plus-white-on-black-eH5nQgoj6TX11_to" transform="translate(87.500031,246.746506)">
+				<polygon points="135,230 135,263.493 230,230 135,230" transform="translate(-182.5,-246.746506)" fill="#444" />
+			</g>
+			<clipPath id="eb-plus-white-on-black-eH5nQgoj6TX12">
+				<rect width="95" height="35.48325" rx="0" ry="0" transform="translate(135.000031 230)" fill="none" />
+			</clipPath>
+		</g>
+	</g>
+	<g id="eb-plus-white-on-black-eH5nQgoj6TX14_ts" transform="translate(0,182.5) scale(0,1)">
+		<g transform="translate(0,-182.5)">
+			<rect width="95" height="365" rx="0" ry="0" transform="matrix(0 1-1 0 365.000031 135.000001)" fill="#fff" />
+		</g>
+	</g>
+</svg>

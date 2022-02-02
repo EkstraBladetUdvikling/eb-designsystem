@@ -1,0 +1,89 @@
+<svg class="liveblog-icon" viewBox="0 0 75 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<path d="M0 4C0 1.79086 1.79086 0 4 0H71C73.2091 0 75 1.79086 75 4V22C75 24.2091 73.2091 26 71 26H4C1.79086 26 0 24.2091 0 22V4Z" fill="black" />
+	<path d="M35.5732 18.25V8.31055H37.5967V16.5615H42.6279V18.25H35.5732ZM44.0156 18.25V8.22852H46.0391V18.25H44.0156ZM50.5303 18.25L46.9482 8.22852H49.1426L51.6787 15.6455L54.1328 8.22852H56.2793L52.6904 18.25H50.5303ZM57.3115 18.25V8.22852H64.7422V9.92383H59.335V12.1455H64.3662V13.834H59.335V16.5615H64.9336V18.25H57.3115Z" fill="white" />
+	<rect width="26" height="26" rx="4" fill="white" />
+	<rect x="5" y="6" width="16" height="2" rx="1" fill="black">
+		<animate
+      attributeName="width"
+      attributeType="XML"
+      keyTimes="0; 0.04; 1"
+      values="0; 16; 16;"
+      dur="4s"
+      repeatCount="indefinite"
+    />
+    <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="translate"
+        keyTimes="0; 0.10; 0.15; 0.20; 0.9; 1"
+        values="0 7; 0 6; 0 4; 0 0; 0 0; 0 -100;"
+        begin="0s"
+        dur="4s"
+        repeatCount="indefinite"
+        additive="sum"
+    />
+	</rect>
+	<rect x="5" y="10" width="11" height="2" rx="1" fill="black">
+    <animate
+      attributeName="width"
+      attributeType="XML"
+      keyTimes="0; 0.10; 0.14; 1"
+      values="0; 0; 11; 11;"
+      dur="4s"
+      repeatCount="indefinite"
+    />
+    <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="translate"
+        keyTimes="0; 0.1; 0.15; 0.20; 0.9; 1"
+        values="0 8; 0 4; 0 4; 0 0; 0 0; 0 -100;"
+        begin="0s"
+        dur="4s"
+        repeatCount="indefinite"
+        additive="sum"
+    />
+  </rect>
+	<rect x="5" y="14" width="14" height="2" rx="1" fill="black">
+    <animate
+      attributeName="width"
+      attributeType="XML"
+      keyTimes="0; 0.15; 0.24; 1"
+      values="0; 0; 14; 14;"
+      dur="4s"
+      repeatCount="indefinite"
+    />
+    <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="translate"
+        keyTimes="0; 0.1; 0.9; 1"
+        values="0 0; 0 0; 0 0; 0 -100;"
+        begin="0s"
+        dur="4s"
+        repeatCount="indefinite"
+        additive="sum"
+    />
+  </rect>
+	<rect x="5" y="18" width="6" height="2" rx="1" fill="black">
+    <animate
+      attributeName="width"
+      attributeType="XML"
+      keyTimes="0; 0.25; 0.35; 1"
+      values="0; 0; 6; 6;"
+      dur="4s"
+      repeatCount="indefinite"
+    />
+    <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="translate"
+        keyTimes="0; 0.1; 0.15; 0.20; 0.9; 1"
+        values="0 18; 0 16; 0 11; 0 0; 0 0; 0 -100;"
+        begin="0s"
+        dur="4s"
+        repeatCount="indefinite"
+        additive="sum"
+    />
+  </rect>
+</svg>

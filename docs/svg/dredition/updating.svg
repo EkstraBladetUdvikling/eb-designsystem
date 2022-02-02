@@ -1,0 +1,15 @@
+<svg class="updating-icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"
+     style="box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.12); border-radius: 4px;">
+    <style>
+        @keyframes updatingAnimation {0% { transform: translate(0, 0); }15% { transform: translate(0, -3.75px); }50% {
+        transform: translate(0, 0); }100% { transform: translate(0, 0); }}
+        circle { animation: updatingAnimation 1.6s infinite; transform-origin: bottom center; transform: translate(0,
+        0);}
+        circle#two { animation-delay: .125s; }
+        circle#three { animation-delay: .25s; }
+    </style>
+    <rect width="26" height="26" rx="4" fill="black"/>
+    <circle id="one" cx="6.5" cy="13" r="2" fill="white"/>
+    <circle id="two" cx="13" cy="13" r="2" fill="white"/>
+    <circle id="three" cx="19.5" cy="13" r="2" fill="white"/>
+</svg>
