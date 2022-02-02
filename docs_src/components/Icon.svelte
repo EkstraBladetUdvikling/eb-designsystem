@@ -4,6 +4,7 @@
   import { Badge, Card, Icon, Button } from '../../dist';
   import { iconnames, iconnameshtml } from '../../dist/components/icon/svgs/iconnames';
   import { graphicnames, graphicnameshtml } from '../../dist/components/icon/graphics/graphicnames';
+  import DrEditionSVGs from '../assets/dredition/DrEditionSVGs.svelte';
   import { colorNames } from '@ekstra-bladet/eb-colors';
 
   let iconColor = 'black';
@@ -165,3 +166,8 @@
     {/if}
   </Card>
 </div>
+
+<h3>DrEdition</h3>
+<p>Animated and static icons used in DrEdition i.e ekstrabladet.dk frontpage cards</p>
+
+<DrEditionSVGs />

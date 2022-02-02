@@ -1,0 +1,60 @@
+<svg class="ama-live-opaque" viewBox="0 0 75 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path opacity="0.6" d="M0 4C0 1.79086 1.79086 0 4 0H71C73.2091 0 75 1.79086 75 4V22C75 24.2091 73.2091 26 71 26H4C1.79086 26 0 24.2091 0 22V4Z" fill="black"/>
+  <path d="M35.5732 18.25V8.31055H37.5967V16.5615H42.6279V18.25H35.5732ZM44.0156 18.25V8.22852H46.0391V18.25H44.0156ZM50.5303 18.25L46.9482 8.22852H49.1426L51.6787 15.6455L54.1328 8.22852H56.2793L52.6904 18.25H50.5303ZM57.3115 18.25V8.22852H64.7422V9.92383H59.335V12.1455H64.3662V13.834H59.335V16.5615H64.9336V18.25H57.3115Z" fill="white"/>
+  <rect width="26" height="26" rx="4" fill="white"/>
+  <path d="M6.5 7C6.5 5.34315 7.84315 4 9.5 4H18.5C20.1569 4 21.5 5.34315 21.5 7V10.5C21.5 11.8807 20.3807 13 19 13C18.2458 13 18.0604 14.4219 18.4438 15.7644C18.5715 16.2117 18.1488 16.7186 17.7296 16.5168C16.106 15.7353 15.0543 14.5557 14.4944 13.7816C14.1614 13.3213 13.6411 13 13.0729 13H9.5C7.84315 13 6.5 11.6569 6.5 10V7Z" fill="#F12D2D">
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="translate"
+        keyTimes="0;0.1;0.25;1"
+        values="15 15; 0 0; 0 0;0 -45;"
+        begin="0s"
+        dur="3s"
+        repeatCount="indefinite"
+        additive="sum"
+      />
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="scale"
+        keyTimes="0;0.1;1"
+        values="0.5;1;1"
+        begin="0s"
+        dur="3s"
+        repeatCount="indefinite"
+        additive="sum"
+      />
+  </path>
+  <path d="M13.5 16.4286C13.5 15.6396 12.8604 15 12.0714 15H5.42857C4.63959 15 4 15.6396 4 16.4286V19.2857C4 20.0747 4.6396 20.7143 5.42858 20.7143C5.55274 20.7143 5.67362 20.7143 5.78571 20.7143C6.32439 20.7143 6.45683 21.7299 6.18301 22.6888C6.09177 23.0084 6.39374 23.3704 6.69316 23.2263C7.85289 22.6681 8.60404 21.8255 9.00402 21.2726C9.24189 20.9438 9.61349 20.7143 10.0193 20.7143H12.0714C12.8604 20.7143 13.5 20.0747 13.5 19.2857V16.4286Z" fill="#F12D2D">
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="translate"
+        keyTimes="0; 0.15; 0.25; 0.4; 1"
+        values="0 13; -5 5; 0 0; 0 0; 0 -45;"
+        begin="0s"
+        dur="3s"
+        repeatCount="indefinite"
+        additive="sum"
+      />
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="scale"
+        keyTimes="0;0.15;0.2;1"
+        values="0.5;0.5;1;1"
+        begin="0s"
+        dur="3s"
+        repeatCount="indefinite"
+        additive="sum"
+      />
+      <animate
+        attributeName="opacity"
+        keyTimes="0;0.2;0.2;1"
+        values="0;0;1;1;"
+        dur="3s"
+        repeatCount="indefinite"
+      />
+  </path>
+</svg>

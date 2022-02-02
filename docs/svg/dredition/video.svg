@@ -1,0 +1,7 @@
+<svg class="video-icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"
+     style="box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.12); border-radius: 4px;">
+    <rect width="26" height="26" rx="4" fill="white"/>
+    <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M8 8.58703C8 7.36401 9.34875 6.60201 10.4227 7.21825L18.2007 11.6812C19.2664 12.2927 19.2664 13.8073 18.2007 14.4188L10.4227 18.8818C9.34874 19.498 8 18.736 8 17.513L8 8.58703Z"
+          fill="black"/>
+</svg>
