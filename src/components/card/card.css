@@ -243,7 +243,6 @@ a.card:focus {
   --fgcolor--list-hover: var(--fgcolor--white);
 }
 
-.card-mode:not([class*="bg--"]):hover,
 .card-inner:not([class*="bg--"]) {
   background: var(--color--list-hover);
   color: var(--fgcolor--list-hover);
