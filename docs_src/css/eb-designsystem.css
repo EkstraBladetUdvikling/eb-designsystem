@@ -1573,7 +1573,6 @@ a.card:focus {
   box-sizing: border-box;
   font-family: var(--fontfamily--secondary);
   overflow: unset;
-  padding: 2px;
 
   flex-shrink: 0;
 }
@@ -1612,14 +1611,13 @@ a.card:focus {
 }
 
 :root {
-  --color--list-hover: var(--color--white);
-  --fgcolor--list-hover: var(--fgcolor--white);
+  --color--list: var(--color--white);
+  --fgcolor--list: var(--fgcolor--white);
 }
 
-.card-mode:not([class*="bg--"]):hover,
 .card-inner:not([class*="bg--"]) {
-  background: var(--color--list-hover);
-  color: var(--fgcolor--list-hover);
+  background: var(--color--list);
+  color: var(--fgcolor--list);
 }
 
 .card-mode:not([class*="bg--"]) {
@@ -2044,6 +2042,15 @@ a.card-mode:focus .card-inner {
 
 .horizontal-scroll-item--small {
   height: 84px;
+}
+
+.horizontal-scroll-items--gap .card-mode--article {
+  margin-right: var(--distance-medium);
+  --card-width: 215px;
+}
+
+.horizontal-scroll-items--gap .card-mode--article:last-child {
+  margin-right: 0;
 }
 
 :root {

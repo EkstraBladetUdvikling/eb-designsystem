@@ -102,3 +102,12 @@
 .horizontal-scroll-item--small {
   height: 84px;
 }
+
+.horizontal-scroll-items--gap .card-mode--article {
+  margin-right: var(--distance-medium);
+  --card-width: 215px;
+}
+
+.horizontal-scroll-items--gap .card-mode--article:last-child {
+  margin-right: 0;
+}
