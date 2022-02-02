@@ -13,23 +13,23 @@
       </tr>
       <tr>
         <td>Hvidt plus med sort skygge (Kan bruges på alle baggrunde, der ikke er røde)</td>
-        <td>EB+_White_onBlack_anim.svg</td>
+        <td>eb-plus-white-onblack-anim.svg</td>
         <td style="background-color: black">
-          <img src="./svg/dredition/EB+_White_onBlack_anim.svg" height="50" alt="B+_White_onBlack_anim.svg" />
+          <img src="./svg/dredition/eb-plus-white-onblack-anim.svg" height="50" alt="B+_White_onBlack_anim" />
         </td>
       </tr>
       <tr>
         <td>Hvidt plus med rød skygge (Kan bruges på rød baggrund)</td>
-        <td>EB+_White_onRed_anim.svg</td>
+        <td>eb-plus-white-onred-anim.svg</td>
         <td style="background-color: darkred">
-          <img src="./svg/dredition/EB+_White_onRed_anim.svg" height="50" />
+          <img src="./svg/dredition/eb-plus-white-onred-anim.svg" height="50" />
         </td>
       </tr>
       <tr>
         <td>Rød plus med sort skygge (Kan bruges på hvid baggrund)</td>
-        <td>EB+_Red_anim.svg</td>
+        <td>eb-plus-red-anim.svg</td>
         <td style="background-color: white">
-          <img src="./svg/dredition/EB+_Red_anim.svg" height="50" />
+          <img src="./svg/dredition/eb-plus-red-anim.svg" height="50" />
         </td>
       </tr>
       <tr>
