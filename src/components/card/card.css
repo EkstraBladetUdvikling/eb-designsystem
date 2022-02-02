@@ -203,7 +203,6 @@ a.card:focus {
   flex-direction: column;
   font-family: var(--fontfamily--secondary);
   overflow: unset;
-  padding: 2px;
 
   flex-shrink: 0;
 }

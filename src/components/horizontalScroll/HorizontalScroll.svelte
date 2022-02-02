@@ -145,7 +145,7 @@
   </Button>
   <div
     bind:this={scrollItemContainer}
-    class="horizontal-scroll-items flex position-relative"
+    class="horizontal-scroll-items horizontal-scroll-items--gap flex position-relative"
     data-horizontallist="horizontallist"
   >
     <slot />

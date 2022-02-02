@@ -21866,7 +21866,7 @@ var app = (function () {
     			t1 = space();
     			div0 = element("div");
     			if (default_slot) default_slot.c();
-    			attr_dev(div0, "class", "horizontal-scroll-items flex position-relative");
+    			attr_dev(div0, "class", "horizontal-scroll-items horizontal-scroll-items--gap flex position-relative");
     			attr_dev(div0, "data-horizontallist", "horizontallist");
     			add_location(div0, file$2L, 127, 2, 4083);
     			attr_dev(div1, "class", /*cssClass*/ ctx[2]);

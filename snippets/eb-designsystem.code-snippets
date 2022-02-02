@@ -220,7 +220,7 @@
     "body": [
       "card-mode"
     ],
-    "description": "This extends card with: {\n border-radius: var(--border-radius-medium);\nbox-shadow: none;\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: var(--fontfamily--secondary);\noverflow: unset;\npadding: 2px;\nflex-shrink: 0;\n }\n Has pseudo styling :not([class*=\"bg--\"]):hover\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
+    "description": "This extends card with: {\n border-radius: var(--border-radius-medium);\nbox-shadow: none;\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\nfont-family: var(--fontfamily--secondary);\noverflow: unset;\nflex-shrink: 0;\n }\n Has pseudo styling :not([class*=\"bg--\"])\n Has pseudo styling :hover\n Has pseudo styling :focus"
   },
   "designsystem card inner": {
     "prefix": "ds-card-inner",
