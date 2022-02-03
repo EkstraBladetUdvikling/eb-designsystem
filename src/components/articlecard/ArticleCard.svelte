@@ -64,9 +64,9 @@
 
   const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
 
-  $: styleProp = `${style}; --color--list-hover: var(--color--${
+  $: styleProp = `${style}; --color--list: var(--color--${
     breaking ? colorNames.breaking : colorName
-  }); --fgcolor--list-hover: var(--fgcolor--${breaking ? colorNames.breaking : colorName}); --card-width: ${width};`;
+  }); --fgcolor--list: var(--fgcolor--${breaking ? colorNames.breaking : colorName}); --card-width: ${width};`;
 
   $: cssClass = className ? `${className} ${baseClass}` : baseClass;
 
@@ -137,12 +137,12 @@
                   on:toggle={toggleSave}
                 >
                   <slot slot="on">
-                    <Icon name="bookmarksolid" style="color: var(--fgcolor--list-hover);" width={12} />
-                    <span class="padding-s--l" style="color: var(--fgcolor--list-hover);">Gemt</span>
+                    <Icon name="bookmarksolid" style="color: var(--fgcolor--list);" width={12} />
+                    <span class="padding-s--l" style="color: var(--fgcolor--list);">Gemt</span>
                   </slot>
                   <slot slot="off">
-                    <Icon name="bookmark" style="color: var(--fgcolor--list-hover);" width={12} />
-                    <span class="padding-s--l" style="color: var(--fgcolor--list-hover);">Gem</span>
+                    <Icon name="bookmark" style="color: var(--fgcolor--list);" width={12} />
+                    <span class="padding-s--l" style="color: var(--fgcolor--list);">Gem</span>
                   </slot>
                 </Toggler>
               {/if}
