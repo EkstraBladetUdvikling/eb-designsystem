@@ -102,6 +102,13 @@
           <img alt="" src="./svg/dredition/live-video-opaque.svg" />
         </td>
       </tr>
+      <tr>
+        <td>radar</td>
+        <td>radar.svg</td>
+        <td>
+          <img alt="" src="./svg/dredition/radar.svg" />
+        </td>
+      </tr>
     </table>
 
     <i class="margin-m--b margin-l--t">Icons right on the article card</i>
