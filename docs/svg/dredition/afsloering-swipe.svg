@@ -8,7 +8,7 @@
 					type="translate"
           dur="4s"
           keyTimes="0;0.20;0.50;0.7;1"
-          values="100 -20; -40 -20; -40 -20; -200 -20; -200 -20;"
+          values="70 -20; -130 -20; -130 -20; -280 -20; -280 -20;"
           repeatCount="indefinite"
         />
 			</polygon>
@@ -32,6 +32,10 @@
 
 			.afsloring-swipe-rect-red {
 			fill: #f00;
+			}
+
+			#afsloring-swipe-red-layer {
+				transform: translate(100px, 0px);
 			}
 
 			.afsloring-swipe-text-red {
