@@ -55,10 +55,10 @@
     enabled "2.0.x"
     kuler "^2.0.0"
 
-"@ekstra-bladet/eb-colors@^4.0.3":
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@ekstra-bladet/eb-colors/-/eb-colors-4.0.3.tgz#d66b8f23e7612a35bd930e8bd2c297065667d64d"
-  integrity sha512-J4xs0mMpxWzWaggZ9ef4JFHcAqklhkJAImUCH4OTktFFbysLIvKymkus/7TP6C3F6PxeZn6iu8UOZcIjhE58Mw==
+"@ekstra-bladet/eb-colors@4.0.4":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@ekstra-bladet/eb-colors/-/eb-colors-4.0.4.tgz#0222754be60c8f387fab1a867515ae8d1b3db10c"
+  integrity sha512-eekUrbv33U5nJGWuUz6f4PSTljUOdeQrEQZFfMch1MFc6gKZzGms+Ycoomxv8B5G3y0A0XUUz/vA1JB7EMWLrQ==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
