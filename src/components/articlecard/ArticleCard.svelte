@@ -27,6 +27,7 @@
   export let media: Partial<IMediaOptions> = undefined;
   export let premium: boolean = false;
   export let published: string = undefined;
+  export let read: boolean = false;
   export let saved: boolean = undefined;
   export let section: string = undefined;
   export let style: string = '';
@@ -35,7 +36,8 @@
   export let width: string = '100%';
 
   const dispatch = createEventDispatcher();
-  let baseClass = `card-mode card-mode--article`;
+  const readClass = read ? ' card--read' : '';
+  let baseClass = `card-mode card-mode--article${readClass}`;
 
   let loadingStyle = 'padding-top: 56.25%; width: 100%;';
   if (loading) {
