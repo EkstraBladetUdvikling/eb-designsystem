@@ -34,11 +34,6 @@
   box-shadow: var(--box-shadow);
 }
 
-.card--read {
-  filter: grayscale(1);
-  opacity: 0.3;
-}
-
 .card:not([class*="bg--"]) {
   background: var(--color--white);
   color: var(--color--black);

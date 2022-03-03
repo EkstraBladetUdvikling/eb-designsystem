@@ -36,7 +36,7 @@
   export let width: string = '100%';
 
   const dispatch = createEventDispatcher();
-  const readClass = read ? ' card--read' : '';
+  const readClass = read ? ' articlecard--read' : '';
   let baseClass = `card-mode card-mode--article${readClass}`;
 
   let loadingStyle = 'padding-top: 56.25%; width: 100%;';
