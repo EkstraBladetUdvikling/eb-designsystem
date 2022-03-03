@@ -27,6 +27,7 @@
   export let media: Partial<IMediaOptions> = undefined;
   export let premium: boolean = false;
   export let published: string = undefined;
+  export let read: boolean = false;
   export let saved: boolean = undefined;
   export let section: string = undefined;
   export let style: string = '';
@@ -63,12 +64,13 @@
   }
 
   const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
+  const readClass = read ? 'articlecard--read' : '';
 
   $: styleProp = `${style}; --color--list: var(--color--${
     breaking ? colorNames.breaking : colorName
   }); --fgcolor--list: var(--fgcolor--${breaking ? colorNames.breaking : colorName}); --card-width: ${width};`;
 
-  $: cssClass = className ? `${className} ${baseClass}` : baseClass;
+  $: cssClass = className ? `${className} ${baseClass} ${readClass}` : `${baseClass} ${readClass}`;
 
   $: mediaCssClass = media && media.className ? `${media.className} card-media` : 'card-media';
 

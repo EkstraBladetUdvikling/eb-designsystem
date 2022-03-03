@@ -19406,7 +19406,7 @@ var app = (function () {
     const get_default_slot_changes$2 = dirty => ({});
     const get_default_slot_context$2 = ctx => ({ slot: "off" });
 
-    // (61:0) {#if loading || (!loading && title)}
+    // (63:0) {#if loading || (!loading && title)}
     function create_if_block$y(ctx) {
     	let card;
     	let current;
@@ -19423,7 +19423,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	card.$on("click", /*click_handler*/ ctx[28]);
+    	card.$on("click", /*click_handler*/ ctx[29]);
 
     	const block = {
     		c: function create() {
@@ -19435,12 +19435,12 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const card_changes = {};
-    			if (dirty & /*url*/ 4096) card_changes.url = /*url*/ ctx[12];
-    			if (dirty & /*cssClass*/ 65536) card_changes.className = /*cssClass*/ ctx[16];
-    			if (dirty & /*styleProp*/ 131072) card_changes.style = /*styleProp*/ ctx[17];
-    			if (dirty & /*breaking*/ 4) card_changes["data-breaking"] = /*breaking*/ ctx[2];
+    			if (dirty[0] & /*url*/ 4096) card_changes.url = /*url*/ ctx[12];
+    			if (dirty[0] & /*cssClass*/ 65536) card_changes.className = /*cssClass*/ ctx[16];
+    			if (dirty[0] & /*styleProp*/ 131072) card_changes.style = /*styleProp*/ ctx[17];
+    			if (dirty[0] & /*breaking*/ 4) card_changes["data-breaking"] = /*breaking*/ ctx[2];
 
-    			if (dirty & /*$$scope, innerClass, truncateTitle, title, saved, published, section, mediaCssClass, media, colorName, update, loadingStyle, loading, premiumMarkerSize, premium*/ 536932347) {
+    			if (dirty[0] & /*$$scope, innerClass, truncateTitle, title, saved, published, section, mediaCssClass, media, colorName, update, loadingStyle, loading, premiumMarkerSize, premium*/ 1073803259) {
     				card_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19464,14 +19464,14 @@ var app = (function () {
     		block,
     		id: create_if_block$y.name,
     		type: "if",
-    		source: "(61:0) {#if loading || (!loading && title)}",
+    		source: "(63:0) {#if loading || (!loading && title)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (64:6) {#if premium}
+    // (66:6) {#if premium}
     function create_if_block_8$2(ctx) {
     	let div;
     	let icon;
@@ -19495,7 +19495,7 @@ var app = (function () {
     			? `premium-dogear--${/*premiumMarkerSize*/ ctx[4]}`
     			: ''));
 
-    			add_location(div, file$2Q, 64, 8, 2342);
+    			add_location(div, file$2Q, 66, 8, 2449);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -19503,7 +19503,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (!current || dirty & /*premiumMarkerSize*/ 16 && div_class_value !== (div_class_value = "premium-dogear " + (/*premiumMarkerSize*/ ctx[4]
+    			if (!current || dirty[0] & /*premiumMarkerSize*/ 16 && div_class_value !== (div_class_value = "premium-dogear " + (/*premiumMarkerSize*/ ctx[4]
     			? `premium-dogear--${/*premiumMarkerSize*/ ctx[4]}`
     			: ''))) {
     				attr_dev(div, "class", div_class_value);
@@ -19528,14 +19528,14 @@ var app = (function () {
     		block,
     		id: create_if_block_8$2.name,
     		type: "if",
-    		source: "(64:6) {#if premium}",
+    		source: "(66:6) {#if premium}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (69:6) {#if loading}
+    // (71:6) {#if loading}
     function create_if_block_7$2(ctx) {
     	let div1;
     	let div0;
@@ -19546,16 +19546,16 @@ var app = (function () {
     			div0 = element("div");
     			attr_dev(div0, "class", "card-image bg--graa4");
     			attr_dev(div0, "style", /*loadingStyle*/ ctx[13]);
-    			add_location(div0, file$2Q, 70, 10, 2590);
+    			add_location(div0, file$2Q, 72, 10, 2697);
     			attr_dev(div1, "class", "card-media");
-    			add_location(div1, file$2Q, 69, 8, 2555);
+    			add_location(div1, file$2Q, 71, 8, 2662);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
     			append_dev(div1, div0);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*loadingStyle*/ 8192) {
+    			if (dirty[0] & /*loadingStyle*/ 8192) {
     				attr_dev(div0, "style", /*loadingStyle*/ ctx[13]);
     			}
     		},
@@ -19568,14 +19568,14 @@ var app = (function () {
     		block,
     		id: create_if_block_7$2.name,
     		type: "if",
-    		source: "(69:6) {#if loading}",
+    		source: "(71:6) {#if loading}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (74:6) {#if media}
+    // (76:6) {#if media}
     function create_if_block_5$5(ctx) {
     	let div;
     	let t;
@@ -19597,9 +19597,9 @@ var app = (function () {
     			if (!src_url_equal(img.src, img_src_value = /*media*/ ctx[6].src)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "height", img_height_value = /*media*/ ctx[6].height);
     			attr_dev(img, "width", img_width_value = /*media*/ ctx[6].width);
-    			add_location(img, file$2Q, 89, 10, 3251);
+    			add_location(img, file$2Q, 91, 10, 3358);
     			attr_dev(div, "class", /*mediaCssClass*/ ctx[15]);
-    			add_location(div, file$2Q, 74, 8, 2701);
+    			add_location(div, file$2Q, 76, 8, 2808);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -19613,7 +19613,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
-    					if (dirty & /*update*/ 32) {
+    					if (dirty[0] & /*update*/ 32) {
     						transition_in(if_block, 1);
     					}
     				} else {
@@ -19632,23 +19632,23 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (!current || dirty & /*title*/ 1) {
+    			if (!current || dirty[0] & /*title*/ 1) {
     				attr_dev(img, "alt", /*title*/ ctx[0]);
     			}
 
-    			if (!current || dirty & /*media*/ 64 && !src_url_equal(img.src, img_src_value = /*media*/ ctx[6].src)) {
+    			if (!current || dirty[0] & /*media*/ 64 && !src_url_equal(img.src, img_src_value = /*media*/ ctx[6].src)) {
     				attr_dev(img, "src", img_src_value);
     			}
 
-    			if (!current || dirty & /*media*/ 64 && img_height_value !== (img_height_value = /*media*/ ctx[6].height)) {
+    			if (!current || dirty[0] & /*media*/ 64 && img_height_value !== (img_height_value = /*media*/ ctx[6].height)) {
     				attr_dev(img, "height", img_height_value);
     			}
 
-    			if (!current || dirty & /*media*/ 64 && img_width_value !== (img_width_value = /*media*/ ctx[6].width)) {
+    			if (!current || dirty[0] & /*media*/ 64 && img_width_value !== (img_width_value = /*media*/ ctx[6].width)) {
     				attr_dev(img, "width", img_width_value);
     			}
 
-    			if (!current || dirty & /*mediaCssClass*/ 32768) {
+    			if (!current || dirty[0] & /*mediaCssClass*/ 32768) {
     				attr_dev(div, "class", /*mediaCssClass*/ ctx[15]);
     			}
     		},
@@ -19671,14 +19671,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5$5.name,
     		type: "if",
-    		source: "(74:6) {#if media}",
+    		source: "(76:6) {#if media}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (76:10) {#if update}
+    // (78:10) {#if update}
     function create_if_block_6$2(ctx) {
     	let badge;
     	let current;
@@ -19704,7 +19704,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const badge_changes = {};
 
-    			if (dirty & /*$$scope, colorName*/ 536870920) {
+    			if (dirty[0] & /*$$scope, colorName*/ 1073741832) {
     				badge_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19728,14 +19728,14 @@ var app = (function () {
     		block,
     		id: create_if_block_6$2.name,
     		type: "if",
-    		source: "(76:10) {#if update}",
+    		source: "(78:10) {#if update}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (77:12) <Badge               className="margin-s position-absolute padding-none padding-s--r card--shadow bg--black fontsize-small"               style="bottom: 5px; left: 5px;"             >
+    // (79:12) <Badge               className="margin-s position-absolute padding-none padding-s--r card--shadow bg--black fontsize-small"               style="bottom: 5px; left: 5px;"             >
     function create_default_slot_1$s(ctx) {
     	let icon;
     	let t;
@@ -19763,7 +19763,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const icon_changes = {};
-    			if (dirty & /*colorName*/ 8) icon_changes.className = "bg--white color--" + /*colorName*/ ctx[3] + " border-radius-s padding-s margin-s--r";
+    			if (dirty[0] & /*colorName*/ 8) icon_changes.className = "bg--white color--" + /*colorName*/ ctx[3] + " border-radius-s padding-s margin-s--r";
     			icon.$set(icon_changes);
     		},
     		i: function intro(local) {
@@ -19785,14 +19785,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$s.name,
     		type: "slot",
-    		source: "(77:12) <Badge               className=\\\"margin-s position-absolute padding-none padding-s--r card--shadow bg--black fontsize-small\\\"               style=\\\"bottom: 5px; left: 5px;\\\"             >",
+    		source: "(79:12) <Badge               className=\\\"margin-s position-absolute padding-none padding-s--r card--shadow bg--black fontsize-small\\\"               style=\\\"bottom: 5px; left: 5px;\\\"             >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (95:10) {#if section || published}
+    // (97:10) {#if section || published}
     function create_if_block_1$f(ctx) {
     	let div;
     	let t0;
@@ -19811,7 +19811,7 @@ var app = (function () {
     			t1 = space();
     			if (if_block2) if_block2.c();
     			attr_dev(div, "class", "card-meta flex flex-wrap--wrap fontsize-xxsmall");
-    			add_location(div, file$2Q, 95, 12, 3500);
+    			add_location(div, file$2Q, 97, 12, 3607);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -19827,7 +19827,7 @@ var app = (function () {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
 
-    					if (dirty & /*section*/ 1024) {
+    					if (dirty[0] & /*section*/ 1024) {
     						transition_in(if_block0, 1);
     					}
     				} else {
@@ -19850,7 +19850,7 @@ var app = (function () {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
 
-    					if (dirty & /*published*/ 256) {
+    					if (dirty[0] & /*published*/ 256) {
     						transition_in(if_block1, 1);
     					}
     				} else {
@@ -19873,7 +19873,7 @@ var app = (function () {
     				if (if_block2) {
     					if_block2.p(ctx, dirty);
 
-    					if (dirty & /*saved*/ 512) {
+    					if (dirty[0] & /*saved*/ 512) {
     						transition_in(if_block2, 1);
     					}
     				} else {
@@ -19917,14 +19917,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$f.name,
     		type: "if",
-    		source: "(95:10) {#if section || published}",
+    		source: "(97:10) {#if section || published}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (97:14) {#if section}
+    // (99:14) {#if section}
     function create_if_block_4$8(ctx) {
     	let div;
     	let span1;
@@ -19948,11 +19948,11 @@ var app = (function () {
     			span0 = element("span");
     			t1 = text(/*section*/ ctx[10]);
     			attr_dev(span0, "class", "padding-s--l");
-    			add_location(span0, file$2Q, 100, 20, 3765);
+    			add_location(span0, file$2Q, 102, 20, 3872);
     			attr_dev(span1, "class", "flex flex-justify--center");
-    			add_location(span1, file$2Q, 98, 18, 3653);
+    			add_location(span1, file$2Q, 100, 18, 3760);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$2Q, 97, 16, 3606);
+    			add_location(div, file$2Q, 99, 16, 3713);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -19964,7 +19964,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (!current || dirty & /*section*/ 1024) set_data_dev(t1, /*section*/ ctx[10]);
+    			if (!current || dirty[0] & /*section*/ 1024) set_data_dev(t1, /*section*/ ctx[10]);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -19985,14 +19985,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4$8.name,
     		type: "if",
-    		source: "(97:14) {#if section}",
+    		source: "(99:14) {#if section}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (105:14) {#if published}
+    // (107:14) {#if published}
     function create_if_block_3$9(ctx) {
     	let div;
     	let icon;
@@ -20015,9 +20015,9 @@ var app = (function () {
     			span = element("span");
     			t1 = text(t1_value);
     			attr_dev(span, "class", "padding-s--l");
-    			add_location(span, file$2Q, 107, 18, 4022);
+    			add_location(span, file$2Q, 109, 18, 4129);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$2Q, 105, 16, 3924);
+    			add_location(div, file$2Q, 107, 16, 4031);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -20028,7 +20028,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty & /*published*/ 256) && t1_value !== (t1_value = parseDate$1(/*published*/ ctx[8]) + "")) set_data_dev(t1, t1_value);
+    			if ((!current || dirty[0] & /*published*/ 256) && t1_value !== (t1_value = parseDate$1(/*published*/ ctx[8]) + "")) set_data_dev(t1, t1_value);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -20049,14 +20049,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$9.name,
     		type: "if",
-    		source: "(105:14) {#if published}",
+    		source: "(107:14) {#if published}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (111:14) {#if saved !== undefined}
+    // (113:14) {#if saved !== undefined}
     function create_if_block_2$9(ctx) {
     	let toggler;
     	let current;
@@ -20086,9 +20086,9 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const toggler_changes = {};
-    			if (dirty & /*saved*/ 512) toggler_changes.defaultState = /*saved*/ ctx[9];
+    			if (dirty[0] & /*saved*/ 512) toggler_changes.defaultState = /*saved*/ ctx[9];
 
-    			if (dirty & /*$$scope*/ 536870912) {
+    			if (dirty[0] & /*$$scope*/ 1073741824) {
     				toggler_changes.$$scope = { dirty, ctx };
     			}
 
@@ -20112,14 +20112,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$9.name,
     		type: "if",
-    		source: "(111:14) {#if saved !== undefined}",
+    		source: "(113:14) {#if saved !== undefined}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (117:34)                      
+    // (119:34)                      
     function fallback_block_1$2(ctx) {
     	let icon;
     	let t0;
@@ -20143,7 +20143,7 @@ var app = (function () {
     			span.textContent = "Gemt";
     			attr_dev(span, "class", "padding-s--l");
     			set_style(span, "color", "var(--fgcolor--list)");
-    			add_location(span, file$2Q, 118, 20, 4509);
+    			add_location(span, file$2Q, 120, 20, 4616);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -20172,18 +20172,18 @@ var app = (function () {
     		block,
     		id: fallback_block_1$2.name,
     		type: "fallback",
-    		source: "(117:34)                      ",
+    		source: "(119:34)                      ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (117:18) 
+    // (119:18) 
     function create_on_slot$2(ctx) {
     	let current;
-    	const default_slot_template = /*#slots*/ ctx[27].default;
-    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[29], get_default_slot_context_1$2);
+    	const default_slot_template = /*#slots*/ ctx[28].default;
+    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[30], get_default_slot_context_1$2);
     	const default_slot_or_fallback = default_slot || fallback_block_1$2(ctx);
 
     	const block = {
@@ -20199,15 +20199,15 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (default_slot) {
-    				if (default_slot.p && (!current || dirty & /*$$scope*/ 536870912)) {
+    				if (default_slot.p && (!current || dirty[0] & /*$$scope*/ 1073741824)) {
     					update_slot_base(
     						default_slot,
     						default_slot_template,
     						ctx,
-    						/*$$scope*/ ctx[29],
+    						/*$$scope*/ ctx[30],
     						!current
-    						? get_all_dirty_from_scope(/*$$scope*/ ctx[29])
-    						: get_slot_changes(default_slot_template, /*$$scope*/ ctx[29], dirty, get_default_slot_changes_1$2),
+    						? get_all_dirty_from_scope(/*$$scope*/ ctx[30])
+    						: get_slot_changes(default_slot_template, /*$$scope*/ ctx[30], dirty, get_default_slot_changes_1$2),
     						get_default_slot_context_1$2
     					);
     				}
@@ -20231,14 +20231,14 @@ var app = (function () {
     		block,
     		id: create_on_slot$2.name,
     		type: "slot",
-    		source: "(117:18) ",
+    		source: "(119:18) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (121:35)                      
+    // (123:35)                      
     function fallback_block$2(ctx) {
     	let icon;
     	let t0;
@@ -20262,7 +20262,7 @@ var app = (function () {
     			span.textContent = "Gem";
     			attr_dev(span, "class", "padding-s--l");
     			set_style(span, "color", "var(--fgcolor--list)");
-    			add_location(span, file$2Q, 122, 20, 4760);
+    			add_location(span, file$2Q, 124, 20, 4867);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -20291,18 +20291,18 @@ var app = (function () {
     		block,
     		id: fallback_block$2.name,
     		type: "fallback",
-    		source: "(121:35)                      ",
+    		source: "(123:35)                      ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (121:18) 
+    // (123:18) 
     function create_off_slot$2(ctx) {
     	let current;
-    	const default_slot_template = /*#slots*/ ctx[27].default;
-    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[29], get_default_slot_context$2);
+    	const default_slot_template = /*#slots*/ ctx[28].default;
+    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[30], get_default_slot_context$2);
     	const default_slot_or_fallback = default_slot || fallback_block$2(ctx);
 
     	const block = {
@@ -20318,15 +20318,15 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (default_slot) {
-    				if (default_slot.p && (!current || dirty & /*$$scope*/ 536870912)) {
+    				if (default_slot.p && (!current || dirty[0] & /*$$scope*/ 1073741824)) {
     					update_slot_base(
     						default_slot,
     						default_slot_template,
     						ctx,
-    						/*$$scope*/ ctx[29],
+    						/*$$scope*/ ctx[30],
     						!current
-    						? get_all_dirty_from_scope(/*$$scope*/ ctx[29])
-    						: get_slot_changes(default_slot_template, /*$$scope*/ ctx[29], dirty, get_default_slot_changes$2),
+    						? get_all_dirty_from_scope(/*$$scope*/ ctx[30])
+    						: get_slot_changes(default_slot_template, /*$$scope*/ ctx[30], dirty, get_default_slot_changes$2),
     						get_default_slot_context$2
     					);
     				}
@@ -20350,14 +20350,14 @@ var app = (function () {
     		block,
     		id: create_off_slot$2.name,
     		type: "slot",
-    		source: "(121:18) ",
+    		source: "(123:18) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (62:2) <Card {url} className={cssClass} style={styleProp} data-breaking={breaking} on:click>
+    // (64:2) <Card {url} className={cssClass} style={styleProp} data-breaking={breaking} on:click>
     function create_default_slot$y(ctx) {
     	let div2;
     	let t0;
@@ -20392,13 +20392,13 @@ var app = (function () {
     			t4 = text(/*title*/ ctx[0]);
     			attr_dev(h2, "class", h2_class_value = "card-title " + (/*truncateTitle*/ ctx[11] ? 'card-title--truncated' : ''));
     			attr_dev(h2, "style", /*titleStyle*/ ctx[18]);
-    			add_location(h2, file$2Q, 128, 10, 4953);
+    			add_location(h2, file$2Q, 130, 10, 5060);
     			attr_dev(div0, "class", "card-content");
-    			add_location(div0, file$2Q, 93, 8, 3424);
+    			add_location(div0, file$2Q, 95, 8, 3531);
     			attr_dev(div1, "class", "card-content-wrapper");
-    			add_location(div1, file$2Q, 92, 6, 3381);
+    			add_location(div1, file$2Q, 94, 6, 3488);
     			attr_dev(div2, "class", /*innerClass*/ ctx[14]);
-    			add_location(div2, file$2Q, 62, 4, 2289);
+    			add_location(div2, file$2Q, 64, 4, 2396);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -20421,7 +20421,7 @@ var app = (function () {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
 
-    					if (dirty & /*premium*/ 128) {
+    					if (dirty[0] & /*premium*/ 128) {
     						transition_in(if_block0, 1);
     					}
     				} else {
@@ -20457,7 +20457,7 @@ var app = (function () {
     				if (if_block2) {
     					if_block2.p(ctx, dirty);
 
-    					if (dirty & /*media*/ 64) {
+    					if (dirty[0] & /*media*/ 64) {
     						transition_in(if_block2, 1);
     					}
     				} else {
@@ -20480,7 +20480,7 @@ var app = (function () {
     				if (if_block3) {
     					if_block3.p(ctx, dirty);
 
-    					if (dirty & /*section, published*/ 1280) {
+    					if (dirty[0] & /*section, published*/ 1280) {
     						transition_in(if_block3, 1);
     					}
     				} else {
@@ -20499,13 +20499,13 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (!current || dirty & /*title*/ 1) set_data_dev(t4, /*title*/ ctx[0]);
+    			if (!current || dirty[0] & /*title*/ 1) set_data_dev(t4, /*title*/ ctx[0]);
 
-    			if (!current || dirty & /*truncateTitle*/ 2048 && h2_class_value !== (h2_class_value = "card-title " + (/*truncateTitle*/ ctx[11] ? 'card-title--truncated' : ''))) {
+    			if (!current || dirty[0] & /*truncateTitle*/ 2048 && h2_class_value !== (h2_class_value = "card-title " + (/*truncateTitle*/ ctx[11] ? 'card-title--truncated' : ''))) {
     				attr_dev(h2, "class", h2_class_value);
     			}
 
-    			if (!current || dirty & /*innerClass*/ 16384) {
+    			if (!current || dirty[0] & /*innerClass*/ 16384) {
     				attr_dev(div2, "class", /*innerClass*/ ctx[14]);
     			}
     		},
@@ -20535,7 +20535,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$y.name,
     		type: "slot",
-    		source: "(62:2) <Card {url} className={cssClass} style={styleProp} data-breaking={breaking} on:click>",
+    		source: "(64:2) <Card {url} className={cssClass} style={styleProp} data-breaking={breaking} on:click>",
     		ctx
     	});
 
@@ -20560,12 +20560,12 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     			current = true;
     		},
-    		p: function update(ctx, [dirty]) {
+    		p: function update(ctx, dirty) {
     			if (/*loading*/ ctx[1] || !/*loading*/ ctx[1] && /*title*/ ctx[0]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
-    					if (dirty & /*loading, title*/ 3) {
+    					if (dirty[0] & /*loading, title*/ 3) {
     						transition_in(if_block, 1);
     					}
     				} else {
@@ -20629,6 +20629,7 @@ var app = (function () {
     	let { media = undefined } = $$props;
     	let { premium = false } = $$props;
     	let { published = undefined } = $$props;
+    	let { read = false } = $$props;
     	let { saved = undefined } = $$props;
     	let { section = undefined } = $$props;
     	let { style = '' } = $$props;
@@ -20663,6 +20664,7 @@ var app = (function () {
     	}
 
     	const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
+    	const readClass = read ? 'articlecard--read' : '';
 
     	function toggleSave(evt) {
     		dispatch('save', { id, save: evt.detail });
@@ -20682,6 +20684,7 @@ var app = (function () {
     		'media',
     		'premium',
     		'published',
+    		'read',
     		'saved',
     		'section',
     		'style',
@@ -20712,13 +20715,14 @@ var app = (function () {
     		if ('media' in $$props) $$invalidate(6, media = $$props.media);
     		if ('premium' in $$props) $$invalidate(7, premium = $$props.premium);
     		if ('published' in $$props) $$invalidate(8, published = $$props.published);
+    		if ('read' in $$props) $$invalidate(24, read = $$props.read);
     		if ('saved' in $$props) $$invalidate(9, saved = $$props.saved);
     		if ('section' in $$props) $$invalidate(10, section = $$props.section);
-    		if ('style' in $$props) $$invalidate(24, style = $$props.style);
+    		if ('style' in $$props) $$invalidate(25, style = $$props.style);
     		if ('truncateTitle' in $$props) $$invalidate(11, truncateTitle = $$props.truncateTitle);
     		if ('url' in $$props) $$invalidate(12, url = $$props.url);
-    		if ('width' in $$props) $$invalidate(25, width = $$props.width);
-    		if ('$$scope' in $$props) $$invalidate(29, $$scope = $$props.$$scope);
+    		if ('width' in $$props) $$invalidate(26, width = $$props.width);
+    		if ('$$scope' in $$props) $$invalidate(30, $$scope = $$props.$$scope);
     	};
 
     	$$self.$capture_state = () => ({
@@ -20742,6 +20746,7 @@ var app = (function () {
     		media,
     		premium,
     		published,
+    		read,
     		saved,
     		section,
     		style,
@@ -20753,6 +20758,7 @@ var app = (function () {
     		loadingStyle,
     		innerClass,
     		titleStyle,
+    		readClass,
     		toggleSave,
     		mediaCssClass,
     		cssClass,
@@ -20773,13 +20779,14 @@ var app = (function () {
     		if ('media' in $$props) $$invalidate(6, media = $$props.media);
     		if ('premium' in $$props) $$invalidate(7, premium = $$props.premium);
     		if ('published' in $$props) $$invalidate(8, published = $$props.published);
+    		if ('read' in $$props) $$invalidate(24, read = $$props.read);
     		if ('saved' in $$props) $$invalidate(9, saved = $$props.saved);
     		if ('section' in $$props) $$invalidate(10, section = $$props.section);
-    		if ('style' in $$props) $$invalidate(24, style = $$props.style);
+    		if ('style' in $$props) $$invalidate(25, style = $$props.style);
     		if ('truncateTitle' in $$props) $$invalidate(11, truncateTitle = $$props.truncateTitle);
     		if ('url' in $$props) $$invalidate(12, url = $$props.url);
-    		if ('width' in $$props) $$invalidate(25, width = $$props.width);
-    		if ('baseClass' in $$props) $$invalidate(26, baseClass = $$props.baseClass);
+    		if ('width' in $$props) $$invalidate(26, width = $$props.width);
+    		if ('baseClass' in $$props) $$invalidate(27, baseClass = $$props.baseClass);
     		if ('loadingStyle' in $$props) $$invalidate(13, loadingStyle = $$props.loadingStyle);
     		if ('innerClass' in $$props) $$invalidate(14, innerClass = $$props.innerClass);
     		if ('mediaCssClass' in $$props) $$invalidate(15, mediaCssClass = $$props.mediaCssClass);
@@ -20792,15 +20799,17 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*style, breaking, colorName, width*/ 50331660) {
+    		if ($$self.$$.dirty[0] & /*style, breaking, colorName, width*/ 100663308) {
     			$$invalidate(17, styleProp = `${style}; --color--list: var(--color--${breaking ? colorNames.breaking : colorName}); --fgcolor--list: var(--fgcolor--${breaking ? colorNames.breaking : colorName}); --card-width: ${width};`);
     		}
 
-    		if ($$self.$$.dirty & /*className, baseClass*/ 69206016) {
-    			$$invalidate(16, cssClass = className ? `${className} ${baseClass}` : baseClass);
+    		if ($$self.$$.dirty[0] & /*className, baseClass*/ 136314880) {
+    			$$invalidate(16, cssClass = className
+    			? `${className} ${baseClass} ${readClass}`
+    			: `${baseClass} ${readClass}`);
     		}
 
-    		if ($$self.$$.dirty & /*media*/ 64) {
+    		if ($$self.$$.dirty[0] & /*media*/ 64) {
     			$$invalidate(15, mediaCssClass = media && media.className
     			? `${media.className} card-media`
     			: 'card-media');
@@ -20832,6 +20841,7 @@ var app = (function () {
     		className,
     		id,
     		maxLines,
+    		read,
     		style,
     		width,
     		baseClass,
@@ -20845,27 +20855,37 @@ var app = (function () {
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$2R, create_fragment$2T, safe_not_equal, {
-    			loading: 1,
-    			title: 0,
-    			breaking: 2,
-    			cardType: 20,
-    			className: 21,
-    			colorName: 3,
-    			premiumMarkerSize: 4,
-    			id: 22,
-    			update: 5,
-    			maxLines: 23,
-    			media: 6,
-    			premium: 7,
-    			published: 8,
-    			saved: 9,
-    			section: 10,
-    			style: 24,
-    			truncateTitle: 11,
-    			url: 12,
-    			width: 25
-    		});
+    		init(
+    			this,
+    			options,
+    			instance$2R,
+    			create_fragment$2T,
+    			safe_not_equal,
+    			{
+    				loading: 1,
+    				title: 0,
+    				breaking: 2,
+    				cardType: 20,
+    				className: 21,
+    				colorName: 3,
+    				premiumMarkerSize: 4,
+    				id: 22,
+    				update: 5,
+    				maxLines: 23,
+    				media: 6,
+    				premium: 7,
+    				published: 8,
+    				read: 24,
+    				saved: 9,
+    				section: 10,
+    				style: 25,
+    				truncateTitle: 11,
+    				url: 12,
+    				width: 26
+    			},
+    			null,
+    			[-1, -1]
+    		);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -20976,6 +20996,14 @@ var app = (function () {
     	}
 
     	set published(value) {
+    		throw new Error("<ArticleCard>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get read() {
+    		throw new Error("<ArticleCard>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set read(value) {
     		throw new Error("<ArticleCard>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
@@ -30747,7 +30775,7 @@ for (const accordion of accordions) {
     /* docs_src/components/ArticleCard.svelte generated by Svelte v3.44.1 */
     const file$2A = "docs_src/components/ArticleCard.svelte";
 
-    // (165:0) {:else}
+    // (179:0) {:else}
     function create_else_block$i(ctx) {
     	let p;
 
@@ -30755,7 +30783,7 @@ for (const accordion of accordions) {
     		c: function create() {
     			p = element("p");
     			p.textContent = "ArticleCard er en ren Svelte component.";
-    			add_location(p, file$2A, 165, 2, 3984);
+    			add_location(p, file$2A, 179, 2, 4389);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30772,7 +30800,7 @@ for (const accordion of accordions) {
     		block,
     		id: create_else_block$i.name,
     		type: "else",
-    		source: "(165:0) {:else}",
+    		source: "(179:0) {:else}",
     		ctx
     	});
 
@@ -30901,14 +30929,14 @@ for (const accordion of accordions) {
     	let td42;
     	let t90;
     	let td43;
-    	let t91;
+    	let t92;
     	let tr12;
     	let td44;
-    	let t93;
+    	let t94;
     	let td45;
-    	let t95;
-    	let td46;
     	let t96;
+    	let td46;
+    	let t97;
     	let td47;
     	let t98;
     	let tr13;
@@ -30917,7 +30945,7 @@ for (const accordion of accordions) {
     	let td49;
     	let t102;
     	let td50;
-    	let t104;
+    	let t103;
     	let td51;
     	let t105;
     	let tr14;
@@ -30926,77 +30954,92 @@ for (const accordion of accordions) {
     	let td53;
     	let t109;
     	let td54;
-    	let t110;
+    	let t111;
     	let td55;
     	let t112;
     	let tr15;
-    	let th4;
-    	let t114;
-    	let tr16;
     	let td56;
-    	let t116;
+    	let t114;
     	let td57;
-    	let t118;
+    	let t116;
     	let td58;
-    	let t119;
+    	let t117;
     	let td59;
-    	let t120;
+    	let t119;
+    	let tr16;
+    	let th4;
+    	let t121;
     	let tr17;
     	let td60;
-    	let t122;
+    	let t123;
     	let td61;
-    	let t124;
-    	let td62;
     	let t125;
-    	let td63;
+    	let td62;
     	let t126;
+    	let td63;
+    	let t127;
     	let tr18;
     	let td64;
-    	let t127;
-    	let badge1;
-    	let t128;
+    	let t129;
     	let td65;
-    	let t130;
-    	let td66;
     	let t131;
-    	let td67;
+    	let td66;
     	let t132;
+    	let td67;
+    	let t133;
     	let tr19;
     	let td68;
     	let t134;
+    	let badge1;
+    	let t135;
     	let td69;
-    	let t136;
-    	let td70;
     	let t137;
-    	let td71;
+    	let td70;
     	let t138;
-    	let articlecard0;
+    	let td71;
     	let t139;
-    	let prism1;
-    	let t140;
-    	let h30;
-    	let t142;
-    	let articlecard1;
+    	let tr20;
+    	let td72;
+    	let t141;
+    	let td73;
     	let t143;
-    	let articlecard2;
+    	let td74;
     	let t144;
-    	let prism2;
+    	let td75;
     	let t145;
-    	let h31;
+    	let articlecard0;
+    	let t146;
+    	let prism1;
     	let t147;
-    	let articlecard3;
-    	let t148;
-    	let articlecard4;
+    	let h30;
     	let t149;
-    	let articlecard5;
+    	let articlecard1;
     	let t150;
+    	let articlecard2;
+    	let t151;
+    	let prism2;
+    	let t152;
+    	let h31;
+    	let t154;
+    	let articlecard3;
+    	let t155;
     	let prism3;
+    	let t156;
+    	let h32;
+    	let t158;
+    	let articlecard4;
+    	let t159;
+    	let articlecard5;
+    	let t160;
+    	let articlecard6;
+    	let t161;
+    	let prism4;
     	let current;
 
     	prism0 = new Prism$1({
     			props: {
     				language: "js",
-    				$$slots: { default: [create_default_slot_5$e] },
+    				$$slots: { default: [create_default_slot_6$d] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -31006,7 +31049,7 @@ for (const accordion of accordions) {
     			props: {
     				type: "secondary",
     				extension: "small",
-    				$$slots: { default: [create_default_slot_4$g] },
+    				$$slots: { default: [create_default_slot_5$e] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -31016,7 +31059,7 @@ for (const accordion of accordions) {
     			props: {
     				type: "primary",
     				extension: "small",
-    				$$slots: { default: [create_default_slot_3$h] },
+    				$$slots: { default: [create_default_slot_4$g] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -31037,7 +31080,7 @@ for (const accordion of accordions) {
     	prism1 = new Prism$1({
     			props: {
     				language: "html",
-    				$$slots: { default: [create_default_slot_2$m] },
+    				$$slots: { default: [create_default_slot_3$h] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -31075,20 +31118,47 @@ for (const accordion of accordions) {
     	prism2 = new Prism$1({
     			props: {
     				language: "html",
+    				$$slots: { default: [create_default_slot_2$m] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const articlecard3_spread_levels = [
+    		{ className: "margin-m--b" },
+    		{ cardType: "small-media" },
+    		{ read: true },
+    		rdmArticleData(250, 120)
+    	];
+
+    	let articlecard3_props = {};
+
+    	for (let i = 0; i < articlecard3_spread_levels.length; i += 1) {
+    		articlecard3_props = assign(articlecard3_props, articlecard3_spread_levels[i]);
+    	}
+
+    	articlecard3 = new ArticleCard$2({
+    			props: articlecard3_props,
+    			$$inline: true
+    		});
+
+    	prism3 = new Prism$1({
+    			props: {
+    				language: "html",
     				$$slots: { default: [create_default_slot_1$p] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	articlecard3 = new ArticleCard$2({ props: { loading: true }, $$inline: true });
+    	articlecard4 = new ArticleCard$2({ props: { loading: true }, $$inline: true });
 
-    	articlecard4 = new ArticleCard$2({
+    	articlecard5 = new ArticleCard$2({
     			props: { loading: true, cardType: "small-media" },
     			$$inline: true
     		});
 
-    	articlecard5 = new ArticleCard$2({
+    	articlecard6 = new ArticleCard$2({
     			props: {
     				loading: true,
     				cardType: "small-media--reverse"
@@ -31096,7 +31166,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	prism3 = new Prism$1({
+    	prism4 = new Prism$1({
     			props: {
     				language: "html",
     				$$slots: { default: [create_default_slot$t] },
@@ -31245,19 +31315,19 @@ for (const accordion of accordions) {
     			t78 = space();
     			tr10 = element("tr");
     			td36 = element("td");
-    			td36.textContent = "section";
+    			td36.textContent = "read";
     			t80 = space();
     			td37 = element("td");
-    			td37.textContent = "string";
+    			td37.textContent = "boolean";
     			t82 = space();
     			td38 = element("td");
     			t83 = space();
     			td39 = element("td");
-    			td39.textContent = "Displays the section meta with a tag icon";
+    			td39.textContent = "Styles the card to looks like it has been read";
     			t85 = space();
     			tr11 = element("tr");
     			td40 = element("td");
-    			td40.textContent = "style";
+    			td40.textContent = "section";
     			t87 = space();
     			td41 = element("td");
     			td41.textContent = "string";
@@ -31265,115 +31335,134 @@ for (const accordion of accordions) {
     			td42 = element("td");
     			t90 = space();
     			td43 = element("td");
-    			t91 = space();
+    			td43.textContent = "Displays the section meta with a tag icon";
+    			t92 = space();
     			tr12 = element("tr");
     			td44 = element("td");
-    			td44.textContent = "published";
-    			t93 = space();
+    			td44.textContent = "style";
+    			t94 = space();
     			td45 = element("td");
-    			td45.textContent = "date string";
-    			t95 = space();
-    			td46 = element("td");
+    			td45.textContent = "string";
     			t96 = space();
+    			td46 = element("td");
+    			t97 = space();
     			td47 = element("td");
-    			td47.textContent = "Displays relative time meta with a icon";
     			t98 = space();
     			tr13 = element("tr");
     			td48 = element("td");
-    			td48.textContent = "truncateTitle";
+    			td48.textContent = "published";
     			t100 = space();
     			td49 = element("td");
-    			td49.textContent = "boolean";
+    			td49.textContent = "date string";
     			t102 = space();
     			td50 = element("td");
-    			td50.textContent = "false";
-    			t104 = space();
+    			t103 = space();
     			td51 = element("td");
+    			td51.textContent = "Displays relative time meta with a icon";
     			t105 = space();
     			tr14 = element("tr");
     			td52 = element("td");
-    			td52.textContent = "cardType";
+    			td52.textContent = "truncateTitle";
     			t107 = space();
     			td53 = element("td");
-    			td53.textContent = "'mode' | 'small-media' | 'small-media--reverse'";
+    			td53.textContent = "boolean";
     			t109 = space();
     			td54 = element("td");
-    			t110 = space();
+    			td54.textContent = "false";
+    			t111 = space();
     			td55 = element("td");
-    			td55.textContent = "Display types. See examples below";
     			t112 = space();
     			tr15 = element("tr");
+    			td56 = element("td");
+    			td56.textContent = "cardType";
+    			t114 = space();
+    			td57 = element("td");
+    			td57.textContent = "'mode' | 'small-media' | 'small-media--reverse'";
+    			t116 = space();
+    			td58 = element("td");
+    			t117 = space();
+    			td59 = element("td");
+    			td59.textContent = "Display types. See examples below";
+    			t119 = space();
+    			tr16 = element("tr");
     			th4 = element("th");
     			th4.textContent = "Media";
-    			t114 = space();
-    			tr16 = element("tr");
-    			td56 = element("td");
-    			td56.textContent = "className";
-    			t116 = space();
-    			td57 = element("td");
-    			td57.textContent = "string";
-    			t118 = space();
-    			td58 = element("td");
-    			t119 = space();
-    			td59 = element("td");
-    			t120 = space();
+    			t121 = space();
     			tr17 = element("tr");
     			td60 = element("td");
-    			td60.textContent = "height";
-    			t122 = space();
+    			td60.textContent = "className";
+    			t123 = space();
     			td61 = element("td");
     			td61.textContent = "string";
-    			t124 = space();
-    			td62 = element("td");
     			t125 = space();
-    			td63 = element("td");
+    			td62 = element("td");
     			t126 = space();
+    			td63 = element("td");
+    			t127 = space();
     			tr18 = element("tr");
     			td64 = element("td");
-    			t127 = text("src ");
-    			create_component(badge1.$$.fragment);
-    			t128 = space();
+    			td64.textContent = "height";
+    			t129 = space();
     			td65 = element("td");
     			td65.textContent = "string";
-    			t130 = space();
-    			td66 = element("td");
     			t131 = space();
-    			td67 = element("td");
+    			td66 = element("td");
     			t132 = space();
+    			td67 = element("td");
+    			t133 = space();
     			tr19 = element("tr");
     			td68 = element("td");
-    			td68.textContent = "width";
-    			t134 = space();
+    			t134 = text("src ");
+    			create_component(badge1.$$.fragment);
+    			t135 = space();
     			td69 = element("td");
     			td69.textContent = "string";
-    			t136 = space();
-    			td70 = element("td");
     			t137 = space();
-    			td71 = element("td");
+    			td70 = element("td");
     			t138 = space();
-    			create_component(articlecard0.$$.fragment);
+    			td71 = element("td");
     			t139 = space();
+    			tr20 = element("tr");
+    			td72 = element("td");
+    			td72.textContent = "width";
+    			t141 = space();
+    			td73 = element("td");
+    			td73.textContent = "string";
+    			t143 = space();
+    			td74 = element("td");
+    			t144 = space();
+    			td75 = element("td");
+    			t145 = space();
+    			create_component(articlecard0.$$.fragment);
+    			t146 = space();
     			create_component(prism1.$$.fragment);
-    			t140 = space();
+    			t147 = space();
     			h30 = element("h3");
     			h30.textContent = "Small-media";
-    			t142 = space();
-    			create_component(articlecard1.$$.fragment);
-    			t143 = space();
-    			create_component(articlecard2.$$.fragment);
-    			t144 = space();
-    			create_component(prism2.$$.fragment);
-    			t145 = space();
-    			h31 = element("h3");
-    			h31.textContent = "Loading placeholder";
-    			t147 = space();
-    			create_component(articlecard3.$$.fragment);
-    			t148 = space();
-    			create_component(articlecard4.$$.fragment);
     			t149 = space();
-    			create_component(articlecard5.$$.fragment);
+    			create_component(articlecard1.$$.fragment);
     			t150 = space();
+    			create_component(articlecard2.$$.fragment);
+    			t151 = space();
+    			create_component(prism2.$$.fragment);
+    			t152 = space();
+    			h31 = element("h3");
+    			h31.textContent = "Small-media read article";
+    			t154 = space();
+    			create_component(articlecard3.$$.fragment);
+    			t155 = space();
     			create_component(prism3.$$.fragment);
+    			t156 = space();
+    			h32 = element("h3");
+    			h32.textContent = "Loading placeholder";
+    			t158 = space();
+    			create_component(articlecard4.$$.fragment);
+    			t159 = space();
+    			create_component(articlecard5.$$.fragment);
+    			t160 = space();
+    			create_component(articlecard6.$$.fragment);
+    			t161 = space();
+    			create_component(prism4.$$.fragment);
     			add_location(th0, file$2A, 16, 8, 423);
     			add_location(th1, file$2A, 17, 8, 450);
     			add_location(th2, file$2A, 18, 8, 472);
@@ -31428,58 +31517,64 @@ for (const accordion of accordions) {
     			add_location(td35, file$2A, 75, 8, 1761);
     			add_location(tr9, file$2A, 71, 6, 1679);
     			add_location(td36, file$2A, 78, 8, 1899);
-    			add_location(td37, file$2A, 79, 8, 1924);
-    			add_location(td38, file$2A, 80, 8, 1948);
-    			add_location(td39, file$2A, 81, 8, 1963);
+    			add_location(td37, file$2A, 79, 8, 1921);
+    			add_location(td38, file$2A, 80, 8, 1946);
+    			add_location(td39, file$2A, 81, 8, 1961);
     			add_location(tr10, file$2A, 77, 6, 1886);
-    			add_location(td40, file$2A, 84, 8, 2045);
-    			add_location(td41, file$2A, 85, 8, 2068);
-    			add_location(td42, file$2A, 86, 8, 2092);
-    			add_location(td43, file$2A, 87, 8, 2107);
-    			add_location(tr11, file$2A, 83, 6, 2032);
-    			add_location(td44, file$2A, 90, 8, 2145);
-    			add_location(td45, file$2A, 91, 8, 2172);
-    			add_location(td46, file$2A, 92, 8, 2201);
-    			add_location(td47, file$2A, 93, 8, 2216);
-    			add_location(tr12, file$2A, 89, 6, 2132);
-    			add_location(td48, file$2A, 96, 8, 2296);
-    			add_location(td49, file$2A, 97, 8, 2327);
-    			add_location(td50, file$2A, 98, 8, 2352);
-    			add_location(td51, file$2A, 99, 8, 2375);
-    			add_location(tr13, file$2A, 95, 6, 2283);
-    			add_location(td52, file$2A, 102, 8, 2413);
-    			add_location(td53, file$2A, 103, 8, 2439);
-    			add_location(td54, file$2A, 104, 8, 2504);
-    			add_location(td55, file$2A, 105, 8, 2519);
-    			add_location(tr14, file$2A, 101, 6, 2400);
+    			add_location(td40, file$2A, 84, 8, 2048);
+    			add_location(td41, file$2A, 85, 8, 2073);
+    			add_location(td42, file$2A, 86, 8, 2097);
+    			add_location(td43, file$2A, 87, 8, 2112);
+    			add_location(tr11, file$2A, 83, 6, 2035);
+    			add_location(td44, file$2A, 90, 8, 2194);
+    			add_location(td45, file$2A, 91, 8, 2217);
+    			add_location(td46, file$2A, 92, 8, 2241);
+    			add_location(td47, file$2A, 93, 8, 2256);
+    			add_location(tr12, file$2A, 89, 6, 2181);
+    			add_location(td48, file$2A, 96, 8, 2294);
+    			add_location(td49, file$2A, 97, 8, 2321);
+    			add_location(td50, file$2A, 98, 8, 2350);
+    			add_location(td51, file$2A, 99, 8, 2365);
+    			add_location(tr13, file$2A, 95, 6, 2281);
+    			add_location(td52, file$2A, 102, 8, 2445);
+    			add_location(td53, file$2A, 103, 8, 2476);
+    			add_location(td54, file$2A, 104, 8, 2501);
+    			add_location(td55, file$2A, 105, 8, 2524);
+    			add_location(tr14, file$2A, 101, 6, 2432);
+    			add_location(td56, file$2A, 108, 8, 2562);
+    			add_location(td57, file$2A, 109, 8, 2588);
+    			add_location(td58, file$2A, 110, 8, 2653);
+    			add_location(td59, file$2A, 111, 8, 2668);
+    			add_location(tr15, file$2A, 107, 6, 2549);
     			attr_dev(th4, "colspan", "4");
-    			add_location(th4, file$2A, 108, 8, 2593);
-    			add_location(tr15, file$2A, 107, 6, 2580);
-    			add_location(td56, file$2A, 111, 8, 2651);
-    			add_location(td57, file$2A, 112, 8, 2678);
-    			add_location(td58, file$2A, 113, 8, 2702);
-    			add_location(td59, file$2A, 114, 8, 2717);
-    			add_location(tr16, file$2A, 110, 6, 2638);
-    			add_location(td60, file$2A, 117, 8, 2755);
-    			add_location(td61, file$2A, 118, 8, 2779);
-    			add_location(td62, file$2A, 119, 8, 2803);
-    			add_location(td63, file$2A, 120, 8, 2818);
-    			add_location(tr17, file$2A, 116, 6, 2742);
-    			add_location(td64, file$2A, 123, 8, 2856);
-    			add_location(td65, file$2A, 124, 8, 2934);
-    			add_location(td66, file$2A, 125, 8, 2958);
-    			add_location(td67, file$2A, 126, 8, 2973);
-    			add_location(tr18, file$2A, 122, 6, 2843);
-    			add_location(td68, file$2A, 129, 8, 3011);
-    			add_location(td69, file$2A, 130, 8, 3034);
-    			add_location(td70, file$2A, 131, 8, 3058);
-    			add_location(td71, file$2A, 132, 8, 3073);
-    			add_location(tr19, file$2A, 128, 6, 2998);
+    			add_location(th4, file$2A, 114, 8, 2742);
+    			add_location(tr16, file$2A, 113, 6, 2729);
+    			add_location(td60, file$2A, 117, 8, 2800);
+    			add_location(td61, file$2A, 118, 8, 2827);
+    			add_location(td62, file$2A, 119, 8, 2851);
+    			add_location(td63, file$2A, 120, 8, 2866);
+    			add_location(tr17, file$2A, 116, 6, 2787);
+    			add_location(td64, file$2A, 123, 8, 2904);
+    			add_location(td65, file$2A, 124, 8, 2928);
+    			add_location(td66, file$2A, 125, 8, 2952);
+    			add_location(td67, file$2A, 126, 8, 2967);
+    			add_location(tr18, file$2A, 122, 6, 2891);
+    			add_location(td68, file$2A, 129, 8, 3005);
+    			add_location(td69, file$2A, 130, 8, 3083);
+    			add_location(td70, file$2A, 131, 8, 3107);
+    			add_location(td71, file$2A, 132, 8, 3122);
+    			add_location(tr19, file$2A, 128, 6, 2992);
+    			add_location(td72, file$2A, 135, 8, 3160);
+    			add_location(td73, file$2A, 136, 8, 3183);
+    			add_location(td74, file$2A, 137, 8, 3207);
+    			add_location(td75, file$2A, 138, 8, 3222);
+    			add_location(tr20, file$2A, 134, 6, 3147);
     			add_location(tbody, file$2A, 22, 4, 553);
     			attr_dev(table, "class", "table");
     			add_location(table, file$2A, 13, 2, 370);
-    			add_location(h30, file$2A, 143, 2, 3235);
-    			add_location(h31, file$2A, 153, 2, 3596);
+    			add_location(h30, file$2A, 149, 2, 3384);
+    			add_location(h31, file$2A, 159, 2, 3745);
+    			add_location(h32, file$2A, 167, 2, 4001);
     		},
     		m: function mount(target, anchor) {
     			mount_component(prism0, target, anchor);
@@ -31602,14 +31697,14 @@ for (const accordion of accordions) {
     			append_dev(tr11, td42);
     			append_dev(tr11, t90);
     			append_dev(tr11, td43);
-    			append_dev(tbody, t91);
+    			append_dev(tbody, t92);
     			append_dev(tbody, tr12);
     			append_dev(tr12, td44);
-    			append_dev(tr12, t93);
+    			append_dev(tr12, t94);
     			append_dev(tr12, td45);
-    			append_dev(tr12, t95);
-    			append_dev(tr12, td46);
     			append_dev(tr12, t96);
+    			append_dev(tr12, td46);
+    			append_dev(tr12, t97);
     			append_dev(tr12, td47);
     			append_dev(tbody, t98);
     			append_dev(tbody, tr13);
@@ -31618,7 +31713,7 @@ for (const accordion of accordions) {
     			append_dev(tr13, td49);
     			append_dev(tr13, t102);
     			append_dev(tr13, td50);
-    			append_dev(tr13, t104);
+    			append_dev(tr13, t103);
     			append_dev(tr13, td51);
     			append_dev(tbody, t105);
     			append_dev(tbody, tr14);
@@ -31627,71 +31722,86 @@ for (const accordion of accordions) {
     			append_dev(tr14, td53);
     			append_dev(tr14, t109);
     			append_dev(tr14, td54);
-    			append_dev(tr14, t110);
+    			append_dev(tr14, t111);
     			append_dev(tr14, td55);
     			append_dev(tbody, t112);
     			append_dev(tbody, tr15);
-    			append_dev(tr15, th4);
-    			append_dev(tbody, t114);
+    			append_dev(tr15, td56);
+    			append_dev(tr15, t114);
+    			append_dev(tr15, td57);
+    			append_dev(tr15, t116);
+    			append_dev(tr15, td58);
+    			append_dev(tr15, t117);
+    			append_dev(tr15, td59);
+    			append_dev(tbody, t119);
     			append_dev(tbody, tr16);
-    			append_dev(tr16, td56);
-    			append_dev(tr16, t116);
-    			append_dev(tr16, td57);
-    			append_dev(tr16, t118);
-    			append_dev(tr16, td58);
-    			append_dev(tr16, t119);
-    			append_dev(tr16, td59);
-    			append_dev(tbody, t120);
+    			append_dev(tr16, th4);
+    			append_dev(tbody, t121);
     			append_dev(tbody, tr17);
     			append_dev(tr17, td60);
-    			append_dev(tr17, t122);
+    			append_dev(tr17, t123);
     			append_dev(tr17, td61);
-    			append_dev(tr17, t124);
-    			append_dev(tr17, td62);
     			append_dev(tr17, t125);
+    			append_dev(tr17, td62);
+    			append_dev(tr17, t126);
     			append_dev(tr17, td63);
-    			append_dev(tbody, t126);
+    			append_dev(tbody, t127);
     			append_dev(tbody, tr18);
     			append_dev(tr18, td64);
-    			append_dev(td64, t127);
-    			mount_component(badge1, td64, null);
-    			append_dev(tr18, t128);
+    			append_dev(tr18, t129);
     			append_dev(tr18, td65);
-    			append_dev(tr18, t130);
-    			append_dev(tr18, td66);
     			append_dev(tr18, t131);
+    			append_dev(tr18, td66);
+    			append_dev(tr18, t132);
     			append_dev(tr18, td67);
-    			append_dev(tbody, t132);
+    			append_dev(tbody, t133);
     			append_dev(tbody, tr19);
     			append_dev(tr19, td68);
-    			append_dev(tr19, t134);
+    			append_dev(td68, t134);
+    			mount_component(badge1, td68, null);
+    			append_dev(tr19, t135);
     			append_dev(tr19, td69);
-    			append_dev(tr19, t136);
-    			append_dev(tr19, td70);
     			append_dev(tr19, t137);
+    			append_dev(tr19, td70);
+    			append_dev(tr19, t138);
     			append_dev(tr19, td71);
-    			insert_dev(target, t138, anchor);
-    			mount_component(articlecard0, target, anchor);
-    			insert_dev(target, t139, anchor);
-    			mount_component(prism1, target, anchor);
-    			insert_dev(target, t140, anchor);
-    			insert_dev(target, h30, anchor);
-    			insert_dev(target, t142, anchor);
-    			mount_component(articlecard1, target, anchor);
-    			insert_dev(target, t143, anchor);
-    			mount_component(articlecard2, target, anchor);
-    			insert_dev(target, t144, anchor);
-    			mount_component(prism2, target, anchor);
+    			append_dev(tbody, t139);
+    			append_dev(tbody, tr20);
+    			append_dev(tr20, td72);
+    			append_dev(tr20, t141);
+    			append_dev(tr20, td73);
+    			append_dev(tr20, t143);
+    			append_dev(tr20, td74);
+    			append_dev(tr20, t144);
+    			append_dev(tr20, td75);
     			insert_dev(target, t145, anchor);
-    			insert_dev(target, h31, anchor);
+    			mount_component(articlecard0, target, anchor);
+    			insert_dev(target, t146, anchor);
+    			mount_component(prism1, target, anchor);
     			insert_dev(target, t147, anchor);
-    			mount_component(articlecard3, target, anchor);
-    			insert_dev(target, t148, anchor);
-    			mount_component(articlecard4, target, anchor);
+    			insert_dev(target, h30, anchor);
     			insert_dev(target, t149, anchor);
-    			mount_component(articlecard5, target, anchor);
+    			mount_component(articlecard1, target, anchor);
     			insert_dev(target, t150, anchor);
+    			mount_component(articlecard2, target, anchor);
+    			insert_dev(target, t151, anchor);
+    			mount_component(prism2, target, anchor);
+    			insert_dev(target, t152, anchor);
+    			insert_dev(target, h31, anchor);
+    			insert_dev(target, t154, anchor);
+    			mount_component(articlecard3, target, anchor);
+    			insert_dev(target, t155, anchor);
     			mount_component(prism3, target, anchor);
+    			insert_dev(target, t156, anchor);
+    			insert_dev(target, h32, anchor);
+    			insert_dev(target, t158, anchor);
+    			mount_component(articlecard4, target, anchor);
+    			insert_dev(target, t159, anchor);
+    			mount_component(articlecard5, target, anchor);
+    			insert_dev(target, t160, anchor);
+    			mount_component(articlecard6, target, anchor);
+    			insert_dev(target, t161, anchor);
+    			mount_component(prism4, target, anchor);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -31755,6 +31865,17 @@ for (const accordion of accordions) {
     			}
 
     			prism2.$set(prism2_changes);
+
+    			const articlecard3_changes = (dirty & /*rdmArticleData*/ 0)
+    			? get_spread_update(articlecard3_spread_levels, [
+    					articlecard3_spread_levels[0],
+    					articlecard3_spread_levels[1],
+    					articlecard3_spread_levels[2],
+    					get_spread_object(rdmArticleData(250, 120))
+    				])
+    			: {};
+
+    			articlecard3.$set(articlecard3_changes);
     			const prism3_changes = {};
 
     			if (dirty & /*$$scope*/ 2) {
@@ -31762,6 +31883,13 @@ for (const accordion of accordions) {
     			}
 
     			prism3.$set(prism3_changes);
+    			const prism4_changes = {};
+
+    			if (dirty & /*$$scope*/ 2) {
+    				prism4_changes.$$scope = { dirty, ctx };
+    			}
+
+    			prism4.$set(prism4_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -31774,9 +31902,11 @@ for (const accordion of accordions) {
     			transition_in(articlecard2.$$.fragment, local);
     			transition_in(prism2.$$.fragment, local);
     			transition_in(articlecard3.$$.fragment, local);
+    			transition_in(prism3.$$.fragment, local);
     			transition_in(articlecard4.$$.fragment, local);
     			transition_in(articlecard5.$$.fragment, local);
-    			transition_in(prism3.$$.fragment, local);
+    			transition_in(articlecard6.$$.fragment, local);
+    			transition_in(prism4.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
@@ -31789,9 +31919,11 @@ for (const accordion of accordions) {
     			transition_out(articlecard2.$$.fragment, local);
     			transition_out(prism2.$$.fragment, local);
     			transition_out(articlecard3.$$.fragment, local);
+    			transition_out(prism3.$$.fragment, local);
     			transition_out(articlecard4.$$.fragment, local);
     			transition_out(articlecard5.$$.fragment, local);
-    			transition_out(prism3.$$.fragment, local);
+    			transition_out(articlecard6.$$.fragment, local);
+    			transition_out(prism4.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -31800,28 +31932,34 @@ for (const accordion of accordions) {
     			if (detaching) detach_dev(table);
     			destroy_component(badge0);
     			destroy_component(badge1);
-    			if (detaching) detach_dev(t138);
-    			destroy_component(articlecard0, detaching);
-    			if (detaching) detach_dev(t139);
-    			destroy_component(prism1, detaching);
-    			if (detaching) detach_dev(t140);
-    			if (detaching) detach_dev(h30);
-    			if (detaching) detach_dev(t142);
-    			destroy_component(articlecard1, detaching);
-    			if (detaching) detach_dev(t143);
-    			destroy_component(articlecard2, detaching);
-    			if (detaching) detach_dev(t144);
-    			destroy_component(prism2, detaching);
     			if (detaching) detach_dev(t145);
-    			if (detaching) detach_dev(h31);
+    			destroy_component(articlecard0, detaching);
+    			if (detaching) detach_dev(t146);
+    			destroy_component(prism1, detaching);
     			if (detaching) detach_dev(t147);
-    			destroy_component(articlecard3, detaching);
-    			if (detaching) detach_dev(t148);
-    			destroy_component(articlecard4, detaching);
+    			if (detaching) detach_dev(h30);
     			if (detaching) detach_dev(t149);
-    			destroy_component(articlecard5, detaching);
+    			destroy_component(articlecard1, detaching);
     			if (detaching) detach_dev(t150);
+    			destroy_component(articlecard2, detaching);
+    			if (detaching) detach_dev(t151);
+    			destroy_component(prism2, detaching);
+    			if (detaching) detach_dev(t152);
+    			if (detaching) detach_dev(h31);
+    			if (detaching) detach_dev(t154);
+    			destroy_component(articlecard3, detaching);
+    			if (detaching) detach_dev(t155);
     			destroy_component(prism3, detaching);
+    			if (detaching) detach_dev(t156);
+    			if (detaching) detach_dev(h32);
+    			if (detaching) detach_dev(t158);
+    			destroy_component(articlecard4, detaching);
+    			if (detaching) detach_dev(t159);
+    			destroy_component(articlecard5, detaching);
+    			if (detaching) detach_dev(t160);
+    			destroy_component(articlecard6, detaching);
+    			if (detaching) detach_dev(t161);
+    			destroy_component(prism4, detaching);
     		}
     	};
 
@@ -31837,7 +31975,7 @@ for (const accordion of accordions) {
     }
 
     // (10:2) <Prism language="js">
-    function create_default_slot_5$e(ctx) {
+    function create_default_slot_6$d(ctx) {
     	let t_value = `import { ArticleCard } from '@ekstra-bladet/designsystem';` + "";
     	let t;
 
@@ -31856,7 +31994,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$e.name,
+    		id: create_default_slot_6$d.name,
     		type: "slot",
     		source: "(10:2) <Prism language=\\\"js\\\">",
     		ctx
@@ -31866,7 +32004,7 @@ for (const accordion of accordions) {
     }
 
     // (76:30) <Badge type="secondary" extension="small">
-    function create_default_slot_4$g(ctx) {
+    function create_default_slot_5$e(ctx) {
     	let t;
 
     	const block = {
@@ -31883,7 +32021,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$g.name,
+    		id: create_default_slot_5$e.name,
     		type: "slot",
     		source: "(76:30) <Badge type=\\\"secondary\\\" extension=\\\"small\\\">",
     		ctx
@@ -31892,8 +32030,8 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (124:16) <Badge type="primary" extension="small">
-    function create_default_slot_3$h(ctx) {
+    // (130:16) <Badge type="primary" extension="small">
+    function create_default_slot_4$g(ctx) {
     	let t;
 
     	const block = {
@@ -31910,17 +32048,17 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$h.name,
+    		id: create_default_slot_4$g.name,
     		type: "slot",
-    		source: "(124:16) <Badge type=\\\"primary\\\" extension=\\\"small\\\">",
+    		source: "(130:16) <Badge type=\\\"primary\\\" extension=\\\"small\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (140:2) <Prism language="html">
-    function create_default_slot_2$m(ctx) {
+    // (146:2) <Prism language="html">
+    function create_default_slot_3$h(ctx) {
     	let t_value = `<ArticleCard {...article} />` + "";
     	let t;
 
@@ -31939,17 +32077,17 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$m.name,
+    		id: create_default_slot_3$h.name,
     		type: "slot",
-    		source: "(140:2) <Prism language=\\\"html\\\">",
+    		source: "(146:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (149:2) <Prism language="html">
-    function create_default_slot_1$p(ctx) {
+    // (155:2) <Prism language="html">
+    function create_default_slot_2$m(ctx) {
     	let t_value = `<ArticleCard className="small-media" {...article} />
 <ArticleCard className="small-media--reverse" {...article} />` + "";
 
@@ -31970,16 +32108,45 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$p.name,
+    		id: create_default_slot_2$m.name,
     		type: "slot",
-    		source: "(149:2) <Prism language=\\\"html\\\">",
+    		source: "(155:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (160:2) <Prism language="html">
+    // (164:2) <Prism language="html">
+    function create_default_slot_1$p(ctx) {
+    	let t_value = `<ArticleCard className="small-media" read={true} {...article} />` + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text(t_value);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1$p.name,
+    		type: "slot",
+    		source: "(164:2) <Prism language=\\\"html\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (174:2) <Prism language="html">
     function create_default_slot$t(ctx) {
     	let t_value = `<ArticleCard loading={true} />
 <ArticleCard loading={true} cardType="small-media" />
@@ -32004,7 +32171,7 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot$t.name,
     		type: "slot",
-    		source: "(160:2) <Prism language=\\\"html\\\">",
+    		source: "(174:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
@@ -59055,7 +59222,7 @@ for (const accordion of accordions) {
     const get_default_slot_changes$1 = dirty => ({});
     const get_default_slot_context$1 = ctx => ({ slot: "off" });
 
-    // (61:0) {#if loading || (!loading && title)}
+    // (63:0) {#if loading || (!loading && title)}
     function create_if_block$e(ctx) {
     	let card;
     	let current;
@@ -59072,7 +59239,7 @@ for (const accordion of accordions) {
     			$$inline: true
     		});
 
-    	card.$on("click", /*click_handler*/ ctx[28]);
+    	card.$on("click", /*click_handler*/ ctx[29]);
 
     	const block = {
     		c: function create() {
@@ -59084,12 +59251,12 @@ for (const accordion of accordions) {
     		},
     		p: function update(ctx, dirty) {
     			const card_changes = {};
-    			if (dirty & /*url*/ 4096) card_changes.url = /*url*/ ctx[12];
-    			if (dirty & /*cssClass*/ 65536) card_changes.className = /*cssClass*/ ctx[16];
-    			if (dirty & /*styleProp*/ 131072) card_changes.style = /*styleProp*/ ctx[17];
-    			if (dirty & /*breaking*/ 4) card_changes["data-breaking"] = /*breaking*/ ctx[2];
+    			if (dirty[0] & /*url*/ 4096) card_changes.url = /*url*/ ctx[12];
+    			if (dirty[0] & /*cssClass*/ 65536) card_changes.className = /*cssClass*/ ctx[16];
+    			if (dirty[0] & /*styleProp*/ 131072) card_changes.style = /*styleProp*/ ctx[17];
+    			if (dirty[0] & /*breaking*/ 4) card_changes["data-breaking"] = /*breaking*/ ctx[2];
 
-    			if (dirty & /*$$scope, innerClass, truncateTitle, title, saved, published, section, mediaCssClass, media, colorName, update, loadingStyle, loading, premiumMarkerSize, premium*/ 536932347) {
+    			if (dirty[0] & /*$$scope, innerClass, truncateTitle, title, saved, published, section, mediaCssClass, media, colorName, update, loadingStyle, loading, premiumMarkerSize, premium*/ 1073803259) {
     				card_changes.$$scope = { dirty, ctx };
     			}
 
@@ -59113,14 +59280,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_if_block$e.name,
     		type: "if",
-    		source: "(61:0) {#if loading || (!loading && title)}",
+    		source: "(63:0) {#if loading || (!loading && title)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (64:6) {#if premium}
+    // (66:6) {#if premium}
     function create_if_block_8(ctx) {
     	let div;
     	let icon;
@@ -59144,7 +59311,7 @@ for (const accordion of accordions) {
     			? `premium-dogear--${/*premiumMarkerSize*/ ctx[4]}`
     			: ''));
 
-    			add_location(div, file$I, 64, 8, 2342);
+    			add_location(div, file$I, 66, 8, 2450);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -59152,7 +59319,7 @@ for (const accordion of accordions) {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (!current || dirty & /*premiumMarkerSize*/ 16 && div_class_value !== (div_class_value = "premium-dogear " + (/*premiumMarkerSize*/ ctx[4]
+    			if (!current || dirty[0] & /*premiumMarkerSize*/ 16 && div_class_value !== (div_class_value = "premium-dogear " + (/*premiumMarkerSize*/ ctx[4]
     			? `premium-dogear--${/*premiumMarkerSize*/ ctx[4]}`
     			: ''))) {
     				attr_dev(div, "class", div_class_value);
@@ -59177,14 +59344,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_if_block_8.name,
     		type: "if",
-    		source: "(64:6) {#if premium}",
+    		source: "(66:6) {#if premium}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (69:6) {#if loading}
+    // (71:6) {#if loading}
     function create_if_block_7(ctx) {
     	let div1;
     	let div0;
@@ -59195,16 +59362,16 @@ for (const accordion of accordions) {
     			div0 = element("div");
     			attr_dev(div0, "class", "card-image bg--graa4");
     			attr_dev(div0, "style", /*loadingStyle*/ ctx[13]);
-    			add_location(div0, file$I, 70, 10, 2590);
+    			add_location(div0, file$I, 72, 10, 2698);
     			attr_dev(div1, "class", "card-media");
-    			add_location(div1, file$I, 69, 8, 2555);
+    			add_location(div1, file$I, 71, 8, 2663);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
     			append_dev(div1, div0);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*loadingStyle*/ 8192) {
+    			if (dirty[0] & /*loadingStyle*/ 8192) {
     				attr_dev(div0, "style", /*loadingStyle*/ ctx[13]);
     			}
     		},
@@ -59217,14 +59384,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_if_block_7.name,
     		type: "if",
-    		source: "(69:6) {#if loading}",
+    		source: "(71:6) {#if loading}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (74:6) {#if media}
+    // (76:6) {#if media}
     function create_if_block_5$1(ctx) {
     	let div;
     	let t;
@@ -59246,9 +59413,9 @@ for (const accordion of accordions) {
     			if (!src_url_equal(img.src, img_src_value = /*media*/ ctx[6].src)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "height", img_height_value = /*media*/ ctx[6].height);
     			attr_dev(img, "width", img_width_value = /*media*/ ctx[6].width);
-    			add_location(img, file$I, 89, 10, 3251);
+    			add_location(img, file$I, 91, 10, 3359);
     			attr_dev(div, "class", /*mediaCssClass*/ ctx[15]);
-    			add_location(div, file$I, 74, 8, 2701);
+    			add_location(div, file$I, 76, 8, 2809);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -59262,7 +59429,7 @@ for (const accordion of accordions) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
-    					if (dirty & /*update*/ 32) {
+    					if (dirty[0] & /*update*/ 32) {
     						transition_in(if_block, 1);
     					}
     				} else {
@@ -59281,23 +59448,23 @@ for (const accordion of accordions) {
     				check_outros();
     			}
 
-    			if (!current || dirty & /*title*/ 1) {
+    			if (!current || dirty[0] & /*title*/ 1) {
     				attr_dev(img, "alt", /*title*/ ctx[0]);
     			}
 
-    			if (!current || dirty & /*media*/ 64 && !src_url_equal(img.src, img_src_value = /*media*/ ctx[6].src)) {
+    			if (!current || dirty[0] & /*media*/ 64 && !src_url_equal(img.src, img_src_value = /*media*/ ctx[6].src)) {
     				attr_dev(img, "src", img_src_value);
     			}
 
-    			if (!current || dirty & /*media*/ 64 && img_height_value !== (img_height_value = /*media*/ ctx[6].height)) {
+    			if (!current || dirty[0] & /*media*/ 64 && img_height_value !== (img_height_value = /*media*/ ctx[6].height)) {
     				attr_dev(img, "height", img_height_value);
     			}
 
-    			if (!current || dirty & /*media*/ 64 && img_width_value !== (img_width_value = /*media*/ ctx[6].width)) {
+    			if (!current || dirty[0] & /*media*/ 64 && img_width_value !== (img_width_value = /*media*/ ctx[6].width)) {
     				attr_dev(img, "width", img_width_value);
     			}
 
-    			if (!current || dirty & /*mediaCssClass*/ 32768) {
+    			if (!current || dirty[0] & /*mediaCssClass*/ 32768) {
     				attr_dev(div, "class", /*mediaCssClass*/ ctx[15]);
     			}
     		},
@@ -59320,14 +59487,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_if_block_5$1.name,
     		type: "if",
-    		source: "(74:6) {#if media}",
+    		source: "(76:6) {#if media}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (76:10) {#if update}
+    // (78:10) {#if update}
     function create_if_block_6(ctx) {
     	let badge;
     	let current;
@@ -59353,7 +59520,7 @@ for (const accordion of accordions) {
     		p: function update(ctx, dirty) {
     			const badge_changes = {};
 
-    			if (dirty & /*$$scope, colorName*/ 536870920) {
+    			if (dirty[0] & /*$$scope, colorName*/ 1073741832) {
     				badge_changes.$$scope = { dirty, ctx };
     			}
 
@@ -59377,14 +59544,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_if_block_6.name,
     		type: "if",
-    		source: "(76:10) {#if update}",
+    		source: "(78:10) {#if update}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (77:12) <Badge               className="margin-s position-absolute padding-none padding-s--r card--shadow bg--black fontsize-small"               style="bottom: 5px; left: 5px;"             >
+    // (79:12) <Badge               className="margin-s position-absolute padding-none padding-s--r card--shadow bg--black fontsize-small"               style="bottom: 5px; left: 5px;"             >
     function create_default_slot_1$i(ctx) {
     	let icon;
     	let t;
@@ -59412,7 +59579,7 @@ for (const accordion of accordions) {
     		},
     		p: function update(ctx, dirty) {
     			const icon_changes = {};
-    			if (dirty & /*colorName*/ 8) icon_changes.className = "bg--white color--" + /*colorName*/ ctx[3] + " border-radius-s padding-s margin-s--r";
+    			if (dirty[0] & /*colorName*/ 8) icon_changes.className = "bg--white color--" + /*colorName*/ ctx[3] + " border-radius-s padding-s margin-s--r";
     			icon.$set(icon_changes);
     		},
     		i: function intro(local) {
@@ -59434,14 +59601,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot_1$i.name,
     		type: "slot",
-    		source: "(77:12) <Badge               className=\\\"margin-s position-absolute padding-none padding-s--r card--shadow bg--black fontsize-small\\\"               style=\\\"bottom: 5px; left: 5px;\\\"             >",
+    		source: "(79:12) <Badge               className=\\\"margin-s position-absolute padding-none padding-s--r card--shadow bg--black fontsize-small\\\"               style=\\\"bottom: 5px; left: 5px;\\\"             >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (95:10) {#if section || published}
+    // (97:10) {#if section || published}
     function create_if_block_1$5(ctx) {
     	let div;
     	let t0;
@@ -59460,7 +59627,7 @@ for (const accordion of accordions) {
     			t1 = space();
     			if (if_block2) if_block2.c();
     			attr_dev(div, "class", "card-meta flex flex-wrap--wrap fontsize-xxsmall");
-    			add_location(div, file$I, 95, 12, 3500);
+    			add_location(div, file$I, 97, 12, 3608);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -59476,7 +59643,7 @@ for (const accordion of accordions) {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
 
-    					if (dirty & /*section*/ 1024) {
+    					if (dirty[0] & /*section*/ 1024) {
     						transition_in(if_block0, 1);
     					}
     				} else {
@@ -59499,7 +59666,7 @@ for (const accordion of accordions) {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
 
-    					if (dirty & /*published*/ 256) {
+    					if (dirty[0] & /*published*/ 256) {
     						transition_in(if_block1, 1);
     					}
     				} else {
@@ -59522,7 +59689,7 @@ for (const accordion of accordions) {
     				if (if_block2) {
     					if_block2.p(ctx, dirty);
 
-    					if (dirty & /*saved*/ 512) {
+    					if (dirty[0] & /*saved*/ 512) {
     						transition_in(if_block2, 1);
     					}
     				} else {
@@ -59566,14 +59733,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_if_block_1$5.name,
     		type: "if",
-    		source: "(95:10) {#if section || published}",
+    		source: "(97:10) {#if section || published}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (97:14) {#if section}
+    // (99:14) {#if section}
     function create_if_block_4$2(ctx) {
     	let div;
     	let span1;
@@ -59597,11 +59764,11 @@ for (const accordion of accordions) {
     			span0 = element("span");
     			t1 = text(/*section*/ ctx[10]);
     			attr_dev(span0, "class", "padding-s--l");
-    			add_location(span0, file$I, 100, 20, 3765);
+    			add_location(span0, file$I, 102, 20, 3873);
     			attr_dev(span1, "class", "flex flex-justify--center");
-    			add_location(span1, file$I, 98, 18, 3653);
+    			add_location(span1, file$I, 100, 18, 3761);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$I, 97, 16, 3606);
+    			add_location(div, file$I, 99, 16, 3714);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -59613,7 +59780,7 @@ for (const accordion of accordions) {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (!current || dirty & /*section*/ 1024) set_data_dev(t1, /*section*/ ctx[10]);
+    			if (!current || dirty[0] & /*section*/ 1024) set_data_dev(t1, /*section*/ ctx[10]);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -59634,14 +59801,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_if_block_4$2.name,
     		type: "if",
-    		source: "(97:14) {#if section}",
+    		source: "(99:14) {#if section}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (105:14) {#if published}
+    // (107:14) {#if published}
     function create_if_block_3$2(ctx) {
     	let div;
     	let icon;
@@ -59664,9 +59831,9 @@ for (const accordion of accordions) {
     			span = element("span");
     			t1 = text(t1_value);
     			attr_dev(span, "class", "padding-s--l");
-    			add_location(span, file$I, 107, 18, 4022);
+    			add_location(span, file$I, 109, 18, 4130);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$I, 105, 16, 3924);
+    			add_location(div, file$I, 107, 16, 4032);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -59677,7 +59844,7 @@ for (const accordion of accordions) {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty & /*published*/ 256) && t1_value !== (t1_value = parseDate_1(/*published*/ ctx[8]) + "")) set_data_dev(t1, t1_value);
+    			if ((!current || dirty[0] & /*published*/ 256) && t1_value !== (t1_value = parseDate_1(/*published*/ ctx[8]) + "")) set_data_dev(t1, t1_value);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -59698,14 +59865,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_if_block_3$2.name,
     		type: "if",
-    		source: "(105:14) {#if published}",
+    		source: "(107:14) {#if published}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (111:14) {#if saved !== undefined}
+    // (113:14) {#if saved !== undefined}
     function create_if_block_2$2(ctx) {
     	let toggler;
     	let current;
@@ -59735,9 +59902,9 @@ for (const accordion of accordions) {
     		},
     		p: function update(ctx, dirty) {
     			const toggler_changes = {};
-    			if (dirty & /*saved*/ 512) toggler_changes.defaultState = /*saved*/ ctx[9];
+    			if (dirty[0] & /*saved*/ 512) toggler_changes.defaultState = /*saved*/ ctx[9];
 
-    			if (dirty & /*$$scope*/ 536870912) {
+    			if (dirty[0] & /*$$scope*/ 1073741824) {
     				toggler_changes.$$scope = { dirty, ctx };
     			}
 
@@ -59761,14 +59928,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(111:14) {#if saved !== undefined}",
+    		source: "(113:14) {#if saved !== undefined}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (117:34)                      
+    // (119:34)                      
     function fallback_block_1$1(ctx) {
     	let icon;
     	let t0;
@@ -59792,7 +59959,7 @@ for (const accordion of accordions) {
     			span.textContent = "Gemt";
     			attr_dev(span, "class", "padding-s--l");
     			set_style(span, "color", "var(--fgcolor--list)");
-    			add_location(span, file$I, 118, 20, 4509);
+    			add_location(span, file$I, 120, 20, 4617);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -59821,18 +59988,18 @@ for (const accordion of accordions) {
     		block,
     		id: fallback_block_1$1.name,
     		type: "fallback",
-    		source: "(117:34)                      ",
+    		source: "(119:34)                      ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (117:18) 
+    // (119:18) 
     function create_on_slot$1(ctx) {
     	let current;
-    	const default_slot_template = /*#slots*/ ctx[27].default;
-    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[29], get_default_slot_context_1$1);
+    	const default_slot_template = /*#slots*/ ctx[28].default;
+    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[30], get_default_slot_context_1$1);
     	const default_slot_or_fallback = default_slot || fallback_block_1$1(ctx);
 
     	const block = {
@@ -59848,15 +60015,15 @@ for (const accordion of accordions) {
     		},
     		p: function update(ctx, dirty) {
     			if (default_slot) {
-    				if (default_slot.p && (!current || dirty & /*$$scope*/ 536870912)) {
+    				if (default_slot.p && (!current || dirty[0] & /*$$scope*/ 1073741824)) {
     					update_slot_base(
     						default_slot,
     						default_slot_template,
     						ctx,
-    						/*$$scope*/ ctx[29],
+    						/*$$scope*/ ctx[30],
     						!current
-    						? get_all_dirty_from_scope(/*$$scope*/ ctx[29])
-    						: get_slot_changes(default_slot_template, /*$$scope*/ ctx[29], dirty, get_default_slot_changes_1$1),
+    						? get_all_dirty_from_scope(/*$$scope*/ ctx[30])
+    						: get_slot_changes(default_slot_template, /*$$scope*/ ctx[30], dirty, get_default_slot_changes_1$1),
     						get_default_slot_context_1$1
     					);
     				}
@@ -59880,14 +60047,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_on_slot$1.name,
     		type: "slot",
-    		source: "(117:18) ",
+    		source: "(119:18) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (121:35)                      
+    // (123:35)                      
     function fallback_block$1(ctx) {
     	let icon;
     	let t0;
@@ -59911,7 +60078,7 @@ for (const accordion of accordions) {
     			span.textContent = "Gem";
     			attr_dev(span, "class", "padding-s--l");
     			set_style(span, "color", "var(--fgcolor--list)");
-    			add_location(span, file$I, 122, 20, 4760);
+    			add_location(span, file$I, 124, 20, 4868);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -59940,18 +60107,18 @@ for (const accordion of accordions) {
     		block,
     		id: fallback_block$1.name,
     		type: "fallback",
-    		source: "(121:35)                      ",
+    		source: "(123:35)                      ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (121:18) 
+    // (123:18) 
     function create_off_slot$1(ctx) {
     	let current;
-    	const default_slot_template = /*#slots*/ ctx[27].default;
-    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[29], get_default_slot_context$1);
+    	const default_slot_template = /*#slots*/ ctx[28].default;
+    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[30], get_default_slot_context$1);
     	const default_slot_or_fallback = default_slot || fallback_block$1(ctx);
 
     	const block = {
@@ -59967,15 +60134,15 @@ for (const accordion of accordions) {
     		},
     		p: function update(ctx, dirty) {
     			if (default_slot) {
-    				if (default_slot.p && (!current || dirty & /*$$scope*/ 536870912)) {
+    				if (default_slot.p && (!current || dirty[0] & /*$$scope*/ 1073741824)) {
     					update_slot_base(
     						default_slot,
     						default_slot_template,
     						ctx,
-    						/*$$scope*/ ctx[29],
+    						/*$$scope*/ ctx[30],
     						!current
-    						? get_all_dirty_from_scope(/*$$scope*/ ctx[29])
-    						: get_slot_changes(default_slot_template, /*$$scope*/ ctx[29], dirty, get_default_slot_changes$1),
+    						? get_all_dirty_from_scope(/*$$scope*/ ctx[30])
+    						: get_slot_changes(default_slot_template, /*$$scope*/ ctx[30], dirty, get_default_slot_changes$1),
     						get_default_slot_context$1
     					);
     				}
@@ -59999,14 +60166,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_off_slot$1.name,
     		type: "slot",
-    		source: "(121:18) ",
+    		source: "(123:18) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (62:2) <Card {url} className={cssClass} style={styleProp} data-breaking={breaking} on:click>
+    // (64:2) <Card {url} className={cssClass} style={styleProp} data-breaking={breaking} on:click>
     function create_default_slot$m(ctx) {
     	let div2;
     	let t0;
@@ -60041,13 +60208,13 @@ for (const accordion of accordions) {
     			t4 = text(/*title*/ ctx[0]);
     			attr_dev(h2, "class", h2_class_value = "card-title " + (/*truncateTitle*/ ctx[11] ? 'card-title--truncated' : ''));
     			attr_dev(h2, "style", /*titleStyle*/ ctx[18]);
-    			add_location(h2, file$I, 128, 10, 4953);
+    			add_location(h2, file$I, 130, 10, 5061);
     			attr_dev(div0, "class", "card-content");
-    			add_location(div0, file$I, 93, 8, 3424);
+    			add_location(div0, file$I, 95, 8, 3532);
     			attr_dev(div1, "class", "card-content-wrapper");
-    			add_location(div1, file$I, 92, 6, 3381);
+    			add_location(div1, file$I, 94, 6, 3489);
     			attr_dev(div2, "class", /*innerClass*/ ctx[14]);
-    			add_location(div2, file$I, 62, 4, 2289);
+    			add_location(div2, file$I, 64, 4, 2397);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -60070,7 +60237,7 @@ for (const accordion of accordions) {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
 
-    					if (dirty & /*premium*/ 128) {
+    					if (dirty[0] & /*premium*/ 128) {
     						transition_in(if_block0, 1);
     					}
     				} else {
@@ -60106,7 +60273,7 @@ for (const accordion of accordions) {
     				if (if_block2) {
     					if_block2.p(ctx, dirty);
 
-    					if (dirty & /*media*/ 64) {
+    					if (dirty[0] & /*media*/ 64) {
     						transition_in(if_block2, 1);
     					}
     				} else {
@@ -60129,7 +60296,7 @@ for (const accordion of accordions) {
     				if (if_block3) {
     					if_block3.p(ctx, dirty);
 
-    					if (dirty & /*section, published*/ 1280) {
+    					if (dirty[0] & /*section, published*/ 1280) {
     						transition_in(if_block3, 1);
     					}
     				} else {
@@ -60148,13 +60315,13 @@ for (const accordion of accordions) {
     				check_outros();
     			}
 
-    			if (!current || dirty & /*title*/ 1) set_data_dev(t4, /*title*/ ctx[0]);
+    			if (!current || dirty[0] & /*title*/ 1) set_data_dev(t4, /*title*/ ctx[0]);
 
-    			if (!current || dirty & /*truncateTitle*/ 2048 && h2_class_value !== (h2_class_value = "card-title " + (/*truncateTitle*/ ctx[11] ? 'card-title--truncated' : ''))) {
+    			if (!current || dirty[0] & /*truncateTitle*/ 2048 && h2_class_value !== (h2_class_value = "card-title " + (/*truncateTitle*/ ctx[11] ? 'card-title--truncated' : ''))) {
     				attr_dev(h2, "class", h2_class_value);
     			}
 
-    			if (!current || dirty & /*innerClass*/ 16384) {
+    			if (!current || dirty[0] & /*innerClass*/ 16384) {
     				attr_dev(div2, "class", /*innerClass*/ ctx[14]);
     			}
     		},
@@ -60184,7 +60351,7 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot$m.name,
     		type: "slot",
-    		source: "(62:2) <Card {url} className={cssClass} style={styleProp} data-breaking={breaking} on:click>",
+    		source: "(64:2) <Card {url} className={cssClass} style={styleProp} data-breaking={breaking} on:click>",
     		ctx
     	});
 
@@ -60209,12 +60376,12 @@ for (const accordion of accordions) {
     			insert_dev(target, if_block_anchor, anchor);
     			current = true;
     		},
-    		p: function update(ctx, [dirty]) {
+    		p: function update(ctx, dirty) {
     			if (/*loading*/ ctx[1] || !/*loading*/ ctx[1] && /*title*/ ctx[0]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
-    					if (dirty & /*loading, title*/ 3) {
+    					if (dirty[0] & /*loading, title*/ 3) {
     						transition_in(if_block, 1);
     					}
     				} else {
@@ -60278,6 +60445,7 @@ for (const accordion of accordions) {
     	let { media = undefined } = $$props;
     	let { premium = false } = $$props;
     	let { published = undefined } = $$props;
+    	let { read = false } = $$props;
     	let { saved = undefined } = $$props;
     	let { section = undefined } = $$props;
     	let { style = '' } = $$props;
@@ -60312,6 +60480,7 @@ for (const accordion of accordions) {
     	}
 
     	const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
+    	const readClass = read ? ' articlecard--read' : '';
 
     	function toggleSave(evt) {
     		dispatch('save', { id, save: evt.detail });
@@ -60331,6 +60500,7 @@ for (const accordion of accordions) {
     		'media',
     		'premium',
     		'published',
+    		'read',
     		'saved',
     		'section',
     		'style',
@@ -60361,13 +60531,14 @@ for (const accordion of accordions) {
     		if ('media' in $$props) $$invalidate(6, media = $$props.media);
     		if ('premium' in $$props) $$invalidate(7, premium = $$props.premium);
     		if ('published' in $$props) $$invalidate(8, published = $$props.published);
+    		if ('read' in $$props) $$invalidate(24, read = $$props.read);
     		if ('saved' in $$props) $$invalidate(9, saved = $$props.saved);
     		if ('section' in $$props) $$invalidate(10, section = $$props.section);
-    		if ('style' in $$props) $$invalidate(24, style = $$props.style);
+    		if ('style' in $$props) $$invalidate(25, style = $$props.style);
     		if ('truncateTitle' in $$props) $$invalidate(11, truncateTitle = $$props.truncateTitle);
     		if ('url' in $$props) $$invalidate(12, url = $$props.url);
-    		if ('width' in $$props) $$invalidate(25, width = $$props.width);
-    		if ('$$scope' in $$props) $$invalidate(29, $$scope = $$props.$$scope);
+    		if ('width' in $$props) $$invalidate(26, width = $$props.width);
+    		if ('$$scope' in $$props) $$invalidate(30, $$scope = $$props.$$scope);
     	};
 
     	$$self.$capture_state = () => ({
@@ -60391,6 +60562,7 @@ for (const accordion of accordions) {
     		media,
     		premium,
     		published,
+    		read,
     		saved,
     		section,
     		style,
@@ -60402,6 +60574,7 @@ for (const accordion of accordions) {
     		loadingStyle,
     		innerClass,
     		titleStyle,
+    		readClass,
     		toggleSave,
     		mediaCssClass,
     		cssClass,
@@ -60422,13 +60595,14 @@ for (const accordion of accordions) {
     		if ('media' in $$props) $$invalidate(6, media = $$props.media);
     		if ('premium' in $$props) $$invalidate(7, premium = $$props.premium);
     		if ('published' in $$props) $$invalidate(8, published = $$props.published);
+    		if ('read' in $$props) $$invalidate(24, read = $$props.read);
     		if ('saved' in $$props) $$invalidate(9, saved = $$props.saved);
     		if ('section' in $$props) $$invalidate(10, section = $$props.section);
-    		if ('style' in $$props) $$invalidate(24, style = $$props.style);
+    		if ('style' in $$props) $$invalidate(25, style = $$props.style);
     		if ('truncateTitle' in $$props) $$invalidate(11, truncateTitle = $$props.truncateTitle);
     		if ('url' in $$props) $$invalidate(12, url = $$props.url);
-    		if ('width' in $$props) $$invalidate(25, width = $$props.width);
-    		if ('baseClass' in $$props) $$invalidate(26, baseClass = $$props.baseClass);
+    		if ('width' in $$props) $$invalidate(26, width = $$props.width);
+    		if ('baseClass' in $$props) $$invalidate(27, baseClass = $$props.baseClass);
     		if ('loadingStyle' in $$props) $$invalidate(13, loadingStyle = $$props.loadingStyle);
     		if ('innerClass' in $$props) $$invalidate(14, innerClass = $$props.innerClass);
     		if ('mediaCssClass' in $$props) $$invalidate(15, mediaCssClass = $$props.mediaCssClass);
@@ -60441,15 +60615,17 @@ for (const accordion of accordions) {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*style, breaking, colorName, width*/ 50331660) {
+    		if ($$self.$$.dirty[0] & /*style, breaking, colorName, width*/ 100663308) {
     			$$invalidate(17, styleProp = `${style}; --color--list: var(--color--${breaking ? colorNames.breaking : colorName}); --fgcolor--list: var(--fgcolor--${breaking ? colorNames.breaking : colorName}); --card-width: ${width};`);
     		}
 
-    		if ($$self.$$.dirty & /*className, baseClass*/ 69206016) {
-    			$$invalidate(16, cssClass = className ? `${className} ${baseClass}` : baseClass);
+    		if ($$self.$$.dirty[0] & /*className, baseClass*/ 136314880) {
+    			$$invalidate(16, cssClass = className
+    			? `${className} ${baseClass} ${readClass}`
+    			: `${baseClass} ${readClass}`);
     		}
 
-    		if ($$self.$$.dirty & /*media*/ 64) {
+    		if ($$self.$$.dirty[0] & /*media*/ 64) {
     			$$invalidate(15, mediaCssClass = media && media.className
     			? `${media.className} card-media`
     			: 'card-media');
@@ -60481,6 +60657,7 @@ for (const accordion of accordions) {
     		className,
     		id,
     		maxLines,
+    		read,
     		style,
     		width,
     		baseClass,
@@ -60494,27 +60671,37 @@ for (const accordion of accordions) {
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$I, create_fragment$J, safe_not_equal, {
-    			loading: 1,
-    			title: 0,
-    			breaking: 2,
-    			cardType: 20,
-    			className: 21,
-    			colorName: 3,
-    			premiumMarkerSize: 4,
-    			id: 22,
-    			update: 5,
-    			maxLines: 23,
-    			media: 6,
-    			premium: 7,
-    			published: 8,
-    			saved: 9,
-    			section: 10,
-    			style: 24,
-    			truncateTitle: 11,
-    			url: 12,
-    			width: 25
-    		});
+    		init(
+    			this,
+    			options,
+    			instance$I,
+    			create_fragment$J,
+    			safe_not_equal,
+    			{
+    				loading: 1,
+    				title: 0,
+    				breaking: 2,
+    				cardType: 20,
+    				className: 21,
+    				colorName: 3,
+    				premiumMarkerSize: 4,
+    				id: 22,
+    				update: 5,
+    				maxLines: 23,
+    				media: 6,
+    				premium: 7,
+    				published: 8,
+    				read: 24,
+    				saved: 9,
+    				section: 10,
+    				style: 25,
+    				truncateTitle: 11,
+    				url: 12,
+    				width: 26
+    			},
+    			null,
+    			[-1, -1]
+    		);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -60625,6 +60812,14 @@ for (const accordion of accordions) {
     	}
 
     	set published(value) {
+    		throw new Error("<ArticleCard>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get read() {
+    		throw new Error("<ArticleCard>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set read(value) {
     		throw new Error("<ArticleCard>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 

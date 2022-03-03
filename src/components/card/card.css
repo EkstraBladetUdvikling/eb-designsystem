@@ -208,12 +208,13 @@ a.card:focus {
 }
 
 .card-inner {
+  position: relative;
+
   border-radius: var(--border-radius-medium);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   height: 100%;
-  position: relative;
 }
 
 .card-mode--article {
@@ -347,46 +348,52 @@ a.card-mode:focus .card-inner {
 }
 
 .premium-dogear {
-  --dogear-size: 61px;
-  --dogear-padding: 7px;
-  --dogear-icon: 18px;
-  --icon-size: var(--dogear-icon);
   position: absolute;
-  padding: var(--dogear-padding) 0 0 var(--dogear-padding);
-  line-height: 0;
-  z-index: 1;
   top: 0;
   left: 0;
+  z-index: 1;
+
+  line-height: 0;
+  padding: var(--dogear-padding) 0 0 var(--dogear-padding);
+
+  --dogear-icon: 18px;
+  --dogear-padding: 7px;
+  --dogear-size: 61px;
+  --icon-size: var(--dogear-icon);
 }
 
 .premium-dogear--small {
-  --dogear-size: 41px;
-  --dogear-padding: 5px;
   --dogear-icon: 14px;
+  --dogear-padding: 5px;
+  --dogear-size: 41px;
 }
 
 .premium-dogear::after {
-  content: " ";
-  background: var(--color--eb);
   position: absolute;
-  display: block;
-  width: var(--dogear-size);
-  height: var(--dogear-size);
   top: -1px;
   left: -1px;
   z-index: -1;
+
+  background: var(--color--eb);
+  content: " ";
+  display: block;
+  width: var(--dogear-size);
+  height: var(--dogear-size);
+
   clip-path: polygon(0 0, 0% 100%, 100% 0);
 }
 
 .card--small-media--reverse .premium-dogear {
-  left: auto;
   right: 0;
+  left: auto;
+
   padding: var(--dogear-padding) var(--dogear-padding) 0 0;
 }
 
 .card--small-media--reverse .premium-dogear::after {
   right: -1px;
   left: auto;
+
   clip-path: polygon(100% 0, 0 0, 100% 100%);
 }
 
