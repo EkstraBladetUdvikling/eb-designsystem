@@ -36,8 +36,7 @@
   export let width: string = '100%';
 
   const dispatch = createEventDispatcher();
-  const readClass = read ? ' articlecard--read' : '';
-  let baseClass = `card-mode card-mode--article${readClass}`;
+  let baseClass = `card-mode card-mode--article`;
 
   let loadingStyle = 'padding-top: 56.25%; width: 100%;';
   if (loading) {
@@ -65,12 +64,13 @@
   }
 
   const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
+  const readClass = read ? 'articlecard--read' : '';
 
   $: styleProp = `${style}; --color--list: var(--color--${
     breaking ? colorNames.breaking : colorName
   }); --fgcolor--list: var(--fgcolor--${breaking ? colorNames.breaking : colorName}); --card-width: ${width};`;
 
-  $: cssClass = className ? `${className} ${baseClass}` : baseClass;
+  $: cssClass = className ? `${className} ${baseClass} ${readClass}` : `${baseClass} ${readClass}`;
 
   $: mediaCssClass = media && media.className ? `${media.className} card-media` : 'card-media';
 
