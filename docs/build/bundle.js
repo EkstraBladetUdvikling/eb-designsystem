@@ -19495,7 +19495,7 @@ var app = (function () {
     			? `premium-dogear--${/*premiumMarkerSize*/ ctx[4]}`
     			: ''));
 
-    			add_location(div, file$2Q, 66, 8, 2449);
+    			add_location(div, file$2Q, 66, 8, 2448);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -19546,9 +19546,9 @@ var app = (function () {
     			div0 = element("div");
     			attr_dev(div0, "class", "card-image bg--graa4");
     			attr_dev(div0, "style", /*loadingStyle*/ ctx[13]);
-    			add_location(div0, file$2Q, 72, 10, 2697);
+    			add_location(div0, file$2Q, 72, 10, 2696);
     			attr_dev(div1, "class", "card-media");
-    			add_location(div1, file$2Q, 71, 8, 2662);
+    			add_location(div1, file$2Q, 71, 8, 2661);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -19597,9 +19597,9 @@ var app = (function () {
     			if (!src_url_equal(img.src, img_src_value = /*media*/ ctx[6].src)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "height", img_height_value = /*media*/ ctx[6].height);
     			attr_dev(img, "width", img_width_value = /*media*/ ctx[6].width);
-    			add_location(img, file$2Q, 91, 10, 3358);
+    			add_location(img, file$2Q, 91, 10, 3357);
     			attr_dev(div, "class", /*mediaCssClass*/ ctx[15]);
-    			add_location(div, file$2Q, 76, 8, 2808);
+    			add_location(div, file$2Q, 76, 8, 2807);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -19811,7 +19811,7 @@ var app = (function () {
     			t1 = space();
     			if (if_block2) if_block2.c();
     			attr_dev(div, "class", "card-meta flex flex-wrap--wrap fontsize-xxsmall");
-    			add_location(div, file$2Q, 97, 12, 3607);
+    			add_location(div, file$2Q, 97, 12, 3606);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -19948,11 +19948,11 @@ var app = (function () {
     			span0 = element("span");
     			t1 = text(/*section*/ ctx[10]);
     			attr_dev(span0, "class", "padding-s--l");
-    			add_location(span0, file$2Q, 102, 20, 3872);
+    			add_location(span0, file$2Q, 102, 20, 3871);
     			attr_dev(span1, "class", "flex flex-justify--center");
-    			add_location(span1, file$2Q, 100, 18, 3760);
+    			add_location(span1, file$2Q, 100, 18, 3759);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$2Q, 99, 16, 3713);
+    			add_location(div, file$2Q, 99, 16, 3712);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -20015,9 +20015,9 @@ var app = (function () {
     			span = element("span");
     			t1 = text(t1_value);
     			attr_dev(span, "class", "padding-s--l");
-    			add_location(span, file$2Q, 109, 18, 4129);
+    			add_location(span, file$2Q, 109, 18, 4128);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$2Q, 107, 16, 4031);
+    			add_location(div, file$2Q, 107, 16, 4030);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -20143,7 +20143,7 @@ var app = (function () {
     			span.textContent = "Gemt";
     			attr_dev(span, "class", "padding-s--l");
     			set_style(span, "color", "var(--fgcolor--list)");
-    			add_location(span, file$2Q, 120, 20, 4616);
+    			add_location(span, file$2Q, 120, 20, 4615);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -20262,7 +20262,7 @@ var app = (function () {
     			span.textContent = "Gem";
     			attr_dev(span, "class", "padding-s--l");
     			set_style(span, "color", "var(--fgcolor--list)");
-    			add_location(span, file$2Q, 124, 20, 4867);
+    			add_location(span, file$2Q, 124, 20, 4866);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -20392,13 +20392,13 @@ var app = (function () {
     			t4 = text(/*title*/ ctx[0]);
     			attr_dev(h2, "class", h2_class_value = "card-title " + (/*truncateTitle*/ ctx[11] ? 'card-title--truncated' : ''));
     			attr_dev(h2, "style", /*titleStyle*/ ctx[18]);
-    			add_location(h2, file$2Q, 130, 10, 5060);
+    			add_location(h2, file$2Q, 130, 10, 5059);
     			attr_dev(div0, "class", "card-content");
-    			add_location(div0, file$2Q, 95, 8, 3531);
+    			add_location(div0, file$2Q, 95, 8, 3530);
     			attr_dev(div1, "class", "card-content-wrapper");
-    			add_location(div1, file$2Q, 94, 6, 3488);
+    			add_location(div1, file$2Q, 94, 6, 3487);
     			attr_dev(div2, "class", /*innerClass*/ ctx[14]);
-    			add_location(div2, file$2Q, 64, 4, 2396);
+    			add_location(div2, file$2Q, 64, 4, 2395);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -20629,7 +20629,7 @@ var app = (function () {
     	let { media = undefined } = $$props;
     	let { premium = false } = $$props;
     	let { published = undefined } = $$props;
-    	let { read = false } = $$props;
+    	let { read = null } = $$props;
     	let { saved = undefined } = $$props;
     	let { section = undefined } = $$props;
     	let { style = '' } = $$props;
@@ -59311,7 +59311,7 @@ for (const accordion of accordions) {
     			? `premium-dogear--${/*premiumMarkerSize*/ ctx[4]}`
     			: ''));
 
-    			add_location(div, file$I, 66, 8, 2450);
+    			add_location(div, file$I, 66, 8, 2446);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -59362,9 +59362,9 @@ for (const accordion of accordions) {
     			div0 = element("div");
     			attr_dev(div0, "class", "card-image bg--graa4");
     			attr_dev(div0, "style", /*loadingStyle*/ ctx[13]);
-    			add_location(div0, file$I, 72, 10, 2698);
+    			add_location(div0, file$I, 72, 10, 2694);
     			attr_dev(div1, "class", "card-media");
-    			add_location(div1, file$I, 71, 8, 2663);
+    			add_location(div1, file$I, 71, 8, 2659);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -59413,9 +59413,9 @@ for (const accordion of accordions) {
     			if (!src_url_equal(img.src, img_src_value = /*media*/ ctx[6].src)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "height", img_height_value = /*media*/ ctx[6].height);
     			attr_dev(img, "width", img_width_value = /*media*/ ctx[6].width);
-    			add_location(img, file$I, 91, 10, 3359);
+    			add_location(img, file$I, 91, 10, 3355);
     			attr_dev(div, "class", /*mediaCssClass*/ ctx[15]);
-    			add_location(div, file$I, 76, 8, 2809);
+    			add_location(div, file$I, 76, 8, 2805);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -59627,7 +59627,7 @@ for (const accordion of accordions) {
     			t1 = space();
     			if (if_block2) if_block2.c();
     			attr_dev(div, "class", "card-meta flex flex-wrap--wrap fontsize-xxsmall");
-    			add_location(div, file$I, 97, 12, 3608);
+    			add_location(div, file$I, 97, 12, 3604);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -59764,11 +59764,11 @@ for (const accordion of accordions) {
     			span0 = element("span");
     			t1 = text(/*section*/ ctx[10]);
     			attr_dev(span0, "class", "padding-s--l");
-    			add_location(span0, file$I, 102, 20, 3873);
+    			add_location(span0, file$I, 102, 20, 3869);
     			attr_dev(span1, "class", "flex flex-justify--center");
-    			add_location(span1, file$I, 100, 18, 3761);
+    			add_location(span1, file$I, 100, 18, 3757);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$I, 99, 16, 3714);
+    			add_location(div, file$I, 99, 16, 3710);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -59831,9 +59831,9 @@ for (const accordion of accordions) {
     			span = element("span");
     			t1 = text(t1_value);
     			attr_dev(span, "class", "padding-s--l");
-    			add_location(span, file$I, 109, 18, 4130);
+    			add_location(span, file$I, 109, 18, 4126);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$I, 107, 16, 4032);
+    			add_location(div, file$I, 107, 16, 4028);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -59959,7 +59959,7 @@ for (const accordion of accordions) {
     			span.textContent = "Gemt";
     			attr_dev(span, "class", "padding-s--l");
     			set_style(span, "color", "var(--fgcolor--list)");
-    			add_location(span, file$I, 120, 20, 4617);
+    			add_location(span, file$I, 120, 20, 4613);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -60078,7 +60078,7 @@ for (const accordion of accordions) {
     			span.textContent = "Gem";
     			attr_dev(span, "class", "padding-s--l");
     			set_style(span, "color", "var(--fgcolor--list)");
-    			add_location(span, file$I, 124, 20, 4868);
+    			add_location(span, file$I, 124, 20, 4864);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -60208,13 +60208,13 @@ for (const accordion of accordions) {
     			t4 = text(/*title*/ ctx[0]);
     			attr_dev(h2, "class", h2_class_value = "card-title " + (/*truncateTitle*/ ctx[11] ? 'card-title--truncated' : ''));
     			attr_dev(h2, "style", /*titleStyle*/ ctx[18]);
-    			add_location(h2, file$I, 130, 10, 5061);
+    			add_location(h2, file$I, 130, 10, 5057);
     			attr_dev(div0, "class", "card-content");
-    			add_location(div0, file$I, 95, 8, 3532);
+    			add_location(div0, file$I, 95, 8, 3528);
     			attr_dev(div1, "class", "card-content-wrapper");
-    			add_location(div1, file$I, 94, 6, 3489);
+    			add_location(div1, file$I, 94, 6, 3485);
     			attr_dev(div2, "class", /*innerClass*/ ctx[14]);
-    			add_location(div2, file$I, 64, 4, 2397);
+    			add_location(div2, file$I, 64, 4, 2393);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -60445,7 +60445,7 @@ for (const accordion of accordions) {
     	let { media = undefined } = $$props;
     	let { premium = false } = $$props;
     	let { published = undefined } = $$props;
-    	let { read = false } = $$props;
+    	let { read = '' } = $$props;
     	let { saved = undefined } = $$props;
     	let { section = undefined } = $$props;
     	let { style = '' } = $$props;
@@ -60480,7 +60480,7 @@ for (const accordion of accordions) {
     	}
 
     	const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
-    	const readClass = read ? ' articlecard--read' : '';
+    	const readClass = read ? 'articlecard--read' : '';
 
     	function toggleSave(evt) {
     		dispatch('save', { id, save: evt.detail });

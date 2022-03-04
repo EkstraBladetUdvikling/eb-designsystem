@@ -27,7 +27,7 @@
   export let media: Partial<IMediaOptions> = undefined;
   export let premium: boolean = false;
   export let published: string = undefined;
-  export let read: boolean = false;
+  export let read: boolean | string = null;
   export let saved: boolean = undefined;
   export let section: string = undefined;
   export let style: string = '';
