@@ -20,6 +20,13 @@
     ],
     "description": "This extends accordion-tab with: {\n border: 1px solid var(--color--graa5);\n }"
   },
+  "designsystem articlecard read": {
+    "prefix": "ds-articlecard--read",
+    "body": [
+      "articlecard--read"
+    ],
+    "description": "NB! This should only be used with articlecard\n{\n filter: grayscale(1);\nopacity: 0.3;\n }"
+  },
   "designsystem articlelist columns": {
     "prefix": "ds-articlelist--columns",
     "body": [
@@ -227,7 +234,7 @@
     "body": [
       "card-inner"
     ],
-    "description": "{\n border-radius: var(--border-radius-medium);\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\nposition: relative;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
+    "description": "{\n position: relative;\nborder-radius: var(--border-radius-medium);\ndisplay: flex;\nflex-direction: column;\noverflow: hidden;\nheight: 100%;\n }\n Has pseudo styling :not([class*=\"bg--\"])"
   },
   "designsystem card mode article": {
     "prefix": "ds-card-mode--article",
@@ -255,14 +262,14 @@
     "body": [
       "premium-dogear"
     ],
-    "description": "{\n --dogear-size: 61px;\n--dogear-padding: 7px;\n--dogear-icon: 18px;\n--icon-size: var(--dogear-icon);\nposition: absolute;\npadding: var(--dogear-padding) 0 0 var(--dogear-padding);\nline-height: 0;\nz-index: 1;\ntop: 0;\nleft: 0;\n }\n Has pseudo styling ::after"
+    "description": "{\n position: absolute;\ntop: 0;\nleft: 0;\nz-index: 1;\nline-height: 0;\npadding: var(--dogear-padding) 0 0 var(--dogear-padding);\n--dogear-icon: 18px;\n--dogear-padding: 7px;\n--dogear-size: 61px;\n--icon-size: var(--dogear-icon);\n }\n Has pseudo styling ::after"
   },
   "designsystem premium dogear small": {
     "prefix": "ds-premium-dogear--small",
     "body": [
       "premium-dogear--small"
     ],
-    "description": "NB! This should only be used with premium-dogear\n{\n --dogear-size: 41px;\n--dogear-padding: 5px;\n--dogear-icon: 14px;\n }"
+    "description": "NB! This should only be used with premium-dogear\n{\n --dogear-icon: 14px;\n--dogear-padding: 5px;\n--dogear-size: 41px;\n }"
   },
   "designsystem form element": {
     "prefix": "ds-form-element",
