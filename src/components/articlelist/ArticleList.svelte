@@ -1,6 +1,8 @@
 <script lang="ts">
   import { afterUpdate } from 'svelte';
-  import { Writable, writable } from 'svelte/store';
+  import { writable } from 'svelte/store';
+
+  import type { Writable } from 'svelte/store';
 
   import HorizontalScroll from '../horizontalScroll/HorizontalScroll.svelte';
 
