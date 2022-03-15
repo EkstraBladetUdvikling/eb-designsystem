@@ -411,6 +411,9 @@ template,[hidden] {
   --rgb-color--black: 0, 0, 0;
   --rgb-fgcolor--black: 255, 255, 255;
 
+  --rgb-color--graa0: 27, 27, 27;
+  --rgb-fgcolor--graa0: 239, 239, 239;
+
   --rgb-color--graa1: 60, 60, 60;
   --rgb-fgcolor--graa1: 255, 255, 255;
 
@@ -583,6 +586,9 @@ template,[hidden] {
 
   --color--black: #000;
   --fgcolor--black: #fff;
+
+  --color--graa0: #1b1b1b;
+  --fgcolor--graa0: #efefef;
 
   --color--graa1: #3c3c3c;
   --fgcolor--graa1: #fff;
@@ -3357,6 +3363,11 @@ html {
   color: var(--fgcolor--black);
 }
 
+.bg--graa0 {
+  background: var(--color--graa0);
+  color: var(--fgcolor--graa0);
+}
+
 .bg--graa1 {
   background: var(--color--graa1);
   color: var(--fgcolor--graa1);
@@ -3623,6 +3634,10 @@ html {
 
 .color--black {
   color: var(--color--black);
+}
+
+.color--graa0 {
+  color: var(--color--graa0);
 }
 
 .color--graa1 {
