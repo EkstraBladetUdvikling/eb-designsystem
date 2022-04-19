@@ -10,6 +10,6 @@
 </script>
 
 <label class="form-label" for="select">{label}</label>
-<select bind:value={selected} classname={baseClass} id="select">
+<select bind:value={selected} class={baseClass} id="select">
   <slot />
 </select>
