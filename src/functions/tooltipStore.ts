@@ -1,4 +1,5 @@
-import { writable, type Writable } from 'svelte/store';
+import { writable } from 'svelte/store';
+import type { Writable } from 'svelte/store';
 import type { Instance, Props, RenderProps } from 'tippy.js/headless';
 
 export type TTooltipInstance = Instance<Partial<Omit<Props, keyof RenderProps>>>;
