@@ -15641,7 +15641,7 @@ var app = (function () {
     			attr_dev(g0, "id", "leg");
     			add_location(g0, file$30, 1, 2, 79);
     			attr_dev(polygon, "points", "135 230 135 263.493 230 230 135 230");
-    			set_style(polygon, "fill", "#ffffff");
+    			set_style(polygon, "fill", "#ddd");
     			add_location(polygon, file$30, 5, 4, 194);
     			attr_dev(g1, "id", "shadow2");
     			add_location(g1, file$30, 4, 2, 173);
@@ -15651,9 +15651,9 @@ var app = (function () {
     			attr_dev(rect1, "height", "364.99999");
     			attr_dev(rect1, "transform", "translate(365.00002 -0.00002) rotate(90)");
     			set_style(rect1, "fill", "#000000");
-    			add_location(rect1, file$30, 8, 4, 298);
+    			add_location(rect1, file$30, 8, 4, 295);
     			attr_dev(g2, "id", "arm");
-    			add_location(g2, file$30, 7, 2, 281);
+    			add_location(g2, file$30, 7, 2, 278);
     			set_svg_attributes(svg, svg_data);
     			add_location(svg, file$30, 0, 0, 0);
     		},
@@ -55393,7 +55393,7 @@ for (const accordion of accordions) {
     			attr_dev(g0, "id", "leg");
     			add_location(g0, file$T, 1, 2, 79);
     			attr_dev(polygon, "points", "135 230 135 263.493 230 230 135 230");
-    			set_style(polygon, "fill", "#ffffff");
+    			set_style(polygon, "fill", "#ddd");
     			add_location(polygon, file$T, 5, 4, 194);
     			attr_dev(g1, "id", "shadow2");
     			add_location(g1, file$T, 4, 2, 173);
@@ -55403,9 +55403,9 @@ for (const accordion of accordions) {
     			attr_dev(rect1, "height", "364.99999");
     			attr_dev(rect1, "transform", "translate(365.00002 -0.00002) rotate(90)");
     			set_style(rect1, "fill", "#000000");
-    			add_location(rect1, file$T, 8, 4, 298);
+    			add_location(rect1, file$T, 8, 4, 295);
     			attr_dev(g2, "id", "arm");
-    			add_location(g2, file$T, 7, 2, 281);
+    			add_location(g2, file$T, 7, 2, 278);
     			set_svg_attributes(svg, svg_data);
     			add_location(svg, file$T, 0, 0, 0);
     		},
