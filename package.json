@@ -54,7 +54,6 @@
   },
   "devDependencies": {
     "copyfiles": "^2.4.1",
-    "csscomb": "^4.3.0",
     "normalize.css": "^8.0.1",
     "onchange": "^7.1.0",
     "postcss": "^8.4.12",
