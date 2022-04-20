@@ -1,10 +1,10 @@
 :root {
-  --right-pos: calc(var(--button-height) * 1.5);
+  --right-pos: 10px;
 }
 
-@media (--smartphone) {
+@media (--desktop) {
   :root {
-    --right-pos: 10px;
+    --right-pos: calc(var(--button-height) * 1.5);
   }
 }
 
@@ -15,7 +15,7 @@
   right: calc(var(--right-pos) * -1);
   z-index: 1;
 
-  box-shadow: -20px 0 20px -20px rgba(0, 0, 0, 0.4);
+  box-shadow: -5px 0 10px -3px rgb(0 0 0 / 40%);
   content: " ";
   opacity: 1;
   transition: opacity 200ms, height 200ms;
@@ -23,24 +23,27 @@
   height: 100%;
 }
 
-.smartphone .horizontal-scroll-container::after {
-  box-shadow: -5px 0 10px -3px rgb(0 0 0 / 40%);
-}
-
 .horizontal-scroll-container::before {
   right: auto;
   left: calc(var(--right-pos) * -1);
 
-  box-shadow: 20px 0 20px -20px rgba(0, 0, 0, 0.4);
-}
-
-.smartphone .horizontal-scroll-container::before {
   box-shadow: 5px 0 10px -3px rgb(0 0 0 / 40%);
 }
 
-.smartphone .horizontal-scroll-container::after,
-.smartphone .horizontal-scroll-container::before {
-  display: none;
+@media (--desktop) {
+  .horizontal-scroll-container::after {
+    box-shadow: -20px 0 20px -20px rgba(0, 0, 0, 0.4);
+  }
+  .horizontal-scroll-container::before {
+    box-shadow: 20px 0 20px -20px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@media (--smartphone) {
+  .horizontal-scroll-container::after,
+  .horizontal-scroll-container::before {
+    display: none;
+  }
 }
 
 .horizontal-scroll-container[data-atend="true"]::after {

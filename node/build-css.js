@@ -9,6 +9,8 @@ const postcssImport = require('postcss-import')({
 const discardDuplicates = require('postcss-discard-duplicates')();
 const discardUnused = require('postcss-discard-unused')();
 const mergeRules = require('postcss-merge-rules')();
+const postcssCustomMedia = require('postcss-custom-media');
+
 const runtimeArguments = process.argv.slice(2);
 
 const importFrom = [
@@ -55,7 +57,12 @@ const buildCSS = async (args) => {
 
     const cssFilesToRead = importFrom;
 
-    const postcssPlugins = [postcssImport];
+    const postcssPlugins = [
+      postcssImport,
+      postcssCustomMedia({
+        importFrom: './src/_custom-mediaqueries.css',
+      }),
+    ];
 
     const fileTypeToFind = '.css';
 
