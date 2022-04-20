@@ -8,7 +8,7 @@ const tsVersionCreator = require('./tsVersionCreator');
 
 const runtimeArguments = process.argv.slice(2);
 
-const importFrom = ['./src/_variables.css', './src/_custom-mediaqueries.css'];
+const importFrom = ['./css/_variables.css', './css/_custom-mediaqueries.css'];
 
 const cssnextObject = {
   importFrom,

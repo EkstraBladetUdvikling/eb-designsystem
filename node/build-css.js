@@ -17,8 +17,8 @@ const importFrom = [
   './node_modules/normalize.css/normalize.css',
   './node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-vars-rgb.css',
   './node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-css-vars.css',
-  './src/_variables.css',
-  './src/_custom-mediaqueries.css',
+  './css/_variables.css',
+  './css/_custom-mediaqueries.css',
 ];
 
 const readFolder = (folderName, filesToFind, array, lvl = 0) => {
@@ -60,7 +60,7 @@ const buildCSS = async (args) => {
     const postcssPlugins = [
       postcssImport,
       postcssCustomMedia({
-        importFrom: './src/_custom-mediaqueries.css',
+        importFrom: './css/_custom-mediaqueries.css',
       }),
     ];
 
@@ -72,8 +72,8 @@ const buildCSS = async (args) => {
     readFolder(srcFolder, fileTypeToFind, cssFilesToRead);
     cssFilesToRead.push('./node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-classes.css');
 
-    const outputFileName = build ? `eb-designsystem--${build}.css` : `eb-designsystem.css`;
-    const outputFiles = [`docs_src/css/${outputFileName}`, `dist/${outputFileName}`];
+    const outputFileName = build ? `designsystem--${build}.css` : `designsystem.css`;
+    const outputFiles = [`docs_src/css/${outputFileName}`, `css/${outputFileName}`];
 
     const readFileContent = [];
 

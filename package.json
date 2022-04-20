@@ -5,18 +5,19 @@
   "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
   "author": "tegner <jesper.h.tegner@jppol.dk>",
   "files": [
-    "./dist",
-    "./snippets"
+    "./css",
+    "./snippets",
+    "./svelte"
   ],
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf ./dist && yarn build:typescript && yarn build:designsystem && yarn svgs && yarn build:svelte",
-    "build:designsystem": "yarn build:css && yarn build:snippets",
+    "build": "rm -rf ./dist && yarn build:typescript && yarn build:designsystem && yarn svgs && yarn build:docs",
     "build:css": "node node/build-css.js",
-    "build:snippets": "node node/build-snippets",
+    "build:designsystem": "yarn build:css && yarn build:snippets",
+    "build:docs": "yarn rollup -c",
+    "build:snippets": "rm -rf ./snippets && node node/build-snippets",
     "build:typescript": "node node/move-svelte && yarn tsc --project tsconfig.tsc.json",
     "build:watch": "onchange 'src/**/*.css' -- yarn build:css",
-    "build:svelte": "yarn rollup -c",
     "dev": "yarn build:typescript && yarn build:css & yarn build:watch & yarn rollup -c -w",
     "predev": "yarn svgs",
     "start": "sirv docs",
@@ -53,7 +54,6 @@
   },
   "devDependencies": {
     "copyfiles": "^2.4.1",
-    "csscomb": "^4.3.0",
     "normalize.css": "^8.0.1",
     "onchange": "^7.1.0",
     "postcss": "^8.4.12",

@@ -1,9 +1,9 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
-  import { Badge, Card, Icon, Button } from '../../dist';
-  import { iconnames, iconnameshtml } from '../../dist/components/icon/svgs/iconnames';
-  import { graphicnames, graphicnameshtml } from '../../dist/components/icon/graphics/graphicnames';
+  import { Badge, Card, Icon, Button } from '../../svelte';
+  import { iconnames, iconnameshtml } from '../../svelte/components/icon/svgs/iconnames';
+  import { graphicnames, graphicnameshtml } from '../../svelte/components/icon/graphics/graphicnames';
   import DrEditionSVGs from '../assets/dredition/DrEditionSVGs.svelte';
   import { colorNames } from '@ekstra-bladet/eb-colors';
 
