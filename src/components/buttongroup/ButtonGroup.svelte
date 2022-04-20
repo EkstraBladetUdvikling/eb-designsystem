@@ -12,10 +12,9 @@
 </script>
 
 <script lang="ts">
-  import { setContext, onDestroy } from 'svelte';
-  import { writable } from 'svelte/store';
-  import type { Writable } from 'svelte/store';
   import { Background } from '@ekstra-bladet/eb-colors/dist/eb-colors';
+  import { setContext, onDestroy } from 'svelte';
+  import { writable, type Writable } from 'svelte/store';
 
   export const selectedId: Writable<number> = writable(0);
 

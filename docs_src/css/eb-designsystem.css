@@ -758,7 +758,7 @@ template,[hidden] {
   * Aliased Fontsizes
   */
 
-@media (--smartphone) {
+@media (max-width: 767px) {
   :root {
     --distance-large: 15px;
   --distance-medium: 10px;
@@ -816,42 +816,25 @@ custom media queries is the only allowed media queries
 ```
 */
 
-@custom-media --smartphone (max-width: 767px);
-
 /*
 * custom media query for desktop
 */
-
-@custom-media --desktop (min-width: 767px);
-
-@custom-media --widedesktop (min-width: 940px);
-
-@custom-media --xtrawidedesktop (min-width: 1140px);
 
 /*
 * media-query for ipad
 */
 
-@custom-media --tablet only screen and (min-width: 768px) and (max-width: 1024px);
-
 /*
 * Landscape media-query for ipad
 */
-
-@custom-media --landscape only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape);
 
 /*
 * Portrait media-query for ipad
 */
 
-@custom-media --portrait only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait);
-
 /*
 * ie11 and above media query for
 */
-
-@custom-media --ie only screen and (-ms-high-contrast: active),
-  (-ms-high-contrast: none);
 
 .accordion-tab {
   background: rgb(var(--rgb-color--white));
@@ -949,7 +932,7 @@ custom media queries is the only allowed media queries
   gap: var(--articlelist-gap, 10px);
 }
 
-@media (--desktop) {
+@media (min-width: 767px) {
   .articlelist--columns[data-items="1"] .card-inner {
     align-items: stretch;
     flex-direction: row;
@@ -960,7 +943,7 @@ custom media queries is the only allowed media queries
   }
 }
 
-@media (--smartphone) {
+@media (max-width: 767px) {
   .articlelist--columns[data-items="1"] .card-mode--article {
     margin-right: 0;
     margin-left: 0;
@@ -1200,7 +1183,7 @@ a.badge:hover {
   height: var(--button-height--big);
 }
 
-@media (--smartphone) {
+@media (max-width: 767px) {
   .button.button--big {
     font-size: 16px;
     height: 42px;
@@ -1386,7 +1369,7 @@ a.badge:hover {
   --card-padding: 20px;
 }
 
-@media (--smartphone) {
+@media (max-width: 767px) {
   :root {
     --card-fs-title: 20px;
     --card-fs-title--small: 16px;
@@ -1558,7 +1541,7 @@ a.card:focus {
   font-size: var(--card-fs-title--small);
 }
 
-@media (--ie) {
+@media only screen and (-ms-high-contrast: active),(-ms-high-contrast: none) {
   .card-media .card-icon svg {
     max-height: 40px;
   }
@@ -1962,12 +1945,12 @@ a.card-mode:focus .card-inner {
 }
 
 :root {
-  --right-pos: calc(var(--button-height) * 1.5);
+  --right-pos: 10px;
 }
 
-@media (--smartphone) {
+@media (min-width: 767px) {
   :root {
-    --right-pos: 10px;
+    --right-pos: calc(var(--button-height) * 1.5);
   }
 }
 
@@ -1978,7 +1961,7 @@ a.card-mode:focus .card-inner {
   right: calc(var(--right-pos) * -1);
   z-index: 1;
 
-  box-shadow: -20px 0 20px -20px rgba(0, 0, 0, 0.4);
+  box-shadow: -5px 0 10px -3px rgb(0 0 0 / 40%);
   content: " ";
   opacity: 1;
   transition: opacity 200ms, height 200ms;
@@ -1986,24 +1969,27 @@ a.card-mode:focus .card-inner {
   height: 100%;
 }
 
-.smartphone .horizontal-scroll-container::after {
-  box-shadow: -5px 0 10px -3px rgb(0 0 0 / 40%);
-}
-
 .horizontal-scroll-container::before {
   right: auto;
   left: calc(var(--right-pos) * -1);
 
-  box-shadow: 20px 0 20px -20px rgba(0, 0, 0, 0.4);
-}
-
-.smartphone .horizontal-scroll-container::before {
   box-shadow: 5px 0 10px -3px rgb(0 0 0 / 40%);
 }
 
-.smartphone .horizontal-scroll-container::after,
-.smartphone .horizontal-scroll-container::before {
-  display: none;
+@media (min-width: 767px) {
+  .horizontal-scroll-container::after {
+    box-shadow: -20px 0 20px -20px rgba(0, 0, 0, 0.4);
+  }
+  .horizontal-scroll-container::before {
+    box-shadow: 20px 0 20px -20px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@media (max-width: 767px) {
+  .horizontal-scroll-container::after,
+  .horizontal-scroll-container::before {
+    display: none;
+  }
 }
 
 .horizontal-scroll-container[data-atend="true"]::after,.horizontal-scroll-container[data-atstart="true"]::before {
@@ -2733,7 +2719,7 @@ h6,p {
   --grid-xlarge: 930px;
 }
 
-@media (--smartphone) {
+@media (max-width: 767px) {
   :root {
     --grid-large: 100%;
     --grid-medium: 100%;
