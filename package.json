@@ -32,6 +32,7 @@
     "@ekstra-bladet/eb-colors": "4.0.4",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-replace": "^4.0.0",
     "@rollup/plugin-typescript": "^8.3.0",
     "@tsconfig/svelte": "^3.0.0",
     "fitty": "^2.3.5",
@@ -51,7 +52,6 @@
     "tippy.js": "^6.3.7"
   },
   "devDependencies": {
-    "@rollup/plugin-replace": "^4.0.0",
     "copyfiles": "^2.4.1",
     "csscomb": "^4.3.0",
     "normalize.css": "^8.0.1",
