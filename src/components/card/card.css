@@ -123,10 +123,6 @@ a.card:focus {
   flex-wrap: wrap;
 }
 
-.card--small-media .card-content {
-  flex-basis: 0;
-}
-
 .card-mode .card--small-media .card-content {
   display: flex;
   flex-direction: column;

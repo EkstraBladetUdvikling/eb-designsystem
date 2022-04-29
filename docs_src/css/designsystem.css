@@ -1489,7 +1489,7 @@ a.card:focus {
 }
 
 .card--small-media .card-content {
-  flex-basis: 0;
+  flex-basis: 1;
 }
 
 .card-mode .card--small-media .card-content {
