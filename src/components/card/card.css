@@ -366,7 +366,7 @@ a.card-mode:focus .card-inner {
 
 .premium-dogear::after {
   position: absolute;
-  top: -1px;
+  top: -3px;
   left: -1px;
   z-index: -1;
 
@@ -390,6 +390,7 @@ a.card-mode:focus .card-inner {
 .card--small-media--reverse .premium-dogear::after,
 .premium-dogear--reverse::after {
   right: -1px;
+
   left: auto;
 
   clip-path: polygon(100% 0, 0 0, 100% 100%);
