@@ -379,14 +379,16 @@ a.card-mode:focus .card-inner {
   clip-path: polygon(0 0, 0% 100%, 100% 0);
 }
 
-.card--small-media--reverse .premium-dogear {
+.card--small-media--reverse .premium-dogear,
+.premium-dogear--reverse {
   right: 0;
   left: auto;
 
   padding: var(--dogear-padding) var(--dogear-padding) 0 0;
 }
 
-.card--small-media--reverse .premium-dogear::after {
+.card--small-media--reverse .premium-dogear::after,
+.premium-dogear--reverse::after {
   right: -1px;
   left: auto;
 
