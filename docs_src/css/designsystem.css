@@ -1945,6 +1945,7 @@ a.card-mode:focus .card-inner {
 
 :root {
   --right-pos: 10px;
+  --horz-gap: var(--distance-medium);
 }
 
 @media (min-width: 767px) {
@@ -2046,9 +2047,8 @@ a.card-mode:focus .card-inner {
   height: 84px;
 }
 
-.horizontal-scroll-items--gap .card-mode--article {
-  margin-right: var(--distance-medium);
-  --card-width: 215px;
+.horizontal-scroll-items--gap {
+  gap: var(--horz-gap);
 }
 
 .horizontal-scroll-items--gap .card-mode--article:last-child {

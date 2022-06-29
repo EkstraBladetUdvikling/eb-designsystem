@@ -25,7 +25,15 @@
   const singleArt = rdmArticleData(640, 360);
   const doubleArt = [rdmArticleData(640, 360), rdmArticleData(640, 360)];
   const threeArt = [rdmArticleData(640, 360), rdmArticleData(640, 360), rdmArticleData(640, 360)];
-  const fourArt = [
+  const multipleArt = [
+    rdmArticleData(640, 360),
+    rdmArticleData(640, 360),
+    rdmArticleData(640, 360),
+    rdmArticleData(640, 360),
+    rdmArticleData(640, 360),
+    rdmArticleData(640, 360),
+    rdmArticleData(640, 360),
+    rdmArticleData(640, 360),
     rdmArticleData(640, 360),
     rdmArticleData(640, 360),
     rdmArticleData(640, 360),
@@ -64,31 +72,31 @@
   </Prism>
 {/if}
 
-<HorizontalScroll>
-  <ArticleCard {...singleArt} className="margin-s" style="width: 215px;" />
-</HorizontalScroll>
-
-<HorizontalScroll>
-  {#each doubleArt as article}
-    <ArticleCard {...article} className="margin-s" style="width: 215px;" />
+<HorizontalScroll className="margin-m--b">
+  {#each multipleArt as article}
+    <ArticleCard {...article} style="width: 215px;" />
   {/each}
 </HorizontalScroll>
 
-<HorizontalScroll>
+<HorizontalScroll className="margin-m--b">
   {#each threeArt as article}
-    <ArticleCard {...article} className="margin-s" style="width: 215px;" />
+    <ArticleCard {...article} style="width: 215px;" />
   {/each}
 </HorizontalScroll>
 
-<HorizontalScroll>
-  {#each fourArt as article}
-    <ArticleCard {...article} className="margin-s" style="width: 215px;" />
+<HorizontalScroll className="margin-m--b">
+  {#each doubleArt as article}
+    <ArticleCard {...article} style="width: 215px;" />
   {/each}
 </HorizontalScroll>
 
-<HorizontalScroll>
+<HorizontalScroll className="margin-m--b">
+  <ArticleCard {...singleArt} style="width: 215px;" />
+</HorizontalScroll>
+
+<HorizontalScroll className="margin-m--b">
   {#each $articles as article}
-    <ArticleCard {...article} className="margin-s" style="width: 215px;" />
+    <ArticleCard {...article} style="width: 215px;" />
   {/each}
 </HorizontalScroll>
 
