@@ -1,7 +1,6 @@
-export function throttle(callback, wait) {
+export function throttle(callback: (argData: any) => void, wait: number) {
   let inThrottle;
-  return function () {
-    const args = arguments;
+  return function (...args: any[]) {
     const context = this;
     if (!inThrottle) {
       callback.apply(context, args);
