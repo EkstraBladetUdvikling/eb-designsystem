@@ -74,29 +74,29 @@
 
 <HorizontalScroll className="margin-m--b">
   {#each multipleArt as article}
-    <ArticleCard {...article} style="width: 215px;" />
+    <ArticleCard {...article} width="350px" />
   {/each}
 </HorizontalScroll>
 
 <HorizontalScroll className="margin-m--b">
   {#each threeArt as article}
-    <ArticleCard {...article} style="width: 215px;" />
+    <ArticleCard {...article} width="215px" />
   {/each}
 </HorizontalScroll>
 
 <HorizontalScroll className="margin-m--b">
   {#each doubleArt as article}
-    <ArticleCard {...article} style="width: 215px;" />
+    <ArticleCard {...article} width="215px" />
   {/each}
 </HorizontalScroll>
 
 <HorizontalScroll className="margin-m--b">
-  <ArticleCard {...singleArt} style="width: 215px;" />
+  <ArticleCard {...singleArt} width="215px" />
 </HorizontalScroll>
 
 <HorizontalScroll className="margin-m--b">
   {#each $articles as article}
-    <ArticleCard {...article} style="width: 215px;" />
+    <ArticleCard {...article} width="215px" />
   {/each}
 </HorizontalScroll>
 

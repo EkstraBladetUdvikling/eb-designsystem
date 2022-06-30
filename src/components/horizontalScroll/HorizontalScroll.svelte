@@ -9,6 +9,16 @@
 
   let baseClass = `horizontal-scroll-container position-relative`;
 
+  enum BLOCKING {
+    'disabled',
+    'enabled',
+  }
+
+  enum DIRECTION {
+    'left',
+    'right',
+  }
+
   enum SCROLLPOS {
     'disabled',
     'end',
@@ -26,6 +36,9 @@
   let wrapLeft: number;
   let wrapRight: number;
   let wrapScrollWidth: number;
+  let currentBlock = 0;
+  let blocks = [0];
+  let blocking: BLOCKING = BLOCKING.enabled;
 
   /**
    * updateDataSet
@@ -94,25 +107,48 @@
    */
   function updateButtonsThroughScroll(ev?: WheelEvent) {
     if (Math.abs(ev.deltaX) > Math.abs(ev.deltaY)) {
+      blocking = BLOCKING.disabled;
       updateButtons();
     }
+  }
+
+  function findPosition(dir: DIRECTION): number {
+    let position: number;
+    if (dir === DIRECTION.left) {
+      if (blocking === BLOCKING.enabled && blocks[currentBlock - 1]) {
+        currentBlock--;
+        position = blocks[currentBlock];
+      } else {
+        blocks = [0];
+        currentBlock = 0;
+        const el = findPrevChild();
+
+        position =
+          scrollItemContainer.scrollLeft -
+          (wrapClientWidth - (el.clientWidth - (wrapLeft - el.getBoundingClientRect().left)));
+      }
+    } else if (dir === DIRECTION.right) {
+      if (blocking === BLOCKING.enabled && blocks[currentBlock + 1]) {
+        currentBlock++;
+        position = blocks[currentBlock];
+      } else {
+        const el = findNextChild();
+        position = el.offsetLeft;
+
+        currentBlock++;
+        blocks.push(position);
+      }
+    }
+
+    return position;
   }
 
   /**
    * Advance scroll to make next or previous elements visible
    */
-  function scroll(dir: 'left' | 'right') {
-    const newPosEl = dir === 'left' ? findPrevChild() : findNextChild();
-    if (!newPosEl) return;
-
-    let left = newPosEl.offsetLeft;
-    if (dir === 'left') {
-      left =
-        scrollItemContainer.scrollLeft -
-        (wrapClientWidth - (newPosEl.clientWidth - (wrapLeft - newPosEl.getBoundingClientRect().left)));
-    }
-
-    if (dir === 'right' && wrapScrollWidth < scrollItemContainer.scrollLeft + left - wrapClientWidth) {
+  function scroll(dir: DIRECTION) {
+    let left = findPosition(dir);
+    if (dir === DIRECTION.right && wrapScrollWidth < scrollItemContainer.scrollLeft + left - wrapClientWidth) {
       left = wrapScrollWidth;
       updateDataSet(SCROLLPOS.end);
     } else if (left <= 0) {
@@ -192,10 +228,18 @@
 </script>
 
 <div bind:this={scrollContainer} class={cssClass}>
-  <Button on:click={() => scroll('left')} className="horizontal-scroll-nav button-prev bg--white" extension="icon">
+  <Button
+    on:click={() => scroll(DIRECTION.left)}
+    className="horizontal-scroll-nav button-prev bg--white"
+    extension="icon"
+  >
     <Icon name="angleleft" width="14" />
   </Button>
-  <Button on:click={() => scroll('right')} className="horizontal-scroll-nav button-next bg--white" extension="icon">
+  <Button
+    on:click={() => scroll(DIRECTION.right)}
+    className="horizontal-scroll-nav button-next bg--white"
+    extension="icon"
+  >
     <Icon name="angleright" width="14" />
   </Button>
   <div
