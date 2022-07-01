@@ -33,6 +33,7 @@ export function rdmArticleData(mediaWidth = 640, mediaHeight = 360): IArticleCar
     truncateTitle: false,
     update: Math.random() < 0.5,
     url: '',
+    videoIcon: Math.random() < 0.3,
   };
 
   return article;

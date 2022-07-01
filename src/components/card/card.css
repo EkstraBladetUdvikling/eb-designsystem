@@ -343,6 +343,13 @@ a.card-mode:focus .card-inner {
   --max-lines: 9;
 }
 
+.video-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  z-index: 1;
+}
+
 .premium-dogear {
   position: absolute;
   top: 0;
@@ -390,7 +397,6 @@ a.card-mode:focus .card-inner {
 .card--small-media--reverse .premium-dogear::after,
 .premium-dogear--reverse::after {
   right: -1px;
-
   left: auto;
 
   clip-path: polygon(100% 0, 0 0, 100% 100%);

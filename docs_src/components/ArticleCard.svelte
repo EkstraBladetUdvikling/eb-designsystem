@@ -59,6 +59,12 @@
         <td />
       </tr>
       <tr>
+        <td>videoIcon</td>
+        <td>boolean</td>
+        <td>false</td>
+        <td>Shows a videoPlay icon on the articleCard inside the image container</td>
+      </tr>
+      <tr>
         <td>loading</td>
         <td>boolean</td>
         <td>false</td>
