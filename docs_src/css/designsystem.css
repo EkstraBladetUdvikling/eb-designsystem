@@ -1709,11 +1709,19 @@ a.card-mode:focus .card-inner {
   --max-lines: 9;
 }
 
-.premium-dogear {
+.video-icon {
+  bottom: 5px;
+  right: 10px;
+}
+
+.video-icon,.premium-dogear {
   position: absolute;
+  z-index: 1;
+}
+
+.premium-dogear {
   top: 0;
   left: 0;
-  z-index: 1;
 
   line-height: 0;
   padding: var(--dogear-padding) 0 0 var(--dogear-padding);
@@ -1756,7 +1764,6 @@ a.card-mode:focus .card-inner {
 .card--small-media--reverse .premium-dogear::after,
 .premium-dogear--reverse::after {
   right: -1px;
-
   left: auto;
 
   clip-path: polygon(100% 0, 0 0, 100% 100%);

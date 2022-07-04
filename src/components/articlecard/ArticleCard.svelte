@@ -33,6 +33,7 @@
   export let style: string = '';
   export let truncateTitle: boolean = false;
   export let url: string = undefined;
+  export let videoIcon: boolean = false;
   export let width: string = '100%';
 
   const dispatch = createEventDispatcher();
@@ -110,6 +111,11 @@
               />
               UPDATE
             </Badge>
+          {/if}
+          {#if videoIcon}
+            <div class="video-icon">
+              <Icon className="color--white" name="videographic" width="25" />
+            </div>
           {/if}
           <img alt={title} class="card-image" src={media.src} height={media.height} width={media.width} />
         </div>
