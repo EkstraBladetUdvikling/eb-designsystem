@@ -156,7 +156,19 @@
               {/if}
             </div>
           {/if}
-          <h2 class="card-title {truncateTitle ? 'card-title--truncated' : ''}" style={titleStyle}>{title}</h2>
+          {#if videoIcon && !media}
+            <div class="video-icon">
+              <Icon className="color--white" name="videographic" width="20" />
+            </div>
+          {/if}
+          <h2
+            class="card-title"
+            class:padding-l--r={videoIcon && !media}
+            class:card-title--truncate={truncateTitle}
+            style={titleStyle}
+          >
+            {title}
+          </h2>
         </div>
       </div>
     </div>
