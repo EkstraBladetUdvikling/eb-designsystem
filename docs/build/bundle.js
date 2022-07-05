@@ -19755,7 +19755,7 @@ var app = (function () {
     			if (dirty[0] & /*styleProp*/ 262144) card_changes.style = /*styleProp*/ ctx[18];
     			if (dirty[0] & /*breaking*/ 4) card_changes["data-breaking"] = /*breaking*/ ctx[2];
 
-    			if (dirty[0] & /*innerClass, truncateTitle, videoIcon, media, title, saved, published, section, mediaCssClass, colorName, update, loadingStyle, loading, premiumMarkerSize, premium*/ 126971 | dirty[1] & /*$$scope*/ 1) {
+    			if (dirty[0] & /*innerClass, videoIcon, media, truncateTitle, title, saved, published, section, mediaCssClass, colorName, update, loadingStyle, loading, premiumMarkerSize, premium*/ 126971 | dirty[1] & /*$$scope*/ 1) {
     				card_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19787,7 +19787,7 @@ var app = (function () {
     }
 
     // (67:6) {#if premium}
-    function create_if_block_10(ctx) {
+    function create_if_block_10$1(ctx) {
     	let div;
     	let icon;
     	let div_class_value;
@@ -19841,7 +19841,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_10.name,
+    		id: create_if_block_10$1.name,
     		type: "if",
     		source: "(67:6) {#if premium}",
     		ctx
@@ -20820,9 +20820,8 @@ var app = (function () {
     	let t4;
     	let h2;
     	let t5;
-    	let h2_class_value;
     	let current;
-    	let if_block0 = /*premium*/ ctx[7] && create_if_block_10(ctx);
+    	let if_block0 = /*premium*/ ctx[7] && create_if_block_10$1(ctx);
     	let if_block1 = /*loading*/ ctx[1] && create_if_block_9$1(ctx);
     	let if_block2 = /*media*/ ctx[6] && create_if_block_6$2(ctx);
     	let if_block3 = (/*section*/ ctx[10] || /*published*/ ctx[8]) && create_if_block_2$9(ctx);
@@ -20845,12 +20844,10 @@ var app = (function () {
     			t4 = space();
     			h2 = element("h2");
     			t5 = text(/*title*/ ctx[0]);
-
-    			attr_dev(h2, "class", h2_class_value = "card-title " + (/*truncateTitle*/ ctx[11] ? 'card-title--truncated' : '') + " " + (/*videoIcon*/ ctx[13] && !/*media*/ ctx[6]
-    			? 'padding-l--r'
-    			: ''));
-
+    			attr_dev(h2, "class", "card-title");
     			attr_dev(h2, "style", /*titleStyle*/ ctx[19]);
+    			toggle_class(h2, "padding-l--r", /*videoIcon*/ ctx[13] && !/*media*/ ctx[6]);
+    			toggle_class(h2, "card-title--truncate", /*truncateTitle*/ ctx[11]);
     			add_location(h2, file$2R, 141, 10, 5453);
     			attr_dev(div0, "class", "card-content");
     			add_location(div0, file$2R, 101, 8, 3737);
@@ -20886,7 +20883,7 @@ var app = (function () {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_10(ctx);
+    					if_block0 = create_if_block_10$1(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(div2, t0);
@@ -20983,10 +20980,12 @@ var app = (function () {
 
     			if (!current || dirty[0] & /*title*/ 1) set_data_dev(t5, /*title*/ ctx[0]);
 
-    			if (!current || dirty[0] & /*truncateTitle, videoIcon, media*/ 10304 && h2_class_value !== (h2_class_value = "card-title " + (/*truncateTitle*/ ctx[11] ? 'card-title--truncated' : '') + " " + (/*videoIcon*/ ctx[13] && !/*media*/ ctx[6]
-    			? 'padding-l--r'
-    			: ''))) {
-    				attr_dev(h2, "class", h2_class_value);
+    			if (dirty[0] & /*videoIcon, media*/ 8256) {
+    				toggle_class(h2, "padding-l--r", /*videoIcon*/ ctx[13] && !/*media*/ ctx[6]);
+    			}
+
+    			if (dirty[0] & /*truncateTitle*/ 2048) {
+    				toggle_class(h2, "card-title--truncate", /*truncateTitle*/ ctx[11]);
     			}
 
     			if (!current || dirty[0] & /*innerClass*/ 32768) {
@@ -60106,7 +60105,7 @@ for (const accordion of accordions) {
     			if (dirty[0] & /*styleProp*/ 262144) card_changes.style = /*styleProp*/ ctx[18];
     			if (dirty[0] & /*breaking*/ 4) card_changes["data-breaking"] = /*breaking*/ ctx[2];
 
-    			if (dirty[0] & /*innerClass, truncateTitle, title, saved, published, section, mediaCssClass, media, videoIcon, colorName, update, loadingStyle, loading, premiumMarkerSize, premium*/ 126971 | dirty[1] & /*$$scope*/ 1) {
+    			if (dirty[0] & /*innerClass, videoIcon, media, truncateTitle, title, saved, published, section, mediaCssClass, colorName, update, loadingStyle, loading, premiumMarkerSize, premium*/ 126971 | dirty[1] & /*$$scope*/ 1) {
     				card_changes.$$scope = { dirty, ctx };
     			}
 
@@ -60138,7 +60137,7 @@ for (const accordion of accordions) {
     }
 
     // (67:6) {#if premium}
-    function create_if_block_9(ctx) {
+    function create_if_block_10(ctx) {
     	let div;
     	let icon;
     	let div_class_value;
@@ -60192,7 +60191,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_9.name,
+    		id: create_if_block_10.name,
     		type: "if",
     		source: "(67:6) {#if premium}",
     		ctx
@@ -60202,7 +60201,7 @@ for (const accordion of accordions) {
     }
 
     // (72:6) {#if loading}
-    function create_if_block_8(ctx) {
+    function create_if_block_9(ctx) {
     	let div1;
     	let div0;
 
@@ -60232,7 +60231,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_8.name,
+    		id: create_if_block_9.name,
     		type: "if",
     		source: "(72:6) {#if loading}",
     		ctx
@@ -60242,7 +60241,7 @@ for (const accordion of accordions) {
     }
 
     // (77:6) {#if media}
-    function create_if_block_5$1(ctx) {
+    function create_if_block_6(ctx) {
     	let div;
     	let t0;
     	let t1;
@@ -60251,8 +60250,8 @@ for (const accordion of accordions) {
     	let img_height_value;
     	let img_width_value;
     	let current;
-    	let if_block0 = /*update*/ ctx[5] && create_if_block_7(ctx);
-    	let if_block1 = /*videoIcon*/ ctx[13] && create_if_block_6(ctx);
+    	let if_block0 = /*update*/ ctx[5] && create_if_block_8(ctx);
+    	let if_block1 = /*videoIcon*/ ctx[13] && create_if_block_7(ctx);
 
     	const block = {
     		c: function create() {
@@ -60289,7 +60288,7 @@ for (const accordion of accordions) {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_7(ctx);
+    					if_block0 = create_if_block_8(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(div, t0);
@@ -60310,7 +60309,7 @@ for (const accordion of accordions) {
     						transition_in(if_block1, 1);
     					}
     				} else {
-    					if_block1 = create_if_block_6(ctx);
+    					if_block1 = create_if_block_7(ctx);
     					if_block1.c();
     					transition_in(if_block1, 1);
     					if_block1.m(div, t1);
@@ -60365,7 +60364,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_5$1.name,
+    		id: create_if_block_6.name,
     		type: "if",
     		source: "(77:6) {#if media}",
     		ctx
@@ -60375,7 +60374,7 @@ for (const accordion of accordions) {
     }
 
     // (79:10) {#if update}
-    function create_if_block_7(ctx) {
+    function create_if_block_8(ctx) {
     	let badge;
     	let current;
 
@@ -60422,7 +60421,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_7.name,
+    		id: create_if_block_8.name,
     		type: "if",
     		source: "(79:10) {#if update}",
     		ctx
@@ -60489,7 +60488,7 @@ for (const accordion of accordions) {
     }
 
     // (93:10) {#if videoIcon}
-    function create_if_block_6(ctx) {
+    function create_if_block_7(ctx) {
     	let div;
     	let icon;
     	let current;
@@ -60532,7 +60531,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_6.name,
+    		id: create_if_block_7.name,
     		type: "if",
     		source: "(93:10) {#if videoIcon}",
     		ctx
@@ -60542,14 +60541,14 @@ for (const accordion of accordions) {
     }
 
     // (103:10) {#if section || published}
-    function create_if_block_1$5(ctx) {
+    function create_if_block_2$2(ctx) {
     	let div;
     	let t0;
     	let t1;
     	let current;
-    	let if_block0 = /*section*/ ctx[10] && create_if_block_4$2(ctx);
-    	let if_block1 = /*published*/ ctx[8] && create_if_block_3$2(ctx);
-    	let if_block2 = /*saved*/ ctx[9] !== undefined && create_if_block_2$2(ctx);
+    	let if_block0 = /*section*/ ctx[10] && create_if_block_5$1(ctx);
+    	let if_block1 = /*published*/ ctx[8] && create_if_block_4$2(ctx);
+    	let if_block2 = /*saved*/ ctx[9] !== undefined && create_if_block_3$2(ctx);
 
     	const block = {
     		c: function create() {
@@ -60580,7 +60579,7 @@ for (const accordion of accordions) {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_4$2(ctx);
+    					if_block0 = create_if_block_5$1(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(div, t0);
@@ -60603,7 +60602,7 @@ for (const accordion of accordions) {
     						transition_in(if_block1, 1);
     					}
     				} else {
-    					if_block1 = create_if_block_3$2(ctx);
+    					if_block1 = create_if_block_4$2(ctx);
     					if_block1.c();
     					transition_in(if_block1, 1);
     					if_block1.m(div, t1);
@@ -60626,7 +60625,7 @@ for (const accordion of accordions) {
     						transition_in(if_block2, 1);
     					}
     				} else {
-    					if_block2 = create_if_block_2$2(ctx);
+    					if_block2 = create_if_block_3$2(ctx);
     					if_block2.c();
     					transition_in(if_block2, 1);
     					if_block2.m(div, null);
@@ -60664,7 +60663,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$5.name,
+    		id: create_if_block_2$2.name,
     		type: "if",
     		source: "(103:10) {#if section || published}",
     		ctx
@@ -60674,7 +60673,7 @@ for (const accordion of accordions) {
     }
 
     // (105:14) {#if section}
-    function create_if_block_4$2(ctx) {
+    function create_if_block_5$1(ctx) {
     	let div;
     	let span1;
     	let icon;
@@ -60732,7 +60731,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_4$2.name,
+    		id: create_if_block_5$1.name,
     		type: "if",
     		source: "(105:14) {#if section}",
     		ctx
@@ -60742,7 +60741,7 @@ for (const accordion of accordions) {
     }
 
     // (113:14) {#if published}
-    function create_if_block_3$2(ctx) {
+    function create_if_block_4$2(ctx) {
     	let div;
     	let icon;
     	let t0;
@@ -60796,7 +60795,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_3$2.name,
+    		id: create_if_block_4$2.name,
     		type: "if",
     		source: "(113:14) {#if published}",
     		ctx
@@ -60806,7 +60805,7 @@ for (const accordion of accordions) {
     }
 
     // (119:14) {#if saved !== undefined}
-    function create_if_block_2$2(ctx) {
+    function create_if_block_3$2(ctx) {
     	let toggler;
     	let current;
 
@@ -60859,7 +60858,7 @@ for (const accordion of accordions) {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2$2.name,
+    		id: create_if_block_3$2.name,
     		type: "if",
     		source: "(119:14) {#if saved !== undefined}",
     		ctx
@@ -61106,6 +61105,59 @@ for (const accordion of accordions) {
     	return block;
     }
 
+    // (137:10) {#if videoIcon && !media}
+    function create_if_block_1$5(ctx) {
+    	let div;
+    	let icon;
+    	let current;
+
+    	icon = new Icon({
+    			props: {
+    				className: "color--white",
+    				name: "videographic",
+    				width: "20"
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			create_component(icon.$$.fragment);
+    			attr_dev(div, "class", "video-icon");
+    			add_location(div, file$I, 137, 12, 5304);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			mount_component(icon, div, null);
+    			current = true;
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(icon.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(icon.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_component(icon);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$5.name,
+    		type: "if",
+    		source: "(137:10) {#if videoIcon && !media}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
     // (65:2) <Card {url} className={cssClass} style={styleProp} data-breaking={breaking} on:click>
     function create_default_slot$m(ctx) {
     	let div2;
@@ -61115,14 +61167,15 @@ for (const accordion of accordions) {
     	let div1;
     	let div0;
     	let t3;
-    	let h2;
     	let t4;
-    	let h2_class_value;
+    	let h2;
+    	let t5;
     	let current;
-    	let if_block0 = /*premium*/ ctx[7] && create_if_block_9(ctx);
-    	let if_block1 = /*loading*/ ctx[1] && create_if_block_8(ctx);
-    	let if_block2 = /*media*/ ctx[6] && create_if_block_5$1(ctx);
-    	let if_block3 = (/*section*/ ctx[10] || /*published*/ ctx[8]) && create_if_block_1$5(ctx);
+    	let if_block0 = /*premium*/ ctx[7] && create_if_block_10(ctx);
+    	let if_block1 = /*loading*/ ctx[1] && create_if_block_9(ctx);
+    	let if_block2 = /*media*/ ctx[6] && create_if_block_6(ctx);
+    	let if_block3 = (/*section*/ ctx[10] || /*published*/ ctx[8]) && create_if_block_2$2(ctx);
+    	let if_block4 = /*videoIcon*/ ctx[13] && !/*media*/ ctx[6] && create_if_block_1$5(ctx);
 
     	const block = {
     		c: function create() {
@@ -61137,11 +61190,15 @@ for (const accordion of accordions) {
     			div0 = element("div");
     			if (if_block3) if_block3.c();
     			t3 = space();
+    			if (if_block4) if_block4.c();
+    			t4 = space();
     			h2 = element("h2");
-    			t4 = text(/*title*/ ctx[0]);
-    			attr_dev(h2, "class", h2_class_value = "card-title " + (/*truncateTitle*/ ctx[11] ? 'card-title--truncated' : ''));
+    			t5 = text(/*title*/ ctx[0]);
+    			attr_dev(h2, "class", "card-title");
     			attr_dev(h2, "style", /*titleStyle*/ ctx[19]);
-    			add_location(h2, file$I, 136, 10, 5266);
+    			toggle_class(h2, "padding-l--r", /*videoIcon*/ ctx[13] && !/*media*/ ctx[6]);
+    			toggle_class(h2, "card-title--truncate", /*truncateTitle*/ ctx[11]);
+    			add_location(h2, file$I, 141, 10, 5453);
     			attr_dev(div0, "class", "card-content");
     			add_location(div0, file$I, 101, 8, 3737);
     			attr_dev(div1, "class", "card-content-wrapper");
@@ -61161,8 +61218,10 @@ for (const accordion of accordions) {
     			append_dev(div1, div0);
     			if (if_block3) if_block3.m(div0, null);
     			append_dev(div0, t3);
+    			if (if_block4) if_block4.m(div0, null);
+    			append_dev(div0, t4);
     			append_dev(div0, h2);
-    			append_dev(h2, t4);
+    			append_dev(h2, t5);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -61174,7 +61233,7 @@ for (const accordion of accordions) {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_9(ctx);
+    					if_block0 = create_if_block_10(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(div2, t0);
@@ -61193,7 +61252,7 @@ for (const accordion of accordions) {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
-    					if_block1 = create_if_block_8(ctx);
+    					if_block1 = create_if_block_9(ctx);
     					if_block1.c();
     					if_block1.m(div2, t1);
     				}
@@ -61210,7 +61269,7 @@ for (const accordion of accordions) {
     						transition_in(if_block2, 1);
     					}
     				} else {
-    					if_block2 = create_if_block_5$1(ctx);
+    					if_block2 = create_if_block_6(ctx);
     					if_block2.c();
     					transition_in(if_block2, 1);
     					if_block2.m(div2, t2);
@@ -61233,7 +61292,7 @@ for (const accordion of accordions) {
     						transition_in(if_block3, 1);
     					}
     				} else {
-    					if_block3 = create_if_block_1$5(ctx);
+    					if_block3 = create_if_block_2$2(ctx);
     					if_block3.c();
     					transition_in(if_block3, 1);
     					if_block3.m(div0, t3);
@@ -61248,10 +61307,35 @@ for (const accordion of accordions) {
     				check_outros();
     			}
 
-    			if (!current || dirty[0] & /*title*/ 1) set_data_dev(t4, /*title*/ ctx[0]);
+    			if (/*videoIcon*/ ctx[13] && !/*media*/ ctx[6]) {
+    				if (if_block4) {
+    					if (dirty[0] & /*videoIcon, media*/ 8256) {
+    						transition_in(if_block4, 1);
+    					}
+    				} else {
+    					if_block4 = create_if_block_1$5(ctx);
+    					if_block4.c();
+    					transition_in(if_block4, 1);
+    					if_block4.m(div0, t4);
+    				}
+    			} else if (if_block4) {
+    				group_outros();
 
-    			if (!current || dirty[0] & /*truncateTitle*/ 2048 && h2_class_value !== (h2_class_value = "card-title " + (/*truncateTitle*/ ctx[11] ? 'card-title--truncated' : ''))) {
-    				attr_dev(h2, "class", h2_class_value);
+    				transition_out(if_block4, 1, 1, () => {
+    					if_block4 = null;
+    				});
+
+    				check_outros();
+    			}
+
+    			if (!current || dirty[0] & /*title*/ 1) set_data_dev(t5, /*title*/ ctx[0]);
+
+    			if (dirty[0] & /*videoIcon, media*/ 8256) {
+    				toggle_class(h2, "padding-l--r", /*videoIcon*/ ctx[13] && !/*media*/ ctx[6]);
+    			}
+
+    			if (dirty[0] & /*truncateTitle*/ 2048) {
+    				toggle_class(h2, "card-title--truncate", /*truncateTitle*/ ctx[11]);
     			}
 
     			if (!current || dirty[0] & /*innerClass*/ 32768) {
@@ -61263,12 +61347,14 @@ for (const accordion of accordions) {
     			transition_in(if_block0);
     			transition_in(if_block2);
     			transition_in(if_block3);
+    			transition_in(if_block4);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(if_block0);
     			transition_out(if_block2);
     			transition_out(if_block3);
+    			transition_out(if_block4);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -61277,6 +61363,7 @@ for (const accordion of accordions) {
     			if (if_block1) if_block1.d();
     			if (if_block2) if_block2.d();
     			if (if_block3) if_block3.d();
+    			if (if_block4) if_block4.d();
     		}
     	};
 

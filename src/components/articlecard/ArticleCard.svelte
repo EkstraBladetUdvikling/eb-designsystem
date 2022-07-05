@@ -162,7 +162,8 @@
             </div>
           {/if}
           <h2
-            class="card-title {videoIcon && !media ? 'padding-l--r' : ''}"
+            class="card-title"
+            class:padding-l--r={videoIcon && !media}
             class:card-title--truncate={truncateTitle}
             style={titleStyle}
           >
