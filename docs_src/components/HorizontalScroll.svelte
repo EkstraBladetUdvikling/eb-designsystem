@@ -5,7 +5,12 @@
   import { ArticleCard, HorizontalScroll } from '../../src';
   import { writable } from 'svelte/store';
 
-  let articles = writable([rdmArticleData(640, 360), rdmArticleData(640, 360)]);
+  let articles = writable([
+    rdmArticleData(640, 360),
+    rdmArticleData(640, 360),
+    rdmArticleData(640, 360),
+    rdmArticleData(640, 360),
+  ]);
 
   const max = 20;
   let count = 2;

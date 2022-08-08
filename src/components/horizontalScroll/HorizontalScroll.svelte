@@ -34,8 +34,8 @@
   let listLength: number;
   let wrapClientWidth: number;
   let wrapLeft: number;
+  let wrapMaxLeft: number;
   let wrapRight: number;
-  let wrapScrollWidth: number;
   let currentBlock = 0;
   let blocks = [0];
   let blocking: BLOCKING = BLOCKING.enabled;
@@ -98,74 +98,6 @@
   }
 
   /**
-   * updateButtonsThroughScroll
-   *
-   * if the user scrolls horizontally in the list with mousewheel/trackpad we
-   * update the visibility of the buttons
-   *
-   * @param ev {WheelEvent}
-   */
-  function updateButtonsThroughScroll(ev?: WheelEvent) {
-    if (Math.abs(ev.deltaX) > Math.abs(ev.deltaY)) {
-      blocking = BLOCKING.disabled;
-      updateButtons();
-    }
-  }
-
-  function findPosition(dir: DIRECTION): number {
-    let position: number;
-    if (dir === DIRECTION.left) {
-      if (blocking === BLOCKING.enabled && blocks[currentBlock - 1]) {
-        currentBlock--;
-        position = blocks[currentBlock];
-      } else {
-        blocks = [0];
-        currentBlock = 0;
-        const el = findPrevChild();
-
-        position =
-          scrollItemContainer.scrollLeft -
-          (wrapClientWidth - (el.clientWidth - (wrapLeft - el.getBoundingClientRect().left)));
-      }
-    } else if (dir === DIRECTION.right) {
-      if (blocking === BLOCKING.enabled && blocks[currentBlock + 1]) {
-        currentBlock++;
-        position = blocks[currentBlock];
-      } else {
-        const el = findNextChild();
-        position = el.offsetLeft;
-
-        currentBlock++;
-        blocks.push(position);
-      }
-    }
-
-    return position;
-  }
-
-  /**
-   * Advance scroll to make next or previous elements visible
-   */
-  function scroll(dir: DIRECTION) {
-    let left = findPosition(dir);
-    if (dir === DIRECTION.right && wrapScrollWidth < scrollItemContainer.scrollLeft + left - wrapClientWidth) {
-      left = wrapScrollWidth;
-      updateDataSet(SCROLLPOS.end);
-    } else if (left <= 0) {
-      left = 0;
-      updateDataSet(SCROLLPOS.start);
-    } else {
-      updateDataSet(SCROLLPOS.neutral);
-    }
-
-    scrollItemContainer.scrollTo({
-      behavior: 'smooth',
-      left,
-      top: 0,
-    });
-  }
-
-  /**
    * Go backwards through children to find the first element on the left which
    * is partially visible/invisible to the user
    */
@@ -187,6 +119,94 @@
     }) as HTMLElement;
   }
 
+  /**
+   * updateButtonsThroughScroll
+   *
+   * if the user scrolls horizontally in the list with mousewheel/trackpad we
+   * update the visibility of the buttons
+   *
+   * @param ev {WheelEvent}
+   */
+  function updateButtonsThroughScroll(ev?: WheelEvent) {
+    if (Math.abs(ev.deltaX) > Math.abs(ev.deltaY)) {
+      blocking = BLOCKING.disabled;
+      updateButtons();
+    }
+  }
+
+  /**
+   * findPosition
+   *
+   * Find the position of the next element we need to show
+   *
+   * @param dir {DIRECTION}
+   */
+  function findPosition(dir: DIRECTION): number {
+    try {
+      let position: number;
+      if (dir === DIRECTION.left) {
+        if (blocking === BLOCKING.enabled && blocks[currentBlock - 1]) {
+          currentBlock--;
+          position = blocks[currentBlock];
+        } else {
+          blocks = [0];
+          currentBlock = 0;
+          const el = findPrevChild();
+          if (!el) {
+            console.warn('No prev child found, assume at start');
+            return 0;
+          }
+          position =
+            scrollItemContainer.scrollLeft -
+            (wrapClientWidth - (el.clientWidth - (wrapLeft - el.getBoundingClientRect().left)));
+        }
+      } else if (dir === DIRECTION.right) {
+        if (blocking === BLOCKING.enabled && blocks[currentBlock + 1]) {
+          currentBlock++;
+          position = blocks[currentBlock];
+        } else {
+          const el = findNextChild();
+          if (!el) {
+            console.warn('No next child found, assume at end');
+            return wrapMaxLeft;
+          }
+          position = el.offsetLeft;
+
+          currentBlock++;
+          blocks.push(position);
+        }
+      }
+
+      return position;
+    } catch (err) {
+      console.error('findPosition', err);
+      return -1;
+    }
+  }
+
+  /**
+   * Advance scroll to make next or previous elements visible
+   */
+  function scrollWithButton(dir: DIRECTION) {
+    let left = findPosition(dir);
+
+    if (dir === DIRECTION.right && wrapMaxLeft < left) {
+      left = wrapMaxLeft;
+      updateDataSet(SCROLLPOS.end);
+    } else if (left <= 0) {
+      left = 0;
+      updateDataSet(SCROLLPOS.start);
+    } else {
+      updateDataSet(SCROLLPOS.neutral);
+    }
+
+    scrollItemContainer.scrollTo({
+      behavior: 'smooth',
+      left,
+      top: 0,
+    });
+  }
+
   onMount(() => {
     scrollItemContainer.addEventListener(
       'wheel',
@@ -197,7 +217,7 @@
     wrapLeft = scrollItemContainer.getBoundingClientRect().left;
     wrapRight = scrollItemContainer.getBoundingClientRect().right;
     wrapClientWidth = scrollItemContainer.clientWidth;
-    wrapScrollWidth = scrollItemContainer.scrollWidth;
+    wrapMaxLeft = scrollItemContainer.scrollWidth - wrapClientWidth;
   });
 
   afterUpdate(() => {
@@ -216,6 +236,8 @@
     ).length;
     const maxLength = listLength - visibleChildren;
 
+    wrapMaxLeft = scrollItemContainer.scrollWidth - wrapClientWidth;
+
     if (maxLength) {
       // Some children not visible - enable scroling
       updateButtons();
@@ -229,14 +251,14 @@
 
 <div bind:this={scrollContainer} class={cssClass}>
   <Button
-    on:click={() => scroll(DIRECTION.left)}
+    on:click={() => scrollWithButton(DIRECTION.left)}
     className="horizontal-scroll-nav button-prev bg--white"
     extension="icon"
   >
     <Icon name="angleleft" width="14" />
   </Button>
   <Button
-    on:click={() => scroll(DIRECTION.right)}
+    on:click={() => scrollWithButton(DIRECTION.right)}
     className="horizontal-scroll-nav button-next bg--white"
     extension="icon"
   >
