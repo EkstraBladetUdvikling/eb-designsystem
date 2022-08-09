@@ -5,5 +5,5 @@
 <h1>Tooltip</h1>
 
 <Prism language="js">
-  {`import { XXX } from '@ekstra-bladet/designsystem/functions/splittitle';`}
+  {`import { tooltipRender } from '@ekstra-bladet/designsystem/svelte/functions/tooltipRender';`}
 </Prism>
