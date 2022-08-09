@@ -1,0 +1,60 @@
+<svg class="afsloring-swipe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 28">
+	<defs>
+		<clipPath id="afsloring-swipe-red-layer">
+			<polygon points="140,60 10,50 40,10, 180,10">
+				<animateTransform
+          attributeName="transform"
+					attributeType="XML"
+					type="translate"
+          dur="4s"
+          keyTimes="0;0.20;0.50;0.7;1"
+          values="70 -20; -130 -20; -130 -20; -280 -20; -280 -20;"
+          repeatCount="indefinite"
+        />
+			</polygon>
+		</clipPath>
+		<style>
+			.afsloring-swipe-cls-1 {
+			fill: #ff0;
+			}
+
+			.afsloring-swipe-cls-2 {
+			font-family: Arial-BoldMT, Arial;
+			font-size: 15px;
+			font-weight: 700;
+
+			isolation: isolate;
+			}
+
+			.afsloring-swipe-cls-3 {
+			letter-spacing: .02em;
+			}
+
+			.afsloring-swipe-rect-red {
+			fill: #f00;
+			}
+
+			#afsloring-swipe-red-layer {
+				transform: translate(100px, 0px);
+			}
+
+			.afsloring-swipe-text-red {
+			fill: #fff;
+			}
+		</style>
+	</defs>
+	<g>
+		<g width="110" height="28">
+			<rect class="afsloring-swipe-cls-1" width="110" height="28" rx="5" />
+			<text class="afsloring-swipe-cls-2" transform="translate(10.69 19.61)">
+				AFSLØRING
+			</text>
+		</g>
+		<g style="clip-path:url(#afsloring-swipe-red-layer); -webkit-clip-path:url(#afsloring-swipe-red-layer);" width="110" height="28">
+			<rect class="afsloring-swipe-cls-1 afsloring-swipe-rect-red" width="110" height="28" rx="5" />
+			<text class="afsloring-swipe-cls-2 afsloring-swipe-text-red" transform="translate(10.69 19.61)">
+				AFSLØRING
+			</text>
+		</g>
+	</g>
+</svg>

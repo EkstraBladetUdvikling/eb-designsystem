@@ -8,16 +8,15 @@
 <script lang="ts">
   export let className: string = undefined;
   export let name: GraphicTypes | IconTypes = undefined;
-  export let width: number | string = 14;
+  export let width: number | string = undefined;
   export let style: string = undefined;
 
-  const defaultStyle = `--icon-size: ${width}px;`;
-
-  $: style = style ? `${defaultStyle} ${style}` : defaultStyle;
+  $: cssWidth = width ? `--icon-size: ${width}px;` : '';
+  $: styleAttr = style ? `${cssWidth} ${style}` : cssWidth;
 
   let baseClass = className ? `icon-svg ${className}` : 'icon-svg';
 </script>
 
 {#if name}
-  <svelte:component this={IconSVGS[name.replace('-', '')]} {style} class={baseClass} />
+  <svelte:component this={IconSVGS[name.replace('-', '')]} style={styleAttr} class={baseClass} />
 {/if}

@@ -9,14 +9,16 @@ const postcssImport = require('postcss-import')({
 const discardDuplicates = require('postcss-discard-duplicates')();
 const discardUnused = require('postcss-discard-unused')();
 const mergeRules = require('postcss-merge-rules')();
+const postcssCustomMedia = require('postcss-custom-media');
+
 const runtimeArguments = process.argv.slice(2);
 
 const importFrom = [
   './node_modules/normalize.css/normalize.css',
   './node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-vars-rgb.css',
   './node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-css-vars.css',
-  './src/_variables.css',
-  './src/_custom-mediaqueries.css',
+  './css/_variables.css',
+  './css/_custom-mediaqueries.css',
 ];
 
 const readFolder = (folderName, filesToFind, array, lvl = 0) => {
@@ -55,7 +57,12 @@ const buildCSS = async (args) => {
 
     const cssFilesToRead = importFrom;
 
-    const postcssPlugins = [postcssImport];
+    const postcssPlugins = [
+      postcssImport,
+      postcssCustomMedia({
+        importFrom: './css/_custom-mediaqueries.css',
+      }),
+    ];
 
     const fileTypeToFind = '.css';
 
@@ -65,8 +72,8 @@ const buildCSS = async (args) => {
     readFolder(srcFolder, fileTypeToFind, cssFilesToRead);
     cssFilesToRead.push('./node_modules/@ekstra-bladet/eb-colors/dist/eb-colors-classes.css');
 
-    const outputFileName = build ? `eb-designsystem--${build}.css` : `eb-designsystem.css`;
-    const outputFiles = [`docs_src/css/${outputFileName}`, `dist/${outputFileName}`];
+    const outputFileName = build ? `designsystem--${build}.css` : `designsystem.css`;
+    const outputFiles = [`docs_src/css/${outputFileName}`, `css/${outputFileName}`];
 
     const readFileContent = [];
 

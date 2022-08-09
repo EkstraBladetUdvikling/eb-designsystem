@@ -114,7 +114,7 @@
     </div>
     <br />
     <Button
-      on:click={(e) => {
+      on:click={() => {
         $tooltipStore['test-anchor'].show();
       }}>Show tooltip</Button
     >

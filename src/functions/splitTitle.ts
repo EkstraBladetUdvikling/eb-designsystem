@@ -1,6 +1,6 @@
 type TDirection = 1 | -1;
 
-export function splitTitle(input: string, minLines: number = 2, maxLines: number = 4): string[] {
+export function splitTitle(input: string, minLines: number = 1, maxLines: number = 4): string[] {
   // Split word in array
   const wordsArray = input.split(' ');
   const arrayOfLengths = wordsArray.map((x) => x.length);

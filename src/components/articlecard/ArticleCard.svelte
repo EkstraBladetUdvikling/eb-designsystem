@@ -20,17 +20,20 @@
   export let cardType: TCardType = undefined;
   export let className: string = undefined;
   export let colorName: string = undefined;
+  export let premiumMarkerSize: 'small' = undefined;
   export let id: number = undefined;
   export let update: boolean = false;
   export let maxLines: number = undefined;
   export let media: Partial<IMediaOptions> = undefined;
   export let premium: boolean = false;
   export let published: string = undefined;
+  export let read: boolean | string | number = null;
   export let saved: boolean = undefined;
   export let section: string = undefined;
   export let style: string = '';
   export let truncateTitle: boolean = false;
   export let url: string = undefined;
+  export let videoIcon: boolean = false;
   export let width: string = '100%';
 
   const dispatch = createEventDispatcher();
@@ -62,10 +65,13 @@
   }
 
   const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
+  const readClass = read ? 'articlecard--read' : '';
 
-  $: styleProp = `${style}; --color--list-hover: var(--color--${colorName}); --fgcolor--list-hover: var(--fgcolor--${colorName}); --card-width: ${width};`;
+  $: styleProp = `${style}; --color--list: var(--color--${
+    breaking ? colorNames.breaking : colorName
+  }); --fgcolor--list: var(--fgcolor--${breaking ? colorNames.breaking : colorName}); --card-width: ${width};`;
 
-  $: cssClass = className ? `${className} ${baseClass}` : baseClass;
+  $: cssClass = className ? `${className} ${baseClass} ${readClass}` : `${baseClass} ${readClass}`;
 
   $: mediaCssClass = media && media.className ? `${media.className} card-media` : 'card-media';
 
@@ -80,6 +86,11 @@
 {#if loading || (!loading && title)}
   <Card {url} className={cssClass} style={styleProp} data-breaking={breaking} on:click>
     <div class={innerClass}>
+      {#if premium}
+        <div class="premium-dogear {premiumMarkerSize ? `premium-dogear--${premiumMarkerSize}` : ''}">
+          <Icon className="color--white" name="ebpluswhite" />
+        </div>
+      {/if}
       {#if loading}
         <div class="card-media">
           <div class="card-image bg--graa4" style={loadingStyle} />
@@ -101,36 +112,18 @@
               UPDATE
             </Badge>
           {/if}
+          {#if videoIcon}
+            <div class="video-icon">
+              <Icon className="color--white" name="videographic" width="25" />
+            </div>
+          {/if}
           <img alt={title} class="card-image" src={media.src} height={media.height} width={media.width} />
         </div>
       {/if}
       <div class="card-content-wrapper">
-        <div class="card-icon flex flex-justify--end">
-          {#if premium}
-            <Icon name="ebpluscirclesolid" width="20" />
-          {/if}
-        </div>
         <div class="card-content">
-          {#if saved !== undefined}
-            <Toggler className="card-save-toggle" defaultState={saved} on:toggle={toggleSave}>
-              <slot slot="on">
-                <Icon
-                  name="starsolid"
-                  width="18"
-                  style="color: var(--fgcolor--{breaking ? colorNames.breaking : colorName});"
-                />
-              </slot>
-              <slot slot="off">
-                <Icon
-                  name="star"
-                  width="18"
-                  style="color: var(--fgcolor--{breaking ? colorNames.breaking : colorName});"
-                />
-              </slot>
-            </Toggler>
-          {/if}
           {#if section || published}
-            <div class="card-meta flex fontsize-xxsmall padding-s--b">
+            <div class="card-meta flex flex-wrap--wrap fontsize-xxsmall">
               {#if section}
                 <div class="card-meta-item">
                   <span class="flex flex-justify--center">
@@ -145,9 +138,37 @@
                   <span class="padding-s--l">{parseDate(published)}</span>
                 </div>
               {/if}
+              {#if saved !== undefined}
+                <Toggler
+                  className="card-meta-item padding-m--r padding-s--b"
+                  defaultState={saved}
+                  on:toggle={toggleSave}
+                >
+                  <slot slot="on">
+                    <Icon name="bookmarksolid" style="color: var(--fgcolor--list);" width={12} />
+                    <span class="padding-s--l" style="color: var(--fgcolor--list);">Gemt</span>
+                  </slot>
+                  <slot slot="off">
+                    <Icon name="bookmark" style="color: var(--fgcolor--list);" width={12} />
+                    <span class="padding-s--l" style="color: var(--fgcolor--list);">Gem</span>
+                  </slot>
+                </Toggler>
+              {/if}
             </div>
           {/if}
-          <h2 class="card-title {truncateTitle ? 'card-title--truncated' : ''}" style={titleStyle}>{title}</h2>
+          {#if videoIcon && !media}
+            <div class="video-icon">
+              <Icon className="color--white" name="videographic" width="20" />
+            </div>
+          {/if}
+          <h2
+            class="card-title"
+            class:padding-l--r={videoIcon && !media}
+            class:card-title--truncate={truncateTitle}
+            style={titleStyle}
+          >
+            {title}
+          </h2>
         </div>
       </div>
     </div>

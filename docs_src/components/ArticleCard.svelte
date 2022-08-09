@@ -59,6 +59,12 @@
         <td />
       </tr>
       <tr>
+        <td>videoIcon</td>
+        <td>boolean</td>
+        <td>false</td>
+        <td>Shows a videoPlay icon on the articleCard inside the image container</td>
+      </tr>
+      <tr>
         <td>loading</td>
         <td>boolean</td>
         <td>false</td>
@@ -75,6 +81,12 @@
         <td>IMediaOptions</td>
         <td />
         <td>Adds a image, see <Badge type="secondary" extension="small">Media</Badge> props below for details</td>
+      </tr>
+      <tr>
+        <td>read</td>
+        <td>boolean</td>
+        <td />
+        <td>Styles the card to looks like it has been read</td>
       </tr>
       <tr>
         <td>section</td>
@@ -150,6 +162,14 @@
   <Prism language="html">
     {`<ArticleCard className="small-media" {...article} />
 <ArticleCard className="small-media--reverse" {...article} />`}
+  </Prism>
+
+  <h3>Small-media read article</h3>
+
+  <ArticleCard className="margin-m--b" cardType="small-media" read={true} {...rdmArticleData(250, 120)} />
+
+  <Prism language="html">
+    {`<ArticleCard className="small-media" read={true} {...article} />`}
   </Prism>
 
   <h3>Loading placeholder</h3>

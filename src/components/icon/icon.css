@@ -1,11 +1,14 @@
 :root {
   --icon-size: 14px;
+  --icon-fill: currentColor;
+  --ebds-figcaption-bg: var(--color--white);
 }
+
 .icon-svg {
   width: var(--icon-size);
   height: var(--icon-size);
 
-  fill: currentColor;
+  fill: var(--icon-fill);
 }
 
 .icon-svg--small {

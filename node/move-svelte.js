@@ -19,7 +19,7 @@ const readFolder = (folderName, filesToFind, array, lvl = 0) => {
   });
 };
 
-const distFolder = 'dist';
+const distFolder = 'svelte';
 const filesToMove = [];
 const filesToFind = ['.svelte', '.svg'];
 readFolder('./src', filesToFind, filesToMove);

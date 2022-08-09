@@ -3,3 +3,6 @@ node_modules
 .vscode
 docs/build/bundle.js.map
 dist
+svelte
+snippets
+css/designsystem.css
