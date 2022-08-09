@@ -1,7 +1,7 @@
 <script lang="ts">
   import { afterUpdate, onMount } from 'svelte';
+  import { HorizontalScrollHandler, SCROLLDIRECTION } from '../../functions/horizontalscroll';
 
-  import { throttle } from '../../functions/throttle';
   import Button from '../button/Button.svelte';
   import Icon from '../icon/Icon.svelte';
 
@@ -9,241 +9,17 @@
 
   let baseClass = `horizontal-scroll-container position-relative`;
 
-  enum BLOCKING {
-    'disabled',
-    'enabled',
-  }
-
-  enum DIRECTION {
-    'left',
-    'right',
-  }
-
-  enum SCROLLPOS {
-    'disabled',
-    'end',
-    'neutral',
-    'start',
-    'unset',
-  }
-
-  let children: HTMLCollection;
-  let currentState = SCROLLPOS.unset;
   let scrollContainer: HTMLDivElement;
   let scrollItemContainer: HTMLDivElement;
-  let listLength: number;
-  let wrapClientWidth: number;
-  let wrapLeft: number;
-  let wrapMaxLeft: number;
-  let wrapRight: number;
-  let currentBlock = 0;
-  let blocks = [0];
-  let blocking: BLOCKING = BLOCKING.enabled;
 
-  /**
-   * updateDataSet
-   *
-   * update the visibility of buttons through data attributes
-   *
-   * @param pos {SCROLLPOS}
-   */
-  function updateDataSet(pos: SCROLLPOS) {
-    if (currentState === pos) return;
-    switch (pos) {
-      case SCROLLPOS.neutral:
-        scrollContainer.dataset.atstart = 'false';
-        scrollContainer.dataset.atend = 'false';
-        break;
-      case SCROLLPOS.end:
-        scrollContainer.dataset.atstart = 'false';
-        scrollContainer.dataset.atend = 'true';
-        break;
-      case SCROLLPOS.start:
-        scrollContainer.dataset.atstart = 'true';
-        scrollContainer.dataset.atend = 'false';
-        break;
-      case SCROLLPOS.disabled:
-        scrollContainer.dataset.atstart = 'true';
-        scrollContainer.dataset.atend = 'true';
-        break;
-    }
-    currentState = pos;
-  }
-
-  /**
-   * updateButtons
-   *
-   * calculate where in the list we are when the user scrolls
-   */
-  function updateButtons() {
-    const childLeft = children[0].getBoundingClientRect().left;
-    const childRight = children[listLength - 1].getBoundingClientRect().right;
-
-    const childrenHiddenLeft = childLeft < wrapLeft;
-    const childrenHiddenRight = childRight > wrapRight;
-
-    let dir: SCROLLPOS;
-
-    if (childrenHiddenLeft && childrenHiddenRight) {
-      dir = SCROLLPOS.neutral;
-    } else if (childrenHiddenLeft) {
-      dir = SCROLLPOS.end;
-    } else if (childrenHiddenRight) {
-      dir = SCROLLPOS.start;
-    } else {
-      dir = SCROLLPOS.disabled;
-    }
-
-    updateDataSet(dir);
-  }
-
-  /**
-   * Go backwards through children to find the first element on the left which
-   * is partially visible/invisible to the user
-   */
-  function findPrevChild(): HTMLElement {
-    return Array.from(children)
-      .reverse()
-      .find((child) => {
-        return child.getBoundingClientRect().left < wrapLeft;
-      }) as HTMLElement;
-  }
-
-  /**
-   * Go through children to find the first element on the right which is
-   * partially visible/invisible to the user
-   */
-  function findNextChild(): HTMLElement {
-    return Array.from(children).find((child) => {
-      return child.getBoundingClientRect().right > wrapRight;
-    }) as HTMLElement;
-  }
-
-  /**
-   * updateButtonsThroughScroll
-   *
-   * if the user scrolls horizontally in the list with mousewheel/trackpad we
-   * update the visibility of the buttons
-   *
-   * @param ev {WheelEvent}
-   */
-  function updateButtonsThroughScroll(ev?: WheelEvent) {
-    if (Math.abs(ev.deltaX) > Math.abs(ev.deltaY)) {
-      blocking = BLOCKING.disabled;
-      updateButtons();
-    }
-  }
-
-  /**
-   * findPosition
-   *
-   * Find the position of the next element we need to show
-   *
-   * @param dir {DIRECTION}
-   */
-  function findPosition(dir: DIRECTION): number {
-    try {
-      let position: number;
-      if (dir === DIRECTION.left) {
-        if (blocking === BLOCKING.enabled && blocks[currentBlock - 1]) {
-          currentBlock--;
-          position = blocks[currentBlock];
-        } else {
-          blocks = [0];
-          currentBlock = 0;
-          const el = findPrevChild();
-          if (!el) {
-            console.warn('No prev child found, assume at start');
-            return 0;
-          }
-          position =
-            scrollItemContainer.scrollLeft -
-            (wrapClientWidth - (el.clientWidth - (wrapLeft - el.getBoundingClientRect().left)));
-        }
-      } else if (dir === DIRECTION.right) {
-        if (blocking === BLOCKING.enabled && blocks[currentBlock + 1]) {
-          currentBlock++;
-          position = blocks[currentBlock];
-        } else {
-          const el = findNextChild();
-          if (!el) {
-            console.warn('No next child found, assume at end');
-            return wrapMaxLeft;
-          }
-          position = el.offsetLeft;
-
-          currentBlock++;
-          blocks.push(position);
-        }
-      }
-
-      return position;
-    } catch (err) {
-      console.error('findPosition', err);
-      return -1;
-    }
-  }
-
-  /**
-   * Advance scroll to make next or previous elements visible
-   */
-  function scrollWithButton(dir: DIRECTION) {
-    let left = findPosition(dir);
-
-    if (dir === DIRECTION.right && wrapMaxLeft < left) {
-      left = wrapMaxLeft;
-      updateDataSet(SCROLLPOS.end);
-    } else if (left <= 0) {
-      left = 0;
-      updateDataSet(SCROLLPOS.start);
-    } else {
-      updateDataSet(SCROLLPOS.neutral);
-    }
-
-    scrollItemContainer.scrollTo({
-      behavior: 'smooth',
-      left,
-      top: 0,
-    });
-  }
+  const horizontalScrollHandler = new HorizontalScrollHandler();
 
   onMount(() => {
-    scrollItemContainer.addEventListener(
-      'wheel',
-      throttle((data: WheelEvent) => {
-        updateButtonsThroughScroll(data);
-      }, 150)
-    );
-    wrapLeft = scrollItemContainer.getBoundingClientRect().left;
-    wrapRight = scrollItemContainer.getBoundingClientRect().right;
-    wrapClientWidth = scrollItemContainer.clientWidth;
-    wrapMaxLeft = scrollItemContainer.scrollWidth - wrapClientWidth;
+    horizontalScrollHandler.init(scrollItemContainer, scrollContainer);
   });
 
   afterUpdate(() => {
-    if (listLength === scrollItemContainer.children.length) return;
-    children = scrollItemContainer.children;
-    listLength = children.length;
-    const containerBBox = scrollContainer.getBoundingClientRect();
-
-    /**
-     * Find how many visible elements we have
-     */
-    const visibleChildren = Array.from(children).filter(
-      (child: HTMLElement) =>
-        child.getBoundingClientRect().left >= containerBBox.left &&
-        child.getBoundingClientRect().right <= containerBBox.right
-    ).length;
-    const maxLength = listLength - visibleChildren;
-
-    wrapMaxLeft = scrollItemContainer.scrollWidth - wrapClientWidth;
-
-    if (maxLength) {
-      // Some children not visible - enable scroling
-      updateButtons();
-    } else {
-      updateDataSet(SCROLLPOS.disabled);
-    }
+    horizontalScrollHandler.update();
   });
 
   $: cssClass = className ? `${className} ${baseClass}` : baseClass;
@@ -251,14 +27,14 @@
 
 <div bind:this={scrollContainer} class={cssClass}>
   <Button
-    on:click={() => scrollWithButton(DIRECTION.left)}
+    on:click={() => horizontalScrollHandler.scrollWithButton(SCROLLDIRECTION.left)}
     className="horizontal-scroll-nav button-prev bg--white"
     extension="icon"
   >
     <Icon name="angleleft" width="14" />
   </Button>
   <Button
-    on:click={() => scrollWithButton(DIRECTION.right)}
+    on:click={() => horizontalScrollHandler.scrollWithButton(SCROLLDIRECTION.right)}
     className="horizontal-scroll-nav button-next bg--white"
     extension="icon"
   >

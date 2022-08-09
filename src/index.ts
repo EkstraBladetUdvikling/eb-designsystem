@@ -28,3 +28,5 @@ export { splitTitle } from './functions/splitTitle';
 export { throttle } from './functions/throttle';
 export { tooltipRender } from './functions/tooltipRender';
 export { tooltipStore } from './functions/tooltipStore';
+
+export { HorizontalScrollHandler, SCROLLDIRECTION } from './functions/horizontalscroll';
