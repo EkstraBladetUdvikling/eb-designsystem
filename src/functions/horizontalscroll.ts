@@ -32,6 +32,12 @@ export class HorizontalScrollHandler {
   private blocks = [0];
   private blocking: BLOCKING = BLOCKING.enabled;
 
+  /**
+   *
+   * @param scrollItemContainer {HTMLDivElement}
+   * @param scrollContainer {HTMLDivElement}
+   * @returns {void}
+   */
   public init(scrollItemContainer: HTMLDivElement, scrollContainer: HTMLDivElement): void {
     this.scrollItemContainer = scrollItemContainer;
     this.scrollContainer = scrollContainer;
@@ -49,6 +55,37 @@ export class HorizontalScrollHandler {
     this.update();
   }
 
+  /**
+   *
+   * @param dir {SCROLLDIRECTION}
+   * @returns {void}
+   *
+   * Advance scroll to make next or previous elements visible
+   */
+  public scrollWithButton(dir: SCROLLDIRECTION): void {
+    let left = this.findPosition(dir);
+
+    if (dir === SCROLLDIRECTION.right && this.wrapMaxLeft < left) {
+      left = this.wrapMaxLeft;
+      this.updateDataSet(SCROLLPOS.end);
+    } else if (left <= 0) {
+      left = 0;
+      this.updateDataSet(SCROLLPOS.start);
+    } else {
+      this.updateDataSet(SCROLLPOS.neutral);
+    }
+
+    this.scrollItemContainer.scrollTo({
+      behavior: 'smooth',
+      left,
+      top: 0,
+    });
+  }
+
+  /**
+   *
+   * @returns {void}
+   */
   public update(): void {
     if (this.listLength === this.scrollItemContainer.children.length) return;
 
@@ -75,29 +112,6 @@ export class HorizontalScrollHandler {
     } else {
       this.updateDataSet(SCROLLPOS.disabled);
     }
-  }
-
-  /**
-   * Advance scroll to make next or previous elements visible
-   */
-  public scrollWithButton(dir: SCROLLDIRECTION) {
-    let left = this.findPosition(dir);
-
-    if (dir === SCROLLDIRECTION.right && this.wrapMaxLeft < left) {
-      left = this.wrapMaxLeft;
-      this.updateDataSet(SCROLLPOS.end);
-    } else if (left <= 0) {
-      left = 0;
-      this.updateDataSet(SCROLLPOS.start);
-    } else {
-      this.updateDataSet(SCROLLPOS.neutral);
-    }
-
-    this.scrollItemContainer.scrollTo({
-      behavior: 'smooth',
-      left,
-      top: 0,
-    });
   }
 
   /**
