@@ -17421,7 +17421,13 @@ var app = (function () {
     	}
     }
 
-    function parseDate$1(datetime) {
+    /**
+     * timePassedSince
+     *
+     * @param datetime {string}
+     * @returns {string}
+     */
+    function timePassedSince$1(datetime) {
         const monthNames = ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'];
         const inputdate = new Date(datetime); // UTC-time from server (Z)
         const now = new Date();
@@ -19820,7 +19826,7 @@ var app = (function () {
     			? `premium-dogear--${/*premiumMarkerSize*/ ctx[4]}`
     			: ''));
 
-    			add_location(div, file$33, 67, 8, 2478);
+    			add_location(div, file$33, 67, 8, 2490);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -19871,9 +19877,9 @@ var app = (function () {
     			div0 = element("div");
     			attr_dev(div0, "class", "card-image bg--graa4");
     			attr_dev(div0, "style", /*loadingStyle*/ ctx[14]);
-    			add_location(div0, file$33, 73, 10, 2726);
+    			add_location(div0, file$33, 73, 10, 2738);
     			attr_dev(div1, "class", "card-media");
-    			add_location(div1, file$33, 72, 8, 2691);
+    			add_location(div1, file$33, 72, 8, 2703);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -19926,9 +19932,9 @@ var app = (function () {
     			if (!src_url_equal(img.src, img_src_value = /*media*/ ctx[6].src)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "height", img_height_value = /*media*/ ctx[6].height);
     			attr_dev(img, "width", img_width_value = /*media*/ ctx[6].width);
-    			add_location(img, file$33, 97, 10, 3564);
+    			add_location(img, file$33, 97, 10, 3576);
     			attr_dev(div, "class", /*mediaCssClass*/ ctx[16]);
-    			add_location(div, file$33, 77, 8, 2837);
+    			add_location(div, file$33, 77, 8, 2849);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -20167,7 +20173,7 @@ var app = (function () {
     			div = element("div");
     			create_component(icon.$$.fragment);
     			attr_dev(div, "class", "video-icon");
-    			add_location(div, file$33, 93, 12, 3415);
+    			add_location(div, file$33, 93, 12, 3427);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -20219,7 +20225,7 @@ var app = (function () {
     			t1 = space();
     			if (if_block2) if_block2.c();
     			attr_dev(div, "class", "card-meta flex flex-wrap--wrap fontsize-xxsmall");
-    			add_location(div, file$33, 103, 12, 3813);
+    			add_location(div, file$33, 103, 12, 3825);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -20356,11 +20362,11 @@ var app = (function () {
     			span0 = element("span");
     			t1 = text(/*section*/ ctx[10]);
     			attr_dev(span0, "class", "padding-s--l");
-    			add_location(span0, file$33, 108, 20, 4078);
+    			add_location(span0, file$33, 108, 20, 4090);
     			attr_dev(span1, "class", "flex flex-justify--center");
-    			add_location(span1, file$33, 106, 18, 3966);
+    			add_location(span1, file$33, 106, 18, 3978);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$33, 105, 16, 3919);
+    			add_location(div, file$33, 105, 16, 3931);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -20406,7 +20412,7 @@ var app = (function () {
     	let icon;
     	let t0;
     	let span;
-    	let t1_value = parseDate$1(/*published*/ ctx[8]) + "";
+    	let t1_value = timePassedSince$1(/*published*/ ctx[8]) + "";
     	let t1;
     	let current;
 
@@ -20423,9 +20429,9 @@ var app = (function () {
     			span = element("span");
     			t1 = text(t1_value);
     			attr_dev(span, "class", "padding-s--l");
-    			add_location(span, file$33, 115, 18, 4335);
+    			add_location(span, file$33, 115, 18, 4347);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$33, 113, 16, 4237);
+    			add_location(div, file$33, 113, 16, 4249);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -20436,7 +20442,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty[0] & /*published*/ 256) && t1_value !== (t1_value = parseDate$1(/*published*/ ctx[8]) + "")) set_data_dev(t1, t1_value);
+    			if ((!current || dirty[0] & /*published*/ 256) && t1_value !== (t1_value = timePassedSince$1(/*published*/ ctx[8]) + "")) set_data_dev(t1, t1_value);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -20551,7 +20557,7 @@ var app = (function () {
     			span.textContent = "Gemt";
     			attr_dev(span, "class", "padding-s--l");
     			set_style(span, "color", "var(--fgcolor--list)");
-    			add_location(span, file$33, 126, 20, 4822);
+    			add_location(span, file$33, 126, 20, 4840);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -20670,7 +20676,7 @@ var app = (function () {
     			span.textContent = "Gem";
     			attr_dev(span, "class", "padding-s--l");
     			set_style(span, "color", "var(--fgcolor--list)");
-    			add_location(span, file$33, 130, 20, 5073);
+    			add_location(span, file$33, 130, 20, 5091);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -20785,7 +20791,7 @@ var app = (function () {
     			div = element("div");
     			create_component(icon.$$.fragment);
     			attr_dev(div, "class", "video-icon");
-    			add_location(div, file$33, 137, 12, 5304);
+    			add_location(div, file$33, 137, 12, 5322);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -20858,13 +20864,13 @@ var app = (function () {
     			attr_dev(h2, "style", /*titleStyle*/ ctx[19]);
     			toggle_class(h2, "padding-l--r", /*videoIcon*/ ctx[13] && !/*media*/ ctx[6]);
     			toggle_class(h2, "card-title--truncate", /*truncateTitle*/ ctx[11]);
-    			add_location(h2, file$33, 141, 10, 5453);
+    			add_location(h2, file$33, 141, 10, 5471);
     			attr_dev(div0, "class", "card-content");
-    			add_location(div0, file$33, 101, 8, 3737);
+    			add_location(div0, file$33, 101, 8, 3749);
     			attr_dev(div1, "class", "card-content-wrapper");
-    			add_location(div1, file$33, 100, 6, 3694);
+    			add_location(div1, file$33, 100, 6, 3706);
     			attr_dev(div2, "class", /*innerClass*/ ctx[15]);
-    			add_location(div2, file$33, 65, 4, 2425);
+    			add_location(div2, file$33, 65, 4, 2437);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -21226,7 +21232,7 @@ var app = (function () {
 
     	$$self.$capture_state = () => ({
     		createEventDispatcher,
-    		parseDate: parseDate$1,
+    		timePassedSince: timePassedSince$1,
     		Badge: Badge$2,
     		Card: Card$2,
     		Icon: Icon$2,
@@ -57755,11 +57761,17 @@ for (const accordion of accordions) {
 
     var require$$0$3 = /*@__PURE__*/getAugmentedNamespace(Accordion$1);
 
-    var parsedate = {};
+    var timepassedsince = {};
 
-    Object.defineProperty(parsedate, "__esModule", { value: true });
-    parsedate.populateDates = parseDate_1 = parsedate.parseDate = void 0;
-    function parseDate(datetime) {
+    Object.defineProperty(timepassedsince, "__esModule", { value: true });
+    var timePassedSince_1 = timepassedsince.timePassedSince = void 0;
+    /**
+     * timePassedSince
+     *
+     * @param datetime {string}
+     * @returns {string}
+     */
+    function timePassedSince(datetime) {
         const monthNames = ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'];
         const inputdate = new Date(datetime); // UTC-time from server (Z)
         const now = new Date();
@@ -57794,17 +57806,7 @@ for (const accordion of accordions) {
         }
         return output;
     }
-    var parseDate_1 = parsedate.parseDate = parseDate;
-    function populateDates() {
-        const dateElems = document.querySelectorAll('span[data-timestamp]');
-        dateElems.forEach((dateElem) => {
-            const formattedDate = parseDate(dateElem.dataset.timestamp);
-            if (formattedDate) {
-                dateElem.innerText = parseDate(dateElem.dataset.timestamp);
-            }
-        });
-    }
-    parsedate.populateDates = populateDates;
+    timePassedSince_1 = timepassedsince.timePassedSince = timePassedSince;
 
     /* svelte/components/badge/Badge.svelte generated by Svelte v3.49.0 */
 
@@ -60175,7 +60177,7 @@ for (const accordion of accordions) {
     			? `premium-dogear--${/*premiumMarkerSize*/ ctx[4]}`
     			: ''));
 
-    			add_location(div, file$W, 67, 8, 2478);
+    			add_location(div, file$W, 67, 8, 2490);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -60226,9 +60228,9 @@ for (const accordion of accordions) {
     			div0 = element("div");
     			attr_dev(div0, "class", "card-image bg--graa4");
     			attr_dev(div0, "style", /*loadingStyle*/ ctx[14]);
-    			add_location(div0, file$W, 73, 10, 2726);
+    			add_location(div0, file$W, 73, 10, 2738);
     			attr_dev(div1, "class", "card-media");
-    			add_location(div1, file$W, 72, 8, 2691);
+    			add_location(div1, file$W, 72, 8, 2703);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -60281,9 +60283,9 @@ for (const accordion of accordions) {
     			if (!src_url_equal(img.src, img_src_value = /*media*/ ctx[6].src)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "height", img_height_value = /*media*/ ctx[6].height);
     			attr_dev(img, "width", img_width_value = /*media*/ ctx[6].width);
-    			add_location(img, file$W, 97, 10, 3564);
+    			add_location(img, file$W, 97, 10, 3576);
     			attr_dev(div, "class", /*mediaCssClass*/ ctx[16]);
-    			add_location(div, file$W, 77, 8, 2837);
+    			add_location(div, file$W, 77, 8, 2849);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -60522,7 +60524,7 @@ for (const accordion of accordions) {
     			div = element("div");
     			create_component(icon.$$.fragment);
     			attr_dev(div, "class", "video-icon");
-    			add_location(div, file$W, 93, 12, 3415);
+    			add_location(div, file$W, 93, 12, 3427);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -60574,7 +60576,7 @@ for (const accordion of accordions) {
     			t1 = space();
     			if (if_block2) if_block2.c();
     			attr_dev(div, "class", "card-meta flex flex-wrap--wrap fontsize-xxsmall");
-    			add_location(div, file$W, 103, 12, 3813);
+    			add_location(div, file$W, 103, 12, 3825);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -60711,11 +60713,11 @@ for (const accordion of accordions) {
     			span0 = element("span");
     			t1 = text(/*section*/ ctx[10]);
     			attr_dev(span0, "class", "padding-s--l");
-    			add_location(span0, file$W, 108, 20, 4078);
+    			add_location(span0, file$W, 108, 20, 4090);
     			attr_dev(span1, "class", "flex flex-justify--center");
-    			add_location(span1, file$W, 106, 18, 3966);
+    			add_location(span1, file$W, 106, 18, 3978);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$W, 105, 16, 3919);
+    			add_location(div, file$W, 105, 16, 3931);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -60761,7 +60763,7 @@ for (const accordion of accordions) {
     	let icon;
     	let t0;
     	let span;
-    	let t1_value = parseDate_1(/*published*/ ctx[8]) + "";
+    	let t1_value = timePassedSince_1(/*published*/ ctx[8]) + "";
     	let t1;
     	let current;
 
@@ -60778,9 +60780,9 @@ for (const accordion of accordions) {
     			span = element("span");
     			t1 = text(t1_value);
     			attr_dev(span, "class", "padding-s--l");
-    			add_location(span, file$W, 115, 18, 4335);
+    			add_location(span, file$W, 115, 18, 4347);
     			attr_dev(div, "class", "card-meta-item");
-    			add_location(div, file$W, 113, 16, 4237);
+    			add_location(div, file$W, 113, 16, 4249);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -60791,7 +60793,7 @@ for (const accordion of accordions) {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty[0] & /*published*/ 256) && t1_value !== (t1_value = parseDate_1(/*published*/ ctx[8]) + "")) set_data_dev(t1, t1_value);
+    			if ((!current || dirty[0] & /*published*/ 256) && t1_value !== (t1_value = timePassedSince_1(/*published*/ ctx[8]) + "")) set_data_dev(t1, t1_value);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -60906,7 +60908,7 @@ for (const accordion of accordions) {
     			span.textContent = "Gemt";
     			attr_dev(span, "class", "padding-s--l");
     			set_style(span, "color", "var(--fgcolor--list)");
-    			add_location(span, file$W, 126, 20, 4822);
+    			add_location(span, file$W, 126, 20, 4840);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -61025,7 +61027,7 @@ for (const accordion of accordions) {
     			span.textContent = "Gem";
     			attr_dev(span, "class", "padding-s--l");
     			set_style(span, "color", "var(--fgcolor--list)");
-    			add_location(span, file$W, 130, 20, 5073);
+    			add_location(span, file$W, 130, 20, 5091);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -61140,7 +61142,7 @@ for (const accordion of accordions) {
     			div = element("div");
     			create_component(icon.$$.fragment);
     			attr_dev(div, "class", "video-icon");
-    			add_location(div, file$W, 137, 12, 5304);
+    			add_location(div, file$W, 137, 12, 5322);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -61213,13 +61215,13 @@ for (const accordion of accordions) {
     			attr_dev(h2, "style", /*titleStyle*/ ctx[19]);
     			toggle_class(h2, "padding-l--r", /*videoIcon*/ ctx[13] && !/*media*/ ctx[6]);
     			toggle_class(h2, "card-title--truncate", /*truncateTitle*/ ctx[11]);
-    			add_location(h2, file$W, 141, 10, 5453);
+    			add_location(h2, file$W, 141, 10, 5471);
     			attr_dev(div0, "class", "card-content");
-    			add_location(div0, file$W, 101, 8, 3737);
+    			add_location(div0, file$W, 101, 8, 3749);
     			attr_dev(div1, "class", "card-content-wrapper");
-    			add_location(div1, file$W, 100, 6, 3694);
+    			add_location(div1, file$W, 100, 6, 3706);
     			attr_dev(div2, "class", /*innerClass*/ ctx[15]);
-    			add_location(div2, file$W, 65, 4, 2425);
+    			add_location(div2, file$W, 65, 4, 2437);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -61581,7 +61583,7 @@ for (const accordion of accordions) {
 
     	$$self.$capture_state = () => ({
     		createEventDispatcher,
-    		parseDate: parseDate_1,
+    		timePassedSince: timePassedSince_1,
     		Badge,
     		Card,
     		Icon,
@@ -61978,6 +61980,12 @@ for (const accordion of accordions) {
     	        this.blocks = [0];
     	        this.blocking = BLOCKING.enabled;
     	    }
+    	    /**
+    	     *
+    	     * @param scrollItemContainer {HTMLDivElement}
+    	     * @param scrollContainer {HTMLDivElement}
+    	     * @returns {void}
+    	     */
     	    init(scrollItemContainer, scrollContainer) {
     	        this.scrollItemContainer = scrollItemContainer;
     	        this.scrollContainer = scrollContainer;
@@ -61989,28 +61997,11 @@ for (const accordion of accordions) {
     	        this.wrapClientWidth = scrollItemContainer.clientWidth;
     	        this.update();
     	    }
-    	    update() {
-    	        if (this.listLength === this.scrollItemContainer.children.length)
-    	            return;
-    	        this.children = this.scrollItemContainer.children;
-    	        this.listLength = this.children.length;
-    	        const containerBBox = this.scrollContainer.getBoundingClientRect();
-    	        /**
-    	         * Find how many visible elements we have
-    	         */
-    	        const visibleChildren = Array.from(this.children).filter((child) => child.getBoundingClientRect().left >= containerBBox.left &&
-    	            child.getBoundingClientRect().right <= containerBBox.right).length;
-    	        const maxLength = this.listLength - visibleChildren;
-    	        this.wrapMaxLeft = this.scrollItemContainer.scrollWidth - this.wrapClientWidth;
-    	        if (maxLength) {
-    	            // Some children not visible - enable scroling
-    	            this.updateButtons();
-    	        }
-    	        else {
-    	            this.updateDataSet(SCROLLPOS.disabled);
-    	        }
-    	    }
     	    /**
+    	     *
+    	     * @param dir {SCROLLDIRECTION}
+    	     * @returns {void}
+    	     *
     	     * Advance scroll to make next or previous elements visible
     	     */
     	    scrollWithButton(dir) {
@@ -62031,6 +62022,31 @@ for (const accordion of accordions) {
     	            left,
     	            top: 0,
     	        });
+    	    }
+    	    /**
+    	     *
+    	     * @returns {void}
+    	     */
+    	    update() {
+    	        if (this.listLength === this.scrollItemContainer.children.length)
+    	            return;
+    	        this.children = this.scrollItemContainer.children;
+    	        this.listLength = this.children.length;
+    	        const containerBBox = this.scrollContainer.getBoundingClientRect();
+    	        /**
+    	         * Find how many visible elements we have
+    	         */
+    	        const visibleChildren = Array.from(this.children).filter((child) => child.getBoundingClientRect().left >= containerBBox.left &&
+    	            child.getBoundingClientRect().right <= containerBBox.right).length;
+    	        const maxLength = this.listLength - visibleChildren;
+    	        this.wrapMaxLeft = this.scrollItemContainer.scrollWidth - this.wrapClientWidth;
+    	        if (maxLength) {
+    	            // Some children not visible - enable scroling
+    	            this.updateButtons();
+    	        }
+    	        else {
+    	            this.updateDataSet(SCROLLPOS.disabled);
+    	        }
     	    }
     	    /**
     	     * updateDataSet
@@ -69399,7 +69415,7 @@ for (const accordion of accordions) {
 
     (function (exports) {
     	Object.defineProperty(exports, "__esModule", { value: true });
-    	exports.SCROLLDIRECTION = exports.HorizontalScrollHandler = exports.tooltipStore = exports.tooltipRender = exports.throttle = exports.splitTitle = exports.splitNfitTitle = exports.parseDate = exports.tooltipAction = exports.Toggler = exports.TextInput = exports.TextArea = exports.Tabs = exports.TabList = exports.TabContent = exports.Tab = exports.Spinner = exports.Select = exports.Icon = exports.HorizontalScroll = exports.FormElement = exports.Checkbox = exports.Card = exports.ButtonGroup = exports.Button = exports.Badge = exports.ArticleList = exports.ArticleCard = exports.Accordion = void 0;
+    	exports.SCROLLDIRECTION = exports.HorizontalScrollHandler = exports.tooltipStore = exports.tooltipRender = exports.timePassedSince = exports.throttle = exports.splitTitle = exports.splitNfitTitle = exports.tooltipAction = exports.Toggler = exports.TextInput = exports.TextArea = exports.Tabs = exports.TabList = exports.TabContent = exports.Tab = exports.Spinner = exports.Select = exports.Icon = exports.HorizontalScroll = exports.FormElement = exports.Checkbox = exports.Card = exports.ButtonGroup = exports.Button = exports.Badge = exports.ArticleList = exports.ArticleCard = exports.Accordion = void 0;
     	// Components
     	var Accordion_svelte_1 = require$$0$3;
     	Object.defineProperty(exports, "Accordion", { enumerable: true, get: function () { return Accordion_svelte_1.default; } });
@@ -69444,14 +69460,14 @@ for (const accordion of accordions) {
     	// Functions
     	var tooltipAction_1 = tooltipAction;
     	Object.defineProperty(exports, "tooltipAction", { enumerable: true, get: function () { return tooltipAction_1.default; } });
-    	var parsedate_1 = parsedate;
-    	Object.defineProperty(exports, "parseDate", { enumerable: true, get: function () { return parsedate_1.parseDate; } });
     	var splitNfitTitle_1 = splitNfitTitle$1;
     	Object.defineProperty(exports, "splitNfitTitle", { enumerable: true, get: function () { return splitNfitTitle_1.splitNfitTitle; } });
     	var splitTitle_1 = splitTitle$1;
     	Object.defineProperty(exports, "splitTitle", { enumerable: true, get: function () { return splitTitle_1.splitTitle; } });
     	var throttle_1 = throttle$1;
     	Object.defineProperty(exports, "throttle", { enumerable: true, get: function () { return throttle_1.throttle; } });
+    	var timepassedsince_1 = timepassedsince;
+    	Object.defineProperty(exports, "timePassedSince", { enumerable: true, get: function () { return timepassedsince_1.timePassedSince; } });
     	var tooltipRender_1 = tooltipRender$1;
     	Object.defineProperty(exports, "tooltipRender", { enumerable: true, get: function () { return tooltipRender_1.tooltipRender; } });
     	var tooltipStore_1 = tooltipStore;
@@ -89261,12 +89277,12 @@ afterUpdate(() => {
     	}
     }
 
-    /* docs_src/exportedfunctions/Parsedate.svelte generated by Svelte v3.49.0 */
-    const file$j = "docs_src/exportedfunctions/Parsedate.svelte";
+    /* docs_src/exportedfunctions/SplitNfitTitle.svelte generated by Svelte v3.49.0 */
+    const file$j = "docs_src/exportedfunctions/SplitNfitTitle.svelte";
 
     // (6:0) <Prism language="js">
     function create_default_slot$7(ctx) {
-    	let t_value = `import { parsedate } from '@ekstra-bladet/designsystem/functions/parsedate';` + "";
+    	let t_value = `import { splitNfitTitle } from '@ekstra-bladet/designsystem/functions/splitnfittitle';` + "";
     	let t;
 
     	const block = {
@@ -89311,7 +89327,7 @@ afterUpdate(() => {
     	const block = {
     		c: function create() {
     			h1 = element("h1");
-    			h1.textContent = "Parsedate";
+    			h1.textContent = "SplitNfitTitle";
     			t1 = space();
     			create_component(prism.$$.fragment);
     			add_location(h1, file$j, 3, 0, 63);
@@ -89363,37 +89379,37 @@ afterUpdate(() => {
 
     function instance$j($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots('Parsedate', slots, []);
+    	validate_slots('SplitNfitTitle', slots, []);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Parsedate> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<SplitNfitTitle> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({ Prism: Prism$1 });
     	return [];
     }
 
-    class Parsedate extends SvelteComponentDev {
+    class SplitNfitTitle extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
     		init(this, options, instance$j, create_fragment$j, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
-    			tagName: "Parsedate",
+    			tagName: "SplitNfitTitle",
     			options,
     			id: create_fragment$j.name
     		});
     	}
     }
 
-    /* docs_src/exportedfunctions/SplitNfitTitle.svelte generated by Svelte v3.49.0 */
-    const file$i = "docs_src/exportedfunctions/SplitNfitTitle.svelte";
+    /* docs_src/exportedfunctions/SplitTitle.svelte generated by Svelte v3.49.0 */
+    const file$i = "docs_src/exportedfunctions/SplitTitle.svelte";
 
     // (6:0) <Prism language="js">
     function create_default_slot$6(ctx) {
-    	let t_value = `import { splitNfitTitle } from '@ekstra-bladet/designsystem/functions/splitnfittitle';` + "";
+    	let t_value = `import { splitTitle } from '@ekstra-bladet/designsystem/functions/splittitle';` + "";
     	let t;
 
     	const block = {
@@ -89438,7 +89454,7 @@ afterUpdate(() => {
     	const block = {
     		c: function create() {
     			h1 = element("h1");
-    			h1.textContent = "SplitNfitTitle";
+    			h1.textContent = "SplitTitle";
     			t1 = space();
     			create_component(prism.$$.fragment);
     			add_location(h1, file$i, 3, 0, 63);
@@ -89490,37 +89506,37 @@ afterUpdate(() => {
 
     function instance$i($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots('SplitNfitTitle', slots, []);
+    	validate_slots('SplitTitle', slots, []);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<SplitNfitTitle> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<SplitTitle> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({ Prism: Prism$1 });
     	return [];
     }
 
-    class SplitNfitTitle extends SvelteComponentDev {
+    class SplitTitle extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
     		init(this, options, instance$i, create_fragment$i, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
-    			tagName: "SplitNfitTitle",
+    			tagName: "SplitTitle",
     			options,
     			id: create_fragment$i.name
     		});
     	}
     }
 
-    /* docs_src/exportedfunctions/SplitTitle.svelte generated by Svelte v3.49.0 */
-    const file$h = "docs_src/exportedfunctions/SplitTitle.svelte";
+    /* docs_src/exportedfunctions/Throttle.svelte generated by Svelte v3.49.0 */
+    const file$h = "docs_src/exportedfunctions/Throttle.svelte";
 
     // (6:0) <Prism language="js">
     function create_default_slot$5(ctx) {
-    	let t_value = `import { splitTitle } from '@ekstra-bladet/designsystem/functions/splittitle';` + "";
+    	let t_value = `import { throttle } from '@ekstra-bladet/designsystem/functions/throttle';` + "";
     	let t;
 
     	const block = {
@@ -89565,7 +89581,7 @@ afterUpdate(() => {
     	const block = {
     		c: function create() {
     			h1 = element("h1");
-    			h1.textContent = "SplitTitle";
+    			h1.textContent = "Throttle";
     			t1 = space();
     			create_component(prism.$$.fragment);
     			add_location(h1, file$h, 3, 0, 63);
@@ -89617,37 +89633,37 @@ afterUpdate(() => {
 
     function instance$h($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots('SplitTitle', slots, []);
+    	validate_slots('Throttle', slots, []);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<SplitTitle> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Throttle> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({ Prism: Prism$1 });
     	return [];
     }
 
-    class SplitTitle extends SvelteComponentDev {
+    class Throttle extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
     		init(this, options, instance$h, create_fragment$h, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
-    			tagName: "SplitTitle",
+    			tagName: "Throttle",
     			options,
     			id: create_fragment$h.name
     		});
     	}
     }
 
-    /* docs_src/exportedfunctions/Throttle.svelte generated by Svelte v3.49.0 */
-    const file$g = "docs_src/exportedfunctions/Throttle.svelte";
+    /* docs_src/exportedfunctions/TimePassedSince.svelte generated by Svelte v3.49.0 */
+    const file$g = "docs_src/exportedfunctions/TimePassedSince.svelte";
 
-    // (6:0) <Prism language="js">
+    // (13:0) <Prism language="js">
     function create_default_slot$4(ctx) {
-    	let t_value = `import { throttle } from '@ekstra-bladet/designsystem/functions/throttle';` + "";
+    	let t_value = `import { timePassedSince } from '@ekstra-bladet/designsystem/functions/timepassedsince';` + "";
     	let t;
 
     	const block = {
@@ -89667,7 +89683,7 @@ afterUpdate(() => {
     		block,
     		id: create_default_slot$4.name,
     		type: "slot",
-    		source: "(6:0) <Prism language=\\\"js\\\">",
+    		source: "(13:0) <Prism language=\\\"js\\\">",
     		ctx
     	});
 
@@ -89677,6 +89693,14 @@ afterUpdate(() => {
     function create_fragment$g(ctx) {
     	let h1;
     	let t1;
+    	let p0;
+    	let t3;
+    	let code;
+    	let div;
+    	let p1;
+    	let t5;
+    	let p2;
+    	let t7;
     	let prism;
     	let current;
 
@@ -89692,10 +89716,27 @@ afterUpdate(() => {
     	const block = {
     		c: function create() {
     			h1 = element("h1");
-    			h1.textContent = "Throttle";
+    			h1.textContent = "timePassedSince";
     			t1 = space();
+    			p0 = element("p");
+    			p0.textContent = "Takes a datetimestring and transforms it to a string with the time passed since the given time";
+    			t3 = space();
+    			code = element("code");
+    			div = element("div");
+    			p1 = element("p");
+    			p1.textContent = "@param datetime: string - valid datetimestring";
+    			t5 = space();
+    			p2 = element("p");
+    			p2.textContent = "@returns string";
+    			t7 = space();
     			create_component(prism.$$.fragment);
     			add_location(h1, file$g, 3, 0, 63);
+    			add_location(p0, file$g, 4, 0, 88);
+    			add_location(p1, file$g, 7, 4, 245);
+    			add_location(p2, file$g, 8, 4, 303);
+    			attr_dev(div, "class", "padding-xl--l padding-m--tb");
+    			add_location(div, file$g, 6, 2, 199);
+    			add_location(code, file$g, 5, 0, 190);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -89703,6 +89744,14 @@ afterUpdate(() => {
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
     			insert_dev(target, t1, anchor);
+    			insert_dev(target, p0, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, code, anchor);
+    			append_dev(code, div);
+    			append_dev(div, p1);
+    			append_dev(div, t5);
+    			append_dev(div, p2);
+    			insert_dev(target, t7, anchor);
     			mount_component(prism, target, anchor);
     			current = true;
     		},
@@ -89727,6 +89776,10 @@ afterUpdate(() => {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(h1);
     			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(p0);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(code);
+    			if (detaching) detach_dev(t7);
     			destroy_component(prism, detaching);
     		}
     	};
@@ -89744,25 +89797,25 @@ afterUpdate(() => {
 
     function instance$g($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots('Throttle', slots, []);
+    	validate_slots('TimePassedSince', slots, []);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Throttle> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<TimePassedSince> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({ Prism: Prism$1 });
     	return [];
     }
 
-    class Throttle extends SvelteComponentDev {
+    class TimePassedSince extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
     		init(this, options, instance$g, create_fragment$g, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
-    			tagName: "Throttle",
+    			tagName: "TimePassedSince",
     			options,
     			id: create_fragment$g.name
     		});
@@ -89904,10 +89957,10 @@ afterUpdate(() => {
                 href: '/exportedfunctions/horizontalscrollhandler',
                 title: 'HorizontalScrollHandler',
             },
-            { component: Parsedate, href: '/exportedfunctions/parsedate', title: 'ParseDate' },
             { component: SplitNfitTitle, href: '/exportedfunctions/splitnfittitle', title: 'SplitNfitTitle' },
             { component: SplitTitle, href: '/exportedfunctions/splittitle', title: 'SplitTitle' },
             { component: Throttle, href: '/exportedfunctions/throttle', title: 'Throttle' },
+            { component: TimePassedSince, href: '/exportedfunctions/timepassedsince', title: 'TimePassedSince' },
             { component: Tooltip, href: '/exportedfunctions/tooltip', title: 'Tooltip' },
         ],
         title: 'Functions',
