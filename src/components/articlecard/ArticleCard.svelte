@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
 
-  import { parseDate } from '../../functions/parsedate';
+  import { timePassedSince } from '../../functions/timepassedsince';
 
   import Badge from '../badge/Badge.svelte';
   import Card from '../card/Card.svelte';
@@ -135,7 +135,7 @@
               {#if published}
                 <div class="card-meta-item">
                   <Icon name="clock" width="12" />
-                  <span class="padding-s--l">{parseDate(published)}</span>
+                  <span class="padding-s--l">{timePassedSince(published)}</span>
                 </div>
               {/if}
               {#if saved !== undefined}

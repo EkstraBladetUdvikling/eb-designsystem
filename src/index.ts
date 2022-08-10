@@ -22,10 +22,10 @@ export { default as Toggler } from './components/toggler/Toggler.svelte';
 
 // Functions
 export { default as tooltipAction } from './functions/tooltipAction';
-export { parseDate } from './functions/parsedate';
 export { splitNfitTitle } from './functions/splitNfitTitle';
 export { splitTitle } from './functions/splitTitle';
 export { throttle } from './functions/throttle';
+export { timePassedSince } from './functions/timepassedsince';
 export { tooltipRender } from './functions/tooltipRender';
 export { tooltipStore } from './functions/tooltipStore';
 

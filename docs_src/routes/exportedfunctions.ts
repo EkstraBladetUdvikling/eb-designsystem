@@ -1,8 +1,8 @@
 import HorizontalScrollHandler from '../exportedfunctions/HorizontalScrollHandler.svelte';
-import ParseDate from '../exportedfunctions/Parsedate.svelte';
 import SplitNfitTitle from '../exportedfunctions/SplitNfitTitle.svelte';
 import SplitTitle from '../exportedfunctions/SplitTitle.svelte';
 import Throttle from '../exportedfunctions/Throttle.svelte';
+import TimePassedSince from '../exportedfunctions/TimePassedSince.svelte';
 import Tooltip from '../exportedfunctions/Tooltip.svelte';
 
 export const exportedfunctions = {
@@ -13,7 +13,7 @@ export const exportedfunctions = {
       href: '/exportedfunctions/horizontalscrollhandler',
       title: 'HorizontalScrollHandler',
     },
-    { component: ParseDate, href: '/exportedfunctions/parsedate', title: 'ParseDate' },
+    { component: TimePassedSince, href: '/exportedfunctions/timepassedsince', title: 'TimePassedSince' },
     { component: SplitNfitTitle, href: '/exportedfunctions/splitnfittitle', title: 'SplitNfitTitle' },
     { component: SplitTitle, href: '/exportedfunctions/splittitle', title: 'SplitTitle' },
     { component: Throttle, href: '/exportedfunctions/throttle', title: 'Throttle' },
