@@ -25,23 +25,27 @@
   <div class="padding-xl--l padding-m--tb">
     <div>
       <h3 class="margin-none">init</h3>
-      <p>@param scrollItemContainer HTMLDivElement- the closest parent to the elements in the scroll list</p>
-      <p>@param scrollContainer HTMLDivElement - the parent, which has the width of the element</p>
-      <p>@description Sets up function to handle scrolling</p>
+      <p>Sets up function to handle scrolling</p>
+      <p>
+        <b>@param scrollItemContainer</b> HTMLDivElement <em>required</em> - the closest parent to the elements in the scroll
+        list
+      </p>
+      <p>
+        <b>@param scrollContainer</b> HTMLDivElement <em>required</em> - the parent, which has the width of the element
+      </p>
     </div>
     <div>
       <h3 class="margin-none">scrollWithButton</h3>
-      <p>@param scrollContainer HTMLDivElement - the parent, which has the width of the element</p>
+      <p>Moves the list to make the next element, which is not fully visible, the new "first" element of the list</p>
       <p>
-        @description Moves the list to make the next element, which is not fully visible, the new "first" element of the
-        list
+        <b>@param scrollContainer</b> HTMLDivElement <em>required</em> - the parent, which has the width of the element
       </p>
     </div>
     <div>
       <h3 class="margin-none">update</h3>
       <p>
-        @description Should be called when new elements are added to list, to ensure all elements will be visible
-        through click functionality
+        Should be called when new elements are added to list, to ensure all elements will be visible through click
+        functionality
       </p>
     </div>
   </div>

@@ -6,8 +6,7 @@
 <p>Takes a datetimestring and transforms it to a string with the time passed since the given time</p>
 <code>
   <div class="padding-xl--l padding-m--tb">
-    <p>@param datetime: string - valid datetimestring</p>
-    <p>@returns string</p>
+    <p><b>@param datetime</b> valid datetimestring <em>required</em></p>
   </div>
 </code>
 
