@@ -27,6 +27,6 @@ export { splitTitle } from './functions/splitTitle';
 export { throttle } from './functions/throttle';
 export { timePassedSince } from './functions/timepassedsince';
 export { tooltipRender } from './functions/tooltipRender';
-export { tooltipStore } from './functions/tooltipStore';
+// export { tooltipStore } from './functions/tooltipStore';
 
 export { HorizontalScrollHandler, SCROLLDIRECTION } from './functions/horizontalscroll';

@@ -5,5 +5,5 @@
 <h1>Throttle</h1>
 
 <Prism language="js">
-  {`import { throttle } from '@ekstra-bladet/designsystem/functions/throttle';`}
+  {`import { throttle } from '@ekstra-bladet/designsystem';`}
 </Prism>

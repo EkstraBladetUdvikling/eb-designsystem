@@ -11,7 +11,6 @@ import HorizontalScroll from '../components/HorizontalScroll.svelte';
 import Spinner from '../components/Spinner.svelte';
 import Tabs from '../components/Tabs.svelte';
 import Toggler from '../components/Toggler.svelte';
-import Tooltip from '../components/Tooltip.svelte';
 
 export const components = {
   href: '/components',
@@ -80,11 +79,6 @@ export const components = {
       component: Toggler,
       href: '/components/toggler',
       title: 'Toggler',
-    },
-    {
-      component: Tooltip,
-      href: '/components/tooltip',
-      title: 'Tooltip',
     },
   ],
   title: 'Components',

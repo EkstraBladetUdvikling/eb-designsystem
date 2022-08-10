@@ -5,5 +5,5 @@
 <h1>SplitNfitTitle</h1>
 
 <Prism language="js">
-  {`import { splitNfitTitle } from '@ekstra-bladet/designsystem/functions/splitnfittitle';`}
+  {`import { splitNfitTitle } from '@ekstra-bladet/designsystem';`}
 </Prism>

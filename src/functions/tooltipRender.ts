@@ -1,6 +1,13 @@
 import tippy from 'tippy.js/headless';
 import type { TTippyCustomOptions, TTooltipInstance } from '../types/tooltipAction';
 
+/**
+ *
+ * @param anchorNode
+ * @param tooltipNode
+ * @param tippyOptions
+ * @returns
+ */
 export function tooltipRender(
   anchorNode: HTMLElement,
   tooltipNode: HTMLElement,

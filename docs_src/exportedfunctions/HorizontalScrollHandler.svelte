@@ -73,7 +73,7 @@ afterUpdate(() => {
     {`import {
   HorizontalScrollHandler,
   SCROLLDIRECTION,
-} from '@ekstra-bladet/designsystem/svelte/functions/horizontalscroll';
+} from '@ekstra-bladet/designsystem';
 
 const scrollItemContainer = document.getElementById('scrollItemContainer');
 const scrollContainer = document.getElementById('scrollContainer');

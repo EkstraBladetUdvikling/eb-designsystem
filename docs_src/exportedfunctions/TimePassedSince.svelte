@@ -12,5 +12,5 @@
 </code>
 
 <Prism language="js">
-  {`import { timePassedSince } from '@ekstra-bladet/designsystem/functions/timepassedsince';`}
+  {`import { timePassedSince } from '@ekstra-bladet/designsystem';`}
 </Prism>
