@@ -27,7 +27,7 @@
         }}
       >
         <span class="fontweight-bold fontsize-medium">{tab.title}</span>
-        <Icon name="angledown" width="14" />
+        <Icon name="angle-down" width="14" />
       </div>
       <div class="accordion-body padding-m padding-l--rl">
         {@html tab.content}

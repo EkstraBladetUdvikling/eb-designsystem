@@ -145,7 +145,7 @@
                   on:toggle={toggleSave}
                 >
                   <slot slot="on">
-                    <Icon name="bookmarksolid" style="color: var(--fgcolor--list);" width={12} />
+                    <Icon name="bookmark-solid" style="color: var(--fgcolor--list);" width={12} />
                     <span class="padding-s--l" style="color: var(--fgcolor--list);">Gemt</span>
                   </slot>
                   <slot slot="off">
@@ -158,7 +158,7 @@
           {/if}
           {#if videoIcon && !media}
             <div class="video-icon">
-              <Icon className="color--white" name="videographic" width="20" />
+              <Icon className="color--white" name="video-graphic" width="20" />
             </div>
           {/if}
           <h2
