@@ -18,10 +18,10 @@
   <span class="flex form-label">
     {label}
     {#if inputtype === 'checkbox'}
-      <Icon className="form-checkbox-toggle--on margin-s--l" name="checksquare" width="16" />
+      <Icon className="form-checkbox-toggle--on margin-s--l" name="check-square" width="16" />
       <Icon className="form-checkbox-toggle--off margin-s--l" name="square" width="16" />
     {:else}
-      <Icon className="form-checkbox-toggle--on margin-s--l" name="checkcircle" width="16" />
+      <Icon className="form-checkbox-toggle--on margin-s--l" name="check-circle" width="16" />
       <Icon className="form-checkbox-toggle--off margin-s--l" name="circle" width="16" />
     {/if}
   </span>

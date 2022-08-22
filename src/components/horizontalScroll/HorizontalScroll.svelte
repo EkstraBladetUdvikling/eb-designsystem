@@ -31,14 +31,14 @@
     className="horizontal-scroll-nav button-prev bg--white"
     extension="icon"
   >
-    <Icon name="angleleft" width="14" />
+    <Icon name="angle-left" width="14" />
   </Button>
   <Button
     on:click={() => horizontalScrollHandler.scrollWithButton(SCROLLDIRECTION.right)}
     className="horizontal-scroll-nav button-next bg--white"
     extension="icon"
   >
-    <Icon name="angleright" width="14" />
+    <Icon name="angle-right" width="14" />
   </Button>
   <div
     bind:this={scrollItemContainer}

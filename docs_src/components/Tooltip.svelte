@@ -110,7 +110,7 @@
         content: 'String or SvelteTemplate',
       }}
     >
-      <Icon className="tooltip-toggle" name="questioncircle" width="18" />
+      <Icon className="tooltip-toggle" name="question-circle" width="18" />
     </div>
     <br />
     <Button
@@ -126,7 +126,7 @@
 
   <Prism language="html">
     {`<div id="uniqueid" use:tooltipAction={{ content: 'Test String' }}>
-    <Icon className="tooltip-toggle" name="questioncircle" width="18" />
+    <Icon className="tooltip-toggle" name="question-circle" width="18" />
 </div>
 
 <Button on:click={(e) => {$tooltipStore['uniqueid'].show();}}>Show tooltip</Button>`}

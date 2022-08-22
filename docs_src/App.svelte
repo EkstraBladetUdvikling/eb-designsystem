@@ -7,6 +7,7 @@
 
   import Sidebar from './main/Sidebar.svelte';
   import Navbar from './main/Navbar.svelte';
+  import Icons from '../docs/svg/symbol/icons.svg';
 </script>
 
 <Navbar />
@@ -14,6 +15,8 @@
 <div class="content-container padding-xl">
   <Router {routes} />
 </div>
+
+<Icons />
 
 <style>
   .content-container {
