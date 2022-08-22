@@ -1,8 +1,6 @@
-<script lang="ts" context="module">
-  import type { GraphicTypes, IconTypes } from 'Icon.svelte';
-</script>
-
 <script lang="ts">
+  import type { GraphicTypes, IconTypes } from '../../types/Icon';
+
   export let className: string = undefined;
   export let name: GraphicTypes | IconTypes = undefined;
   export let width: number | string = undefined;

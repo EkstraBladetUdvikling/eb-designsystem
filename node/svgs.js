@@ -92,14 +92,9 @@ graphicNames.forEach((gfxName, idx) => {
   graphicComponentNamesHTML.push(`'${gfxName}'`);
 });
 
-const definitionFile = `declare module 'Icon.svelte' {
-  export { SvelteComponentDev as default } from 'svelte/internal';
+const definitionFile = `
   ${iconTypes}
-
   ${graphicTypes}
-}
-
-declare module '*.svg';
 `;
 
 fs.writeFileSync(`./src/types/Icon.d.ts`, definitionFile);
@@ -111,7 +106,7 @@ fs.writeFileSync(`./src/components/icon/IconComponents.ts`, componentFile);
 fs.writeFileSync(
   `./src/components/icon/svgs/iconnames.ts`,
   `
-  import type { IconTypes } from 'Icon.svelte';
+  import type { IconTypes } from '../../../types/Icon';
   export const iconnames: string[] = [${iconComponentNames.join(',')}];
   export const iconnameshtml: IconTypes[] = [${iconComponentNamesHTML.join(',')}];
   `
@@ -120,7 +115,7 @@ fs.writeFileSync(
 fs.writeFileSync(
   `./src/components/icon/graphics/graphicnames.ts`,
   `
-  import type { GraphicTypes } from 'Icon.svelte';
+  import type { GraphicTypes } from '../../../types/Icon';
   export const graphicnames: string[] = [${graphicComponentNames.join(',')}];
   export const graphicnameshtml: GraphicTypes[] = [${graphicComponentNamesHTML.join(',')}];
   `
