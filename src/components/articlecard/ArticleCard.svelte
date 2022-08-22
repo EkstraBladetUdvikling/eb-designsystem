@@ -88,7 +88,7 @@
     <div class={innerClass}>
       {#if premium}
         <div class="premium-dogear {premiumMarkerSize ? `premium-dogear--${premiumMarkerSize}` : ''}">
-          <Icon className="color--white" name="ebpluswhite" />
+          <Icon className="color--white" name="ebplus-white" />
         </div>
       {/if}
       {#if loading}
@@ -114,7 +114,7 @@
           {/if}
           {#if videoIcon}
             <div class="video-icon">
-              <Icon className="color--white" name="videographic" width="25" />
+              <Icon className="color--white" name="video-graphic" width="25" />
             </div>
           {/if}
           <img alt={title} class="card-image" src={media.src} height={media.height} width={media.width} />

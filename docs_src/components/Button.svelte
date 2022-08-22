@@ -146,10 +146,10 @@
 
 <Button className="margin-m">
   <span>Icon to the right</span>
-  <Icon className="icon" name="angleright" width="20" />
+  <Icon className="icon" name="angle-right" width="20" />
 </Button>
 <Button className="margin-m">
-  <Icon className="icon" name="angleleft" width="20" />
+  <Icon className="icon" name="angle-left" width="20" />
   <span>Icon to the left</span>
 </Button>
 
@@ -157,10 +157,10 @@
   <Prism language="html">
     {`<Button>
   <span></span>
-  <Icon className="icon" name="angleright" width="20" />
+  <Icon className="icon" name="angle-right" width="20" />
 </Button>
 <Button>
-  <Icon className="icon" name="angleleft" width="20" />
+  <Icon className="icon" name="angle-left" width="20" />
   <span></span>
 </Button>`}
   </Prism>
