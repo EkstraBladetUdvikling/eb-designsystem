@@ -29,6 +29,7 @@ async function linter() {
 
       process.exit(1);
     } else {
+      // eslint-disable-next-line no-console
       console.log("Passed");
     }
   })().catch((error) => {
