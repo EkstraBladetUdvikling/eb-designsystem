@@ -5,9 +5,9 @@
 
   import { routes } from './routes/routes';
 
-  import Sidebar from './main/Sidebar.svelte';
-  import Navbar from './main/Navbar.svelte';
   import Icons from '../docs/svg/symbol/icons.svg';
+  import Navbar from './main/Navbar.svelte';
+  import Sidebar from './main/Sidebar.svelte';
 </script>
 
 <Navbar />

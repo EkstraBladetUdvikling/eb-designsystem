@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { colorNames } from '@ekstra-bladet/eb-colors';
   import { createEventDispatcher } from 'svelte';
 
   import { timePassedSince } from '../../functions/timepassedsince';
@@ -7,10 +8,9 @@
   import Card from '../card/Card.svelte';
   import Icon from '../icon/Icon.svelte';
   import Toggler from '../toggler/Toggler.svelte';
-  import { colorNames } from '@ekstra-bladet/eb-colors';
 
-  import type { TCardType } from '../../types/Card';
   import type { IMediaOptions } from './ArticleCard';
+  import type { TCardType } from '../../types/Card';
 
   export let loading: boolean = false;
 

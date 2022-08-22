@@ -1,9 +1,11 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
-  import { sourceType } from '../stores';
-  import Icon from '../../src/components/icon/Icon.svelte';
+
   import Button from '../../src/components/button/Button.svelte';
+  import Icon from '../../src/components/icon/Icon.svelte';
   import Spinner from '../../src/components/spinner/Spinner.svelte';
+
+  import { sourceType } from '../stores';
 
   import tooltip from '../../src/functions/tooltipAction';
   import { tooltipStore } from '../../src/functions/tooltipStore';

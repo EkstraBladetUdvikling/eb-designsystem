@@ -1,11 +1,12 @@
 <script lang="ts">
-  import Prism from 'svelte-prism';
-  import { sourceType } from '../stores';
-  import { Badge, Card, Icon, Button } from '../../svelte';
-  import { iconnames, iconnameshtml } from '../../svelte/components/icon/svgs/iconnames';
-  import { graphicnames, graphicnameshtml } from '../../svelte/components/icon/graphics/graphicnames';
-  import DrEditionSVGs from '../assets/dredition/DrEditionSVGs.svelte';
   import { colorNames } from '@ekstra-bladet/eb-colors';
+  import Prism from 'svelte-prism';
+
+  import DrEditionSVGs from '../assets/dredition/DrEditionSVGs.svelte';
+  import { graphicnameshtml } from '../../svelte/components/icon/graphics/graphicnames';
+  import { iconnameshtml } from '../../svelte/components/icon/svgs/iconnames';
+  import { sourceType } from '../stores';
+  import { Badge, Button, Card, Icon } from '../../svelte';
 
   let iconColor = 'black';
 

@@ -1,6 +1,7 @@
 <script lang="ts">
-  import Prism from 'svelte-prism';
   import { link } from 'svelte-spa-router';
+  import Prism from 'svelte-prism';
+
   import { utilities } from '../routes/utilities';
 
   const colorRoute = utilities.routes.find((util) => util.title === 'Color');

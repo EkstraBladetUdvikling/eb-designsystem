@@ -14,7 +14,7 @@ export function tooltipRender(
   tippyOptions: TTippyCustomOptions = {}
 ): TTooltipInstance {
   return tippy(anchorNode, {
-    render(_instance) {
+    render() {
       const popperElem = document.createElement('div');
       const arrowElem = document.createElement('div');
 

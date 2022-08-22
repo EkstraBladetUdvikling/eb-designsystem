@@ -1,5 +1,6 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
+
   import { Card } from '../../src';
 </script>
 

@@ -1,6 +1,7 @@
 <script lang="ts">
-  import Prism from 'svelte-prism';
   import { link } from 'svelte-spa-router';
+  import Prism from 'svelte-prism';
+
   import { exportedfunctions } from '../routes/exportedfunctions';
 
   const splitRoute = exportedfunctions.routes.find((exfunc) => exfunc.title === 'SplitTitle');

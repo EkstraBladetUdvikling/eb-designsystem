@@ -3,7 +3,7 @@
   export let url: string = undefined;
   export let style: string = undefined;
 
-  let baseClass = 'card';
+  const baseClass = 'card';
 
   const dataProps = {};
 

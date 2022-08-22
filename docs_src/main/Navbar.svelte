@@ -1,8 +1,9 @@
 <script lang="ts">
-  import { Button, ButtonGroup } from '../../src';
-  import { sourceType } from '../stores';
-  import type { SourceTyping } from '../stores';
   import GithubIcon from '../assets/icons/github.svg';
+  import { sourceType } from '../stores';
+  import { Button, ButtonGroup } from '../../src';
+
+  import type { SourceTyping } from '../stores';
 
   function changeSourceType(source: SourceTyping) {
     sourceType.set(source);

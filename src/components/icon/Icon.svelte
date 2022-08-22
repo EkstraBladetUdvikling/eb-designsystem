@@ -9,7 +9,7 @@
   $: cssWidth = width ? `--icon-size: ${width}px;` : '';
   $: styleAttr = style ? `${cssWidth} ${style}` : cssWidth;
 
-  let baseClass = className ? `icon-svg ${className}` : 'icon-svg';
+  const baseClass = className ? `icon-svg ${className}` : 'icon-svg';
 </script>
 
 {#if name}

@@ -13,7 +13,7 @@
 
 <script lang="ts">
   import { Background } from '@ekstra-bladet/eb-colors/dist/eb-colors';
-  import { setContext, onDestroy } from 'svelte';
+  import { onDestroy, setContext } from 'svelte';
   import { writable, type Writable } from 'svelte/store';
 
   export const selectedId: Writable<number> = writable(0);
@@ -66,7 +66,7 @@
 
   const { background: colorBackground, color: colorForeground } = Background[color]
     ? Background[color]
-    : Background['bruger'];
+    : Background.bruger;
 
   /**
    * If hovercolor is not specified, use color and utimately fall back to "Bruger"
@@ -75,7 +75,7 @@
 
   const { background: hoverColor, color: hoverColorForeground } = Background[colorHover]
     ? Background[colorHover]
-    : Background['bruger'];
+    : Background.bruger;
 
   $: cssClass = className ? `${className} ${baseClass}` : baseClass;
   $: style = `--buttongroup-color: ${colorBackground}; --buttongroup-fgcolor: ${colorForeground}; --buttongroup-color--hover: ${hoverColor}; --buttongroup-fgcolor--hover: ${hoverColorForeground};`;

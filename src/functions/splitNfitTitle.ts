@@ -10,8 +10,8 @@ interface FittyOptions {
 }
 
 function fit(titleParts: HTMLSpanElement[], fittyOptions?: FittyOptions): void {
-  let cleanFittyOptions = Object.fromEntries(
-    Object.entries(fittyOptions).filter(([_fittyOptionsKey, fittyOptionsVal]) => fittyOptionsVal != null)
+  const cleanFittyOptions = Object.fromEntries(
+    Object.entries(fittyOptions).filter(([, fittyOptionsVal]) => fittyOptionsVal !== null)
   );
 
   titleParts.forEach((titlePart) => {
@@ -50,16 +50,16 @@ export async function splitNfitTitle(title: string, options?: ISplitNfitOptions)
 
   if (safe) {
     fit(titleSpans, {
-      minSize,
       maxSize,
+      minSize,
       multiLine,
       observeMutations,
     });
   } else {
     await document.fonts.ready.then(() => {
       fit(titleSpans, {
-        minSize,
         maxSize,
+        minSize,
         multiLine,
         observeMutations,
       });

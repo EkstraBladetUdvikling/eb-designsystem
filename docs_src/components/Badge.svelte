@@ -1,7 +1,8 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
-  import { sourceType } from '../stores';
   import { bluedarkBGClass, greenBGClass, greendarkBGClass } from '@ekstra-bladet/eb-colors';
+
+  import { sourceType } from '../stores';
   import { Badge, Icon } from '../../src';
 </script>
 

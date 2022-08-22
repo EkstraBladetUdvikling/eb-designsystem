@@ -9,8 +9,8 @@
 
   for (let i = 0; i < 3; i++) {
     tabs.push({
+      content: `<h2>Test af h2</h2>${rdmParagraphs()}`,
       title: `Tab ${i + 1}`,
-      content: '<h2>Test af h2</h2>' + rdmParagraphs(),
     });
   }
 </script>

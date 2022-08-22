@@ -1,0 +1,3 @@
+./node/**/**/*.ts
+./webapp/WEB-INF/jsp/components/**/*.d.ts
+.eslintrc.js

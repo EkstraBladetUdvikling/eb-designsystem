@@ -22,7 +22,7 @@
     rdmArticleData(640, 360),
   ];
 
-  let articles = writable([rdmArticleData(640, 360)]);
+  const articles = writable([rdmArticleData(640, 360)]);
 
   const max = 11;
   let count = $articles.length;

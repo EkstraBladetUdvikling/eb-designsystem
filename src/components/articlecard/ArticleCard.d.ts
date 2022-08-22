@@ -1,5 +1,4 @@
 import type { TCardType } from '../../types/Card';
-import { colorNames } from '@ekstra-bladet/eb-colors';
 
 export interface IMediaOptions {
   className: string;
