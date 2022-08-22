@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { IconTypes } from 'Icon.svelte';
+  import type { IconTypes } from '../../types/Icon';
 
   import { createEventDispatcher } from 'svelte';
 
@@ -17,13 +17,13 @@
   /**
    * Handle user click on toggle element
    */
-  let name: IconTypes = defaultState ? 'toggleon' : 'toggleoff';
+  let name: IconTypes = defaultState ? 'toggle-on' : 'toggle-off';
   const dispatch = createEventDispatcher();
   function toggle(evt: Event, status?: boolean) {
     evt.preventDefault();
     defaultState = status ?? !defaultState;
 
-    name = defaultState ? 'toggleon' : 'toggleoff';
+    name = defaultState ? 'toggle-on' : 'toggle-off';
     dispatch('toggle', defaultState);
   }
 

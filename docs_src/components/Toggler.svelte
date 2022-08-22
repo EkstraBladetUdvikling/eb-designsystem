@@ -77,10 +77,10 @@
 
 <Toggler>
   <slot slot="on">
-    <Icon name="angledown" style="width: 24px; height: 24px;" />
+    <Icon name="angle-down" style="width: 24px; height: 24px;" />
   </slot>
   <slot slot="off">
-    <Icon name="angleup" style="width: 24px; height: 24px;" />
+    <Icon name="angle-up" style="width: 24px; height: 24px;" />
   </slot>
 </Toggler>
 
@@ -88,10 +88,10 @@
   <Prism language="html">
     {`<Toggler>
   <slot slot="on">
-    <Icon name="angledown" style="width: 24px; height: 24px;" />
+    <Icon name="angle-down" style="width: 24px; height: 24px;" />
   </slot>
   <slot slot="off">
-    <Icon name="angleup" style="width: 24px; height: 24px;" />
+    <Icon name="angle-up" style="width: 24px; height: 24px;" />
   </slot>
 </Toggler>`}
   </Prism>

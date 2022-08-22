@@ -93,22 +93,18 @@
     </select>
   </div>
   <Button className="margin-m--r" type="cancel" on:click={decrement}>
-    <Icon name="angleleft" width={18} />
+    <Icon name="angle-left" width={18} />
   </Button>
   <p>Size: <input type="number" bind:value={size} style="width: 45px;" />px</p>
   <Button className="margin-m--l" type="cancel" on:click={increment}>
-    <Icon name="angleright" width={18} />
+    <Icon name="angle-right" width={18} />
   </Button>
 </div>
 <div class="flex flex-wrap--wrap" style="--icon-fill: var(--color--{iconColor});">
-  {#each iconnames as name, i}
+  {#each iconnameshtml as name, i}
     <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
       <Icon {name} className="margin-s" width={size} />
-      {#if $sourceType === 'svelte'}
-        <small>{name}</small>
-      {:else}
-        <small>{iconnameshtml[i]}</small>
-      {/if}
+      <small>{iconnameshtml[i]}</small>
     </Card>
   {/each}
 </div>
@@ -129,14 +125,10 @@
 <p>Graphics are capable of containing more layers i.e static colors on stroke and fill.</p>
 
 <div class="flex flex-wrap--wrap">
-  {#each graphicnames as name, i}
+  {#each graphicnameshtml as name, i}
     <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
       <Icon {name} className="margin-s" width={86} />
-      {#if $sourceType === 'svelte'}
-        <small>{name}</small>
-      {:else}
-        <small>{graphicnameshtml[i]}</small>
-      {/if}
+      <small>{graphicnameshtml[i]}</small>pik
     </Card>
   {/each}
 </div>
@@ -158,12 +150,8 @@
 <p>The "background" of figcaption-pin can be changed through the css variable <em>--ebds-figcaption-bg</em></p>
 <div class="flex flex-wrap--wrap">
   <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
-    <Icon name="figcaptionpin" className="margin-s" width={36} />
-    {#if $sourceType === 'svelte'}
-      <small>figcaptionpin</small>
-    {:else}
-      <small>figcaption-pin</small>
-    {/if}
+    <Icon name="figcaption-pin" className="margin-s" width={36} />
+    <small>figcaption-pin</small>
   </Card>
 </div>
 

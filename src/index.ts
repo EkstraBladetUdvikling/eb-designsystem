@@ -21,12 +21,6 @@ export { default as TextInput } from './components/form-elements/TextInput.svelt
 export { default as Toggler } from './components/toggler/Toggler.svelte';
 
 // Functions
-export { default as tooltipAction } from './functions/tooltipAction';
-export { splitNfitTitle } from './functions/splitNfitTitle';
-export { splitTitle } from './functions/splitTitle';
-export { throttle } from './functions/throttle';
 export { timePassedSince } from './functions/timepassedsince';
-export { tooltipRender } from './functions/tooltipRender';
-// export { tooltipStore } from './functions/tooltipStore';
-
+export { throttle } from './functions/throttle';
 export { HorizontalScrollHandler, SCROLLDIRECTION } from './functions/horizontalscroll';
