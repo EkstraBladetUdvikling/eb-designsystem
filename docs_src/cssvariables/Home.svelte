@@ -7,7 +7,8 @@
 <h1>CSS Variables</h1>
 
 <div class="grid-width--small">
-  <p>Blah blah</p>
+  <p>Utility CSS variables to be used in styling</p>
+  <p>These are not meant to be overridden</p>
 </div>
 <ul>
   {#each cssvariables.routes as route}
