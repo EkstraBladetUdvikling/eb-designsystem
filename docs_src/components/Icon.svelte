@@ -129,7 +129,7 @@
   {#each graphicnameshtml as name, i}
     <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
       <Icon {name} className="margin-s" width={86} />
-      <small>{graphicnameshtml[i]}</small>pik
+      <small>{graphicnameshtml[i]}</small>
     </Card>
   {/each}
 </div>
