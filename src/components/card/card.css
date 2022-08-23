@@ -343,10 +343,10 @@ a.card-mode:focus .card-inner {
   --max-lines: 9;
 }
 
-.video-icon {
+.card .video-icon {
   position: absolute;
-  bottom: 5px;
   right: 10px;
+  bottom: 5px;
   z-index: 1;
 }
 
