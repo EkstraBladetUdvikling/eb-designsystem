@@ -14,7 +14,7 @@
 </code>
 
 <Prism language="js">
-  {`import { splitTitle } from '@ekstra-bladet/designsystem';
+  {`import { splitTitle } from '@ekstra-bladet/designsystem/svelte/functions/splitTitle';
 
 const lines = splitTitle('Split this into lines', 2, 3);
 `}

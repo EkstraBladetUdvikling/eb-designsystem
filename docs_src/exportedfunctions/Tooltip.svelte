@@ -27,7 +27,7 @@
   </p>
 
   <Prism language="js">
-    {`import { tooltipAction } from '@ekstra-bladet/designsystem';`}
+    {`import { tooltipAction } from '@ekstra-bladet/designsystem/svelte/functions/tooltipAction';`}
   </Prism>
 
   <table class="table">
@@ -135,7 +135,7 @@
   </div>
 
   <Prism language="js">
-    {`import { tooltipAction, tooltipStore } from '@ekstra-bladet/designsystem';`}
+    {`import { tooltipAction, tooltipStore } from '@ekstra-bladet/designsystem/svelte/functions/tooltipAction';`}
   </Prism>
 
   <Prism language="html">
@@ -157,7 +157,7 @@
     </div>
   </code>
   <Prism language="js">
-    {`import { tooltipRender } from '@ekstra-bladet/designsystem';`}
+    {`import { tooltipRender } from '@ekstra-bladet/designsystem/svelte/functions/tooltipAction';`}
   </Prism>
 
   <p>To make easier use of tooltips on ekstrabladet.dk it is globally avaible through the data-tooltip attributes</p>

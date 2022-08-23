@@ -38,7 +38,7 @@
   </div>
 </code>
 <Prism language="js">
-  {`import { splitNfitTitle } from '@ekstra-bladet/designsystem';
+  {`import { splitNfitTitle } from '@ekstra-bladet/designsystem/svelte/functions/splitNfitTitle';
 
 const titleEl = splitNfitTitle('This is my title that I want split and fitted');
 document.appendChild(titleEl);
