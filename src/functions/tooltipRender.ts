@@ -1,13 +1,20 @@
 import tippy from 'tippy.js/headless';
 import type { TTippyCustomOptions, TTooltipInstance } from '../types/tooltipAction';
 
+/**
+ *
+ * @param anchorNode
+ * @param tooltipNode
+ * @param tippyOptions
+ * @returns
+ */
 export function tooltipRender(
   anchorNode: HTMLElement,
   tooltipNode: HTMLElement,
   tippyOptions: TTippyCustomOptions = {}
 ): TTooltipInstance {
   return tippy(anchorNode, {
-    render(_instance) {
+    render() {
       const popperElem = document.createElement('div');
       const arrowElem = document.createElement('div');
 

@@ -1,4 +1,10 @@
-export function parseDate(datetime: string): string {
+/**
+ * timePassedSince
+ *
+ * @param datetime {string}
+ * @returns {string}
+ */
+export function timePassedSince(datetime: string): string {
   const monthNames = ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'];
   const inputdate = new Date(datetime); // UTC-time from server (Z)
   const now = new Date();
@@ -34,15 +40,4 @@ export function parseDate(datetime: string): string {
   }
 
   return output;
-}
-
-export function populateDates(): void {
-  const dateElems: NodeListOf<HTMLElement> = document.querySelectorAll('span[data-timestamp]');
-
-  dateElems.forEach((dateElem) => {
-    const formattedDate = parseDate(dateElem.dataset.timestamp);
-    if (formattedDate) {
-      dateElem.innerText = parseDate(dateElem.dataset.timestamp);
-    }
-  });
 }

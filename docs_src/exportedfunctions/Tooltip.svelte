@@ -1,19 +1,33 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
-  import { sourceType } from '../stores';
-  import Icon from '../../src/components/icon/Icon.svelte';
+
   import Button from '../../src/components/button/Button.svelte';
+  import Icon from '../../src/components/icon/Icon.svelte';
   import Spinner from '../../src/components/spinner/Spinner.svelte';
+
+  import { sourceType } from '../stores';
 
   import tooltip from '../../src/functions/tooltipAction';
   import { tooltipStore } from '../../src/functions/tooltipStore';
 </script>
 
+<h1 class="color--eb">Tooltip</h1>
+
+<p>
+  Tooltips is a wrapper used to create tooltips with third party library
+  <a href="https://atomiks.github.io/tippyjs/">tippy.js</a>
+</p>
+
 {#if $sourceType === 'svelte'}
-  <h1 class="color--eb">Tooltip (Action)</h1>
+  <h2 class="color--eb">Tooltip as an action (svelte)</h2>
+
+  <p>
+    More about actions
+    <a href="https://svelte.dev/docs#template-syntax-element-directives-use-action" target="_blank">svelte action</a>
+  </p>
 
   <Prism language="js">
-    {`import { tooltipAction } from '@ekstra-bladet/designsystem';`}
+    {`import { tooltipAction } from '@ekstra-bladet/designsystem/svelte/functions/tooltipAction';`}
   </Prism>
 
   <table class="table">
@@ -121,7 +135,7 @@
   </div>
 
   <Prism language="js">
-    {`import { tooltipAction, tooltipStore } from '@ekstra-bladet/designsystem';`}
+    {`import { tooltipAction, tooltipStore } from '@ekstra-bladet/designsystem/svelte/functions/tooltipAction';`}
   </Prism>
 
   <Prism language="html">
@@ -132,10 +146,31 @@
 <Button on:click={(e) => {$tooltipStore['uniqueid'].show();}}>Show tooltip</Button>`}
   </Prism>
 {:else}
-  <h1 class="color--eb">Tooltip (Ekstrabladet)</h1>
+  <h2 class="color--eb">Tooltip as a function</h2>
 
-  <p>Tooltips are available global on ekstrabladet.dk by using data-tooltip attribute</p>
+  <code>
+    <div class="padding-xl--l padding-m--tb">
+      <div>@param anchorNode HTMLElement - required</div>
+      <div>@param tooltipNode HTMLElement - required</div>
+      <div>@param tippyOptions TTippyCustomOptions - optional</div>
+      <div>@returns A tooltip instance</div>
+    </div>
+  </code>
+  <Prism language="js">
+    {`import { tooltipRender } from '@ekstra-bladet/designsystem/svelte/functions/tooltipAction';`}
+  </Prism>
 
+  <p>To make easier use of tooltips on ekstrabladet.dk it is globally avaible through the data-tooltip attributes</p>
+
+  <div>
+    <div><b>data-tooltip</b> <em>required</em> String or id selector(#selector) for element to show in tooltip</div>
+    <div><b>data-tooltip-callback</b> global function to call as callback</div>
+    <div><b>data-tooltip-interactive</b> boolean deciding if the user can interact with the tooltip</div>
+    <div>
+      <b>data-tooltip-placement</b> auto | top | right | bottom | left - where should the tooltip pop from, defaults to auto
+    </div>
+    <div><b>data-tooltip-trigger</b> which user action should trigger the popup, defaults to mouseenter</div>
+  </div>
   <h3>Simple tooltip</h3>
   <Prism language="html">
     {`<div data-tooltip="Simple text tooltip">Hover</div>`}

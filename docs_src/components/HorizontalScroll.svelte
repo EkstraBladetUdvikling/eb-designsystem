@@ -1,11 +1,12 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
+  import { writable } from 'svelte/store';
+
   import { rdmArticleData } from '../util';
   import { sourceType } from '../stores';
   import { ArticleCard, HorizontalScroll } from '../../src';
-  import { writable } from 'svelte/store';
 
-  let articles = writable([rdmArticleData(640, 360), rdmArticleData(640, 360)]);
+  const articles = writable([rdmArticleData(640, 360), rdmArticleData(640, 360)]);
 
   const max = 20;
   let count = 2;

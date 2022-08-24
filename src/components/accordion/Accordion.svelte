@@ -12,7 +12,7 @@
     title: string;
   }
 
-  export const activeTab: Writable<Number> = writable(undefined);
+  export const activeTab: Writable<number> = writable(undefined);
   export let dataTheme: 'darkmode' | 'lightmode' | undefined = undefined;
   export let tabs: ITabsConfig[];
 </script>

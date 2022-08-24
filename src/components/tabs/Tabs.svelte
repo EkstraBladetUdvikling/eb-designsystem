@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-  import { setContext, onDestroy, SvelteComponent } from 'svelte';
+  import { onDestroy, setContext, SvelteComponent } from 'svelte';
   import { writable, type Writable } from 'svelte/store';
 
   export const selectedId: Writable<number> = writable(0);
@@ -20,17 +20,6 @@
   });
 
   setContext(BUTTONS, {
-    registerTab: (button: TButton) => {
-      buttons.push(button);
-      selectedButton.update((current) => current || button);
-
-      onDestroy(() => {
-        const i = buttons.indexOf(button);
-        buttons.splice(i, 1);
-        selectedButton.update((current) => (current === button ? buttons[i] || buttons[buttons.length - 1] : current));
-      });
-    },
-
     registerPanel: (panel: HTMLElement) => {
       panels.push(panel);
       selectedPanel.update((current) => current || panel);
@@ -39,6 +28,17 @@
         const i = panels.indexOf(panel);
         panels.splice(i, 1);
         selectedPanel.update((current) => (current === panel ? panels[i] || panels[panels.length - 1] : current));
+      });
+    },
+
+    registerTab: (button: TButton) => {
+      buttons.push(button);
+      selectedButton.update((current) => current || button);
+
+      onDestroy(() => {
+        const i = buttons.indexOf(button);
+        buttons.splice(i, 1);
+        selectedButton.update((current) => (current === button ? buttons[i] || buttons[buttons.length - 1] : current));
       });
     },
 

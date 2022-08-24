@@ -6,54 +6,80 @@ import Button from '../components/Button.svelte';
 import ButtonGroup from '../components/ButtonGroup.svelte';
 import Card from '../components/Card.svelte';
 import FormElement from '../components/FormElement.svelte';
-import Icon from '../components/Icon.svelte';
 import HorizontalScroll from '../components/HorizontalScroll.svelte';
+import Icon from '../components/Icon.svelte';
 import Spinner from '../components/Spinner.svelte';
 import Tabs from '../components/Tabs.svelte';
 import Toggler from '../components/Toggler.svelte';
-import Tooltip from '../components/Tooltip.svelte';
 
 export const components = {
   href: '/components',
   routes: [
-    { href: '/components/accordion', title: 'Accordion', component: Accordion },
     {
+      component: Accordion,
+      href: '/components/accordion',
+      title: 'Accordion',
+    },
+    {
+      component: ArticleCard,
       href: '/components/articlecard',
       title: 'Article card',
-      component: ArticleCard,
     },
     {
+      component: ArticleList,
       href: '/components/articlelist',
       title: 'Article list',
-
-      component: ArticleList,
     },
-    { href: '/components/badge', title: 'Badge', component: Badge },
-    { href: '/components/button', title: 'Button', component: Button },
     {
+      component: Badge,
+      href: '/components/badge',
+      title: 'Badge',
+    },
+    {
+      component: Button,
+      href: '/components/button',
+      title: 'Button',
+    },
+    {
+      component: ButtonGroup,
       href: '/components/buttongroup',
       title: 'Button group',
-
-      component: ButtonGroup,
     },
-    { href: '/components/card', title: 'Card', component: Card },
     {
+      component: Card,
+      href: '/components/card',
+      title: 'Card',
+    },
+    {
+      component: FormElement,
       href: '/components/form-elements',
       title: 'Form elements',
-
-      component: FormElement,
     },
-    { href: '/components/icon', title: 'Icon', component: Icon },
     {
+      component: Icon,
+      href: '/components/icon',
+      title: 'Icon',
+    },
+    {
+      component: HorizontalScroll,
       href: '/components/horizontalscroll',
       title: 'Horizontal scroll',
-
-      component: HorizontalScroll,
     },
-    { href: '/components/tabs', title: 'Tabs', component: Tabs },
-    { href: '/components/spinner', title: 'Spinner', component: Spinner },
-    { href: '/components/toggler', title: 'Toggler', component: Toggler },
-    { href: '/components/tooltip', title: 'Tooltip', component: Tooltip },
+    {
+      component: Tabs,
+      href: '/components/tabs',
+      title: 'Tabs',
+    },
+    {
+      component: Spinner,
+      href: '/components/spinner',
+      title: 'Spinner',
+    },
+    {
+      component: Toggler,
+      href: '/components/toggler',
+      title: 'Toggler',
+    },
   ],
   title: 'Components',
 };

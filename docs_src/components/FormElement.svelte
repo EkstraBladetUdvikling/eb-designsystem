@@ -1,8 +1,8 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
 
-  import { sourceType } from '../stores';
   import { FormElement } from '../../src';
+  import { sourceType } from '../stores';
 </script>
 
 <h1 class="color--eb">Form Element</h1>

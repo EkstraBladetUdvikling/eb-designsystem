@@ -2,7 +2,7 @@
   import Prism from 'svelte-prism';
   import { rdmParagraphs } from '../lipsum';
   import { sourceType } from '../stores';
-  import { Card, Tabs, Tab, TabContent, TabList } from '../../src';
+  import { Card, Tab, TabContent, TabList, Tabs } from '../../src';
 
   let content1 = rdmParagraphs();
   let content2 = rdmParagraphs();

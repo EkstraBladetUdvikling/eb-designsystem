@@ -1,5 +1,6 @@
 <script lang="ts">
   import { getContext } from 'svelte';
+
   import { BUTTONS } from './Tabs.svelte';
 
   const button = {};
@@ -9,7 +10,7 @@
 
   export let className = undefined;
 
-  let baseClass = `button`;
+  const baseClass = `button`;
 
   $: cssClass = className ? `${baseClass} ${className}` : baseClass;
 </script>

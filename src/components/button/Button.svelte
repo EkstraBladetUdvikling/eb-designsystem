@@ -12,7 +12,7 @@
 
   let baseClass = 'button';
   if (extension) {
-    let extSplit = extension.split(' ');
+    const extSplit = extension.split(' ');
 
     extSplit.forEach((extClass) => {
       baseClass = `${baseClass} button--${extClass}`;
@@ -33,7 +33,9 @@
    * For use in group
    */
   import { getContext, onMount } from 'svelte';
+
   import { BUTTONS } from '../buttongroup/ButtonGroup.svelte';
+
   import type { TButton, TRegisterButton, TSelectButton, TSelectedButton } from '../../types/ButtonGroup';
 
   export let initial = false;

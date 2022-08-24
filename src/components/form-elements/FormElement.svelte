@@ -1,8 +1,8 @@
 <script lang="ts">
   import Checkbox from './Checkbox.svelte';
   import Select from './Select.svelte';
-  import TextInput from './TextInput.svelte';
   import TextArea from './TextArea.svelte';
+  import TextInput from './TextInput.svelte';
 
   import type { SvelteComponent } from 'svelte';
 

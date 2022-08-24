@@ -7,7 +7,7 @@
 
   export let className = undefined;
 
-  let baseClass = `horizontal-scroll-container position-relative`;
+  const baseClass = `horizontal-scroll-container position-relative`;
 
   let scrollContainer: HTMLDivElement;
   let scrollItemContainer: HTMLDivElement;

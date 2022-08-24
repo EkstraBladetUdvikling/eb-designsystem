@@ -1,16 +1,16 @@
 <script lang="ts">
+  import { colorNames } from '@ekstra-bladet/eb-colors';
   import { createEventDispatcher } from 'svelte';
 
-  import { parseDate } from '../../functions/parsedate';
+  import { timePassedSince } from '../../functions/timepassedsince';
 
   import Badge from '../badge/Badge.svelte';
   import Card from '../card/Card.svelte';
   import Icon from '../icon/Icon.svelte';
   import Toggler from '../toggler/Toggler.svelte';
-  import { colorNames } from '@ekstra-bladet/eb-colors';
 
-  import type { TCardType } from '../../types/Card';
   import type { IMediaOptions } from './ArticleCard';
+  import type { TCardType } from '../../types/Card';
 
   export let loading: boolean = false;
 
@@ -135,7 +135,7 @@
               {#if published}
                 <div class="card-meta-item">
                   <Icon name="clock" width="12" />
-                  <span class="padding-s--l">{parseDate(published)}</span>
+                  <span class="padding-s--l">{timePassedSince(published)}</span>
                 </div>
               {/if}
               {#if saved !== undefined}

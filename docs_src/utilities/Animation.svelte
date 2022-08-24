@@ -1,11 +1,11 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
 
-  import { ArticleCard, Badge, Tabs, Tab, TabContent, TabList } from '../../src/';
   import CodeIcon from '../assets/icons/code.svg';
   import ComponentsIcon from '../assets/icons/components.svg';
+  import { ArticleCard, Badge, Tab, TabContent, TabList, Tabs } from '../../src/';
 
-  let article = {
+  const article = {
     href: '#',
     media: {
       src: 'https://via.placeholder.com/610x343&text=610x343',

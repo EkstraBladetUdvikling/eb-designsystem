@@ -21,7 +21,6 @@ export { default as TextInput } from './components/form-elements/TextInput.svelt
 export { default as Toggler } from './components/toggler/Toggler.svelte';
 
 // Functions
-export { parseDate } from './functions/parsedate';
+export { timePassedSince } from './functions/timepassedsince';
 export { throttle } from './functions/throttle';
-
 export { HorizontalScrollHandler, SCROLLDIRECTION } from './functions/horizontalscroll';

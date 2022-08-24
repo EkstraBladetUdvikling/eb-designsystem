@@ -1,6 +1,7 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
   import type { Writable } from 'svelte/store';
+
   import { sourceType } from '../stores';
   import { Button, ButtonGroup } from '../../src';
 

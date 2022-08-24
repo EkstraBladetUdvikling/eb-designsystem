@@ -1,5 +1,6 @@
 <script lang="ts">
   import { getContext } from 'svelte';
+
   import { BUTTONS } from './Tabs.svelte';
 
   const panel = {};

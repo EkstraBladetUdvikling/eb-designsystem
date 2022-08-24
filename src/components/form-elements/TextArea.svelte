@@ -4,7 +4,7 @@
   export let inputtype = 'textarea';
   export let label = undefined;
   export let className = undefined;
-  export let size = "padding-m--tb";
+  export let size = 'padding-m--tb';
 
   let textareaEl: HTMLTextAreaElement;
   let textareaLabelEl: HTMLSpanElement;

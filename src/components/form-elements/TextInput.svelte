@@ -4,7 +4,7 @@
   export let inputtype = 'text';
   export let label = undefined;
   export let className = undefined;
-  export let size = "padding-m--tb";
+  export let size = 'padding-m--tb';
 
   let inputEl: HTMLInputElement;
   let inputLabelEl: HTMLSpanElement;

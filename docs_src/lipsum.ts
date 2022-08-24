@@ -57,7 +57,7 @@ export const getWord = () => lipsum[Math.floor(Math.random() * 50)].split(' ')[0
 
 export function rdmParagraphs(num: number = 3) {
   let returnData = '';
-  for (var i = num; i--; ) {
+  for (let i = num; i--;) {
     returnData += `<p>${getSentence()}</p>`;
   }
   return returnData;

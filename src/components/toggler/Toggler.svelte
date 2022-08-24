@@ -27,7 +27,7 @@
     dispatch('toggle', defaultState);
   }
 
-  $: defaultState;
+  $: defaultState = defaultState;
 </script>
 
 {#if isSwitch}
