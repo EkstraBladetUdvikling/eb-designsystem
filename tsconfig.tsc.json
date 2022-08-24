@@ -3,12 +3,12 @@
     "allowJs": true,
     "declaration": true,
     "declarationDir": "./svelte",
-    "module": "es6",
+    "module": "esnext",
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "./svelte",
-    "target": "es6"
+    "target": "ES2017"
   },
   "indent": [true, "spaces", 2],
   "exclude": ["./node_modules"],
