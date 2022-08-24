@@ -1709,19 +1709,18 @@ a.card-mode:focus .card-inner {
   --max-lines: 9;
 }
 
-.video-icon {
-  bottom: 5px;
-  right: 10px;
-}
-
-.video-icon,.premium-dogear {
+.card .video-icon {
   position: absolute;
+  right: 10px;
+  bottom: 5px;
   z-index: 1;
 }
 
 .premium-dogear {
+  position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
 
   line-height: 0;
   padding: var(--dogear-padding) 0 0 var(--dogear-padding);
