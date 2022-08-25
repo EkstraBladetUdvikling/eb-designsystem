@@ -11,7 +11,8 @@ interface FittyOptions {
 
 function fit(titleParts: HTMLSpanElement[], fittyOptions?: FittyOptions): void {
   const cleanFittyOptions = Object.fromEntries(
-    Object.entries(fittyOptions).filter(([, fittyOptionsVal]) => fittyOptionsVal !== null)
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    Object.entries(fittyOptions).filter(([_x, fittyOptionsVal]) => fittyOptionsVal !== null)
   );
 
   titleParts.forEach((titlePart) => {
