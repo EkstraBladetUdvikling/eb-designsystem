@@ -10,7 +10,8 @@ interface FittyOptions {
 }
 
 function fit(titleParts: HTMLSpanElement[], fittyOptions?: FittyOptions): void {
-  const cleanFittyOptions = Object.fromEntries(
+  // eslint-disable-next-line prefer-const
+  let cleanFittyOptions = Object.fromEntries(
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     Object.entries(fittyOptions).filter(([_x, fittyOptionsVal]) => fittyOptionsVal !== null)
   );
