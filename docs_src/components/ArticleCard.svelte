@@ -83,12 +83,6 @@
         <td>Adds a image, see <Badge type="secondary" extension="small">Media</Badge> props below for details</td>
       </tr>
       <tr>
-        <td>read</td>
-        <td>boolean</td>
-        <td />
-        <td>Styles the card to looks like it has been read</td>
-      </tr>
-      <tr>
         <td>section</td>
         <td>string</td>
         <td />
@@ -164,24 +158,16 @@
 <ArticleCard className="small-media--reverse" {...article} />`}
   </Prism>
 
-  <h3>Small-media read article</h3>
-
-  <ArticleCard className="margin-m--b" cardType="small-media" read={true} {...rdmArticleData(250, 120)} />
-
-  <Prism language="html">
-    {`<ArticleCard className="small-media" read={true} {...article} />`}
-  </Prism>
-
   <h3>Loading placeholder</h3>
 
-  <ArticleCard loading={true} />
-  <ArticleCard loading={true} cardType="small-media" />
-  <ArticleCard loading={true} cardType="small-media--reverse" />
+  <ArticleCard loading={true} colorName="graa7" className="margin-m--b" />
+  <ArticleCard loading={true} cardType="small-media" colorName="graa7" className="margin-m--b" />
+  <ArticleCard loading={true} cardType="small-media--reverse" colorName="graa7" className="margin-m--b" />
 
   <Prism language="html">
-    {`<ArticleCard loading={true} />
-<ArticleCard loading={true} cardType="small-media" />
-<ArticleCard loading={true} cardType="small-media--reverse" />`}
+    {`<ArticleCard loading={true} colorName="graa7" />
+<ArticleCard loading={true} cardType="small-media" colorName="graa7" />
+<ArticleCard loading={true} cardType="small-media--reverse" colorName="graa7" />`}
   </Prism>
 {:else}
   <p>ArticleCard er en ren Svelte component.</p>

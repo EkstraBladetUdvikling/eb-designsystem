@@ -921,11 +921,6 @@ custom media queries is the only allowed media queries
   color: var(--color--graa3);
 }
 
-.articlecard--read {
-  filter: grayscale(1);
-  opacity: 0.3;
-}
-
 .articlelist--columns {
   display: grid;
   grid-template-columns: repeat(var(--articlelist-columns), 1fr);
