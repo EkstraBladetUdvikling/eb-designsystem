@@ -83,10 +83,10 @@
         <td>Adds a image, see <Badge type="secondary" extension="small">Media</Badge> props below for details</td>
       </tr>
       <tr>
-        <td>read</td>
-        <td>boolean</td>
+        <td>section</td>
+        <td>string</td>
         <td />
-        <td>Styles the card to looks like it has been read</td>
+        <td>Displays the section meta with a tag icon</td>
       </tr>
       <tr>
         <td>style</td>
