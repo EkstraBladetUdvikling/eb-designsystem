@@ -27,7 +27,6 @@
   export let media: Partial<IMediaOptions> = undefined;
   export let premium: boolean = false;
   export let published: string = undefined;
-  export let read: boolean | string | number = null;
   export let saved: boolean = undefined;
   export let section: string = undefined;
   export let style: string = '';
@@ -42,8 +41,6 @@
   let loadingStyle = 'padding-top: 56.25%; width: 100%;';
   if (loading) {
     baseClass = `${baseClass} animation-fogwave`;
-
-    title = 'Loading';
 
     switch (cardType) {
       case 'small-media':
@@ -65,13 +62,12 @@
   }
 
   const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
-  const readClass = read ? 'articlecard--read' : '';
 
   $: styleProp = `${style}; --color--list: var(--color--${
     breaking ? colorNames.breaking : colorName
   }); --fgcolor--list: var(--fgcolor--${breaking ? colorNames.breaking : colorName}); --card-width: ${width};`;
 
-  $: cssClass = className ? `${className} ${baseClass} ${readClass}` : `${baseClass} ${readClass}`;
+  $: cssClass = className ? `${className} ${baseClass}` : baseClass;
 
   $: mediaCssClass = media && media.className ? `${media.className} card-media` : 'card-media';
 
@@ -124,7 +120,7 @@
         <div class="card-content">
           {#if section || published}
             <div class="card-meta flex flex-wrap--wrap fontsize-xxsmall">
-              {#if section}
+              {#if section && section !== 'New Articles'}
                 <div class="card-meta-item">
                   <span class="flex flex-justify--center">
                     <Icon name="tag" width="12" />
