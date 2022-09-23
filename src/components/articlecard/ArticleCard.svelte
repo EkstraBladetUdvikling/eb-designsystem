@@ -113,7 +113,14 @@
               <Icon className="color--white" name="video-graphic" width="25" />
             </div>
           {/if}
-          <img alt={title} class="card-image" src={media.src} height={media.height} width={media.width} />
+          <img
+            alt={title}
+            class="card-image"
+            src={media.src}
+            height={media.height}
+            width={media.width}
+            style="width: {media.width}px"
+          />
         </div>
       {/if}
       <div class="card-content-wrapper">
