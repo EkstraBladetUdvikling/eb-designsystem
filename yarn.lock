@@ -139,10 +139,10 @@
     enabled "2.0.x"
     kuler "^2.0.0"
 
-"@ekstra-bladet/eb-colors@4.0.4":
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/@ekstra-bladet/eb-colors/-/eb-colors-4.0.4.tgz#0222754be60c8f387fab1a867515ae8d1b3db10c"
-  integrity sha512-eekUrbv33U5nJGWuUz6f4PSTljUOdeQrEQZFfMch1MFc6gKZzGms+Ycoomxv8B5G3y0A0XUUz/vA1JB7EMWLrQ==
+"@ekstra-bladet/eb-colors@4.0.5":
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/@ekstra-bladet/eb-colors/-/eb-colors-4.0.5.tgz#5fca3c7edcffb256846361c16c6876f0c7ee0121"
+  integrity sha512-nmeXf0CqiOYZ8UNN+oDmrWdxOC3zXUfwsFcMOlMwMTrBhVhRoYn/DHnfiT73DJsHyfx/aca+mW0Ctpl+qne+Wg==
 
 "@es-joy/jsdoccomment@~0.31.0":
   version "0.31.0"

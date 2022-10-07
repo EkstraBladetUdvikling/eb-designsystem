@@ -1,6 +1,6 @@
 :root {
-  --right-pos: 10px;
   --horz-gap: var(--distance-medium);
+  --right-pos: 10px;
 }
 
 @media (--desktop) {
@@ -33,10 +33,10 @@
 
 @media (--desktop) {
   .horizontal-scroll-container::after {
-    box-shadow: -20px 0 20px -20px rgba(0, 0, 0, 0.4);
+    box-shadow: -20px 0 20px -20px rgba(0, 0, 0, .4);
   }
   .horizontal-scroll-container::before {
-    box-shadow: 20px 0 20px -20px rgba(0, 0, 0, 0.4);
+    box-shadow: 20px 0 20px -20px rgba(0, 0, 0, .4);
   }
 }
 
@@ -64,7 +64,7 @@
   z-index: 100;
 
   box-shadow: var(--box-shadow);
-  opacity: 0;
+  display: none;
   transform: translateY(-50%);
 }
 
@@ -75,7 +75,7 @@
 }
 
 .horizontal-scroll-container:not([data-atstart="true"]):hover .button-prev {
-  opacity: 1;
+  display: block;
 }
 
 .horizontal-scroll-nav.button-next {
@@ -84,7 +84,7 @@
 }
 
 .horizontal-scroll-container:not([data-atend="true"]):hover .button-next {
-  opacity: 1;
+  display: block;
 }
 
 .horizontal-scroll-items {
