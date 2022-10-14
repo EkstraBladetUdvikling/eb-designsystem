@@ -367,7 +367,7 @@ template,[hidden] {
   --rgb-fgcolor--orange: 255, 255, 255;
 
   --rgb-color--yellow: 250, 229, 0;
-  --rgb-fgcolor--yellow: 255, 255, 255;
+  --rgb-fgcolor--yellow: 0, 0, 0;
 
   --rgb-color--yellowlight: 255, 255, 0;
   --rgb-fgcolor--yellowlight: 0, 0, 0;
@@ -543,7 +543,7 @@ template,[hidden] {
   --fgcolor--orange: #fff;
 
   --color--yellow: #fae500;
-  --fgcolor--yellow: #fff;
+  --fgcolor--yellow: #000;
 
   --color--yellowlight: #ff0;
   --fgcolor--yellowlight: #000;
@@ -1960,9 +1960,8 @@ a.card-mode:focus .card-inner {
   position: absolute;
   top: 0;
   right: calc(var(--right-pos) * -1);
+  left: calc(100% - var(--right-pos));
   z-index: 1;
-
-  box-shadow: -5px 0 10px -3px rgb(0 0 0 / 40%);
   content: " ";
   opacity: 1;
   transition: opacity 200ms, height 200ms;
@@ -1972,18 +1971,16 @@ a.card-mode:focus .card-inner {
 
 .horizontal-scroll-container::before {
   right: auto;
-  left: calc(var(--right-pos) * -1);
-
-  box-shadow: 5px 0 10px -3px rgb(0 0 0 / 40%);
+  left: 0;
 }
 
-@media (min-width: 767px) {
-  .horizontal-scroll-container::after {
-    box-shadow: -20px 0 20px -20px rgba(0, 0, 0, 0.4);
-  }
-  .horizontal-scroll-container::before {
-    box-shadow: 20px 0 20px -20px rgba(0, 0, 0, 0.4);
-  }
+.horizontal-scroll-container::after {
+  background:linear-gradient(90deg, transparent 40%, rgba(67, 67, 67, 0.6) 100%);
+
+}
+
+.horizontal-scroll-container::before {
+  background:linear-gradient(270deg, transparent 40%, rgba(67, 67, 67, 0.6) 100%);
 }
 
 @media (max-width: 767px) {
