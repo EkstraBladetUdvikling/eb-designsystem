@@ -1962,6 +1962,8 @@ a.card-mode:focus .card-inner {
   right: calc(var(--right-pos) * -1);
   left: calc(100% - var(--right-pos));
   z-index: 1;
+
+  box-shadow: -5px 0 10px -3px rgb(0 0 0 / 40%);
   content: " ";
   opacity: 1;
   transition: opacity 200ms, height 200ms;
@@ -1971,16 +1973,18 @@ a.card-mode:focus .card-inner {
 
 .horizontal-scroll-container::before {
   right: auto;
-  left: 0;
+  left: calc(var(--right-pos) * -1);
+
+  box-shadow: 5px 0 10px -3px rgb(0 0 0 / 40%);
 }
 
-.horizontal-scroll-container::after {
-  background:linear-gradient(90deg, transparent 80%, rgba(67, 67, 67, 0.6) 100%);
-
-}
-
-.horizontal-scroll-container::before {
-  background:linear-gradient(270deg, transparent 80%, rgba(67, 67, 67, 0.6) 100%);
+@media (min-width: 767px) {
+  .horizontal-scroll-container::after {
+    box-shadow: inset -20px 0 20px -20px rgba(0, 0, 0, 0.4);
+  }
+  .horizontal-scroll-container::before {
+    box-shadow: 20px 0 20px -20px rgba(0, 0, 0, 0.4);
+  }
 }
 
 @media (max-width: 767px) {
