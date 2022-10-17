@@ -27,13 +27,6 @@
 }
 
 
-@media (--smartphone) {
-  .horizontal-scroll-container::after,
-  .horizontal-scroll-container::before {
-    display: none;
-  }
-}
-
 .horizontal-scroll-container[data-atend="true"]::after {
   opacity: 0;
   height: 0;

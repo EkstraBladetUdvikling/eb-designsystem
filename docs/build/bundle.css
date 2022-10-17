@@ -1972,13 +1972,6 @@ a.card-mode:focus .card-inner {
   left: 0;
 }
 
-@media (max-width: 767px) {
-  .horizontal-scroll-container::after,
-  .horizontal-scroll-container::before {
-    display: none;
-  }
-}
-
 .horizontal-scroll-container[data-atend="true"]::after,.horizontal-scroll-container[data-atstart="true"]::before {
   opacity: 0;
   height: 0;
