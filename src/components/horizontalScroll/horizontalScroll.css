@@ -1,45 +1,31 @@
 :root {
-  --right-pos: 10px;
   --horz-gap: var(--distance-medium);
-}
-
-@media (--desktop) {
-  :root {
-    --right-pos: calc(var(--button-height) * 1.5);
-  }
 }
 
 .horizontal-scroll-container::before,
 .horizontal-scroll-container::after {
   position: absolute;
   top: 0;
-  right: calc(var(--right-pos) * -1);
-  left: calc(100% - var(--right-pos));
+  right: calc(5px * -1);
+  left: calc(100% - 5px);
   z-index: 1;
 
-  box-shadow: -5px 0 10px -3px rgb(0 0 0 / 40%);
   content: " ";
   opacity: 1;
   transition: opacity 200ms, height 200ms;
-  width: var(--right-pos);
+  width: 5px;
   height: 100%;
+  background: radial-gradient(circle, transparent 5%, #00000094 50%, transparent 95%);
+  background-size: 100% 200%;
+  background-position: 0% 100%;
+  filter: blur(6px);
 }
 
 .horizontal-scroll-container::before {
   right: auto;
-  left: calc(var(--right-pos) * -1);
-
-  box-shadow: 5px 0 10px -3px rgb(0 0 0 / 40%);
+  left: 0;
 }
 
-@media (--desktop) {
-  .horizontal-scroll-container::after {
-    box-shadow: inset -20px 0 20px -20px rgba(0, 0, 0, 0.4);
-  }
-  .horizontal-scroll-container::before {
-    box-shadow: 20px 0 20px -20px rgba(0, 0, 0, 0.4);
-  }
-}
 
 @media (--smartphone) {
   .horizontal-scroll-container::after,
@@ -61,7 +47,7 @@
 .horizontal-scroll-nav {
   position: absolute;
   top: 50%;
-  left: 5px;
+  left: 10px;
   z-index: 100;
 
   box-shadow: var(--box-shadow);
@@ -80,7 +66,7 @@
 }
 
 .horizontal-scroll-nav.button-next {
-  right: 5px;
+  right: 10px;
   left: auto;
 }
 
