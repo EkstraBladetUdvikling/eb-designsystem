@@ -15,10 +15,11 @@
   transition: opacity 200ms, height 200ms;
   width: 5px;
   height: 100%;
-  background: radial-gradient(circle, transparent 5%, #00000094 50%, transparent 95%);
+  background: linear-gradient(90deg, transparent 5%, #00000094 50%, transparent 95%);
   background-size: 100% 200%;
   background-position: 0% 100%;
-  filter: blur(6px);
+  filter: blur(4px);
+  border-radius: 100%;
 }
 
 .horizontal-scroll-container::before {
