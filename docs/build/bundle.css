@@ -1952,25 +1952,23 @@ a.card-mode:focus .card-inner {
 .horizontal-scroll-container::after {
   position: absolute;
   top: 0;
-  right: calc(5px * -1);
-  left: calc(100% - 5px);
+  left: calc(100% - 30px);
   z-index: 1;
 
   content: " ";
-  opacity: 1;
+  opacity: 0.2;
   transition: opacity 200ms, height 200ms;
-  width: 5px;
+  width: 30px;
   height: 100%;
-  background: linear-gradient(90deg, transparent 5%, #00000094 50%, transparent 95%);
-  background-size: 100% 200%;
-  background-position: 0% 100%;
-  filter: blur(4px);
-  border-radius: 100%;
+  background-image: url(../assets/images/horizontal-fade.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%
 }
 
 .horizontal-scroll-container::before {
   right: auto;
   left: 0;
+  transform: rotate(180deg);
 }
 
 @media (max-width: 767px) {
