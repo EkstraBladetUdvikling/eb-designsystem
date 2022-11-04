@@ -1948,34 +1948,42 @@ a.card-mode:focus .card-inner {
   --horz-gap: var(--distance-medium);
 }
 
+.horizontal-scroll-container {
+  overflow: hidden;
+}
+
 .horizontal-scroll-container::before,
 .horizontal-scroll-container::after {
-  position: absolute;
-  top: 0;
-  right: calc(5px * -1);
-  left: calc(100% - 5px);
-  z-index: 1;
-
-  content: " ";
-  opacity: 1;
-  transition: opacity 200ms, height 200ms;
-  width: 5px;
-  height: 100%;
-  background: linear-gradient(90deg, transparent 5%, #00000094 50%, transparent 95%);
+  background: linear-gradient(90deg,transparent 5%,rgba(0,0,0,.4)50%);
+  background-position: 0 100%;
   background-size: 100% 200%;
-  background-position: 0% 100%;
+  border-radius: 1000% / 300%;
+  content: " ";
   filter: blur(4px);
-  border-radius: 100%;
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  top: 0px;
+  transition: opacity .2s;
+  width: 7px;
+  z-index: 1;
+  height: 100%;
 }
 
 .horizontal-scroll-container::before {
+  background: linear-gradient(270deg,transparent 5%,rgba(0,0,0,.4)50%);
   right: auto;
-  left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.horizontal-scroll-container::after {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .horizontal-scroll-container[data-atend="true"]::after,.horizontal-scroll-container[data-atstart="true"]::before {
   opacity: 0;
-  height: 0;
 }
 
 .horizontal-scroll-nav {
