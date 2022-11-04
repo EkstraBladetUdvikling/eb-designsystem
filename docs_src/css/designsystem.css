@@ -367,7 +367,7 @@ template,[hidden] {
   --rgb-fgcolor--orange: 255, 255, 255;
 
   --rgb-color--yellow: 250, 229, 0;
-  --rgb-fgcolor--yellow: 255, 255, 255;
+  --rgb-fgcolor--yellow: 0, 0, 0;
 
   --rgb-color--yellowlight: 255, 255, 0;
   --rgb-fgcolor--yellowlight: 0, 0, 0;
@@ -543,7 +543,7 @@ template,[hidden] {
   --fgcolor--orange: #fff;
 
   --color--yellow: #fae500;
-  --fgcolor--yellow: #fff;
+  --fgcolor--yellow: #000;
 
   --color--yellowlight: #ff0;
   --fgcolor--yellowlight: #000;
@@ -1945,63 +1945,51 @@ a.card-mode:focus .card-inner {
 }
 
 :root {
-  --right-pos: 10px;
   --horz-gap: var(--distance-medium);
 }
 
-@media (min-width: 767px) {
-  :root {
-    --right-pos: calc(var(--button-height) * 1.5);
-  }
+.horizontal-scroll-container {
+  overflow: hidden;
 }
 
 .horizontal-scroll-container::before,
 .horizontal-scroll-container::after {
-  position: absolute;
-  top: 0;
-  right: calc(var(--right-pos) * -1);
-  z-index: 1;
-
-  box-shadow: -5px 0 10px -3px rgb(0 0 0 / 40%);
+  background: linear-gradient(90deg,transparent 5%,rgba(0,0,0,.4)50%);
+  background-position: 0 100%;
+  background-size: 100% 200%;
+  border-radius: 1000% / 300%;
   content: " ";
+  filter: blur(4px);
   opacity: 1;
-  transition: opacity 200ms, height 200ms;
-  width: var(--right-pos);
+  position: absolute;
+  right: 0;
+  top: 0px;
+  transition: opacity .2s;
+  width: 7px;
+  z-index: 1;
   height: 100%;
 }
 
 .horizontal-scroll-container::before {
+  background: linear-gradient(270deg,transparent 5%,rgba(0,0,0,.4)50%);
   right: auto;
-  left: calc(var(--right-pos) * -1);
-
-  box-shadow: 5px 0 10px -3px rgb(0 0 0 / 40%);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
-@media (min-width: 767px) {
-  .horizontal-scroll-container::after {
-    box-shadow: -20px 0 20px -20px rgba(0, 0, 0, 0.4);
-  }
-  .horizontal-scroll-container::before {
-    box-shadow: 20px 0 20px -20px rgba(0, 0, 0, 0.4);
-  }
-}
-
-@media (max-width: 767px) {
-  .horizontal-scroll-container::after,
-  .horizontal-scroll-container::before {
-    display: none;
-  }
+.horizontal-scroll-container::after {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .horizontal-scroll-container[data-atend="true"]::after,.horizontal-scroll-container[data-atstart="true"]::before {
   opacity: 0;
-  height: 0;
 }
 
 .horizontal-scroll-nav {
   position: absolute;
   top: 50%;
-  left: 5px;
+  left: 10px;
   z-index: 100;
 
   box-shadow: var(--box-shadow);
@@ -2020,7 +2008,7 @@ a.card-mode:focus .card-inner {
 }
 
 .horizontal-scroll-nav.button-next {
-  right: 5px;
+  right: 10px;
   left: auto;
 }
 
