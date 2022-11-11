@@ -26,13 +26,6 @@
         </td>
       </tr>
       <tr>
-        <td>Rød plus med sort skygge (Kan bruges på hvid baggrund)</td>
-        <td>eb-plus-red-anim.svg</td>
-        <td style="background-color: white">
-          <img alt="" src="./svg/dredition/eb-plus-red-anim.svg" height="50" />
-        </td>
-      </tr>
-      <tr>
         <td>Sort plus med hvid skygge (Kan bruges på hvid baggrund)</td>
         <td>eb-plus-black-anim.svg</td>
         <td style="background-color: white">
