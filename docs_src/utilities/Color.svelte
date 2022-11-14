@@ -11,16 +11,9 @@
 <h1 class="color--eb">Color</h1>
 
 <h3>Text color</h3>
-<p
-  class="color--red"
-  on:click={moveToAllColors}
-  on:keydown={moveToAllColors}
-  role="button"
-  tabindex={0}
-  style="cursor: pointer;"
->
+<button class="button button--cancel margin-m--b" on:click={moveToAllColors} style="cursor: pointer;">
   View all colors available
-</p>
+</button>
 
 <Card className="bg--graa7">
   <div class="flex flex-justify--between flex-wrap--wrap" slot="content">
@@ -48,16 +41,9 @@
 </Prism>
 
 <h3>Background color</h3>
-<p
-  class="color--red"
-  on:click={moveToAllColors}
-  on:keydown={moveToAllColors}
-  role="button"
-  tabindex={0}
-  style="cursor: pointer;"
->
+<button class="button button--cancel margin-m--b" on:click={moveToAllColors} style="cursor: pointer;">
   View all colors available
-</p>
+</button>
 
 <Card className="bg--graa7">
   <div class="flex flex-justify--between flex-wrap--wrap" slot="content">
