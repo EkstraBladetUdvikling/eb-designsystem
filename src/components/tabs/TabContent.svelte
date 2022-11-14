@@ -1,10 +1,9 @@
 <script lang="ts">
   import { getContext } from 'svelte';
-
-  import { BUTTONS } from './Tabs.svelte';
+  import type { IBUTTONS } from '../../types/ButtonGroup';
 
   const panel = {};
-  const { registerPanel, selectedPanel } = getContext(BUTTONS);
+  const { registerPanel, selectedPanel } = getContext<IBUTTONS>('BUTTONS');
 
   registerPanel(panel);
 </script>

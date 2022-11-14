@@ -1,7 +1,3 @@
-<script lang="ts" context="module">
-  export const BUTTONS = {};
-</script>
-
 <script lang="ts">
   import { onDestroy, setContext, SvelteComponent } from 'svelte';
   import { writable, type Writable } from 'svelte/store';
@@ -19,7 +15,7 @@
     selectedPanel.set(panels[i]);
   });
 
-  setContext(BUTTONS, {
+  setContext('BUTTONS', {
     registerPanel: (panel: HTMLElement) => {
       panels.push(panel);
       selectedPanel.update((current) => current || panel);
