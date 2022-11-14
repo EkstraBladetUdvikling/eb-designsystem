@@ -26,7 +26,7 @@
     <slot />
   </a>
 {:else}
-  <span class={cssClass} on:click {style} data-type={type}>
+  <span class={cssClass} on:click on:keydown role="button" tabindex={0} {style} data-type={type}>
     <slot />
   </span>
 {/if}

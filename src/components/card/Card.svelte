@@ -37,7 +37,7 @@
     {/if}
   </a>
 {:else}
-  <div class={cssClass} {style} on:click>
+  <div class={cssClass} {style} on:click on:keydown role="button" tabindex={0}>
     {#if $$slots.header}
       <div class="card-header">
         <slot name="header" />

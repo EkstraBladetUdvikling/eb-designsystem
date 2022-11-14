@@ -23,7 +23,9 @@
 
   <p>
     More about actions
-    <a href="https://svelte.dev/docs#template-syntax-element-directives-use-action" target="_blank">svelte action</a>
+    <a href="https://svelte.dev/docs#template-syntax-element-directives-use-action" target="_blank" rel="noreferrer"
+      >svelte action</a
+    >
   </p>
 
   <Prism language="js">
@@ -51,8 +53,10 @@
         <td>boolean</td>
         <td>false</td>
         <td
-          >Optional: Parse content as HTML <a href="https://svelte.dev/tutorial/html-tags" target="_blank"
-            >(see Svelte-docs)</a
+          >Optional: Parse content as HTML <a
+            href="https://svelte.dev/tutorial/html-tags"
+            target="_blank"
+            rel="noreferrer">(see Svelte-docs)</a
           ></td
         >
       </tr>
@@ -67,8 +71,10 @@
         <td>Object</td>
         <td>empty</td>
         <td
-          >Optional: Tippy options <a href="https://atomiks.github.io/tippyjs/v6/all-props/" target="_blank"
-            >(see reference)</a
+          >Optional: Tippy options <a
+            href="https://atomiks.github.io/tippyjs/v6/all-props/"
+            target="_blank"
+            rel="noreferrer">(see reference)</a
           ><br />Props marked with
           <img
             src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTEiIGZpbGw9IiNEQUU2RkYiLz4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTEiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcikiLz4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTEiIHN0cm9rZT0iIzc3NjFEMSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxwYXRoIGQ9Ik03LjgwMTkxIDcuMkgxMy42ODE5QzE0LjY2MTkgNy4yIDE1LjM3MTIgNy40MjQgMTUuODA5OSA3Ljg3MkMxNi4yNTc5IDguMzEwNjcgMTYuNDgxOSA5LjAyIDE2LjQ4MTkgMTBWMTEuMjZDMTYuNDgxOSAxMi4wMzQ3IDE2LjM1MTIgMTIuNjM2NyAxNi4wODk5IDEzLjA2NkMxNS44Mzc5IDEzLjQ5NTMgMTUuNDMxOSAxMy43OCAxNC44NzE5IDEzLjkyTDE2LjYyMTkgMTdIMTMuODkxOUwxMi4yODE5IDE0LjA2SDEwLjMyMTlWMTdINy44MDE5MVY3LjJaTTEzLjk2MTkgMTBDMTMuOTYxOSA5LjQ0IDEzLjY4MTkgOS4xNiAxMy4xMjE5IDkuMTZIMTAuMzIxOVYxMi4xSDEzLjEyMTlDMTMuNjgxOSAxMi4xIDEzLjk2MTkgMTEuODIgMTMuOTYxOSAxMS4yNlYxMFoiIGZpbGw9IiM3NzYxRDEiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhciIgeDE9IjEyIiB5MT0iMCIgeDI9IjEyIiB5Mj0iMjQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0VGREVGRiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IndoaXRlIiBzdG9wLW9wYWNpdHk9IjAiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K"

@@ -131,7 +131,9 @@ var app = (function () {
         target.insertBefore(node, anchor || null);
     }
     function detach(node) {
-        node.parentNode.removeChild(node);
+        if (node.parentNode) {
+            node.parentNode.removeChild(node);
+        }
     }
     function destroy_each(iterations, detaching) {
         for (let i = 0; i < iterations.length; i += 1) {
@@ -287,15 +289,49 @@ var app = (function () {
             throw new Error('Function called outside component initialization');
         return current_component;
     }
+    /**
+     * The `onMount` function schedules a callback to run as soon as the component has been mounted to the DOM.
+     * It must be called during the component's initialisation (but doesn't need to live *inside* the component;
+     * it can be called from an external module).
+     *
+     * `onMount` does not run inside a [server-side component](/docs#run-time-server-side-component-api).
+     *
+     * https://svelte.dev/docs#run-time-svelte-onmount
+     */
     function onMount(fn) {
         get_current_component().$$.on_mount.push(fn);
     }
+    /**
+     * Schedules a callback to run immediately after the component has been updated.
+     *
+     * The first time the callback runs will be after the initial `onMount`
+     */
     function afterUpdate(fn) {
         get_current_component().$$.after_update.push(fn);
     }
+    /**
+     * Schedules a callback to run immediately before the component is unmounted.
+     *
+     * Out of `onMount`, `beforeUpdate`, `afterUpdate` and `onDestroy`, this is the
+     * only one that runs inside a server-side component.
+     *
+     * https://svelte.dev/docs#run-time-svelte-ondestroy
+     */
     function onDestroy(fn) {
         get_current_component().$$.on_destroy.push(fn);
     }
+    /**
+     * Creates an event dispatcher that can be used to dispatch [component events](/docs#template-syntax-component-directives-on-eventname).
+     * Event dispatchers are functions that can take two arguments: `name` and `detail`.
+     *
+     * Component events created with `createEventDispatcher` create a
+     * [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent).
+     * These events do not [bubble](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#Event_bubbling_and_capture).
+     * The `detail` argument corresponds to the [CustomEvent.detail](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/detail)
+     * property and can contain any type of data.
+     *
+     * https://svelte.dev/docs#run-time-svelte-createeventdispatcher
+     */
     function createEventDispatcher() {
         const component = get_current_component();
         return (type, detail, { cancelable = false } = {}) => {
@@ -312,10 +348,25 @@ var app = (function () {
             return true;
         };
     }
+    /**
+     * Associates an arbitrary `context` object with the current component and the specified `key`
+     * and returns that object. The context is then available to children of the component
+     * (including slotted content) with `getContext`.
+     *
+     * Like lifecycle functions, this must be called during component initialisation.
+     *
+     * https://svelte.dev/docs#run-time-svelte-setcontext
+     */
     function setContext(key, context) {
         get_current_component().$$.context.set(key, context);
         return context;
     }
+    /**
+     * Retrieves the context that belongs to the closest parent component with the specified `key`.
+     * Must be called during component initialisation.
+     *
+     * https://svelte.dev/docs#run-time-svelte-getcontext
+     */
     function getContext(key) {
         return get_current_component().$$.context.get(key);
     }
@@ -513,14 +564,17 @@ var app = (function () {
         block && block.c();
     }
     function mount_component(component, target, anchor, customElement) {
-        const { fragment, on_mount, on_destroy, after_update } = component.$$;
+        const { fragment, after_update } = component.$$;
         fragment && fragment.m(target, anchor);
         if (!customElement) {
             // onMount happens before the initial afterUpdate
             add_render_callback(() => {
-                const new_on_destroy = on_mount.map(run).filter(is_function);
-                if (on_destroy) {
-                    on_destroy.push(...new_on_destroy);
+                const new_on_destroy = component.$$.on_mount.map(run).filter(is_function);
+                // if the component was destroyed immediately
+                // it will update the `$$.on_destroy` reference to `null`.
+                // the destructured on_destroy may still reference to the old array
+                if (component.$$.on_destroy) {
+                    component.$$.on_destroy.push(...new_on_destroy);
                 }
                 else {
                     // Edge case - component was destroyed immediately,
@@ -556,7 +610,7 @@ var app = (function () {
         set_current_component(component);
         const $$ = component.$$ = {
             fragment: null,
-            ctx: null,
+            ctx: [],
             // state
             props,
             update: noop,
@@ -621,6 +675,9 @@ var app = (function () {
             this.$destroy = noop;
         }
         $on(type, callback) {
+            if (!is_function(callback)) {
+                return noop;
+            }
             const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
             callbacks.push(callback);
             return () => {
@@ -639,7 +696,7 @@ var app = (function () {
     }
 
     function dispatch_dev(type, detail) {
-        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.49.0' }, detail), { bubbles: true }));
+        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.53.1' }, detail), { bubbles: true }));
     }
     function append_dev(target, node) {
         dispatch_dev('SvelteDOMInsert', { target, node });
@@ -697,6 +754,25 @@ var app = (function () {
         for (const slot_key of Object.keys(slot)) {
             if (!~keys.indexOf(slot_key)) {
                 console.warn(`<${name}> received an unexpected slot "${slot_key}".`);
+            }
+        }
+    }
+    function construct_svelte_component_dev(component, props) {
+        const error_message = 'this={...} of <svelte:component> should specify a Svelte component.';
+        try {
+            const instance = new component(props);
+            if (!instance.$$ || !instance.$set || !instance.$on || !instance.$destroy) {
+                throw new Error(error_message);
+            }
+            return instance;
+        }
+        catch (err) {
+            const { message } = err;
+            if (typeof message === 'string' && message.indexOf('is not a constructor') !== -1) {
+                throw new Error(error_message);
+            }
+            else {
+                throw err;
             }
         }
     }
@@ -938,7 +1014,7 @@ var app = (function () {
     	};
     }
 
-    /* node_modules/svelte-spa-router/Router.svelte generated by Svelte v3.49.0 */
+    /* node_modules/svelte-spa-router/Router.svelte generated by Svelte v3.53.1 */
 
     const { Error: Error_1, Object: Object_1$1, console: console_1 } = globals;
 
@@ -964,7 +1040,7 @@ var app = (function () {
     	}
 
     	if (switch_value) {
-    		switch_instance = new switch_value(switch_props());
+    		switch_instance = construct_svelte_component_dev(switch_value, switch_props());
     		switch_instance.$on("routeEvent", /*routeEvent_handler_1*/ ctx[7]);
     	}
 
@@ -974,10 +1050,7 @@ var app = (function () {
     			switch_instance_anchor = empty();
     		},
     		m: function mount(target, anchor) {
-    			if (switch_instance) {
-    				mount_component(switch_instance, target, anchor);
-    			}
-
+    			if (switch_instance) mount_component(switch_instance, target, anchor);
     			insert_dev(target, switch_instance_anchor, anchor);
     			current = true;
     		},
@@ -999,7 +1072,7 @@ var app = (function () {
     				}
 
     				if (switch_value) {
-    					switch_instance = new switch_value(switch_props());
+    					switch_instance = construct_svelte_component_dev(switch_value, switch_props());
     					switch_instance.$on("routeEvent", /*routeEvent_handler_1*/ ctx[7]);
     					create_component(switch_instance.$$.fragment);
     					transition_in(switch_instance.$$.fragment, 1);
@@ -1059,7 +1132,7 @@ var app = (function () {
     	}
 
     	if (switch_value) {
-    		switch_instance = new switch_value(switch_props());
+    		switch_instance = construct_svelte_component_dev(switch_value, switch_props());
     		switch_instance.$on("routeEvent", /*routeEvent_handler*/ ctx[6]);
     	}
 
@@ -1069,10 +1142,7 @@ var app = (function () {
     			switch_instance_anchor = empty();
     		},
     		m: function mount(target, anchor) {
-    			if (switch_instance) {
-    				mount_component(switch_instance, target, anchor);
-    			}
-
+    			if (switch_instance) mount_component(switch_instance, target, anchor);
     			insert_dev(target, switch_instance_anchor, anchor);
     			current = true;
     		},
@@ -1097,7 +1167,7 @@ var app = (function () {
     				}
 
     				if (switch_value) {
-    					switch_instance = new switch_value(switch_props());
+    					switch_instance = construct_svelte_component_dev(switch_value, switch_props());
     					switch_instance.$on("routeEvent", /*routeEvent_handler*/ ctx[6]);
     					create_component(switch_instance.$$.fragment);
     					transition_in(switch_instance.$$.fragment, 1);
@@ -3970,7 +4040,7 @@ var app = (function () {
     Prism.languages.svelte.tag.addInlined('style', 'css');
     Prism.languages.svelte.tag.addInlined('script', 'javascript');
 
-    /* node_modules/svelte-prism/src/Prism.svelte generated by Svelte v3.49.0 */
+    /* node_modules/svelte-prism/src/Prism.svelte generated by Svelte v3.53.1 */
     const file$1c = "node_modules/svelte-prism/src/Prism.svelte";
 
     // (32:45) {:else}
@@ -4345,7 +4415,7 @@ var app = (function () {
         localStorage.setItem('sourceType', value);
     });
 
-    /* src/components/icon/Icon.svelte generated by Svelte v3.49.0 */
+    /* src/components/icon/Icon.svelte generated by Svelte v3.53.1 */
 
     const file$1b = "src/components/icon/Icon.svelte";
 
@@ -4555,13 +4625,13 @@ var app = (function () {
     	}
     }
 
-    /* src/components/accordion/Accordion.svelte generated by Svelte v3.49.0 */
+    /* src/components/accordion/Accordion.svelte generated by Svelte v3.53.1 */
     const file$1a = "src/components/accordion/Accordion.svelte";
 
     function get_each_context$9(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[5] = list[i];
-    	child_ctx[7] = i;
+    	child_ctx[6] = list[i];
+    	child_ctx[8] = i;
     	return child_ctx;
     }
 
@@ -4570,13 +4640,14 @@ var app = (function () {
     	let div2;
     	let div0;
     	let span;
-    	let t0_value = /*tab*/ ctx[5].title + "";
+    	let t0_value = /*tab*/ ctx[6].title + "";
     	let t0;
     	let t1;
     	let icon;
+    	let div0_aria_label_value;
     	let t2;
     	let div1;
-    	let raw_value = /*tab*/ ctx[5].content + "";
+    	let raw_value = /*tab*/ ctx[6].content + "";
     	let t3;
     	let current;
     	let mounted;
@@ -4588,7 +4659,11 @@ var app = (function () {
     		});
 
     	function click_handler() {
-    		return /*click_handler*/ ctx[4](/*i*/ ctx[7]);
+    		return /*click_handler*/ ctx[4](/*i*/ ctx[8]);
+    	}
+
+    	function keydown_handler() {
+    		return /*keydown_handler*/ ctx[5](/*i*/ ctx[8]);
     	}
 
     	const block = {
@@ -4603,13 +4678,16 @@ var app = (function () {
     			div1 = element("div");
     			t3 = space();
     			attr_dev(span, "class", "fontweight-bold fontsize-medium");
-    			add_location(span, file$1a, 16, 8, 637);
+    			add_location(span, file$1a, 22, 8, 823);
     			attr_dev(div0, "class", "accordion-header flex flex-justify--between flex-align--center padding-m");
+    			attr_dev(div0, "role", "button");
+    			attr_dev(div0, "tabindex", 0);
+    			attr_dev(div0, "aria-label", div0_aria_label_value = /*tab*/ ctx[6].title);
     			add_location(div0, file$1a, 10, 6, 417);
     			attr_dev(div1, "class", "accordion-body padding-m padding-l--rl");
-    			add_location(div1, file$1a, 19, 6, 767);
+    			add_location(div1, file$1a, 25, 6, 953);
     			attr_dev(div2, "class", "accordion-tab margin-m--b");
-    			toggle_class(div2, "accordion-expanded", /*$activeTab*/ ctx[3] === /*i*/ ctx[7]);
+    			toggle_class(div2, "accordion-expanded", /*$activeTab*/ ctx[3] === /*i*/ ctx[8]);
     			add_location(div2, file$1a, 9, 4, 327);
     		},
     		m: function mount(target, anchor) {
@@ -4626,16 +4704,25 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(div0, "click", stop_propagation(click_handler), false, false, true);
+    				dispose = [
+    					listen_dev(div0, "click", stop_propagation(click_handler), false, false, true),
+    					listen_dev(div0, "keydown", stop_propagation(keydown_handler), false, false, true)
+    				];
+
     				mounted = true;
     			}
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if ((!current || dirty & /*tabs*/ 4) && t0_value !== (t0_value = /*tab*/ ctx[5].title + "")) set_data_dev(t0, t0_value);
-    			if ((!current || dirty & /*tabs*/ 4) && raw_value !== (raw_value = /*tab*/ ctx[5].content + "")) div1.innerHTML = raw_value;
-    			if (dirty & /*$activeTab*/ 8) {
-    				toggle_class(div2, "accordion-expanded", /*$activeTab*/ ctx[3] === /*i*/ ctx[7]);
+    			if ((!current || dirty & /*tabs*/ 4) && t0_value !== (t0_value = /*tab*/ ctx[6].title + "")) set_data_dev(t0, t0_value);
+
+    			if (!current || dirty & /*tabs*/ 4 && div0_aria_label_value !== (div0_aria_label_value = /*tab*/ ctx[6].title)) {
+    				attr_dev(div0, "aria-label", div0_aria_label_value);
+    			}
+
+    			if ((!current || dirty & /*tabs*/ 4) && raw_value !== (raw_value = /*tab*/ ctx[6].content + "")) div1.innerHTML = raw_value;
+    			if (!current || dirty & /*$activeTab*/ 8) {
+    				toggle_class(div2, "accordion-expanded", /*$activeTab*/ ctx[3] === /*i*/ ctx[8]);
     			}
     		},
     		i: function intro(local) {
@@ -4651,7 +4738,7 @@ var app = (function () {
     			if (detaching) detach_dev(div2);
     			destroy_component(icon);
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -4786,6 +4873,13 @@ var app = (function () {
     	$$subscribe_activeTab();
     	let { dataTheme = undefined } = $$props;
     	let { tabs } = $$props;
+
+    	$$self.$$.on_mount.push(function () {
+    		if (tabs === undefined && !('tabs' in $$props || $$self.$$.bound[$$self.$$.props['tabs']])) {
+    			console.warn("<Accordion> was created without expected prop 'tabs'");
+    		}
+    	});
+
     	const writable_props = ['dataTheme', 'tabs'];
 
     	Object.keys($$props).forEach(key => {
@@ -4793,6 +4887,10 @@ var app = (function () {
     	});
 
     	const click_handler = i => {
+    		set_store_value(activeTab, $activeTab = $activeTab !== i ? i : undefined, $activeTab);
+    	};
+
+    	const keydown_handler = i => {
     		set_store_value(activeTab, $activeTab = $activeTab !== i ? i : undefined, $activeTab);
     	};
 
@@ -4819,7 +4917,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [activeTab, dataTheme, tabs, $activeTab, click_handler];
+    	return [activeTab, dataTheme, tabs, $activeTab, click_handler, keydown_handler];
     }
 
     class Accordion extends SvelteComponentDev {
@@ -4833,13 +4931,6 @@ var app = (function () {
     			options,
     			id: create_fragment$1b.name
     		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
-
-    		if (/*tabs*/ ctx[2] === undefined && !('tabs' in props)) {
-    			console.warn("<Accordion> was created without expected prop 'tabs'");
-    		}
     	}
 
     	get activeTab() {
@@ -4918,7 +5009,7 @@ var app = (function () {
         return output;
     }
 
-    /* src/components/badge/Badge.svelte generated by Svelte v3.49.0 */
+    /* src/components/badge/Badge.svelte generated by Svelte v3.53.1 */
 
     const file$19 = "src/components/badge/Badge.svelte";
 
@@ -4936,6 +5027,8 @@ var app = (function () {
     			span = element("span");
     			if (default_slot) default_slot.c();
     			attr_dev(span, "class", /*cssClass*/ ctx[3]);
+    			attr_dev(span, "role", "button");
+    			attr_dev(span, "tabindex", 0);
     			attr_dev(span, "style", /*style*/ ctx[1]);
     			attr_dev(span, "data-type", /*type*/ ctx[2]);
     			add_location(span, file$19, 22, 2, 593);
@@ -4950,7 +5043,11 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(span, "click", /*click_handler_1*/ ctx[10], false, false, false);
+    				dispose = [
+    					listen_dev(span, "click", /*click_handler_1*/ ctx[10], false, false, false),
+    					listen_dev(span, "keydown", /*keydown_handler*/ ctx[11], false, false, false)
+    				];
+
     				mounted = true;
     			}
     		},
@@ -4995,7 +5092,7 @@ var app = (function () {
     			if (detaching) detach_dev(span);
     			if (default_slot) default_slot.d(detaching);
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -5218,6 +5315,10 @@ var app = (function () {
     		bubble.call(this, $$self, event);
     	}
 
+    	function keydown_handler(event) {
+    		bubble.call(this, $$self, event);
+    	}
+
     	$$self.$$set = $$props => {
     		if ('className' in $$props) $$invalidate(4, className = $$props.className);
     		if ('extension' in $$props) $$invalidate(5, extension = $$props.extension);
@@ -5268,7 +5369,8 @@ var app = (function () {
     		$$scope,
     		slots,
     		click_handler,
-    		click_handler_1
+    		click_handler_1,
+    		keydown_handler
     	];
     }
 
@@ -5333,7 +5435,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/card/Card.svelte generated by Svelte v3.49.0 */
+    /* src/components/card/Card.svelte generated by Svelte v3.53.1 */
 
     const file$18 = "src/components/card/Card.svelte";
     const get_footer_slot_changes_1$1 = dirty => ({});
@@ -5384,6 +5486,8 @@ var app = (function () {
     			if (if_block3) if_block3.c();
     			attr_dev(div, "class", /*cssClass*/ ctx[3]);
     			attr_dev(div, "style", /*style*/ ctx[1]);
+    			attr_dev(div, "role", "button");
+    			attr_dev(div, "tabindex", 0);
     			add_location(div, file$18, 34, 2, 826);
     		},
     		m: function mount(target, anchor) {
@@ -5404,7 +5508,11 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(div, "click", /*click_handler_1*/ ctx[9], false, false, false);
+    				dispose = [
+    					listen_dev(div, "click", /*click_handler_1*/ ctx[9], false, false, false),
+    					listen_dev(div, "keydown", /*keydown_handler*/ ctx[10], false, false, false)
+    				];
+
     				mounted = true;
     			}
     		},
@@ -5549,7 +5657,7 @@ var app = (function () {
     			if (if_block2) if_block2.d();
     			if (if_block3) if_block3.d();
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -5798,7 +5906,7 @@ var app = (function () {
     			div = element("div");
     			if (header_slot) header_slot.c();
     			attr_dev(div, "class", "card-header");
-    			add_location(div, file$18, 36, 6, 897);
+    			add_location(div, file$18, 36, 6, 935);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -5863,7 +5971,7 @@ var app = (function () {
     			div = element("div");
     			if (media_slot) media_slot.c();
     			attr_dev(div, "class", "card-media");
-    			add_location(div, file$18, 41, 6, 1007);
+    			add_location(div, file$18, 41, 6, 1045);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -5928,7 +6036,7 @@ var app = (function () {
     			div = element("div");
     			if (content_slot) content_slot.c();
     			attr_dev(div, "class", "card-content");
-    			add_location(div, file$18, 47, 6, 1130);
+    			add_location(div, file$18, 47, 6, 1168);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -5993,7 +6101,7 @@ var app = (function () {
     			div = element("div");
     			if (footer_slot) footer_slot.c();
     			attr_dev(div, "class", "card-footer");
-    			add_location(div, file$18, 52, 6, 1243);
+    			add_location(div, file$18, 52, 6, 1281);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -6400,8 +6508,12 @@ var app = (function () {
     		bubble.call(this, $$self, event);
     	}
 
+    	function keydown_handler(event) {
+    		bubble.call(this, $$self, event);
+    	}
+
     	$$self.$$set = $$new_props => {
-    		$$invalidate(10, $$props = assign(assign({}, $$props), exclude_internal_props($$new_props)));
+    		$$invalidate(11, $$props = assign(assign({}, $$props), exclude_internal_props($$new_props)));
     		if ('className' in $$new_props) $$invalidate(5, className = $$new_props.className);
     		if ('url' in $$new_props) $$invalidate(0, url = $$new_props.url);
     		if ('style' in $$new_props) $$invalidate(1, style = $$new_props.style);
@@ -6418,7 +6530,7 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$new_props => {
-    		$$invalidate(10, $$props = assign(assign({}, $$props), $$new_props));
+    		$$invalidate(11, $$props = assign(assign({}, $$props), $$new_props));
     		if ('className' in $$props) $$invalidate(5, className = $$new_props.className);
     		if ('url' in $$props) $$invalidate(0, url = $$new_props.url);
     		if ('style' in $$props) $$invalidate(1, style = $$new_props.style);
@@ -6447,7 +6559,8 @@ var app = (function () {
     		$$scope,
     		slots,
     		click_handler,
-    		click_handler_1
+    		click_handler_1,
+    		keydown_handler
     	];
     }
 
@@ -6489,7 +6602,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/toggler/Toggler.svelte generated by Svelte v3.49.0 */
+    /* src/components/toggler/Toggler.svelte generated by Svelte v3.53.1 */
     const file$17 = "src/components/toggler/Toggler.svelte";
     const get_off_slot_changes_1 = dirty => ({});
     const get_off_slot_context_1 = ctx => ({});
@@ -6599,7 +6712,7 @@ var app = (function () {
     				prop_dev(button, "disabled", /*disabled*/ ctx[2]);
     			}
 
-    			if (dirty & /*baseClass, disabled*/ 12) {
+    			if (!current || dirty & /*baseClass, disabled*/ 12) {
     				toggle_class(button, "toggle-disabled", /*disabled*/ ctx[2]);
     			}
     		},
@@ -6750,7 +6863,7 @@ var app = (function () {
     				prop_dev(button0, "disabled", /*disabled*/ ctx[2]);
     			}
 
-    			if (dirty & /*baseClass, disabled*/ 12) {
+    			if (!current || dirty & /*baseClass, disabled*/ 12) {
     				toggle_class(button0, "toggle-disabled", /*disabled*/ ctx[2]);
     			}
 
@@ -6791,7 +6904,7 @@ var app = (function () {
     				prop_dev(button1, "disabled", /*disabled*/ ctx[2]);
     			}
 
-    			if (dirty & /*baseClass, disabled*/ 12) {
+    			if (!current || dirty & /*baseClass, disabled*/ 12) {
     				toggle_class(button1, "toggle-disabled", /*disabled*/ ctx[2]);
     			}
     		},
@@ -7178,7 +7291,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/articlecard/ArticleCard.svelte generated by Svelte v3.49.0 */
+    /* src/components/articlecard/ArticleCard.svelte generated by Svelte v3.53.1 */
     const file$16 = "src/components/articlecard/ArticleCard.svelte";
     const get_default_slot_changes_1$1 = dirty => ({});
     const get_default_slot_context_1$1 = ctx => ({ slot: "on" });
@@ -8449,11 +8562,11 @@ var app = (function () {
 
     			if (!current || dirty[0] & /*title*/ 2) set_data_dev(t5, /*title*/ ctx[1]);
 
-    			if (dirty[0] & /*videoIcon, media*/ 8256) {
+    			if (!current || dirty[0] & /*videoIcon, media*/ 8256) {
     				toggle_class(h2, "padding-l--r", /*videoIcon*/ ctx[13] && !/*media*/ ctx[6]);
     			}
 
-    			if (dirty[0] & /*truncateTitle*/ 2048) {
+    			if (!current || dirty[0] & /*truncateTitle*/ 2048) {
     				toggle_class(h2, "card-title--truncate", /*truncateTitle*/ ctx[11]);
     			}
 
@@ -9255,7 +9368,7 @@ var app = (function () {
         }
     }
 
-    /* src/components/buttongroup/ButtonGroup.svelte generated by Svelte v3.49.0 */
+    /* src/components/buttongroup/ButtonGroup.svelte generated by Svelte v3.53.1 */
     const file$15 = "src/components/buttongroup/ButtonGroup.svelte";
 
     function create_fragment$16(ctx) {
@@ -9547,7 +9660,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/button/Button.svelte generated by Svelte v3.49.0 */
+    /* src/components/button/Button.svelte generated by Svelte v3.53.1 */
     const file$14 = "src/components/button/Button.svelte";
 
     // (53:0) {:else}
@@ -10066,7 +10179,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/horizontalScroll/HorizontalScroll.svelte generated by Svelte v3.49.0 */
+    /* src/components/horizontalScroll/HorizontalScroll.svelte generated by Svelte v3.53.1 */
     const file$13 = "src/components/horizontalScroll/HorizontalScroll.svelte";
 
     // (20:2) <Button     on:click={() => horizontalScrollHandler.scrollWithButton(SCROLLDIRECTION.left)}     className="horizontal-scroll-nav button-prev bg--white"     extension="icon"   >
@@ -10410,7 +10523,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/articlelist/ArticleList.svelte generated by Svelte v3.49.0 */
+    /* src/components/articlelist/ArticleList.svelte generated by Svelte v3.53.1 */
     const file$12 = "src/components/articlelist/ArticleList.svelte";
 
     // (47:2) {:else}
@@ -10869,7 +10982,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/form-elements/Checkbox.svelte generated by Svelte v3.49.0 */
+    /* src/components/form-elements/Checkbox.svelte generated by Svelte v3.53.1 */
     const file$11 = "src/components/form-elements/Checkbox.svelte";
 
     // (20:4) {:else}
@@ -11251,7 +11364,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/form-elements/Select.svelte generated by Svelte v3.49.0 */
+    /* src/components/form-elements/Select.svelte generated by Svelte v3.53.1 */
 
     const file$10 = "src/components/form-elements/Select.svelte";
 
@@ -11470,7 +11583,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/form-elements/TextArea.svelte generated by Svelte v3.49.0 */
+    /* src/components/form-elements/TextArea.svelte generated by Svelte v3.53.1 */
     const file$$ = "src/components/form-elements/TextArea.svelte";
 
     // (28:2) {#if label}
@@ -11748,7 +11861,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/form-elements/TextInput.svelte generated by Svelte v3.49.0 */
+    /* src/components/form-elements/TextInput.svelte generated by Svelte v3.53.1 */
     const file$_ = "src/components/form-elements/TextInput.svelte";
 
     // (28:2) {#if label}
@@ -12031,7 +12144,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/form-elements/FormElement.svelte generated by Svelte v3.49.0 */
+    /* src/components/form-elements/FormElement.svelte generated by Svelte v3.53.1 */
     const file$Z = "src/components/form-elements/FormElement.svelte";
 
     // (42:2) <svelte:component this={component} class={className} {size} {label} {inputtype} {group} {value} name={fieldName}>
@@ -12116,7 +12229,7 @@ var app = (function () {
     	}
 
     	if (switch_value) {
-    		switch_instance = new switch_value(switch_props(ctx));
+    		switch_instance = construct_svelte_component_dev(switch_value, switch_props(ctx));
     	}
 
     	const block = {
@@ -12131,11 +12244,7 @@ var app = (function () {
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
-
-    			if (switch_instance) {
-    				mount_component(switch_instance, div, null);
-    			}
-
+    			if (switch_instance) mount_component(switch_instance, div, null);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -12165,7 +12274,7 @@ var app = (function () {
     				}
 
     				if (switch_value) {
-    					switch_instance = new switch_value(switch_props(ctx));
+    					switch_instance = construct_svelte_component_dev(switch_value, switch_props(ctx));
     					create_component(switch_instance.$$.fragment);
     					transition_in(switch_instance.$$.fragment, 1);
     					mount_component(switch_instance, div, null);
@@ -12385,7 +12494,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/spinner/Spinner.svelte generated by Svelte v3.49.0 */
+    /* src/components/spinner/Spinner.svelte generated by Svelte v3.53.1 */
     const file$Y = "src/components/spinner/Spinner.svelte";
 
     // (5:0) {#if isLoading}
@@ -12592,7 +12701,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/tabs/Tab.svelte generated by Svelte v3.49.0 */
+    /* src/components/tabs/Tab.svelte generated by Svelte v3.53.1 */
     const file$X = "src/components/tabs/Tab.svelte";
 
     function create_fragment$Y(ctx) {
@@ -12768,7 +12877,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/tabs/TabContent.svelte generated by Svelte v3.49.0 */
+    /* src/components/tabs/TabContent.svelte generated by Svelte v3.53.1 */
 
     // (7:0) {#if $selectedPanel === panel}
     function create_if_block$j(ctx) {
@@ -12940,7 +13049,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/tabs/TabList.svelte generated by Svelte v3.49.0 */
+    /* src/components/tabs/TabList.svelte generated by Svelte v3.53.1 */
 
     const file$W = "src/components/tabs/TabList.svelte";
 
@@ -13096,7 +13205,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/tabs/Tabs.svelte generated by Svelte v3.49.0 */
+    /* src/components/tabs/Tabs.svelte generated by Svelte v3.53.1 */
     const file$V = "src/components/tabs/Tabs.svelte";
 
     function create_fragment$V(ctx) {
@@ -13285,7 +13394,7 @@ var app = (function () {
     	}
     }
 
-    /* docs_src/components/Accordion.svelte generated by Svelte v3.49.0 */
+    /* docs_src/components/Accordion.svelte generated by Svelte v3.53.1 */
     const file$U = "docs_src/components/Accordion.svelte";
 
     // (16:0) {#if $sourceType === 'svelte'}
@@ -14053,7 +14162,7 @@ for (const accordion of accordions) {
         return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
     }
 
-    /* docs_src/components/ArticleCard.svelte generated by Svelte v3.49.0 */
+    /* docs_src/components/ArticleCard.svelte generated by Svelte v3.53.1 */
     const file$T = "docs_src/components/ArticleCard.svelte";
 
     // (171:0) {:else}
@@ -15501,7 +15610,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/ArticleList.svelte generated by Svelte v3.49.0 */
+    /* docs_src/components/ArticleList.svelte generated by Svelte v3.53.1 */
     const file$S = "docs_src/components/ArticleList.svelte";
 
     function get_each_context$8(ctx, list, i) {
@@ -16824,7 +16933,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/Badge.svelte generated by Svelte v3.49.0 */
+    /* docs_src/components/Badge.svelte generated by Svelte v3.53.1 */
     const file$R = "docs_src/components/Badge.svelte";
 
     // (11:0) {#if $sourceType === 'svelte'}
@@ -18634,7 +18743,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/Button.svelte generated by Svelte v3.49.0 */
+    /* docs_src/components/Button.svelte generated by Svelte v3.53.1 */
     const file$Q = "docs_src/components/Button.svelte";
 
     // (8:0) {#if $sourceType === 'svelte'}
@@ -20891,7 +21000,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/ButtonGroup.svelte generated by Svelte v3.49.0 */
+    /* docs_src/components/ButtonGroup.svelte generated by Svelte v3.53.1 */
     const file$P = "docs_src/components/ButtonGroup.svelte";
 
     // (9:0) {#if $sourceType === 'svelte'}
@@ -23744,7 +23853,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/Card.svelte generated by Svelte v3.49.0 */
+    /* docs_src/components/Card.svelte generated by Svelte v3.53.1 */
     const file$O = "docs_src/components/Card.svelte";
 
     // (8:0) {#if $sourceType === 'svelte'}
@@ -24855,7 +24964,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/FormElement.svelte generated by Svelte v3.49.0 */
+    /* docs_src/components/FormElement.svelte generated by Svelte v3.53.1 */
     const file$N = "docs_src/components/FormElement.svelte";
 
     // (8:0) {#if $sourceType === 'svelte'}
@@ -26280,7 +26389,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/HorizontalScroll.svelte generated by Svelte v3.49.0 */
+    /* docs_src/components/HorizontalScroll.svelte generated by Svelte v3.53.1 */
     const file$M = "docs_src/components/HorizontalScroll.svelte";
 
     function get_each_context$7(ctx, list, i) {
@@ -27735,7 +27844,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/assets/dredition/DrEditionSVGs.svelte generated by Svelte v3.49.0 */
+    /* docs_src/assets/dredition/DrEditionSVGs.svelte generated by Svelte v3.53.1 */
 
     const file$L = "docs_src/assets/dredition/DrEditionSVGs.svelte";
 
@@ -28684,7 +28793,7 @@ for (const accordion of accordions) {
 
     const iconnameshtml = ['angle-down', 'angle-left', 'angle-right', 'angle-up', 'arrow-down', 'arrow-left', 'arrow-right', 'arrow-up', 'article', 'at', 'bell', 'bookmark-solid', 'bookmark', 'calendar', 'camera-solid', 'camera', 'chart-bar', 'check-circle-solid', 'check-circle', 'check-square-solid', 'check-square', 'check', 'circle-notch', 'circle-solid', 'circle', 'clock', 'cog-solid', 'cog', 'comment-solid', 'comment', 'comments-solid', 'creditcard-solid', 'creditcard', 'desktop', 'dot-circle', 'ebplus-circle-solid', 'ebplus', 'edit', 'envelope', 'exclamation-circle-solid', 'exclamation-circle', 'exclamation-triangle-solid', 'exclamation-triangle', 'expand', 'external-link', 'facebook', 'filter-solid', 'futbol', 'gallery', 'headphones', 'headset', 'heart-half-solid', 'heart-solid', 'heart', 'history', 'info-circle-solid', 'info-circle', 'instagram', 'lightning', 'linkedin', 'list-ol', 'lock', 'mappin-solid', 'medielogin', 'menubars-solid', 'menubars', 'miteb-solid', 'miteb', 'newspaper', 'pause-circle', 'phone', 'pin-solid', 'play-circle', 'question-circle', 'rss-symbol', 'rss', 'search', 'smartphone', 'square', 'star-half-solid', 'star-solid', 'star', 'sync', 'tablet', 'tag-solid', 'tag', 'tags-solid', 'tags', 'times-circle-solid', 'times-circle', 'times', 'toggle-off', 'toggle-on', 'trash-solid', 'trash', 'twitter', 'user-circle-solid', 'user-circle', 'user-solid', 'users', 'video', 'volume-muted-solid', 'volume-up-solid', 'youtube'];
 
-    /* svelte/components/icon/Icon.svelte generated by Svelte v3.49.0 */
+    /* svelte/components/icon/Icon.svelte generated by Svelte v3.53.1 */
 
     const file$K = "svelte/components/icon/Icon.svelte";
 
@@ -28894,7 +29003,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* svelte/components/badge/Badge.svelte generated by Svelte v3.49.0 */
+    /* svelte/components/badge/Badge.svelte generated by Svelte v3.53.1 */
 
     const file$J = "svelte/components/badge/Badge.svelte";
 
@@ -28912,6 +29021,8 @@ for (const accordion of accordions) {
     			span = element("span");
     			if (default_slot) default_slot.c();
     			attr_dev(span, "class", /*cssClass*/ ctx[3]);
+    			attr_dev(span, "role", "button");
+    			attr_dev(span, "tabindex", 0);
     			attr_dev(span, "style", /*style*/ ctx[1]);
     			attr_dev(span, "data-type", /*type*/ ctx[2]);
     			add_location(span, file$J, 22, 2, 593);
@@ -28926,7 +29037,11 @@ for (const accordion of accordions) {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(span, "click", /*click_handler_1*/ ctx[10], false, false, false);
+    				dispose = [
+    					listen_dev(span, "click", /*click_handler_1*/ ctx[10], false, false, false),
+    					listen_dev(span, "keydown", /*keydown_handler*/ ctx[11], false, false, false)
+    				];
+
     				mounted = true;
     			}
     		},
@@ -28971,7 +29086,7 @@ for (const accordion of accordions) {
     			if (detaching) detach_dev(span);
     			if (default_slot) default_slot.d(detaching);
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -29194,6 +29309,10 @@ for (const accordion of accordions) {
     		bubble.call(this, $$self, event);
     	}
 
+    	function keydown_handler(event) {
+    		bubble.call(this, $$self, event);
+    	}
+
     	$$self.$$set = $$props => {
     		if ('className' in $$props) $$invalidate(4, className = $$props.className);
     		if ('extension' in $$props) $$invalidate(5, extension = $$props.extension);
@@ -29244,7 +29363,8 @@ for (const accordion of accordions) {
     		$$scope,
     		slots,
     		click_handler,
-    		click_handler_1
+    		click_handler_1,
+    		keydown_handler
     	];
     }
 
@@ -29309,7 +29429,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* svelte/components/card/Card.svelte generated by Svelte v3.49.0 */
+    /* svelte/components/card/Card.svelte generated by Svelte v3.53.1 */
 
     const file$I = "svelte/components/card/Card.svelte";
     const get_footer_slot_changes_1 = dirty => ({});
@@ -29360,6 +29480,8 @@ for (const accordion of accordions) {
     			if (if_block3) if_block3.c();
     			attr_dev(div, "class", /*cssClass*/ ctx[3]);
     			attr_dev(div, "style", /*style*/ ctx[1]);
+    			attr_dev(div, "role", "button");
+    			attr_dev(div, "tabindex", 0);
     			add_location(div, file$I, 34, 2, 826);
     		},
     		m: function mount(target, anchor) {
@@ -29380,7 +29502,11 @@ for (const accordion of accordions) {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(div, "click", /*click_handler_1*/ ctx[9], false, false, false);
+    				dispose = [
+    					listen_dev(div, "click", /*click_handler_1*/ ctx[9], false, false, false),
+    					listen_dev(div, "keydown", /*keydown_handler*/ ctx[10], false, false, false)
+    				];
+
     				mounted = true;
     			}
     		},
@@ -29525,7 +29651,7 @@ for (const accordion of accordions) {
     			if (if_block2) if_block2.d();
     			if (if_block3) if_block3.d();
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -29774,7 +29900,7 @@ for (const accordion of accordions) {
     			div = element("div");
     			if (header_slot) header_slot.c();
     			attr_dev(div, "class", "card-header");
-    			add_location(div, file$I, 36, 6, 897);
+    			add_location(div, file$I, 36, 6, 935);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -29839,7 +29965,7 @@ for (const accordion of accordions) {
     			div = element("div");
     			if (media_slot) media_slot.c();
     			attr_dev(div, "class", "card-media");
-    			add_location(div, file$I, 41, 6, 1007);
+    			add_location(div, file$I, 41, 6, 1045);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -29904,7 +30030,7 @@ for (const accordion of accordions) {
     			div = element("div");
     			if (content_slot) content_slot.c();
     			attr_dev(div, "class", "card-content");
-    			add_location(div, file$I, 47, 6, 1130);
+    			add_location(div, file$I, 47, 6, 1168);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -29969,7 +30095,7 @@ for (const accordion of accordions) {
     			div = element("div");
     			if (footer_slot) footer_slot.c();
     			attr_dev(div, "class", "card-footer");
-    			add_location(div, file$I, 52, 6, 1243);
+    			add_location(div, file$I, 52, 6, 1281);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -30376,8 +30502,12 @@ for (const accordion of accordions) {
     		bubble.call(this, $$self, event);
     	}
 
+    	function keydown_handler(event) {
+    		bubble.call(this, $$self, event);
+    	}
+
     	$$self.$$set = $$new_props => {
-    		$$invalidate(10, $$props = assign(assign({}, $$props), exclude_internal_props($$new_props)));
+    		$$invalidate(11, $$props = assign(assign({}, $$props), exclude_internal_props($$new_props)));
     		if ('className' in $$new_props) $$invalidate(5, className = $$new_props.className);
     		if ('url' in $$new_props) $$invalidate(0, url = $$new_props.url);
     		if ('style' in $$new_props) $$invalidate(1, style = $$new_props.style);
@@ -30394,7 +30524,7 @@ for (const accordion of accordions) {
     	});
 
     	$$self.$inject_state = $$new_props => {
-    		$$invalidate(10, $$props = assign(assign({}, $$props), $$new_props));
+    		$$invalidate(11, $$props = assign(assign({}, $$props), $$new_props));
     		if ('className' in $$props) $$invalidate(5, className = $$new_props.className);
     		if ('url' in $$props) $$invalidate(0, url = $$new_props.url);
     		if ('style' in $$props) $$invalidate(1, style = $$new_props.style);
@@ -30423,7 +30553,8 @@ for (const accordion of accordions) {
     		$$scope,
     		slots,
     		click_handler,
-    		click_handler_1
+    		click_handler_1,
+    		keydown_handler
     	];
     }
 
@@ -30484,11 +30615,11 @@ for (const accordion of accordions) {
         SCROLLPOS[SCROLLPOS["unset"] = 4] = "unset";
     })(SCROLLPOS || (SCROLLPOS = {}));
 
-    /* svelte/components/buttongroup/ButtonGroup.svelte generated by Svelte v3.49.0 */
+    /* svelte/components/buttongroup/ButtonGroup.svelte generated by Svelte v3.53.1 */
 
     const BUTTONS = {};
 
-    /* svelte/components/button/Button.svelte generated by Svelte v3.49.0 */
+    /* svelte/components/button/Button.svelte generated by Svelte v3.53.1 */
     const file$H = "svelte/components/button/Button.svelte";
 
     // (53:0) {:else}
@@ -31007,7 +31138,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/Icon.svelte generated by Svelte v3.49.0 */
+    /* docs_src/components/Icon.svelte generated by Svelte v3.53.1 */
 
     const { Object: Object_1 } = globals;
     const file$G = "docs_src/components/Icon.svelte";
@@ -31381,7 +31512,7 @@ for (const accordion of accordions) {
     	return block;
     }
 
-    // (85:6) {#each Object.keys(colorNames) as colorName}
+    // (86:6) {#each Object.keys(colorNames) as colorName}
     function create_each_block_2(ctx) {
     	let option;
     	let t_value = /*colorName*/ ctx[11] + "";
@@ -31393,7 +31524,7 @@ for (const accordion of accordions) {
     			t = text(t_value);
     			option.__value = /*colorName*/ ctx[11];
     			option.value = option.__value;
-    			add_location(option, file$G, 85, 8, 2487);
+    			add_location(option, file$G, 86, 8, 2506);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -31409,14 +31540,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(85:6) {#each Object.keys(colorNames) as colorName}",
+    		source: "(86:6) {#each Object.keys(colorNames) as colorName}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (90:2) <Button className="margin-m--r" type="cancel" on:click={decrement}>
+    // (91:2) <Button className="margin-m--r" type="cancel" on:click={decrement}>
     function create_default_slot_8$6(ctx) {
     	let icon;
     	let current;
@@ -31453,14 +31584,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot_8$6.name,
     		type: "slot",
-    		source: "(90:2) <Button className=\\\"margin-m--r\\\" type=\\\"cancel\\\" on:click={decrement}>",
+    		source: "(91:2) <Button className=\\\"margin-m--r\\\" type=\\\"cancel\\\" on:click={decrement}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (94:2) <Button className="margin-m--l" type="cancel" on:click={increment}>
+    // (95:2) <Button className="margin-m--l" type="cancel" on:click={increment}>
     function create_default_slot_7$6(ctx) {
     	let icon;
     	let current;
@@ -31497,14 +31628,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot_7$6.name,
     		type: "slot",
-    		source: "(94:2) <Button className=\\\"margin-m--l\\\" type=\\\"cancel\\\" on:click={increment}>",
+    		source: "(95:2) <Button className=\\\"margin-m--l\\\" type=\\\"cancel\\\" on:click={increment}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (100:4) <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
+    // (101:4) <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
     function create_default_slot_6$7(ctx) {
     	let icon;
     	let t0;
@@ -31530,7 +31661,7 @@ for (const accordion of accordions) {
     			small = element("small");
     			t1 = text(t1_value);
     			t2 = space();
-    			add_location(small, file$G, 101, 6, 3161);
+    			add_location(small, file$G, 102, 6, 3180);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -31566,14 +31697,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot_6$7.name,
     		type: "slot",
-    		source: "(100:4) <Card className=\\\"flex-align--center flex-justify--center margin-s padding-m bg--graa6\\\">",
+    		source: "(101:4) <Card className=\\\"flex-align--center flex-justify--center margin-s padding-m bg--graa6\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (99:2) {#each iconnameshtml as name, i}
+    // (100:2) {#each iconnameshtml as name, i}
     function create_each_block_1$1(ctx) {
     	let card;
     	let current;
@@ -31622,14 +31753,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(99:2) {#each iconnameshtml as name, i}",
+    		source: "(100:2) {#each iconnameshtml as name, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (111:0) {:else}
+    // (112:0) {:else}
     function create_else_block_1$1(ctx) {
     	let prism;
     	let current;
@@ -31669,14 +31800,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_else_block_1$1.name,
     		type: "else",
-    		source: "(111:0) {:else}",
+    		source: "(112:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (107:0) {#if $sourceType === 'svelte'}
+    // (108:0) {#if $sourceType === 'svelte'}
     function create_if_block_1$3(ctx) {
     	let prism;
     	let current;
@@ -31716,14 +31847,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(107:0) {#if $sourceType === 'svelte'}",
+    		source: "(108:0) {#if $sourceType === 'svelte'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (112:2) <Prism language="html">
+    // (113:2) <Prism language="html">
     function create_default_slot_5$7(ctx) {
     	let t_value = `<svg class="icon-svg" viewBox="0 0 50 50">
   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-name"></use>
@@ -31748,14 +31879,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot_5$7.name,
     		type: "slot",
-    		source: "(112:2) <Prism language=\\\"html\\\">",
+    		source: "(113:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (108:2) <Prism language="html">
+    // (109:2) <Prism language="html">
     function create_default_slot_4$a(ctx) {
     	let t_value = `<Icon name="iconname" />` + "";
     	let t;
@@ -31777,14 +31908,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot_4$a.name,
     		type: "slot",
-    		source: "(108:2) <Prism language=\\\"html\\\">",
+    		source: "(109:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (124:4) <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
+    // (125:4) <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
     function create_default_slot_3$b(ctx) {
     	let icon;
     	let t0;
@@ -31810,7 +31941,7 @@ for (const accordion of accordions) {
     			small = element("small");
     			t1 = text(t1_value);
     			t2 = space();
-    			add_location(small, file$G, 125, 6, 3853);
+    			add_location(small, file$G, 126, 6, 3872);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -31842,14 +31973,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot_3$b.name,
     		type: "slot",
-    		source: "(124:4) <Card className=\\\"flex-align--center flex-justify--center margin-s padding-m bg--graa6\\\">",
+    		source: "(125:4) <Card className=\\\"flex-align--center flex-justify--center margin-s padding-m bg--graa6\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (123:2) {#each graphicnameshtml as name, i}
+    // (124:2) {#each graphicnameshtml as name, i}
     function create_each_block$6(ctx) {
     	let card;
     	let current;
@@ -31898,14 +32029,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_each_block$6.name,
     		type: "each",
-    		source: "(123:2) {#each graphicnameshtml as name, i}",
+    		source: "(124:2) {#each graphicnameshtml as name, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (135:0) {:else}
+    // (136:0) {:else}
     function create_else_block$6(ctx) {
     	let prism;
     	let current;
@@ -31945,14 +32076,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_else_block$6.name,
     		type: "else",
-    		source: "(135:0) {:else}",
+    		source: "(136:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (131:0) {#if $sourceType === 'svelte'}
+    // (132:0) {#if $sourceType === 'svelte'}
     function create_if_block$6(ctx) {
     	let prism;
     	let current;
@@ -31992,14 +32123,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_if_block$6.name,
     		type: "if",
-    		source: "(131:0) {#if $sourceType === 'svelte'}",
+    		source: "(132:0) {#if $sourceType === 'svelte'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (136:2) <Prism language="html">
+    // (137:2) <Prism language="html">
     function create_default_slot_2$g(ctx) {
     	let t_value = `<svg class="icon-svg" viewBox="0 0 50 50">
   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-name"></use>
@@ -32024,14 +32155,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot_2$g.name,
     		type: "slot",
-    		source: "(136:2) <Prism language=\\\"html\\\">",
+    		source: "(137:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (132:2) <Prism language="html">
+    // (133:2) <Prism language="html">
     function create_default_slot_1$j(ctx) {
     	let t_value = `<Icon name="iconname" />` + "";
     	let t;
@@ -32053,14 +32184,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot_1$j.name,
     		type: "slot",
-    		source: "(132:2) <Prism language=\\\"html\\\">",
+    		source: "(133:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (147:2) <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
+    // (148:2) <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
     function create_default_slot$q(ctx) {
     	let icon;
     	let t0;
@@ -32082,7 +32213,7 @@ for (const accordion of accordions) {
     			t0 = space();
     			small = element("small");
     			small.textContent = "figcaption-pin";
-    			add_location(small, file$G, 148, 4, 4558);
+    			add_location(small, file$G, 149, 4, 4577);
     		},
     		m: function mount(target, anchor) {
     			mount_component(icon, target, anchor);
@@ -32111,7 +32242,7 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot$q.name,
     		type: "slot",
-    		source: "(147:2) <Card className=\\\"flex-align--center flex-justify--center margin-s padding-m bg--graa6\\\">",
+    		source: "(148:2) <Card className=\\\"flex-align--center flex-justify--center margin-s padding-m bg--graa6\\\">",
     		ctx
     	});
 
@@ -32307,7 +32438,7 @@ for (const accordion of accordions) {
     			t15 = text("Most icons are derived from ");
     			a = element("a");
     			a.textContent = "FontAwesome";
-    			t17 = text(" using only the\n  ");
+    			t17 = text(" using\n  only the\n  ");
     			b0 = element("b");
     			b0.textContent = "light";
     			t19 = text("\n  or ");
@@ -32388,37 +32519,38 @@ for (const accordion of accordions) {
     			add_location(p1, file$G, 74, 0, 1989);
     			attr_dev(a, "href", "https://fontawesome.com/");
     			attr_dev(a, "target", "_blank");
+    			attr_dev(a, "rel", "noreferrer");
     			add_location(a, file$G, 76, 30, 2120);
-    			add_location(b0, file$G, 77, 2, 2204);
-    			add_location(b1, file$G, 78, 5, 2222);
+    			add_location(b0, file$G, 78, 2, 2223);
+    			add_location(b1, file$G, 79, 5, 2241);
     			add_location(p2, file$G, 75, 0, 2086);
     			option.__value = "black";
     			option.value = option.__value;
-    			add_location(option, file$G, 83, 6, 2405);
+    			add_location(option, file$G, 84, 6, 2424);
     			if (/*iconColor*/ ctx[0] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[5].call(select));
-    			add_location(select, file$G, 82, 22, 2367);
+    			add_location(select, file$G, 83, 22, 2386);
     			attr_dev(div0, "class", "margin-m--r");
-    			add_location(div0, file$G, 81, 2, 2319);
+    			add_location(div0, file$G, 82, 2, 2338);
     			attr_dev(input, "type", "number");
     			set_style(input, "width", "45px");
-    			add_location(input, file$G, 92, 11, 2688);
-    			add_location(p3, file$G, 92, 2, 2679);
+    			add_location(input, file$G, 93, 11, 2707);
+    			add_location(p3, file$G, 93, 2, 2698);
     			attr_dev(div1, "class", "flex flex-row flex-justify--center flex-align--center");
-    			add_location(div1, file$G, 80, 0, 2249);
+    			add_location(div1, file$G, 81, 0, 2268);
     			attr_dev(div2, "class", "flex flex-wrap--wrap");
     			set_style(div2, "--icon-fill", "var(--color--" + /*iconColor*/ ctx[0] + ")");
-    			add_location(div2, file$G, 97, 0, 2889);
-    			add_location(h31, file$G, 118, 0, 3517);
-    			add_location(p4, file$G, 119, 0, 3535);
+    			add_location(div2, file$G, 98, 0, 2908);
+    			add_location(h31, file$G, 119, 0, 3536);
+    			add_location(p4, file$G, 120, 0, 3554);
     			attr_dev(div3, "class", "flex flex-wrap--wrap");
-    			add_location(div3, file$G, 121, 0, 3628);
-    			add_location(h32, file$G, 142, 0, 4212);
-    			add_location(em3, file$G, 144, 78, 4328);
-    			add_location(p5, file$G, 144, 0, 4250);
+    			add_location(div3, file$G, 122, 0, 3647);
+    			add_location(h32, file$G, 143, 0, 4231);
+    			add_location(em3, file$G, 145, 78, 4347);
+    			add_location(p5, file$G, 145, 0, 4269);
     			attr_dev(div4, "class", "flex flex-wrap--wrap");
-    			add_location(div4, file$G, 145, 0, 4362);
-    			add_location(h33, file$G, 152, 0, 4606);
-    			add_location(p6, file$G, 153, 0, 4625);
+    			add_location(div4, file$G, 146, 0, 4381);
+    			add_location(h33, file$G, 153, 0, 4625);
+    			add_location(p6, file$G, 154, 0, 4644);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -32889,7 +33021,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/Spinner.svelte generated by Svelte v3.49.0 */
+    /* docs_src/components/Spinner.svelte generated by Svelte v3.53.1 */
     const file$F = "docs_src/components/Spinner.svelte";
 
     // (8:0) {#if $sourceType === 'svelte'}
@@ -33390,7 +33522,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/Tabs.svelte generated by Svelte v3.49.0 */
+    /* docs_src/components/Tabs.svelte generated by Svelte v3.53.1 */
     const file$E = "docs_src/components/Tabs.svelte";
 
     // (110:0) {:else}
@@ -35322,7 +35454,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/Toggler.svelte generated by Svelte v3.49.0 */
+    /* docs_src/components/Toggler.svelte generated by Svelte v3.53.1 */
     const file$D = "docs_src/components/Toggler.svelte";
     const get_default_slot_changes_7 = dirty => ({});
     const get_default_slot_context_7 = ctx => ({ slot: "on" });
@@ -37500,7 +37632,7 @@ for (const accordion of accordions) {
         title: 'Components',
     };
 
-    /* docs_src/assets/icons/code.svg.rollup-plugin.svelte generated by Svelte v3.49.0 */
+    /* docs_src/assets/icons/code.svg.rollup-plugin.svelte generated by Svelte v3.53.1 */
 
     const file$C = "docs_src/assets/icons/code.svg.rollup-plugin.svelte";
 
@@ -37608,7 +37740,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/assets/icons/components.svg.rollup-plugin.svelte generated by Svelte v3.49.0 */
+    /* docs_src/assets/icons/components.svg.rollup-plugin.svelte generated by Svelte v3.53.1 */
 
     const file$B = "docs_src/assets/icons/components.svg.rollup-plugin.svelte";
 
@@ -37716,7 +37848,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Animation.svelte generated by Svelte v3.49.0 */
+    /* docs_src/utilities/Animation.svelte generated by Svelte v3.53.1 */
     const file$A = "docs_src/utilities/Animation.svelte";
 
     // (29:8) <Tab>
@@ -38561,7 +38693,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Border.svelte generated by Svelte v3.49.0 */
+    /* docs_src/utilities/Border.svelte generated by Svelte v3.53.1 */
     const file$z = "docs_src/utilities/Border.svelte";
 
     // (10:2) 
@@ -39200,10 +39332,10 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Color.svelte generated by Svelte v3.49.0 */
+    /* docs_src/utilities/Color.svelte generated by Svelte v3.53.1 */
     const file$y = "docs_src/utilities/Color.svelte";
 
-    // (14:2) 
+    // (23:2) 
     function create_content_slot_1(ctx) {
     	let div7;
     	let div0;
@@ -39248,23 +39380,23 @@ for (const accordion of accordions) {
     			em = element("em");
     			em.textContent = "(inherit the color of the section i.e sport)";
     			attr_dev(div0, "class", "flex flex--column padding-xl width-1of3 margin-l bg--white color--black");
-    			add_location(div0, file$y, 14, 4, 462);
+    			add_location(div0, file$y, 23, 4, 535);
     			attr_dev(div1, "class", "flex flex--column padding-xl width-1of3 margin-l bg--black color--white");
-    			add_location(div1, file$y, 15, 4, 570);
+    			add_location(div1, file$y, 24, 4, 643);
     			attr_dev(div2, "class", "flex flex--column padding-xl width-1of3 margin-l bg--white color--sport");
-    			add_location(div2, file$y, 16, 4, 678);
+    			add_location(div2, file$y, 25, 4, 751);
     			attr_dev(div3, "class", "flex flex--column padding-xl width-1of3 margin-l bg--white color--eb");
-    			add_location(div3, file$y, 17, 4, 786);
+    			add_location(div3, file$y, 26, 4, 859);
     			attr_dev(div4, "class", "flex flex--column padding-xl width-1of3 margin-l bg--white color--orangedark");
-    			add_location(div4, file$y, 18, 4, 888);
+    			add_location(div4, file$y, 27, 4, 961);
     			attr_dev(div5, "class", "flex flex--column padding-xl width-1of3 margin-l bg--white color--nyheder");
-    			add_location(div5, file$y, 19, 4, 1006);
-    			add_location(em, file$y, 22, 6, 1233);
+    			add_location(div5, file$y, 28, 4, 1079);
+    			add_location(em, file$y, 31, 6, 1306);
     			attr_dev(div6, "class", "flex flex--column padding-xl width-1of3 margin-l bg--white color--section");
-    			add_location(div6, file$y, 20, 4, 1118);
+    			add_location(div6, file$y, 29, 4, 1191);
     			attr_dev(div7, "class", "flex flex-justify--between flex-wrap--wrap");
     			attr_dev(div7, "slot", "content");
-    			add_location(div7, file$y, 13, 2, 386);
+    			add_location(div7, file$y, 22, 2, 459);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div7, anchor);
@@ -39294,14 +39426,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_content_slot_1.name,
     		type: "slot",
-    		source: "(14:2) ",
+    		source: "(23:2) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (28:0) <Prism language="html">
+    // (37:0) <Prism language="html">
     function create_default_slot_1$d(ctx) {
     	let t_value = `<div class="color--black"></div>
 <div class="color--white"></div>
@@ -39330,14 +39462,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot_1$d.name,
     		type: "slot",
-    		source: "(28:0) <Prism language=\\\"html\\\">",
+    		source: "(37:0) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (42:2) 
+    // (53:2) 
     function create_content_slot$2(ctx) {
     	let div7;
     	let div0;
@@ -39382,23 +39514,23 @@ for (const accordion of accordions) {
     			em = element("em");
     			em.textContent = "(inherit the color of the section i.e sport)";
     			attr_dev(div0, "class", "flex flex--column padding-xl width-1of3 margin-l bg--black");
-    			add_location(div0, file$y, 42, 4, 1833);
+    			add_location(div0, file$y, 53, 4, 1939);
     			attr_dev(div1, "class", "flex flex--column padding-xl width-1of3 margin-l bg--white color--black");
-    			add_location(div1, file$y, 43, 4, 1925);
+    			add_location(div1, file$y, 54, 4, 2031);
     			attr_dev(div2, "class", "flex flex--column padding-xl width-1of3 margin-l bg--underholdning");
-    			add_location(div2, file$y, 44, 4, 2030);
+    			add_location(div2, file$y, 55, 4, 2136);
     			attr_dev(div3, "class", "flex flex--column padding-xl width-1of3 margin-l bg--eb");
-    			add_location(div3, file$y, 45, 4, 2138);
+    			add_location(div3, file$y, 56, 4, 2244);
     			attr_dev(div4, "class", "flex flex--column padding-xl width-1of3 margin-l bg--orangedark");
-    			add_location(div4, file$y, 46, 4, 2224);
+    			add_location(div4, file$y, 57, 4, 2330);
     			attr_dev(div5, "class", "flex flex--column padding-xl width-1of3 margin-l bg--nyheder");
-    			add_location(div5, file$y, 47, 4, 2326);
-    			add_location(em, file$y, 50, 6, 2534);
+    			add_location(div5, file$y, 58, 4, 2432);
+    			add_location(em, file$y, 61, 6, 2640);
     			attr_dev(div6, "class", "flex flex--column padding-xl width-1of3 margin-l bg--white color--section");
-    			add_location(div6, file$y, 48, 4, 2422);
+    			add_location(div6, file$y, 59, 4, 2528);
     			attr_dev(div7, "class", "flex flex-justify--between flex-wrap--wrap");
     			attr_dev(div7, "slot", "content");
-    			add_location(div7, file$y, 41, 2, 1757);
+    			add_location(div7, file$y, 52, 2, 1863);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div7, anchor);
@@ -39428,14 +39560,14 @@ for (const accordion of accordions) {
     		block,
     		id: create_content_slot$2.name,
     		type: "slot",
-    		source: "(42:2) ",
+    		source: "(53:2) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (56:0) <Prism language="html">
+    // (67:0) <Prism language="html">
     function create_default_slot$k(ctx) {
     	let t_value = `<div class="bg--black"></div>
 <div class="bg--white"></div>
@@ -39464,7 +39596,7 @@ for (const accordion of accordions) {
     		block,
     		id: create_default_slot$k.name,
     		type: "slot",
-    		source: "(56:0) <Prism language=\\\"html\\\">",
+    		source: "(67:0) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
@@ -39571,21 +39703,23 @@ for (const accordion of accordions) {
     			add_location(h1, file$y, 7, 0, 196);
     			add_location(h30, file$y, 9, 0, 230);
     			attr_dev(p0, "class", "color--red");
+    			attr_dev(p0, "role", "button");
+    			attr_dev(p0, "tabindex", 0);
     			set_style(p0, "cursor", "pointer");
     			add_location(p0, file$y, 10, 0, 250);
-    			add_location(h31, file$y, 37, 0, 1595);
+    			add_location(h31, file$y, 46, 0, 1668);
     			attr_dev(p1, "class", "color--red");
     			set_style(p1, "cursor", "pointer");
-    			add_location(p1, file$y, 38, 0, 1621);
+    			add_location(p1, file$y, 47, 0, 1694);
     			attr_dev(h32, "id", "all-colors-section");
-    			add_location(h32, file$y, 65, 0, 2881);
+    			add_location(h32, file$y, 76, 0, 2987);
     			attr_dev(a, "href", "https://ekstrabladetudvikling.github.io/eb-colors/");
-    			add_location(a, file$y, 68, 72, 3135);
+    			add_location(a, file$y, 79, 72, 3241);
     			attr_dev(object, "data", "https://ekstrabladetudvikling.github.io/eb-colors/");
     			attr_dev(object, "width", "100%");
     			attr_dev(object, "height", "500");
     			attr_dev(object, "title", "eb-colors");
-    			add_location(object, file$y, 67, 0, 2952);
+    			add_location(object, file$y, 78, 0, 3058);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -39619,7 +39753,9 @@ for (const accordion of accordions) {
     			if (!mounted) {
     				dispose = [
     					listen_dev(p0, "click", moveToAllColors, false, false, false),
-    					listen_dev(p1, "click", moveToAllColors, false, false, false)
+    					listen_dev(p0, "keydown", moveToAllColors, false, false, false),
+    					listen_dev(p1, "click", moveToAllColors, false, false, false),
+    					listen_dev(p1, "keydown", moveToAllColors, false, false, false)
     				];
 
     				mounted = true;
@@ -39739,7 +39875,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Flex.svelte generated by Svelte v3.49.0 */
+    /* docs_src/utilities/Flex.svelte generated by Svelte v3.53.1 */
     const file$x = "docs_src/utilities/Flex.svelte";
 
     // (9:0) <Prism language="html">
@@ -41677,7 +41813,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Fonts.svelte generated by Svelte v3.49.0 */
+    /* docs_src/utilities/Fonts.svelte generated by Svelte v3.53.1 */
     const file$w = "docs_src/utilities/Fonts.svelte";
 
     // (9:0) <Card className="bg--graa7 padding-l--rl">
@@ -42683,7 +42819,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Grid.svelte generated by Svelte v3.49.0 */
+    /* docs_src/utilities/Grid.svelte generated by Svelte v3.53.1 */
     const file$v = "docs_src/utilities/Grid.svelte";
 
     // (7:0) <Card className="bg--graa7 text-align--center">
@@ -43030,7 +43166,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Helpers.svelte generated by Svelte v3.49.0 */
+    /* docs_src/utilities/Helpers.svelte generated by Svelte v3.53.1 */
     const file$u = "docs_src/utilities/Helpers.svelte";
 
     // (9:0) <Prism language="html">
@@ -44007,7 +44143,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Separator.svelte generated by Svelte v3.49.0 */
+    /* docs_src/utilities/Separator.svelte generated by Svelte v3.53.1 */
     const file$t = "docs_src/utilities/Separator.svelte";
 
     // (23:0) <Prism language="html">
@@ -44221,7 +44357,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Sizing.svelte generated by Svelte v3.49.0 */
+    /* docs_src/utilities/Sizing.svelte generated by Svelte v3.53.1 */
     const file$s = "docs_src/utilities/Sizing.svelte";
 
     // (9:0) <Card className="bg--graa7">
@@ -44728,7 +44864,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Text.svelte generated by Svelte v3.49.0 */
+    /* docs_src/utilities/Text.svelte generated by Svelte v3.53.1 */
     const file$r = "docs_src/utilities/Text.svelte";
 
     // (9:0) <Card className="bg--graa7 padding-m">
@@ -45290,7 +45426,7 @@ for (const accordion of accordions) {
         title: 'Utilities',
     };
 
-    /* docs_src/cssvariables/Colors.svelte generated by Svelte v3.49.0 */
+    /* docs_src/cssvariables/Colors.svelte generated by Svelte v3.53.1 */
     const file$q = "docs_src/cssvariables/Colors.svelte";
 
     // (14:0) <Prism language="css">
@@ -45470,7 +45606,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/cssvariables/Distance.svelte generated by Svelte v3.49.0 */
+    /* docs_src/cssvariables/Distance.svelte generated by Svelte v3.53.1 */
     const file$p = "docs_src/cssvariables/Distance.svelte";
 
     // (6:0) <Prism language="css">
@@ -45678,7 +45814,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/cssvariables/Fonts.svelte generated by Svelte v3.49.0 */
+    /* docs_src/cssvariables/Fonts.svelte generated by Svelte v3.53.1 */
     const file$o = "docs_src/cssvariables/Fonts.svelte";
 
     // (8:0) <Prism language="css">
@@ -46129,7 +46265,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/cssvariables/Misc.svelte generated by Svelte v3.49.0 */
+    /* docs_src/cssvariables/Misc.svelte generated by Svelte v3.53.1 */
     const file$n = "docs_src/cssvariables/Misc.svelte";
 
     // (12:0) <Prism language="css">
@@ -46366,7 +46502,7 @@ for (const accordion of accordions) {
         title: 'CSS variables',
     };
 
-    /* docs_src/exportedfunctions/HorizontalScrollHandler.svelte generated by Svelte v3.49.0 */
+    /* docs_src/exportedfunctions/HorizontalScrollHandler.svelte generated by Svelte v3.53.1 */
     const file$m = "docs_src/exportedfunctions/HorizontalScrollHandler.svelte";
 
     // (73:0) {:else}
@@ -47012,7 +47148,7 @@ afterUpdate(() => {
     	}
     }
 
-    /* docs_src/exportedfunctions/SplitNfitTitle.svelte generated by Svelte v3.49.0 */
+    /* docs_src/exportedfunctions/SplitNfitTitle.svelte generated by Svelte v3.53.1 */
     const file$l = "docs_src/exportedfunctions/SplitNfitTitle.svelte";
 
     // (37:0) <Prism language="js">
@@ -47126,7 +47262,7 @@ document.appendChild(titleEl);
     			t4 = text(" to split the title, and\n  then uses\n  ");
     			a1 = element("a");
     			a1.textContent = "fitty";
-    			t6 = text(" to adjust font-size to make the lines fit the width\n  of the parent element.");
+    			t6 = text(" to adjust font-size to make the\n  lines fit the width of the parent element.");
     			t7 = space();
     			p1 = element("p");
     			p1.textContent = "Returns a document fragment";
@@ -47186,33 +47322,34 @@ document.appendChild(titleEl);
     			add_location(a0, file$l, 10, 2, 301);
     			attr_dev(a1, "href", "https://www.npmjs.com/package/fitty");
     			attr_dev(a1, "target", "_blank");
+    			attr_dev(a1, "rel", "noreferrer");
     			add_location(a1, file$l, 12, 2, 433);
     			add_location(p0, file$l, 8, 0, 288);
-    			add_location(p1, file$l, 15, 0, 587);
-    			add_location(b0, file$l, 18, 9, 682);
-    			add_location(em, file$l, 18, 36, 709);
-    			add_location(div0, file$l, 18, 4, 677);
-    			add_location(b1, file$l, 20, 6, 749);
-    			add_location(b2, file$l, 22, 13, 824);
-    			add_location(div1, file$l, 22, 8, 819);
-    			add_location(b3, file$l, 23, 13, 878);
-    			add_location(div2, file$l, 23, 8, 873);
-    			add_location(b4, file$l, 24, 13, 931);
-    			add_location(div3, file$l, 24, 8, 926);
-    			add_location(b5, file$l, 25, 13, 979);
-    			add_location(div4, file$l, 25, 8, 974);
-    			add_location(b6, file$l, 26, 13, 1027);
-    			add_location(div5, file$l, 26, 8, 1022);
-    			add_location(b7, file$l, 27, 13, 1078);
-    			add_location(div6, file$l, 27, 8, 1073);
-    			add_location(b8, file$l, 29, 10, 1160);
-    			add_location(div7, file$l, 28, 8, 1144);
+    			add_location(p1, file$l, 15, 0, 604);
+    			add_location(b0, file$l, 18, 9, 699);
+    			add_location(em, file$l, 18, 36, 726);
+    			add_location(div0, file$l, 18, 4, 694);
+    			add_location(b1, file$l, 20, 6, 766);
+    			add_location(b2, file$l, 22, 13, 841);
+    			add_location(div1, file$l, 22, 8, 836);
+    			add_location(b3, file$l, 23, 13, 895);
+    			add_location(div2, file$l, 23, 8, 890);
+    			add_location(b4, file$l, 24, 13, 948);
+    			add_location(div3, file$l, 24, 8, 943);
+    			add_location(b5, file$l, 25, 13, 996);
+    			add_location(div4, file$l, 25, 8, 991);
+    			add_location(b6, file$l, 26, 13, 1044);
+    			add_location(div5, file$l, 26, 8, 1039);
+    			add_location(b7, file$l, 27, 13, 1095);
+    			add_location(div6, file$l, 27, 8, 1090);
+    			add_location(b8, file$l, 29, 10, 1177);
+    			add_location(div7, file$l, 28, 8, 1161);
     			attr_dev(div8, "class", "padding-l--l");
-    			add_location(div8, file$l, 21, 6, 784);
-    			add_location(div9, file$l, 19, 4, 737);
+    			add_location(div8, file$l, 21, 6, 801);
+    			add_location(div9, file$l, 19, 4, 754);
     			attr_dev(div10, "class", "padding-xl--l padding-m--tb");
-    			add_location(div10, file$l, 17, 2, 631);
-    			add_location(code, file$l, 16, 0, 622);
+    			add_location(div10, file$l, 17, 2, 648);
+    			add_location(code, file$l, 16, 0, 639);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -47358,7 +47495,7 @@ document.appendChild(titleEl);
     	}
     }
 
-    /* docs_src/exportedfunctions/SplitTitle.svelte generated by Svelte v3.49.0 */
+    /* docs_src/exportedfunctions/SplitTitle.svelte generated by Svelte v3.53.1 */
     const file$k = "docs_src/exportedfunctions/SplitTitle.svelte";
 
     // (15:0) <Prism language="js">
@@ -47569,7 +47706,7 @@ const lines = splitTitle('Split this into lines', 2, 3);
     	}
     }
 
-    /* docs_src/exportedfunctions/Throttle.svelte generated by Svelte v3.49.0 */
+    /* docs_src/exportedfunctions/Throttle.svelte generated by Svelte v3.53.1 */
     const file$j = "docs_src/exportedfunctions/Throttle.svelte";
 
     // (19:0) <Prism language="js">
@@ -47777,7 +47914,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/exportedfunctions/TimePassedSince.svelte generated by Svelte v3.49.0 */
+    /* docs_src/exportedfunctions/TimePassedSince.svelte generated by Svelte v3.53.1 */
     const file$i = "docs_src/exportedfunctions/TimePassedSince.svelte";
 
     // (12:0) <Prism language="js">
@@ -51480,7 +51617,7 @@ window.addEventListener(
 
     const tooltipStore = writable({});
 
-    /* src/components/tooltip/Tooltip.svelte generated by Svelte v3.49.0 */
+    /* src/components/tooltip/Tooltip.svelte generated by Svelte v3.53.1 */
     const file$h = "src/components/tooltip/Tooltip.svelte";
 
     // (38:2) {:else}
@@ -51574,7 +51711,7 @@ window.addEventListener(
     	}
 
     	if (switch_value) {
-    		switch_instance = new switch_value(switch_props());
+    		switch_instance = construct_svelte_component_dev(switch_value, switch_props());
     	}
 
     	const block = {
@@ -51583,10 +51720,7 @@ window.addEventListener(
     			switch_instance_anchor = empty();
     		},
     		m: function mount(target, anchor) {
-    			if (switch_instance) {
-    				mount_component(switch_instance, target, anchor);
-    			}
-
+    			if (switch_instance) mount_component(switch_instance, target, anchor);
     			insert_dev(target, switch_instance_anchor, anchor);
     			current = true;
     		},
@@ -51608,7 +51742,7 @@ window.addEventListener(
     				}
 
     				if (switch_value) {
-    					switch_instance = new switch_value(switch_props());
+    					switch_instance = construct_svelte_component_dev(switch_value, switch_props());
     					create_component(switch_instance.$$.fragment);
     					transition_in(switch_instance.$$.fragment, 1);
     					mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
@@ -51705,7 +51839,7 @@ window.addEventListener(
     				if_block.m(div, null);
     			}
 
-    			if (dirty & /*textOnly*/ 16) {
+    			if (!current || dirty & /*textOnly*/ 16) {
     				toggle_class(div, "tooltip-textonly", /*textOnly*/ ctx[4]);
     			}
     		},
@@ -51772,6 +51906,16 @@ window.addEventListener(
     		if (anchorNode.hasAttribute('id')) {
     			const id = anchorNode.getAttribute('id');
     			delete $tooltipStore[id];
+    		}
+    	});
+
+    	$$self.$$.on_mount.push(function () {
+    		if (anchorNode === undefined && !('anchorNode' in $$props || $$self.$$.bound[$$self.$$.props['anchorNode']])) {
+    			console.warn("<Tooltip> was created without expected prop 'anchorNode'");
+    		}
+
+    		if (content === undefined && !('content' in $$props || $$self.$$.bound[$$self.$$.props['content']])) {
+    			console.warn("<Tooltip> was created without expected prop 'content'");
     		}
     	});
 
@@ -51865,17 +52009,6 @@ window.addEventListener(
     			options,
     			id: create_fragment$h.name
     		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
-
-    		if (/*anchorNode*/ ctx[5] === undefined && !('anchorNode' in props)) {
-    			console.warn("<Tooltip> was created without expected prop 'anchorNode'");
-    		}
-
-    		if (/*content*/ ctx[1] === undefined && !('content' in props)) {
-    			console.warn("<Tooltip> was created without expected prop 'content'");
-    		}
     	}
 
     	get allowHTML() {
@@ -51935,10 +52068,10 @@ window.addEventListener(
         };
     }
 
-    /* docs_src/exportedfunctions/Tooltip.svelte generated by Svelte v3.49.0 */
+    /* docs_src/exportedfunctions/Tooltip.svelte generated by Svelte v3.53.1 */
     const file$g = "docs_src/exportedfunctions/Tooltip.svelte";
 
-    // (144:0) {:else}
+    // (150:0) {:else}
     function create_else_block(ctx) {
     	let h2;
     	let t1;
@@ -52101,31 +52234,31 @@ window.addEventListener(
     			t39 = space();
     			create_component(prism3.$$.fragment);
     			attr_dev(h2, "class", "color--eb");
-    			add_location(h2, file$g, 144, 2, 5141);
-    			add_location(div0, file$g, 148, 6, 5252);
-    			add_location(div1, file$g, 149, 6, 5310);
-    			add_location(div2, file$g, 150, 6, 5369);
-    			add_location(div3, file$g, 151, 6, 5437);
+    			add_location(h2, file$g, 150, 2, 5250);
+    			add_location(div0, file$g, 154, 6, 5361);
+    			add_location(div1, file$g, 155, 6, 5419);
+    			add_location(div2, file$g, 156, 6, 5478);
+    			add_location(div3, file$g, 157, 6, 5546);
     			attr_dev(div4, "class", "padding-xl--l padding-m--tb");
-    			add_location(div4, file$g, 147, 4, 5204);
-    			add_location(code, file$g, 146, 2, 5193);
-    			add_location(p0, file$g, 158, 2, 5635);
-    			add_location(b0, file$g, 161, 9, 5769);
-    			add_location(em, file$g, 161, 29, 5789);
-    			add_location(div5, file$g, 161, 4, 5764);
-    			add_location(b1, file$g, 162, 9, 5886);
-    			add_location(div6, file$g, 162, 4, 5881);
-    			add_location(b2, file$g, 163, 9, 5966);
-    			add_location(div7, file$g, 163, 4, 5961);
-    			add_location(b3, file$g, 165, 6, 6079);
-    			add_location(div8, file$g, 164, 4, 6067);
-    			add_location(b4, file$g, 167, 9, 6218);
-    			add_location(div9, file$g, 167, 4, 6213);
-    			add_location(div10, file$g, 160, 2, 5754);
-    			add_location(h30, file$g, 169, 2, 6330);
-    			add_location(h31, file$g, 174, 2, 6454);
-    			add_location(p1, file$g, 175, 2, 6478);
-    			add_location(h32, file$g, 180, 2, 6668);
+    			add_location(div4, file$g, 153, 4, 5313);
+    			add_location(code, file$g, 152, 2, 5302);
+    			add_location(p0, file$g, 164, 2, 5744);
+    			add_location(b0, file$g, 167, 9, 5878);
+    			add_location(em, file$g, 167, 29, 5898);
+    			add_location(div5, file$g, 167, 4, 5873);
+    			add_location(b1, file$g, 168, 9, 5995);
+    			add_location(div6, file$g, 168, 4, 5990);
+    			add_location(b2, file$g, 169, 9, 6075);
+    			add_location(div7, file$g, 169, 4, 6070);
+    			add_location(b3, file$g, 171, 6, 6188);
+    			add_location(div8, file$g, 170, 4, 6176);
+    			add_location(b4, file$g, 173, 9, 6327);
+    			add_location(div9, file$g, 173, 4, 6322);
+    			add_location(div10, file$g, 166, 2, 5863);
+    			add_location(h30, file$g, 175, 2, 6439);
+    			add_location(h31, file$g, 180, 2, 6563);
+    			add_location(p1, file$g, 181, 2, 6587);
+    			add_location(h32, file$g, 186, 2, 6777);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -52258,7 +52391,7 @@ window.addEventListener(
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(144:0) {:else}",
+    		source: "(150:0) {:else}",
     		ctx
     	});
 
@@ -52548,64 +52681,67 @@ window.addEventListener(
     			add_location(h2, file$g, 17, 2, 626);
     			attr_dev(a0, "href", "https://svelte.dev/docs#template-syntax-element-directives-use-action");
     			attr_dev(a0, "target", "_blank");
+    			attr_dev(a0, "rel", "noreferrer");
     			add_location(a0, file$g, 21, 4, 717);
     			add_location(p0, file$g, 19, 2, 686);
-    			add_location(th0, file$g, 31, 8, 1030);
-    			add_location(th1, file$g, 32, 8, 1054);
-    			add_location(th2, file$g, 33, 8, 1076);
-    			add_location(th3, file$g, 34, 8, 1107);
-    			add_location(tr0, file$g, 30, 6, 1017);
-    			add_location(thead, file$g, 29, 4, 1003);
-    			add_location(td0, file$g, 39, 8, 1184);
-    			add_location(td1, file$g, 40, 8, 1209);
-    			add_location(td2, file$g, 41, 8, 1251);
-    			add_location(td3, file$g, 42, 8, 1266);
-    			add_location(tr1, file$g, 38, 6, 1171);
-    			add_location(td4, file$g, 45, 8, 1342);
-    			add_location(td5, file$g, 46, 8, 1369);
-    			add_location(td6, file$g, 47, 8, 1394);
+    			add_location(th0, file$g, 33, 8, 1059);
+    			add_location(th1, file$g, 34, 8, 1083);
+    			add_location(th2, file$g, 35, 8, 1105);
+    			add_location(th3, file$g, 36, 8, 1136);
+    			add_location(tr0, file$g, 32, 6, 1046);
+    			add_location(thead, file$g, 31, 4, 1032);
+    			add_location(td0, file$g, 41, 8, 1213);
+    			add_location(td1, file$g, 42, 8, 1238);
+    			add_location(td2, file$g, 43, 8, 1280);
+    			add_location(td3, file$g, 44, 8, 1295);
+    			add_location(tr1, file$g, 40, 6, 1200);
+    			add_location(td4, file$g, 47, 8, 1371);
+    			add_location(td5, file$g, 48, 8, 1398);
+    			add_location(td6, file$g, 49, 8, 1423);
     			attr_dev(a1, "href", "https://svelte.dev/tutorial/html-tags");
     			attr_dev(a1, "target", "_blank");
-    			add_location(a1, file$g, 49, 43, 1464);
-    			add_location(td7, file$g, 48, 8, 1417);
-    			add_location(tr2, file$g, 44, 6, 1329);
-    			add_location(td8, file$g, 55, 8, 1619);
-    			add_location(td9, file$g, 56, 8, 1642);
-    			add_location(td10, file$g, 57, 8, 1666);
-    			add_location(td11, file$g, 58, 8, 1689);
-    			add_location(tr3, file$g, 54, 6, 1606);
-    			add_location(td12, file$g, 61, 8, 1788);
-    			add_location(td13, file$g, 62, 8, 1818);
-    			add_location(td14, file$g, 63, 8, 1842);
+    			attr_dev(a1, "rel", "noreferrer");
+    			add_location(a1, file$g, 51, 43, 1493);
+    			add_location(td7, file$g, 50, 8, 1446);
+    			add_location(tr2, file$g, 46, 6, 1358);
+    			add_location(td8, file$g, 59, 8, 1688);
+    			add_location(td9, file$g, 60, 8, 1711);
+    			add_location(td10, file$g, 61, 8, 1735);
+    			add_location(td11, file$g, 62, 8, 1758);
+    			add_location(tr3, file$g, 58, 6, 1675);
+    			add_location(td12, file$g, 65, 8, 1857);
+    			add_location(td13, file$g, 66, 8, 1887);
+    			add_location(td14, file$g, 67, 8, 1911);
     			attr_dev(a2, "href", "https://atomiks.github.io/tippyjs/v6/all-props/");
     			attr_dev(a2, "target", "_blank");
-    			add_location(a2, file$g, 65, 35, 1904);
-    			add_location(br0, file$g, 67, 11, 2021);
+    			attr_dev(a2, "rel", "noreferrer");
+    			add_location(a2, file$g, 69, 35, 1973);
+    			add_location(br0, file$g, 73, 11, 2130);
     			if (!src_url_equal(img.src, img_src_value = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTEiIGZpbGw9IiNEQUU2RkYiLz4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTEiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcikiLz4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTEiIHN0cm9rZT0iIzc3NjFEMSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxwYXRoIGQ9Ik03LjgwMTkxIDcuMkgxMy42ODE5QzE0LjY2MTkgNy4yIDE1LjM3MTIgNy40MjQgMTUuODA5OSA3Ljg3MkMxNi4yNTc5IDguMzEwNjcgMTYuNDgxOSA5LjAyIDE2LjQ4MTkgMTBWMTEuMjZDMTYuNDgxOSAxMi4wMzQ3IDE2LjM1MTIgMTIuNjM2NyAxNi4wODk5IDEzLjA2NkMxNS44Mzc5IDEzLjQ5NTMgMTUuNDMxOSAxMy43OCAxNC44NzE5IDEzLjkyTDE2LjYyMTkgMTdIMTMuODkxOUwxMi4yODE5IDE0LjA2SDEwLjMyMTlWMTdINy44MDE5MVY3LjJaTTEzLjk2MTkgMTBDMTMuOTYxOSA5LjQ0IDEzLjY4MTkgOS4xNiAxMy4xMjE5IDkuMTZIMTAuMzIxOVYxMi4xSDEzLjEyMTlDMTMuNjgxOSAxMi4xIDEzLjk2MTkgMTEuODIgMTMuOTYxOSAxMS4yNlYxMFoiIGZpbGw9IiM3NzYxRDEiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhciIgeDE9IjEyIiB5MT0iMCIgeDI9IjEyIiB5Mj0iMjQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0VGREVGRiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IndoaXRlIiBzdG9wLW9wYWNpdHk9IjAiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "(R)");
-    			add_location(img, file$g, 68, 10, 2055);
-    			add_location(td15, file$g, 64, 8, 1865);
-    			add_location(tr4, file$g, 60, 6, 1775);
-    			add_location(tbody, file$g, 37, 4, 1157);
+    			add_location(img, file$g, 74, 10, 2164);
+    			add_location(td15, file$g, 68, 8, 1934);
+    			add_location(tr4, file$g, 64, 6, 1844);
+    			add_location(tbody, file$g, 39, 4, 1186);
     			attr_dev(table, "class", "table");
-    			add_location(table, file$g, 28, 2, 977);
-    			add_location(h30, file$g, 77, 2, 3395);
+    			add_location(table, file$g, 30, 2, 1006);
+    			add_location(h30, file$g, 83, 2, 3504);
     			set_style(p1, "display", "inline-block");
     			attr_dev(p1, "class", "margin-none");
-    			add_location(p1, file$g, 79, 2, 3422);
-    			add_location(h31, file$g, 87, 2, 3686);
+    			add_location(p1, file$g, 85, 2, 3531);
+    			add_location(h31, file$g, 93, 2, 3795);
     			set_style(p2, "display", "inline-block");
     			set_style(p2, "cursor", "pointer");
     			attr_dev(p2, "class", "margin-none");
-    			add_location(p2, file$g, 89, 4, 3724);
-    			add_location(div0, file$g, 88, 2, 3714);
-    			add_location(h32, file$g, 112, 2, 4255);
+    			add_location(p2, file$g, 95, 4, 3833);
+    			add_location(div0, file$g, 94, 2, 3823);
+    			add_location(h32, file$g, 118, 2, 4364);
     			attr_dev(div1, "id", "test-anchor");
     			set_style(div1, "display", "inline-block");
-    			add_location(div1, file$g, 115, 4, 4332);
-    			add_location(br1, file$g, 124, 4, 4569);
+    			add_location(div1, file$g, 121, 4, 4441);
+    			add_location(br1, file$g, 130, 4, 4678);
     			attr_dev(div2, "class", "flex flex-justify--between");
-    			add_location(div2, file$g, 114, 2, 4287);
+    			add_location(div2, file$g, 120, 2, 4396);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -52829,7 +52965,7 @@ window.addEventListener(
     	return block;
     }
 
-    // (155:2) <Prism language="js">
+    // (161:2) <Prism language="js">
     function create_default_slot_9(ctx) {
     	let t_value = `import { tooltipRender } from '@ekstra-bladet/designsystem/svelte/functions/tooltipAction';` + "";
     	let t;
@@ -52851,14 +52987,14 @@ window.addEventListener(
     		block,
     		id: create_default_slot_9.name,
     		type: "slot",
-    		source: "(155:2) <Prism language=\\\"js\\\">",
+    		source: "(161:2) <Prism language=\\\"js\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (171:2) <Prism language="html">
+    // (177:2) <Prism language="html">
     function create_default_slot_8(ctx) {
     	let t_value = `<div data-tooltip="Simple text tooltip">Hover</div>` + "";
     	let t;
@@ -52880,14 +53016,14 @@ window.addEventListener(
     		block,
     		id: create_default_slot_8.name,
     		type: "slot",
-    		source: "(171:2) <Prism language=\\\"html\\\">",
+    		source: "(177:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (177:2) <Prism language="html">
+    // (183:2) <Prism language="html">
     function create_default_slot_7(ctx) {
     	let t_value = `<div data-tooltip="Simple text<br>tooltip" data-tooltip-allowhtml="true">Hover</div>` + "";
     	let t;
@@ -52909,14 +53045,14 @@ window.addEventListener(
     		block,
     		id: create_default_slot_7.name,
     		type: "slot",
-    		source: "(177:2) <Prism language=\\\"html\\\">",
+    		source: "(183:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (182:2) <Prism language="html">
+    // (188:2) <Prism language="html">
     function create_default_slot_6(ctx) {
     	let t_value = `<div
   data-tooltip="#testid"
@@ -52951,14 +53087,14 @@ window.addEventListener(
     		block,
     		id: create_default_slot_6.name,
     		type: "slot",
-    		source: "(182:2) <Prism language=\\\"html\\\">",
+    		source: "(188:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (25:2) <Prism language="js">
+    // (27:2) <Prism language="js">
     function create_default_slot_5(ctx) {
     	let t_value = `import { tooltipAction } from '@ekstra-bladet/designsystem/svelte/functions/tooltipAction';` + "";
     	let t;
@@ -52980,14 +53116,14 @@ window.addEventListener(
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(25:2) <Prism language=\\\"js\\\">",
+    		source: "(27:2) <Prism language=\\\"js\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (84:2) <Prism language="html">
+    // (90:2) <Prism language="html">
     function create_default_slot_4$1(ctx) {
     	let t_value = `<p use:tooltipAction={{ content: 'Text, HTML or SvelteComponent' }}>Hover me</p>` + "";
     	let t;
@@ -53009,14 +53145,14 @@ window.addEventListener(
     		block,
     		id: create_default_slot_4$1.name,
     		type: "slot",
-    		source: "(84:2) <Prism language=\\\"html\\\">",
+    		source: "(90:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (103:2) <Prism language="html">
+    // (109:2) <Prism language="html">
     function create_default_slot_3$1(ctx) {
     	let t_value = `<p use:tooltip={{
       content: Spinner,
@@ -53045,14 +53181,14 @@ window.addEventListener(
     		block,
     		id: create_default_slot_3$1.name,
     		type: "slot",
-    		source: "(103:2) <Prism language=\\\"html\\\">",
+    		source: "(109:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (126:4) <Button       on:click={() => {         $tooltipStore['test-anchor'].show();       }}>
+    // (132:4) <Button       on:click={() => {         $tooltipStore['test-anchor'].show();       }}>
     function create_default_slot_2$2(ctx) {
     	let t;
 
@@ -53072,14 +53208,14 @@ window.addEventListener(
     		block,
     		id: create_default_slot_2$2.name,
     		type: "slot",
-    		source: "(126:4) <Button       on:click={() => {         $tooltipStore['test-anchor'].show();       }}>",
+    		source: "(132:4) <Button       on:click={() => {         $tooltipStore['test-anchor'].show();       }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (133:2) <Prism language="js">
+    // (139:2) <Prism language="js">
     function create_default_slot_1$2(ctx) {
     	let t_value = `import { tooltipAction, tooltipStore } from '@ekstra-bladet/designsystem/svelte/functions/tooltipAction';` + "";
     	let t;
@@ -53101,14 +53237,14 @@ window.addEventListener(
     		block,
     		id: create_default_slot_1$2.name,
     		type: "slot",
-    		source: "(133:2) <Prism language=\\\"js\\\">",
+    		source: "(139:2) <Prism language=\\\"js\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (137:2) <Prism language="html">
+    // (143:2) <Prism language="html">
     function create_default_slot$3(ctx) {
     	let t_value = `<div id="uniqueid" use:tooltipAction={{ content: 'Test String' }}>
     <Icon className="tooltip-toggle" name="question-circle" width="18" />
@@ -53135,7 +53271,7 @@ window.addEventListener(
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(137:2) <Prism language=\\\"html\\\">",
+    		source: "(143:2) <Prism language=\\\"html\\\">",
     		ctx
     	});
 
@@ -53318,7 +53454,7 @@ window.addEventListener(
         title: 'Functions',
     };
 
-    /* docs_src/guidelines/Svelte.svelte generated by Svelte v3.49.0 */
+    /* docs_src/guidelines/Svelte.svelte generated by Svelte v3.53.1 */
     const file$f = "docs_src/guidelines/Svelte.svelte";
 
     // (28:0) <Prism language="js">
@@ -53569,7 +53705,7 @@ window.addEventListener(
         title: 'Guidelines',
     };
 
-    /* docs_src/components/Home.svelte generated by Svelte v3.49.0 */
+    /* docs_src/components/Home.svelte generated by Svelte v3.53.1 */
     const file$e = "docs_src/components/Home.svelte";
 
     function get_each_context$5(ctx, list, i) {
@@ -53757,7 +53893,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/cssvariables/Home.svelte generated by Svelte v3.49.0 */
+    /* docs_src/cssvariables/Home.svelte generated by Svelte v3.53.1 */
     const file$d = "docs_src/cssvariables/Home.svelte";
 
     function get_each_context$4(ctx, list, i) {
@@ -53953,7 +54089,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/exportedfunctions/Home.svelte generated by Svelte v3.49.0 */
+    /* docs_src/exportedfunctions/Home.svelte generated by Svelte v3.53.1 */
     const file$c = "docs_src/exportedfunctions/Home.svelte";
 
     function get_each_context$3(ctx, list, i) {
@@ -54141,7 +54277,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/guidelines/Home.svelte generated by Svelte v3.49.0 */
+    /* docs_src/guidelines/Home.svelte generated by Svelte v3.53.1 */
     const file$b = "docs_src/guidelines/Home.svelte";
 
     function get_each_context$2(ctx, list, i) {
@@ -54329,7 +54465,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/assets/icons/css-vars.svg.rollup-plugin.svelte generated by Svelte v3.49.0 */
+    /* docs_src/assets/icons/css-vars.svg.rollup-plugin.svelte generated by Svelte v3.53.1 */
 
     const file$a = "docs_src/assets/icons/css-vars.svg.rollup-plugin.svelte";
 
@@ -54441,7 +54577,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/assets/icons/guideline.svg.rollup-plugin.svelte generated by Svelte v3.49.0 */
+    /* docs_src/assets/icons/guideline.svg.rollup-plugin.svelte generated by Svelte v3.53.1 */
 
     const file$9 = "docs_src/assets/icons/guideline.svg.rollup-plugin.svelte";
 
@@ -54549,7 +54685,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/assets/icons/js-functions.svg.rollup-plugin.svelte generated by Svelte v3.49.0 */
+    /* docs_src/assets/icons/js-functions.svg.rollup-plugin.svelte generated by Svelte v3.53.1 */
 
     const file$8 = "docs_src/assets/icons/js-functions.svg.rollup-plugin.svelte";
 
@@ -54661,7 +54797,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/assets/icons/utility.svg.rollup-plugin.svelte generated by Svelte v3.49.0 */
+    /* docs_src/assets/icons/utility.svg.rollup-plugin.svelte generated by Svelte v3.53.1 */
 
     const file$7 = "docs_src/assets/icons/utility.svg.rollup-plugin.svelte";
 
@@ -54773,7 +54909,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/main/Home.svelte generated by Svelte v3.49.0 */
+    /* docs_src/main/Home.svelte generated by Svelte v3.53.1 */
     const file$6 = "docs_src/main/Home.svelte";
 
     // (26:8) <Card className="padding-m">
@@ -55373,7 +55509,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/utilities/Home.svelte generated by Svelte v3.49.0 */
+    /* docs_src/utilities/Home.svelte generated by Svelte v3.53.1 */
     const file$5 = "docs_src/utilities/Home.svelte";
 
     function get_each_context$1(ctx, list, i) {
@@ -55582,7 +55718,7 @@ window.addEventListener(
     const routes = spaRoutes;
     const menuItems = [guidelines, components, utilities, exportedfunctions, cssvariables];
 
-    /* docs/svg/symbol/icons.svg.rollup-plugin.svelte generated by Svelte v3.49.0 */
+    /* docs/svg/symbol/icons.svg.rollup-plugin.svelte generated by Svelte v3.53.1 */
 
     const file$4 = "docs/svg/symbol/icons.svg.rollup-plugin.svelte";
 
@@ -57161,7 +57297,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/assets/icons/github.svg.rollup-plugin.svelte generated by Svelte v3.49.0 */
+    /* docs_src/assets/icons/github.svg.rollup-plugin.svelte generated by Svelte v3.53.1 */
 
     const file$3 = "docs_src/assets/icons/github.svg.rollup-plugin.svelte";
 
@@ -57273,7 +57409,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/main/Navbar.svelte generated by Svelte v3.49.0 */
+    /* docs_src/main/Navbar.svelte generated by Svelte v3.53.1 */
     const file$2 = "docs_src/main/Navbar.svelte";
 
     // (16:6) <Button size="small" initial={$sourceType === 'svelte'} on:click={() => changeSourceType('svelte')}>
@@ -57453,10 +57589,11 @@ window.addEventListener(
     			t2 = space();
     			create_component(buttongroup.$$.fragment);
     			attr_dev(span, "class", "flex flex-align--end padding-s--l");
-    			add_location(span, file$2, 12, 6, 528);
+    			add_location(span, file$2, 12, 6, 545);
     			attr_dev(a, "href", "https://github.com/EkstraBladetUdvikling/eb-designsystem");
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "class", "flex svelte-1bwbuf8");
+    			attr_dev(a, "rel", "noreferrer");
     			add_location(a, file$2, 10, 4, 393);
     			attr_dev(nav, "class", "navmenu flex flex-justify--between flex-align--center padding-xl--rl svelte-1bwbuf8");
     			add_location(nav, file$2, 9, 2, 306);
@@ -57561,7 +57698,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/main/Sidebar.svelte generated by Svelte v3.49.0 */
+    /* docs_src/main/Sidebar.svelte generated by Svelte v3.53.1 */
     const file$1 = "docs_src/main/Sidebar.svelte";
 
     function get_each_context(ctx, list, i) {
@@ -57932,7 +58069,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/App.svelte generated by Svelte v3.49.0 */
+    /* docs_src/App.svelte generated by Svelte v3.53.1 */
     const file = "docs_src/App.svelte";
 
     function create_fragment(ctx) {

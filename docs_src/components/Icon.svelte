@@ -80,7 +80,8 @@
 </p>
 <p>But by changing the css variable, the color can be handled separately from any set color.</p>
 <p>
-  Most icons are derived from <a href="https://fontawesome.com/" target="_blank">FontAwesome</a> using only the
+  Most icons are derived from <a href="https://fontawesome.com/" target="_blank" rel="noreferrer">FontAwesome</a> using
+  only the
   <b>light</b>
   or <b>solid</b> library!
 </p>

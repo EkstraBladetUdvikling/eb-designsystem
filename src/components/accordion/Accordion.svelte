@@ -25,6 +25,12 @@
         on:click|stopPropagation={() => {
           $activeTab = $activeTab !== i ? i : undefined;
         }}
+        on:keydown|stopPropagation={() => {
+          $activeTab = $activeTab !== i ? i : undefined;
+        }}
+        role="button"
+        tabindex={0}
+        aria-label={tab.title}
       >
         <span class="fontweight-bold fontsize-medium">{tab.title}</span>
         <Icon name="angle-down" width="14" />
