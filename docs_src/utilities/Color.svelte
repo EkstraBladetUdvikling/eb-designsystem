@@ -48,7 +48,14 @@
 </Prism>
 
 <h3>Background color</h3>
-<p class="color--red" on:click={moveToAllColors} on:keydown={moveToAllColors} style="cursor: pointer;">
+<p
+  class="color--red"
+  on:click={moveToAllColors}
+  on:keydown={moveToAllColors}
+  role="button"
+  tabindex={0}
+  style="cursor: pointer;"
+>
   View all colors available
 </p>
 
