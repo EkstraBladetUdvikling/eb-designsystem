@@ -1,9 +1,9 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
 
+  import { Accordion } from '../../src';
   import { rdmParagraphs } from '../lipsum';
   import { sourceType } from '../stores';
-  import { Accordion } from '../../src';
 
   const tabs = [];
 

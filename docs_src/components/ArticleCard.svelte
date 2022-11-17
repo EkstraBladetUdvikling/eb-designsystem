@@ -1,8 +1,9 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
+
+  import { ArticleCard } from '../../src';
   import { rdmArticleData } from '../util';
   import { sourceType } from '../stores';
-  import { ArticleCard } from '../../src';
 </script>
 
 <h1 class="color--eb">Article Card</h1>
