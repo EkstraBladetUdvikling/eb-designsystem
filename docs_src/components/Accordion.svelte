@@ -3,7 +3,7 @@
 
   import { rdmParagraphs } from '../lipsum';
   import { sourceType } from '../stores';
-  import { Accordion, Badge } from '../../src';
+  import { Accordion } from '../../src';
 
   const tabs = [];
 
@@ -36,7 +36,9 @@
         <td>tabs</td>
         <td>ITabsConfig[]</td>
         <td />
-        <td>Array of tab data. See <Badge type="secondary" extension="small">Tab</Badge> props below for details</td>
+        <td
+          >Array of tab data. See <span class="badge badge--small" data-type="secondary">Tab</span> props below for details</td
+        >
       </tr>
       <tr>
         <th colspan="4">Tab</th>

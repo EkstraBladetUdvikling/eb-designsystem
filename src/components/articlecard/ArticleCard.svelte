@@ -4,7 +4,6 @@
 
   import { timePassedSince } from '../../functions/timepassedsince';
 
-  import Badge from '../badge/Badge.svelte';
   import Card from '../card/Card.svelte';
   import Icon from '../icon/Icon.svelte';
   import Toggler from '../toggler/Toggler.svelte';
@@ -95,8 +94,8 @@
       {#if media}
         <div class={mediaCssClass}>
           {#if update}
-            <Badge
-              className="margin-s position-absolute padding-none padding-s--r card--shadow bg--black fontsize-small"
+            <span
+              class="badge margin-s position-absolute padding-none padding-s--r card--shadow bg--black fontsize-small"
               style="bottom: 5px; left: 5px;"
             >
               <Icon
@@ -106,7 +105,7 @@
                 width="15"
               />
               UPDATE
-            </Badge>
+            </span>
           {/if}
           {#if videoIcon}
             <div class="video-icon">

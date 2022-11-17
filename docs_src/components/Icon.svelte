@@ -6,7 +6,7 @@
   import { graphicnameshtml } from '../../svelte/components/icon/graphics/graphicnames';
   import { iconnameshtml } from '../../svelte/components/icon/svgs/iconnames';
   import { sourceType } from '../stores';
-  import { Badge, Button, Card, Icon } from '../../svelte';
+  import { Button, Card, Icon } from '../../svelte';
 
   let iconColor = 'black';
 
@@ -45,7 +45,7 @@
         <td>Custom class names</td>
       </tr>
       <tr>
-        <td>name <Badge type="primary" extension="small">required</Badge></td>
+        <td>name <span class="badge badge--small" data-type="primary">required</span></td>
         <td>IconTypes</td>
         <td />
         <td>Only names listed beneath are valid</td>
