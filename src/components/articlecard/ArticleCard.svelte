@@ -4,7 +4,6 @@
 
   import { timePassedSince } from '../../functions/timepassedsince';
 
-  import Card from '../card/Card.svelte';
   import Icon from '../icon/Icon.svelte';
   import Toggler from '../toggler/Toggler.svelte';
 
@@ -79,7 +78,7 @@
 </script>
 
 {#if loading || (!loading && title)}
-  <Card {url} className={cssClass} style={styleProp} data-breaking={breaking} on:click>
+  <a href={url} class={cssClass} style={styleProp} data-breaking={breaking} on:click>
     <div class={innerClass}>
       {#if premium}
         <div class="premium-dogear {premiumMarkerSize ? `premium-dogear--${premiumMarkerSize}` : ''}">
@@ -174,5 +173,5 @@
         </div>
       </div>
     </div>
-  </Card>
+  </a>
 {/if}

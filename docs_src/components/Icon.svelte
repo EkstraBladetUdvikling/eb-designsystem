@@ -6,7 +6,7 @@
   import { graphicnameshtml } from '../../svelte/components/icon/graphics/graphicnames';
   import { iconnameshtml } from '../../svelte/components/icon/svgs/iconnames';
   import { sourceType } from '../stores';
-  import { Button, Card, Icon } from '../../svelte';
+  import { Button, Icon } from '../../svelte';
 
   let iconColor = 'black';
 
@@ -104,10 +104,10 @@
 </div>
 <div class="flex flex-wrap--wrap" style="--icon-fill: var(--color--{iconColor});">
   {#each iconnameshtml as name, i}
-    <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
+    <div class="card flex-align--center flex-justify--center margin-s padding-m bg--graa6">
       <Icon {name} className="margin-s" width={size} />
       <small>{iconnameshtml[i]}</small>
-    </Card>
+    </div>
   {/each}
 </div>
 
@@ -128,10 +128,10 @@
 
 <div class="flex flex-wrap--wrap">
   {#each graphicnameshtml as name, i}
-    <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
+    <div class="card flex-align--center flex-justify--center margin-s padding-m bg--graa6">
       <Icon {name} className="margin-s" width={86} />
       <small>{graphicnameshtml[i]}</small>
-    </Card>
+    </div>
   {/each}
 </div>
 
@@ -151,10 +151,10 @@
 
 <p>The "background" of figcaption-pin can be changed through the css variable <em>--ebds-figcaption-bg</em></p>
 <div class="flex flex-wrap--wrap">
-  <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
+  <div class="card flex-align--center flex-justify--center margin-s padding-m bg--graa6">
     <Icon name="figcaption-pin" className="margin-s" width={36} />
     <small>figcaption-pin</small>
-  </Card>
+  </div>
 </div>
 
 <h3>DrEdition</h3>
