@@ -11827,7 +11827,7 @@ var app = (function () {
     			add_location(td2, file$S, 33, 8, 782);
     			attr_dev(span, "class", "badge badge--small");
     			attr_dev(span, "data-type", "secondary");
-    			add_location(span, file$S, 35, 34, 835);
+    			add_location(span, file$S, 35, 33, 835);
     			add_location(td3, file$S, 34, 8, 797);
     			add_location(tr1, file$S, 30, 6, 716);
     			attr_dev(th4, "colspan", "4");

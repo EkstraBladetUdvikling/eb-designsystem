@@ -36,9 +36,9 @@
         <td>tabs</td>
         <td>ITabsConfig[]</td>
         <td />
-        <td
-          >Array of tab data. See <span class="badge badge--small" data-type="secondary">Tab</span> props below for details</td
-        >
+        <td>
+          Array of tab data. See <span class="badge badge--small" data-type="secondary">Tab</span> props below for details
+        </td>
       </tr>
       <tr>
         <th colspan="4">Tab</th>
