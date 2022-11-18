@@ -81,9 +81,9 @@
         <td>media</td>
         <td>IMediaOptions</td>
         <td />
-        <td
-          >Adds a image, see <span class="badge badge--small" data-type="secondary">Media</span> props below for details</td
-        >
+        <td>
+          Adds a image, see <span class="badge badge--small" data-type="secondary">Media</span> props below for details
+        </td>
       </tr>
       <tr>
         <td>section</td>
