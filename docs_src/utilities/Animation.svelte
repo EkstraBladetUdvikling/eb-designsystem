@@ -3,7 +3,7 @@
 
   import CodeIcon from '../assets/icons/code.svg';
   import ComponentsIcon from '../assets/icons/components.svg';
-  import { ArticleCard, Badge, Tab, TabContent, TabList, Tabs } from '../../src/';
+  import { ArticleCard, Tab, TabContent, TabList, Tabs } from '../../src/';
 
   const article = {
     href: '#',
@@ -45,9 +45,9 @@
         />
       </div>
       <div class="flex grid-width--small">
-        <Badge href="#" className="margin-s bg--bluedark animation-fogwave">Bandekriminialitet</Badge>
-        <Badge href="#" className="margin-s bg--green animation-fogwave">Sport</Badge>
-        <Badge href="#" className="margin-s bg--greendark animation-fogwave">Nicklas Bendtner</Badge>
+        <a href="#/utilities/animation" class="badge margin-s bg--bluedark animation-fogwave">Bandekriminialitet</a>
+        <a href="#/utilities/animation" class="badge margin-s bg--green animation-fogwave">Sport</a>
+        <a href="#/utilities/animation" class="badge margin-s bg--greendark animation-fogwave">Nicklas Bendtner</a>
       </div>
     </TabContent>
     <TabContent>
@@ -61,10 +61,6 @@
           timestamp="{article.timestamp}"
           title="{article.title}"
           />`}
-      />
-      <Prism
-        language="html"
-        source={`<Badge href="#" className="margin-s bg--greendark animation-fogwave">Nicklas Bendtner</Badge>`}
       />
       <Prism
         language="html"

@@ -6,7 +6,7 @@
   import { graphicnameshtml } from '../../svelte/components/icon/graphics/graphicnames';
   import { iconnameshtml } from '../../svelte/components/icon/svgs/iconnames';
   import { sourceType } from '../stores';
-  import { Badge, Button, Card, Icon } from '../../svelte';
+  import { Button, Icon } from '../../svelte';
 
   let iconColor = 'black';
 
@@ -45,7 +45,7 @@
         <td>Custom class names</td>
       </tr>
       <tr>
-        <td>name <Badge type="primary" extension="small">required</Badge></td>
+        <td>name <span class="badge badge--small" data-type="primary">required</span></td>
         <td>IconTypes</td>
         <td />
         <td>Only names listed beneath are valid</td>
@@ -80,7 +80,8 @@
 </p>
 <p>But by changing the css variable, the color can be handled separately from any set color.</p>
 <p>
-  Most icons are derived from <a href="https://fontawesome.com/" target="_blank">FontAwesome</a> using only the
+  Most icons are derived from <a href="https://fontawesome.com/" target="_blank" rel="noreferrer">FontAwesome</a> using
+  only the
   <b>light</b>
   or <b>solid</b> library!
 </p>
@@ -103,10 +104,10 @@
 </div>
 <div class="flex flex-wrap--wrap" style="--icon-fill: var(--color--{iconColor});">
   {#each iconnameshtml as name, i}
-    <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
+    <div class="card flex-align--center flex-justify--center margin-s padding-m bg--graa6">
       <Icon {name} className="margin-s" width={size} />
       <small>{iconnameshtml[i]}</small>
-    </Card>
+    </div>
   {/each}
 </div>
 
@@ -127,10 +128,10 @@
 
 <div class="flex flex-wrap--wrap">
   {#each graphicnameshtml as name, i}
-    <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
+    <div class="card flex-align--center flex-justify--center margin-s padding-m bg--graa6">
       <Icon {name} className="margin-s" width={86} />
       <small>{graphicnameshtml[i]}</small>
-    </Card>
+    </div>
   {/each}
 </div>
 
@@ -150,10 +151,10 @@
 
 <p>The "background" of figcaption-pin can be changed through the css variable <em>--ebds-figcaption-bg</em></p>
 <div class="flex flex-wrap--wrap">
-  <Card className="flex-align--center flex-justify--center margin-s padding-m bg--graa6">
+  <div class="card flex-align--center flex-justify--center margin-s padding-m bg--graa6">
     <Icon name="figcaption-pin" className="margin-s" width={36} />
     <small>figcaption-pin</small>
-  </Card>
+  </div>
 </div>
 
 <h3>DrEdition</h3>

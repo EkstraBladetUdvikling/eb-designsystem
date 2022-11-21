@@ -12,6 +12,11 @@
     title: string;
   }
 
+  function toggleAccordion(event: Event, index?: number) {
+    event.stopPropagation();
+    $activeTab = $activeTab !== index ? index : undefined;
+  }
+
   export const activeTab: Writable<number> = writable(undefined);
   export let dataTheme: 'darkmode' | 'lightmode' | undefined = undefined;
   export let tabs: ITabsConfig[];
@@ -22,9 +27,11 @@
     <div class:accordion-expanded={$activeTab === i} class="accordion-tab margin-m--b">
       <div
         class="accordion-header flex flex-justify--between flex-align--center padding-m"
-        on:click|stopPropagation={() => {
-          $activeTab = $activeTab !== i ? i : undefined;
-        }}
+        on:click={(e) => toggleAccordion(e, i)}
+        on:keydown={(e) => toggleAccordion(e, i)}
+        role="button"
+        tabindex={0}
+        aria-label={tab.title}
       >
         <span class="fontweight-bold fontsize-medium">{tab.title}</span>
         <Icon name="angle-down" width="14" />

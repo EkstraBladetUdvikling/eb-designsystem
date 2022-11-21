@@ -4,8 +4,6 @@
 
   import { timePassedSince } from '../../functions/timepassedsince';
 
-  import Badge from '../badge/Badge.svelte';
-  import Card from '../card/Card.svelte';
   import Icon from '../icon/Icon.svelte';
   import Toggler from '../toggler/Toggler.svelte';
 
@@ -80,7 +78,7 @@
 </script>
 
 {#if loading || (!loading && title)}
-  <Card {url} className={cssClass} style={styleProp} data-breaking={breaking} on:click>
+  <a href={url} class={cssClass} style={styleProp} data-breaking={breaking} on:click>
     <div class={innerClass}>
       {#if premium}
         <div class="premium-dogear {premiumMarkerSize ? `premium-dogear--${premiumMarkerSize}` : ''}">
@@ -95,8 +93,8 @@
       {#if media}
         <div class={mediaCssClass}>
           {#if update}
-            <Badge
-              className="margin-s position-absolute padding-none padding-s--r card--shadow bg--black fontsize-small"
+            <span
+              class="badge margin-s position-absolute padding-none padding-s--r card--shadow bg--black fontsize-small"
               style="bottom: 5px; left: 5px;"
             >
               <Icon
@@ -106,7 +104,7 @@
                 width="15"
               />
               UPDATE
-            </Badge>
+            </span>
           {/if}
           {#if videoIcon}
             <div class="video-icon">
@@ -175,5 +173,5 @@
         </div>
       </div>
     </div>
-  </Card>
+  </a>
 {/if}

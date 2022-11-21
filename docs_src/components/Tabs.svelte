@@ -2,7 +2,7 @@
   import Prism from 'svelte-prism';
   import { rdmParagraphs } from '../lipsum';
   import { sourceType } from '../stores';
-  import { Card, Tab, TabContent, TabList, Tabs } from '../../src';
+  import { Tab, TabContent, TabList, Tabs } from '../../src';
 
   let content1 = rdmParagraphs();
   let content2 = rdmParagraphs();
@@ -25,22 +25,22 @@
       <Tab>Tab 3 Long Text Bla Bla</Tab>
     </TabList>
     <TabContent>
-      <Card className="margin-m--t">
-        <h2 slot="header">Content 1</h2>
+      <div class="card margin-m--t">
+        <h2 class="card-header">Content 1</h2>
         {@html content1}
-      </Card>
+      </div>
     </TabContent>
     <TabContent>
-      <Card className="margin-m--t">
-        <h2 slot="header">Content 2</h2>
+      <div class="card margin-m--t">
+        <h2 class="card-header">Content 2</h2>
         {@html content2}
-      </Card>
+      </div>
     </TabContent>
     <TabContent>
-      <Card className="margin-m--t">
-        <h2 slot="header">Content 3</h2>
+      <div class="card margin-m--t">
+        <h2 class="card-header">Content 3</h2>
         {@html content3}
-      </Card>
+      </div>
     </TabContent>
   </Tabs>
 
@@ -72,22 +72,22 @@
       <Tab>Tab 3</Tab>
     </TabList>
     <TabContent>
-      <Card className="margin-m--t">
-        <h2 slot="header">Content 1</h2>
-        <div slot="content" contenteditable="true" bind:innerHTML={content1} />
-      </Card>
+      <div class="card margin-m--t">
+        <h2 class="card-header">Content 1</h2>
+        <div class="card-content" contenteditable="true" bind:innerHTML={content1} />
+      </div>
     </TabContent>
     <TabContent>
-      <Card className="margin-m--t">
-        <h2 slot="header">Content 2</h2>
-        <div slot="content" contenteditable="true" bind:innerHTML={content2} />
-      </Card>
+      <div class="card margin-m--t">
+        <h2 class="card-header">Content 2</h2>
+        <div class="card-content" contenteditable="true" bind:innerHTML={content2} />
+      </div>
     </TabContent>
     <TabContent>
-      <Card className="margin-m--t">
-        <h2 slot="header">Content 3</h2>
-        <div slot="content" contenteditable="true" bind:innerHTML={content3} />
-      </Card>
+      <div class="card margin-m--t">
+        <h2 class="card-header">Content 3</h2>
+        <div class="card-content" contenteditable="true" bind:innerHTML={content3} />
+      </div>
     </TabContent>
   </Tabs>
 

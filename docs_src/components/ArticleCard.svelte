@@ -1,8 +1,9 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
+
+  import { ArticleCard } from '../../src';
   import { rdmArticleData } from '../util';
   import { sourceType } from '../stores';
-  import { ArticleCard, Badge } from '../../src';
 </script>
 
 <h1 class="color--eb">Article Card</h1>
@@ -80,7 +81,9 @@
         <td>media</td>
         <td>IMediaOptions</td>
         <td />
-        <td>Adds a image, see <Badge type="secondary" extension="small">Media</Badge> props below for details</td>
+        <td>
+          Adds a image, see <span class="badge badge--small" data-type="secondary">Media</span> props below for details
+        </td>
       </tr>
       <tr>
         <td>section</td>
@@ -128,7 +131,7 @@
         <td /></tr
       >
       <tr>
-        <td>src <Badge type="primary" extension="small">required</Badge></td>
+        <td>src <span class="badge badge--small" data-type="primary">required</span></td>
         <td>string</td>
         <td />
         <td /></tr

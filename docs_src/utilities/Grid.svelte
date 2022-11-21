@@ -1,12 +1,10 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
-
-  import { Card } from '../../src';
 </script>
 
 <h1 class="color--eb margin-l--b">Grid</h1>
 
-<Card className="bg--graa7 text-align--center">
+<div class="card bg--graa7 text-align--center">
   <div class="grid-width--xlarge vertical-center bg--eb" style="overflow: hidden">
     <p>grid-width--xlarge: 930px</p>
     <p>Page content width - frontpage</p>
@@ -23,7 +21,7 @@
       </div>
     </div>
   </div>
-</Card>
+</div>
 
 <h3>HTML class names</h3>
 

@@ -1,8 +1,6 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
 
-  import { Card } from '../../src';
-
   function moveToAllColors() {
     document.getElementById('all-colors-section').scrollIntoView();
   }
@@ -11,10 +9,12 @@
 <h1 class="color--eb">Color</h1>
 
 <h3>Text color</h3>
-<p class="color--red" on:click={moveToAllColors} style="cursor: pointer;">View all colors available</p>
+<button class="button button--cancel margin-m--b" on:click={moveToAllColors} style="cursor: pointer;">
+  View all colors available
+</button>
 
-<Card className="bg--graa7">
-  <div class="flex flex-justify--between flex-wrap--wrap" slot="content">
+<div class="card bg--graa7">
+  <div class="card-content flex flex-justify--between flex-wrap--wrap">
     <div class="flex flex--column padding-xl width-1of3 margin-l bg--white color--black">color--black</div>
     <div class="flex flex--column padding-xl width-1of3 margin-l bg--black color--white">color--white</div>
     <div class="flex flex--column padding-xl width-1of3 margin-l bg--white color--sport">color--sport</div>
@@ -26,7 +26,7 @@
       <em>(inherit the color of the section i.e sport)</em>
     </div>
   </div>
-</Card>
+</div>
 
 <Prism language="html">
   {`<div class="color--black"></div>
@@ -39,10 +39,12 @@
 </Prism>
 
 <h3>Background color</h3>
-<p class="color--red" on:click={moveToAllColors} style="cursor: pointer;">View all colors available</p>
+<button class="button button--cancel margin-m--b" on:click={moveToAllColors} style="cursor: pointer;">
+  View all colors available
+</button>
 
-<Card className="bg--graa7">
-  <div class="flex flex-justify--between flex-wrap--wrap" slot="content">
+<div class="card bg--graa7">
+  <div class="card-content flex flex-justify--between flex-wrap--wrap">
     <div class="flex flex--column padding-xl width-1of3 margin-l bg--black">bg--black</div>
     <div class="flex flex--column padding-xl width-1of3 margin-l bg--white color--black">bg--white</div>
     <div class="flex flex--column padding-xl width-1of3 margin-l bg--underholdning">bg--underholdning</div>
@@ -54,7 +56,7 @@
       <em>(inherit the color of the section i.e sport)</em>
     </div>
   </div>
-</Card>
+</div>
 
 <Prism language="html">
   {`<div class="bg--black"></div>

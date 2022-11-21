@@ -1,14 +1,12 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
-
-  import { Card } from '../../src';
 </script>
 
 <h1 class="color--eb">Fonts</h1>
 
 <h3>Font family</h3>
 
-<Card className="bg--graa7 padding-l--rl">
+<div class="card bg--graa7 padding-l--rl">
   <div class="ff-primary margin-l--tb">
     <strong>.ff-primary:</strong>
     <p>Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz Ææ Øø Åå 1234567890</p>
@@ -17,7 +15,7 @@
     <strong>.ff-secondary:</strong>
     <p>Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz Ææ Øø Åå 1234567890</p>
   </div>
-</Card>
+</div>
 
 <Prism language="html">
   {`<div class="ff-primary"></div>
@@ -26,11 +24,11 @@
 
 <h3>Font-weight</h3>
 
-<Card className="bg--graa7 padding-l--rl">
+<div class="card bg--graa7 padding-l--rl">
   <p class="fontweight-normal">fontweight-normal</p>
   <p class="fontweight-bold">fontweight-bold</p>
   <p class="fontweight-bolder">fontweight-bolder</p>
-</Card>
+</div>
 
 <Prism language="html">
   {`<p class="fontweight-normal"></p>
@@ -44,7 +42,7 @@
 <p>Rem værdien er udregnet i forhold til en basis font-size på 16px, hvilket er browser-standarden</p>
 <p>Der er både en <u>larger</u> og en <u>smaller</u> mulighed, der begge er relative til parent fontsize</p>
 
-<Card className="bg--graa7 padding-l">
+<div class="card bg--graa7 padding-l">
   <div class="fontsize-xxsmall padding-m--b">
     fontsize-xxsmall = .625rem ~ 10px;
     <div class="fontsize-smaller">fontsize-smaller</div>
@@ -90,7 +88,7 @@
     <div class="fontsize-smaller">fontsize-smaller</div>
     <div class="fontsize-larger">fontsize-larger</div>
   </div>
-</Card>
+</div>
 
 <Prism language="html">
   {`<div class="fontsize-xxsmall"></div>
@@ -109,7 +107,7 @@
 
 <h3>Headers and font aliases</h3>
 
-<Card className="bg--graa7 padding-l--rl padding-l--t">
+<div class="card bg--graa7 padding-l--rl padding-l--t">
   <h1>h1</h1>
   <h2>h2</h2>
   <h3>h3</h3>
@@ -125,4 +123,4 @@
   <p class="fs-subtitle">fs-subtitle</p>
   <p class="fs-timestamp">fs-timestamp</p>
   <p class="fs-title">fs-title</p>
-</Card>
+</div>

@@ -1,7 +1,5 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
-
-  import { Card } from '../../src';
 </script>
 
 <h1 class="color--eb">Helpers</h1>
@@ -22,12 +20,12 @@
 
 <h3>Floats</h3>
 
-<Card className="bg--graa7">
+<div class="card bg--graa7">
   <div>
     <div class="bg--eb padding-m float-left">float-left</div>
     <div class="bg--eb padding-m float-right">float-right</div>
   </div>
-</Card>
+</div>
 
 <Prism language="html">
   {`<div class="float-left"></div>
@@ -43,9 +41,9 @@
 <h3>Centrér vertikalt</h3>
 <p>Kræver en fast bredde på elementet.</p>
 
-<Card className="bg--graa7">
+<div class="card bg--graa7">
   <div class="vertical-center width-1of3 padding-l bg--eb">vertical-center</div>
-</Card>
+</div>
 
 <Prism language="html">
   {`<div class="vertical-center"></div>
@@ -90,13 +88,13 @@
 
 <h3>Box-shadow</h3>
 
-<Card className="bg--graa7">
-  <div slot="content">
+<div class="card bg--graa7">
+  <div class="card-content">
     <div class="border-radius box-shadow--small padding-xl margin-l bg--eb">box-shadow--small</div>
     <div class="border-radius box-shadow padding-xl margin-l bg--eb">box-shadow</div>
     <div class="border-radius box-shadow--large padding-xl margin-l bg--eb">box-shadow--large</div>
   </div>
-</Card>
+</div>
 
 <Prism language="html">
   {`<div class="box-shadow--small"></div>

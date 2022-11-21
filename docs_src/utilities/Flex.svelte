@@ -1,7 +1,5 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
-
-  import { Card } from '../../src';
 </script>
 
 <h1 class="color--eb">Flex</h1>
@@ -15,7 +13,7 @@
 <h3>Justify content</h3>
 <p>Justify content anvendes til <i>horizontal</i> placering af child elementer.</p>
 
-<Card className="bg--graa7">
+<div class="card bg--graa7">
   <strong class="margin-m">flex flex-justify--start</strong>
   <div class="flex flex-justify--start bg--eb">
     <div class="bg--graa4 padding-l">Flex item 1</div>
@@ -46,7 +44,7 @@
     <div class="bg--graa3 padding-l">Flex item 2</div>
     <div class="bg--graa2 padding-l">Flex item 3</div>
   </div>
-</Card>
+</div>
 
 <Prism language="html">
   {`<div class="flex flex-justify--start"></div>
@@ -59,7 +57,7 @@
 <h3>Align items</h3>
 <p>Align items anvendes til <i>veritcal</i> placering af child elementer.</p>
 
-<Card className="bg--graa7">
+<div class="card bg--graa7">
   <strong class="margin-m">flex flex-align--start</strong>
   <div class="flex flex-align--start bg--eb" style="height: 100px">
     <div class="bg--graa4 padding-l">Flex item 1</div>
@@ -84,7 +82,7 @@
     <div class="bg--graa3 padding-l">Flex item 2</div>
     <div class="bg--graa2 padding-l">Flex item 3</div>
   </div>
-</Card>
+</div>
 
 <Prism language="html">
   {`<div class="flex flex-align--start"></div>
@@ -96,13 +94,13 @@
 <h3>Flex center</h3>
 <p>Flex center centrere alle child elementer både <i>horizontalt</i> og <i>vertical</i>.</p>
 
-<Card className="bg--graa7">
+<div class="card bg--graa7">
   <div class="flex flex--center bg--eb" style="height: 100px">
     <div class="bg--graa4 padding-l">Flex item 1</div>
     <div class="bg--graa3 padding-l">Flex item 2</div>
     <div class="bg--graa2 padding-l">Flex item 3</div>
   </div>
-</Card>
+</div>
 
 <Prism language="html">
   {`<div class="flex flex--center"></div>`}
@@ -111,7 +109,7 @@
 <h3>Directions</h3>
 <p>Directions bestemmer rækkefølgen for visning af child elementer.</p>
 
-<Card className="bg--graa7">
+<div class="card bg--graa7">
   <strong class="margin-m">flex flex--column</strong>
   <div class="flex flex--column">
     <div class="bg--graa4 padding-l">Flex item 1</div>
@@ -136,7 +134,7 @@
     <div class="bg--graa3 padding-l">Flex item 2</div>
     <div class="bg--graa2 padding-l">Flex item 3</div>
   </div>
-</Card>
+</div>
 
 <Prism language="html">
   {`<div class="flex flex--column"></div>
@@ -151,7 +149,7 @@
   istedet for one-line.
 </p>
 
-<Card className="bg--graa7">
+<div class="card bg--graa7">
   <strong class="margin-m">flex</strong>
   <div class="flex">
     <div class="bg--graa4 width-1of3 padding-l">Flex item 1</div>
@@ -166,7 +164,7 @@
     <div class="bg--graa2 width-1of3 padding-l">Flex item 3</div>
     <div class="bg--graa1 width-1of3 padding-l">Flex item 4</div>
   </div>
-</Card>
+</div>
 
 <Prism language="html">
   {`<div class="flex"></div>
@@ -177,14 +175,14 @@
 
 <h3>Align self</h3>
 
-<Card className="bg--graa7">
+<div class="card bg--graa7">
   <div class="flex bg--eb" style="height: 100px">
     <div class="flex-item--start bg--graa4 width-1of3 padding-l">flex-item--start</div>
     <div class="flex-item--end bg--graa2 width-1of3 padding-l">flex-item--end</div>
     <div class="flex-item--center bg--graa3 width-1of3 padding-l">flex-item--center</div>
     <div class="flex-item--stretch bg--graa1 width-1of3 padding-l">flex-item--stretch</div>
   </div>
-</Card>
+</div>
 
 <Prism language="html">
   {`<div class="flex">
@@ -201,7 +199,7 @@
   <code>flex-item--noshrink</code> sørger for at et child element altid vil have den samme størrelse også på scalering.
 </p>
 
-<Card className="bg--graa7">
+<div class="card bg--graa7">
   <strong class="margin-m margin-l--t">Grow</strong>
   <div class="flex bg--eb">
     <div class="flex-item--grow bg--graa4 padding-l">flex-item--grow</div>
@@ -214,7 +212,7 @@
     <div class="bg--graa3 width-1of3 padding-l">width-1of3</div>
     <div class="bg--graa2 width-1of3 padding-l">width-1of3</div>
   </div>
-</Card>
+</div>
 
 <Prism language="html">
   {`<div class="flex">

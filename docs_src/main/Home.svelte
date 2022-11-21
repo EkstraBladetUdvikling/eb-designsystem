@@ -1,8 +1,6 @@
 <script lang="ts">
   import { link } from 'svelte-spa-router';
 
-  import { Card } from '../../src';
-
   import ComponentsIcon from '../assets/icons/components.svg';
   import CssVarsIcon from '../assets/icons/css-vars.svg';
   import GuidelineIcon from '../assets/icons/guideline.svg';
@@ -27,48 +25,48 @@
     <div class="text-align--center margin-m--tb padding-m bg--graa7">yarn add @ekstra-bladet/designsystem</div>
     <div class="grid home-section">
       <a href="#a11y" use:link={{ disabled: false, href: components.href }} class="home-section-item components">
-        <Card className="padding-m">
+        <div class="card padding-m">
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Components</h2>
             <ComponentsIcon width="60" height="60" />
           </div>
-        </Card>
+        </div>
       </a>
       <a href="#a11y" use:link={{ disabled: false, href: utilities.href }} class="home-section-item utilities">
-        <Card className="padding-m">
+        <div class="card padding-m">
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Utilities</h2>
             <UtilityIcon width="60" height="60" />
           </div>
-        </Card>
+        </div>
       </a>
       <a href="#a11y" use:link={{ disabled: false, href: guidelines.href }} class="home-section-item guidelines">
-        <Card className="padding-m">
+        <div class="card padding-m">
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Guidelines</h2>
             <GuidelineIcon width="45" height="60" />
           </div>
-        </Card>
+        </div>
       </a>
       <a
         href="#a11y"
         use:link={{ disabled: false, href: exportedfunctions.href }}
         class="home-section-item exportedfunctions"
       >
-        <Card className="padding-m">
+        <div class="card padding-m">
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">JS Functions</h2>
             <JSFunctionsIcon width="60" height="60" />
           </div>
-        </Card>
+        </div>
       </a>
       <a href="#a11y" use:link={{ disabled: false, href: cssvariables.href }} class="home-section-item cssvariables">
-        <Card className="padding-m">
+        <div class="card padding-m">
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">CSS Variables</h2>
             <CssVarsIcon width="45" height="60" />
           </div>
-        </Card>
+        </div>
       </a>
     </div>
   </div>

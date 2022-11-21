@@ -13,8 +13,8 @@
   Uses
   <a href="#a11y" use:link={{ disabled: false, href: splitRoute.href }}> {splitRoute.title}</a> to split the title, and
   then uses
-  <a href="https://www.npmjs.com/package/fitty" target="_blank">fitty</a> to adjust font-size to make the lines fit the width
-  of the parent element.
+  <a href="https://www.npmjs.com/package/fitty" target="_blank" rel="noreferrer">fitty</a> to adjust font-size to make the
+  lines fit the width of the parent element.
 </p>
 <p>Returns a document fragment</p>
 <code>
