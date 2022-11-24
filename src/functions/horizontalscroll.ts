@@ -42,12 +42,15 @@ export class HorizontalScrollHandler {
     this.scrollItemContainer = scrollItemContainer;
     this.scrollContainer = scrollContainer;
 
-    this.scrollItemContainer.addEventListener(
-      'wheel',
-      throttle((data: WheelEvent) => {
-        this.updateButtonsThroughScroll(data);
-      }, 150)
-    );
+    ['wheel', 'touchmove'].forEach((evtName) => {
+      this.scrollItemContainer.addEventListener(
+        evtName,
+        throttle((evt: WheelEvent | TouchEvent) => {
+          this.updateButtonsThroughScroll(evt);
+        }, 50)
+      );
+    });
+
     this.wrapLeft = scrollItemContainer.getBoundingClientRect().left;
     this.wrapRight = scrollItemContainer.getBoundingClientRect().right;
     this.wrapClientWidth = scrollItemContainer.clientWidth;
@@ -196,13 +199,13 @@ export class HorizontalScrollHandler {
   /**
    * updateButtonsThroughScroll
    *
-   * if the user scrolls horizontally in the list with mousewheel/trackpad we
+   * if the user scrolls or swipes horizontally in the list with mousewheel/trackpad we
    * update the visibility of the buttons
    *
-   * @param ev {WheelEvent}
+   * @param evt {WheelEvent | TouchEvent}
    */
-  private updateButtonsThroughScroll(ev?: WheelEvent) {
-    if (Math.abs(ev.deltaX) > Math.abs(ev.deltaY)) {
+  private updateButtonsThroughScroll(evt: WheelEvent | TouchEvent) {
+    if (!('deltaX' in evt) || Math.abs(evt.deltaX) > Math.abs(evt.deltaY)) {
       this.blocking = BLOCKING.disabled;
       this.updateButtons();
     }
