@@ -43,11 +43,13 @@ export class HorizontalScrollHandler {
     this.scrollContainer = scrollContainer;
 
     this.scrollItemContainer.addEventListener(
-      'wheel',
-      throttle((data: WheelEvent) => {
-        this.updateButtonsThroughScroll(data);
-      }, 150)
+      'scroll',
+      throttle(() => {
+        this.blocking = BLOCKING.disabled;
+        this.updateButtons();
+      }, 50)
     );
+
     this.wrapLeft = scrollItemContainer.getBoundingClientRect().left;
     this.wrapRight = scrollItemContainer.getBoundingClientRect().right;
     this.wrapClientWidth = scrollItemContainer.clientWidth;
@@ -150,11 +152,12 @@ export class HorizontalScrollHandler {
    * calculate where in the list we are when the user scrolls
    */
   private updateButtons() {
+    const buffer = 30;
     const childLeft = this.children[0].getBoundingClientRect().left;
     const childRight = this.children[this.listLength - 1].getBoundingClientRect().right;
 
-    const childrenHiddenLeft = childLeft < this.wrapLeft;
-    const childrenHiddenRight = childRight > this.wrapRight;
+    const childrenHiddenLeft = childLeft + buffer < this.wrapLeft;
+    const childrenHiddenRight = childRight - buffer > this.wrapRight;
 
     let dir: SCROLLPOS;
 
@@ -191,21 +194,6 @@ export class HorizontalScrollHandler {
     return Array.from(this.children).find((child) => {
       return child.getBoundingClientRect().right > this.wrapRight;
     }) as HTMLElement;
-  }
-
-  /**
-   * updateButtonsThroughScroll
-   *
-   * if the user scrolls horizontally in the list with mousewheel/trackpad we
-   * update the visibility of the buttons
-   *
-   * @param ev {WheelEvent}
-   */
-  private updateButtonsThroughScroll(ev?: WheelEvent) {
-    if (Math.abs(ev.deltaX) > Math.abs(ev.deltaY)) {
-      this.blocking = BLOCKING.disabled;
-      this.updateButtons();
-    }
   }
 
   /**
