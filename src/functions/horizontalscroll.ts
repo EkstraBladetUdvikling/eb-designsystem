@@ -42,14 +42,13 @@ export class HorizontalScrollHandler {
     this.scrollItemContainer = scrollItemContainer;
     this.scrollContainer = scrollContainer;
 
-    ['wheel', 'touchmove'].forEach((evtName) => {
-      this.scrollItemContainer.addEventListener(
-        evtName,
-        throttle((evt: WheelEvent | TouchEvent) => {
-          this.updateButtonsThroughScroll(evt);
-        }, 50)
-      );
-    });
+    this.scrollItemContainer.addEventListener(
+      'scroll',
+      throttle(() => {
+        this.blocking = BLOCKING.disabled;
+        this.updateButtons();
+      }, 50)
+    );
 
     this.wrapLeft = scrollItemContainer.getBoundingClientRect().left;
     this.wrapRight = scrollItemContainer.getBoundingClientRect().right;
@@ -153,11 +152,12 @@ export class HorizontalScrollHandler {
    * calculate where in the list we are when the user scrolls
    */
   private updateButtons() {
+    const buffer = 30;
     const childLeft = this.children[0].getBoundingClientRect().left;
     const childRight = this.children[this.listLength - 1].getBoundingClientRect().right;
 
-    const childrenHiddenLeft = childLeft < this.wrapLeft;
-    const childrenHiddenRight = childRight > this.wrapRight;
+    const childrenHiddenLeft = childLeft + buffer < this.wrapLeft;
+    const childrenHiddenRight = childRight - buffer > this.wrapRight;
 
     let dir: SCROLLPOS;
 
@@ -194,21 +194,6 @@ export class HorizontalScrollHandler {
     return Array.from(this.children).find((child) => {
       return child.getBoundingClientRect().right > this.wrapRight;
     }) as HTMLElement;
-  }
-
-  /**
-   * updateButtonsThroughScroll
-   *
-   * if the user scrolls or swipes horizontally in the list with mousewheel/trackpad we
-   * update the visibility of the buttons
-   *
-   * @param evt {WheelEvent | TouchEvent}
-   */
-  private updateButtonsThroughScroll(evt: WheelEvent | TouchEvent) {
-    if (!('deltaX' in evt) || Math.abs(evt.deltaX) > Math.abs(evt.deltaY)) {
-      this.blocking = BLOCKING.disabled;
-      this.updateButtons();
-    }
   }
 
   /**
