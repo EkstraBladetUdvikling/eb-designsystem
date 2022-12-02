@@ -3,10 +3,10 @@
   import Prism from 'svelte-prism';
 
   import DrEditionSVGs from '../assets/dredition/DrEditionSVGs.svelte';
-  import { graphicnameshtml } from '../../svelte/components/icon/graphics/graphicnames';
-  import { iconnameshtml } from '../../svelte/components/icon/svgs/iconnames';
+  import { graphicnameshtml } from '../../src/components/icon/graphics/graphicnames';
+  import { iconnameshtml } from '../../src/components/icon/svgs/iconnames';
   import { sourceType } from '../stores';
-  import { Button, Icon } from '../../svelte';
+  import { Button, Icon } from '../../src';
 
   let iconColor = 'black';
 
