@@ -2,8 +2,8 @@
   import Prism from 'svelte-prism';
   import type { Writable } from 'svelte/store';
 
+  import { ButtonGroup } from '../../src';
   import { sourceType } from '../stores';
-  import { Button, ButtonGroup } from '../../src';
 
   let selectedId: Writable<number>;
 </script>
@@ -12,7 +12,7 @@
 
 {#if $sourceType === 'svelte'}
   <Prism language="js">
-    {`import { Button, ButtonGroup } from '@ekstra-bladet/designsystem';`}
+    {`import { ButtonGroup } from '@ekstra-bladet/designsystem';`}
   </Prism>
 
   <table class="table">
@@ -69,17 +69,17 @@
 <p>Button-index selected: {$selectedId}</p>
 
 <ButtonGroup className="margin-l--b" bind:selectedId>
-  <Button>Button 1</Button>
-  <Button>Button 2</Button>
-  <Button>Button 3</Button>
+  <button class="button">Button 1</button>
+  <button class="button">Button 2</button>
+  <button class="button">Button 3</button>
 </ButtonGroup>
 
 {#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<ButtonGroup bind:selectedId>
-  <Button></Button>
-  <Button></Button>
-  <Button></Button>
+  <button class="button"></button>
+  <button class="button"></button>
+  <button class="button"></button>
 </ButtonGroup>`}
   </Prism>
 {:else}
@@ -95,27 +95,27 @@
 <h3>Variations</h3>
 
 <ButtonGroup type="primary" className="margin-m--b">
-  <Button>Primary</Button>
-  <Button>Button 2</Button>
-  <Button>Button 3</Button>
+  <button class="button">Primary</button>
+  <button class="button">Button 2</button>
+  <button class="button">Button 3</button>
 </ButtonGroup>
 
 <ButtonGroup type="secondary" className="margin-m--b">
-  <Button>Secondary</Button>
-  <Button>Button 2</Button>
-  <Button>Button 3</Button>
+  <button class="button">Secondary</button>
+  <button class="button">Button 2</button>
+  <button class="button">Button 3</button>
 </ButtonGroup>
 
 <ButtonGroup type="accept" className="margin-m--b">
-  <Button>Accept</Button>
-  <Button>Button 2</Button>
-  <Button>Button 3</Button>
+  <button class="button">Accept</button>
+  <button class="button">Button 2</button>
+  <button class="button">Button 3</button>
 </ButtonGroup>
 
 <ButtonGroup type="cancel" className="margin-l--b">
-  <Button>Cancel</Button>
-  <Button>Button 2</Button>
-  <Button>Button 3</Button>
+  <button class="button">Cancel</button>
+  <button class="button">Button 2</button>
+  <button class="button">Button 3</button>
 </ButtonGroup>
 
 {#if $sourceType === 'svelte'}
@@ -137,9 +137,9 @@
 <h3>Farve muligheder fra eb-colors</h3>
 
 <ButtonGroup color="Bordeaux" className="margin-l--b">
-  <Button>Button 1</Button>
-  <Button>Button 2</Button>
-  <Button>Button 3</Button>
+  <button class="button">Button 1</button>
+  <button class="button">Button 2</button>
+  <button class="button">Button 3</button>
 </ButtonGroup>
 
 {#if $sourceType === 'svelte'}
@@ -160,9 +160,9 @@
 <h3>Solid button group</h3>
 
 <ButtonGroup solid={true} color="Black" colorHover="Red" className="margin-l--b">
-  <Button>Button 1</Button>
-  <Button>Button 2</Button>
-  <Button>Button 3</Button>
+  <button class="button">Button 1</button>
+  <button class="button">Button 2</button>
+  <button class="button">Button 3</button>
 </ButtonGroup>
 
 {#if $sourceType === 'svelte'}

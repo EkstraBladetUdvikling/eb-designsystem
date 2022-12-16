@@ -5,8 +5,9 @@
   import DrEditionSVGs from '../assets/dredition/DrEditionSVGs.svelte';
   import { graphicnameshtml } from '../../src/components/icon/graphics/graphicnames';
   import { iconnameshtml } from '../../src/components/icon/svgs/iconnames';
+
+  import { Icon } from '../../src';
   import { sourceType } from '../stores';
-  import { Button, Icon } from '../../src';
 
   let iconColor = 'black';
 
@@ -94,13 +95,13 @@
       {/each}
     </select>
   </div>
-  <Button className="margin-m--r" type="cancel" on:click={decrement}>
+  <button class="button button--cancel margin-m--r" on:click={decrement}>
     <Icon name="angle-left" width={18} />
-  </Button>
+  </button>
   <p>Size: <input type="number" bind:value={size} style="width: 45px;" />px</p>
-  <Button className="margin-m--l" type="cancel" on:click={increment}>
+  <button class="button button--cancel margin-m--l" on:click={increment}>
     <Icon name="angle-right" width={18} />
-  </Button>
+  </button>
 </div>
 <div class="flex flex-wrap--wrap" style="--icon-fill: var(--color--{iconColor});">
   {#each iconnameshtml as name, i}

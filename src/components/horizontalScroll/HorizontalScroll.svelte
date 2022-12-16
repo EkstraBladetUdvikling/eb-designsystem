@@ -2,7 +2,6 @@
   import { afterUpdate, onMount } from 'svelte';
   import { HorizontalScrollHandler, SCROLLDIRECTION } from '../../functions/horizontalscroll';
 
-  import Button from '../button/Button.svelte';
   import Icon from '../icon/Icon.svelte';
 
   export let className = undefined;
@@ -26,20 +25,18 @@
 </script>
 
 <div bind:this={scrollContainer} class={cssClass}>
-  <Button
+  <button
     on:click={() => horizontalScrollHandler.scrollWithButton(SCROLLDIRECTION.left)}
-    className="horizontal-scroll-nav button-prev bg--white"
-    extension="icon"
+    class="button button--icon horizontal-scroll-nav button-prev bg--white"
   >
     <Icon name="angle-left" width="14" />
-  </Button>
-  <Button
+  </button>
+  <button
     on:click={() => horizontalScrollHandler.scrollWithButton(SCROLLDIRECTION.right)}
-    className="horizontal-scroll-nav button-next bg--white"
-    extension="icon"
+    class="button button--icon horizontal-scroll-nav button-next bg--white"
   >
     <Icon name="angle-right" width="14" />
-  </Button>
+  </button>
   <div
     bind:this={scrollItemContainer}
     class="horizontal-scroll-items horizontal-scroll-items--gap flex position-relative"

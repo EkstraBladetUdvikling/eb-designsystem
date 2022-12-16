@@ -1,7 +1,8 @@
 <script lang="ts">
   import GithubIcon from '../assets/icons/github.svg';
+
+  import { ButtonGroup } from '../../src';
   import { sourceType } from '../stores';
-  import { Button, ButtonGroup } from '../../src';
 
   import type { SourceTyping } from '../stores';
 
@@ -17,9 +18,16 @@
       <span class="flex flex-align--end padding-s--l">Github</span>
     </a>
     <ButtonGroup type="secondary">
-      <Button size="small" initial={$sourceType === 'svelte'} on:click={() => changeSourceType('svelte')}>Svelte</Button
+      <button
+        class="button button--small"
+        data-selected={$sourceType === 'svelte'}
+        on:click={() => changeSourceType('svelte')}>Svelte</button
       >
-      <Button size="small" initial={$sourceType === 'html'} on:click={() => changeSourceType('html')}>HTML</Button>
+      <button
+        class="button button--small"
+        data-selected={$sourceType === 'html'}
+        on:click={() => changeSourceType('html')}>HTML</button
+      >
     </ButtonGroup>
   </nav>
 </div>

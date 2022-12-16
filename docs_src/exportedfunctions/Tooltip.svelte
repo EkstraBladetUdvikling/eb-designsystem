@@ -1,7 +1,6 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
 
-  import Button from '../../src/components/button/Button.svelte';
   import Icon from '../../src/components/icon/Icon.svelte';
   import Spinner from '../../src/components/spinner/Spinner.svelte';
 
@@ -133,11 +132,14 @@
       <Icon className="tooltip-toggle" name="question-circle" width="18" />
     </div>
     <br />
-    <Button
+    <button
+      class="button"
       on:click={() => {
         $tooltipStore['test-anchor'].show();
-      }}>Show tooltip</Button
+      }}
     >
+      Show tooltip
+    </button>
   </div>
 
   <Prism language="js">
@@ -149,7 +151,7 @@
     <Icon className="tooltip-toggle" name="question-circle" width="18" />
 </div>
 
-<Button on:click={(e) => {$tooltipStore['uniqueid'].show();}}>Show tooltip</Button>`}
+<button class="button" on:click={(e) => {$tooltipStore['uniqueid'].show();}}>Show tooltip</button>`}
   </Prism>
 {:else}
   <h2 class="color--eb">Tooltip as a function</h2>

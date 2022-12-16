@@ -2,7 +2,6 @@
 export { default as Accordion } from './components/accordion/Accordion.svelte';
 export { default as ArticleCard } from './components/articlecard/ArticleCard.svelte';
 export { default as ArticleList } from './components/articlelist/ArticleList.svelte';
-export { default as Button } from './components/button/Button.svelte';
 export { default as ButtonGroup } from './components/buttongroup/ButtonGroup.svelte';
 export { default as Checkbox } from './components/form-elements/Checkbox.svelte';
 export { default as FormElement } from './components/form-elements/FormElement.svelte';
