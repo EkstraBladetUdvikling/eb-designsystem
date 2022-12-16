@@ -1,6 +1,13 @@
 <script lang="ts">
   import Icon from '../icon/Icon.svelte';
-  export let isLoading = false;
+
+  export let delay = 150;
+
+  let isLoading = false;
+
+  setTimeout(() => {
+    isLoading = true;
+  }, delay);
 </script>
 
 {#if isLoading}

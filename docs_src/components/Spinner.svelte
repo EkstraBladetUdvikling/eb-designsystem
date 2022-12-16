@@ -22,22 +22,22 @@
     </thead>
     <tbody>
       <tr>
-        <td>isLoading</td>
-        <td>boolean</td>
-        <td>false</td>
-        <td>Will only show if set to 'true'</td>
+        <td>delay</td>
+        <td>number</td>
+        <td>150</td>
+        <td />
       </tr>
     </tbody>
   </table>
 {/if}
 
 <div class="padding-l">
-  <Spinner isLoading={true} />
+  <Spinner />
 </div>
 
 {#if $sourceType === 'svelte'}
   <Prism language="html">
-    {`<Spinner isLoading={true}/>`}
+    {`<Spinner />`}
   </Prism>
 {:else}
   <Prism language="html">
