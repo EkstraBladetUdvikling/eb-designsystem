@@ -8,6 +8,7 @@ export { default as FormElement } from './components/form-elements/FormElement.s
 export { default as HorizontalScroll } from './components/horizontalScroll/HorizontalScroll.svelte';
 export { default as Icon } from './components/icon/Icon.svelte';
 export { default as Select } from './components/form-elements/Select.svelte';
+export { default as DelayedSpinner } from './components/spinner/DelayedSpinner.svelte';
 export { default as Spinner } from './components/spinner/Spinner.svelte';
 export { default as Tab } from './components/tabs/Tab.svelte';
 export { default as TabContent } from './components/tabs/TabContent.svelte';
