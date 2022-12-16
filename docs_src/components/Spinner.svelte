@@ -27,6 +27,12 @@
         <td>150</td>
         <td />
       </tr>
+      <tr>
+        <td>size</td>
+        <td>number</td>
+        <td>18</td>
+        <td>pixel value which translates to <em>--icon-size: [size]px</em></td>
+      </tr>
     </tbody>
   </table>
 {/if}
