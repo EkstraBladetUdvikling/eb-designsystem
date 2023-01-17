@@ -4,7 +4,7 @@
  * @param datetime {string}
  * @returns {string}
  */
-export function timePassedSince(datetime: string): string {
+export function timePassedSince(datetime: string, todayAsText: boolean = false): string {
   const monthNames = ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'];
   const inputdate = new Date(datetime); // UTC-time from server (Z)
   const now = new Date();
@@ -24,6 +24,8 @@ export function timePassedSince(datetime: string): string {
         now.getFullYear() !== inputDateLocalTz.getFullYear() ? ` ${inputDateLocalTz.getFullYear()}` : ''
       }`;
     }
+  } else if (todayAsText) {
+    output = 'I dag';
   } else {
     // Less than 24 hours old
     const hours = Math.floor((secondsSince % 86400) / 3600);
