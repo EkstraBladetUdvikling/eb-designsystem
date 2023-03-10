@@ -1,0 +1,30 @@
+<svg class="live-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 28">
+  <defs>
+    <style>
+      .live-cls-1 {
+        fill: #000;
+      }
+
+      .live-cls-2 {
+        fill: #fff;
+        isolation: isolate;
+        font-size: 15px;
+        font-family: Arial-BoldMT, Arial;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+
+  <g>
+    <g>
+      <rect class="live-cls-1" width="75" height="28" rx="5">
+      </rect>
+    </g>
+    <g>
+      <text class="live-cls-2" transform="translate(21 19)">
+      LIVE
+      <animate attributeName="opacity" keyTimes="0;0.3;0.7;1" values="1;0.25;1;1;" dur="1.5s" repeatCount="indefinite" />
+      </text>
+    </g>
+  </g>
+</svg>
