@@ -16,6 +16,8 @@
   let instance: TTooltipInstance = null;
   $: textOnly = typeof content === 'string' || content instanceof String;
 
+  $: svelteComponentContent = content as typeof SvelteComponent;
+
   onMount(() => {
     instance = tooltipRender(anchorNode, tooltipNode, tippyOptions);
 
@@ -42,7 +44,7 @@
 
 <div bind:this={tooltipNode} class:tooltip-textonly={textOnly}>
   {#if !textOnly}
-    <svelte:component this={content} {...props} />
+    <svelte:component this={svelteComponentContent} {...props} />
   {:else if allowHTML}
     {@html content}
   {:else}

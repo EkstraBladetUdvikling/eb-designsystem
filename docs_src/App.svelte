@@ -5,7 +5,7 @@
 
   import { routes } from './routes/routes';
 
-  import Icons from '../docs/svg/symbol/icons.svg';
+  import Icons from '../docs/svg/symbol/icons.svelte';
   import Navbar from './main/Navbar.svelte';
   import Sidebar from './main/Sidebar.svelte';
 </script>
@@ -16,7 +16,7 @@
   <Router {routes} />
 </div>
 
-<Icons />
+{@html Icons}
 
 <style>
   .content-container {

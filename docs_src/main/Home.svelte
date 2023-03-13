@@ -1,11 +1,11 @@
 <script lang="ts">
   import { link } from 'svelte-spa-router';
 
-  import ComponentsIcon from '../assets/icons/components.svg';
-  import CssVarsIcon from '../assets/icons/css-vars.svg';
-  import GuidelineIcon from '../assets/icons/guideline.svg';
-  import JSFunctionsIcon from '../assets/icons/js-functions.svg';
-  import UtilityIcon from '../assets/icons/utility.svg';
+  import ComponentsIcon from '../assets/icons/components.svelte';
+  import CssVarsIcon from '../assets/icons/css-vars.svelte';
+  import GuidelineIcon from '../assets/icons/guideline.svelte';
+  import JSFunctionsIcon from '../assets/icons/js-functions.svelte';
+  import UtilityIcon from '../assets/icons/utility.svelte';
 
   import { components } from '../routes/components';
   import { cssvariables } from '../routes/cssvariables';
