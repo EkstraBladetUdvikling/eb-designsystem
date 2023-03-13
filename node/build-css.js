@@ -60,7 +60,7 @@ const buildCSS = async (args) => {
     const postcssPlugins = [
       postcssImport,
       postcssCustomMedia({
-        importFrom: './css/_custom-mediaqueries.css',
+        // importFrom: './css/_custom-mediaqueries.css',
       }),
     ];
 
