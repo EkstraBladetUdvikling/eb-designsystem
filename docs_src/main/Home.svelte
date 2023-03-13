@@ -1,11 +1,11 @@
 <script lang="ts">
   import { link } from 'svelte-spa-router';
 
-  import ComponentsIcon from '../assets/icons/components.svg';
-  import CssVarsIcon from '../assets/icons/css-vars.svg';
-  import GuidelineIcon from '../assets/icons/guideline.svg';
-  import JSFunctionsIcon from '../assets/icons/js-functions.svg';
-  import UtilityIcon from '../assets/icons/utility.svg';
+  import ComponentsIcon from '../assets/icons/components.svelte';
+  import CssVarsIcon from '../assets/icons/css-vars.svelte';
+  import GuidelineIcon from '../assets/icons/guideline.svelte';
+  import JSFunctionsIcon from '../assets/icons/js-functions.svelte';
+  import UtilityIcon from '../assets/icons/utility.svelte';
 
   import { components } from '../routes/components';
   import { cssvariables } from '../routes/cssvariables';
@@ -28,7 +28,7 @@
         <div class="card padding-m">
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Components</h2>
-            <ComponentsIcon width="60" height="60" />
+            <ComponentsIcon width={60} height={60} />
           </div>
         </div>
       </a>
@@ -36,7 +36,7 @@
         <div class="card padding-m">
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Utilities</h2>
-            <UtilityIcon width="60" height="60" />
+            <UtilityIcon width={60} height={60} />
           </div>
         </div>
       </a>
@@ -44,7 +44,7 @@
         <div class="card padding-m">
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Guidelines</h2>
-            <GuidelineIcon width="45" height="60" />
+            <GuidelineIcon width={45} height={60} />
           </div>
         </div>
       </a>
@@ -56,7 +56,7 @@
         <div class="card padding-m">
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">JS Functions</h2>
-            <JSFunctionsIcon width="60" height="60" />
+            <JSFunctionsIcon width={60} height={60} />
           </div>
         </div>
       </a>
@@ -64,7 +64,7 @@
         <div class="card padding-m">
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">CSS Variables</h2>
-            <CssVarsIcon width="45" height="60" />
+            <CssVarsIcon width={45} height={60} />
           </div>
         </div>
       </a>

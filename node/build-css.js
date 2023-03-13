@@ -57,12 +57,7 @@ const buildCSS = async (args) => {
 
     const cssFilesToRead = importFrom;
 
-    const postcssPlugins = [
-      postcssImport,
-      postcssCustomMedia({
-        importFrom: './css/_custom-mediaqueries.css',
-      }),
-    ];
+    const postcssPlugins = [postcssImport, postcssCustomMedia()];
 
     const fileTypeToFind = '.css';
 

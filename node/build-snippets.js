@@ -67,7 +67,7 @@ const buildCSS = async (args) => {
     });
 
     const css = readFileContent.join('');
-    await postcss([customProperties(cssnextObject), tsVersionCreator])
+    await postcss([customProperties(), tsVersionCreator])
       .process(css, {
         from: 'undefined',
       })

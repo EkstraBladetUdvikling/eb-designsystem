@@ -1,8 +1,8 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
 
-  import CodeIcon from '../assets/icons/code.svg';
-  import ComponentsIcon from '../assets/icons/components.svg';
+  import CodeIcon from '../assets/icons/code.svelte';
+  import ComponentsIcon from '../assets/icons/components.svelte';
   import { ArticleCard, Tab, TabContent, TabList, Tabs } from '../../src/';
 
   const article = {
