@@ -16,7 +16,7 @@
   <Router {routes} />
 </div>
 
-{@html Icons}
+<Icons />
 
 <style>
   .content-container {

@@ -28,7 +28,7 @@
         <div class="card padding-m">
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Components</h2>
-            <ComponentsIcon width="60" height="60" />
+            <ComponentsIcon width={60} height={60} />
           </div>
         </div>
       </a>
@@ -36,7 +36,7 @@
         <div class="card padding-m">
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Utilities</h2>
-            <UtilityIcon width="60" height="60" />
+            <UtilityIcon width={60} height={60} />
           </div>
         </div>
       </a>
@@ -44,7 +44,7 @@
         <div class="card padding-m">
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">Guidelines</h2>
-            <GuidelineIcon width="45" height="60" />
+            <GuidelineIcon width={45} height={60} />
           </div>
         </div>
       </a>
@@ -56,7 +56,7 @@
         <div class="card padding-m">
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">JS Functions</h2>
-            <JSFunctionsIcon width="60" height="60" />
+            <JSFunctionsIcon width={60} height={60} />
           </div>
         </div>
       </a>
@@ -64,7 +64,7 @@
         <div class="card padding-m">
           <div class="flex-item flex-item--center text-align--center">
             <h2 class="color--graa1">CSS Variables</h2>
-            <CssVarsIcon width="45" height="60" />
+            <CssVarsIcon width={45} height={60} />
           </div>
         </div>
       </a>
