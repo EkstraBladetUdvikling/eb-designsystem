@@ -1,5 +1,5 @@
 <script lang="ts">
-  import GithubIcon from '../assets/icons/github.svg';
+  import GithubIcon from '../assets/icons/github.svelte';
 
   import { ButtonGroup } from '../../src';
   import { sourceType } from '../stores';
