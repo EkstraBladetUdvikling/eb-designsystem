@@ -81,7 +81,7 @@
             <img alt="" src="./svg/dredition/eb-plus-white-onred-anim.svg" height="18" />
           </div>
         </td>
-        <td>Dogear plus</td>
+        <td>Dogear plus <i>(dogear made with css)</i></td>
         <td>eb-plus-white-onred-anim.svg</td>
       </tr>
       <tr>
