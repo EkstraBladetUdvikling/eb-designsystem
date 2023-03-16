@@ -158,7 +158,7 @@
   </div>
 </div>
 
-<h3>DrEdition</h3>
-<p>Animated and static icons used in DrEdition i.e ekstrabladet.dk frontpage cards</p>
+<h3>Frontpage icons (DrEdition)</h3>
+<p>Icons used in DrEdition Aptoma i.e ekstrabladet.dk frontpage cards</p>
 
 <DrEditionSVGs />
