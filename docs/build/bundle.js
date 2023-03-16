@@ -196,8 +196,15 @@ var app = (function () {
         }
         select.selectedIndex = -1; // no option should be selected
     }
+    function first_enabled_option(select) {
+        for (const option of select.options) {
+            if (!option.disabled) {
+                return option;
+            }
+        }
+    }
     function select_value(select) {
-        const selected_option = select.querySelector(':checked') || select.options[0];
+        const selected_option = select.querySelector(':checked') || first_enabled_option(select);
         return selected_option && selected_option.__value;
     }
     function toggle_class(element, name, toggle) {
@@ -221,16 +228,17 @@ var app = (function () {
             if (!this.e) {
                 if (this.is_svg)
                     this.e = svg_element(target.nodeName);
+                /** #7364  target for <template> may be provided as #document-fragment(11) */
                 else
-                    this.e = element(target.nodeName);
-                this.t = target;
+                    this.e = element((target.nodeType === 11 ? 'TEMPLATE' : target.nodeName));
+                this.t = target.tagName !== 'TEMPLATE' ? target : target.content;
                 this.c(html);
             }
             this.i(anchor);
         }
         h(html) {
             this.e.innerHTML = html;
-            this.n = Array.from(this.e.childNodes);
+            this.n = Array.from(this.e.nodeName === 'TEMPLATE' ? this.e.content.childNodes : this.e.childNodes);
         }
         i(anchor) {
             for (let i = 0; i < this.n.length; i += 1) {
@@ -350,9 +358,9 @@ var app = (function () {
 
     const dirty_components = [];
     const binding_callbacks = [];
-    const render_callbacks = [];
+    let render_callbacks = [];
     const flush_callbacks = [];
-    const resolved_promise = Promise.resolve();
+    const resolved_promise = /* @__PURE__ */ Promise.resolve();
     let update_scheduled = false;
     function schedule_update() {
         if (!update_scheduled) {
@@ -391,15 +399,29 @@ var app = (function () {
     const seen_callbacks = new Set();
     let flushidx = 0; // Do *not* move this inside the flush() function
     function flush() {
+        // Do not reenter flush while dirty components are updated, as this can
+        // result in an infinite loop. Instead, let the inner flush handle it.
+        // Reentrancy is ok afterwards for bindings etc.
+        if (flushidx !== 0) {
+            return;
+        }
         const saved_component = current_component;
         do {
             // first, call beforeUpdate functions
             // and update components
-            while (flushidx < dirty_components.length) {
-                const component = dirty_components[flushidx];
-                flushidx++;
-                set_current_component(component);
-                update(component.$$);
+            try {
+                while (flushidx < dirty_components.length) {
+                    const component = dirty_components[flushidx];
+                    flushidx++;
+                    set_current_component(component);
+                    update(component.$$);
+                }
+            }
+            catch (e) {
+                // reset dirty state to not end up in a deadlocked state and then rethrow
+                dirty_components.length = 0;
+                flushidx = 0;
+                throw e;
             }
             set_current_component(null);
             dirty_components.length = 0;
@@ -435,6 +457,16 @@ var app = (function () {
             $$.fragment && $$.fragment.p($$.ctx, dirty);
             $$.after_update.forEach(add_render_callback);
         }
+    }
+    /**
+     * Useful for example to execute remaining `afterUpdate` callbacks before executing `destroy`.
+     */
+    function flush_render_callbacks(fns) {
+        const filtered = [];
+        const targets = [];
+        render_callbacks.forEach((c) => fns.indexOf(c) === -1 ? filtered.push(c) : targets.push(c));
+        targets.forEach((c) => c());
+        render_callbacks = filtered;
     }
     const outroing = new Set();
     let outros;
@@ -556,6 +588,7 @@ var app = (function () {
     function destroy_component(component, detaching) {
         const $$ = component.$$;
         if ($$.fragment !== null) {
+            flush_render_callbacks($$.after_update);
             run_all($$.on_destroy);
             $$.fragment && $$.fragment.d(detaching);
             // TODO null out other refs, including component.$$ (but need to
@@ -663,7 +696,7 @@ var app = (function () {
     }
 
     function dispatch_dev(type, detail) {
-        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.53.1' }, detail), { bubbles: true }));
+        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.56.0' }, detail), { bubbles: true }));
     }
     function append_dev(target, node) {
         dispatch_dev('SvelteDOMInsert', { target, node });
@@ -677,12 +710,14 @@ var app = (function () {
         dispatch_dev('SvelteDOMRemove', { node });
         detach(node);
     }
-    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation, has_stop_immediate_propagation) {
         const modifiers = options === true ? ['capture'] : options ? Array.from(Object.keys(options)) : [];
         if (has_prevent_default)
             modifiers.push('preventDefault');
         if (has_stop_propagation)
             modifiers.push('stopPropagation');
+        if (has_stop_immediate_propagation)
+            modifiers.push('stopImmediatePropagation');
         dispatch_dev('SvelteDOMAddEventListener', { node, event, handler, modifiers });
         const dispose = listen(node, event, handler, options);
         return () => {
@@ -904,7 +939,7 @@ var app = (function () {
             run(value);
             return () => {
                 subscribers.delete(subscriber);
-                if (subscribers.size === 0) {
+                if (subscribers.size === 0 && stop) {
                     stop();
                     stop = null;
                 }
@@ -981,7 +1016,7 @@ var app = (function () {
     	};
     }
 
-    /* node_modules/svelte-spa-router/Router.svelte generated by Svelte v3.53.1 */
+    /* node_modules/svelte-spa-router/Router.svelte generated by Svelte v3.56.0 */
 
     const { Error: Error_1, Object: Object_1$1, console: console_1 } = globals;
 
@@ -1026,7 +1061,7 @@ var app = (function () {
     			? get_spread_update(switch_instance_spread_levels, [get_spread_object(/*props*/ ctx[2])])
     			: {};
 
-    			if (switch_value !== (switch_value = /*component*/ ctx[0])) {
+    			if (dirty & /*component*/ 1 && switch_value !== (switch_value = /*component*/ ctx[0])) {
     				if (switch_instance) {
     					group_outros();
     					const old_component = switch_instance;
@@ -1121,7 +1156,7 @@ var app = (function () {
     				])
     			: {};
 
-    			if (switch_value !== (switch_value = /*component*/ ctx[0])) {
+    			if (dirty & /*component*/ 1 && switch_value !== (switch_value = /*component*/ ctx[0])) {
     				if (switch_instance) {
     					group_outros();
     					const old_component = switch_instance;
@@ -1912,7 +1947,11 @@ var app = (function () {
 
     var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
-    var prism$2 = {exports: {}};
+    var prismExports = {};
+    var prism$2 = {
+      get exports(){ return prismExports; },
+      set exports(v){ prismExports = v; },
+    };
 
     (function (module) {
     	/* **********************************************
@@ -3862,7 +3901,7 @@ var app = (function () {
     	}());
     } (prism$2));
 
-    var prism$1 = prism$2.exports;
+    var prism$1 = prismExports;
 
     const blocks = '(if|else if|await|then|catch|each|html|debug)';
 
@@ -4007,7 +4046,7 @@ var app = (function () {
     Prism.languages.svelte.tag.addInlined('style', 'css');
     Prism.languages.svelte.tag.addInlined('script', 'javascript');
 
-    /* node_modules/svelte-prism/src/Prism.svelte generated by Svelte v3.53.1 */
+    /* node_modules/svelte-prism/src/Prism.svelte generated by Svelte v3.56.0 */
     const file$15 = "node_modules/svelte-prism/src/Prism.svelte";
 
     // (32:45) {:else}
@@ -4276,7 +4315,7 @@ var app = (function () {
     	];
     }
 
-    class Prism$1 extends SvelteComponentDev {
+    let Prism$1 = class Prism extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
     		init(this, options, instance$15, create_fragment$16, safe_not_equal, { language: 0, source: 3, transform: 4 });
@@ -4312,9 +4351,9 @@ var app = (function () {
     	set transform(value) {
     		throw new Error("<Prism>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
-    }
+    };
 
-    /* src/components/icon/Icon.svelte generated by Svelte v3.53.1 */
+    /* src/components/icon/Icon.svelte generated by Svelte v3.56.0 */
 
     const file$14 = "src/components/icon/Icon.svelte";
 
@@ -4524,7 +4563,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/accordion/Accordion.svelte generated by Svelte v3.53.1 */
+    /* src/components/accordion/Accordion.svelte generated by Svelte v3.56.0 */
     const file$13 = "src/components/accordion/Accordion.svelte";
 
     function get_each_context$9(ctx, list, i) {
@@ -4604,8 +4643,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(div0, "click", click_handler, false, false, false),
-    					listen_dev(div0, "keydown", keydown_handler, false, false, false)
+    					listen_dev(div0, "click", click_handler, false, false, false, false),
+    					listen_dev(div0, "keydown", keydown_handler, false, false, false, false)
     				];
 
     				mounted = true;
@@ -4686,7 +4725,9 @@ var app = (function () {
     			insert_dev(target, div, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div, null);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(div, null);
+    				}
     			}
 
     			current = true;
@@ -4916,7 +4957,7 @@ var app = (function () {
         return output;
     }
 
-    /* src/components/toggler/Toggler.svelte generated by Svelte v3.53.1 */
+    /* src/components/toggler/Toggler.svelte generated by Svelte v3.56.0 */
     const file$12 = "src/components/toggler/Toggler.svelte";
     const get_off_slot_changes_1 = dirty => ({});
     const get_off_slot_context_1 = ctx => ({});
@@ -4972,7 +5013,7 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", stop_propagation(/*toggle*/ ctx[5]), false, false, true);
+    				dispose = listen_dev(button, "click", stop_propagation(/*toggle*/ ctx[5]), false, false, true, false);
     				mounted = true;
     			}
     		},
@@ -5142,8 +5183,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", stop_propagation(/*click_handler*/ ctx[9]), false, false, true),
-    					listen_dev(button1, "click", stop_propagation(/*click_handler_1*/ ctx[11]), false, false, true)
+    					listen_dev(button0, "click", stop_propagation(/*click_handler*/ ctx[9]), false, false, true, false),
+    					listen_dev(button1, "click", stop_propagation(/*click_handler_1*/ ctx[11]), false, false, true, false)
     				];
 
     				mounted = true;
@@ -5605,7 +5646,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/articlecard/ArticleCard.svelte generated by Svelte v3.53.1 */
+    /* src/components/articlecard/ArticleCard.svelte generated by Svelte v3.56.0 */
     const file$11 = "src/components/articlecard/ArticleCard.svelte";
     const get_default_slot_changes_1$1 = dirty => ({});
     const get_default_slot_context_1$1 = ctx => ({ slot: "on" });
@@ -5689,7 +5730,7 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(a, "click", /*click_handler*/ ctx[29], false, false, false);
+    				dispose = listen_dev(a, "click", /*click_handler*/ ctx[29], false, false, false, false);
     				mounted = true;
     			}
     		},
@@ -7380,7 +7421,7 @@ var app = (function () {
         SCROLLPOS[SCROLLPOS["start"] = 3] = "start";
         SCROLLPOS[SCROLLPOS["unset"] = 4] = "unset";
     })(SCROLLPOS || (SCROLLPOS = {}));
-    class HorizontalScrollHandler$1 {
+    let HorizontalScrollHandler$1 = class HorizontalScrollHandler {
         constructor() {
             this.currentState = SCROLLPOS.unset;
             this.listLength = 0;
@@ -7584,9 +7625,9 @@ var app = (function () {
                 return -1;
             }
         }
-    }
+    };
 
-    /* src/components/horizontalScroll/HorizontalScroll.svelte generated by Svelte v3.53.1 */
+    /* src/components/horizontalScroll/HorizontalScroll.svelte generated by Svelte v3.56.0 */
     const file$10 = "src/components/horizontalScroll/HorizontalScroll.svelte";
 
     function create_fragment$11(ctx) {
@@ -7659,8 +7700,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", /*click_handler*/ ctx[7], false, false, false),
-    					listen_dev(button1, "click", /*click_handler_1*/ ctx[8], false, false, false)
+    					listen_dev(button0, "click", /*click_handler*/ ctx[7], false, false, false, false),
+    					listen_dev(button1, "click", /*click_handler_1*/ ctx[8], false, false, false, false)
     				];
 
     				mounted = true;
@@ -7836,7 +7877,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/articlelist/ArticleList.svelte generated by Svelte v3.53.1 */
+    /* src/components/articlelist/ArticleList.svelte generated by Svelte v3.56.0 */
     const file$$ = "src/components/articlelist/ArticleList.svelte";
 
     // (47:2) {:else}
@@ -8295,7 +8336,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/buttongroup/ButtonGroup.svelte generated by Svelte v3.53.1 */
+    /* src/components/buttongroup/ButtonGroup.svelte generated by Svelte v3.56.0 */
     const file$_ = "src/components/buttongroup/ButtonGroup.svelte";
 
     function create_fragment$$(ctx) {
@@ -8500,7 +8541,7 @@ var app = (function () {
     		}
     	};
 
-    	$$invalidate(0, style = `--buttongroup-color: ${colorBackground}; --buttongroup-fgcolor: ${colorForeground}; --buttongroup-color--hover: ${hoverColor}; --buttongroup-fgcolor--hover: ${hoverColorForeground};`);
+    	style = `--buttongroup-color: ${colorBackground}; --buttongroup-fgcolor: ${colorForeground}; --buttongroup-color--hover: ${hoverColor}; --buttongroup-fgcolor--hover: ${hoverColorForeground};`;
 
     	return [
     		style,
@@ -8587,7 +8628,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/form-elements/Checkbox.svelte generated by Svelte v3.53.1 */
+    /* src/components/form-elements/Checkbox.svelte generated by Svelte v3.56.0 */
     const file$Z = "src/components/form-elements/Checkbox.svelte";
 
     // (20:4) {:else}
@@ -8969,7 +9010,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/form-elements/Select.svelte generated by Svelte v3.53.1 */
+    /* src/components/form-elements/Select.svelte generated by Svelte v3.56.0 */
 
     const file$Y = "src/components/form-elements/Select.svelte";
 
@@ -9188,7 +9229,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/form-elements/TextArea.svelte generated by Svelte v3.53.1 */
+    /* src/components/form-elements/TextArea.svelte generated by Svelte v3.56.0 */
     const file$X = "src/components/form-elements/TextArea.svelte";
 
     // (28:2) {#if label}
@@ -9263,7 +9304,7 @@ var app = (function () {
     			/*textarea_binding*/ ctx[9](textarea);
 
     			if (!mounted) {
-    				dispose = listen_dev(textarea, "focus", /*focus_handler*/ ctx[7], false, false, false);
+    				dispose = listen_dev(textarea, "focus", /*focus_handler*/ ctx[7], false, false, false, false);
     				mounted = true;
     			}
     		},
@@ -9466,7 +9507,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/form-elements/TextInput.svelte generated by Svelte v3.53.1 */
+    /* src/components/form-elements/TextInput.svelte generated by Svelte v3.56.0 */
     const file$W = "src/components/form-elements/TextInput.svelte";
 
     // (28:2) {#if label}
@@ -9542,7 +9583,7 @@ var app = (function () {
     			/*input_binding*/ ctx[9](input);
 
     			if (!mounted) {
-    				dispose = listen_dev(input, "focus", /*focus_handler*/ ctx[7], false, false, false);
+    				dispose = listen_dev(input, "focus", /*focus_handler*/ ctx[7], false, false, false, false);
     				mounted = true;
     			}
     		},
@@ -9749,7 +9790,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/form-elements/FormElement.svelte generated by Svelte v3.53.1 */
+    /* src/components/form-elements/FormElement.svelte generated by Svelte v3.56.0 */
     const file$V = "src/components/form-elements/FormElement.svelte";
 
     // (42:2) <svelte:component this={component} class={className} {size} {label} {inputtype} {group} {value} name={fieldName}>
@@ -9866,7 +9907,7 @@ var app = (function () {
     				switch_instance_changes.$$scope = { dirty, ctx };
     			}
 
-    			if (switch_value !== (switch_value = /*component*/ ctx[7])) {
+    			if (dirty & /*component*/ 128 && switch_value !== (switch_value = /*component*/ ctx[7])) {
     				if (switch_instance) {
     					group_outros();
     					const old_component = switch_instance;
@@ -10099,7 +10140,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/spinner/Spinner.svelte generated by Svelte v3.53.1 */
+    /* src/components/spinner/Spinner.svelte generated by Svelte v3.56.0 */
     const file$U = "src/components/spinner/Spinner.svelte";
 
     // (11:0) {#if isLoading}
@@ -10340,7 +10381,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/tabs/Tab.svelte generated by Svelte v3.53.1 */
+    /* src/components/tabs/Tab.svelte generated by Svelte v3.56.0 */
     const file$T = "src/components/tabs/Tab.svelte";
 
     function create_fragment$U(ctx) {
@@ -10373,7 +10414,7 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(button_1, "click", stop_propagation(/*click_handler*/ ctx[8]), false, false, true);
+    				dispose = listen_dev(button_1, "click", stop_propagation(/*click_handler*/ ctx[8]), false, false, true, false);
     				mounted = true;
     			}
     		},
@@ -10516,7 +10557,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/tabs/TabContent.svelte generated by Svelte v3.53.1 */
+    /* src/components/tabs/TabContent.svelte generated by Svelte v3.56.0 */
 
     // (7:0) {#if $selectedPanel === panel}
     function create_if_block$f(ctx) {
@@ -10688,7 +10729,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/tabs/TabList.svelte generated by Svelte v3.53.1 */
+    /* src/components/tabs/TabList.svelte generated by Svelte v3.56.0 */
 
     const file$S = "src/components/tabs/TabList.svelte";
 
@@ -10844,7 +10885,7 @@ var app = (function () {
     	}
     }
 
-    /* src/components/tabs/Tabs.svelte generated by Svelte v3.53.1 */
+    /* src/components/tabs/Tabs.svelte generated by Svelte v3.56.0 */
     const file$R = "src/components/tabs/Tabs.svelte";
 
     function create_fragment$R(ctx) {
@@ -11101,7 +11142,7 @@ var app = (function () {
         localStorage.setItem('sourceType', value);
     });
 
-    /* docs_src/components/Accordion.svelte generated by Svelte v3.53.1 */
+    /* docs_src/components/Accordion.svelte generated by Svelte v3.56.0 */
     const file$Q = "docs_src/components/Accordion.svelte";
 
     // (16:0) {#if $sourceType === 'svelte'}
@@ -11832,7 +11873,7 @@ for (const accordion of accordions) {
         return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
     }
 
-    /* docs_src/components/ArticleCard.svelte generated by Svelte v3.53.1 */
+    /* docs_src/components/ArticleCard.svelte generated by Svelte v3.56.0 */
     const file$P = "docs_src/components/ArticleCard.svelte";
 
     // (173:0) {:else}
@@ -13193,7 +13234,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/ArticleList.svelte generated by Svelte v3.53.1 */
+    /* docs_src/components/ArticleList.svelte generated by Svelte v3.56.0 */
     const file$O = "docs_src/components/ArticleList.svelte";
 
     function get_each_context$8(ctx, list, i) {
@@ -13315,7 +13356,9 @@ for (const accordion of accordions) {
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(target, anchor);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(target, anchor);
+    				}
     			}
 
     			insert_dev(target, each_1_anchor, anchor);
@@ -13468,7 +13511,9 @@ for (const accordion of accordions) {
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(target, anchor);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(target, anchor);
+    				}
     			}
 
     			insert_dev(target, each_1_anchor, anchor);
@@ -13621,7 +13666,9 @@ for (const accordion of accordions) {
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(target, anchor);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(target, anchor);
+    				}
     			}
 
     			insert_dev(target, each_1_anchor, anchor);
@@ -13774,7 +13821,9 @@ for (const accordion of accordions) {
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(target, anchor);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(target, anchor);
+    				}
     			}
 
     			insert_dev(target, each_1_anchor, anchor);
@@ -13935,7 +13984,9 @@ for (const accordion of accordions) {
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(target, anchor);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(target, anchor);
+    				}
     			}
 
     			insert_dev(target, each_1_anchor, anchor);
@@ -14088,7 +14139,9 @@ for (const accordion of accordions) {
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(target, anchor);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(target, anchor);
+    				}
     			}
 
     			insert_dev(target, each_1_anchor, anchor);
@@ -14516,7 +14569,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/Badge.svelte generated by Svelte v3.53.1 */
+    /* docs_src/components/Badge.svelte generated by Svelte v3.56.0 */
     const file$N = "docs_src/components/Badge.svelte";
 
     // (10:0) {:else}
@@ -15085,7 +15138,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/Button.svelte generated by Svelte v3.53.1 */
+    /* docs_src/components/Button.svelte generated by Svelte v3.56.0 */
     const file$M = "docs_src/components/Button.svelte";
 
     // (10:0) {:else}
@@ -15777,7 +15830,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/ButtonGroup.svelte generated by Svelte v3.53.1 */
+    /* docs_src/components/ButtonGroup.svelte generated by Svelte v3.56.0 */
     const file$L = "docs_src/components/ButtonGroup.svelte";
 
     // (9:0) {#if $sourceType === 'svelte'}
@@ -17698,7 +17751,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/Card.svelte generated by Svelte v3.53.1 */
+    /* docs_src/components/Card.svelte generated by Svelte v3.56.0 */
     const file$K = "docs_src/components/Card.svelte";
 
     // (9:0) {:else}
@@ -18116,7 +18169,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/FormElement.svelte generated by Svelte v3.53.1 */
+    /* docs_src/components/FormElement.svelte generated by Svelte v3.56.0 */
     const file$J = "docs_src/components/FormElement.svelte";
 
     // (8:0) {#if $sourceType === 'svelte'}
@@ -19541,7 +19594,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/HorizontalScroll.svelte generated by Svelte v3.53.1 */
+    /* docs_src/components/HorizontalScroll.svelte generated by Svelte v3.56.0 */
     const file$I = "docs_src/components/HorizontalScroll.svelte";
 
     function get_each_context$7(ctx, list, i) {
@@ -19894,7 +19947,9 @@ for (const accordion of accordions) {
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(target, anchor);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(target, anchor);
+    				}
     			}
 
     			insert_dev(target, each_1_anchor, anchor);
@@ -20043,7 +20098,9 @@ for (const accordion of accordions) {
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(target, anchor);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(target, anchor);
+    				}
     			}
 
     			insert_dev(target, each_1_anchor, anchor);
@@ -20192,7 +20249,9 @@ for (const accordion of accordions) {
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(target, anchor);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(target, anchor);
+    				}
     			}
 
     			insert_dev(target, each_1_anchor, anchor);
@@ -20394,7 +20453,9 @@ for (const accordion of accordions) {
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(target, anchor);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(target, anchor);
+    				}
     			}
 
     			insert_dev(target, each_1_anchor, anchor);
@@ -20996,7 +21057,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/assets/dredition/DrEditionSVGs.svelte generated by Svelte v3.53.1 */
+    /* docs_src/assets/dredition/DrEditionSVGs.svelte generated by Svelte v3.56.0 */
 
     const file$H = "docs_src/assets/dredition/DrEditionSVGs.svelte";
 
@@ -22350,7 +22411,7 @@ for (const accordion of accordions) {
 
     const iconnameshtml = ['angle-down', 'angle-left', 'angle-right', 'angle-up', 'arrow-down', 'arrow-left', 'arrow-right', 'arrow-up', 'article', 'at', 'bell', 'bookmark-solid', 'bookmark', 'calendar', 'camera-solid', 'camera', 'chart-bar', 'check-circle-solid', 'check-circle', 'check-solid', 'check-square-solid', 'check-square', 'check', 'circle-notch', 'circle-solid', 'circle', 'clock', 'cog-solid', 'cog', 'comment-solid', 'comment', 'comments-solid', 'creditcard-solid', 'creditcard', 'desktop', 'dot-circle', 'ebplus-circle-solid', 'ebplus', 'edit', 'envelope', 'exclamation-circle-solid', 'exclamation-circle', 'exclamation-triangle-solid', 'exclamation-triangle', 'expand', 'external-link', 'facebook', 'filter-solid', 'futbol', 'gallery', 'headphones', 'headset', 'heart-half-solid', 'heart-solid', 'heart', 'history', 'info-circle-solid', 'info-circle', 'instagram', 'lightning', 'linkedin', 'list-ol', 'lock', 'mappin-solid', 'medielogin', 'menubars-solid', 'menubars', 'miteb-solid', 'miteb', 'newspaper', 'pause-circle', 'pause-solid', 'phone', 'pin-solid', 'play-circle', 'play-solid', 'question-circle', 'rss-symbol', 'rss', 'search', 'smartphone', 'square', 'star-half-solid', 'star-solid', 'star', 'sync', 'tablet', 'tag-solid', 'tag', 'tags-solid', 'tags', 'times-circle-solid', 'times-circle', 'times', 'toggle-off', 'toggle-on', 'trash-solid', 'trash', 'twitter', 'user-circle-solid', 'user-circle', 'user-solid', 'users', 'video', 'volume-muted-solid', 'volume-up-solid', 'youtube'];
 
-    /* docs_src/components/Icon.svelte generated by Svelte v3.53.1 */
+    /* docs_src/components/Icon.svelte generated by Svelte v3.56.0 */
 
     const { Object: Object_1 } = globals;
     const file$G = "docs_src/components/Icon.svelte";
@@ -23518,7 +23579,9 @@ for (const accordion of accordions) {
     			append_dev(select, option);
 
     			for (let i = 0; i < each_blocks_2.length; i += 1) {
-    				each_blocks_2[i].m(select, null);
+    				if (each_blocks_2[i]) {
+    					each_blocks_2[i].m(select, null);
+    				}
     			}
 
     			select_option(select, /*iconColor*/ ctx[0]);
@@ -23538,7 +23601,9 @@ for (const accordion of accordions) {
     			insert_dev(target, div2, anchor);
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
-    				each_blocks_1[i].m(div2, null);
+    				if (each_blocks_1[i]) {
+    					each_blocks_1[i].m(div2, null);
+    				}
     			}
 
     			insert_dev(target, t31, anchor);
@@ -23551,7 +23616,9 @@ for (const accordion of accordions) {
     			insert_dev(target, div3, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div3, null);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(div3, null);
+    				}
     			}
 
     			insert_dev(target, t37, anchor);
@@ -23579,9 +23646,9 @@ for (const accordion of accordions) {
     			if (!mounted) {
     				dispose = [
     					listen_dev(select, "change", /*select_change_handler*/ ctx[5]),
-    					listen_dev(button0, "click", /*decrement*/ ctx[3], false, false, false),
+    					listen_dev(button0, "click", /*decrement*/ ctx[3], false, false, false, false),
     					listen_dev(input, "input", /*input_input_handler*/ ctx[6]),
-    					listen_dev(button1, "click", /*increment*/ ctx[4], false, false, false)
+    					listen_dev(button1, "click", /*increment*/ ctx[4], false, false, false, false)
     				];
 
     				mounted = true;
@@ -23930,7 +23997,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/Spinner.svelte generated by Svelte v3.53.1 */
+    /* docs_src/components/Spinner.svelte generated by Svelte v3.56.0 */
     const file$F = "docs_src/components/Spinner.svelte";
 
     // (8:0) {#if $sourceType === 'svelte'}
@@ -24468,7 +24535,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/Tabs.svelte generated by Svelte v3.53.1 */
+    /* docs_src/components/Tabs.svelte generated by Svelte v3.56.0 */
     const file$E = "docs_src/components/Tabs.svelte";
 
     // (110:0) {:else}
@@ -25931,7 +25998,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/components/Toggler.svelte generated by Svelte v3.53.1 */
+    /* docs_src/components/Toggler.svelte generated by Svelte v3.56.0 */
     const file$D = "docs_src/components/Toggler.svelte";
     const get_default_slot_changes_7 = dirty => ({});
     const get_default_slot_context_7 = ctx => ({ slot: "on" });
@@ -28109,7 +28176,7 @@ for (const accordion of accordions) {
         title: 'Components',
     };
 
-    /* docs_src/assets/icons/code.svelte generated by Svelte v3.53.1 */
+    /* docs_src/assets/icons/code.svelte generated by Svelte v3.56.0 */
 
     const file$C = "docs_src/assets/icons/code.svelte";
 
@@ -28226,7 +28293,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/assets/icons/components.svelte generated by Svelte v3.53.1 */
+    /* docs_src/assets/icons/components.svelte generated by Svelte v3.56.0 */
 
     const file$B = "docs_src/assets/icons/components.svelte";
 
@@ -28343,7 +28410,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Animation.svelte generated by Svelte v3.53.1 */
+    /* docs_src/utilities/Animation.svelte generated by Svelte v3.56.0 */
     const file$A = "docs_src/utilities/Animation.svelte";
 
     // (29:8) <Tab>
@@ -29039,7 +29106,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Border.svelte generated by Svelte v3.53.1 */
+    /* docs_src/utilities/Border.svelte generated by Svelte v3.56.0 */
     const file$z = "docs_src/utilities/Border.svelte";
 
     // (18:0) <Prism language="html">
@@ -29553,7 +29620,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Color.svelte generated by Svelte v3.53.1 */
+    /* docs_src/utilities/Color.svelte generated by Svelte v3.56.0 */
     const file$y = "docs_src/utilities/Color.svelte";
 
     // (29:0) <Prism language="html">
@@ -29905,8 +29972,8 @@ for (const accordion of accordions) {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", moveToAllColors, false, false, false),
-    					listen_dev(button1, "click", moveToAllColors, false, false, false)
+    					listen_dev(button0, "click", moveToAllColors, false, false, false, false),
+    					listen_dev(button1, "click", moveToAllColors, false, false, false, false)
     				];
 
     				mounted = true;
@@ -30008,7 +30075,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Flex.svelte generated by Svelte v3.53.1 */
+    /* docs_src/utilities/Flex.svelte generated by Svelte v3.56.0 */
     const file$x = "docs_src/utilities/Flex.svelte";
 
     // (8:0) <Prism language="html">
@@ -31601,7 +31668,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Fonts.svelte generated by Svelte v3.53.1 */
+    /* docs_src/utilities/Fonts.svelte generated by Svelte v3.56.0 */
     const file$w = "docs_src/utilities/Fonts.svelte";
 
     // (19:0) <Prism language="html">
@@ -32381,7 +32448,7 @@ for (const accordion of accordions) {
     	return [];
     }
 
-    class Fonts$1 extends SvelteComponentDev {
+    let Fonts$1 = class Fonts extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
     		init(this, options, instance$v, create_fragment$w, safe_not_equal, {});
@@ -32393,9 +32460,9 @@ for (const accordion of accordions) {
     			id: create_fragment$w.name
     		});
     	}
-    }
+    };
 
-    /* docs_src/utilities/Grid.svelte generated by Svelte v3.53.1 */
+    /* docs_src/utilities/Grid.svelte generated by Svelte v3.56.0 */
     const file$v = "docs_src/utilities/Grid.svelte";
 
     // (27:0) <Prism language="html">
@@ -32701,7 +32768,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Helpers.svelte generated by Svelte v3.53.1 */
+    /* docs_src/utilities/Helpers.svelte generated by Svelte v3.56.0 */
     const file$u = "docs_src/utilities/Helpers.svelte";
 
     // (8:0) <Prism language="html">
@@ -33555,7 +33622,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Separator.svelte generated by Svelte v3.53.1 */
+    /* docs_src/utilities/Separator.svelte generated by Svelte v3.56.0 */
     const file$t = "docs_src/utilities/Separator.svelte";
 
     // (23:0) <Prism language="html">
@@ -33769,7 +33836,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Sizing.svelte generated by Svelte v3.53.1 */
+    /* docs_src/utilities/Sizing.svelte generated by Svelte v3.56.0 */
     const file$s = "docs_src/utilities/Sizing.svelte";
 
     // (22:0) <Prism language="html">
@@ -34150,7 +34217,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/utilities/Text.svelte generated by Svelte v3.53.1 */
+    /* docs_src/utilities/Text.svelte generated by Svelte v3.56.0 */
     const file$r = "docs_src/utilities/Text.svelte";
 
     // (14:0) <Prism language="html">
@@ -34582,7 +34649,7 @@ for (const accordion of accordions) {
         title: 'Utilities',
     };
 
-    /* docs_src/cssvariables/Colors.svelte generated by Svelte v3.53.1 */
+    /* docs_src/cssvariables/Colors.svelte generated by Svelte v3.56.0 */
     const file$q = "docs_src/cssvariables/Colors.svelte";
 
     // (14:0) <Prism language="css">
@@ -34762,7 +34829,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/cssvariables/Distance.svelte generated by Svelte v3.53.1 */
+    /* docs_src/cssvariables/Distance.svelte generated by Svelte v3.56.0 */
     const file$p = "docs_src/cssvariables/Distance.svelte";
 
     // (6:0) <Prism language="css">
@@ -34970,7 +35037,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/cssvariables/Fonts.svelte generated by Svelte v3.53.1 */
+    /* docs_src/cssvariables/Fonts.svelte generated by Svelte v3.56.0 */
     const file$o = "docs_src/cssvariables/Fonts.svelte";
 
     // (8:0) <Prism language="css">
@@ -35421,7 +35488,7 @@ for (const accordion of accordions) {
     	}
     }
 
-    /* docs_src/cssvariables/Misc.svelte generated by Svelte v3.53.1 */
+    /* docs_src/cssvariables/Misc.svelte generated by Svelte v3.56.0 */
     const file$n = "docs_src/cssvariables/Misc.svelte";
 
     // (12:0) <Prism language="css">
@@ -35658,7 +35725,7 @@ for (const accordion of accordions) {
         title: 'CSS variables',
     };
 
-    /* docs_src/exportedfunctions/HorizontalScrollHandler.svelte generated by Svelte v3.53.1 */
+    /* docs_src/exportedfunctions/HorizontalScrollHandler.svelte generated by Svelte v3.56.0 */
     const file$m = "docs_src/exportedfunctions/HorizontalScrollHandler.svelte";
 
     // (73:0) {:else}
@@ -36304,7 +36371,7 @@ afterUpdate(() => {
     	}
     }
 
-    /* docs_src/exportedfunctions/SplitNfitTitle.svelte generated by Svelte v3.53.1 */
+    /* docs_src/exportedfunctions/SplitNfitTitle.svelte generated by Svelte v3.56.0 */
     const file$l = "docs_src/exportedfunctions/SplitNfitTitle.svelte";
 
     // (37:0) <Prism language="js">
@@ -36651,7 +36718,7 @@ document.appendChild(titleEl);
     	}
     }
 
-    /* docs_src/exportedfunctions/SplitTitle.svelte generated by Svelte v3.53.1 */
+    /* docs_src/exportedfunctions/SplitTitle.svelte generated by Svelte v3.56.0 */
     const file$k = "docs_src/exportedfunctions/SplitTitle.svelte";
 
     // (15:0) <Prism language="js">
@@ -36862,7 +36929,7 @@ const lines = splitTitle('Split this into lines', 2, 3);
     	}
     }
 
-    /* docs_src/exportedfunctions/Throttle.svelte generated by Svelte v3.53.1 */
+    /* docs_src/exportedfunctions/Throttle.svelte generated by Svelte v3.56.0 */
     const file$j = "docs_src/exportedfunctions/Throttle.svelte";
 
     // (19:0) <Prism language="js">
@@ -37070,7 +37137,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/exportedfunctions/TimePassedSince.svelte generated by Svelte v3.53.1 */
+    /* docs_src/exportedfunctions/TimePassedSince.svelte generated by Svelte v3.56.0 */
     const file$i = "docs_src/exportedfunctions/TimePassedSince.svelte";
 
     // (13:0) <Prism language="js">
@@ -40793,7 +40860,7 @@ window.addEventListener(
 
     const tooltipStore = writable({});
 
-    /* src/components/tooltip/Tooltip.svelte generated by Svelte v3.53.1 */
+    /* src/components/tooltip/Tooltip.svelte generated by Svelte v3.56.0 */
     const file$h = "src/components/tooltip/Tooltip.svelte";
 
     // (39:2) {:else}
@@ -40905,7 +40972,7 @@ window.addEventListener(
     			? get_spread_update(switch_instance_spread_levels, [get_spread_object(/*props*/ ctx[2])])
     			: {};
 
-    			if (switch_value !== (switch_value = /*svelteComponentContent*/ ctx[4])) {
+    			if (dirty & /*svelteComponentContent*/ 16 && switch_value !== (switch_value = /*svelteComponentContent*/ ctx[4])) {
     				if (switch_instance) {
     					group_outros();
     					const old_component = switch_instance;
@@ -41175,7 +41242,7 @@ window.addEventListener(
     	];
     }
 
-    class Tooltip$1 extends SvelteComponentDev {
+    let Tooltip$1 = class Tooltip extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
 
@@ -41234,7 +41301,7 @@ window.addEventListener(
     	set tippyOptions(value) {
     		throw new Error("<Tooltip>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
-    }
+    };
 
     function tooltip (anchorNode, options) {
         const target = document.createElement('div');
@@ -41252,7 +41319,7 @@ window.addEventListener(
         };
     }
 
-    /* docs_src/exportedfunctions/Tooltip.svelte generated by Svelte v3.53.1 */
+    /* docs_src/exportedfunctions/Tooltip.svelte generated by Svelte v3.56.0 */
     const file$g = "docs_src/exportedfunctions/Tooltip.svelte";
 
     // (152:0) {:else}
@@ -42026,7 +42093,7 @@ window.addEventListener(
     						}
     					})),
     					action_destroyer(tooltip.call(null, div1, { content: 'String or SvelteTemplate' })),
-    					listen_dev(button, "click", /*click_handler*/ ctx[2], false, false, false)
+    					listen_dev(button, "click", /*click_handler*/ ctx[2], false, false, false, false)
     				];
 
     				mounted = true;
@@ -42594,7 +42661,7 @@ window.addEventListener(
         title: 'Functions',
     };
 
-    /* docs_src/guidelines/Svelte.svelte generated by Svelte v3.53.1 */
+    /* docs_src/guidelines/Svelte.svelte generated by Svelte v3.56.0 */
     const file$f = "docs_src/guidelines/Svelte.svelte";
 
     // (28:0) <Prism language="js">
@@ -42845,7 +42912,7 @@ window.addEventListener(
         title: 'Guidelines',
     };
 
-    /* docs_src/components/Home.svelte generated by Svelte v3.53.1 */
+    /* docs_src/components/Home.svelte generated by Svelte v3.56.0 */
     const file$e = "docs_src/components/Home.svelte";
 
     function get_each_context$5(ctx, list, i) {
@@ -42955,7 +43022,9 @@ window.addEventListener(
     			insert_dev(target, ul, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(ul, null);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(ul, null);
+    				}
     			}
     		},
     		p: function update(ctx, [dirty]) {
@@ -43019,7 +43088,7 @@ window.addEventListener(
     	return [];
     }
 
-    class Home$5 extends SvelteComponentDev {
+    let Home$5 = class Home extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
     		init(this, options, instance$e, create_fragment$e, safe_not_equal, {});
@@ -43031,9 +43100,9 @@ window.addEventListener(
     			id: create_fragment$e.name
     		});
     	}
-    }
+    };
 
-    /* docs_src/cssvariables/Home.svelte generated by Svelte v3.53.1 */
+    /* docs_src/cssvariables/Home.svelte generated by Svelte v3.56.0 */
     const file$d = "docs_src/cssvariables/Home.svelte";
 
     function get_each_context$4(ctx, list, i) {
@@ -43151,7 +43220,9 @@ window.addEventListener(
     			insert_dev(target, ul, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(ul, null);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(ul, null);
+    				}
     			}
     		},
     		p: function update(ctx, [dirty]) {
@@ -43215,7 +43286,7 @@ window.addEventListener(
     	return [];
     }
 
-    class Home$4 extends SvelteComponentDev {
+    let Home$4 = class Home extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
     		init(this, options, instance$d, create_fragment$d, safe_not_equal, {});
@@ -43227,9 +43298,9 @@ window.addEventListener(
     			id: create_fragment$d.name
     		});
     	}
-    }
+    };
 
-    /* docs_src/exportedfunctions/Home.svelte generated by Svelte v3.53.1 */
+    /* docs_src/exportedfunctions/Home.svelte generated by Svelte v3.56.0 */
     const file$c = "docs_src/exportedfunctions/Home.svelte";
 
     function get_each_context$3(ctx, list, i) {
@@ -43339,7 +43410,9 @@ window.addEventListener(
     			insert_dev(target, ul, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(ul, null);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(ul, null);
+    				}
     			}
     		},
     		p: function update(ctx, [dirty]) {
@@ -43403,7 +43476,7 @@ window.addEventListener(
     	return [];
     }
 
-    class Home$3 extends SvelteComponentDev {
+    let Home$3 = class Home extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
     		init(this, options, instance$c, create_fragment$c, safe_not_equal, {});
@@ -43415,9 +43488,9 @@ window.addEventListener(
     			id: create_fragment$c.name
     		});
     	}
-    }
+    };
 
-    /* docs_src/guidelines/Home.svelte generated by Svelte v3.53.1 */
+    /* docs_src/guidelines/Home.svelte generated by Svelte v3.56.0 */
     const file$b = "docs_src/guidelines/Home.svelte";
 
     function get_each_context$2(ctx, list, i) {
@@ -43527,7 +43600,9 @@ window.addEventListener(
     			insert_dev(target, ul, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(ul, null);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(ul, null);
+    				}
     			}
     		},
     		p: function update(ctx, [dirty]) {
@@ -43591,7 +43666,7 @@ window.addEventListener(
     	return [];
     }
 
-    class Home$2 extends SvelteComponentDev {
+    let Home$2 = class Home extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
     		init(this, options, instance$b, create_fragment$b, safe_not_equal, {});
@@ -43603,9 +43678,9 @@ window.addEventListener(
     			id: create_fragment$b.name
     		});
     	}
-    }
+    };
 
-    /* docs_src/assets/icons/css-vars.svelte generated by Svelte v3.53.1 */
+    /* docs_src/assets/icons/css-vars.svelte generated by Svelte v3.56.0 */
 
     const file$a = "docs_src/assets/icons/css-vars.svelte";
 
@@ -43722,7 +43797,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/assets/icons/guideline.svelte generated by Svelte v3.53.1 */
+    /* docs_src/assets/icons/guideline.svelte generated by Svelte v3.56.0 */
 
     const file$9 = "docs_src/assets/icons/guideline.svelte";
 
@@ -43839,7 +43914,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/assets/icons/js-functions.svelte generated by Svelte v3.53.1 */
+    /* docs_src/assets/icons/js-functions.svelte generated by Svelte v3.56.0 */
 
     const file$8 = "docs_src/assets/icons/js-functions.svelte";
 
@@ -43956,7 +44031,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/assets/icons/utility.svelte generated by Svelte v3.53.1 */
+    /* docs_src/assets/icons/utility.svelte generated by Svelte v3.56.0 */
 
     const file$7 = "docs_src/assets/icons/utility.svelte";
 
@@ -44073,7 +44148,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/main/Home.svelte generated by Svelte v3.53.1 */
+    /* docs_src/main/Home.svelte generated by Svelte v3.56.0 */
     const file$6 = "docs_src/main/Home.svelte";
 
     function create_fragment$6(ctx) {
@@ -44402,7 +44477,7 @@ window.addEventListener(
     	return [];
     }
 
-    class Home$1 extends SvelteComponentDev {
+    let Home$1 = class Home extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
     		init(this, options, instance$6, create_fragment$6, safe_not_equal, {});
@@ -44414,9 +44489,9 @@ window.addEventListener(
     			id: create_fragment$6.name
     		});
     	}
-    }
+    };
 
-    /* docs_src/utilities/Home.svelte generated by Svelte v3.53.1 */
+    /* docs_src/utilities/Home.svelte generated by Svelte v3.56.0 */
     const file$5 = "docs_src/utilities/Home.svelte";
 
     function get_each_context$1(ctx, list, i) {
@@ -44526,7 +44601,9 @@ window.addEventListener(
     			insert_dev(target, ul, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(ul, null);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(ul, null);
+    				}
     			}
     		},
     		p: function update(ctx, [dirty]) {
@@ -44625,7 +44702,7 @@ window.addEventListener(
     const routes = spaRoutes;
     const menuItems = [guidelines, components, utilities, exportedfunctions, cssvariables];
 
-    /* docs/svg/symbol/icons.svelte generated by Svelte v3.53.1 */
+    /* docs/svg/symbol/icons.svelte generated by Svelte v3.56.0 */
 
     const file$4 = "docs/svg/symbol/icons.svelte";
 
@@ -46246,7 +46323,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/assets/icons/github.svelte generated by Svelte v3.53.1 */
+    /* docs_src/assets/icons/github.svelte generated by Svelte v3.56.0 */
 
     const file$3 = "docs_src/assets/icons/github.svelte";
 
@@ -46363,7 +46440,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/main/Navbar.svelte generated by Svelte v3.53.1 */
+    /* docs_src/main/Navbar.svelte generated by Svelte v3.56.0 */
     const file$2 = "docs_src/main/Navbar.svelte";
 
     // (15:4) <ButtonGroup type="secondary">
@@ -46401,8 +46478,8 @@ window.addEventListener(
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", /*click_handler*/ ctx[2], false, false, false),
-    					listen_dev(button1, "click", /*click_handler_1*/ ctx[3], false, false, false)
+    					listen_dev(button0, "click", /*click_handler*/ ctx[2], false, false, false, false),
+    					listen_dev(button1, "click", /*click_handler_1*/ ctx[3], false, false, false, false)
     				];
 
     				mounted = true;
@@ -46578,7 +46655,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/main/Sidebar.svelte generated by Svelte v3.53.1 */
+    /* docs_src/main/Sidebar.svelte generated by Svelte v3.56.0 */
     const file$1 = "docs_src/main/Sidebar.svelte";
 
     function get_each_context(ctx, list, i) {
@@ -46705,7 +46782,9 @@ window.addEventListener(
     			append_dev(div2, div1);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div1, null);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(div1, null);
+    				}
     			}
 
     			append_dev(div2, t2);
@@ -46861,7 +46940,9 @@ window.addEventListener(
     			append_dev(div5, t4);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div5, null);
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(div5, null);
+    				}
     			}
 
     			if (!mounted) {
@@ -46949,7 +47030,7 @@ window.addEventListener(
     	}
     }
 
-    /* docs_src/App.svelte generated by Svelte v3.53.1 */
+    /* docs_src/App.svelte generated by Svelte v3.56.0 */
     const file = "docs_src/App.svelte";
 
     function create_fragment(ctx) {
