@@ -46,6 +46,10 @@ spriter.compile((error, result, _data) => {
 
   for (var type in result.symbol) {
     fs.writeFileSync(result.symbol[type].path, result.symbol[type].contents);
+    fs.writeFileSync(
+      result.symbol[type].path.replace('.svg', '.svelte'),
+      String(result.symbol[type].contents).replace('<?xml version="1.0" encoding="utf-8"?>', '')
+    );
   }
 });
 
