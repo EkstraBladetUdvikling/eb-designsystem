@@ -92,6 +92,7 @@ a.card:focus {
 
 .card-meta {
   font-weight: normal;
+  line-height: 1.15;
 }
 
 .card-meta-item {
