@@ -1359,15 +1359,13 @@ a.badge:hover {
   --card-border-color: var(--color--graa7);
   --card-border-section--color: var(--color--eb);
   --card-border-section--width: 8px;
-  --card-fs-title: 30px;
-  --card-fs-title--small: 20px;
+  --card-fs-title: var(--fs-rem-large);
+  --card-fs-title--small: var(--fs-rem-medium);
   --card-padding: 20px;
 }
 
 @media (max-width: 767px) {
   :root {
-    --card-fs-title: 20px;
-    --card-fs-title--small: 16px;
     --card-padding: 10px;
   }
 }
@@ -1470,7 +1468,8 @@ a.card:focus {
   text-transform: uppercase;
 }
 
-.card-title:not([class*="fs-"]):not([class*="fontsize-"]) {
+.card-title {
+  font-family: var(--fontfamily--primary);
   font-size: var(--card-fs-title);
   font-weight: 700;
   margin: 0;
@@ -1509,31 +1508,6 @@ a.card:focus {
   padding: 0 var(--card-padding);
 }
 
-/* Shrink font-size on small cards with media, if not explicitly set to large */
-
-.width-1of2
-  > .card
-  .card-media
-  + .card-content
-  .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
-.width-1of3
-  > .card
-  .card-media
-  + .card-content
-  .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
-.card.width-1of2
-  .card-media
-  + .card-content
-  .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
-.card.width-1of3
-  .card-media
-  + .card-content
-  .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
-.card--small-media .card-title:not(.card-title--large):not([class*="fs-"]):not([class*="fontsize-"]),
-.card-title--small:not([class*="fs-"]):not([class*="fontsize-"]) {
-  font-size: var(--card-fs-title--small);
-}
-
 @media only screen and (-ms-high-contrast: active),(-ms-high-contrast: none) {
   .card-media .card-icon svg {
     max-height: 40px;
@@ -1550,12 +1524,11 @@ a.card:focus {
   */
 
 :root {
-  --card-mode--title: var(--fs-large);
   --card-mode-icon--height: 20px;
-  --card-mode-padding: 15px;
 }
 
 .card.card-mode {
+  --card-fs-title: var(--fs-rem-large);
   box-shadow: none;
   box-sizing: border-box;
   font-family: var(--fontfamily--secondary);
@@ -1565,6 +1538,7 @@ a.card:focus {
 }
 
 .card.card-mode,.card-inner {
+
   border-radius: var(--border-radius-medium);
   display: flex;
   flex-direction: column;
@@ -1679,12 +1653,6 @@ a.card-mode:focus .card-inner {
   background-repeat: no-repeat;
   background-size: contain;
   width: 100%;
-}
-
-.card-mode .card-title:not([class*="fs-"]):not([class*="fontsize-"]) {
-  font-size: var(--card-mode--title);
-  font-weight: 700;
-  margin: 0;
 }
 
 .card-media ~ .card-content-wrapper .card-title--truncated {
