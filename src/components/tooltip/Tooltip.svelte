@@ -8,7 +8,7 @@
 
   export let allowHTML: boolean = false; // Allow HTML
   export let anchorNode: HTMLElement;
-  export let content: string | typeof SvelteComponent; // Text or Svelte Component
+  export let content: string | any; // Text or Svelte Component
   export let props = {}; // Props passed to chosen component
   export let tippyOptions: TTippyCustomOptions = {}; // Additional TippyJS props
 
@@ -16,7 +16,7 @@
   let instance: TTooltipInstance = null;
   $: textOnly = typeof content === 'string' || content instanceof String;
 
-  $: svelteComponentContent = content as typeof SvelteComponent;
+  $: svelteComponentContent = content as any;
 
   onMount(() => {
     instance = tooltipRender(anchorNode, tooltipNode, tippyOptions);
