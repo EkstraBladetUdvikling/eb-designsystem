@@ -97,6 +97,7 @@ a.card:focus {
 .card-meta-item {
   align-items: center;
   display: flex;
+  font-family: inherit;
   padding-right: var(--distance-medium);
   padding-bottom: var(--distance-small);
   white-space: nowrap;
