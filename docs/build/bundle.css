@@ -1449,6 +1449,7 @@ a.card:focus {
 }
 
 .card-meta {
+  font-family: var(--fontfamily--primary);
   font-weight: normal;
   line-height: 1.15;
 }
