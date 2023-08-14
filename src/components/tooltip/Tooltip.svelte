@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { TTippyCustomOptions, TTooltipInstance } from '../../types/tooltipAction';
 
-  import { afterUpdate, onDestroy, onMount, SvelteComponent } from 'svelte';
+  import { afterUpdate, onDestroy, onMount } from 'svelte';
 
   import { tooltipRender } from '../../functions/tooltipRender';
   import { tooltipStore } from '../../functions/tooltipStore';
