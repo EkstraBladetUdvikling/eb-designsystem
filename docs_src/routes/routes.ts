@@ -14,7 +14,7 @@ import UtilitiesHome from '../utilities/Home.svelte';
 import type { SvelteComponent } from 'svelte';
 
 interface IRoute {
-  component: typeof SvelteComponent;
+  component: typeof SvelteComponent<any>;
   href: string;
   title: string;
 }

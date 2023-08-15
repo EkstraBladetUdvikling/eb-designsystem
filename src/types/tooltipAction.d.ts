@@ -5,7 +5,7 @@ export type TTippyCustomOptions = Partial<Omit<Props, keyof RenderProps>>;
 export type TTooltipInstance = Instance<TTippyCustomOptions>;
 
 export interface ITooltipOptions {
-  content: string | typeof SvelteComponent;
+  content: string | typeof SvelteComponent<any>;
   allowHTML?: boolean;
   props?: any;
   tippyOptions?: TTippyCustomOptions;

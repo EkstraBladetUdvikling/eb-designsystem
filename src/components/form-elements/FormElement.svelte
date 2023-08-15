@@ -8,13 +8,12 @@
 
   export let className = undefined;
   export let fieldName = undefined;
-  export let group = undefined;
   export let inputtype = 'text';
   export let label = undefined;
   export let value: number | string = '';
   export let size = 'medium';
 
-  let component: typeof SvelteComponent = TextInput;
+  let component: typeof SvelteComponent<any> = TextInput;
   switch (inputtype) {
     case 'select':
       component = Select;
@@ -45,7 +44,7 @@
 </script>
 
 <div class="form-element margin-l--b">
-  <svelte:component this={component} class={className} {size} {label} {inputtype} {group} {value} name={fieldName}>
+  <svelte:component this={component} class={className} {size} {label} {inputtype} {value} name={fieldName}>
     <slot />
   </svelte:component>
 </div>

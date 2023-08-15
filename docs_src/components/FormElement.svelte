@@ -73,7 +73,7 @@
 {#if $sourceType === 'svelte'}
   <Prism language="html">
     {`<FormElement inputtype="checkbox" label="" />
-<FormElement inputtype="radio" label="" bind:group={group} value={1} />`}
+<FormElement inputtype="radio" label="" value={1} />`}
   </Prism>
 {:else}
   <Prism language="html">
