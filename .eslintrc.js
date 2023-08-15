@@ -1,25 +1,23 @@
 module.exports = {
   env: {
     browser: true,
+    es2017: true,
+    node: true,
   },
   root: true,
   parser: '@typescript-eslint/parser',
   parserOptions: {
     extraFileExtensions: ['.svelte'],
     project: ['tsconfig.json', 'tsconfig.tsc.json'],
+    sourceType: 'module',
   },
-  plugins: [
-    'eslint-plugin-import',
-    'eslint-plugin-jsdoc',
-    'eslint-plugin-prefer-arrow',
-    'svelte3',
-    '@typescript-eslint',
-  ],
+  plugins: ['eslint-plugin-import', 'eslint-plugin-jsdoc', 'eslint-plugin-prefer-arrow', '@typescript-eslint'],
   extends: [
     'eslint:recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
+    'plugin:svelte/base',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     // 'plugin:@typescript-eslint/recommended-requiring-type-checking', // Harder linting yet
@@ -217,10 +215,10 @@ module.exports = {
     'import/named': 'error',
   },
   settings: {
-    'svelte3/typescript': require('typescript'),
+    'svelte/typescript': () => require('typescript'),
     // ignore style tags in Svelte because of Tailwind CSS
     // See https://github.com/sveltejs/eslint-plugin-svelte3/issues/70
-    'svelte3/ignore-styles': () => true,
+    'svelte/ignore-styles': () => true,
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
@@ -235,7 +233,10 @@ module.exports = {
   overrides: [
     {
       files: ['*.svelte'],
-      processor: 'svelte3/svelte3',
+      parser: 'svelte-eslint-parser',
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+      },
     },
   ],
   ignorePatterns: ['node_modules'],

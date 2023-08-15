@@ -47,7 +47,7 @@ export class HorizontalScrollHandler {
       throttle(() => {
         this.blocking = BLOCKING.disabled;
         this.updateButtons();
-      }, 50)
+      }, 50),
     );
 
     this.wrapLeft = scrollItemContainer.getBoundingClientRect().left;
@@ -102,7 +102,7 @@ export class HorizontalScrollHandler {
     const visibleChildren = Array.from(this.children).filter(
       (child: HTMLElement) =>
         child.getBoundingClientRect().left >= containerBBox.left &&
-        child.getBoundingClientRect().right <= containerBBox.right
+        child.getBoundingClientRect().right <= containerBBox.right,
     ).length;
     const maxLength = this.listLength - visibleChildren;
 

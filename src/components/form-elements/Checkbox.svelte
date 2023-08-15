@@ -1,7 +1,6 @@
 <script lang="ts">
   import Icon from '../icon/Icon.svelte';
   export let fieldName = undefined;
-  export let group = undefined;
   export let label = undefined;
   export let inputtype = 'checkbox';
   export let value: string = '';
@@ -14,7 +13,7 @@
 </script>
 
 <label>
-  <input type={inputtype} class={baseClass} name={fieldName} {group} {value} />
+  <input type={inputtype} class={baseClass} name={fieldName} {value} />
   <span class="flex form-label">
     {label}
     {#if inputtype === 'checkbox'}

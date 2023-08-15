@@ -19,7 +19,7 @@ export function splitTitle(input: string, minLines: number = 1, maxLines: number
   if (numLines >= arrayOfLengths.length) return wordsArray;
 
   const partition_between = Array.from({ length: numLines - 1 }).map(
-    (_x, i) => (i + 1) * Math.floor(arrayOfLengths.length / numLines)
+    (_x, i) => (i + 1) * Math.floor(arrayOfLengths.length / numLines),
   );
 
   const average_height =
@@ -35,7 +35,7 @@ export function splitTitle(input: string, minLines: number = 1, maxLines: number
     const starts: number[] = [0].concat(...partition_between);
     const ends: number[] = partition_between.concat(arrayOfLengths.length);
     const partitions: number[][] = Array.from({ length: numLines }).map((_x, i) =>
-      arrayOfLengths.slice(starts[i], ends[i])
+      arrayOfLengths.slice(starts[i], ends[i]),
     );
     // Calculate the sum of wordlengths (heights)
     const heights: number[] = partitions.map((partition) => partition.reduce((arr, cur) => arr + cur, 0));
