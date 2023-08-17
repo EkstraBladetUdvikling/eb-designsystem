@@ -1,16 +1,15 @@
 {
+  "extends": "./tsconfig.shared.json",
+
   "compilerOptions": {
     "allowJs": true,
     "declaration": true,
     "declarationDir": "./svelte",
     "module": "esnext",
-    "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "./svelte",
-    "target": "es2017"
+    "outDir": "./svelte"
   },
-  "indent": [true, "spaces", 2],
   "exclude": ["./node_modules"],
   "include": ["./src/**/*.ts"]
 }

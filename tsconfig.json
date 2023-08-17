@@ -1,10 +1,9 @@
 {
-  "extends": "@tsconfig/svelte/tsconfig.json",
+  "extends": ["@tsconfig/svelte/tsconfig.json", "./tsconfig.shared.json"],
 
   "include": ["templates/**/*", "src", "docs_src"],
   "exclude": ["node_modules/*", "__sapper__/*", "../docs/*", "../dist/*"],
   "compileOptions": {
-    "moduleResolution": "node",
     "typeRoots": ["./src/types"]
   }
 }
