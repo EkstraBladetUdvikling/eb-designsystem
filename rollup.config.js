@@ -62,9 +62,7 @@ export default {
     // a separate file - better for performance
     css({ output: 'bundle.css' }),
     commonjs(),
-    typescript({
-      tsconfig: 'tsconfig.json',
-    }),
+    typescript(),
     replace({
       preventAssignment: true,
       'process.env.NODE_ENV': JSON.stringify(production ? 'production' : 'development'),
