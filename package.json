@@ -16,7 +16,7 @@
     "build:designsystem": "yarn build:css && yarn build:snippets",
     "build:docs": "yarn rollup -c --bundleConfigAsCjs",
     "build:snippets": "rm -rf ./snippets && node node/build-snippets",
-    "build:typescript": "rm -rf ./svelte && node node/move-svelte && yarn tsc --project tsconfig.tsc.json",
+    "build:typescript": "rm -rf ./svelte && node node/move-svelte && yarn tsc --project tsconfig.typescript.json",
     "build:watch": "onchange 'src/**/*.css' -- yarn build:css",
     "dev": "yarn build:typescript && yarn build:css & yarn build:watch & yarn rollup -c -w --bundleConfigAsCjs",
     "predev": "yarn svgs",
