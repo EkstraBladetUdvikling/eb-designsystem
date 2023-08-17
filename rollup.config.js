@@ -1,5 +1,5 @@
 import { svelteSVG } from 'rollup-plugin-svelte-svg';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
 import css from 'rollup-plugin-css-only';
 import livereload from 'rollup-plugin-livereload';
@@ -62,10 +62,7 @@ export default {
     // a separate file - better for performance
     css({ output: 'bundle.css' }),
     commonjs(),
-    typescript({
-      inlineSources: false,
-      sourceMap: false,
-    }),
+    typescript(),
     replace({
       preventAssignment: true,
       'process.env.NODE_ENV': JSON.stringify(production ? 'production' : 'development'),
