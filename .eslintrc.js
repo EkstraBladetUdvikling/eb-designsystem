@@ -11,12 +11,9 @@ module.exports = {
     project: ['tsconfig.json', 'tsconfig.tsc.json'],
     sourceType: 'module',
   },
-  plugins: ['eslint-plugin-import', 'eslint-plugin-jsdoc', 'eslint-plugin-prefer-arrow', '@typescript-eslint'],
+  plugins: ['eslint-plugin-jsdoc', 'eslint-plugin-prefer-arrow', '@typescript-eslint'],
   extends: [
     'eslint:recommended',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'plugin:import/typescript',
     'plugin:svelte/base',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
@@ -212,7 +209,6 @@ module.exports = {
     ],
     'use-isnan': 'error',
     'valid-typeof': ['error', { requireStringLiterals: true }],
-    'import/named': 'error',
   },
   settings: {
     'svelte/typescript': () => require('typescript'),
