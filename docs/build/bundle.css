@@ -1025,8 +1025,8 @@ a.badge:hover {
 }
 
 .button:disabled {
+  --button-color: var(--color--graa3);
   cursor: default;
-  filter: grayscale(100%);
 
   pointer-events: none;
 }
@@ -1036,7 +1036,7 @@ a.badge:hover {
 .button:focus,
 .button--solid {
   background: var(--button-color);
-  border: 1px solid var(--color--white);
+  border: 1px solid var(--button-color);
   color: var(--button-text-color, var(--color--white));
 }
 
@@ -1134,7 +1134,6 @@ a.badge:hover {
   background: none;
   border: 0;
   color: inherit;
-  outline: none;
   padding: 0;
   height: auto;
 }

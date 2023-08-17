@@ -31,8 +31,8 @@
 }
 
 .button:disabled {
+  --button-color: var(--color--graa3);
   cursor: default;
-  filter: grayscale(100%);
 
   pointer-events: none;
 }
