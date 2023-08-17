@@ -119,12 +119,12 @@
     </button>
   </div>
   <div class="flex margin-m--b">
-    <button class="button" style="--button-color: var(--color--lime); --text-color: var(--color--bluedark);">
+    <button class="button" style="--button-color: var(--color--lime); --button-text-color: var(--color--bluedark);">
       Lime/bluedark
     </button>
     <button
       class="button button--solid margin-m--l"
-      style="--button-color: var(--color--lime); --text-color: var(--color--bluedark);"
+      style="--button-color: var(--color--lime); --button-text-color: var(--color--bluedark);"
     >
       Lime/bluedark
     </button>
@@ -135,6 +135,6 @@
 <button class="button" style="--button-color: var(--color--eb);"></button>
 <button class="button" style="--button-color: var(--color--blue);"></button>
 <button class="button" style="--button-color: var(--color--underholdning);"></button>
-<button class="button" style="--button-color: var(--color--lime); --text-color: var(--color--bluedark);"></button>`}
+<button class="button" style="--button-color: var(--color--lime); --button-text-color: var(--color--bluedark);"></button>`}
   </Prism>
 {/if}
