@@ -5,13 +5,14 @@
   --button-height: 36px;
   --button-height--big: 45px;
   --button-height--small: 30px;
+  --button-color: var(--color--section, var(--color--default));
 }
 
 .button {
   /**
-    @description: Standard button design
-    @template:
-    <button class="button">$1</button>
+  @description: Standard button design
+  @template:
+  <button class="button">$1</button>
   */
   align-items: center;
   border-radius: var(--button-border-radius);
@@ -24,32 +25,14 @@
   text-decoration: none;
   white-space: nowrap;
   height: var(--button-height);
-}
-
-/* Default button coloring */
-.button:not([class*="bg--"]) {
   background: var(--color--white);
-  border: 1px solid var(--color--section, var(--color--default));
-  color: var(--color--section, var(--color--default));
-}
-
-/* Custom button - temp solution */
-.button[class*="bg--"] {
-  border: 1px solid transparent;
-}
-
-/* On hover */
-.button[class*="bg--"]:active,
-.button[class*="bg--"]:hover,
-.button[class*="bg--"]:focus {
-  background: var(--color--white);
-  border: 1px solid var(--color--graa5);
-  color: var(--color--black);
+  border: 1px solid var(--button-color);
+  color: var(--text-color, var(--button-color));
 }
 
 .button:disabled {
   cursor: default;
-  opacity: .7;
+  filter: grayscale(100%);
 
   pointer-events: none;
 }
@@ -57,24 +40,18 @@
 .button:active,
 .button:hover,
 .button:focus,
-.button--solid:not([class*="bg--"]) {
-  background: var(--color--section, var(--color--default));
-  border: 1px solid var(--color--section, var(--color--default));
-  color: var(--fgcolor--section, var(--fgcolor--default));
-  outline: none;
+.button--solid {
+  background: var(--button-color);
+  border: 1px solid var(--color--white);
+  color: var(--text-color, var(--color--white));
 }
 
-/* Solid buttons */
-.button--solid:not([class*="bg--"]):active,
-.button--solid:not([class*="bg--"]):hover,
-.button--solid:not([class*="bg--"]):focus {
-  color: var(--color--section, var(--color--default));
-}
-
-.button--solid:not([class*="bg--"]):active,
-.button--solid:not([class*="bg--"]):hover,
-.button--solid:not([class*="bg--"]):focus {
-  background: var(--fgcolor--section, var(--color--white));
+.button--solid:active,
+.button--solid:hover,
+.button--solid:focus {
+  background: var(--color--white);
+  border: 1px solid var(--button-color);
+  color: var(--text-color, var(--button-color));
 }
 
 /* Primary button */
@@ -82,16 +59,7 @@
 .button--solid.button--primary:active,
 .button--solid.button--primary:hover,
 .button--solid.button--primary:focus {
-  border-color: var(--color--primary);
-  color: var(--color--primary);
-}
-
-.button--solid.button--primary,
-.button--primary:active,
-.button--primary:hover,
-.button--primary:focus {
-  background: var(--color--primary);
-  color: var(--fgcolor--primary);
+  --button-color: var(--color--primary);
 }
 
 /* Secondary button */
@@ -99,16 +67,7 @@
 .button--solid.button--secondary:active,
 .button--solid.button--secondary:hover,
 .button--solid.button--secondary:focus {
-  border-color: var(--color--secondary);
-  color: var(--color--secondary);
-}
-
-.button--solid.button--secondary,
-.button--secondary:active,
-.button--secondary:hover,
-.button--secondary:focus {
-  background: var(--color--secondary);
-  color: var(--fgcolor--secondary);
+  --button-color: var(--color--secondary);
 }
 
 /* Accept button */
@@ -116,16 +75,7 @@
 .button--solid.button--accept:active,
 .button--solid.button--accept:hover,
 .button--solid.button--accept:focus {
-  border-color: var(--color--accept);
-  color: var(--color--accept);
-}
-
-.button--solid.button--accept,
-.button--accept:active,
-.button--accept:hover,
-.button--accept:focus {
-  background: var(--color--accept);
-  color: var(--fgcolor--accept);
+  --button-color: var(--color--accept);
 }
 
 /* Cancel button */
@@ -133,16 +83,7 @@
 .button--solid.button--cancel:active,
 .button--solid.button--cancel:hover,
 .button--solid.button--cancel:focus {
-  border-color: var(--color--cancel);
-  color: var(--color--cancel);
-}
-
-.button--solid.button--cancel,
-.button--cancel:active,
-.button--cancel:hover,
-.button--cancel:focus {
-  background: var(--color--cancel);
-  color: var(--fgcolor--cancel);
+  --button-color: var(--color--cancel);
 }
 
 .button .icon {
