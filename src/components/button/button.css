@@ -30,13 +30,6 @@
   color: var(--button-text-color, var(--button-color));
 }
 
-.button:disabled {
-  --button-color: var(--color--graa3);
-  cursor: default;
-
-  pointer-events: none;
-}
-
 .button:active,
 .button:hover,
 .button:focus,
@@ -156,4 +149,11 @@
 
 .button.button--icon .icon {
   margin: 0;
+}
+
+.button:disabled {
+  --button-color: var(--color--graa3);
+  cursor: default;
+
+  pointer-events: none;
 }
