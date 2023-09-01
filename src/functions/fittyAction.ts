@@ -7,7 +7,7 @@ export function fittyaction(node: HTMLElement): any {
 
   setTimeout(() => {
     fittyInstance.fit();
-  }, 500);
+  }, 100);
 
   document.fonts.ready.then(() => {
     // Check if fitty needs to refit after loading fonts
