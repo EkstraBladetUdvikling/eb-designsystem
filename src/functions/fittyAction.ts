@@ -5,6 +5,10 @@ export function fittyaction(node: HTMLElement): any {
     minSize: 14,
   });
 
+  setTimeout(() => {
+    fittyInstance.fit();
+  }, 500);
+
   document.fonts.ready.then(() => {
     // Check if fitty needs to refit after loading fonts
     if (node.offsetWidth > node.parentElement.offsetWidth) {
