@@ -6,12 +6,12 @@
 
   import type { SvelteComponent } from 'svelte';
 
-  export let className = undefined;
-  export let fieldName = undefined;
-  export let inputtype = 'text';
-  export let label = undefined;
+  export let className: string | undefined = undefined;
+  export let fieldName: string | undefined = undefined;
+  export let inputtype: string = 'text';
+  export let label: string | undefined = undefined;
   export let value: number | string = '';
-  export let size = 'medium';
+  export let size: string = 'medium';
 
   let component: typeof SvelteComponent<any> = TextInput;
   switch (inputtype) {

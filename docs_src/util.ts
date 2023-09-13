@@ -27,7 +27,7 @@ export function rdmArticleData(mediaWidth = 640, mediaHeight = 360): IArticleCar
         ? {
             src: `https://loremflickr.com/${mediaWidth}/${mediaHeight}/city,people,nature,animal?random=${Math.random()}`,
           }
-        : null,
+        : {},
     premium: Math.random() < 0.3,
     published: randomDate().toString(),
     saved: Math.random() < 0.5,
@@ -36,7 +36,6 @@ export function rdmArticleData(mediaWidth = 640, mediaHeight = 360): IArticleCar
     truncateTitle: false,
     update: Math.random() < 0.5,
     url: '',
-    videoIcon: Math.random() < 0.3,
   };
 
   return article;

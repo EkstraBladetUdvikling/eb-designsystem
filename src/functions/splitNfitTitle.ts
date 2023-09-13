@@ -9,7 +9,15 @@ interface FittyOptions {
   observeMutations?: MutationObserverInit;
 }
 
-function fit(titleParts: HTMLSpanElement[], fittyOptions?: FittyOptions): void {
+// Provide default values
+const defaultFittyOptions: FittyOptions = {
+  maxSize: undefined,
+  minSize: undefined,
+  multiLine: false,
+  observeMutations: undefined,
+};
+
+function fit(titleParts: HTMLSpanElement[], fittyOptions: FittyOptions = defaultFittyOptions): void {
   const cleanFittyOptions = Object.fromEntries(
     Object.entries(fittyOptions).filter(([, fittyOptionsVal]) => fittyOptionsVal !== undefined),
   );
@@ -32,13 +40,25 @@ interface ISplitNfitOptions extends FittyOptions {
   minLines?: number;
   safe?: boolean;
 }
-export async function splitNfitTitle(title: string, options?: ISplitNfitOptions): Promise<DocumentFragment> {
+
+// Provide default values
+const defaultSplitNfitOptions: ISplitNfitOptions = {
+  maxLines: 10,
+  minLines: 1,
+  safe: false,
+  ...defaultFittyOptions, // Include FittyOptions defaults
+};
+
+export async function splitNfitTitle(
+  title: string,
+  options: ISplitNfitOptions = defaultSplitNfitOptions,
+): Promise<DocumentFragment> {
   const { maxLines = 10, maxSize, minLines = 1, minSize, multiLine, observeMutations, safe = false } = options;
 
   const titleSplit: string[] = splitTitle(title, minLines, maxLines);
 
   const titleFrag = document.createDocumentFragment();
-  const titleSpans = [];
+  const titleSpans: HTMLSpanElement[] = [];
 
   titleSplit.forEach((txt: string) => {
     const titleSpan = document.createElement('span');

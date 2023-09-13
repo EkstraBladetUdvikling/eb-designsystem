@@ -1,11 +1,13 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
 
+  import type { ITabsConfig } from '../../src/types/Accordion';
+
   import { Accordion } from '../../src';
   import { rdmParagraphs } from '../lipsum';
   import { sourceType } from '../stores';
 
-  const tabs = [];
+  const tabs: ITabsConfig[] = [];
 
   for (let i = 0; i < 3; i++) {
     tabs.push({

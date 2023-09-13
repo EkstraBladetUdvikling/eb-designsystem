@@ -2,8 +2,8 @@
   import { onMount } from 'svelte';
 
   export let inputtype = 'textarea';
-  export let label = undefined;
-  export let className = undefined;
+  export let label: string | undefined = undefined;
+  export let className: string | undefined = undefined;
   export let size = 'padding-m--tb';
 
   let textareaEl: HTMLTextAreaElement;
@@ -12,15 +12,20 @@
 
   if (className) baseClass = `${className} ${baseClass}`;
 
-     /* focus effect on form elements */
+  /* focus effect on form elements */
   onMount(() => {
     textareaEl.addEventListener('focus', () => {
-      textareaEl.parentElement.setAttribute('data-focus', 'true');
-      const inputLabel = textareaEl.previousElementSibling;
-      inputLabel.classList.remove('hidden');
+      if (textareaEl.parentElement) {
+        textareaEl.parentElement.setAttribute('data-focus', 'true');
+      }
+      if (textareaEl.previousElementSibling) {
+        textareaEl.previousElementSibling.classList.remove('hidden');
+      }
     });
     textareaEl.addEventListener('focusout', () => {
-      textareaEl.parentElement.setAttribute('data-focus', 'false');
+      if (textareaEl.parentElement) {
+        textareaEl.parentElement.setAttribute('data-focus', 'false');
+      }
       if (textareaEl.value.length === 0) {
         textareaLabelEl.classList.add('hidden');
       }
@@ -32,5 +37,5 @@
   {#if label}
     <span bind:this={textareaLabelEl} class="hidden">{label}:</span>
   {/if}
-  <textarea bind:this={textareaEl} on:focus class={baseClass} placeholder={label}></textarea>
+  <textarea bind:this={textareaEl} on:focus class={baseClass} placeholder={label} />
 </div>

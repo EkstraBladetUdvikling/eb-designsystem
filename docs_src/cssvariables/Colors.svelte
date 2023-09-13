@@ -4,7 +4,7 @@
 
   import { utilities } from '../routes/utilities';
 
-  const colorRoute = utilities.routes.find((util) => util.title === 'Color');
+  const colorRoute = utilities.routes.find((util) => util.title === 'Color') || { href: '' };
 </script>
 
 <h1>Colors</h1>

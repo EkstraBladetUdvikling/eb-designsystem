@@ -1,11 +1,11 @@
 <script lang="ts">
   import Icon from '../icon/Icon.svelte';
-  export let fieldName = undefined;
-  export let label = undefined;
-  export let inputtype = 'checkbox';
+  export let fieldName: string | undefined = undefined;
+  export let label: string | undefined = undefined;
+  export let inputtype: string = 'checkbox';
   export let value: string = '';
 
-  export let className = undefined;
+  export let className: string | undefined = undefined;
 
   let baseClass = `form-checkbox form-checkbox--icon`;
 

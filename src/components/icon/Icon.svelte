@@ -1,10 +1,10 @@
 <script lang="ts">
   import type { GraphicTypes, IconTypes } from '../../types/Icon';
 
-  export let className: string = undefined;
-  export let name: GraphicTypes | IconTypes = undefined;
-  export let width: number | string = undefined;
-  export let style: string = undefined;
+  export let className: string | undefined = undefined;
+  export let name: GraphicTypes | IconTypes | undefined = undefined;
+  export let width: number | string | undefined = undefined;
+  export let style: string | undefined = undefined;
 
   $: cssWidth = width ? `--icon-size: ${width}px;` : '';
   $: styleAttr = style ? `${cssWidth} ${style}` : cssWidth;

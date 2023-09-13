@@ -1,10 +1,10 @@
 export interface IInviewOptions {
-  accumulateIntersectingTime?: boolean;
-  minIntersectingTime?: number;
-  root?: HTMLElement | null;
-  rootMargin?: string;
-  threshold?: number | number[];
-  unobserveOnEnter?: boolean;
+  accumulateIntersectingTime: boolean;
+  minIntersectingTime: number;
+  root: HTMLElement | null;
+  rootMargin: string;
+  threshold: number | number[];
+  unobserveOnEnter: boolean;
 }
 
 export interface IInviewPosition {

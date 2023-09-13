@@ -7,7 +7,7 @@
 
   registerTab(button);
 
-  export let className = undefined;
+  export let className: string | undefined = undefined;
 
   const baseClass = `button`;
 

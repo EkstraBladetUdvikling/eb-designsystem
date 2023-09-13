@@ -136,7 +136,7 @@
 
 <h3>Farve muligheder fra eb-colors</h3>
 
-<ButtonGroup color="Bordeaux" className="margin-l--b">
+<ButtonGroup color="bordeaux" className="margin-l--b">
   <button class="button">Button 1</button>
   <button class="button">Button 2</button>
   <button class="button">Button 3</button>
@@ -159,7 +159,7 @@
 
 <h3>Solid button group</h3>
 
-<ButtonGroup solid={true} color="Black" colorHover="Red" className="margin-l--b">
+<ButtonGroup solid={true} color="black" colorHover="red" className="margin-l--b">
   <button class="button">Button 1</button>
   <button class="button">Button 2</button>
   <button class="button">Button 3</button>

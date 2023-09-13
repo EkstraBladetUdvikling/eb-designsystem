@@ -1,8 +1,8 @@
 import type { IInviewOptions, IInviewPosition, IInviewScrollDirection } from '../types/inviewAction';
 
 class Timer {
-  private timeout: ReturnType<typeof setTimeout>;
-  private startDate: Date;
+  private timeout: ReturnType<typeof setTimeout> | undefined;
+  private startDate: Date | undefined;
   private delay: number;
 
   constructor(delay: number) {
@@ -20,14 +20,14 @@ class Timer {
     }
   }
 
-  public resume<T>(callback: (args: T[]) => any, ...args: T[]) {
+  public resume<T>(callback: (...args: T[]) => any, ...args: T[]) {
     if (this.delay) {
       this.startDate = new Date();
       this.timeout = setTimeout(() => {
-        callback.apply(this, Array.prototype.slice.call(args, 2, args.length));
+        callback.apply(this, args.slice(2)); // Use args.slice(2) to pass arguments from index 2 to the end
       }, this.delay);
     } else {
-      callback.apply(this, Array.prototype.slice.call(args, 2, args.length));
+      callback.apply(this, args.slice(2)); // Use args.slice(2) to pass arguments from index 2 to the end
     }
   }
 }
@@ -41,12 +41,7 @@ const defaultOptions: IInviewOptions = {
   unobserveOnEnter: false,
 };
 
-export default function inview(node: HTMLElement, options: IInviewOptions): { destroy: () => void } {
-  const actionOptions: IInviewOptions = {
-    ...defaultOptions,
-    ...options,
-  };
-
+export default function inview(node: HTMLElement, options: IInviewOptions = defaultOptions): { destroy: () => void } {
   const prevPos: IInviewPosition = {
     x: undefined,
     y: undefined,
@@ -57,7 +52,7 @@ export default function inview(node: HTMLElement, options: IInviewOptions): { de
     vertical: undefined,
   };
 
-  const intersectionTimer: Timer = new Timer(actionOptions.minIntersectingTime);
+  const intersectionTimer: Timer = new Timer(options.minIntersectingTime);
   let inView = false;
   let observer: IntersectionObserver;
 
@@ -70,13 +65,13 @@ export default function inview(node: HTMLElement, options: IInviewOptions): { de
         entries.forEach((singleEntry) => {
           const entry = singleEntry;
 
-          if (prevPos.y > entry.boundingClientRect.y) {
+          if (prevPos.y && prevPos.y > entry.boundingClientRect.y) {
             scrollDirection.vertical = 'up';
           } else {
             scrollDirection.vertical = 'down';
           }
 
-          if (prevPos.x > entry.boundingClientRect.x) {
+          if (prevPos.x && prevPos.x > entry.boundingClientRect.x) {
             scrollDirection.horizontal = 'left';
           } else {
             scrollDirection.horizontal = 'right';
@@ -131,7 +126,7 @@ export default function inview(node: HTMLElement, options: IInviewOptions): { de
               }),
             );
 
-            if (actionOptions.accumulateIntersectingTime) {
+            if (options.accumulateIntersectingTime) {
               intersectionTimer.pause();
             } else {
               intersectionTimer.reset();
@@ -140,9 +135,9 @@ export default function inview(node: HTMLElement, options: IInviewOptions): { de
         });
       },
       {
-        root: actionOptions.root,
-        rootMargin: actionOptions.rootMargin,
-        threshold: actionOptions.threshold,
+        root: options.root,
+        rootMargin: options.rootMargin,
+        threshold: options.threshold,
       },
     );
 
