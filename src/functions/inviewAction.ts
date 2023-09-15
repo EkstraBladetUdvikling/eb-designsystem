@@ -41,11 +41,13 @@ const defaultOptions: IInviewOptions = {
   unobserveOnEnter: false,
 };
 
-export default function inview(node: HTMLElement, options: IInviewOptions = defaultOptions): { destroy: () => void } {
+export default function inview(node: HTMLElement, optionsArg?: Partial<IInviewOptions>): { destroy: () => void } {
   const prevPos: IInviewPosition = {
     x: undefined,
     y: undefined,
   };
+
+  const options = { ...defaultOptions, ...optionsArg };
 
   const scrollDirection: IInviewScrollDirection = {
     horizontal: undefined,
@@ -91,7 +93,7 @@ export default function inview(node: HTMLElement, options: IInviewOptions = defa
                 scrollDirection,
                 unobserve,
               },
-            }),
+            })
           );
 
           if (entry.isIntersecting) {
@@ -107,7 +109,7 @@ export default function inview(node: HTMLElement, options: IInviewOptions = defa
                     scrollDirection,
                     unobserve,
                   },
-                }),
+                })
               );
 
               options.unobserveOnEnter && observeInstance.unobserve(node);
@@ -123,7 +125,7 @@ export default function inview(node: HTMLElement, options: IInviewOptions = defa
                   scrollDirection,
                   unobserve,
                 },
-              }),
+              })
             );
 
             if (options.accumulateIntersectingTime) {
@@ -138,7 +140,7 @@ export default function inview(node: HTMLElement, options: IInviewOptions = defa
         root: options.root,
         rootMargin: options.rootMargin,
         threshold: options.threshold,
-      },
+      }
     );
 
     observer.observe(node);
