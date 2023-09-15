@@ -22,15 +22,25 @@
   let articleListContainer: HTMLDivElement;
   let itemWidth: number;
 
-  const getChildrenWidth = (): number =>
-    articleListContainer.querySelector('[data-horizontallist="horizontallist"]')
-      ? articleListContainer.querySelector('[data-horizontallist="horizontallist"]').children[0].clientWidth
-      : articleListContainer.children[0].children[0].clientWidth;
+  const getChildrenWidth = (): number => {
+    const list = articleListContainer.querySelector('[data-horizontallist="horizontallist"]');
 
-  const getChildrenCount = (): number =>
-    articleListContainer.querySelector('[data-horizontallist="horizontallist"]')
-      ? articleListContainer.querySelector('[data-horizontallist="horizontallist"]').children.length
-      : articleListContainer.children[0].children.length;
+    if (list && list.children) {
+      return list.children[0].clientWidth;
+    }
+
+    return articleListContainer.children[0].children[0].clientWidth;
+  };
+
+  const getChildrenCount = (): number => {
+    const list = articleListContainer.querySelector('[data-horizontallist="horizontallist"]');
+
+    if (list && list.children) {
+      return list.children.length;
+    }
+
+    return articleListContainer.children[0].children.length;
+  };
 
   function updateType() {
     itemWidth = itemWidth ?? getChildrenWidth();

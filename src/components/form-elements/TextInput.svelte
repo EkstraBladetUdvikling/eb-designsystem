@@ -1,10 +1,10 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  export let inputtype = 'text';
-  export let label = undefined;
-  export let className = undefined;
-  export let size = 'padding-m--tb';
+  export let inputtype: string = 'text';
+  export let label: string | undefined = undefined;
+  export let className: string | undefined = undefined;
+  export let size: string = 'padding-m--tb';
 
   let inputEl: HTMLInputElement;
   let inputLabelEl: HTMLSpanElement;
@@ -15,12 +15,17 @@
   /* focus effect on form elements */
   onMount(() => {
     inputEl.addEventListener('focus', () => {
-      inputEl.parentElement.setAttribute('data-focus', 'true');
-      const inputLabel = inputEl.previousElementSibling;
-      inputLabel.classList.remove('hidden');
+      if (inputEl.parentElement) {
+        inputEl.parentElement.setAttribute('data-focus', 'true');
+      }
+      if (inputEl.previousElementSibling) {
+        inputEl.previousElementSibling.classList.remove('hidden');
+      }
     });
     inputEl.addEventListener('focusout', () => {
-      inputEl.parentElement.setAttribute('data-focus', 'false');
+      if (inputEl.parentElement) {
+        inputEl.parentElement.setAttribute('data-focus', 'false');
+      }
       if (inputEl.value.length === 0) {
         inputLabelEl.classList.add('hidden');
       }

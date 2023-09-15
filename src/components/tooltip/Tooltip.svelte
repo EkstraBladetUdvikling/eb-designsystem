@@ -13,7 +13,7 @@
   export let tippyOptions: TTippyCustomOptions = {}; // Additional TippyJS props
 
   let tooltipNode: HTMLDivElement;
-  let instance: TTooltipInstance = null;
+  let instance: TTooltipInstance | null = null;
   $: textOnly = typeof content === 'string' || content instanceof String;
 
   $: svelteComponentContent = content as any;
@@ -24,19 +24,25 @@
     // Add to store for programmatic access, if anchor has unique id
     if (anchorNode.hasAttribute('id')) {
       const id = anchorNode.getAttribute('id');
-      $tooltipStore[id] = instance;
+      if (id) {
+        $tooltipStore[id] = instance;
+      }
     }
   });
 
   afterUpdate(() => {
-    instance.setProps(tippyOptions);
+    if (instance) {
+      instance.setProps(tippyOptions);
+    }
   });
 
   onDestroy(() => {
     // Remove tooltip instance and store entry
-    instance.destroy();
-    if (anchorNode.hasAttribute('id')) {
-      const id = anchorNode.getAttribute('id');
+    if (instance) {
+      instance.destroy();
+    }
+    const id = anchorNode.getAttribute('id');
+    if (id) {
       delete $tooltipStore[id];
     }
   });

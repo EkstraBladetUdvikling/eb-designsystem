@@ -1,7 +1,7 @@
 <script lang="ts">
   type TType = 'tabs' | 'pillnavigation';
   export let type: TType = 'tabs';
-  export let className = undefined;
+  export let className: string | undefined = undefined;
 
   let baseClass = '';
 

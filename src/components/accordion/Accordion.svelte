@@ -1,23 +1,20 @@
 <script lang="ts">
   import { writable, type Writable } from 'svelte/store';
 
+  import type { ITabsConfig } from '../../types/Accordion';
+
   import Icon from '../icon/Icon.svelte';
 
   /**
    * dataTheme: string - Adds a theme to the accordion (optional)
    * tabs: Array - data to fill the accordion-tabs
    */
-  interface ITabsConfig {
-    content: string;
-    title: string;
-  }
-
-  function toggleAccordion(event: Event, index?: number) {
+  function toggleAccordion(event: Event, index: number = 0) {
     event.stopPropagation();
-    $activeTab = $activeTab !== index ? index : undefined;
+    $activeTab = $activeTab !== index ? index : 0;
   }
 
-  export const activeTab: Writable<number> = writable(undefined);
+  export const activeTab: Writable<number> = writable(0);
   export let dataTheme: 'darkmode' | 'lightmode' | undefined = undefined;
   export let tabs: ITabsConfig[];
 </script>

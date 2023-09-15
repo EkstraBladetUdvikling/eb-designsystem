@@ -15,21 +15,21 @@
   export let title: string = '';
 
   export let breaking: boolean = false;
-  export let cardType: TCardType = undefined;
-  export let className: string = undefined;
-  export let colorName: string = undefined;
-  export let premiumMarkerSize: 'small' = undefined;
-  export let id: number = undefined;
+  export let cardType: TCardType | undefined = undefined;
+  export let className: string | undefined = undefined;
+  export let colorName: string | undefined = undefined;
+  export let premiumMarkerSize: 'small' | undefined = undefined;
+  export let id: number | undefined = undefined;
   export let update: boolean = false;
-  export let maxLines: number = undefined;
-  export let media: Partial<IMediaOptions> = undefined;
+  export let maxLines: number | undefined = undefined;
+  export let media: Partial<IMediaOptions> | undefined = undefined;
   export let premium: boolean = false;
-  export let published: string = undefined;
-  export let saved: boolean = undefined;
-  export let section: string = undefined;
+  export let published: string | undefined = undefined;
+  export let saved: boolean | undefined = undefined;
+  export let section: string | undefined = undefined;
   export let style: string = '';
   export let truncateTitle: boolean = false;
-  export let url: string = undefined;
+  export let url: string | undefined = undefined;
   export let videoIcon: boolean = false;
   export let width: string = '100%';
 

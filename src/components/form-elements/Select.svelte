@@ -1,8 +1,8 @@
 <script lang="ts">
   export let inputtype = 'text';
-  export let label = undefined;
-  export let className = undefined;
-  export let selected = undefined;
+  export let label: string | undefined = undefined;
+  export let className: string | undefined = undefined;
+  export let selected: string | undefined = undefined;
 
   let baseClass = `form-input form-input--${inputtype}`;
 

@@ -7,8 +7,8 @@
   type TButton = HTMLElement | typeof SvelteComponent;
   const buttons: TButton[] = [];
   const panels: HTMLElement[] = [];
-  const selectedButton = writable(null);
-  const selectedPanel = writable(null);
+  const selectedButton = writable();
+  const selectedPanel = writable();
 
   selectedId.subscribe((i: number) => {
     selectedButton.set(buttons[i]);
@@ -46,7 +46,7 @@
     selectedPanel,
   });
 
-  export let className = undefined;
+  export let className: string | undefined = undefined;
 </script>
 
 <div class={className}>

@@ -2,7 +2,8 @@
   import Prism from 'svelte-prism';
 
   function moveToAllColors() {
-    document.getElementById('all-colors-section').scrollIntoView();
+    const colorSection = document.getElementById('all-colors-section');
+    if (colorSection) colorSection.scrollIntoView();
   }
 </script>
 

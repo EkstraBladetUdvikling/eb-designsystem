@@ -5,7 +5,7 @@
 
   import Icon from '../icon/Icon.svelte';
 
-  export let className = undefined;
+  export let className: string | undefined = undefined;
   export let defaultState = true;
   export let isSwitch = false;
   export let disabled = false;

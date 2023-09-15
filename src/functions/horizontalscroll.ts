@@ -19,15 +19,15 @@ enum SCROLLPOS {
 }
 
 export class HorizontalScrollHandler {
-  private children: HTMLCollection;
+  private children!: HTMLCollection;
   private currentState = SCROLLPOS.unset;
-  private scrollContainer: HTMLDivElement;
-  private scrollItemContainer: HTMLDivElement;
+  private scrollContainer!: HTMLDivElement;
+  private scrollItemContainer!: HTMLDivElement;
   private listLength: number = 0;
-  private wrapClientWidth: number;
-  private wrapLeft: number;
-  private wrapMaxLeft: number;
-  private wrapRight: number;
+  private wrapClientWidth!: number;
+  private wrapLeft!: number;
+  private wrapMaxLeft!: number;
+  private wrapRight!: number;
   private currentBlock = 0;
   private blocks = [0];
   private blocking: BLOCKING = BLOCKING.enabled;
@@ -99,12 +99,12 @@ export class HorizontalScrollHandler {
     /**
      * Find how many visible elements we have
      */
-    const visibleChildren = Array.from(this.children).filter(
-      (child: HTMLElement) =>
-        child.getBoundingClientRect().left >= containerBBox.left &&
-        child.getBoundingClientRect().right <= containerBBox.right,
-    ).length;
-    const maxLength = this.listLength - visibleChildren;
+    const visibleChildrenCount = Array.from(this.children).filter((child: Element) => {
+      const childBBox = child.getBoundingClientRect() as DOMRect;
+      return childBBox.left >= containerBBox.left && childBBox.right <= containerBBox.right;
+    }).length;
+
+    const maxLength = this.listLength - visibleChildrenCount;
 
     this.wrapMaxLeft = this.scrollItemContainer.scrollWidth - this.wrapClientWidth;
 
@@ -205,7 +205,7 @@ export class HorizontalScrollHandler {
    */
   private findPosition(dir: SCROLLDIRECTION): number {
     try {
-      let position: number;
+      let position: number = 0;
       if (dir === SCROLLDIRECTION.left) {
         if (this.blocking === BLOCKING.enabled && this.blocks[this.currentBlock - 1]) {
           this.currentBlock--;

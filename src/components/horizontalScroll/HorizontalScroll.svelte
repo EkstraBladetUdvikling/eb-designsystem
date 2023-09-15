@@ -4,7 +4,7 @@
 
   import Icon from '../icon/Icon.svelte';
 
-  export let className = undefined;
+  export let className: string | undefined = undefined;
 
   const baseClass = `horizontal-scroll-container position-relative`;
 

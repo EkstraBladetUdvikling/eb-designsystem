@@ -1,6 +1,6 @@
 export function throttle(callback: (argData: any) => void, wait: number) {
-  let inThrottle;
-  return function(...args: any[]) {
+  let inThrottle: boolean;
+  return function(this: any, ...args: [argData: any]) {
     // eslint-disable-next-line @typescript-eslint/no-this-alias
     const context = this;
     if (!inThrottle) {

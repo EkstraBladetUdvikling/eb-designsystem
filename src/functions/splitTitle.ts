@@ -26,9 +26,10 @@ export function splitTitle(input: string, minLines: number = 1, maxLines: number
     arrayOfLengths.reduce((arr, cur) => {
       return arr + cur;
     }) / numLines;
-  let bestScore: number = null;
-  let bestPartitions: number[][] = null;
+  let bestScore: number | null = null;
+  let bestPartitions: number[][] = [];
   let count = 0;
+  let noImprovementsCount: number = 0;
 
   // Safelimit number of iterations to find optimal partion
   while (count < 20) {
@@ -43,8 +44,6 @@ export function splitTitle(input: string, minLines: number = 1, maxLines: number
     const absHeightDiffs: number[] = heights.map((x) => Math.abs(average_height - x));
     const worstPartitionIndex: number = absHeightDiffs.indexOf(Math.max(...absHeightDiffs));
     const worstHeightDiff: number = average_height - heights[worstPartitionIndex];
-
-    let noImprovementsCount: number;
 
     if (bestScore === null || Math.abs(worstHeightDiff) < bestScore) {
       bestScore = Math.abs(worstHeightDiff);

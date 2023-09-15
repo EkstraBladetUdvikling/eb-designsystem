@@ -11,7 +11,7 @@ export function fittyaction(node: HTMLElement): any {
 
   document.fonts.ready.then(() => {
     // Check if fitty needs to refit after loading fonts
-    if (node.offsetWidth > node.parentElement.offsetWidth) {
+    if (node.parentElement && node.offsetWidth > node.parentElement.offsetWidth) {
       fittyInstance.fit();
     }
   });

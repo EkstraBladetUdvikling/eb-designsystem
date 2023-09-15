@@ -4,7 +4,10 @@
 
   import { exportedfunctions } from '../routes/exportedfunctions';
 
-  const splitRoute = exportedfunctions.routes.find((exfunc) => exfunc.title === 'SplitTitle');
+  const splitRoute = exportedfunctions.routes.find((exfunc) => exfunc.title === 'SplitTitle') || {
+    href: '',
+    title: '',
+  };
 </script>
 
 <h1>SplitNfitTitle</h1>

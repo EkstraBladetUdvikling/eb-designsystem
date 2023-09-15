@@ -18,7 +18,7 @@
 
   export const selectedId: Writable<number> = writable(0);
 
-  const selectedButton = writable(null);
+  const selectedButton = writable();
   const buttons: TButton[] = [];
   selectedId.subscribe((i: number) => {
     selectedButton.set(buttons[i]);
@@ -46,12 +46,12 @@
     selectedButton,
   });
 
-  export let className = undefined;
+  export let className: string | undefined = undefined;
 
   type TType = 'accept' | 'cancel' | 'primary' | 'secondary';
-  export let type: TType = undefined;
-  export let color = undefined;
-  export let colorHover = undefined;
+  export let type: TType | undefined = undefined;
+  export let color: keyof typeof Background = 'bruger';
+  export let colorHover: keyof typeof Background = 'bruger';
   export let solid: boolean = false;
 
   let baseClass = `buttongroup`;
