@@ -11,7 +11,7 @@
 
   let iconColor = 'black';
 
-  let size = 14;
+  let size = 24;
 
   const decrement = () => {
     return --size;
