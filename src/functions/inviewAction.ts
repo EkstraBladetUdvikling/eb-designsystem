@@ -93,7 +93,7 @@ export default function inview(node: HTMLElement, optionsArg?: Partial<IInviewOp
                 scrollDirection,
                 unobserve,
               },
-            })
+            }),
           );
 
           if (entry.isIntersecting) {
@@ -109,7 +109,7 @@ export default function inview(node: HTMLElement, optionsArg?: Partial<IInviewOp
                     scrollDirection,
                     unobserve,
                   },
-                })
+                }),
               );
 
               options.unobserveOnEnter && observeInstance.unobserve(node);
@@ -125,7 +125,7 @@ export default function inview(node: HTMLElement, optionsArg?: Partial<IInviewOp
                   scrollDirection,
                   unobserve,
                 },
-              })
+              }),
             );
 
             if (options.accumulateIntersectingTime) {
@@ -140,7 +140,7 @@ export default function inview(node: HTMLElement, optionsArg?: Partial<IInviewOp
         root: options.root,
         rootMargin: options.rootMargin,
         threshold: options.threshold,
-      }
+      },
     );
 
     observer.observe(node);
