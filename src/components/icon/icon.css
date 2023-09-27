@@ -2,6 +2,7 @@
   --icon-size: 14px;
   --icon-fill: currentColor;
   --ebds-figcaption-bg: var(--color--white);
+  --icon-filter: none;
 }
 
 .icon-svg {
@@ -9,6 +10,10 @@
   height: var(--icon-size);
 
   fill: var(--icon-fill);
+}
+
+.icon-svg .filter {
+  filter: var(--icon-filter);
 }
 
 .icon-svg--small {

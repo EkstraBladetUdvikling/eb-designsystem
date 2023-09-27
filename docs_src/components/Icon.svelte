@@ -124,6 +124,32 @@
   </Prism>
 {/if}
 
+<h3>Filter extension</h3>
+<p>A (small) subset of icons will respond to the CSS variable --icon-filter, can be used to create a drop-shadow</p>
+
+<div class="dropit-example flex">
+  <div class="flex">
+    <div class="dropit">
+      <Icon name="share" />
+    </div>
+    <Icon name="share" />
+  </div>
+
+  <div class="flex">
+    <div class="dropit">
+      <Icon name="volume" />
+    </div>
+    <Icon name="volume" />
+  </div>
+
+  <div class="flex">
+    <div class="dropit">
+      <Icon name="volume-off" />
+    </div>
+    <Icon name="volume-off" />
+  </div>
+</div>
+
 <h3>Graphics</h3>
 <p>Graphics are capable of containing more layers i.e static colors on stroke and fill.</p>
 
@@ -162,3 +188,15 @@
 <p>Icons used in DrEdition Aptoma i.e ekstrabladet.dk frontpage cards</p>
 
 <DrEditionSVGs />
+
+<style>
+  .dropit-example {
+    --icon-fill: red;
+    --icon-size: 40px;
+    gap: 20px;
+  }
+
+  .dropit {
+    --icon-filter: drop-shadow(0px 20px 4px black);
+  }
+</style>
