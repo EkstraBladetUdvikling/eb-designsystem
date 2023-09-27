@@ -1960,6 +1960,7 @@ a.card-mode:focus .card-inner {
   --icon-size: 14px;
   --icon-fill: currentColor;
   --ebds-figcaption-bg: var(--color--white);
+  --icon-filter: none;
 }
 
 .icon-svg {
@@ -1967,6 +1968,10 @@ a.card-mode:focus .card-inner {
   height: var(--icon-size);
 
   fill: var(--icon-fill);
+}
+
+.icon-svg .filter {
+  filter: var(--icon-filter);
 }
 
 .icon-svg--small {
