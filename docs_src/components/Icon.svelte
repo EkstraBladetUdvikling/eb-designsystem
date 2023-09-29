@@ -148,6 +148,13 @@
     </div>
     <Icon name="volume-off" />
   </div>
+
+  <div class="flex">
+    <div class="dropit">
+      <Icon name="times-circle" />
+    </div>
+    <Icon name="times-circle" />
+  </div>
 </div>
 
 <h3>Graphics</h3>
