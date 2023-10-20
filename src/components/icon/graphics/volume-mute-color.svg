@@ -4,7 +4,7 @@
       filter: var(--icon-filter);
     }
     .fill {
-      fill: var(--icon-fill);
+      fill: var(--icon-fill, currentColor);
     }
   </style>
 <path class="filter fill" fill-rule="evenodd" clip-rule="evenodd" d="M231.81 64C225.9 64 219.89 66.18 215.03 71.05L126.06 160H24C10.74 160 0 170.74 0 184V328C0 341.25 10.74 352 24 352H126.06L215.03 440.95C219.9 445.82 225.91 448 231.81 448C244.14 448 256 438.48 256 423.98V88.02C256 73.51 244.13 64 231.81 64ZM160 318.06L208 366.05V145.95L160 193.94L145.94 208H48V304H145.94L160 318.06Z" />
