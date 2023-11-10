@@ -2,9 +2,11 @@
  * timePassedSince
  *
  * @param datetime {string}
+ * @param todayAsText {boolean}
+ * @param uppercase {boolean}
  * @returns {string}
  */
-export function timePassedSince(datetime: string, todayAsText: boolean = false): string {
+export function timePassedSince(datetime: string, todayAsText: boolean = false, uppercase: boolean = false): string {
   const monthNames = ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'];
   const inputdate = new Date(datetime); // UTC-time from server (Z)
   const now = new Date();
@@ -39,6 +41,10 @@ export function timePassedSince(datetime: string, todayAsText: boolean = false):
     } else if (seconds) {
       output = `${seconds} sek`;
     }
+  }
+
+  if (uppercase) {
+    output.toUpperCase();
   }
 
   return output;

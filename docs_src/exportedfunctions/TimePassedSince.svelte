@@ -8,6 +8,7 @@
   <div class="padding-xl--l padding-m--tb">
     <p><b>@param datetime</b> valid datetimestring <em>required</em></p>
     <p><b>@param todayAsText</b> boolean <em>optional</em></p>
+    <p><b>@param uppercase</b> boolean <em>optional</em></p>
   </div>
 </code>
 
