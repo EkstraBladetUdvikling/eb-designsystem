@@ -174,7 +174,7 @@
     {`<div class="buttongroup buttongroup--solid" style="
   --buttongroup-color: #000;
   --buttongroup-fgcolor: #fff;
-  --buttongroup-color--hover: #bd1118;
+  --buttongroup-color--hover: #e3141d;
   --buttongroup-fgcolor--hover: #fff;
 ">...</div>`}
   </Prism>

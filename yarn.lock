@@ -278,10 +278,10 @@
     enabled "2.0.x"
     kuler "^2.0.0"
 
-"@ekstra-bladet/eb-colors@4.0.5":
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/@ekstra-bladet/eb-colors/-/eb-colors-4.0.5.tgz#5fca3c7edcffb256846361c16c6876f0c7ee0121"
-  integrity sha512-nmeXf0CqiOYZ8UNN+oDmrWdxOC3zXUfwsFcMOlMwMTrBhVhRoYn/DHnfiT73DJsHyfx/aca+mW0Ctpl+qne+Wg==
+"@ekstra-bladet/eb-colors@4.0.6":
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/@ekstra-bladet/eb-colors/-/eb-colors-4.0.6.tgz#29ce97cf119b1687eaf0e268094be1ae920b9d68"
+  integrity sha512-3Ulyj2du+UviypOcsuE2WvwIFKdpfed1LtvDwDubtR4US55uEfeKcXppy7RBbRGr3PXyailj7/iERNLJomp2Nw==
 
 "@es-joy/jsdoccomment@~0.40.1":
   version "0.40.1"
