@@ -351,7 +351,7 @@ template,[hidden] {
   --rgb-color--reddark: 153, 0, 0;
   --rgb-fgcolor--reddark: 255, 255, 255;
 
-  --rgb-color--red: 189, 17, 24;
+  --rgb-color--red: 227, 20, 29;
   --rgb-fgcolor--red: 255, 255, 255;
 
   --rgb-color--pink: 179, 30, 97;
@@ -456,7 +456,7 @@ template,[hidden] {
   --rgb-color--pastel-yellow: 212, 197, 100;
   --rgb-fgcolor--pastel-yellow: 255, 255, 255;
 
-  --rgb-color--eb: 189, 17, 24;
+  --rgb-color--eb: 227, 20, 29;
   --rgb-fgcolor--eb: 255, 255, 255;
 
   --rgb-color--eb2: 153, 0, 0;
@@ -516,7 +516,7 @@ template,[hidden] {
   --rgb-color--sport: 2, 158, 93;
   --rgb-fgcolor--sport: 255, 255, 255;
 
-  --rgb-color--tv: 189, 17, 24;
+  --rgb-color--tv: 227, 20, 29;
   --rgb-fgcolor--tv: 255, 255, 255;
 
   --rgb-color--underholdning: 81, 32, 140;
@@ -527,7 +527,7 @@ template,[hidden] {
   --color--reddark: #900;
   --fgcolor--reddark: #fff;
 
-  --color--red: #bd1118;
+  --color--red: #e3141d;
   --fgcolor--red: #fff;
 
   --color--pink: #b31e61;
@@ -632,7 +632,7 @@ template,[hidden] {
   --color--pastel-yellow: #d4c564;
   --fgcolor--pastel-yellow: #fff;
 
-  --color--eb: #bd1118;
+  --color--eb: #e3141d;
   --fgcolor--eb: #fff;
 
   --color--eb2: #900;
@@ -692,7 +692,7 @@ template,[hidden] {
   --color--sport: #029e5d;
   --fgcolor--sport: #fff;
 
-  --color--tv: #bd1118;
+  --color--tv: #e3141d;
   --fgcolor--tv: #fff;
 
   --color--underholdning: #51208c;

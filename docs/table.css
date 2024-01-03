@@ -1,6 +1,6 @@
 .table {
   border-collapse: collapse;
-  border-color: #bd1118;
+  border-color: #e3141d;
   caption-side: bottom;
   margin: 1rem 0;
   width: 100%;
@@ -19,16 +19,16 @@ tr {
 .table th,
 .table td {
   border-bottom-width: 1px;
-  padding: 0.5rem 0.5rem;
+  padding: .5rem .5rem;
   text-align: left;
 }
 
 .table th {
-  background: #bd1118;
+  background: #e3141d;
   color: #fff;
   white-space: nowrap;
 }
 
 .table td {
-  font-size: 0.9em;
+  font-size: .9em;
 }
