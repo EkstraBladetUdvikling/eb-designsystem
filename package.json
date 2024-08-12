@@ -28,7 +28,7 @@
     "prepublish": "yarn dist",
     "installsnippets": "node node/install-snippets",
     "installsnippets:eb": "node node/install-snippets ../ekstrabladet/ekstrabladet-publication/src/main/.vscode",
-    "copy_svg": "copyfiles -f \"./docs/svg/symbol/icons.svg\" \"./dist\"",
+    "copy_svg": "node node/copy_svg.mjs",
     "svgs": "node node/svgs.js && yarn copy_svg"
   },
   "dependencies": {
@@ -55,7 +55,9 @@
     "tippy.js": "^6.3.7"
   },
   "devDependencies": {
-    "copyfiles": "^2.4.1",
+    "@eslint/js": "^9.9.0",
+    "eslint": "9.x",
+    "globals": "^15.9.0",
     "normalize.css": "^8.0.1",
     "onchange": "^7.1.0",
     "postcss": "^8.4.41",
@@ -68,11 +70,17 @@
     "postcss-merge-rules": "^7.0.3",
     "postcss-preset-env": "^10.0.0",
     "postcss-selectorcleanse": "^1.0.6",
-    "string-width": "7.2.0",
-    "strip-ansi": "6.0.1",
     "svg-sprite": "^2.0.4",
     "tslib": "^2.6.3",
     "typescript": "^5.5.4",
-    "wrap-ansi": "7.0.0"
+    "typescript-eslint": "^8.0.1"
+  },
+  "resolutions": {
+    "cliui": "^8.0.1",
+    "glob": "^10.0.4",
+    "string-width-cjs": "^5.1.1",
+    "strip-ansi-cjs": "^8.0.0",
+    "wrap-ansi-cjs": "^8.0.0",
+    "yargs": "^17.7.2"
   }
 }
