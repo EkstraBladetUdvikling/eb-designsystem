@@ -23,7 +23,7 @@
     "start": "sirv docs",
     "validate": "svelte-check || { echo 'svelte-check failed' ; exit: 1; }",
     "dist": "yarn build",
-    "lint": "node node/linter.mjs || { echo 'linting failed' ; exit: 1; }",
+    "lint": "yarn eslint || { echo 'linting failed' ; exit: 1; }",
     "prepare": "yarn build:typescript",
     "prepublish": "yarn dist",
     "installsnippets": "node node/install-snippets",
