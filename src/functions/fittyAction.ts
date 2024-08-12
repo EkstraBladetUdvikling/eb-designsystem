@@ -1,6 +1,6 @@
 import fitty from 'fitty';
 
-export function fittyaction(node: HTMLElement): any {
+export function fittyaction(node: HTMLElement) {
   const fittyInstance = fitty(node, {
     minSize: 14,
   });
