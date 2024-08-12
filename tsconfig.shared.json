@@ -3,6 +3,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
     "sourceMap": false,
     "target": "es2020"
   },
