@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Prism from 'svelte-prism';
 </script>
 

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /* All dredition icons can be found in: docs/svg/dredition */
 </script>
 
@@ -7,9 +7,9 @@
     <i class="margin-m--b">Icons on the article card</i>
     <table class="dredition-table-icons">
       <tr>
-        <th width="150">Icon</th>
-        <th width="300">Name in DrEdition</th>
-        <th width="300">Filename</th>
+        <th style="width:150px;">Icon</th>
+        <th style="width:300px;">Name in DrEdition</th>
+        <th style="width:300px;">Filename</th>
       </tr>
       <tr>
         <td>
@@ -111,11 +111,11 @@
 
     <table class="dredition-table-icons">
       <tr>
-        <th width="300">Name in DrEdition</th>
-        <th width="300">Filename</th>
-        <th width="300">Icon</th>
-        <th width="300">Deprecated date</th>
-        <th width="300">Delete date</th>
+        <th style="width:300px;">Name in DrEdition</th>
+        <th style="width:300px;">Filename</th>
+        <th style="width:300px;">Icon</th>
+        <th style="width:300px;">Deprecated date</th>
+        <th style="width:300px;">Delete date</th>
       </tr>
       <tr>
         <td>
