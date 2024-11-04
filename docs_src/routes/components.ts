@@ -1,6 +1,7 @@
 import ArticleCard from '../components/ArticleCard.svelte';
 import Badge from '../components/Badge.svelte';
 import Button from '../components/Button.svelte';
+import ButtonGroup from '../components/ButtonGroup.svelte';
 import Card from '../components/Card.svelte';
 import HorizontalScroll from '../components/HorizontalScroll.svelte';
 import Icon from '../components/Icon.svelte';
@@ -23,6 +24,11 @@ export const components = {
       component: Button,
       href: '/components/button',
       title: 'Button',
+    },
+    {
+      component: ButtonGroup,
+      href: '/components/buttongroup',
+      title: 'Button group',
     },
     {
       component: Card,
