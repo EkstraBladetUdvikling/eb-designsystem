@@ -1,7 +1,6 @@
 <script lang="ts">
   import GithubIcon from '../assets/icons/github.svelte';
 
-  import { ButtonGroup } from '../../src';
   import { sourceType } from '../stores';
 
   import type { SourceTyping } from '../stores';
@@ -17,7 +16,7 @@
       <GithubIcon width={20} />
       <span class="flex flex-align--end padding-s--l">Github</span>
     </a>
-    <ButtonGroup type="secondary">
+    <div class="buttongroup buttongroup--secondary">
       <button
         class="button button--small"
         data-selected={$sourceType === 'svelte'}
@@ -28,7 +27,7 @@
         data-selected={$sourceType === 'html'}
         on:click={() => changeSourceType('html')}>HTML</button
       >
-    </ButtonGroup>
+    </div>
   </nav>
 </div>
 
@@ -49,5 +48,63 @@
   .navmenu-container .navmenu {
     height: 60px;
     max-height: 60px;
+  }
+
+  :root {
+    --buttongroup-color: var(--color--default);
+    --buttongroup-color--hover: var(--buttongroup-color);
+    --buttongroup-fgcolor: var(--fgcolor--default);
+    --buttongroup-fgcolor--hover: var(--buttongroup-fgcolor);
+  }
+
+  .buttongroup {
+    display: flex;
+  }
+
+  .buttongroup .button {
+    background: var(--color--white);
+    border-color: var(--buttongroup-color);
+    border-right-width: 0;
+    color: var(--buttongroup-color);
+  }
+
+  .buttongroup .button:active,
+  .buttongroup .button:hover,
+  .buttongroup .button:focus,
+  .buttongroup .button[data-selected='true'] {
+    background: var(--buttongroup-color--hover);
+    border-color: var(--buttongroup-color--hover);
+    color: var(--buttongroup-fgcolor--hover);
+  }
+
+  .buttongroup .button:first-of-type {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .buttongroup .button:not(:first-of-type):not(:last-of-type) {
+    border-radius: 0;
+  }
+
+  .buttongroup .button:last-of-type {
+    border-top-left-radius: 0;
+    border-right-width: 1px;
+    border-bottom-left-radius: 0;
+  }
+
+  .buttongroup--secondary .button {
+    background: var(--color--white);
+    border-color: var(--color--secondary);
+    border-right-width: 0;
+    color: var(--color--secondary);
+  }
+
+  .buttongroup--secondary .button:active,
+  .buttongroup--secondary .button:hover,
+  .buttongroup--secondary .button:focus,
+  .buttongroup--secondary .button[data-selected='true'] {
+    background: var(--color--secondary);
+    border-color: var(--color--secondary);
+    color: var(--fgcolor--secondary);
   }
 </style>
