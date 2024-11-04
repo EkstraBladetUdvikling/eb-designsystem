@@ -68,10 +68,10 @@
 
   $: mediaCssClass = media && media.className ? `${media.className} card-media` : 'card-media';
 
-  function toggleSave(evt: CustomEvent<any>): void {
+  function toggleSave(didSave: boolean): void {
     dispatch('save', {
       id,
-      save: evt.detail,
+      save: didSave,
     });
   }
 </script>
@@ -141,7 +141,10 @@
               {#if saved !== undefined}
                 <button
                   class="toggle-button card-meta-item padding-m--r padding-s--b"
-                  on:click|stopPropagation={toggleSave}
+                  on:click={(evt) => {
+                    evt.preventDefault();
+                    toggleSave(!saved);
+                  }}
                 >
                   {#if saved}
                     <Icon name="bookmark-solid" style="color: var(--fgcolor--list);" width={12} />
