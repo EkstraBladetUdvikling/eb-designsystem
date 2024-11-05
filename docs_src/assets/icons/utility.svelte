@@ -1,18 +1,7 @@
-<script lang="ts">
-  interface Props {
-    height?: number | 'auto';
-    width?: number | 'auto';
-  }
-
-  let { height = 'auto', width = 'auto' }: Props = $props();
-
-  const style = `
-    height: ${typeof height === 'number' ? `${height}px` : height};
-    width: ${typeof width === 'number' ? `${width}px` : width};`;
-</script>
+<script lang="ts"></script>
 
 <svg
-  {style}
+  style="width:60px; height:60px;"
   aria-hidden="true"
   focusable="false"
   data-prefix="fab"

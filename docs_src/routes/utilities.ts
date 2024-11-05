@@ -10,18 +10,18 @@ import Sizing from '../utilities/Sizing.svelte';
 import Text from '../utilities/Text.svelte';
 
 export const utilities = {
-  href: '/utilities',
+  path: '/utilities',
   routes: [
-    { component: Animation, href: '/utilities/animation', title: 'Animation' },
-    { component: Border, href: '/utilities/border', title: 'Border' },
-    { component: Color, href: '/utilities/color', title: 'Color' },
-    { component: Flex, href: '/utilities/flex', title: 'Flex' },
-    { component: Fonts, href: '/utilities/fonts', title: 'Fonts' },
-    { component: Grid, href: '/utilities/grid', title: 'Grid' },
-    { component: Helpers, href: '/utilities/helpers', title: 'Helpers' },
-    { component: Separator, href: '/utilities/separator', title: 'Separator' },
-    { component: Sizing, href: '/utilities/sizing', title: 'Sizing' },
-    { component: Text, href: '/utilities/text', title: 'Text' },
+    { component: Animation, path: '/utilities/animation', name: 'Animation' },
+    { component: Border, path: '/utilities/border', name: 'Border' },
+    { component: Color, path: '/utilities/color', name: 'Color' },
+    { component: Flex, path: '/utilities/flex', name: 'Flex' },
+    { component: Fonts, path: '/utilities/fonts', name: 'Fonts' },
+    { component: Grid, path: '/utilities/grid', name: 'Grid' },
+    { component: Helpers, path: '/utilities/helpers', name: 'Helpers' },
+    { component: Separator, path: '/utilities/separator', name: 'Separator' },
+    { component: Sizing, path: '/utilities/sizing', name: 'Sizing' },
+    { component: Text, path: '/utilities/text', name: 'Text' },
   ],
-  title: 'Utilities',
+  name: 'Utilities',
 };

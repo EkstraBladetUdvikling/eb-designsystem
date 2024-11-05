@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { link, location } from 'svelte-spa-router';
+  import { active, link } from '@dvcol/svelte-simple-router';
 
   import { menuItems } from '../routes/routes';
 </script>
@@ -17,12 +17,7 @@
   </div>
   <div class="sidebar-menuitem-container padding-l">
     <div class="sidebar-submenu-items">
-      <a
-        class="sidebar-item width-1of1 padding-m--t padding-m--rl"
-        class:active-item={'/' === $location}
-        href="#a11y"
-        use:link={{ disabled: false, href: '/' }}
-      >
+      <a class="sidebar-item width-1of1 padding-m--t padding-m--rl" class:active-item={active} href="/" use:link>
         Overview
       </a>
     </div>
@@ -30,8 +25,8 @@
   {#each menuItems as group}
     <div class="sidebar-menuitem-container padding-l">
       <div class="sidebar-submenu-title fontsize-small">
-        <a class:active-item={group.href === $location} href="#a11y" use:link={{ disabled: false, href: group.href }}>
-          {group.title}
+        <a class:active-item={active} href={group.path} use:link>
+          {group.name}
         </a>
       </div>
 
@@ -39,11 +34,11 @@
         {#each group.routes as menuItem}
           <a
             class="sidebar-item width-1of1 padding-m--t padding-m--rl"
-            class:active-item={menuItem.href === $location}
-            href="#a11y"
-            use:link={{ disabled: false, href: menuItem.href }}
+            class:active-item={active}
+            href={menuItem.path}
+            use:link
           >
-            {menuItem.title}
+            {menuItem.name}
           </a>
         {/each}
       </div>

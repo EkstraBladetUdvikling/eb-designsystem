@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { link } from 'svelte-spa-router';
+  import { link } from '@dvcol/svelte-simple-router';
 
   import { exportedfunctions } from '../routes/exportedfunctions';
 </script>
@@ -11,6 +11,6 @@
 </div>
 <ul>
   {#each exportedfunctions.routes as route}
-    <li><a href="#a11y" use:link={{ disabled: false, href: route.href }}>{route.title}</a></li>
+    <li><a href={route.path} use:link>{route.name}</a></li>
   {/each}
 </ul>

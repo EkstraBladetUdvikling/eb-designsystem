@@ -1,7 +1,7 @@
 import Svelte from '../guidelines/Svelte.svelte';
 
 export const guidelines = {
-  href: '/guidelines',
-  routes: [{ component: Svelte, href: '/guidelines/svelte', title: 'Svelte' }],
-  title: 'Guidelines',
+  path: '/guidelines',
+  routes: [{ component: Svelte, path: '/guidelines/svelte', name: 'Svelte' }],
+  name: 'Guidelines',
 };

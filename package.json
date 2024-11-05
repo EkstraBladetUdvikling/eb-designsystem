@@ -52,10 +52,10 @@
     "svelte-check": "^4.0.5",
     "svelte-preprocess": "^6.0.3",
     "svelte-prism": "^1.1.6",
-    "svelte-spa-router": "^4.0.1",
     "tippy.js": "^6.3.7"
   },
   "devDependencies": {
+    "@dvcol/svelte-simple-router": "^1.6.1",
     "@eslint/js": "^9.14.0",
     "eslint": "9.14.0",
     "globals": "^15.12.0",
