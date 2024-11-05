@@ -20,12 +20,12 @@
       <button
         class="button button--small"
         data-selected={$sourceType === 'svelte'}
-        on:click={() => changeSourceType('svelte')}>Svelte</button
+        onclick={() => changeSourceType('svelte')}>Svelte</button
       >
       <button
         class="button button--small"
         data-selected={$sourceType === 'html'}
-        on:click={() => changeSourceType('html')}>HTML</button
+        onclick={() => changeSourceType('html')}>HTML</button
       >
     </div>
   </nav>

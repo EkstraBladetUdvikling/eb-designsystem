@@ -44,7 +44,7 @@
       <tr>
         <td>content</td>
         <td>string / SvelteComponent</td>
-        <td />
+        <td></td>
         <td>Input text, HTML or SvelteComponent</td>
       </tr>
       <tr>
@@ -134,7 +134,7 @@
     <br />
     <button
       class="button"
-      on:click={() => {
+      onclick={() => {
         $tooltipStore['test-anchor'].show();
       }}
     >

@@ -1,6 +1,10 @@
 <script lang="ts">
-  export let height: number | 'auto' = 'auto';
-  export let width: number | 'auto' = 'auto';
+  interface Props {
+    height?: number | 'auto';
+    width?: number | 'auto';
+  }
+
+  let { height = 'auto', width = 'auto' }: Props = $props();
 
   const style = `
     height: ${typeof height === 'number' ? `${height}px` : height};

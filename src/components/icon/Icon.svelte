@@ -1,13 +1,22 @@
 <script lang="ts">
   import type { GraphicTypes, IconTypes } from '../../types/Icon';
 
-  export let className: string | undefined = undefined;
-  export let name: GraphicTypes | IconTypes | undefined = undefined;
-  export let width: number | string | undefined = undefined;
-  export let style: string | undefined = undefined;
+  interface Props {
+    className?: string | undefined;
+    name?: GraphicTypes | IconTypes | undefined;
+    width?: number | string | undefined;
+    style?: string | undefined;
+  }
 
-  $: cssWidth = width ? `--icon-size: ${width}px;` : '';
-  $: styleAttr = style ? `${cssWidth} ${style}` : cssWidth;
+  let {
+    className = undefined,
+    name = undefined,
+    width = undefined,
+    style = undefined
+  }: Props = $props();
+
+  let cssWidth = $derived(width ? `--icon-size: ${width}px;` : '');
+  let styleAttr = $derived(style ? `${cssWidth} ${style}` : cssWidth);
 
   const baseClass = className ? `icon-svg ${className}` : 'icon-svg';
 </script>
