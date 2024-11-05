@@ -5,7 +5,6 @@
   import { timePassedSince } from '../../functions/timepassedsince';
 
   import Icon from '../icon/Icon.svelte';
-  import Toggler from '../toggler/Toggler.svelte';
 
   import type { IMediaOptions } from './ArticleCard';
   import type { TCardType } from '../../types/Card';
@@ -69,10 +68,10 @@
 
   $: mediaCssClass = media && media.className ? `${media.className} card-media` : 'card-media';
 
-  function toggleSave(evt: CustomEvent<any>): void {
+  function toggleSave(didSave: boolean): void {
     dispatch('save', {
       id,
-      save: evt.detail,
+      save: didSave,
     });
   }
 </script>
@@ -87,7 +86,7 @@
       {/if}
       {#if loading}
         <div class="card-media">
-          <div class="card-image bg--graa4" style={loadingStyle} />
+          <div class="card-image bg--graa4" style={loadingStyle}></div>
         </div>
       {/if}
       {#if media}
@@ -140,20 +139,22 @@
                 </div>
               {/if}
               {#if saved !== undefined}
-                <Toggler
-                  className="card-meta-item padding-m--r padding-s--b"
-                  defaultState={saved}
-                  on:toggle={toggleSave}
+                <button
+                  class="toggle-button card-meta-item padding-m--r padding-s--b"
+                  on:click={(evt) => {
+                    evt.preventDefault();
+                    toggleSave(!saved);
+                  }}
                 >
-                  <slot slot="on">
+                  {#if saved}
                     <Icon name="bookmark-solid" style="color: var(--fgcolor--list);" width={12} />
                     <span class="padding-s--l" style="color: var(--fgcolor--list);">Gemt</span>
-                  </slot>
-                  <slot slot="off">
+                  {:else}
                     <Icon name="bookmark" style="color: var(--fgcolor--list);" width={12} />
                     <span class="padding-s--l" style="color: var(--fgcolor--list);">Gem</span>
-                  </slot>
-                </Toggler>
+                  {/if}
+                  <slot />
+                </button>
               {/if}
             </div>
           {/if}

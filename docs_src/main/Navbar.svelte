@@ -1,7 +1,6 @@
 <script lang="ts">
   import GithubIcon from '../assets/icons/github.svelte';
 
-  import { ButtonGroup } from '../../src';
   import { sourceType } from '../stores';
 
   import type { SourceTyping } from '../stores';
@@ -17,7 +16,7 @@
       <GithubIcon width={20} />
       <span class="flex flex-align--end padding-s--l">Github</span>
     </a>
-    <ButtonGroup type="secondary">
+    <div class="buttongroup buttongroup--secondary">
       <button
         class="button button--small"
         data-selected={$sourceType === 'svelte'}
@@ -28,7 +27,7 @@
         data-selected={$sourceType === 'html'}
         on:click={() => changeSourceType('html')}>HTML</button
       >
-    </ButtonGroup>
+    </div>
   </nav>
 </div>
 

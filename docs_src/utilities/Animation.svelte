@@ -1,17 +1,16 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
 
-  import CodeIcon from '../assets/icons/code.svelte';
-  import ComponentsIcon from '../assets/icons/components.svelte';
-  import { ArticleCard, Tab, TabContent, TabList, Tabs } from '../../src/';
+  import { ArticleCard } from '../../src/';
 
   const article = {
-    href: '#',
+    colorName: 'sport',
+    url: '#',
     media: {
-      src: 'https://via.placeholder.com/610x343&text=610x343',
+      src: 'https://loremflickr.com/640/360/city,people,nature,animal?random=0.09136348618909862',
     },
     section: 'Sport',
-    timestamp: '2 timer siden',
+    published: '2 timer siden',
     title: 'List element',
   };
 </script>
@@ -22,52 +21,34 @@
   <p>Animationer anvendes ved tilføjelse af class: <code>className="animation-navnPåAnimation"</code></p>
   <p>Denne class kan anvendes på tværs af vores komponenter</p>
   <p>
-    <b>OBS:</b> anvendes en animation direkte på et html-element skal det anvendes på følgende måde:
+    <b>OBS:</b> anvendes en animation direkte på et html-element skal det anvendes på følgende måde:<br />
     <code>class="animation-navnPåAnimation"</code>
   </p>
   <h3>Eksempler på animationer</h3>
-  <Tabs>
-    <div class="flex flex-justify--end width-1of1">
-      <TabList>
-        <Tab><ComponentsIcon width={16} /></Tab>
-        <Tab><CodeIcon width={16} /></Tab>
-      </TabList>
-    </div>
-    <TabContent>
-      <div class="flex grid-width--small">
-        <ArticleCard
-          className="animation-fogwave"
-          media={{ src: 'https://via.placeholder.com/610x343&text=610x343' }}
-          published={article.timestamp}
-          section={article.section}
-          title={article.title}
-          url={article.href}
-        />
-      </div>
-      <div class="flex grid-width--small">
-        <a href="#/utilities/animation" class="badge margin-s bg--bluedark animation-fogwave">Bandekriminialitet</a>
-        <a href="#/utilities/animation" class="badge margin-s bg--green animation-fogwave">Sport</a>
-        <a href="#/utilities/animation" class="badge margin-s bg--greendark animation-fogwave">Nicklas Bendtner</a>
-      </div>
-    </TabContent>
-    <TabContent>
-      <Prism
-        language="html"
-        source={`<ArticleCard
+  <div class="flex grid-width--small">
+    <ArticleCard className="animation-fogwave" {...article} />
+  </div>
+  <div class="flex grid-width--small">
+    <a href="#/utilities/animation" class="badge margin-s bg--bluedark animation-fogwave">Bandekriminialitet</a>
+    <a href="#/utilities/animation" class="badge margin-s bg--green animation-fogwave">Sport</a>
+    <a href="#/utilities/animation" class="badge margin-s bg--greendark animation-fogwave">Nicklas Bendtner</a>
+  </div>
+
+  <Prism
+    language="html"
+    source={`<ArticleCard
           className="animation-fogwave"
           href="{article.href}"
-          media="{{src:'https://via.placeholder.com/610x343&text=610x343'}}"
+          media="{{src:'https://loremflickr.com/640/360/city,people,nature,animal?random=0.09136348618909862'}}"
           section="{article.section}"
           timestamp="{article.timestamp}"
           title="{article.title}"
           />`}
-      />
-      <Prism
-        language="html"
-        source={`<a href="#" class="badge badge--primary animation-fogwave margin-s--r">Bandekriminialitet</a>`}
-      />
-    </TabContent>
-  </Tabs>
+  />
+  <Prism
+    language="html"
+    source={`<a href="#" class="badge badge--primary animation-fogwave margin-s--r">Bandekriminialitet</a>`}
+  />
 
   <h3>Overblik over animationer</h3>
   <div class="grid-width--large">

@@ -61,8 +61,8 @@
       <tr>
         <td>className</td>
         <td>string</td>
-        <td />
-        <td />
+        <td></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -75,7 +75,7 @@
 
 <HorizontalScroll className="margin-m--b">
   {#each multipleArt as article}
-    <ArticleCard {...article} width="350px" />
+    <ArticleCard {...article} width="350px" style="flex-shrink:0;" />
   {/each}
 </HorizontalScroll>
 
