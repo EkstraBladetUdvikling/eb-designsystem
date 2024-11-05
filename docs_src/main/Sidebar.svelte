@@ -17,27 +17,20 @@
   </div>
   <div class="sidebar-menuitem-container padding-l">
     <div class="sidebar-submenu-items">
-      <a class="sidebar-item width-1of1 padding-m--t padding-m--rl" class:active-item={active} href="/" use:link>
-        Overview
-      </a>
+      <a class="sidebar-item width-1of1 padding-m--t padding-m--rl" use:active href="/" use:link> Overview </a>
     </div>
   </div>
   {#each menuItems as group}
     <div class="sidebar-menuitem-container padding-l">
       <div class="sidebar-submenu-title fontsize-small">
-        <a class:active-item={active} href={group.path} use:link>
+        <a href={group.path} use:link use:active>
           {group.name}
         </a>
       </div>
 
       <div class="sidebar-submenu-items">
         {#each group.routes as menuItem}
-          <a
-            class="sidebar-item width-1of1 padding-m--t padding-m--rl"
-            class:active-item={active}
-            href={menuItem.path}
-            use:link
-          >
+          <a class="sidebar-item width-1of1 padding-m--t padding-m--rl" href={menuItem.path} use:link use:active>
             {menuItem.name}
           </a>
         {/each}
@@ -79,8 +72,5 @@
   }
   .sidebar-submenu-title {
     color: var(--color--graa3);
-  }
-  .active-item {
-    color: var(--color--red);
   }
 </style>

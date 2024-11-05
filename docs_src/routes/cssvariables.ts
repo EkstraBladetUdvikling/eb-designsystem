@@ -10,7 +10,7 @@ export const cssvariables = {
   routes: [
     { component: Colors, path: `${path}/colors`, name: 'Colors' },
     { component: Distance, path: `${path}/distance`, name: 'Distance' },
-    { component: Fonts, path: `${path}/fonts`, name: 'Fonts' },
+    { component: Fonts, path: `${path}/fonts`, name: 'Font variables' },
     { component: Misc, path: `${path}/misc`, name: 'Misc' },
   ],
   name: 'CSS variables',
