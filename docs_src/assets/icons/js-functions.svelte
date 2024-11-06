@@ -1,7 +1,7 @@
 <script lang="ts"></script>
 
 <svg
-  style="width:60px height:60px;"
+  style="width:60px; height:60px;"
   aria-hidden="true"
   focusable="false"
   data-prefix="fab"

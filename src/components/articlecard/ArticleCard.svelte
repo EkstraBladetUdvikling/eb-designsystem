@@ -1,7 +1,4 @@
 <script lang="ts">
-  import { createBubbler } from 'svelte/legacy';
-
-  const bubble = createBubbler();
   import { colorNames } from '@ekstra-bladet/eb-colors';
   import { createEventDispatcher } from 'svelte';
 
@@ -13,8 +10,9 @@
   import type { TCardType } from '../../types/Card';
 
 
-
   interface Props {
+    click?: (event: MouseEvent) => void;
+    save?: (save: boolean) => void;
     loading?: boolean;
     title?: string;
     breaking?: boolean;
@@ -39,6 +37,7 @@
   }
 
   let {
+    click,
     loading = false,
     title = '',
     breaking = false,
@@ -52,6 +51,7 @@
     media = undefined,
     premium = false,
     published = undefined,
+    save,
     saved = undefined,
     section = undefined,
     style = '',
@@ -97,17 +97,10 @@
   let cssClass = $derived(className ? `${className} ${baseClass}` : baseClass);
 
   let mediaCssClass = $derived(media && media.className ? `${media.className} card-media` : 'card-media');
-
-  function toggleSave(didSave: boolean): void {
-    dispatch('save', {
-      id,
-      save: didSave,
-    });
-  }
 </script>
 
 {#if loading || (!loading && title)}
-  <a href={url} class={cssClass} style={styleProp} data-breaking={breaking} onclick={bubble('click')}>
+  <a href={url} class={cssClass} style={styleProp} data-breaking={breaking} onclick={click}>
     <div class={innerClass}>
       {#if premium}
         <div class="premium-dogear {premiumMarkerSize ? `premium-dogear--${premiumMarkerSize}` : ''}">
@@ -168,12 +161,13 @@
                   <span class="padding-s--l">{timePassedSince(published)}</span>
                 </div>
               {/if}
-              {#if saved !== undefined}
+              {#if saved !== undefined && save}
                 <button
                   class="toggle-button card-meta-item padding-m--r padding-s--b"
                   onclick={(evt) => {
                     evt.preventDefault();
-                    toggleSave(!saved);
+                    evt.stopPropagation();
+                    save(!saved);
                   }}
                 >
                   {#if saved}
