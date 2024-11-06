@@ -1153,6 +1153,15 @@ var app = (function () {
 		current_queued_micro_tasks.push(fn);
 	}
 
+	/**
+	 * Synchronously run any queued tasks.
+	 */
+	function flush_tasks() {
+		if (is_micro_task_queued$1) {
+			process_micro_tasks();
+		}
+	}
+
 	/** @import { ProxyMetadata } from '#client' */
 	/** @typedef {{ file: string, line: number, column: number }} Location */
 
@@ -1279,6 +1288,11 @@ var app = (function () {
 	}
 
 	/** @import { ComponentContext, Derived, Effect, Reaction, Signal, Source, Value } from '#client' */
+
+	const FLUSH_MICROTASK = 0;
+	const FLUSH_SYNC = 1;
+	// Used for controlling the flush of effects.
+	let scheduler_mode = FLUSH_MICROTASK;
 	// Used for handling scheduling
 	let is_micro_task_queued = false;
 
@@ -1700,7 +1714,7 @@ var app = (function () {
 	 * @returns {void}
 	 */
 	function schedule_effect(signal) {
-		{
+		if (scheduler_mode === FLUSH_MICROTASK) {
 			if (!is_micro_task_queued) {
 				is_micro_task_queued = true;
 				queueMicrotask(process_deferred);
@@ -1789,6 +1803,56 @@ var app = (function () {
 			collected_effects.push(child);
 			process_effects(child, collected_effects);
 		}
+	}
+
+	/**
+	 * Internal version of `flushSync` with the option to not flush previous effects.
+	 * Returns the result of the passed function, if given.
+	 * @param {() => any} [fn]
+	 * @returns {any}
+	 */
+	function flush_sync(fn) {
+		var previous_scheduler_mode = scheduler_mode;
+		var previous_queued_root_effects = queued_root_effects;
+
+		try {
+			infinite_loop_guard();
+
+			/** @type {Effect[]} */
+			const root_effects = [];
+
+			scheduler_mode = FLUSH_SYNC;
+			queued_root_effects = root_effects;
+			is_micro_task_queued = false;
+
+			flush_queued_root_effects(previous_queued_root_effects);
+
+			var result = fn?.();
+
+			flush_tasks();
+			if (queued_root_effects.length > 0 || root_effects.length > 0) {
+				flush_sync();
+			}
+
+			flush_count = 0;
+			if (DEV) ;
+
+			return result;
+		} finally {
+			scheduler_mode = previous_scheduler_mode;
+			queued_root_effects = previous_queued_root_effects;
+		}
+	}
+
+	/**
+	 * Returns a promise that resolves once any pending state changes have been applied.
+	 * @returns {Promise<void>}
+	 */
+	async function tick() {
+		await Promise.resolve();
+		// By calling flush_sync we guarantee that any pending state changes are applied after one tick.
+		// TODO look into whether we can make flushing subsequent updates synchronously in the future.
+		flush_sync();
 	}
 
 	/**
@@ -13554,8 +13618,7 @@ var app = (function () {
 				ArticleCard(node_4, spread_props(
 					{
 						className: "margin-m--b",
-						cardType: "small-media",
-						saved: true
+						cardType: "small-media"
 					},
 					() => get(spread_element_1)
 				));
@@ -21098,7 +21161,7 @@ window.addEventListener(
 	mark_module_start();
 	Tooltip$1[FILENAME] = "src/components/tooltip/Tooltip.svelte";
 
-	var root$h = add_locations(template(`<div><!></div>`), Tooltip$1[FILENAME], [[41, 0]]);
+	var root$h = add_locations(template(`<div><!></div>`), Tooltip$1[FILENAME], [[40, 0]]);
 
 	function Tooltip$1($$anchor, $$props) {
 		check_target(new.target);
@@ -21134,7 +21197,7 @@ window.addEventListener(
 			}
 		});
 
-		afterUpdate(() => {
+		tick().then(() => {
 			if (instance) {
 				instance.setProps(tippyOptions());
 			}
@@ -22147,6 +22210,7 @@ window.addEventListener(
 	    ...cssvariables.routes,
 	];
 	const options = {
+	    hash: true,
 	    routes,
 	};
 
@@ -22470,9 +22534,9 @@ window.addEventListener(
 	mark_module_start();
 	Sidebar[FILENAME] = "docs_src/main/Sidebar.svelte";
 
-	var root_2 = add_locations(template(`<a class="sidebar-item width-1of1 padding-m--t padding-m--rl svelte-1hxd992"> </a>`), Sidebar[FILENAME], [[31, 10]]);
+	var root_2 = add_locations(template(`<a class="sidebar-item width-1of1 padding-m--t padding-m--rl svelte-1158qlm"> </a>`), Sidebar[FILENAME], [[31, 10]]);
 
-	var root_1$1 = add_locations(template(`<div class="sidebar-menuitem-container padding-l svelte-1hxd992"><div class="sidebar-submenu-title fontsize-small svelte-1hxd992"><a class="svelte-1hxd992"> </a></div> <div class="sidebar-submenu-items"></div></div>`), Sidebar[FILENAME], [
+	var root_1$1 = add_locations(template(`<div class="sidebar-menuitem-container padding-l svelte-1158qlm"><div class="sidebar-submenu-title fontsize-small svelte-1158qlm"><a class="svelte-1158qlm"> </a></div> <div class="sidebar-submenu-items"></div></div>`), Sidebar[FILENAME], [
 		[
 			22,
 			4,
@@ -22483,7 +22547,7 @@ window.addEventListener(
 		]
 	]);
 
-	var root = add_locations(template(`<div id="sidebar-menu" class="sidebar-container height-100vh bg--white margin-l--r svelte-1hxd992"><div class="flex flex-justify--around sidebar-logo-container padding-m--rl svelte-1hxd992"><div><a href="#/" class="svelte-1hxd992"><img alt="" src="ekstrabladet.svg" style="height:70px;"></a></div> <div class="flex-item flex-item--center"><p class="flex--grow width-1of1 color--graa1 fontweight-bold">Design system</p></div></div> <div class="sidebar-menuitem-container padding-l svelte-1hxd992"><div class="sidebar-submenu-items"><a class="sidebar-item width-1of1 padding-m--t padding-m--rl svelte-1hxd992" href="/">Overview</a></div></div> <!></div>`), Sidebar[FILENAME], [
+	var root = add_locations(template(`<div id="sidebar-menu" class="sidebar-container height-100vh bg--white margin-l--r svelte-1158qlm"><div class="flex flex-justify--around sidebar-logo-container padding-m--rl svelte-1158qlm"><div><a href="#/" class="svelte-1158qlm"><img alt="" src="ekstrabladet.svg" style="height:70px;"></a></div> <div class="flex-item flex-item--center"><p class="flex--grow width-1of1 color--graa1 fontweight-bold">Design system</p></div></div> <div class="sidebar-menuitem-container padding-l svelte-1158qlm"><div class="sidebar-submenu-items"><a class="sidebar-item width-1of1 padding-m--t padding-m--rl svelte-1158qlm" href="/">Overview</a></div></div> <!></div>`), Sidebar[FILENAME], [
 		[
 			5,
 			0,

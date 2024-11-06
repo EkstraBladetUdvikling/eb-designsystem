@@ -52,5 +52,6 @@ export const routes = [
 ];
 
 export const options = {
+  hash: true,
   routes,
 } as const;

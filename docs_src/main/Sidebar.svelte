@@ -73,4 +73,7 @@
   .sidebar-submenu-title {
     color: var(--color--graa3);
   }
+  .sidebar-item:global([data-active='true']) {
+    color: var(--color--red);
+  }
 </style>

@@ -1,8 +1,7 @@
-<!-- @migration-task Error while migrating Svelte code: Can't migrate code with afterUpdate. Please migrate by hand. -->
 <script lang="ts">
   import type { TTippyCustomOptions, TTooltipInstance } from '../../types/tooltipAction';
 
-  import { afterUpdate, onDestroy, onMount } from 'svelte';
+  import { onDestroy, onMount, tick } from 'svelte';
 
   import { tooltipRender } from '../../functions/tooltipRender';
   import { tooltipStore } from '../../functions/tooltipStore';
@@ -31,7 +30,7 @@
     }
   });
 
-  afterUpdate(() => {
+  tick().then(() => {
     if (instance) {
       instance.setProps(tippyOptions);
     }
