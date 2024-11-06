@@ -1,4 +1,3 @@
-import type { SvelteComponent } from 'svelte';
 import type { Instance, Props, RenderProps } from 'tippy.js/headless';
 
 export type TTippyCustomOptions = Partial<Omit<Props, keyof RenderProps>>;

@@ -4,6 +4,10 @@
   import { ArticleCard } from '../../src';
   import { rdmArticleData } from '../util';
   import { sourceType } from '../stores';
+
+  const save = (save: boolean) => {
+    console.log('saved?', save);
+  };
 </script>
 
 <h1 class="color--eb">Article Card</h1>
@@ -145,7 +149,7 @@
     </tbody>
   </table>
 
-  <ArticleCard {...rdmArticleData()} />
+  <ArticleCard {save} {...rdmArticleData()} />
 
   <Prism language="html">
     {`<ArticleCard {...article} />`}
@@ -153,8 +157,8 @@
 
   <h3>Small-media</h3>
 
-  <ArticleCard className="margin-m--b" cardType="small-media" {...rdmArticleData(250, 120)} />
-  <ArticleCard cardType="small-media--reverse" {...rdmArticleData(250, 120)} />
+  <ArticleCard {save} className="margin-m--b" cardType="small-media" {...rdmArticleData(250, 120)} />
+  <ArticleCard {save} cardType="small-media--reverse" {...rdmArticleData(250, 120)} />
 
   <Prism language="html">
     {`<ArticleCard className="small-media" {...article} />
@@ -163,9 +167,9 @@
 
   <h3>Loading placeholder</h3>
 
-  <ArticleCard loading={true} colorName="graa7" className="margin-m--b" />
-  <ArticleCard loading={true} cardType="small-media" colorName="graa7" className="margin-m--b" />
-  <ArticleCard loading={true} cardType="small-media--reverse" colorName="graa7" className="margin-m--b" />
+  <ArticleCard {save} loading={true} colorName="graa7" className="margin-m--b" />
+  <ArticleCard {save} loading={true} cardType="small-media" colorName="graa7" className="margin-m--b" />
+  <ArticleCard {save} loading={true} cardType="small-media--reverse" colorName="graa7" className="margin-m--b" />
 
   <Prism language="html">
     {`<ArticleCard loading={true} colorName="graa7" />
