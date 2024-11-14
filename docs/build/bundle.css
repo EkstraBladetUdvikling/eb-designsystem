@@ -3582,17 +3582,18 @@ html {
 }
 
 /* stylelint-disable selector-pseudo-class-no-unknown */
-div[data-transition-id=container].svelte-17v5qnt {
+div[data-transition-id=container].svelte-g6ungj {
   view-transition-name: var(--container-transition-name);
 }
-div[data-transition-id=container].svelte-17v5qnt:has(div[data-transition-id="wrapper"]:not(:only-child)) {
+div[data-transition-id=container].svelte-g6ungj:has(div[data-transition-id="wrapper"]:not(:only-child)) {
   position: relative;
 }
-div[data-transition-id=container].svelte-17v5qnt:has(div[data-transition-id="wrapper"]:not(:only-child)) div[data-transition-id=wrapper]:where(.svelte-17v5qnt):not(:where(.svelte-17v5qnt):first-child) {
+div[data-transition-id=container].svelte-g6ungj:has(div[data-transition-id="wrapper"]:not(:only-child)) div[data-transition-id=wrapper]:where(.svelte-g6ungj):not(:first-child) {
   position: absolute;
 }
-div[data-transition-id=container].svelte-17v5qnt:has(div[data-transition-id="wrapper"]:not(:only-child)) div[data-transition-id=wrapper]:where(.svelte-17v5qnt):not(:where(.svelte-17v5qnt):first-child):not(:where(.svelte-17v5qnt):last-child) {
-  display: none;
+div[data-transition-id=container].svelte-g6ungj:has(div[data-transition-id="wrapper"]:not(:only-child)) div[data-transition-id=wrapper]:where(.svelte-g6ungj):not(:first-child):not(:last-child) {
+  visibility: hidden;
+  pointer-events: none;
 }
 
   .debug.svelte-1x3z273 {
