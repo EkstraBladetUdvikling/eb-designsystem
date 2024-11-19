@@ -6,7 +6,7 @@
   import { sourceType } from '../stores';
 
   const save = (save: boolean) => {
-    console.log('saved?', save);
+    return save;
   };
 </script>
 
@@ -132,14 +132,14 @@
         <td>height</td>
         <td>string</td>
         <td></td>
-        <td></td></tr
-      >
+        <td></td>
+      </tr>
       <tr>
         <td>src <span class="badge badge--small" data-type="primary">required</span></td>
         <td>string</td>
         <td></td>
-        <td></td></tr
-      >
+        <td></td>
+      </tr>
       <tr>
         <td>width</td>
         <td>string</td>
