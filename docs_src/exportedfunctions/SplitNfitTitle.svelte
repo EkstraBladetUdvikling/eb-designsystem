@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { link } from 'svelte-spa-router';
+  import { link } from '@dvcol/svelte-simple-router';
   import Prism from 'svelte-prism';
 
   import { exportedfunctions } from '../routes/exportedfunctions';
 
-  const splitRoute = exportedfunctions.routes.find((exfunc) => exfunc.title === 'SplitTitle') || {
-    href: '',
-    title: '',
+  const splitRoute = exportedfunctions.routes.find((exfunc) => exfunc.name === 'SplitTitle') || {
+    name: '',
+    path: '',
   };
 </script>
 
@@ -14,8 +14,7 @@
 
 <p>
   Uses
-  <a href="#a11y" use:link={{ disabled: false, href: splitRoute.href }}> {splitRoute.title}</a> to split the title, and
-  then uses
+  <a href={splitRoute.path} use:link> {splitRoute.name}</a> to split the title, and then uses
   <a href="https://www.npmjs.com/package/fitty" target="_blank" rel="noreferrer">fitty</a> to adjust font-size to make the
   lines fit the width of the parent element.
 </p>

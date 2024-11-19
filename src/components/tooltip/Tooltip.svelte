@@ -1,22 +1,20 @@
 <script lang="ts">
-  import type { TTippyCustomOptions, TTooltipInstance } from '../../types/tooltipAction';
+  import type { ITooltipOptions, TTooltipInstance } from '../../types/tooltipAction';
 
-  import { afterUpdate, onDestroy, onMount } from 'svelte';
+  import { onDestroy, onMount, tick } from 'svelte';
 
   import { tooltipRender } from '../../functions/tooltipRender';
   import { tooltipStore } from '../../functions/tooltipStore';
 
-  export let allowHTML: boolean = false; // Allow HTML
-  export let anchorNode: HTMLElement;
-  export let content: string | any; // Text or Svelte Component
-  export let props = {}; // Props passed to chosen component
-  export let tippyOptions: TTippyCustomOptions = {}; // Additional TippyJS props
+  type ToolTipProps = ITooltipOptions & { anchorNode: HTMLElement };
+
+  let { allowHTML = false, anchorNode, content, props = $bindable({}), tippyOptions = {} }: ToolTipProps = $props();
 
   let tooltipNode: HTMLDivElement;
   let instance: TTooltipInstance | null = null;
-  $: textOnly = typeof content === 'string' || content instanceof String;
+  let textOnly = $state(typeof content === 'string' || content instanceof String);
 
-  $: svelteComponentContent = content as any;
+  let SvelteComponentContent = $state(content as any);
 
   onMount(() => {
     instance = tooltipRender(anchorNode, tooltipNode, tippyOptions);
@@ -30,7 +28,7 @@
     }
   });
 
-  afterUpdate(() => {
+  tick().then(() => {
     if (instance) {
       instance.setProps(tippyOptions);
     }
@@ -50,7 +48,7 @@
 
 <div bind:this={tooltipNode} class:tooltip-textonly={textOnly}>
   {#if !textOnly}
-    <svelte:component this={svelteComponentContent} {...props} />
+    <SvelteComponentContent {...props} />
   {:else if allowHTML}
     {@html content}
   {:else}

@@ -1,22 +1,24 @@
 <script lang="ts">
   import './css/designsystem.css';
 
-  import Router from 'svelte-spa-router';
+  import { RouterContext, RouterView } from '@dvcol/svelte-simple-router';
 
-  import { routes } from './routes/routes';
+  import { options } from './routes/routes';
 
   import Icons from '../docs/svg/symbol/icons.svelte';
   import Navbar from './main/Navbar.svelte';
   import Sidebar from './main/Sidebar.svelte';
 </script>
 
-<Navbar />
-<Sidebar />
-<div class="content-container padding-xl">
-  <Router {routes} />
-</div>
+<RouterContext {options}>
+  <Navbar />
+  <Sidebar />
+  <div class="content-container padding-xl">
+    <RouterView></RouterView>
+  </div>
 
-<Icons />
+  <Icons />
+</RouterContext>
 
 <style>
   .content-container {

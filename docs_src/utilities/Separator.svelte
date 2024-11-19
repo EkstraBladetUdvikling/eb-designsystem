@@ -13,9 +13,9 @@
 <div class="flex">
   <div class="width-1of3 padding-m box-shadow border-radius">
     <p>Header</p>
-    <div class="separator" />
+    <div class="separator"></div>
     <p>Content</p>
-    <div class="separator" />
+    <div class="separator"></div>
     <p>Footer</p>
   </div>
 </div>

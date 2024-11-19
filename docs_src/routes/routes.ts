@@ -11,42 +11,47 @@ import GuidelinesHome from '../guidelines/Home.svelte';
 import Home from '../main/Home.svelte';
 import UtilitiesHome from '../utilities/Home.svelte';
 
-import type { SvelteComponent } from 'svelte';
+export const menuItems = [guidelines, components, utilities, exportedfunctions, cssvariables];
 
-interface IRoute {
-  component: typeof SvelteComponent<any>;
-  href: string;
-  title: string;
-}
-
-export type TRoutes = IRoute[];
-
-export interface IMenuGroups {
-  href: string;
-  routes: TRoutes;
-  title: string;
-}
-
-// Fills the object to create a SPA routing
-const spaRoutes = {
-  '/': Home,
-  [guidelines.href]: GuidelinesHome,
-  [components.href]: ComponentsHome,
-  [utilities.href]: UtilitiesHome,
-  [exportedfunctions.href]: FunctionsHome,
-  [cssvariables.href]: CssVariablesHome,
-};
-
-[
+export const routes = [
+  {
+    name: 'Home',
+    path: '/',
+    component: Home,
+  },
+  {
+    name: guidelines.name,
+    path: guidelines.path,
+    component: GuidelinesHome,
+  },
+  {
+    name: components.name,
+    path: components.path,
+    component: ComponentsHome,
+  },
+  {
+    name: utilities.name,
+    path: utilities.path,
+    component: UtilitiesHome,
+  },
+  {
+    name: exportedfunctions.name,
+    path: exportedfunctions.path,
+    component: FunctionsHome,
+  },
+  {
+    name: cssvariables.name,
+    path: cssvariables.path,
+    component: CssVariablesHome,
+  },
   ...guidelines.routes,
   ...components.routes,
   ...utilities.routes,
   ...exportedfunctions.routes,
   ...cssvariables.routes,
-].forEach((route) => {
-  spaRoutes[route.href] = route.component;
-});
+];
 
-export const routes = spaRoutes;
-
-export const menuItems: IMenuGroups[] = [guidelines, components, utilities, exportedfunctions, cssvariables];
+export const options = {
+  hash: true,
+  routes,
+} as const;

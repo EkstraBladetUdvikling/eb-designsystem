@@ -1,6 +1,5 @@
 <script lang="ts">
   import { colorNames } from '@ekstra-bladet/eb-colors';
-  import { createEventDispatcher } from 'svelte';
 
   import { timePassedSince } from '../../functions/timepassedsince';
 
@@ -9,75 +8,77 @@
   import type { IMediaOptions } from './ArticleCard';
   import type { TCardType } from '../../types/Card';
 
-  export let loading: boolean = false;
-
-  export let title: string = '';
-
-  export let breaking: boolean = false;
-  export let cardType: TCardType | undefined = undefined;
-  export let className: string | undefined = undefined;
-  export let colorName: string | undefined = undefined;
-  export let premiumMarkerSize: 'small' | undefined = undefined;
-  export let id: number | undefined = undefined;
-  export let update: boolean = false;
-  export let maxLines: number | undefined = undefined;
-  export let media: Partial<IMediaOptions> | undefined = undefined;
-  export let premium: boolean = false;
-  export let published: string | undefined = undefined;
-  export let saved: boolean | undefined = undefined;
-  export let section: string | undefined = undefined;
-  export let style: string = '';
-  export let truncateTitle: boolean = false;
-  export let url: string | undefined = undefined;
-  export let videoIcon: boolean = false;
-  export let width: string = '100%';
-
-  const dispatch = createEventDispatcher();
-  let baseClass = `card-mode card-mode--article`;
-
-  let loadingStyle = 'padding-top: 56.25%; width: 100%;';
-  if (loading) {
-    baseClass = `${baseClass} animation-fogwave`;
-
-    switch (cardType) {
-      case 'small-media':
-      case 'small-media--reverse':
-        loadingStyle = 'width: 200px;height: 115px;';
-        break;
-    }
+  interface Props {
+    click?: (event: MouseEvent) => void;
+    save?: (save: boolean) => void;
+    loading?: boolean;
+    title?: string;
+    breaking?: boolean;
+    cardType?: TCardType | undefined;
+    className?: string | undefined;
+    colorName?: string | undefined;
+    premiumMarkerSize?: 'small' | undefined;
+    update?: boolean;
+    maxLines?: number | undefined;
+    media?: Partial<IMediaOptions> | undefined;
+    premium?: boolean;
+    published?: string | undefined;
+    saved?: boolean | undefined;
+    section?: string | undefined;
+    style?: string;
+    truncateTitle?: boolean;
+    url?: string | undefined;
+    videoIcon?: boolean;
+    width?: string;
   }
 
-  let innerClass = 'card-inner';
+  let {
+    click,
+    loading = false,
+    title = '',
+    breaking = false,
+    cardType = undefined,
+    className = undefined,
+    colorName = undefined,
+    premiumMarkerSize = undefined,
+    update = false,
+    maxLines = undefined,
+    media = undefined,
+    premium = false,
+    published = undefined,
+    save,
+    saved = undefined,
+    section = undefined,
+    style = '',
+    truncateTitle = false,
+    url = undefined,
+    videoIcon = false,
+    width = '100%',
+  }: Props = $props();
 
-  switch (cardType) {
-    case 'small-media':
-      innerClass = `${innerClass} card--small-media`;
-      break;
-    case 'small-media--reverse':
-      innerClass = `${innerClass} card--small-media card--small-media--reverse`;
-      break;
-  }
+  let baseClass = `card-mode card-mode--article ${loading ? 'animation-fogwave' : ''}`;
+
+  let loadingStyle = `padding-top: 56.25%; ${cardType?.includes('small-media') ? 'width: 200px;height: 115px;' : 'width: 100%;'}`;
+
+  let innerClass = `card-inner ${cardType === 'small-media' ? 'card--small-media' : ''} ${
+    cardType === 'small-media--reverse' ? 'card--small-media card--small-media--reverse' : ''
+  }`;
 
   const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
 
-  $: styleProp = `${style}; --color--list: var(--color--${
-    breaking ? colorNames.breaking : colorName
-  }); --fgcolor--list: var(--fgcolor--${breaking ? colorNames.breaking : colorName}); --card-width: ${width};`;
+  let styleProp = $derived(
+    `${style}; --color--list: var(--color--${
+      breaking ? colorNames.breaking : colorName
+    }); --fgcolor--list: var(--fgcolor--${breaking ? colorNames.breaking : colorName}); --card-width: ${width};`,
+  );
 
-  $: cssClass = className ? `${className} ${baseClass}` : baseClass;
+  let cssClass = $derived(className ? `${className} ${baseClass}` : baseClass);
 
-  $: mediaCssClass = media && media.className ? `${media.className} card-media` : 'card-media';
-
-  function toggleSave(didSave: boolean): void {
-    dispatch('save', {
-      id,
-      save: didSave,
-    });
-  }
+  let mediaCssClass = $derived(media && media.className ? `${media.className} card-media` : 'card-media');
 </script>
 
 {#if loading || (!loading && title)}
-  <a href={url} class={cssClass} style={styleProp} data-breaking={breaking} on:click>
+  <a href={url} class={cssClass} style={styleProp} data-breaking={breaking} onclick={click}>
     <div class={innerClass}>
       {#if premium}
         <div class="premium-dogear {premiumMarkerSize ? `premium-dogear--${premiumMarkerSize}` : ''}">
@@ -138,12 +139,13 @@
                   <span class="padding-s--l">{timePassedSince(published)}</span>
                 </div>
               {/if}
-              {#if saved !== undefined}
+              {#if saved !== undefined && save}
                 <button
                   class="toggle-button card-meta-item padding-m--r padding-s--b"
-                  on:click={(evt) => {
+                  onclick={(evt) => {
                     evt.preventDefault();
-                    toggleSave(!saved);
+                    evt.stopPropagation();
+                    save(!saved);
                   }}
                 >
                   {#if saved}
@@ -153,7 +155,6 @@
                     <Icon name="bookmark" style="color: var(--fgcolor--list);" width={12} />
                     <span class="padding-s--l" style="color: var(--fgcolor--list);">Gem</span>
                   {/if}
-                  <slot />
                 </button>
               {/if}
             </div>

@@ -68,7 +68,7 @@ onMount(() => {
   horizontalScrollHandler.init(scrollItemContainer, scrollContainer);
 });
 
-afterUpdate(() => {
+tick().then(() => {
   horizontalScrollHandler.update();
 });`}
   </Prism>

@@ -1,16 +1,20 @@
 <script lang="ts">
   import Icon from '../icon/Icon.svelte';
 
-  export let delay = 150;
-  export let size = 18;
+  interface Props {
+    delay?: number;
+    size?: number;
+  }
 
-  let isLoading = false;
+  let { delay = 150, size = 18 }: Props = $props();
+
+  let isLoading = $state(false);
 
   setTimeout(() => {
     isLoading = true;
   }, delay);
 
-  $: style = `--icon-size: ${size}px;`;
+  let style = $derived(`--icon-size: ${size}px;`);
 </script>
 
 {#if isLoading}

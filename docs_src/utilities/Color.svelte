@@ -10,7 +10,7 @@
 <h1 class="color--eb">Color</h1>
 
 <h3>Text color</h3>
-<button class="button button--cancel margin-m--b" on:click={moveToAllColors} style="cursor: pointer;">
+<button class="button button--cancel margin-m--b" onclick={moveToAllColors} style="cursor: pointer;">
   View all colors available
 </button>
 
@@ -40,7 +40,7 @@
 </Prism>
 
 <h3>Background color</h3>
-<button class="button button--cancel margin-m--b" on:click={moveToAllColors} style="cursor: pointer;">
+<button class="button button--cancel margin-m--b" onclick={moveToAllColors} style="cursor: pointer;">
   View all colors available
 </button>
 

@@ -9,9 +9,9 @@
   import { Icon } from '../../src';
   import { sourceType } from '../stores';
 
-  let iconColor = 'black';
+  let iconColor = $state('black');
 
-  let size = 24;
+  let size = $state(24);
 
   const decrement = () => {
     return --size;
@@ -42,13 +42,13 @@
       <tr>
         <td>className</td>
         <td>string</td>
-        <td />
+        <td></td>
         <td>Custom class names</td>
       </tr>
       <tr>
         <td>name <span class="badge badge--small" data-type="primary">required</span></td>
         <td>IconTypes</td>
-        <td />
+        <td></td>
         <td>Only names listed beneath are valid</td>
       </tr>
       <tr>
@@ -66,7 +66,7 @@
       <tr>
         <td>style</td>
         <td>string</td>
-        <td />
+        <td></td>
         <td>Custom styling</td>
       </tr>
     </tbody>
@@ -95,11 +95,11 @@
       {/each}
     </select>
   </div>
-  <button class="button button--cancel margin-m--r" on:click={decrement}>
+  <button class="button button--cancel margin-m--r" onclick={decrement}>
     <Icon name="angle-left" width={18} />
   </button>
   <p>Size: <input type="number" bind:value={size} style="width: 45px;" />px</p>
-  <button class="button button--cancel margin-m--l" on:click={increment}>
+  <button class="button button--cancel margin-m--l" onclick={increment}>
     <Icon name="angle-right" width={18} />
   </button>
 </div>

@@ -1,13 +1,7 @@
-<script lang="ts">
-  export let height: number | 'auto' = 'auto';
-  export let width: number | 'auto' = 'auto';
-  const style = `
-    height: ${typeof height === 'number' ? `${height}px` : height};
-    width: ${typeof width === 'number' ? `${width}px` : width};`;
-</script>
+<script lang="ts"></script>
 
 <svg
-  {style}
+  style="width: 45px;height: 60px;"
   aria-hidden="true"
   focusable="false"
   data-prefix="fab"

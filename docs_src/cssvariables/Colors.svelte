@@ -1,17 +1,17 @@
 <script lang="ts">
-  import { link } from 'svelte-spa-router';
+  import { link } from '@dvcol/svelte-simple-router';
   import Prism from 'svelte-prism';
 
   import { utilities } from '../routes/utilities';
 
-  const colorRoute = utilities.routes.find((util) => util.title === 'Color') || { href: '' };
+  const colorRoute = utilities.routes.find((util) => util.name === 'Color') || { path: '' };
 </script>
 
 <h1>Colors</h1>
 
 <div>
   <p>Named colors for ease of use</p>
-  <p><a href="#a11y" use:link={{ disabled: false, href: colorRoute.href }}>See list of colors</a></p>
+  <p><a href={colorRoute.path} use:link>See list of colors</a></p>
 </div>
 
 <Prism language="css">
