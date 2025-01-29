@@ -3596,35 +3596,33 @@ div[data-transition-id=container].svelte-g6ungj:has(div[data-transition-id="wrap
   pointer-events: none;
 }
 
-  .debug.svelte-1x3z273 {
+  .debug.svelte-10j0lt3 {
     width: fit-content;
     margin: 1rem 0;
     padding: 1rem;
-    background-color: color-mix(in srgb, transparent, white 10%);
     border-radius: 0.5rem;
 
-    h3:where(.svelte-1x3z273) {
+    h3:where(.svelte-10j0lt3) {
       margin-top: 0;
     }
   }
 
-  .error.svelte-1x3z273 {
+  .error.svelte-10j0lt3 {
     color: red;
   }
 
 
-  .debug.svelte-1iqdhn8 {
+  .debug.svelte-1utuibo {
     width: fit-content;
     margin: 1rem 0;
     padding: 1rem;
-    background-color: color-mix(in srgb, transparent, white 10%);
     border-radius: 0.5rem;
 
-    h3:where(.svelte-1iqdhn8) {
+    h3:where(.svelte-1utuibo) {
       margin-top: 0;
     }
 
-    .route:where(.svelte-1iqdhn8) {
+    .route:where(.svelte-1utuibo) {
       color: orangered;
       font-weight: bold;
     }
