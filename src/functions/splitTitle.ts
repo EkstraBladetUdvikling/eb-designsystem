@@ -1,15 +1,117 @@
 type TDirection = 1 | -1;
 
+function combineNumbers(arr: number[], minChars: number) {
+  const result: number[] = [];
+  const idxResult: (number | number[])[] = [];
+  let i = 0;
+
+  while (i < arr.length) {
+    let combined = arr[i];
+
+    if (combined >= minChars) {
+      result.push(combined);
+      idxResult.push(i);
+      i++;
+      continue;
+    }
+
+    let j = i + 1;
+
+    // look in past to find best combo
+    const last = result.length ? result[result.length - 1] : 0;
+    const backwardsCombination = last + arr[i];
+
+    while (j < arr.length && combined < minChars) {
+      combined += arr[j];
+      j++;
+    }
+
+    const closest =
+      last !== 0
+        ? [combined, backwardsCombination].sort((a, b) => Math.abs(minChars - a) - Math.abs(minChars - b))[0]
+        : combined;
+
+    if (closest === combined && combined >= minChars) {
+      result.push(closest);
+
+      idxResult.push([i, j - 1]);
+      i = j;
+    } else {
+      result[result.length - 1] = backwardsCombination;
+
+      if (Array.isArray(idxResult[idxResult.length - 1])) {
+        (idxResult[idxResult.length - 1] as number[])[1] = i;
+      } else {
+        idxResult[idxResult.length - 1] = [idxResult[idxResult.length - 1] as number, i];
+      }
+
+      i++;
+    }
+  }
+
+  return idxResult;
+}
+
+function splitIntoLines(sentence: string, minChars: number) {
+  const split = sentence.split(' ');
+  const lines: string[] = [];
+
+  // Find words with length less than minChars and combine them with the next or previous word depending on the length of the current line
+  const shorts = split.filter((word) => word.length < minChars);
+
+  const hasNumber: number[] = [];
+  split.forEach((word, idx) => {
+    if (/\d/.test(word)) {
+      hasNumber.push(idx);
+    }
+  });
+
+  if (hasNumber.length) {
+    hasNumber.forEach((idx) => {
+      split[idx] = split[idx] + ' ' + split[idx + 1];
+      split.splice(idx + 1, 1);
+    });
+  }
+
+  if (!shorts.length) return split;
+
+  const wordLengths = split.map((word) => word.length);
+  const idxResult = combineNumbers(wordLengths, minChars);
+
+  idxResult.forEach((idx) => {
+    if (Array.isArray(idx)) {
+      const [start, end] = idx;
+
+      // const combined = split.slice(start, end);
+      const combined = split.slice(start, end + 1);
+
+      lines.push(combined.join(' '));
+    } else {
+      lines.push(split[idx]);
+    }
+  });
+
+  return lines;
+}
+
+interface ISplitTitleOptions {
+  input: string;
+  minChars: number;
+  minLines: number;
+  maxLines: number;
+}
+
 /**
  *
  * @param input {string}
  * @param minLines {number}
  * @param maxLines {number}
- * @returns {srtring[]}
+ * @returns {string[]}
  */
-export function splitTitle(input: string, minLines: number = 1, maxLines: number = 4): string[] {
+export function splitTitle(options: ISplitTitleOptions): string[] {
+  const { input, minChars = 3, minLines = 1, maxLines = 4 } = options;
   // Split word in array
-  const wordsArray = input.split(' ');
+  const wordsArray = splitIntoLines(input, minChars);
   const arrayOfLengths = wordsArray.map((x) => x.length);
 
   // Calculate optimal number of lines
@@ -19,7 +121,7 @@ export function splitTitle(input: string, minLines: number = 1, maxLines: number
   if (numLines >= arrayOfLengths.length) return wordsArray;
 
   const partition_between = Array.from({ length: numLines - 1 }).map(
-    (_x, i) => (i + 1) * Math.floor(arrayOfLengths.length / numLines),
+    (_x, i) => (i + 1) * Math.floor(arrayOfLengths.length / numLines)
   );
 
   const average_height =
@@ -36,7 +138,7 @@ export function splitTitle(input: string, minLines: number = 1, maxLines: number
     const starts: number[] = [0].concat(...partition_between);
     const ends: number[] = partition_between.concat(arrayOfLengths.length);
     const partitions: number[][] = Array.from({ length: numLines }).map((_x, i) =>
-      arrayOfLengths.slice(starts[i], ends[i]),
+      arrayOfLengths.slice(starts[i], ends[i])
     );
     // Calculate the sum of wordlengths (heights)
     const heights: number[] = partitions.map((partition) => partition.reduce((arr, cur) => arr + cur, 0));
