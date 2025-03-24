@@ -7,15 +7,17 @@
 <p>The created lines is returned as an array of strings.</p>
 <code>
   <div>
-    <div><b>@param input</b> string <em>required</em></div>
-    <div><b>@param minLines</b> number = 1</div>
-    <div><b>@param maxLines</b> number = 4</div>
+    <div><b>@param ISplitTitleOptions</b> string <em>required</em></div>
+    <div class="padding-m--l"><b>options</b> string <em>required</em></div>
+    <div class="padding-m--l"><b>minChars?</b> number = 3</div>
+    <div class="padding-m--l"><b>minLines?</b> number = 1</div>
+    <div class="padding-m--l"><b>maxLines?</b> number = 4</div>
   </div>
 </code>
 
 <Prism language="js">
   {`import { splitTitle } from '@ekstra-bladet/designsystem/svelte/functions/splitTitle';
 
-const lines = splitTitle('Split this into lines', 2, 3);
+const lines = splitTitle({ input: 'Split this into lines', minChars: 4, minLines: 2, maxLines: 3 });
 `}
 </Prism>

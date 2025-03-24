@@ -19,7 +19,7 @@ const defaultFittyOptions: FittyOptions = {
 
 function fit(titleParts: HTMLSpanElement[], fittyOptions: FittyOptions = defaultFittyOptions): void {
   const cleanFittyOptions = Object.fromEntries(
-    Object.entries(fittyOptions).filter(([, fittyOptionsVal]) => fittyOptionsVal !== undefined),
+    Object.entries(fittyOptions).filter(([, fittyOptionsVal]) => fittyOptionsVal !== undefined)
   );
 
   titleParts.forEach((titlePart) => {
@@ -51,11 +51,11 @@ const defaultSplitNfitOptions: ISplitNfitOptions = {
 
 export async function splitNfitTitle(
   title: string,
-  options: ISplitNfitOptions = defaultSplitNfitOptions,
+  options: ISplitNfitOptions = defaultSplitNfitOptions
 ): Promise<DocumentFragment> {
   const { maxLines = 10, maxSize, minLines = 1, minSize, multiLine, observeMutations, safe = false } = options;
 
-  const titleSplit: string[] = splitTitle(title, minLines, maxLines);
+  const titleSplit: string[] = splitTitle({ input: title, minLines, maxLines });
 
   const titleFrag = document.createDocumentFragment();
   const titleSpans: HTMLSpanElement[] = [];
