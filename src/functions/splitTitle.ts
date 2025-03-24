@@ -52,7 +52,7 @@ function combineNumbers(arr: number[], minChars: number) {
   return idxResult;
 }
 
-function splitIntoLines(sentence: string, minChars = 4) {
+function splitIntoLines(sentence: string, minChars: number) {
   const split = sentence.split(' ');
   const lines: string[] = [];
 
@@ -94,16 +94,24 @@ function splitIntoLines(sentence: string, minChars = 4) {
   return lines;
 }
 
+interface ISplitTitleOptions {
+  input: string;
+  minChars: number;
+  minLines: number;
+  maxLines: number;
+}
+
 /**
  *
  * @param input {string}
  * @param minLines {number}
  * @param maxLines {number}
- * @returns {srtring[]}
+ * @returns {string[]}
  */
-export function splitTitle(input: string, minLines: number = 1, maxLines: number = 4): string[] {
+export function splitTitle(options: ISplitTitleOptions): string[] {
+  const { input, minChars = 3, minLines = 1, maxLines = 4 } = options;
   // Split word in array
-  const wordsArray = splitIntoLines(input);
+  const wordsArray = splitIntoLines(input, minChars);
   const arrayOfLengths = wordsArray.map((x) => x.length);
 
   // Calculate optimal number of lines
