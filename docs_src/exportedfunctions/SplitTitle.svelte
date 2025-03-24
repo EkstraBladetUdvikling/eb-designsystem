@@ -6,12 +6,14 @@
 <p>Splits the title into lines based on given min and max number of lines.</p>
 <p>The created lines is returned as an array of strings.</p>
 <code>
-  <div>
-    <div><b>@param ISplitTitleOptions</b> string <em>required</em></div>
-    <div class="padding-m--l"><b>options</b> string <em>required</em></div>
-    <div class="padding-m--l"><b>minChars?</b> number = 3</div>
-    <div class="padding-m--l"><b>minLines?</b> number = 1</div>
-    <div class="padding-m--l"><b>maxLines?</b> number = 4</div>
+  <div class="padding-xl--l padding-m--tb">
+    <b>@param ISplitTitleOptions</b> object
+    <div class="padding-l--l">
+      <div><b>@prop options</b> string <em>required</em></div>
+      <div><b>@prop minChars?</b> number = 3</div>
+      <div><b>@prop minLines?</b> number = 1</div>
+      <div><b>@prop maxLines?</b> number = 4</div>
+    </div>
   </div>
 </code>
 
