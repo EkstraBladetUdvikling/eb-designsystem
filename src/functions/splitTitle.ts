@@ -96,9 +96,9 @@ function splitIntoLines(sentence: string, minChars: number) {
 
 interface ISplitTitleOptions {
   input: string;
-  minChars: number;
-  minLines: number;
-  maxLines: number;
+  minChars?: number;
+  minLines?: number;
+  maxLines?: number;
 }
 
 /**
