@@ -68,8 +68,10 @@ function splitIntoLines(sentence: string, minChars: number) {
 
   if (hasNumber.length) {
     hasNumber.forEach((idx) => {
-      split[idx] = split[idx] + ' ' + split[idx + 1];
-      split.splice(idx + 1, 1);
+      if (idx + 1 < split.length) {
+        split[idx] = split[idx] + ' ' + split[idx + 1];
+        split.splice(idx + 1, 1);
+      }
     });
   }
 
@@ -102,10 +104,13 @@ interface ISplitTitleOptions {
 }
 
 /**
+ * Splits a title into multiple lines based on specified constraints
  *
- * @param input {string}
- * @param minLines {number}
- * @param maxLines {number}
+ * @param options - An object containing the following properties:
+ *   - input: The input string to split.
+ *   - minChars: The minimum number of characters per line (default is 3).
+ *   - minLines: The minimum number of lines (default is 1).
+ *   - maxLines: The maximum number of lines (default is 4).
  * @returns {string[]}
  */
 export function splitTitle(options: ISplitTitleOptions): string[] {
