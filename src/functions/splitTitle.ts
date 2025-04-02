@@ -68,8 +68,10 @@ function splitIntoLines(sentence: string, minChars: number) {
 
   if (hasNumber.length) {
     hasNumber.forEach((idx) => {
-      split[idx] = split[idx] + ' ' + split[idx + 1];
-      split.splice(idx + 1, 1);
+      if (idx + 1 < split.length) {
+        split[idx] = split[idx] + ' ' + split[idx + 1];
+        split.splice(idx + 1, 1);
+      }
     });
   }
 
