@@ -338,10 +338,10 @@
     enabled "2.0.x"
     kuler "^2.0.0"
 
-"@ekstra-bladet/eb-colors@4.0.6":
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/@ekstra-bladet/eb-colors/-/eb-colors-4.0.6.tgz#29ce97cf119b1687eaf0e268094be1ae920b9d68"
-  integrity sha512-3Ulyj2du+UviypOcsuE2WvwIFKdpfed1LtvDwDubtR4US55uEfeKcXppy7RBbRGr3PXyailj7/iERNLJomp2Nw==
+"@ekstra-bladet/eb-colors@5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@ekstra-bladet/eb-colors/-/eb-colors-5.0.0.tgz#6cf57808c5a2f82a569354bea84e0e65d0c501c5"
+  integrity sha512-ICDZyILXG3Cys8CYixLOssHz2lK4PvEx2C/OR3MnX1qLreNlSSXT3mdoO5GcHpmZqaVQW+H0OqJT3pn4fDvDeQ==
 
 "@eslint-community/eslint-utils@^4.2.0", "@eslint-community/eslint-utils@^4.4.0":
   version "4.4.0"
