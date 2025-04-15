@@ -1,18 +1,18 @@
 /* Font-face for Breaking */
 @font-face {
   font-family: "Breaking";
-  src: url("../breakingfont/BreakingVAR-Regular.woff2") format("woff2");
-  src: url("../breakingfont/BreakingVAR-Regular.woff") format("woff");
-  src: url("../breakingfont/BreakingVAR-Regular.ttf") format("truetype");
+  src: url("./breakingfont/BreakingVAR-Regular.woff2") format("woff2");
+  src: url("./breakingfont/BreakingVAR-Regular.woff") format("woff");
+  src: url("./breakingfont/BreakingVAR-Regular.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Breaking";
-  src: url("../breakingfont/BreakingVAR-Italic.woff2") format("woff2");
-  src: url("../breakingfont/BreakingVAR-Italic.woff") format("woff");
-  src: url("../breakingfont/BreakingVAR-Italic.ttf") format("truetype");
+  src: url("./breakingfont/BreakingVAR-Italic.woff2") format("woff2");
+  src: url("./breakingfont/BreakingVAR-Italic.woff") format("woff");
+  src: url("./breakingfont/BreakingVAR-Italic.ttf") format("truetype");
   font-weight: 100 900;
   font-style: italic;
 }
