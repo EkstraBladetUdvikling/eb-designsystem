@@ -8,7 +8,7 @@
 
 <Prism language="css">
   {`
-  --fontfamily--primary: "Work Sans", var(--fontfamily--secondary);
+  --fontfamily--primary: "Breaking", var(--fontfamily--secondary);
   --fontfamily--secondary: Arial, Helvetica, sans-serif;
   `}
 </Prism>
