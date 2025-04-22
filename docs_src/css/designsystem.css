@@ -465,6 +465,9 @@ template,[hidden] {
   --rgb-color--sex-samliv: 244, 85, 49;
   --rgb-fgcolor--sex-samliv: 255, 255, 255;
 
+  --rgb-color--side9: 244, 85, 49;
+  --rgb-fgcolor--side9: 255, 255, 255;
+
   --rgb-color--krimi: 61, 67, 82;
   --rgb-fgcolor--krimi: 255, 255, 255;
 
@@ -590,15 +593,18 @@ template,[hidden] {
   --color--sex-samliv: #f45531;
   --fgcolor--sex-samliv: #fff;
 
+  --color--side9: #f45531;
+  --fgcolor--side9: #fff;
+
   --color--krimi: #3d4352;
   --fgcolor--krimi: #fff;
 
   --color--politik: #0059db;
   --fgcolor--politik: #fff;
-  --box-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);
+  --box-shadow: 0 5px 18px rgba(var(--rgb-color--black), 0.1);
 
   --border-radius--small: 5px;
-  --box-shadow--dark: 0 5px 18px rgba(var(--rgb-color--black), .6);
+  --box-shadow--dark: 0 5px 18px rgba(var(--rgb-color--black), 0.6);
   --color--accept: var(--color--green);
   --color--cancel: var(--color--red);
   --color--default: var(--color--bluedark);
@@ -616,17 +622,17 @@ template,[hidden] {
   --fgcolor--default: var(--fgcolor--bluedark);
   --fgcolor--primary: var(--fgcolor--bruger);
   --fgcolor--secondary: var(--fgcolor--graa3);
-  --fontfamily--primary: "Work Sans", var(--fontfamily--secondary);
+  --fontfamily--primary: "Breaking", var(--fontfamily--secondary);
   --fontfamily--secondary: Arial, Helvetica, sans-serif;
   --fs-rem-large: 1.125rem; /* 18px */
   --fs-rem-medium: 1rem; /* 16px */
-  --fs-rem-small: .875rem; /* 14px */
+  --fs-rem-small: 0.875rem; /* 14px */
   --fs-rem-xlarge: 1.25rem; /* 20px */
-  --fs-rem-xsmall: .75rem; /* 12px */
+  --fs-rem-xsmall: 0.75rem; /* 12px */
   --fs-rem-xxlarge: 1.875rem; /* 30px */
-  --fs-rem-xxsmall: .625rem; /* 10px */
+  --fs-rem-xxsmall: 0.625rem; /* 10px */
   --fs-rem-xxxlarge: 2.25rem; /* 36px */
-  --fs-rem-xxxsmall: .4375rem; /* 7px */
+  --fs-rem-xxxsmall: 0.4375rem; /* 7px */
   --fs-rem-xxxxlarge: 3.125rem; /* 50px */
   --fs-large: var(--fs-rem-large);
   --fs-medium: var(--fs-rem-medium);
@@ -659,27 +665,27 @@ template,[hidden] {
 @media (max-width: 767px) {
   :root {
     --distance-large: 15px;
-  --distance-medium: 10px;
-  --distance-small: 5px;
-  --distance-standard: 10px;
-  --distance-xlarge: 20px;
-  --distance-xxlarge: 30px;
+    --distance-medium: 10px;
+    --distance-small: 5px;
+    --distance-standard: 10px;
+    --distance-xlarge: 20px;
+    --distance-xxlarge: 30px;
     --fs-large: var(--fs-rem-medium);
-  --fs-medium: var(--fs-rem-medium);
-  --fs-small: var(--fs-rem-xsmall);
-  --fs-xlarge: var(--fs-rem-xlarge);
-  --fs-xsmall: var(--fs-rem-xxsmall);
-  --fs-xxlarge: var(--fs-rem-xxlarge);
-  --fs-xxsmall: var(--fs-rem-xxxsmall);
-  --fs-xxxlarge: var(--fs-rem-xxxlarge);
+    --fs-medium: var(--fs-rem-medium);
+    --fs-small: var(--fs-rem-xsmall);
+    --fs-xlarge: var(--fs-rem-xlarge);
+    --fs-xsmall: var(--fs-rem-xxsmall);
+    --fs-xxlarge: var(--fs-rem-xxlarge);
+    --fs-xxsmall: var(--fs-rem-xxxsmall);
+    --fs-xxxlarge: var(--fs-rem-xxxlarge);
     --fs-ads: var(--fs-xxsmall);
-  --fs-bodytext: var(--fs-large);
-  --fs-caption: var(--fs-small);
-  --fs-quote: var(--fs-xxlarge);
-  --fs-showmore: var(--fs-medium);
-  --fs-subtitle: var(--fs-xlarge);
-  --fs-timestamp: var(--fs-xsmall);
-  --fs-title: var(--fs-xxxlarge);
+    --fs-bodytext: var(--fs-large);
+    --fs-caption: var(--fs-small);
+    --fs-quote: var(--fs-xxlarge);
+    --fs-showmore: var(--fs-medium);
+    --fs-subtitle: var(--fs-xlarge);
+    --fs-timestamp: var(--fs-xsmall);
+    --fs-title: var(--fs-xxxlarge);
   }
 
   /**
@@ -3112,6 +3118,11 @@ html {
   color: var(--fgcolor--sex-samliv);
 }
 
+.bg--side9 {
+  background: var(--color--side9);
+  color: var(--fgcolor--side9);
+}
+
 .bg--krimi {
   background: var(--color--krimi);
   color: var(--fgcolor--krimi);
@@ -3280,6 +3291,10 @@ html {
 
 .color--sex-samliv {
   color: var(--color--sex-samliv);
+}
+
+.color--side9 {
+  color: var(--color--side9);
 }
 
 .color--krimi {
