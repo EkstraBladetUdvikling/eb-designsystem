@@ -1,0 +1,39 @@
+@import "prism.css";
+@import "table.css";
+@import "build/bundle.css";
+
+/* Font-face for Breaking */
+@font-face {
+  font-family: "Breaking";
+  src: url("/assets/fonts/BreakingVAR-Regular.woff2") format("woff2");
+  src: url("/assets/fonts/BreakingVAR-Regular.woff") format("woff");
+  src: url("/assets/fonts/BreakingVAR-Regular.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Breaking";
+  src: url("/assets/fonts/BreakingVAR-Italic.woff2") format("woff2");
+  src: url("/assets/fonts/BreakingVAR-Italic.woff") format("woff");
+  src: url("/assets/fonts/BreakingVAR-Italic.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+a {
+  color: #e3141d;
+  text-decoration: none;
+}
+div,
+section {
+  box-sizing: border-box;
+}
+h1,
+h2 {
+  line-height: normal;
+  margin: 0;
+}
+.eb-logo {
+  width: 40px;
+}
