@@ -656,18 +656,18 @@ template,[hidden] {
 
 @font-face {
   font-family: "Breaking";
-  src: url("../docs_src/assets/fonts/BreakingVAR-Regular.woff2") format("woff2");
-  src: url("../docs_src/assets/fonts/BreakingVAR-Regular.woff") format("woff");
-  src: url("../docs_src/assets/fonts/BreakingVAR-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/BreakingVAR-Regular.woff2") format("woff2");
+  src: url("../assets/fonts/BreakingVAR-Regular.woff") format("woff");
+  src: url("../assets/fonts/BreakingVAR-Regular.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Breaking";
-  src: url("../docs_src/assets/fonts/BreakingVAR-Italic.woff2") format("woff2");
-  src: url("../docs_src/assets/fonts/BreakingVAR-Italic.woff") format("woff");
-  src: url("../docs_src/assets/fonts/BreakingVAR-Italic.ttf") format("truetype");
+  src: url("../assets/fonts/BreakingVAR-Italic.woff2") format("woff2");
+  src: url("../assets/fonts/BreakingVAR-Italic.woff") format("woff");
+  src: url("../assets/fonts/BreakingVAR-Italic.ttf") format("truetype");
   font-weight: 100 900;
   font-style: italic;
 }
