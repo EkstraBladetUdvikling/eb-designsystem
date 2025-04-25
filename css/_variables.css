@@ -22,7 +22,7 @@
   --fgcolor--primary: var(--fgcolor--lightblue);
   --fgcolor--secondary: var(--fgcolor--graa3);
   --fontfamily--primary: "Breaking", var(--fontfamily--secondary);
-  --fontfamily--secondary: Arial, Helvetica, sans-serif;
+  --fontfamily--secondary: "Breaking Text", Arial, Helvetica, sans-serif;
   --fs-rem-large: 1.125rem; /* 18px */
   --fs-rem-medium: 1rem; /* 16px */
   --fs-rem-small: 0.875rem; /* 14px */
@@ -54,7 +54,7 @@
   */
 :root {
   --fs-ads: var(--fs-xxsmall);
-  --fs-bodytext: var(--fs-large);
+  --fs-bodytext: var(--fs-medium);
   --fs-caption: var(--fs-small);
   --fs-quote: var(--fs-xxlarge);
   --fs-showmore: var(--fs-medium);
