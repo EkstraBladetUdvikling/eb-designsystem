@@ -5,7 +5,7 @@
   --button-height: 36px;
   --button-height--big: 45px;
   --button-height--small: 30px;
-  --button-color: var(--color--default);
+  --button-color: var(--color--section, var(--color--default));
 }
 
 .button {
