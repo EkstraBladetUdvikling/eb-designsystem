@@ -623,7 +623,7 @@ template,[hidden] {
   --fgcolor--primary: var(--fgcolor--lightblue);
   --fgcolor--secondary: var(--fgcolor--graa3);
   --fontfamily--primary: "Breaking", var(--fontfamily--secondary);
-  --fontfamily--secondary: Arial, Helvetica, sans-serif;
+  --fontfamily--secondary: "Breaking Text", Arial, Helvetica, sans-serif;
   --fs-rem-large: 1.125rem; /* 18px */
   --fs-rem-medium: 1rem; /* 16px */
   --fs-rem-small: 0.875rem; /* 14px */
@@ -643,7 +643,7 @@ template,[hidden] {
   --fs-xxsmall: var(--fs-rem-xxsmall);
   --fs-xxxlarge: var(--fs-rem-xxxxlarge);
   --fs-ads: var(--fs-xxsmall);
-  --fs-bodytext: var(--fs-large);
+  --fs-bodytext: var(--fs-medium);
   --fs-caption: var(--fs-small);
   --fs-quote: var(--fs-xxlarge);
   --fs-showmore: var(--fs-medium);
@@ -2915,7 +2915,19 @@ html {
 }
 
 .lineheight-m {
-  line-height: 1.5em;
+  line-height: 1.625em;
+}
+
+.lineheight-l {
+  line-height: 1.333em;
+}
+
+.lineheight-xl {
+  line-height: 1.428em;
+}
+
+.lineheight-xxl {
+  line-height: 1em;
 }
 
 .bg--red {

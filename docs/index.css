@@ -21,6 +21,91 @@
   font-style: italic;
 }
 
+/* Font-face for Breaking Text */
+@font-face {
+  font-family: "Breaking Text";
+  src: url("/assets/fonts/BreakingText-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Breaking Text";
+  src: url("/assets/fonts/BreakingText-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Breaking Text";
+  src: url("/assets/fonts/BreakingText-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Breaking Text";
+  src: url("/assets/fonts/BreakingTextSemiCondensed-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: semi-condensed;
+}
+
+@font-face {
+  font-family: "Breaking Text";
+  src: url("/assets/fonts/BreakingTextSemiCondensed-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: semi-condensed;
+}
+
+@font-face {
+  font-family: "Breaking Text";
+  src: url("/assets/fonts/BreakingTextSemiCondensed-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: semi-condensed;
+}
+
+@font-face {
+  font-family: "Breaking Text";
+  src: url("/assets/fonts/BreakingTextSemiCondensed-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: semi-condensed;
+}
+
+@font-face {
+  font-family: "Breaking Text";
+  src: url("/assets/fonts/BreakingTextSemiCondensed-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: semi-condensed;
+}
+
+@font-face {
+  font-family: "Breaking Text";
+  src: url("/assets/fonts/BreakingTextSemiExpanded-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: semi-expanded;
+}
+
+@font-face {
+  font-family: "Breaking Text";
+  src: url("/assets/fonts/BreakingTextSemiExpanded-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: semi-expanded;
+}
+
+@font-face {
+  font-family: "Breaking Text";
+  src: url("/assets/fonts/BreakingTextSemiExpanded-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: semi-expanded;
+}
+
 a {
   color: #e3141d;
   text-decoration: none;
