@@ -101,10 +101,6 @@
   <h3>Colors</h3>
 
   <div class="flex margin-m--b">
-    <button class="button" style="--button-color: var(--color--livescore);">Livescore</button>
-    <button class="button button--solid margin-m--l" style="--button-color: var(--color--livescore);">Livescore</button>
-  </div>
-  <div class="flex margin-m--b">
     <button class="button" style="--button-color: var(--color--eb);">Eb</button>
     <button class="button button--solid margin-m--l" style="--button-color: var(--color--eb);">Eb</button>
   </div>
@@ -118,23 +114,10 @@
       Underholdning
     </button>
   </div>
-  <div class="flex margin-m--b">
-    <button class="button" style="--button-color: var(--color--lime); --button-text-color: var(--color--bluedark);">
-      Lime/bluedark
-    </button>
-    <button
-      class="button button--solid margin-m--l"
-      style="--button-color: var(--color--lime); --button-text-color: var(--color--bluedark);"
-    >
-      Lime/bluedark
-    </button>
-  </div>
 
   <Prism language="html">
-    {`<button class="button" style="--button-color: var(--color--livescore);"></button>
-<button class="button" style="--button-color: var(--color--eb);"></button>
+    {`<button class="button" style="--button-color: var(--color--eb);"></button>
 <button class="button" style="--button-color: var(--color--blue);"></button>
-<button class="button" style="--button-color: var(--color--underholdning);"></button>
-<button class="button" style="--button-color: var(--color--lime); --button-text-color: var(--color--bluedark);"></button>`}
+<button class="button" style="--button-color: var(--color--underholdning);"></button>`}
   </Prism>
 {/if}
