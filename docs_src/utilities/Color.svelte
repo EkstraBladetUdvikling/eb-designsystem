@@ -21,7 +21,7 @@
     <div class="flex flex--column padding-xl width-1of3 margin-l bg--white color--sport">color--sport</div>
     <div class="flex flex--column padding-xl width-1of3 margin-l bg--white color--eb">color--eb</div>
     <div class="flex flex--column padding-xl width-1of3 margin-l bg--white color--orangedark">color--orangedark</div>
-    <div class="flex flex--column padding-xl width-1of3 margin-l bg--white color--nyheder">color--nyheder</div>
+    <div class="flex flex--column padding-xl width-1of3 margin-l bg--black color--nyheder">color--nyheder</div>
     <div class="flex flex--column padding-xl width-1of3 margin-l bg--white color--section">
       color--section
       <em>(inherit the color of the section i.e sport)</em>

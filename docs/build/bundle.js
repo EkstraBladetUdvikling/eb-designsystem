@@ -18133,7 +18133,7 @@ var app = (function () {
 				add_location(div3, file$z, 21, 4, 852);
 				attr_dev(div4, "class", "flex flex--column padding-xl width-1of3 margin-l bg--white color--orangedark");
 				add_location(div4, file$z, 22, 4, 954);
-				attr_dev(div5, "class", "flex flex--column padding-xl width-1of3 margin-l bg--white color--nyheder");
+				attr_dev(div5, "class", "flex flex--column padding-xl width-1of3 margin-l bg--black color--nyheder");
 				add_location(div5, file$z, 23, 4, 1072);
 				add_location(em0, file$z, 26, 6, 1299);
 				attr_dev(div6, "class", "flex flex--column padding-xl width-1of3 margin-l bg--white color--section");
@@ -23008,8 +23008,8 @@ var app = (function () {
   --fgcolor--cancel: var(--fgcolor--red);
   --color--default: var(--color--bluedark);
   --fgcolor--default: var(--fgcolor--bluedark);
-  --color--primary: var(--color--bruger);
-  --fgcolor--primary: var(--fgcolor--bruger);
+  --color--primary: var(--color--lightblue);
+  --fgcolor--primary: var(--fgcolor--lightblue);
   --color--secondary: var(--color--graa3);
   --fgcolor--secondary: var(--fgcolor--graa3);
   ` + "";
