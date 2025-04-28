@@ -54,7 +54,7 @@
   */
 :root {
   --fs-ads: var(--fs-xxsmall);
-  --fs-bodytext: var(--fs-medium);
+  --fs-bodytext: var(--fs-xlarge);
   --fs-caption: var(--fs-small);
   --fs-quote: var(--fs-xxlarge);
   --fs-showmore: var(--fs-medium);
@@ -77,7 +77,7 @@
   * SMARTPHONE Fontsizes pixel
   */
   :root {
-    --fs-large: var(--fs-rem-medium);
+    --fs-large: var(--fs-rem-large);
     --fs-medium: var(--fs-rem-medium);
     --fs-small: var(--fs-rem-xsmall);
     --fs-xlarge: var(--fs-rem-xlarge);
