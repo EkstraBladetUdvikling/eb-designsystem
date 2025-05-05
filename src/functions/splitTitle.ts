@@ -115,72 +115,45 @@ interface ISplitTitleOptions {
  */
 export function splitTitle(options: ISplitTitleOptions): string[] {
   const { input, minChars = 3, minLines = 1, maxLines = 4 } = options;
-  // Split word in array
-  const wordsArray = splitIntoLines(input, minChars);
-  const arrayOfLengths = wordsArray.map((x) => x.length);
-
-  // Calculate optimal number of lines
-  const numLines: number = Math.min(Math.max(Math.ceil(input.length / 20), minLines), maxLines);
-
+  const tokens = splitIntoLines(input, minChars);
+  const numLines = Math.min(Math.max(Math.ceil(input.length / 20), minLines), maxLines);
   if (numLines <= 1) return [input];
-  if (numLines >= arrayOfLengths.length) return wordsArray;
+  if (numLines >= tokens.length) return tokens;
 
-  const partition_between = Array.from({ length: numLines - 1 }).map(
-    (_x, i) => (i + 1) * Math.floor(arrayOfLengths.length / numLines)
-  );
+  const lengths = tokens.map((t) => t.length);
+  const avgLineLength = (input.length + 1) / numLines + 1;
 
-  const average_height =
-    arrayOfLengths.reduce((arr, cur) => {
-      return arr + cur;
-    }) / numLines;
-  let bestScore: number | null = null;
-  let bestPartitions: number[][] = [];
-  let count = 0;
-  let noImprovementsCount: number = 0;
+  const prefixSums = [0];
+  lengths.reduce((prefix, cur, i) => {
+    prefixSums[i + 1] = prefix + cur;
+    return prefixSums[i + 1];
+  }, 0);
 
-  // Safelimit number of iterations to find optimal partion
-  while (count < 20) {
-    const starts: number[] = [0].concat(...partition_between);
-    const ends: number[] = partition_between.concat(arrayOfLengths.length);
-    const partitions: number[][] = Array.from({ length: numLines }).map((_x, i) =>
-      arrayOfLengths.slice(starts[i], ends[i])
-    );
-    // Calculate the sum of wordlengths (heights)
-    const heights: number[] = partitions.map((partition) => partition.reduce((arr, cur) => arr + cur, 0));
+  const dp = Array.from({ length: tokens.length + 1 }, () => Array(numLines + 1).fill(Infinity));
+  dp[0][0] = 0.0;
 
-    const absHeightDiffs: number[] = heights.map((x) => Math.abs(average_height - x));
-    const worstPartitionIndex: number = absHeightDiffs.indexOf(Math.max(...absHeightDiffs));
-    const worstHeightDiff: number = average_height - heights[worstPartitionIndex];
+  const lookup = Array.from({ length: tokens.length + 1 }, () => Array(numLines + 1).fill(-1));
 
-    if (bestScore === null || Math.abs(worstHeightDiff) < bestScore) {
-      bestScore = Math.abs(worstHeightDiff);
-      bestPartitions = partitions;
-      noImprovementsCount = 0;
-    } else {
-      noImprovementsCount += 1;
+  for (let i = 1; i <= tokens.length; i++) {
+    for (let k = 0; k < i; k++) {
+      const loss = Math.abs(avgLineLength - (prefixSums[i] - prefixSums[k] + (i - k - 1)));
+      for (let j = 1; j <= numLines; j++) {
+        const totalLoss = Math.max(dp[k][j - 1], loss);
+        if (totalLoss < dp[i][j]) {
+          dp[i][j] = totalLoss;
+          lookup[i][j] = k;
+        }
+      }
     }
-
-    if (worstHeightDiff === 0 || noImprovementsCount > 5 || count > 5) {
-      // We got the best partion!
-      return bestPartitions.map((x: number[]) => x.map(() => wordsArray.shift()).join(' '));
-    }
-
-    count++;
-
-    const move: TDirection = worstHeightDiff < 0 ? -1 : 1;
-
-    const boundToMove: number =
-      worstPartitionIndex === 0
-        ? 0
-        : worstPartitionIndex === numLines - 1
-        ? numLines - 2
-        : worstHeightDiff < 0 !== heights[worstPartitionIndex - 1] > heights[worstPartitionIndex + 1]
-        ? worstPartitionIndex - 1
-        : worstPartitionIndex;
-
-    const direction: TDirection = boundToMove < worstPartitionIndex ? -1 : 1;
-    partition_between[boundToMove] += move * direction;
   }
 
-  return [input];
+  const result = [];
+  let i = tokens.length;
+  for (let j = numLines; j > 0; j--) {
+    const k = lookup[i][j];
+    result.unshift(tokens.slice(k, i).join(' '));
+    i = k;
+  }
+
+  return result;
 }
