@@ -9,7 +9,7 @@
 <Prism language="css">
   {`
   --fontfamily--primary: "Breaking", var(--fontfamily--secondary);
-  --fontfamily--secondary: Arial, Helvetica, sans-serif;
+  --fontfamily--secondary: "Breaking Text", Arial, Helvetica, sans-serif;
   `}
 </Prism>
 
@@ -22,11 +22,12 @@
   --fs-rem-small: .875rem; /* 14px */
   --fs-rem-xlarge: 1.25rem; /* 20px */
   --fs-rem-xsmall: .75rem; /* 12px */
-  --fs-rem-xxlarge: 1.875rem; /* 30px */
+  --fs-rem-xxlarge: 1.5rem; /* 24px */
   --fs-rem-xxsmall: .625rem; /* 10px */
-  --fs-rem-xxxlarge: 2.25rem; /* 36px */
+  --fs-rem-xxxlarge: 1.75rem; /* 28px */
   --fs-rem-xxxsmall: .4375rem; /* 7px */
-  --fs-rem-xxxxlarge: 3.125rem; /* 50px */
+  --fs-rem-xxxxlarge: 2.5rem; /* 40px */
+  --fs-rem-xxxxxlarge: 5rem; /* 80px */
   --fs-large: var(--fs-rem-large);
   --fs-medium: var(--fs-rem-medium);
   --fs-small: var(--fs-rem-small);
@@ -47,9 +48,9 @@
   --fs-caption: var(--fs-small);
   --fs-quote: var(--fs-xxlarge);
   --fs-showmore: var(--fs-medium);
-  --fs-subtitle: var(--fs-xlarge);
+  --fs-subtitle: var(--fs-xxlarge);
   --fs-timestamp: var(--fs-xsmall);
-  --fs-title: var(--fs-xxxlarge);
+  --fs-title: var(--fs-xxxxxlarge);
   `}
 </Prism>
 
@@ -57,14 +58,14 @@
 
 <Prism language="css">
   {`
-  --fs-large: var(--fs-rem-medium);
+  --fs-large: var(--fs-rem-large);
   --fs-medium: var(--fs-rem-medium);
   --fs-small: var(--fs-rem-xsmall);
   --fs-xlarge: var(--fs-rem-xlarge);
   --fs-xsmall: var(--fs-rem-xxsmall);
   --fs-xxlarge: var(--fs-rem-xxlarge);
   --fs-xxsmall: var(--fs-rem-xxxsmall);
-  --fs-xxxlarge: var(--fs-rem-xxxlarge);
+  --fs-xxxlarge: var(--fs-rem-xxxxlarge);
   `}
 </Prism>
 

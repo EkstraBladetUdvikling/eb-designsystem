@@ -17,6 +17,7 @@ textarea {
 h1 {
   font-size: var(--fs-title);
   line-height: normal;
+  font-stretch: semi-condensed;
 }
 
 h2 {

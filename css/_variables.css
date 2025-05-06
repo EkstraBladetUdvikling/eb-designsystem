@@ -46,8 +46,9 @@
   --fs-xsmall: var(--fs-rem-xsmall);
   --fs-xxlarge: var(--fs-rem-xxlarge);
   --fs-xxsmall: var(--fs-rem-xxsmall);
-  --fs-xxxlarge: var(--fs-rem-xxxxlarge);
-  --fs-xxxxlarge: var(--fs-rem-xxxxxlarge);
+  --fs-xxxlarge: var(--fs-rem-xxxlarge);
+  --fs-xxxxlarge: var(--fs-rem-xxxxlarge);
+  --fs-xxxxxlarge: var(--fs-rem-xxxxxxlarge);
 }
 
 /**
@@ -55,13 +56,13 @@
   */
 :root {
   --fs-ads: var(--fs-xxsmall);
-  --fs-bodytext: var(--fs-medium);
+  --fs-bodytext: var(--fs-large);
   --fs-caption: var(--fs-small);
   --fs-quote: var(--fs-xxlarge);
   --fs-showmore: var(--fs-medium);
   --fs-subtitle: var(--fs-xxlarge);
   --fs-timestamp: var(--fs-xsmall);
-  --fs-title: var(--fs-xxxxlarge);
+  --fs-title: var(--fs-xxxxxlarge);
 }
 
 @media (--smartphone) {
@@ -93,7 +94,7 @@
   */
   :root {
     --fs-ads: var(--fs-xxsmall);
-    --fs-bodytext: var(--fs-medium);
+    --fs-bodytext: var(--fs-large);
     --fs-caption: var(--fs-small);
     --fs-quote: var(--fs-xxlarge);
     --fs-showmore: var(--fs-medium);
