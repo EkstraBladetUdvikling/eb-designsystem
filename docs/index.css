@@ -5,20 +5,64 @@
 /* Font-face for Breaking */
 @font-face {
   font-family: "Breaking";
-  src: url("/assets/fonts/BreakingVAR-Regular.woff2") format("woff2"),
-    url("/assets/fonts/BreakingVAR-Regular.woff") format("woff"),
-    url("/assets/fonts/BreakingVAR-Regular.ttf") format("truetype");
-  font-weight: 100 900;
+  src: url("/assets/fonts/Breaking-Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Breaking";
-  src: url("/assets/fonts/BreakingVAR-Italic.woff2") format("woff2"),
-    url("/assets/fonts/BreakingVAR-Italic.woff") format("woff"),
-    url("/assets/fonts/BreakingVAR-Italic.ttf") format("truetype");
-  font-weight: 100 900;
+  src: url("/assets/fonts/Breaking-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
   font-style: italic;
+}
+
+@font-face {
+  font-family: "Breaking";
+  src: url("/assets/fonts/BreakingSemiCondensed-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: semi-condensed;
+}
+
+@font-face {
+  font-family: "Breaking";
+  src: url("/assets/fonts/BreakingSemiCondensed-BlackItalic.woff2") format("woff2");
+  font-weight: 900;
+  font-style: italic;
+  font-stretch: semi-condensed;
+}
+
+@font-face {
+  font-family: "Breaking";
+  src: url("/assets/fonts/BreakingSemiCondensed-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: semi-condensed;
+}
+
+@font-face {
+  font-family: "Breaking";
+  src: url("/assets/fonts/BreakingSemiCondensed-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: semi-condensed;
+}
+
+@font-face {
+  font-family: "Breaking";
+  src: url("/assets/fonts/BreakingSemiCondensed-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: semi-condensed;
+}
+
+@font-face {
+  font-family: "Breaking";
+  src: url("/assets/fonts/BreakingSemiCondensed-ExtraBoldItalic.woff2") format("woff2");
+  font-weight: 800;
+  font-style: italic;
+  font-stretch: semi-condensed;
 }
 
 /* Font-face for Breaking Text */
@@ -32,14 +76,14 @@
 @font-face {
   font-family: "Breaking Text";
   src: url("/assets/fonts/BreakingText-Italic.woff2") format("woff2");
-  font-weight: 400;
+  font-weight: 400 500;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Breaking Text";
   src: url("/assets/fonts/BreakingText-Regular.woff2") format("woff2");
-  font-weight: 400;
+  font-weight: 400 500;
   font-style: normal;
 }
 @font-face {
