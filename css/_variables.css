@@ -55,7 +55,7 @@
   */
 :root {
   --fs-ads: var(--fs-xxsmall);
-  --fs-bodytext: var(--fs-xlarge);
+  --fs-bodytext: var(--fs-medium);
   --fs-caption: var(--fs-small);
   --fs-quote: var(--fs-xxlarge);
   --fs-showmore: var(--fs-medium);
@@ -93,7 +93,7 @@
   */
   :root {
     --fs-ads: var(--fs-xxsmall);
-    --fs-bodytext: var(--fs-large);
+    --fs-bodytext: var(--fs-medium);
     --fs-caption: var(--fs-small);
     --fs-quote: var(--fs-xxlarge);
     --fs-showmore: var(--fs-medium);
