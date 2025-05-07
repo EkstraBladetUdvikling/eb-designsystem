@@ -643,7 +643,7 @@ template,[hidden] {
   --fs-xxsmall: var(--fs-rem-xxsmall);
   --fs-xxxlarge: var(--fs-rem-xxxlarge);
   --fs-xxxxlarge: var(--fs-rem-xxxxlarge);
-  --fs-xxxxxlarge: var(--fs-rem-xxxxxxlarge);
+  --fs-xxxxxlarge: var(--fs-rem-xxxxxlarge);
   --fs-ads: var(--fs-xxsmall);
   --fs-bodytext: var(--fs-large);
   --fs-caption: var(--fs-small);
@@ -2301,6 +2301,8 @@ textarea {
 h1 {
   font-size: var(--fs-title);
   font-stretch: semi-condensed;
+  font-weight: 700;
+  font-family: var(--fontfamily--primary);
 }
 
 h1,h2 {

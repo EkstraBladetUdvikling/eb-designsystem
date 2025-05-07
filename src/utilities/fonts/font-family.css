@@ -18,6 +18,8 @@ h1 {
   font-size: var(--fs-title);
   line-height: normal;
   font-stretch: semi-condensed;
+  font-weight: 700;
+  font-family: var(--fontfamily--primary);
 }
 
 h2 {
