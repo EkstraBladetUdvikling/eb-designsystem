@@ -17340,14 +17340,20 @@ var app = (function () {
 		return block;
 	}
 
-	// (39:0) <Prism language="html">
+	// (45:0) <Prism language="html">
 	function create_default_slot_1$c(ctx) {
 		let t_value = `<div class="border-radius"></div>
 <div class="border-radius-s"></div>
+<div class="border-radius-xs"></div>
+<div class="border-radius-f"></div>
 <div class="border-radius--t"></div>
 <div class="border-radius-s--t"></div>
+<div class="border-radius-xs--t"></div>
+<div class="border-radius-f--t"></div>
 <div class="border-radius--b"></div>
-<div class="border-radius-s--b"></div>` + "";
+<div class="border-radius-s--b"></div>
+<div class="border-radius-xs--b"></div>
+<div class="border-radius-f--b"></div>` + "";
 
 		let t;
 
@@ -17370,14 +17376,14 @@ var app = (function () {
 			block,
 			id: create_default_slot_1$c.name,
 			type: "slot",
-			source: "(39:0) <Prism language=\\\"html\\\">",
+			source: "(45:0) <Prism language=\\\"html\\\">",
 			ctx
 		});
 
 		return block;
 	}
 
-	// (65:0) <Prism language="html">
+	// (77:0) <Prism language="html">
 	function create_default_slot$j(ctx) {
 		let t_value = `<div class="border border--black"></div>
 <div class="border border--graa1"></div>
@@ -17410,7 +17416,7 @@ var app = (function () {
 			block,
 			id: create_default_slot$j.name,
 			type: "slot",
-			source: "(65:0) <Prism language=\\\"html\\\">",
+			source: "(77:0) <Prism language=\\\"html\\\">",
 			ctx
 		});
 
@@ -17438,8 +17444,8 @@ var app = (function () {
 		let t14;
 		let h31;
 		let t16;
-		let div14;
-		let div13;
+		let div20;
+		let div19;
 		let div7;
 		let t18;
 		let div8;
@@ -17452,32 +17458,44 @@ var app = (function () {
 		let t26;
 		let div12;
 		let t28;
-		let prism1;
-		let t29;
-		let h32;
-		let t31;
-		let p;
-		let t33;
-		let div25;
-		let div24;
+		let div13;
+		let t30;
+		let div14;
+		let t32;
 		let div15;
-		let t35;
+		let t34;
 		let div16;
-		let t37;
+		let t36;
 		let div17;
-		let t39;
+		let t38;
 		let div18;
+		let t40;
+		let prism1;
 		let t41;
-		let div19;
+		let h32;
 		let t43;
-		let div20;
+		let p;
 		let t45;
+		let div31;
+		let div30;
 		let div21;
 		let t47;
 		let div22;
 		let t49;
 		let div23;
 		let t51;
+		let div24;
+		let t53;
+		let div25;
+		let t55;
+		let div26;
+		let t57;
+		let div27;
+		let t59;
+		let div28;
+		let t61;
+		let div29;
+		let t63;
 		let prism2;
 		let current;
 
@@ -17538,8 +17556,8 @@ var app = (function () {
 				h31 = element("h3");
 				h31.textContent = "Border-radius";
 				t16 = space();
-				div14 = element("div");
-				div13 = element("div");
+				div20 = element("div");
+				div19 = element("div");
 				div7 = element("div");
 				div7.textContent = "border-radius";
 				t18 = space();
@@ -17547,54 +17565,72 @@ var app = (function () {
 				div8.textContent = "border-radius-s";
 				t20 = space();
 				div9 = element("div");
-				div9.textContent = "border-radius--t";
+				div9.textContent = "border-radius-xs";
 				t22 = space();
 				div10 = element("div");
-				div10.textContent = "border-radius-s--t";
+				div10.textContent = "border-radius-f";
 				t24 = space();
 				div11 = element("div");
-				div11.textContent = "border-radius--b";
+				div11.textContent = "border-radius--t";
 				t26 = space();
 				div12 = element("div");
-				div12.textContent = "border-radius-s--b";
+				div12.textContent = "border-radius-s--t";
 				t28 = space();
+				div13 = element("div");
+				div13.textContent = "border-radius-xs--t";
+				t30 = space();
+				div14 = element("div");
+				div14.textContent = "border-radius-f--t";
+				t32 = space();
+				div15 = element("div");
+				div15.textContent = "border-radius--b";
+				t34 = space();
+				div16 = element("div");
+				div16.textContent = "border-radius-s--b";
+				t36 = space();
+				div17 = element("div");
+				div17.textContent = "border-radius-xs--b";
+				t38 = space();
+				div18 = element("div");
+				div18.textContent = "border-radius-f--b";
+				t40 = space();
 				create_component(prism1.$$.fragment);
-				t29 = space();
+				t41 = space();
 				h32 = element("h3");
 				h32.textContent = "Border colors";
-				t31 = space();
+				t43 = space();
 				p = element("p");
 				p.textContent = "All border colors available";
-				t33 = space();
-				div25 = element("div");
-				div24 = element("div");
-				div15 = element("div");
-				div15.textContent = "border--black";
-				t35 = space();
-				div16 = element("div");
-				div16.textContent = "border--graa1";
-				t37 = space();
-				div17 = element("div");
-				div17.textContent = "border--graa2";
-				t39 = space();
-				div18 = element("div");
-				div18.textContent = "border--graa3";
-				t41 = space();
-				div19 = element("div");
-				div19.textContent = "border--graa4";
-				t43 = space();
-				div20 = element("div");
-				div20.textContent = "border--graa5";
 				t45 = space();
+				div31 = element("div");
+				div30 = element("div");
 				div21 = element("div");
-				div21.textContent = "border--graa6";
+				div21.textContent = "border--black";
 				t47 = space();
 				div22 = element("div");
-				div22.textContent = "border--graa7";
+				div22.textContent = "border--graa1";
 				t49 = space();
 				div23 = element("div");
-				div23.textContent = "border--white";
+				div23.textContent = "border--graa2";
 				t51 = space();
+				div24 = element("div");
+				div24.textContent = "border--graa3";
+				t53 = space();
+				div25 = element("div");
+				div25.textContent = "border--graa4";
+				t55 = space();
+				div26 = element("div");
+				div26.textContent = "border--graa5";
+				t57 = space();
+				div27 = element("div");
+				div27.textContent = "border--graa6";
+				t59 = space();
+				div28 = element("div");
+				div28.textContent = "border--graa7";
+				t61 = space();
+				div29 = element("div");
+				div29.textContent = "border--white";
+				t63 = space();
 				create_component(prism2.$$.fragment);
 				attr_dev(h1, "class", "color--eb");
 				add_location(h1, file$A, 4, 0, 63);
@@ -17618,42 +17654,54 @@ var app = (function () {
 				add_location(div7, file$A, 30, 4, 1018);
 				attr_dev(div8, "class", "border-radius-s padding-xl width-1of3 margin-l bg--eb");
 				add_location(div8, file$A, 31, 4, 1107);
-				attr_dev(div9, "class", "border-radius--t padding-xl width-1of3 margin-l bg--eb");
+				attr_dev(div9, "class", "border-radius-xs padding-xl width-1of3 margin-l bg--eb");
 				add_location(div9, file$A, 32, 4, 1200);
-				attr_dev(div10, "class", "border-radius-s--t padding-xl width-1of3 margin-l bg--eb");
+				attr_dev(div10, "class", "border-radius-f padding-xl width-1of3 margin-l bg--eb");
 				add_location(div10, file$A, 33, 4, 1295);
-				attr_dev(div11, "class", "border-radius--b padding-xl width-1of3 margin-l bg--eb");
-				add_location(div11, file$A, 34, 4, 1394);
-				attr_dev(div12, "class", "border-radius-s--b padding-xl width-1of3 margin-l bg--eb");
-				add_location(div12, file$A, 35, 4, 1489);
-				attr_dev(div13, "class", "card-content flex flex-justify--between flex-wrap--wrap");
-				add_location(div13, file$A, 29, 2, 944);
-				attr_dev(div14, "class", "card bg--graa7");
-				add_location(div14, file$A, 28, 0, 913);
-				add_location(h32, file$A, 48, 0, 1863);
-				add_location(p, file$A, 49, 0, 1886);
-				attr_dev(div15, "class", "flex flex-align--center border border--black padding-xl width-1of3 margin-l");
-				add_location(div15, file$A, 53, 4, 2027);
-				attr_dev(div16, "class", "flex flex-align--center border border--graa1 padding-xl width-1of3 margin-l");
-				add_location(div16, file$A, 54, 4, 2140);
-				attr_dev(div17, "class", "flex flex-align--center border border--graa2 padding-xl width-1of3 margin-l");
-				add_location(div17, file$A, 55, 4, 2253);
-				attr_dev(div18, "class", "flex flex-align--center border border--graa3 padding-xl width-1of3 margin-l");
-				add_location(div18, file$A, 56, 4, 2366);
-				attr_dev(div19, "class", "flex flex-align--center border border--graa4 padding-xl width-1of3 margin-l");
-				add_location(div19, file$A, 57, 4, 2479);
-				attr_dev(div20, "class", "flex flex-align--center border border--graa5 padding-xl width-1of3 margin-l");
-				add_location(div20, file$A, 58, 4, 2592);
-				attr_dev(div21, "class", "flex flex-align--center border border--graa6 padding-xl width-1of3 margin-l");
-				add_location(div21, file$A, 59, 4, 2705);
-				attr_dev(div22, "class", "flex flex-align--center border border--graa7 padding-xl width-1of3 margin-l");
-				add_location(div22, file$A, 60, 4, 2818);
-				attr_dev(div23, "class", "flex flex-align--center border border--white padding-xl width-1of3 margin-l");
-				add_location(div23, file$A, 61, 4, 2931);
-				attr_dev(div24, "class", "card-content flex flex-justify--between flex-wrap--wrap");
-				add_location(div24, file$A, 52, 2, 1953);
-				attr_dev(div25, "class", "card bg--graa7");
-				add_location(div25, file$A, 51, 0, 1922);
+				attr_dev(div11, "class", "border-radius--t padding-xl width-1of3 margin-l bg--eb");
+				add_location(div11, file$A, 34, 4, 1388);
+				attr_dev(div12, "class", "border-radius-s--t padding-xl width-1of3 margin-l bg--eb");
+				add_location(div12, file$A, 35, 4, 1483);
+				attr_dev(div13, "class", "border-radius-xs--t padding-xl width-1of3 margin-l bg--eb");
+				add_location(div13, file$A, 36, 4, 1582);
+				attr_dev(div14, "class", "border-radius-f--t padding-xl width-1of3 margin-l bg--eb");
+				add_location(div14, file$A, 37, 4, 1683);
+				attr_dev(div15, "class", "border-radius--b padding-xl width-1of3 margin-l bg--eb");
+				add_location(div15, file$A, 38, 4, 1782);
+				attr_dev(div16, "class", "border-radius-s--b padding-xl width-1of3 margin-l bg--eb");
+				add_location(div16, file$A, 39, 4, 1877);
+				attr_dev(div17, "class", "border-radius-xs--b padding-xl width-1of3 margin-l bg--eb");
+				add_location(div17, file$A, 40, 4, 1976);
+				attr_dev(div18, "class", "border-radius-f--b padding-xl width-1of3 margin-l bg--eb");
+				add_location(div18, file$A, 41, 4, 2077);
+				attr_dev(div19, "class", "card-content flex flex-justify--between flex-wrap--wrap");
+				add_location(div19, file$A, 29, 2, 944);
+				attr_dev(div20, "class", "card bg--graa7");
+				add_location(div20, file$A, 28, 0, 913);
+				add_location(h32, file$A, 60, 0, 2682);
+				add_location(p, file$A, 61, 0, 2705);
+				attr_dev(div21, "class", "flex flex-align--center border border--black padding-xl width-1of3 margin-l");
+				add_location(div21, file$A, 65, 4, 2846);
+				attr_dev(div22, "class", "flex flex-align--center border border--graa1 padding-xl width-1of3 margin-l");
+				add_location(div22, file$A, 66, 4, 2959);
+				attr_dev(div23, "class", "flex flex-align--center border border--graa2 padding-xl width-1of3 margin-l");
+				add_location(div23, file$A, 67, 4, 3072);
+				attr_dev(div24, "class", "flex flex-align--center border border--graa3 padding-xl width-1of3 margin-l");
+				add_location(div24, file$A, 68, 4, 3185);
+				attr_dev(div25, "class", "flex flex-align--center border border--graa4 padding-xl width-1of3 margin-l");
+				add_location(div25, file$A, 69, 4, 3298);
+				attr_dev(div26, "class", "flex flex-align--center border border--graa5 padding-xl width-1of3 margin-l");
+				add_location(div26, file$A, 70, 4, 3411);
+				attr_dev(div27, "class", "flex flex-align--center border border--graa6 padding-xl width-1of3 margin-l");
+				add_location(div27, file$A, 71, 4, 3524);
+				attr_dev(div28, "class", "flex flex-align--center border border--graa7 padding-xl width-1of3 margin-l");
+				add_location(div28, file$A, 72, 4, 3637);
+				attr_dev(div29, "class", "flex flex-align--center border border--white padding-xl width-1of3 margin-l");
+				add_location(div29, file$A, 73, 4, 3750);
+				attr_dev(div30, "class", "card-content flex flex-justify--between flex-wrap--wrap");
+				add_location(div30, file$A, 64, 2, 2772);
+				attr_dev(div31, "class", "card bg--graa7");
+				add_location(div31, file$A, 63, 0, 2741);
 			},
 			l: function claim(nodes) {
 				throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -17679,46 +17727,58 @@ var app = (function () {
 				insert_dev(target, t14, anchor);
 				insert_dev(target, h31, anchor);
 				insert_dev(target, t16, anchor);
-				insert_dev(target, div14, anchor);
-				append_dev(div14, div13);
-				append_dev(div13, div7);
-				append_dev(div13, t18);
-				append_dev(div13, div8);
-				append_dev(div13, t20);
-				append_dev(div13, div9);
-				append_dev(div13, t22);
-				append_dev(div13, div10);
-				append_dev(div13, t24);
-				append_dev(div13, div11);
-				append_dev(div13, t26);
-				append_dev(div13, div12);
-				insert_dev(target, t28, anchor);
+				insert_dev(target, div20, anchor);
+				append_dev(div20, div19);
+				append_dev(div19, div7);
+				append_dev(div19, t18);
+				append_dev(div19, div8);
+				append_dev(div19, t20);
+				append_dev(div19, div9);
+				append_dev(div19, t22);
+				append_dev(div19, div10);
+				append_dev(div19, t24);
+				append_dev(div19, div11);
+				append_dev(div19, t26);
+				append_dev(div19, div12);
+				append_dev(div19, t28);
+				append_dev(div19, div13);
+				append_dev(div19, t30);
+				append_dev(div19, div14);
+				append_dev(div19, t32);
+				append_dev(div19, div15);
+				append_dev(div19, t34);
+				append_dev(div19, div16);
+				append_dev(div19, t36);
+				append_dev(div19, div17);
+				append_dev(div19, t38);
+				append_dev(div19, div18);
+				insert_dev(target, t40, anchor);
 				mount_component(prism1, target, anchor);
-				insert_dev(target, t29, anchor);
+				insert_dev(target, t41, anchor);
 				insert_dev(target, h32, anchor);
-				insert_dev(target, t31, anchor);
+				insert_dev(target, t43, anchor);
 				insert_dev(target, p, anchor);
-				insert_dev(target, t33, anchor);
-				insert_dev(target, div25, anchor);
-				append_dev(div25, div24);
-				append_dev(div24, div15);
-				append_dev(div24, t35);
-				append_dev(div24, div16);
-				append_dev(div24, t37);
-				append_dev(div24, div17);
-				append_dev(div24, t39);
-				append_dev(div24, div18);
-				append_dev(div24, t41);
-				append_dev(div24, div19);
-				append_dev(div24, t43);
-				append_dev(div24, div20);
-				append_dev(div24, t45);
-				append_dev(div24, div21);
-				append_dev(div24, t47);
-				append_dev(div24, div22);
-				append_dev(div24, t49);
-				append_dev(div24, div23);
-				insert_dev(target, t51, anchor);
+				insert_dev(target, t45, anchor);
+				insert_dev(target, div31, anchor);
+				append_dev(div31, div30);
+				append_dev(div30, div21);
+				append_dev(div30, t47);
+				append_dev(div30, div22);
+				append_dev(div30, t49);
+				append_dev(div30, div23);
+				append_dev(div30, t51);
+				append_dev(div30, div24);
+				append_dev(div30, t53);
+				append_dev(div30, div25);
+				append_dev(div30, t55);
+				append_dev(div30, div26);
+				append_dev(div30, t57);
+				append_dev(div30, div27);
+				append_dev(div30, t59);
+				append_dev(div30, div28);
+				append_dev(div30, t61);
+				append_dev(div30, div29);
+				insert_dev(target, t63, anchor);
 				mount_component(prism2, target, anchor);
 				current = true;
 			},
@@ -17769,15 +17829,15 @@ var app = (function () {
 					detach_dev(t14);
 					detach_dev(h31);
 					detach_dev(t16);
-					detach_dev(div14);
-					detach_dev(t28);
-					detach_dev(t29);
+					detach_dev(div20);
+					detach_dev(t40);
+					detach_dev(t41);
 					detach_dev(h32);
-					detach_dev(t31);
+					detach_dev(t43);
 					detach_dev(p);
-					detach_dev(t33);
-					detach_dev(div25);
-					detach_dev(t51);
+					detach_dev(t45);
+					detach_dev(div31);
+					detach_dev(t63);
 				}
 
 				destroy_component(prism0, detaching);
