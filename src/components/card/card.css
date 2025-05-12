@@ -19,7 +19,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  font-family: var(--fontfamily--primary);
+  font-family: var(--fontfamily--secondary);
   overflow: hidden;
 }
 
