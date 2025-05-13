@@ -1,15 +1,26 @@
 /* Variables */
 :root {
-  --border-radius: 10px; /* default */
+  --border-radius: 6px; /* default */
 
   --border-radius-medium: var(--border-radius); /* default */
-  --border-radius-small: 5px;
+  --border-radius-small: 4px;
+  --border-radius-xsmall: 2px;
+  --border-radius-full: 99px;
 }
 
 /* All border-radius */
 .border-radius-s {
   border-radius: var(--border-radius-small);
 }
+
+.border-radius-xs {
+  border-radius: var(--border-radius-xsmall);
+}
+
+.border-radius-f {
+  border-radius: var(--border-radius-full);
+}
+
 .border-radius {
   border-radius: var(--border-radius-medium);
 }
@@ -19,6 +30,17 @@
   border-top-left-radius: var(--border-radius-small);
   border-top-right-radius: var(--border-radius-small);
 }
+
+.border-radius-xs--t {
+  border-top-left-radius: var(--border-radius-xsmall);
+  border-top-right-radius: var(--border-radius-xsmall);
+}
+
+.border-radius-f--t {
+  border-top-left-radius: var(--border-radius-full);
+  border-top-right-radius: var(--border-radius-full);
+}
+
 .border-radius--t {
   border-top-left-radius: var(--border-radius-medium);
   border-top-right-radius: var(--border-radius-medium);
@@ -29,6 +51,17 @@
   border-bottom-left-radius: var(--border-radius-small);
   border-bottom-right-radius: var(--border-radius-small);
 }
+
+.border-radius-xs--b {
+  border-bottom-left-radius: var(--border-radius-xsmall);
+  border-bottom-right-radius: var(--border-radius-xsmall);
+}
+
+.border-radius-f--b {
+  border-bottom-left-radius: var(--border-radius-full);
+  border-bottom-right-radius: var(--border-radius-full);
+}
+
 .border-radius--b {
   border-bottom-left-radius: var(--border-radius-medium);
   border-bottom-right-radius: var(--border-radius-medium);
