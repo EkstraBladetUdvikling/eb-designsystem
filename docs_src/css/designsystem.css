@@ -697,10 +697,10 @@ template,[hidden] {
 
   --color--underholdning: #51208c;
   --fgcolor--underholdning: #fff;
-  --box-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);
+  --box-shadow: 0 5px 18px rgba(var(--rgb-color--black), 0.1);
 
   --border-radius--small: 5px;
-  --box-shadow--dark: 0 5px 18px rgba(var(--rgb-color--black), .6);
+  --box-shadow--dark: 0 5px 18px rgba(var(--rgb-color--black), 0.6);
   --color--accept: var(--color--green);
   --color--cancel: var(--color--red);
   --color--default: var(--color--bluedark);
@@ -718,17 +718,17 @@ template,[hidden] {
   --fgcolor--default: var(--fgcolor--bluedark);
   --fgcolor--primary: var(--fgcolor--bruger);
   --fgcolor--secondary: var(--fgcolor--graa3);
-  --fontfamily--primary: "Work Sans", var(--fontfamily--secondary);
-  --fontfamily--secondary: Arial, Helvetica, sans-serif;
+  --fontfamily--primary: "Breaking", var(--fontfamily--secondary);
+  --fontfamily--secondary: "Breaking Text", Arial, Helvetica, sans-serif;
   --fs-rem-large: 1.125rem; /* 18px */
   --fs-rem-medium: 1rem; /* 16px */
-  --fs-rem-small: .875rem; /* 14px */
+  --fs-rem-small: 0.875rem; /* 14px */
   --fs-rem-xlarge: 1.25rem; /* 20px */
-  --fs-rem-xsmall: .75rem; /* 12px */
+  --fs-rem-xsmall: 0.75rem; /* 12px */
   --fs-rem-xxlarge: 1.875rem; /* 30px */
-  --fs-rem-xxsmall: .625rem; /* 10px */
+  --fs-rem-xxsmall: 0.625rem; /* 10px */
   --fs-rem-xxxlarge: 2.25rem; /* 36px */
-  --fs-rem-xxxsmall: .4375rem; /* 7px */
+  --fs-rem-xxxsmall: 0.4375rem; /* 7px */
   --fs-rem-xxxxlarge: 3.125rem; /* 50px */
   --fs-large: var(--fs-rem-large);
   --fs-medium: var(--fs-rem-medium);
@@ -761,27 +761,27 @@ template,[hidden] {
 @media (max-width: 767px) {
   :root {
     --distance-large: 15px;
-  --distance-medium: 10px;
-  --distance-small: 5px;
-  --distance-standard: 10px;
-  --distance-xlarge: 20px;
-  --distance-xxlarge: 30px;
+    --distance-medium: 10px;
+    --distance-small: 5px;
+    --distance-standard: 10px;
+    --distance-xlarge: 20px;
+    --distance-xxlarge: 30px;
     --fs-large: var(--fs-rem-medium);
-  --fs-medium: var(--fs-rem-medium);
-  --fs-small: var(--fs-rem-xsmall);
-  --fs-xlarge: var(--fs-rem-xlarge);
-  --fs-xsmall: var(--fs-rem-xxsmall);
-  --fs-xxlarge: var(--fs-rem-xxlarge);
-  --fs-xxsmall: var(--fs-rem-xxxsmall);
-  --fs-xxxlarge: var(--fs-rem-xxxlarge);
+    --fs-medium: var(--fs-rem-medium);
+    --fs-small: var(--fs-rem-xsmall);
+    --fs-xlarge: var(--fs-rem-xlarge);
+    --fs-xsmall: var(--fs-rem-xxsmall);
+    --fs-xxlarge: var(--fs-rem-xxlarge);
+    --fs-xxsmall: var(--fs-rem-xxxsmall);
+    --fs-xxxlarge: var(--fs-rem-xxxlarge);
     --fs-ads: var(--fs-xxsmall);
-  --fs-bodytext: var(--fs-large);
-  --fs-caption: var(--fs-small);
-  --fs-quote: var(--fs-xxlarge);
-  --fs-showmore: var(--fs-medium);
-  --fs-subtitle: var(--fs-xlarge);
-  --fs-timestamp: var(--fs-xsmall);
-  --fs-title: var(--fs-xxxlarge);
+    --fs-bodytext: var(--fs-large);
+    --fs-caption: var(--fs-small);
+    --fs-quote: var(--fs-xxlarge);
+    --fs-showmore: var(--fs-medium);
+    --fs-subtitle: var(--fs-xlarge);
+    --fs-timestamp: var(--fs-xsmall);
+    --fs-title: var(--fs-xxxlarge);
   }
 
   /**
@@ -2394,6 +2394,9 @@ textarea {
 
 h1 {
   font-size: var(--fs-title);
+  font-stretch: semi-condensed;
+  font-weight: 700;
+  font-family: var(--fontfamily--primary);
 }
 
 h1,h2 {

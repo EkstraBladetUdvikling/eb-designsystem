@@ -1,0 +1,126 @@
+@import "prism.css";
+@import "table.css";
+@import "build/bundle.css";
+
+/* Font-face for Breaking */
+@font-face {
+  font-family: "Breaking";
+  src: url("/assets/fonts/Breaking-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Breaking";
+  src: url("/assets/fonts/BreakingSemiCondensed-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: semi-condensed;
+}
+
+@font-face {
+  font-family: "Breaking";
+  src: url("/assets/fonts/BreakingSemiCondensed-BlackItalic.woff2") format("woff2");
+  font-weight: 900;
+  font-style: italic;
+  font-stretch: semi-condensed;
+}
+
+@font-face {
+  font-family: "Breaking";
+  src: url("/assets/fonts/BreakingSemiCondensed-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: semi-condensed;
+}
+
+@font-face {
+  font-family: "Breaking";
+  src: url("/assets/fonts/BreakingSemiCondensed-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: semi-condensed;
+}
+
+@font-face {
+  font-family: "Breaking";
+  src: url("/assets/fonts/BreakingSemiCondensed-ExtraBoldItalic.woff2") format("woff2");
+  font-weight: 800;
+  font-style: italic;
+  font-stretch: semi-condensed;
+}
+
+/****** Font-face for Breaking Text ******/
+
+@font-face {
+  font-family: "Breaking Text";
+  src: url("/assets/fonts/BreakingText-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Breaking Text";
+  src: url("/assets/fonts/BreakingText-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Breaking Text";
+  src: url("/assets/fonts/BreakingText-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Menu */
+
+@font-face {
+  font-family: "Breaking Text";
+  src: url("/assets/fonts/BreakingText-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Brødtekst - Artikel */
+
+@font-face {
+  font-family: "Breaking Text";
+  src: url("/assets/fonts/BreakingTextSemiExpanded-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: semi-expanded;
+}
+
+@font-face {
+  font-family: "Breaking Text";
+  src: url("/assets/fonts/BreakingTextSemiExpanded-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: semi-expanded;
+}
+
+@font-face {
+  font-family: "Breaking Text";
+  src: url("/assets/fonts/BreakingTextSemiExpanded-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: semi-expanded;
+}
+
+a {
+  color: #e3141d;
+  text-decoration: none;
+}
+div,
+section {
+  box-sizing: border-box;
+}
+h1,
+h2 {
+  line-height: normal;
+  margin: 0;
+}
+.eb-logo {
+  width: 40px;
+}
