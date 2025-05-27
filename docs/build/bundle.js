@@ -20506,11 +20506,10 @@ var app = (function () {
 		return block;
 	}
 
-	// (32:0) <Prism language="html">
+	// (31:0) <Prism language="html">
 	function create_default_slot_1$9(ctx) {
 		let t_value = `<p class="fontweight-normal"></p>
-<p class="fontweight-bold"></p>
-<p class="fontweight-bolder"></p>` + "";
+<p class="fontweight-bold"></p>` + "";
 
 		let t;
 
@@ -20533,14 +20532,14 @@ var app = (function () {
 			block,
 			id: create_default_slot_1$9.name,
 			type: "slot",
-			source: "(32:0) <Prism language=\\\"html\\\">",
+			source: "(31:0) <Prism language=\\\"html\\\">",
 			ctx
 		});
 
 		return block;
 	}
 
-	// (92:0) <Prism language="html">
+	// (95:0) <Prism language="html">
 	function create_default_slot$g(ctx) {
 		let t_value = `<div class="fontsize-xxsmall"></div>
 <div class="fontsize-xsmall"></div>
@@ -20551,6 +20550,7 @@ var app = (function () {
 <div class="fontsize-xxlarge"></div>
 <div class="fontsize-xxxlarge"></div>
 <div class="fontsize-xxxxlarge"></div>
+<div class="fontsize-xxxxxlarge"></div>
 
 <div class="fontsize-smaller"></div>
 <div class="fontsize-larger"></div>` + "";
@@ -20576,7 +20576,7 @@ var app = (function () {
 			block,
 			id: create_default_slot$g.name,
 			type: "slot",
-			source: "(92:0) <Prism language=\\\"html\\\">",
+			source: "(95:0) <Prism language=\\\"html\\\">",
 			ctx
 		});
 
@@ -20608,110 +20608,114 @@ var app = (function () {
 		let t16;
 		let p3;
 		let t18;
-		let p4;
-		let t20;
 		let prism1;
-		let t21;
+		let t19;
 		let h32;
+		let t21;
+		let p4;
 		let t23;
 		let p5;
 		let t25;
 		let p6;
-		let t27;
-		let p7;
-		let t28;
+		let t26;
 		let u0;
-		let t30;
+		let t28;
 		let u1;
-		let t32;
-		let t33;
-		let div31;
+		let t30;
+		let t31;
+		let div34;
 		let div6;
-		let t34;
+		let t32;
 		let div4;
-		let t36;
+		let t34;
 		let div5;
-		let t38;
+		let t36;
 		let div9;
-		let t39;
+		let t37;
 		let div7;
-		let t41;
+		let t39;
 		let div8;
-		let t43;
+		let t41;
 		let div12;
-		let t44;
+		let t42;
 		let div10;
-		let t46;
+		let t44;
 		let div11;
-		let t48;
+		let t46;
 		let div15;
-		let t49;
+		let t47;
 		let div13;
-		let t51;
+		let t49;
 		let div14;
-		let t53;
+		let t51;
 		let div18;
-		let t54;
+		let t52;
 		let div16;
-		let t56;
+		let t54;
 		let div17;
-		let t58;
+		let t56;
 		let div21;
-		let t59;
+		let t57;
 		let div19;
-		let t61;
+		let t59;
 		let div20;
-		let t63;
+		let t61;
 		let div24;
-		let t64;
+		let t62;
 		let div22;
-		let t66;
+		let t64;
 		let div23;
-		let t68;
+		let t66;
 		let div27;
-		let t69;
+		let t67;
 		let div25;
-		let t71;
+		let t69;
 		let div26;
-		let t73;
+		let t71;
 		let div30;
-		let t74;
+		let t72;
 		let div28;
-		let t76;
+		let t74;
 		let div29;
-		let t78;
-		let prism2;
+		let t76;
+		let div33;
+		let t77;
+		let div31;
 		let t79;
-		let h33;
-		let t81;
 		let div32;
+		let t81;
+		let prism2;
+		let t82;
+		let h33;
+		let t84;
+		let div35;
 		let h11;
-		let t83;
+		let t86;
 		let h2;
-		let t85;
+		let t88;
 		let h34;
-		let t87;
+		let t90;
 		let h4;
-		let t89;
+		let t92;
 		let h5;
-		let t91;
+		let t94;
 		let h6;
-		let t93;
+		let t96;
+		let p7;
+		let t98;
 		let p8;
-		let t95;
+		let t100;
 		let p9;
-		let t97;
+		let t102;
 		let p10;
-		let t99;
+		let t104;
 		let p11;
-		let t101;
+		let t106;
 		let p12;
-		let t103;
+		let t108;
 		let p13;
-		let t105;
+		let t110;
 		let p14;
-		let t107;
-		let p15;
 		let current;
 
 		prism0 = new Prism$1({
@@ -20776,149 +20780,154 @@ var app = (function () {
 				p3 = element("p");
 				p3.textContent = "fontweight-bold";
 				t18 = space();
-				p4 = element("p");
-				p4.textContent = "fontweight-bolder";
-				t20 = space();
 				create_component(prism1.$$.fragment);
-				t21 = space();
+				t19 = space();
 				h32 = element("h3");
 				h32.textContent = "Font-size";
+				t21 = space();
+				p4 = element("p");
+				p4.textContent = "Font-size er sat i rem for at understøtte brugerens font-size valg i browseren.";
 				t23 = space();
 				p5 = element("p");
-				p5.textContent = "Font-size er sat i rem for at understøtte brugerens font-size valg i browseren.";
+				p5.textContent = "Rem værdien er udregnet i forhold til en basis font-size på 16px, hvilket er browser-standarden";
 				t25 = space();
 				p6 = element("p");
-				p6.textContent = "Rem værdien er udregnet i forhold til en basis font-size på 16px, hvilket er browser-standarden";
-				t27 = space();
-				p7 = element("p");
-				t28 = text("Der er både en ");
+				t26 = text("Der er både en ");
 				u0 = element("u");
 				u0.textContent = "larger";
-				t30 = text(" og en ");
+				t28 = text(" og en ");
 				u1 = element("u");
 				u1.textContent = "smaller";
-				t32 = text(" mulighed, der begge er relative til parent fontsize");
-				t33 = space();
-				div31 = element("div");
+				t30 = text(" mulighed, der begge er relative til parent fontsize");
+				t31 = space();
+				div34 = element("div");
 				div6 = element("div");
-				t34 = text("fontsize-xxsmall = .625rem ~ 10px;\n    ");
+				t32 = text("fontsize-xxsmall = .625rem ~ 10px;\n    ");
 				div4 = element("div");
 				div4.textContent = "fontsize-smaller";
-				t36 = space();
+				t34 = space();
 				div5 = element("div");
 				div5.textContent = "fontsize-larger";
-				t38 = space();
+				t36 = space();
 				div9 = element("div");
-				t39 = text("fontsize-xsmall = .75rem ~ 12px;\n    ");
+				t37 = text("fontsize-xsmall = .75rem ~ 12px;\n    ");
 				div7 = element("div");
 				div7.textContent = "fontsize-smaller";
-				t41 = space();
+				t39 = space();
 				div8 = element("div");
 				div8.textContent = "fontsize-larger";
-				t43 = space();
+				t41 = space();
 				div12 = element("div");
-				t44 = text("fontsize-small = .875rem ~ 14px;\n    ");
+				t42 = text("fontsize-small = .875rem ~ 14px;\n    ");
 				div10 = element("div");
 				div10.textContent = "fontsize-smaller";
-				t46 = space();
+				t44 = space();
 				div11 = element("div");
 				div11.textContent = "fontsize-larger";
-				t48 = space();
+				t46 = space();
 				div15 = element("div");
-				t49 = text("fontsize-medium = 1rem ~ 16px;\n    ");
+				t47 = text("fontsize-medium = 1rem ~ 16px;\n    ");
 				div13 = element("div");
 				div13.textContent = "fontsize-smaller";
-				t51 = space();
+				t49 = space();
 				div14 = element("div");
 				div14.textContent = "fontsize-larger";
-				t53 = space();
+				t51 = space();
 				div18 = element("div");
-				t54 = text("fontsize-large = 1.125rem ~ 18px;\n    ");
+				t52 = text("fontsize-large = 1.125rem ~ 18px;\n    ");
 				div16 = element("div");
 				div16.textContent = "fontsize-smaller";
-				t56 = space();
+				t54 = space();
 				div17 = element("div");
 				div17.textContent = "fontsize-larger";
-				t58 = space();
+				t56 = space();
 				div21 = element("div");
-				t59 = text("fontsize-xlarge = 1.25rem ~ 20px;\n    ");
+				t57 = text("fontsize-xlarge = 1.25rem ~ 20px;\n    ");
 				div19 = element("div");
 				div19.textContent = "fontsize-smaller";
-				t61 = space();
+				t59 = space();
 				div20 = element("div");
 				div20.textContent = "fontsize-larger";
-				t63 = space();
+				t61 = space();
 				div24 = element("div");
-				t64 = text("fontsize-xxlarge = 1.875rem ~ 30px;\n    ");
+				t62 = text("fontsize-xxlarge = 1.5rem ~ 24px;\n    ");
 				div22 = element("div");
 				div22.textContent = "fontsize-smaller";
-				t66 = space();
+				t64 = space();
 				div23 = element("div");
 				div23.textContent = "fontsize-larger";
-				t68 = space();
+				t66 = space();
 				div27 = element("div");
-				t69 = text("fontsize-xxxlarge = 2.25rem ~ 36px;\n    ");
+				t67 = text("fontsize-xxxlarge = 1.75rem ~ 28px;\n    ");
 				div25 = element("div");
 				div25.textContent = "fontsize-smaller";
-				t71 = space();
+				t69 = space();
 				div26 = element("div");
 				div26.textContent = "fontsize-larger";
-				t73 = space();
+				t71 = space();
 				div30 = element("div");
-				t74 = text("fontsize-xxxxlarge = 3.125rem ~ 50px;\n    ");
+				t72 = text("fontsize-xxxxlarge = 2.5rem ~ 40px;\n    ");
 				div28 = element("div");
 				div28.textContent = "fontsize-smaller";
-				t76 = space();
+				t74 = space();
 				div29 = element("div");
 				div29.textContent = "fontsize-larger";
-				t78 = space();
-				create_component(prism2.$$.fragment);
+				t76 = space();
+				div33 = element("div");
+				t77 = text("fontsize-xxxxxlarge = 5rem ~ 80px;\n    ");
+				div31 = element("div");
+				div31.textContent = "fontsize-smaller";
 				t79 = space();
+				div32 = element("div");
+				div32.textContent = "fontsize-larger";
+				t81 = space();
+				create_component(prism2.$$.fragment);
+				t82 = space();
 				h33 = element("h3");
 				h33.textContent = "Headers and font aliases";
-				t81 = space();
-				div32 = element("div");
+				t84 = space();
+				div35 = element("div");
 				h11 = element("h1");
 				h11.textContent = "h1";
-				t83 = space();
+				t86 = space();
 				h2 = element("h2");
 				h2.textContent = "h2";
-				t85 = space();
+				t88 = space();
 				h34 = element("h3");
 				h34.textContent = "h3";
-				t87 = space();
+				t90 = space();
 				h4 = element("h4");
 				h4.textContent = "h4";
-				t89 = space();
+				t92 = space();
 				h5 = element("h5");
 				h5.textContent = "h5";
-				t91 = space();
+				t94 = space();
 				h6 = element("h6");
 				h6.textContent = "h6";
-				t93 = space();
+				t96 = space();
+				p7 = element("p");
+				p7.textContent = "fs-ads";
+				t98 = space();
 				p8 = element("p");
-				p8.textContent = "fs-ads";
-				t95 = space();
+				p8.textContent = "fs-bodytext";
+				t100 = space();
 				p9 = element("p");
-				p9.textContent = "fs-bodytext";
-				t97 = space();
+				p9.textContent = "fs-caption";
+				t102 = space();
 				p10 = element("p");
-				p10.textContent = "fs-caption";
-				t99 = space();
+				p10.textContent = "fs-quote";
+				t104 = space();
 				p11 = element("p");
-				p11.textContent = "fs-quote";
-				t101 = space();
+				p11.textContent = "fs-showmore";
+				t106 = space();
 				p12 = element("p");
-				p12.textContent = "fs-showmore";
-				t103 = space();
+				p12.textContent = "fs-subtitle";
+				t108 = space();
 				p13 = element("p");
-				p13.textContent = "fs-subtitle";
-				t105 = space();
+				p13.textContent = "fs-timestamp";
+				t110 = space();
 				p14 = element("p");
-				p14.textContent = "fs-timestamp";
-				t107 = space();
-				p15 = element("p");
-				p15.textContent = "fs-title";
+				p14.textContent = "fs-title";
 				attr_dev(h10, "class", "color--eb");
 				add_location(h10, file$x, 4, 0, 63);
 				add_location(h30, file$x, 6, 0, 97);
@@ -20937,97 +20946,101 @@ var app = (function () {
 				add_location(p2, file$x, 27, 2, 716);
 				attr_dev(p3, "class", "fontweight-bold");
 				add_location(p3, file$x, 28, 2, 769);
-				attr_dev(p4, "class", "fontweight-bolder");
-				add_location(p4, file$x, 29, 2, 818);
 				attr_dev(div3, "class", "card bg--graa7 padding-l--rl");
 				add_location(div3, file$x, 26, 0, 671);
-				add_location(h32, file$x, 38, 0, 1017);
-				add_location(p5, file$x, 40, 0, 1037);
-				add_location(p6, file$x, 41, 0, 1124);
-				add_location(u0, file$x, 42, 18, 1245);
-				add_location(u1, file$x, 42, 38, 1265);
-				add_location(p7, file$x, 42, 0, 1227);
+				add_location(h32, file$x, 36, 0, 930);
+				add_location(p4, file$x, 38, 0, 950);
+				add_location(p5, file$x, 39, 0, 1037);
+				add_location(u0, file$x, 40, 18, 1158);
+				add_location(u1, file$x, 40, 38, 1178);
+				add_location(p6, file$x, 40, 0, 1140);
 				attr_dev(div4, "class", "fontsize-smaller");
-				add_location(div4, file$x, 47, 4, 1465);
+				add_location(div4, file$x, 45, 4, 1378);
 				attr_dev(div5, "class", "fontsize-larger");
-				add_location(div5, file$x, 48, 4, 1522);
+				add_location(div5, file$x, 46, 4, 1435);
 				attr_dev(div6, "class", "fontsize-xxsmall padding-m--b");
-				add_location(div6, file$x, 45, 2, 1378);
+				add_location(div6, file$x, 43, 2, 1291);
 				attr_dev(div7, "class", "fontsize-smaller");
-				add_location(div7, file$x, 52, 4, 1669);
+				add_location(div7, file$x, 50, 4, 1582);
 				attr_dev(div8, "class", "fontsize-larger");
-				add_location(div8, file$x, 53, 4, 1726);
+				add_location(div8, file$x, 51, 4, 1639);
 				attr_dev(div9, "class", "fontsize-xsmall padding-m--tb");
-				add_location(div9, file$x, 50, 2, 1584);
+				add_location(div9, file$x, 48, 2, 1497);
 				attr_dev(div10, "class", "fontsize-smaller");
-				add_location(div10, file$x, 57, 4, 1872);
+				add_location(div10, file$x, 55, 4, 1785);
 				attr_dev(div11, "class", "fontsize-larger");
-				add_location(div11, file$x, 58, 4, 1929);
+				add_location(div11, file$x, 56, 4, 1842);
 				attr_dev(div12, "class", "fontsize-small padding-m--tb");
-				add_location(div12, file$x, 55, 2, 1788);
+				add_location(div12, file$x, 53, 2, 1701);
 				attr_dev(div13, "class", "fontsize-smaller");
-				add_location(div13, file$x, 62, 4, 2074);
+				add_location(div13, file$x, 60, 4, 1987);
 				attr_dev(div14, "class", "fontsize-larger");
-				add_location(div14, file$x, 63, 4, 2131);
+				add_location(div14, file$x, 61, 4, 2044);
 				attr_dev(div15, "class", "fontsize-medium padding-m--tb");
-				add_location(div15, file$x, 60, 2, 1991);
+				add_location(div15, file$x, 58, 2, 1904);
 				attr_dev(div16, "class", "fontsize-smaller");
-				add_location(div16, file$x, 67, 4, 2278);
+				add_location(div16, file$x, 65, 4, 2191);
 				attr_dev(div17, "class", "fontsize-larger");
-				add_location(div17, file$x, 68, 4, 2335);
+				add_location(div17, file$x, 66, 4, 2248);
 				attr_dev(div18, "class", "fontsize-large padding-m--tb");
-				add_location(div18, file$x, 65, 2, 2193);
+				add_location(div18, file$x, 63, 2, 2106);
 				attr_dev(div19, "class", "fontsize-smaller");
-				add_location(div19, file$x, 72, 4, 2483);
+				add_location(div19, file$x, 70, 4, 2396);
 				attr_dev(div20, "class", "fontsize-larger");
-				add_location(div20, file$x, 73, 4, 2540);
+				add_location(div20, file$x, 71, 4, 2453);
 				attr_dev(div21, "class", "fontsize-xlarge padding-m--tb");
-				add_location(div21, file$x, 70, 2, 2397);
+				add_location(div21, file$x, 68, 2, 2310);
 				attr_dev(div22, "class", "fontsize-smaller");
-				add_location(div22, file$x, 77, 4, 2691);
+				add_location(div22, file$x, 75, 4, 2604);
 				attr_dev(div23, "class", "fontsize-larger");
-				add_location(div23, file$x, 78, 4, 2748);
+				add_location(div23, file$x, 76, 4, 2661);
 				attr_dev(div24, "class", "fontsize-xxlarge padding-m--tb");
-				add_location(div24, file$x, 75, 2, 2602);
+				add_location(div24, file$x, 73, 4, 2517);
 				attr_dev(div25, "class", "fontsize-smaller");
-				add_location(div25, file$x, 82, 4, 2900);
+				add_location(div25, file$x, 80, 4, 2815);
 				attr_dev(div26, "class", "fontsize-larger");
-				add_location(div26, file$x, 83, 4, 2957);
+				add_location(div26, file$x, 81, 4, 2872);
 				attr_dev(div27, "class", "fontsize-xxxlarge padding-m--tb");
-				add_location(div27, file$x, 80, 2, 2810);
+				add_location(div27, file$x, 78, 4, 2725);
 				attr_dev(div28, "class", "fontsize-smaller");
-				add_location(div28, file$x, 87, 4, 3111);
+				add_location(div28, file$x, 85, 4, 3025);
 				attr_dev(div29, "class", "fontsize-larger");
-				add_location(div29, file$x, 88, 4, 3168);
-				attr_dev(div30, "class", "fontsize-xxxxlarge padding-m--t");
-				add_location(div30, file$x, 85, 2, 3019);
-				attr_dev(div31, "class", "card bg--graa7 padding-l");
-				add_location(div31, file$x, 44, 0, 1337);
-				add_location(h33, file$x, 107, 0, 3679);
-				add_location(h11, file$x, 110, 2, 3772);
-				add_location(h2, file$x, 111, 2, 3786);
-				add_location(h34, file$x, 112, 2, 3800);
-				add_location(h4, file$x, 113, 2, 3814);
-				add_location(h5, file$x, 114, 2, 3828);
-				add_location(h6, file$x, 115, 2, 3842);
-				attr_dev(p8, "class", "fs-ads");
-				add_location(p8, file$x, 117, 2, 3857);
-				attr_dev(p9, "class", "fs-bodytext");
-				add_location(p9, file$x, 118, 2, 3888);
-				attr_dev(p10, "class", "fs-caption");
-				add_location(p10, file$x, 119, 2, 3929);
-				attr_dev(p11, "class", "fs-quote");
-				add_location(p11, file$x, 120, 2, 3968);
-				attr_dev(p12, "class", "fs-showmore");
-				add_location(p12, file$x, 121, 2, 4003);
-				attr_dev(p13, "class", "fs-subtitle");
-				add_location(p13, file$x, 122, 2, 4044);
-				attr_dev(p14, "class", "fs-timestamp");
-				add_location(p14, file$x, 123, 2, 4085);
-				attr_dev(p15, "class", "fs-title");
-				add_location(p15, file$x, 124, 2, 4128);
-				attr_dev(div32, "class", "card bg--graa7 padding-l--rl padding-l--t");
-				add_location(div32, file$x, 109, 0, 3714);
+				add_location(div29, file$x, 86, 4, 3082);
+				attr_dev(div30, "class", "fontsize-xxxxlarge padding-m--tb");
+				add_location(div30, file$x, 83, 2, 2934);
+				attr_dev(div31, "class", "fontsize-smaller");
+				add_location(div31, file$x, 90, 4, 3234);
+				attr_dev(div32, "class", "fontsize-larger");
+				add_location(div32, file$x, 91, 4, 3291);
+				attr_dev(div33, "class", "fontsize-xxxxxlarge padding-m--t");
+				add_location(div33, file$x, 88, 2, 3144);
+				attr_dev(div34, "class", "card bg--graa7 padding-l");
+				add_location(div34, file$x, 42, 0, 1250);
+				add_location(h33, file$x, 111, 0, 3842);
+				add_location(h11, file$x, 114, 2, 3935);
+				add_location(h2, file$x, 115, 2, 3949);
+				add_location(h34, file$x, 116, 2, 3963);
+				add_location(h4, file$x, 117, 2, 3977);
+				add_location(h5, file$x, 118, 2, 3991);
+				add_location(h6, file$x, 119, 2, 4005);
+				attr_dev(p7, "class", "fs-ads");
+				add_location(p7, file$x, 121, 2, 4020);
+				attr_dev(p8, "class", "fs-bodytext");
+				add_location(p8, file$x, 122, 2, 4051);
+				attr_dev(p9, "class", "fs-caption");
+				add_location(p9, file$x, 123, 2, 4092);
+				attr_dev(p10, "class", "fs-quote");
+				add_location(p10, file$x, 124, 2, 4131);
+				attr_dev(p11, "class", "fs-showmore");
+				add_location(p11, file$x, 125, 2, 4166);
+				attr_dev(p12, "class", "fs-subtitle");
+				add_location(p12, file$x, 126, 2, 4207);
+				attr_dev(p13, "class", "fs-timestamp");
+				add_location(p13, file$x, 127, 2, 4248);
+				attr_dev(p14, "class", "fs-title");
+				add_location(p14, file$x, 128, 2, 4291);
+				attr_dev(div35, "class", "card bg--graa7 padding-l--rl padding-l--t");
+				add_location(div35, file$x, 113, 0, 3877);
 			},
 			l: function claim(nodes) {
 				throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -21056,111 +21069,115 @@ var app = (function () {
 				append_dev(div3, p2);
 				append_dev(div3, t16);
 				append_dev(div3, p3);
-				append_dev(div3, t18);
-				append_dev(div3, p4);
-				insert_dev(target, t20, anchor);
+				insert_dev(target, t18, anchor);
 				mount_component(prism1, target, anchor);
-				insert_dev(target, t21, anchor);
+				insert_dev(target, t19, anchor);
 				insert_dev(target, h32, anchor);
+				insert_dev(target, t21, anchor);
+				insert_dev(target, p4, anchor);
 				insert_dev(target, t23, anchor);
 				insert_dev(target, p5, anchor);
 				insert_dev(target, t25, anchor);
 				insert_dev(target, p6, anchor);
-				insert_dev(target, t27, anchor);
-				insert_dev(target, p7, anchor);
-				append_dev(p7, t28);
-				append_dev(p7, u0);
-				append_dev(p7, t30);
-				append_dev(p7, u1);
-				append_dev(p7, t32);
-				insert_dev(target, t33, anchor);
-				insert_dev(target, div31, anchor);
-				append_dev(div31, div6);
-				append_dev(div6, t34);
+				append_dev(p6, t26);
+				append_dev(p6, u0);
+				append_dev(p6, t28);
+				append_dev(p6, u1);
+				append_dev(p6, t30);
+				insert_dev(target, t31, anchor);
+				insert_dev(target, div34, anchor);
+				append_dev(div34, div6);
+				append_dev(div6, t32);
 				append_dev(div6, div4);
-				append_dev(div6, t36);
+				append_dev(div6, t34);
 				append_dev(div6, div5);
-				append_dev(div31, t38);
-				append_dev(div31, div9);
-				append_dev(div9, t39);
+				append_dev(div34, t36);
+				append_dev(div34, div9);
+				append_dev(div9, t37);
 				append_dev(div9, div7);
-				append_dev(div9, t41);
+				append_dev(div9, t39);
 				append_dev(div9, div8);
-				append_dev(div31, t43);
-				append_dev(div31, div12);
-				append_dev(div12, t44);
+				append_dev(div34, t41);
+				append_dev(div34, div12);
+				append_dev(div12, t42);
 				append_dev(div12, div10);
-				append_dev(div12, t46);
+				append_dev(div12, t44);
 				append_dev(div12, div11);
-				append_dev(div31, t48);
-				append_dev(div31, div15);
-				append_dev(div15, t49);
+				append_dev(div34, t46);
+				append_dev(div34, div15);
+				append_dev(div15, t47);
 				append_dev(div15, div13);
-				append_dev(div15, t51);
+				append_dev(div15, t49);
 				append_dev(div15, div14);
-				append_dev(div31, t53);
-				append_dev(div31, div18);
-				append_dev(div18, t54);
+				append_dev(div34, t51);
+				append_dev(div34, div18);
+				append_dev(div18, t52);
 				append_dev(div18, div16);
-				append_dev(div18, t56);
+				append_dev(div18, t54);
 				append_dev(div18, div17);
-				append_dev(div31, t58);
-				append_dev(div31, div21);
-				append_dev(div21, t59);
+				append_dev(div34, t56);
+				append_dev(div34, div21);
+				append_dev(div21, t57);
 				append_dev(div21, div19);
-				append_dev(div21, t61);
+				append_dev(div21, t59);
 				append_dev(div21, div20);
-				append_dev(div31, t63);
-				append_dev(div31, div24);
-				append_dev(div24, t64);
+				append_dev(div34, t61);
+				append_dev(div34, div24);
+				append_dev(div24, t62);
 				append_dev(div24, div22);
-				append_dev(div24, t66);
+				append_dev(div24, t64);
 				append_dev(div24, div23);
-				append_dev(div31, t68);
-				append_dev(div31, div27);
-				append_dev(div27, t69);
+				append_dev(div34, t66);
+				append_dev(div34, div27);
+				append_dev(div27, t67);
 				append_dev(div27, div25);
-				append_dev(div27, t71);
+				append_dev(div27, t69);
 				append_dev(div27, div26);
-				append_dev(div31, t73);
-				append_dev(div31, div30);
-				append_dev(div30, t74);
+				append_dev(div34, t71);
+				append_dev(div34, div30);
+				append_dev(div30, t72);
 				append_dev(div30, div28);
-				append_dev(div30, t76);
+				append_dev(div30, t74);
 				append_dev(div30, div29);
-				insert_dev(target, t78, anchor);
-				mount_component(prism2, target, anchor);
-				insert_dev(target, t79, anchor);
-				insert_dev(target, h33, anchor);
+				append_dev(div34, t76);
+				append_dev(div34, div33);
+				append_dev(div33, t77);
+				append_dev(div33, div31);
+				append_dev(div33, t79);
+				append_dev(div33, div32);
 				insert_dev(target, t81, anchor);
-				insert_dev(target, div32, anchor);
-				append_dev(div32, h11);
-				append_dev(div32, t83);
-				append_dev(div32, h2);
-				append_dev(div32, t85);
-				append_dev(div32, h34);
-				append_dev(div32, t87);
-				append_dev(div32, h4);
-				append_dev(div32, t89);
-				append_dev(div32, h5);
-				append_dev(div32, t91);
-				append_dev(div32, h6);
-				append_dev(div32, t93);
-				append_dev(div32, p8);
-				append_dev(div32, t95);
-				append_dev(div32, p9);
-				append_dev(div32, t97);
-				append_dev(div32, p10);
-				append_dev(div32, t99);
-				append_dev(div32, p11);
-				append_dev(div32, t101);
-				append_dev(div32, p12);
-				append_dev(div32, t103);
-				append_dev(div32, p13);
-				append_dev(div32, t105);
-				append_dev(div32, p14);
-				append_dev(div32, t107);
-				append_dev(div32, p15);
+				mount_component(prism2, target, anchor);
+				insert_dev(target, t82, anchor);
+				insert_dev(target, h33, anchor);
+				insert_dev(target, t84, anchor);
+				insert_dev(target, div35, anchor);
+				append_dev(div35, h11);
+				append_dev(div35, t86);
+				append_dev(div35, h2);
+				append_dev(div35, t88);
+				append_dev(div35, h34);
+				append_dev(div35, t90);
+				append_dev(div35, h4);
+				append_dev(div35, t92);
+				append_dev(div35, h5);
+				append_dev(div35, t94);
+				append_dev(div35, h6);
+				append_dev(div35, t96);
+				append_dev(div35, p7);
+				append_dev(div35, t98);
+				append_dev(div35, p8);
+				append_dev(div35, t100);
+				append_dev(div35, p9);
+				append_dev(div35, t102);
+				append_dev(div35, p10);
+				append_dev(div35, t104);
+				append_dev(div35, p11);
+				append_dev(div35, t106);
+				append_dev(div35, p12);
+				append_dev(div35, t108);
+				append_dev(div35, p13);
+				append_dev(div35, t110);
+				append_dev(div35, p14);
 				current = true;
 			},
 			p: function update(ctx, [dirty]) {
@@ -21211,22 +21228,22 @@ var app = (function () {
 					detach_dev(h31);
 					detach_dev(t14);
 					detach_dev(div3);
-					detach_dev(t20);
-					detach_dev(t21);
+					detach_dev(t18);
+					detach_dev(t19);
 					detach_dev(h32);
+					detach_dev(t21);
+					detach_dev(p4);
 					detach_dev(t23);
 					detach_dev(p5);
 					detach_dev(t25);
 					detach_dev(p6);
-					detach_dev(t27);
-					detach_dev(p7);
-					detach_dev(t33);
-					detach_dev(div31);
-					detach_dev(t78);
-					detach_dev(t79);
-					detach_dev(h33);
+					detach_dev(t31);
+					detach_dev(div34);
 					detach_dev(t81);
-					detach_dev(div32);
+					detach_dev(t82);
+					detach_dev(h33);
+					detach_dev(t84);
+					detach_dev(div35);
 				}
 
 				destroy_component(prism0, detaching);
@@ -23955,11 +23972,12 @@ var app = (function () {
   --fs-rem-small: .875rem; /* 14px */
   --fs-rem-xlarge: 1.25rem; /* 20px */
   --fs-rem-xsmall: .75rem; /* 12px */
-  --fs-rem-xxlarge: 1.875rem; /* 30px */
+  --fs-rem-xxlarge: 1.5rem; /* 24px */
   --fs-rem-xxsmall: .625rem; /* 10px */
-  --fs-rem-xxxlarge: 2.25rem; /* 36px */
+  --fs-rem-xxxlarge: 1.75rem; /* 28px */
   --fs-rem-xxxsmall: .4375rem; /* 7px */
-  --fs-rem-xxxxlarge: 3.125rem; /* 50px */
+  --fs-rem-xxxxlarge: 2.5rem; /* 40px */
+  --fs-rem-xxxxxlarge: 5rem; /* 80px */
   --fs-large: var(--fs-rem-large);
   --fs-medium: var(--fs-rem-medium);
   --fs-small: var(--fs-rem-small);
@@ -23967,7 +23985,9 @@ var app = (function () {
   --fs-xsmall: var(--fs-rem-xsmall);
   --fs-xxlarge: var(--fs-rem-xxlarge);
   --fs-xxsmall: var(--fs-rem-xxsmall);
-  --fs-xxxlarge: var(--fs-rem-xxxxlarge);
+  --fs-xxxlarge: var(--fs-rem-xxxlarge);
+  --fs-xxxxlarge: var(--fs-rem-xxxxlarge);
+  --fs-xxxxxlarge: var(--fs-rem-xxxxxlarge);
   ` + "";
 
 		let t;
@@ -23998,7 +24018,7 @@ var app = (function () {
 		return block;
 	}
 
-	// (42:0) <Prism language="css">
+	// (45:0) <Prism language="css">
 	function create_default_slot_2$2(ctx) {
 		let t_value = `
   --fs-ads: var(--fs-xxsmall);
@@ -24006,9 +24026,9 @@ var app = (function () {
   --fs-caption: var(--fs-small);
   --fs-quote: var(--fs-xxlarge);
   --fs-showmore: var(--fs-medium);
-  --fs-subtitle: var(--fs-xlarge);
+  --fs-subtitle: var(--fs-xxlarge);
   --fs-timestamp: var(--fs-xsmall);
-  --fs-title: var(--fs-xxxlarge);
+  --fs-title: var(--fs-xxxxxlarge);
   ` + "";
 
 		let t;
@@ -24032,24 +24052,24 @@ var app = (function () {
 			block,
 			id: create_default_slot_2$2.name,
 			type: "slot",
-			source: "(42:0) <Prism language=\\\"css\\\">",
+			source: "(45:0) <Prism language=\\\"css\\\">",
 			ctx
 		});
 
 		return block;
 	}
 
-	// (57:0) <Prism language="css">
+	// (60:0) <Prism language="css">
 	function create_default_slot_1$3(ctx) {
 		let t_value = `
-  --fs-large: var(--fs-rem-medium);
+  --fs-large: var(--fs-rem-large);
   --fs-medium: var(--fs-rem-medium);
   --fs-small: var(--fs-rem-xsmall);
   --fs-xlarge: var(--fs-rem-xlarge);
   --fs-xsmall: var(--fs-rem-xxsmall);
   --fs-xxlarge: var(--fs-rem-xxlarge);
   --fs-xxsmall: var(--fs-rem-xxxsmall);
-  --fs-xxxlarge: var(--fs-rem-xxxlarge);
+  --fs-xxxlarge: var(--fs-rem-xxxxlarge);
   ` + "";
 
 		let t;
@@ -24073,14 +24093,14 @@ var app = (function () {
 			block,
 			id: create_default_slot_1$3.name,
 			type: "slot",
-			source: "(57:0) <Prism language=\\\"css\\\">",
+			source: "(60:0) <Prism language=\\\"css\\\">",
 			ctx
 		});
 
 		return block;
 	}
 
-	// (72:0) <Prism language="css">
+	// (75:0) <Prism language="css">
 	function create_default_slot$8(ctx) {
 		let t_value = `
   --fs-ads: var(--fs-xxsmall);
@@ -24114,7 +24134,7 @@ var app = (function () {
 			block,
 			id: create_default_slot$8.name,
 			type: "slot",
-			source: "(72:0) <Prism language=\\\"css\\\">",
+			source: "(75:0) <Prism language=\\\"css\\\">",
 			ctx
 		});
 
@@ -24222,9 +24242,9 @@ var app = (function () {
 				add_location(h1, file$p, 4, 0, 63);
 				add_location(h20, file$p, 6, 0, 79);
 				add_location(h21, file$p, 15, 0, 287);
-				add_location(h22, file$p, 40, 0, 1047);
-				add_location(h23, file$p, 55, 0, 1389);
-				add_location(h24, file$p, 70, 0, 1767);
+				add_location(h22, file$p, 43, 0, 1170);
+				add_location(h23, file$p, 58, 0, 1515);
+				add_location(h24, file$p, 73, 0, 1893);
 			},
 			l: function claim(nodes) {
 				throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
