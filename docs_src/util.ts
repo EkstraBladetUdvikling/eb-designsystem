@@ -7,8 +7,11 @@ import { getSentence, getWord } from './lipsum';
 export function rdmArticleData(mediaWidth = 640, mediaHeight = 360): IArticleCardProps {
   const colorNamesForUse = [
     colorNames.breaking,
+    colorNames.bruger,
     colorNames.eb,
+    colorNames.flash,
     colorNames.forbrug,
+    colorNames.livescore,
     colorNames.native,
     colorNames.nyheder,
     colorNames.sexsamliv,

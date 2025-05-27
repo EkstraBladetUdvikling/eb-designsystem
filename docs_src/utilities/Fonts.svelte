@@ -27,11 +27,13 @@
 <div class="card bg--graa7 padding-l--rl">
   <p class="fontweight-normal">fontweight-normal</p>
   <p class="fontweight-bold">fontweight-bold</p>
+  <p class="fontweight-bolder">fontweight-bolder</p>
 </div>
 
 <Prism language="html">
   {`<p class="fontweight-normal"></p>
-<p class="fontweight-bold"></p>`}
+<p class="fontweight-bold"></p>
+<p class="fontweight-bolder"></p>`}
 </Prism>
 
 <h3>Font-size</h3>
@@ -71,23 +73,18 @@
     <div class="fontsize-smaller">fontsize-smaller</div>
     <div class="fontsize-larger">fontsize-larger</div>
   </div>
-    <div class="fontsize-xxlarge padding-m--tb">
-    fontsize-xxlarge = 1.5rem ~ 24px;
+  <div class="fontsize-xxlarge padding-m--tb">
+    fontsize-xxlarge = 1.875rem ~ 30px;
     <div class="fontsize-smaller">fontsize-smaller</div>
     <div class="fontsize-larger">fontsize-larger</div>
   </div>
-    <div class="fontsize-xxxlarge padding-m--tb">
-    fontsize-xxxlarge = 1.75rem ~ 28px;
+  <div class="fontsize-xxxlarge padding-m--tb">
+    fontsize-xxxlarge = 2.25rem ~ 36px;
     <div class="fontsize-smaller">fontsize-smaller</div>
     <div class="fontsize-larger">fontsize-larger</div>
   </div>
-  <div class="fontsize-xxxxlarge padding-m--tb">
-    fontsize-xxxxlarge = 2.5rem ~ 40px;
-    <div class="fontsize-smaller">fontsize-smaller</div>
-    <div class="fontsize-larger">fontsize-larger</div>
-  </div>
-  <div class="fontsize-xxxxxlarge padding-m--t">
-    fontsize-xxxxxlarge = 5rem ~ 80px;
+  <div class="fontsize-xxxxlarge padding-m--t">
+    fontsize-xxxxlarge = 3.125rem ~ 50px;
     <div class="fontsize-smaller">fontsize-smaller</div>
     <div class="fontsize-larger">fontsize-larger</div>
   </div>
@@ -103,7 +100,6 @@
 <div class="fontsize-xxlarge"></div>
 <div class="fontsize-xxxlarge"></div>
 <div class="fontsize-xxxxlarge"></div>
-<div class="fontsize-xxxxxlarge"></div>
 
 <div class="fontsize-smaller"></div>
 <div class="fontsize-larger"></div>`}

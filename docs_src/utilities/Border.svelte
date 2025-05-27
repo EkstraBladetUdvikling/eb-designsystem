@@ -30,32 +30,20 @@
   <div class="card-content flex flex-justify--between flex-wrap--wrap">
     <div class="border-radius padding-xl width-1of3 margin-l bg--eb">border-radius</div>
     <div class="border-radius-s padding-xl width-1of3 margin-l bg--eb">border-radius-s</div>
-    <div class="border-radius-xs padding-xl width-1of3 margin-l bg--eb">border-radius-xs</div>
-    <div class="border-radius-f padding-xl width-1of3 margin-l bg--eb">border-radius-f</div>
     <div class="border-radius--t padding-xl width-1of3 margin-l bg--eb">border-radius--t</div>
     <div class="border-radius-s--t padding-xl width-1of3 margin-l bg--eb">border-radius-s--t</div>
-    <div class="border-radius-xs--t padding-xl width-1of3 margin-l bg--eb">border-radius-xs--t</div>
-    <div class="border-radius-f--t padding-xl width-1of3 margin-l bg--eb">border-radius-f--t</div>
     <div class="border-radius--b padding-xl width-1of3 margin-l bg--eb">border-radius--b</div>
     <div class="border-radius-s--b padding-xl width-1of3 margin-l bg--eb">border-radius-s--b</div>
-    <div class="border-radius-xs--b padding-xl width-1of3 margin-l bg--eb">border-radius-xs--b</div>
-    <div class="border-radius-f--b padding-xl width-1of3 margin-l bg--eb">border-radius-f--b</div>
   </div>
 </div>
 
 <Prism language="html">
   {`<div class="border-radius"></div>
 <div class="border-radius-s"></div>
-<div class="border-radius-xs"></div>
-<div class="border-radius-f"></div>
 <div class="border-radius--t"></div>
 <div class="border-radius-s--t"></div>
-<div class="border-radius-xs--t"></div>
-<div class="border-radius-f--t"></div>
 <div class="border-radius--b"></div>
-<div class="border-radius-s--b"></div>
-<div class="border-radius-xs--b"></div>
-<div class="border-radius-f--b"></div>`}
+<div class="border-radius-s--b"></div>`}
 </Prism>
 
 <h3>Border colors</h3>

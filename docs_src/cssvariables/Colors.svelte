@@ -22,8 +22,8 @@
   --fgcolor--cancel: var(--fgcolor--red);
   --color--default: var(--color--bluedark);
   --fgcolor--default: var(--fgcolor--bluedark);
-  --color--primary: var(--color--lightblue);
-  --fgcolor--primary: var(--fgcolor--lightblue);
+  --color--primary: var(--color--bruger);
+  --fgcolor--primary: var(--fgcolor--bruger);
   --color--secondary: var(--color--graa3);
   --fgcolor--secondary: var(--fgcolor--graa3);
   `}

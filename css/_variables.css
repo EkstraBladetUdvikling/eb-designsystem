@@ -1,13 +1,13 @@
 /* Systemwide variables - default + desktop */
 :root {
-  --box-shadow: 0 5px 18px rgba(var(--rgb-color--black), 0.1);
+  --box-shadow: 0 5px 18px rgba(var(--rgb-color--black), .1);
 
   --border-radius--small: 5px;
-  --box-shadow--dark: 0 5px 18px rgba(var(--rgb-color--black), 0.6);
+  --box-shadow--dark: 0 5px 18px rgba(var(--rgb-color--black), .6);
   --color--accept: var(--color--green);
   --color--cancel: var(--color--red);
   --color--default: var(--color--bluedark);
-  --color--primary: var(--color--lightblue);
+  --color--primary: var(--color--bruger);
   --color--secondary: var(--color--graa3);
   /* distance - desktop & tablet */
   --distance-large: 20px;
@@ -19,20 +19,20 @@
   --fgcolor--accept: var(--fgcolor--green);
   --fgcolor--cancel: var(--fgcolor--red);
   --fgcolor--default: var(--fgcolor--bluedark);
-  --fgcolor--primary: var(--fgcolor--lightblue);
+  --fgcolor--primary: var(--fgcolor--bruger);
   --fgcolor--secondary: var(--fgcolor--graa3);
-  --fontfamily--primary: "Breaking", var(--fontfamily--secondary);
-  --fontfamily--secondary: "Breaking Text", Arial, Helvetica, sans-serif;
+  --fontfamily--primary: "Work Sans", var(--fontfamily--secondary);
+  --fontfamily--secondary: Arial, Helvetica, sans-serif;
   --fs-rem-large: 1.125rem; /* 18px */
   --fs-rem-medium: 1rem; /* 16px */
-  --fs-rem-small: 0.875rem; /* 14px */
+  --fs-rem-small: .875rem; /* 14px */
   --fs-rem-xlarge: 1.25rem; /* 20px */
-  --fs-rem-xsmall: 0.75rem; /* 12px */
-  --fs-rem-xxlarge: 1.5rem; /* 24px */
-  --fs-rem-xxsmall: 0.625rem; /* 10px */
-  --fs-rem-xxxlarge: 1.75rem; /* 28px */
-  --fs-rem-xxxxlarge: 2.5rem; /* 40px */
-  --fs-rem-xxxxxlarge: 5rem; /* 80px */
+  --fs-rem-xsmall: .75rem; /* 12px */
+  --fs-rem-xxlarge: 1.875rem; /* 30px */
+  --fs-rem-xxsmall: .625rem; /* 10px */
+  --fs-rem-xxxlarge: 2.25rem; /* 36px */
+  --fs-rem-xxxsmall: .4375rem; /* 7px */
+  --fs-rem-xxxxlarge: 3.125rem; /* 50px */
 }
 
 /**
@@ -46,9 +46,7 @@
   --fs-xsmall: var(--fs-rem-xsmall);
   --fs-xxlarge: var(--fs-rem-xxlarge);
   --fs-xxsmall: var(--fs-rem-xxsmall);
-  --fs-xxxlarge: var(--fs-rem-xxxlarge);
-  --fs-xxxxlarge: var(--fs-rem-xxxxlarge);
-  --fs-xxxxxlarge: var(--fs-rem-xxxxxlarge);
+  --fs-xxxlarge: var(--fs-rem-xxxxlarge);
 }
 
 /**
@@ -60,33 +58,33 @@
   --fs-caption: var(--fs-small);
   --fs-quote: var(--fs-xxlarge);
   --fs-showmore: var(--fs-medium);
-  --fs-subtitle: var(--fs-xxlarge);
+  --fs-subtitle: var(--fs-xlarge);
   --fs-timestamp: var(--fs-xsmall);
-  --fs-title: var(--fs-xxxxxlarge);
+  --fs-title: var(--fs-xxxlarge);
 }
 
 @media (--smartphone) {
   :root {
     --distance-large: 15px;
-    --distance-medium: 10px;
-    --distance-small: 5px;
-    --distance-standard: 10px;
-    --distance-xlarge: 20px;
-    --distance-xxlarge: 30px;
+  --distance-medium: 10px;
+  --distance-small: 5px;
+  --distance-standard: 10px;
+  --distance-xlarge: 20px;
+  --distance-xxlarge: 30px;
   }
 
   /**
   * SMARTPHONE Fontsizes pixel
   */
   :root {
-    --fs-large: var(--fs-rem-large);
-    --fs-medium: var(--fs-rem-medium);
-    --fs-small: var(--fs-rem-xsmall);
-    --fs-xlarge: var(--fs-rem-xlarge);
-    --fs-xsmall: var(--fs-rem-xxsmall);
-    --fs-xxlarge: var(--fs-rem-xxlarge);
-    --fs-xxsmall: var(--fs-rem-xxxsmall);
-    --fs-xxxlarge: var(--fs-rem-xxxxlarge);
+    --fs-large: var(--fs-rem-medium);
+  --fs-medium: var(--fs-rem-medium);
+  --fs-small: var(--fs-rem-xsmall);
+  --fs-xlarge: var(--fs-rem-xlarge);
+  --fs-xsmall: var(--fs-rem-xxsmall);
+  --fs-xxlarge: var(--fs-rem-xxlarge);
+  --fs-xxsmall: var(--fs-rem-xxxsmall);
+  --fs-xxxlarge: var(--fs-rem-xxxlarge);
   }
 
   /**
@@ -94,12 +92,12 @@
   */
   :root {
     --fs-ads: var(--fs-xxsmall);
-    --fs-bodytext: var(--fs-large);
-    --fs-caption: var(--fs-small);
-    --fs-quote: var(--fs-xxlarge);
-    --fs-showmore: var(--fs-medium);
-    --fs-subtitle: var(--fs-xlarge);
-    --fs-timestamp: var(--fs-xsmall);
-    --fs-title: var(--fs-xxxlarge);
+  --fs-bodytext: var(--fs-large);
+  --fs-caption: var(--fs-small);
+  --fs-quote: var(--fs-xxlarge);
+  --fs-showmore: var(--fs-medium);
+  --fs-subtitle: var(--fs-xlarge);
+  --fs-timestamp: var(--fs-xsmall);
+  --fs-title: var(--fs-xxxlarge);
   }
 }

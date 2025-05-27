@@ -52,15 +52,7 @@ function combineNumbers(arr: number[], minChars: number) {
   return idxResult;
 }
 
-/**
- * Splits a sentence into multiple lines based on a minimum character length per line.
- *
- * @param sentence - The input sentence to split.
- * @param minChars - The minimum number of characters per line.
- * @returns An array of strings, each representing a line split according to the rules.
- */
-function splitIntoLines(sentence: string, minChars: number): string[] {
-  if (sentence.length < minChars) return [sentence];
+function splitIntoLines(sentence: string, minChars: number) {
   const split = sentence.split(' ');
   const lines: string[] = [];
 

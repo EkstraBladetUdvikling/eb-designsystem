@@ -23,17 +23,5 @@ html {
 }
 
 .lineheight-m {
-  line-height: 1.625em;
-}
-
-.lineheight-l {
-  line-height: 1.333em;
-}
-
-.lineheight-xl {
-  line-height: 1.428em;
-}
-
-.lineheight-xxl {
-  line-height: 1em;
+  line-height: 1.5em;
 }
