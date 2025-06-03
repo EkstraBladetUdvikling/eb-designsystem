@@ -36,6 +36,14 @@
 
 @font-face {
   font-family: "Breaking";
+  src: url("/assets/fonts/BreakingSemiCondensed-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: semi-condensed;
+}
+
+@font-face {
+  font-family: "Breaking";
   src: url("/assets/fonts/BreakingSemiCondensed-ExtraBold.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
