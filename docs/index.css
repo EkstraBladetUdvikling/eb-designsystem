@@ -116,9 +116,6 @@
   font-stretch: semi-expanded;
 }
 
-html {
-  font-variant-ligatures: none;
-}
 a {
   color: #e3141d;
   text-decoration: none;

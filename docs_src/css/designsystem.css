@@ -2394,6 +2394,14 @@ textarea {
   font-family: var(--fontfamily--secondary);
 }
 
+html,
+button,
+input,
+select,
+textarea {
+  font-variant-ligatures: none;
+}
+
 h1 {
   font-size: var(--fs-title);
   font-stretch: semi-condensed;

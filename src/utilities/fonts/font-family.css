@@ -12,6 +12,7 @@ input,
 select,
 textarea {
   font-family: var(--fontfamily--secondary);
+  font-variant-ligatures: none;
 }
 
 h1 {
