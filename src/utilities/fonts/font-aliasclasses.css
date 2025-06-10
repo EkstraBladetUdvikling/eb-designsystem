@@ -10,7 +10,13 @@
 
 .fs-caption {
   font-size: var(--fs-caption);
-  line-height: normal;
+  line-height: 20px;
+}
+
+@media (--smartphone) {
+  .fs-caption {
+    line-height: 14px;
+  }
 }
 
 .fs-quote {

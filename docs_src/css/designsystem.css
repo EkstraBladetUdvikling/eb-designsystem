@@ -2384,7 +2384,13 @@ a.card-mode:focus .card-inner {
 
 .fs-caption {
   font-size: var(--fs-caption);
-  line-height: normal;
+  line-height: 20px;
+}
+
+@media (max-width: 767px) {
+  .fs-caption {
+    line-height: 14px;
+  }
 }
 
 .fs-quote {
