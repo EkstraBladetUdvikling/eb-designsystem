@@ -35,7 +35,9 @@
   --fs-xsmall: var(--fs-rem-xsmall);
   --fs-xxlarge: var(--fs-rem-xxlarge);
   --fs-xxsmall: var(--fs-rem-xxsmall);
-  --fs-xxxlarge: var(--fs-rem-xxxxlarge);
+  --fs-xxxlarge: var(--fs-rem-xxxlarge);
+  --fs-xxxxlarge: var(--fs-rem-xxxxlarge);
+  --fs-xxxxxlarge: var(--fs-rem-xxxxxlarge);
   `}
 </Prism>
 
