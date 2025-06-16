@@ -50,7 +50,7 @@
 }
 
 .fontsize-xxxxxlarge {
-  /** @description: Matches 80px */
+  /** @description: Matches 72px */
   font-size: var(--fs-rem-xxxxxlarge);
 }
 

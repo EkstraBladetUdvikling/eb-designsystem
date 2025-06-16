@@ -633,7 +633,7 @@ template,[hidden] {
   --fs-rem-xxsmall: 0.625rem; /* 10px */
   --fs-rem-xxxlarge: 1.75rem; /* 28px */
   --fs-rem-xxxxlarge: 2.5rem; /* 40px */
-  --fs-rem-xxxxxlarge: 5rem; /* 80px */
+  --fs-rem-xxxxxlarge: 4.5rem; /* 72px */
   --fs-large: var(--fs-rem-large);
   --fs-medium: var(--fs-rem-medium);
   --fs-small: var(--fs-rem-small);
@@ -2420,7 +2420,7 @@ h6,p {
 }
 
 .fontsize-xxxxxlarge {
-  /** @description: Matches 80px */
+  /** @description: Matches 72px */
   font-size: var(--fs-rem-xxxxxlarge);
 }
 
