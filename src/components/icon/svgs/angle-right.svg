@@ -4,5 +4,6 @@
       filter: var(--icon-filter);
     }
   </style>
-  <path class="filter" d="M17.525 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L205.947 256 10.454 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L34.495 36.465c-4.686-4.687-12.284-4.687-16.97 0z"></path>
+  <path class="filter" d="M461.5 320L438.9 342.6L278.9 502.6L256.3 525.3L211 480L233.6 457.4L371 320L233.6 182.6L211 160L256.3 114.7L278.9 137.4L438.9 297.4L461.5 320z"/>
 </svg>
+<!--!Font Awesome Pro v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2025 Fonticons, Inc.-->
