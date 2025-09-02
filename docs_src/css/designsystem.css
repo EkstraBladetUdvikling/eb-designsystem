@@ -3047,6 +3047,16 @@ html {
   color: var(--fgcolor--reddark);
 }
 
+.bg--bordeaux {
+  background: var(--color--bordeaux);
+  color: var(--fgcolor--bordeaux);
+}
+
+.bg--reddark {
+  background: var(--color--reddark);
+  color: var(--fgcolor--reddark);
+}
+
 .bg--red {
   background: var(--color--red);
   color: var(--fgcolor--red);
