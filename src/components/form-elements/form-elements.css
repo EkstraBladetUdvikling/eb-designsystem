@@ -44,7 +44,7 @@
   top: 0;
   left: 5px;
 
-  font-size: .7em;
+  font-size: 0.7em;
   transform: translate(0, -110%);
 }
 
@@ -93,11 +93,11 @@
 }
 
 [data-focus="true"] {
-  border: 1px solid var(--color--bluelight);
+  border: 1px solid var(--color--lightblue);
 }
 
 [data-focus="true"] span {
-  color: var(--color--bluelight);
+  color: var(--color--lightblue);
 }
 
 .form-input-container input,
@@ -126,7 +126,7 @@
   left: 3px;
   z-index: -1;
 
-  transform: scale(.1);
+  transform: scale(0.1);
 }
 
 .form-checkbox--icon ~ .form-label {

@@ -35,18 +35,23 @@
 }
 
 .fontsize-xxlarge {
-  /** @description: Matches 30px */
+  /** @description: Matches 24px */
   font-size: var(--fs-rem-xxlarge);
 }
 
 .fontsize-xxxlarge {
-  /** @description: Matches 36px */
+  /** @description: Matches 28px */
   font-size: var(--fs-rem-xxxlarge);
 }
 
 .fontsize-xxxxlarge {
-  /** @description: Matches 50px */
+  /** @description: Matches 40px */
   font-size: var(--fs-rem-xxxxlarge);
+}
+
+.fontsize-xxxxxlarge {
+  /** @description: Matches 80px */
+  font-size: var(--fs-rem-xxxxxlarge);
 }
 
 .fontsize-smaller {
