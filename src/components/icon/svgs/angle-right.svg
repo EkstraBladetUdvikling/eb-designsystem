@@ -1,9 +1,1 @@
-<svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
-  <style>
-    .filter {
-      filter: var(--icon-filter);
-    }
-  </style>
-  <path class="filter" d="M461.5 320L438.9 342.6L278.9 502.6L256.3 525.3L211 480L233.6 457.4L371 320L233.6 182.6L211 160L256.3 114.7L278.9 137.4L438.9 297.4L461.5 320z"/>
-</svg>
-<!--!Font Awesome Pro v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2025 Fonticons, Inc.-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc. --><path d="M301.3 256l-22.6 22.6-160 160L96 461.3 50.7 416l22.6-22.6L210.7 256 73.4 118.6 50.7 96 96 50.7l22.6 22.6 160 160L301.3 256z"/></svg>
