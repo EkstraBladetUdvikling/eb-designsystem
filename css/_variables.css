@@ -10,12 +10,12 @@
   --color--primary: var(--color--lightblue);
   --color--secondary: var(--color--graa3);
   /* distance - desktop & tablet */
-  --distance-large: 20px;
-  --distance-medium: 10px;
-  --distance-small: 5px;
-  --distance-standard: 10px;
-  --distance-xlarge: 30px;
-  --distance-xxlarge: 50px;
+  --distance-large: 16px;
+  --distance-medium: 8px;
+  --distance-small: 4px;
+  --distance-standard: 8px;
+  --distance-xlarge: 24px;
+  --distance-xxlarge: 48px;
   --fgcolor--accept: var(--fgcolor--green);
   --fgcolor--cancel: var(--fgcolor--red);
   --fgcolor--default: var(--fgcolor--bluedark);
@@ -66,15 +66,6 @@
 }
 
 @media (--smartphone) {
-  :root {
-    --distance-large: 15px;
-    --distance-medium: 10px;
-    --distance-small: 5px;
-    --distance-standard: 10px;
-    --distance-xlarge: 20px;
-    --distance-xxlarge: 30px;
-  }
-
   /**
   * SMARTPHONE Fontsizes pixel
   */
