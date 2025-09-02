@@ -27,7 +27,7 @@
   --fs-rem-xxxlarge: 1.75rem; /* 28px */
   --fs-rem-xxxsmall: .4375rem; /* 7px */
   --fs-rem-xxxxlarge: 2.5rem; /* 40px */
-  --fs-rem-xxxxxlarge: 5rem; /* 80px */
+  --fs-rem-xxxxxlarge: 4.5rem; /* 72px */
   --fs-large: var(--fs-rem-large);
   --fs-medium: var(--fs-rem-medium);
   --fs-small: var(--fs-rem-small);

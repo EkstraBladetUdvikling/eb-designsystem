@@ -729,7 +729,7 @@ template,[hidden] {
   --fs-rem-xxsmall: 0.625rem; /* 10px */
   --fs-rem-xxxlarge: 1.75rem; /* 28px */
   --fs-rem-xxxxlarge: 2.5rem; /* 40px */
-  --fs-rem-xxxxxlarge: 5rem; /* 80px */
+  --fs-rem-xxxxxlarge: 4.5rem; /* 72px */
   --fs-large: var(--fs-rem-large);
   --fs-medium: var(--fs-rem-medium);
   --fs-small: var(--fs-rem-small);
@@ -1666,7 +1666,7 @@ a.card-mode:focus .card-inner {
   top: 0;
   left: 5px;
 
-  font-size: .7em;
+  font-size: 0.7em;
   transform: translate(0, -110%);
 }
 
@@ -1715,11 +1715,11 @@ a.card-mode:focus .card-inner {
 }
 
 [data-focus="true"] {
-  border: 1px solid var(--color--bluelight);
+  border: 1px solid var(--color--lightblue);
 }
 
 [data-focus="true"] span {
-  color: var(--color--bluelight);
+  color: var(--color--lightblue);
 }
 
 .form-input-container input,
@@ -1750,7 +1750,7 @@ a.card-mode:focus .card-inner {
   left: 3px;
   z-index: -1;
 
-  transform: scale(.1);
+  transform: scale(0.1);
 }
 
 .form-checkbox--icon ~ .form-label {
@@ -2354,7 +2354,13 @@ a.card-mode:focus .card-inner {
 
 .fs-caption {
   font-size: var(--fs-caption);
-  line-height: normal;
+  line-height: 20px;
+}
+
+@media (max-width: 767px) {
+  .fs-caption {
+    line-height: 14px;
+  }
 }
 
 .fs-quote {
@@ -2364,7 +2370,6 @@ a.card-mode:focus .card-inner {
 
 .fs-showmore {
   font-size: var(--fs-showmore);
-  line-height: normal;
 }
 
 .fs-subtitle {

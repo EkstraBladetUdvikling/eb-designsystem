@@ -87,7 +87,7 @@
     <div class="fontsize-larger">fontsize-larger</div>
   </div>
   <div class="fontsize-xxxxxlarge padding-m--t">
-    fontsize-xxxxxlarge = 5rem ~ 80px;
+    fontsize-xxxxxlarge = 4.5rem ~ 72px;
     <div class="fontsize-smaller">fontsize-smaller</div>
     <div class="fontsize-larger">fontsize-larger</div>
   </div>
