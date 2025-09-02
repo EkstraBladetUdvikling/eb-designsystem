@@ -608,7 +608,7 @@ template,[hidden] {
   --color--accept: var(--color--green);
   --color--cancel: var(--color--red);
   --color--default: var(--color--bluedark);
-  --color--primary: var(--color--bruger);
+  --color--primary: var(--color--lightblue);
   --color--secondary: var(--color--graa3);
   /* distance - desktop & tablet */
   --distance-large: 20px;
@@ -620,7 +620,7 @@ template,[hidden] {
   --fgcolor--accept: var(--fgcolor--green);
   --fgcolor--cancel: var(--fgcolor--red);
   --fgcolor--default: var(--fgcolor--bluedark);
-  --fgcolor--primary: var(--fgcolor--bruger);
+  --fgcolor--primary: var(--fgcolor--lightblue);
   --fgcolor--secondary: var(--fgcolor--graa3);
   --fontfamily--primary: "Breaking", var(--fontfamily--secondary);
   --fontfamily--secondary: "Breaking Text", Arial, Helvetica, sans-serif;
