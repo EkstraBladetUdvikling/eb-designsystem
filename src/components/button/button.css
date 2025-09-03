@@ -27,6 +27,7 @@
   display: flex;
   font-size: var(--button-fs);
   font-weight: 800;
+  line-height: 1;
   padding: var(--button-padding);
   text-align: center;
   text-decoration: none;
@@ -156,4 +157,75 @@
   cursor: default;
 
   pointer-events: none;
+}
+
+.button[data-redesign] {
+  background: rgb(var(--button-background, var(--rgb-color--red)));
+  color: rgb(var(--button-text-color, var(--rgb-fgcolor--red)));
+  border: 0;
+}
+
+.button[data-redesign*="primary"]:active,
+.button[data-redesign*="primary"]:hover,
+.button[data-redesign*="primary"]:focus {
+  background: rgba(var(--button-background, var(--rgb-color--red)), 0.7);
+  color: rgb(var(--button-text-color, var(--rgb-fgcolor--red)));
+}
+
+.button[data-redesign="primary red"] {
+  --button-background: var(--rgb-color--red);
+  --button-text-color: var(--rgb-fgcolor--red);
+}
+
+.button[data-redesign="primary black"] {
+  --button-background: var(--rgb-color--black);
+  --button-text-color: var(--rgb-fgcolor--black);
+}
+
+.button[data-redesign="secondary"] {
+  background: rgb(var(--button-background, var(--rgb-color--white)), 0.2);
+  color: rgb(var(--button-text-color, var(--rgb-fgcolor--white)));
+}
+
+.button[data-redesign="secondary"]:active,
+.button[data-redesign="secondary"]:hover,
+.button[data-redesign="secondary"]:focus {
+  background: rgb(var(--button-background, var(--rgb-color--white)), 0.3);
+  color: rgb(var(--button-text-color, var(--rgb-fgcolor--white)));
+}
+
+.button[data-redesign="secondary transparent"] {
+  background: rgb(var(--button-background, var(--rgb-color--white)), 0);
+  color: rgb(var(--button-text-color, var(--rgb-fgcolor--white)));
+}
+
+.button[data-redesign="secondary transparent"]:active,
+.button[data-redesign="secondary transparent"]:hover,
+.button[data-redesign="secondary transparent"]:focus {
+  background: rgb(var(--button-background, var(--rgb-color--black)), 0.05);
+  color: rgb(var(--button-text-color, var(--rgb-fgcolor--white)));
+}
+
+.button[data-redesign="secondary onlight"] {
+  background: rgb(var(--button-background, var(--rgb-color--black)), 0.1);
+  color: rgb(var(--button-text-color, var(--rgb-color--black)));
+}
+
+.button[data-redesign="secondary onlight"]:active,
+.button[data-redesign="secondary onlight"]:hover,
+.button[data-redesign="secondary onlight"]:focus {
+  background: rgb(var(--button-background, var(--rgb-color--black)), 0.2);
+  color: rgb(var(--button-text-color, var(--rgb-color--black)));
+}
+
+.button[data-redesign="secondary ondark"] {
+  background: rgb(var(--button-background, var(--rgb-color--white)), 0.2);
+  color: rgb(var(--button-text-color, var(--rgb-color--white)));
+}
+
+.button[data-redesign="secondary ondark"]:active,
+.button[data-redesign="secondary ondark"]:hover,
+.button[data-redesign="secondary ondark"]:focus {
+  background: rgb(var(--button-background, var(--rgb-color--white)), 0.3);
+  color: rgb(var(--button-text-color, var(--rgb-color--white)));
 }
