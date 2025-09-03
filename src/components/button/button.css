@@ -26,12 +26,13 @@
   cursor: pointer;
   display: flex;
   font-size: var(--button-fs);
+  font-weight: 800;
   padding: var(--button-padding);
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
   height: var(--button-height);
-  background: var(--color--white);
+  background: var(--button-background, var(--color--white));
   border: 1px solid var(--button-color);
   color: var(--button-text-color, var(--button-color));
 }
@@ -48,9 +49,9 @@
 .button--solid:active,
 .button--solid:hover,
 .button--solid:focus {
-  background: var(--color--white);
+  background: var(--button-text-color, var(--color--white));
   border: 1px solid var(--button-color);
-  color: var(--button-text-color, var(--button-color));
+  color: var(--button-color);
 }
 
 /* Primary button */
@@ -127,6 +128,7 @@
   background: none;
   border: 0;
   color: inherit;
+  font-weight: normal;
   padding: 0;
   height: auto;
 }
