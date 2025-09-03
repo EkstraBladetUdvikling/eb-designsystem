@@ -23,14 +23,15 @@
   --distance-xsmall: 2px;
   --distance-small: 4px;
   --distance-medium: 8px;
-  --distance-large: 16px;
-  --distance-xlarge: 24px;
-  --distance-xxlarge: 32px;
-  --distance-xxxlarge: 40px;
-  --distance-xxxxlarge: 48px;
-  --distance-xxxxxlarge: 40px;
+  --distance-large: 12px;
+  --distance-xlarge: 16px;
+  --distance-xxlarge: 24px;
+  --distance-xxxlarge: 32px;
+  --distance-xxxxlarge: 40px;
+  --distance-xxxxxlarge: 48px;
   --distance-xxxxxxlarge: 64px;
   --distance-xxxxxxxlarge: 80px;
+
   --distance-standard: var(--distance-medium);
 
   --fontfamily--primary: "Breaking", var(--fontfamily--secondary);
