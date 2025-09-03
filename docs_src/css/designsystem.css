@@ -870,9 +870,9 @@ a.badge:hover {
 .button--solid:active,
 .button--solid:hover,
 .button--solid:focus {
-  background: var(--color--white);
+  background: var(--button-text-color, var(--color--white));
   border: 1px solid var(--button-color);
-  color: var(--button-text-color, var(--button-color));
+  color: var(--button-color);
 }
 
 /* Primary button */
