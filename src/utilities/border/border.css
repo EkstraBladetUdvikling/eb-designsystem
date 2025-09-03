@@ -3,8 +3,8 @@
   --border-radius: 6px; /* default */
 
   --border-radius-medium: var(--border-radius); /* default */
-  --border-radius-small: 4px;
   --border-radius-xsmall: 2px;
+  --border-radius-small: 4px;
   --border-radius-full: 99px;
 }
 
