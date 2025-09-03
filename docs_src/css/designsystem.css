@@ -604,25 +604,39 @@ template,[hidden] {
   --box-shadow: 0 5px 18px rgba(var(--rgb-color--black), 0.1);
 
   --box-shadow--dark: 0 5px 18px rgba(var(--rgb-color--black), 0.6);
+
   --color--accept: var(--color--green);
-  --color--cancel: var(--color--red);
-  --color--default: var(--color--bluedark);
-  --color--primary: var(--color--lightblue);
-  --color--secondary: var(--color--graa3);
-  /* distance - desktop & tablet */
-  --distance-large: 16px;
-  --distance-medium: 8px;
-  --distance-small: 4px;
-  --distance-standard: 8px;
-  --distance-xlarge: 24px;
-  --distance-xxlarge: 48px;
   --fgcolor--accept: var(--fgcolor--green);
+
+  --color--cancel: var(--color--red);
   --fgcolor--cancel: var(--fgcolor--red);
+
+  --color--default: var(--color--bluedark);
   --fgcolor--default: var(--fgcolor--bluedark);
+
+  --color--primary: var(--color--lightblue);
   --fgcolor--primary: var(--fgcolor--lightblue);
+
+  --color--secondary: var(--color--graa3);
   --fgcolor--secondary: var(--fgcolor--graa3);
+
+  /* distance - desktop & tablet */
+  --distance-xsmall: 2px;
+  --distance-small: 4px;
+  --distance-medium: 8px;
+  --distance-large: 16px;
+  --distance-xlarge: 24px;
+  --distance-xxlarge: 32px;
+  --distance-xxxlarge: 40px;
+  --distance-xxxxlarge: 48px;
+  --distance-xxxxxlarge: 40px;
+  --distance-xxxxxxlarge: 64px;
+  --distance-xxxxxxxlarge: 80px;
+  --distance-standard: var(--distance-medium);
+
   --fontfamily--primary: "Breaking", var(--fontfamily--secondary);
   --fontfamily--secondary: "Breaking Text", Arial, Helvetica, sans-serif;
+
   --fs-rem-large: 1.125rem; /* 18px */
   --fs-rem-medium: 1rem; /* 16px */
   --fs-rem-small: 0.875rem; /* 14px */
@@ -806,12 +820,18 @@ a.badge:hover {
 }
 
 :root {
-  --button-border-radius: 18px;
-  --button-border-radius--big: 25px;
-  --button-border-radius--small: 15px;
+  --button-border-radius: var(--border-radius-full);
+  --button-border-radius--big: var(--border-radius-full);
+  --button-border-radius--small: var(--border-radius-full);
   --button-height: 36px;
-  --button-height--big: 45px;
-  --button-height--small: 30px;
+  --button-height--big: 48px;
+  --button-height--small: 24px;
+  --button-fs: 16px;
+  --button-fs--big: 20px;
+  --button-fs--small: 12px;
+  --button-padding: 0 var(--distance-large);
+  --button-padding--big: 0 var(--distance-xlarge);
+  --button-padding--small: 0 var(--distance-small);
   --button-color: var(--color--section, var(--color--default));
 }
 
@@ -826,8 +846,8 @@ a.badge:hover {
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
-  font-size: 14px;
-  padding: 0 20px;
+  font-size: var(--button-fs);
+  padding: var(--button-padding);
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
@@ -913,24 +933,16 @@ a.badge:hover {
 
 .button.button--small {
   border-radius: var(--button-border-radius--small);
-  font-size: 12px;
-  padding: 0 15px;
+  font-size: var(--button-fs--small);
+  padding: var(--button-padding--small);
   height: var(--button-height--small);
 }
 
 .button.button--big {
   border-radius: var(--button-border-radius--big);
-  font-size: 18px;
-  font-weight: bold;
-  padding: 0 30px;
+  font-size: var(--button-fs--big);
+  padding: var(--button-padding--big);
   height: var(--button-height--big);
-}
-
-@media (max-width: 767px) {
-  .button.button--big {
-    font-size: 16px;
-    height: 42px;
-  }
 }
 
 .button.button--link,
@@ -2097,8 +2109,8 @@ a.card-mode:focus .card-inner {
   --border-radius: 6px; /* default */
 
   --border-radius-medium: var(--border-radius); /* default */
-  --border-radius-small: 4px;
   --border-radius-xsmall: 2px;
+  --border-radius-small: 4px;
   --border-radius-full: 99px;
 }
 
