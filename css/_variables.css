@@ -3,25 +3,39 @@
   --box-shadow: 0 5px 18px rgba(var(--rgb-color--black), 0.1);
 
   --box-shadow--dark: 0 5px 18px rgba(var(--rgb-color--black), 0.6);
+
   --color--accept: var(--color--green);
-  --color--cancel: var(--color--red);
-  --color--default: var(--color--bluedark);
-  --color--primary: var(--color--lightblue);
-  --color--secondary: var(--color--graa3);
-  /* distance - desktop & tablet */
-  --distance-large: 16px;
-  --distance-medium: 8px;
-  --distance-small: 4px;
-  --distance-standard: 8px;
-  --distance-xlarge: 24px;
-  --distance-xxlarge: 48px;
   --fgcolor--accept: var(--fgcolor--green);
+
+  --color--cancel: var(--color--red);
   --fgcolor--cancel: var(--fgcolor--red);
+
+  --color--default: var(--color--bluedark);
   --fgcolor--default: var(--fgcolor--bluedark);
+
+  --color--primary: var(--color--lightblue);
   --fgcolor--primary: var(--fgcolor--lightblue);
+
+  --color--secondary: var(--color--graa3);
   --fgcolor--secondary: var(--fgcolor--graa3);
+
+  /* distance - desktop & tablet */
+  --distance-xsmall: 2px;
+  --distance-small: 4px;
+  --distance-medium: 8px;
+  --distance-large: 16px;
+  --distance-xlarge: 24px;
+  --distance-xxlarge: 32px;
+  --distance-xxxlarge: 40px;
+  --distance-xxxxlarge: 48px;
+  --distance-xxxxxlarge: 40px;
+  --distance-xxxxxxlarge: 64px;
+  --distance-xxxxxxxlarge: 80px;
+  --distance-standard: var(--distance-medium);
+
   --fontfamily--primary: "Breaking", var(--fontfamily--secondary);
   --fontfamily--secondary: "Breaking Text", Arial, Helvetica, sans-serif;
+
   --fs-rem-large: 1.125rem; /* 18px */
   --fs-rem-medium: 1rem; /* 16px */
   --fs-rem-small: 0.875rem; /* 14px */
