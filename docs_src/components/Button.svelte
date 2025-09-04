@@ -66,6 +66,13 @@
 </button>`}
   </Prism>
 
+  <p>
+    Udover standard farverne kan de styres med følgende CSS variabler:
+  </p>
+  <div>
+    <code>--button-background: 255, 255, 255; /** skal være en rgb værdi, da den derefter kan tildelse alpha værdi */</code>
+    <code>--button-text-color: 255, 255, 255; /** skal være en rgb værdi, da den derefter kan tildelse alpha værdi */</code>
+  </div>
   <hr class="margin-xxl--tb" />
 
   <h3>Gammel knap design</h3>
