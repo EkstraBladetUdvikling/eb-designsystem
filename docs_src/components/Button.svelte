@@ -10,8 +10,72 @@
 {#if $sourceType === 'svelte'}
   <p>Only valid as a HTML-standard element</p>
 {:else}
-  <h3>Default</h3>
+  <h3>Knap redesign</h3>
+  <div class="flex flex-align--center padding-l--l margin-m--tb" style="gap: var(--distance-large);">
+    <button class="button button--small" data-redesign="primary red">
+      Primær rød (small)
+    </button>
+    <button class="button" data-redesign="primary red">
+      Primær rød (standard)
+    </button>
+    <button class="button button--big" data-redesign="primary red">
+      Primær rød (stor)
+    </button>
+  </div>
 
+  <Prism language="html">
+    {`<button class="button" data-redesign="primary red"></button>
+<button class="button button--big" data-redesign="primary red"></button>
+<button class="button button--small" data-redesign="primary red"></button>`}
+  </Prism>
+
+  <div class="flex padding-l--l margin-m--tb">
+    <button class="button" data-redesign="primary black">
+      Primær sort
+    </button>
+  </div>
+
+  <div class="flex padding-l--l margin-m--tb">
+    <button class="button" data-redesign="secondary transparent">
+      Sekundær transparent
+    </button>
+  </div>
+
+  <div class="flex bg--graa6 padding-l margin-m--tb">
+    <button class="button" data-redesign="secondary onlight">
+      Sekundær lys
+    </button>
+  </div>
+
+  <div class="flex bg--graa1 padding-l margin-m--tb">
+    <button class="button" data-redesign="secondary ondark">
+      Sekundær mørk
+    </button>
+    <button class="button button--icon" data-redesign="secondary ondark">
+      <Icon name="times" width="18" />
+    </button>
+  </div>
+
+  <Prism language="html">
+    {`<button class="button" data-redesign="primary black"></button>
+<button class="button" data-redesign="secondary transparent"></button>
+<button class="button" data-redesign="secondary onlight"></button>
+<button class="button" data-redesign="secondary ondark"></button>
+<button class="button button--icon" data-redesign="secondary ondark">
+  <Icon name="times" width="18" />
+</button>`}
+  </Prism>
+
+  <p>
+    Udover standard farverne kan de styres med følgende CSS variabler:
+  </p>
+  <div>
+    <code>--button-background: 255, 255, 255; /** skal være en rgb værdi, da den derefter kan tildelse alpha værdi */</code>
+    <code>--button-text-color: 255, 255, 255; /** skal være en rgb værdi, da den derefter kan tildelse alpha værdi */</code>
+  </div>
+  <hr class="margin-xxl--tb" />
+
+  <h3>Gammel knap design</h3>
   <div class="flex">
     <button class="button">Button</button>
     <button class="button margin-l--l" disabled>Disabled</button>
@@ -114,6 +178,8 @@
       Underholdning
     </button>
   </div>
+
+
 
   <Prism language="html">
     {`<button class="button" style="--button-color: var(--color--eb);"></button>

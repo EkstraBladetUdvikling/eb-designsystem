@@ -1,10 +1,16 @@
 :root {
-  --button-border-radius: 18px;
-  --button-border-radius--big: 25px;
-  --button-border-radius--small: 15px;
+  --button-border-radius: var(--border-radius-full);
+  --button-border-radius--big: var(--border-radius-full);
+  --button-border-radius--small: var(--border-radius-full);
   --button-height: 36px;
-  --button-height--big: 45px;
-  --button-height--small: 30px;
+  --button-height--big: 48px;
+  --button-height--small: 24px;
+  --button-fs: 16px;
+  --button-fs--big: 20px;
+  --button-fs--small: 12px;
+  --button-padding: 0 var(--distance-large);
+  --button-padding--big: 0 var(--distance-xlarge);
+  --button-padding--small: 0 var(--distance-small);
   --button-color: var(--color--section, var(--color--default));
 }
 
@@ -19,13 +25,15 @@
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
-  font-size: 14px;
-  padding: 0 20px;
+  font-size: var(--button-fs);
+  font-weight: 800;
+  line-height: 1;
+  padding: var(--button-padding);
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
   height: var(--button-height);
-  background: var(--color--white);
+  background: var(--button-background, var(--color--white));
   border: 1px solid var(--button-color);
   color: var(--button-text-color, var(--button-color));
 }
@@ -42,9 +50,9 @@
 .button--solid:active,
 .button--solid:hover,
 .button--solid:focus {
-  background: var(--color--white);
+  background: var(--button-text-color, var(--color--white));
   border: 1px solid var(--button-color);
-  color: var(--button-text-color, var(--button-color));
+  color: var(--button-color);
 }
 
 /* Primary button */
@@ -102,24 +110,16 @@
 
 .button.button--small {
   border-radius: var(--button-border-radius--small);
-  font-size: 12px;
-  padding: 0 15px;
+  font-size: var(--button-fs--small);
+  padding: var(--button-padding--small);
   height: var(--button-height--small);
 }
 
 .button.button--big {
   border-radius: var(--button-border-radius--big);
-  font-size: 18px;
-  font-weight: bold;
-  padding: 0 30px;
+  font-size: var(--button-fs--big);
+  padding: var(--button-padding--big);
   height: var(--button-height--big);
-}
-
-@media (--smartphone) {
-  .button.button--big {
-    font-size: 16px;
-    height: 42px;
-  }
 }
 
 .button.button--link,
@@ -129,6 +129,7 @@
   background: none;
   border: 0;
   color: inherit;
+  font-weight: normal;
   padding: 0;
   height: auto;
 }
@@ -156,4 +157,75 @@
   cursor: default;
 
   pointer-events: none;
+}
+
+.button[data-redesign] {
+  background: rgb(var(--button-background, var(--rgb-color--red)));
+  color: rgb(var(--button-text-color, var(--rgb-fgcolor--red)));
+  border: 0;
+}
+
+.button[data-redesign*="primary"]:active,
+.button[data-redesign*="primary"]:hover,
+.button[data-redesign*="primary"]:focus {
+  background: rgba(var(--button-background, var(--rgb-color--red)), 0.7);
+  color: rgb(var(--button-text-color, var(--rgb-fgcolor--red)));
+}
+
+.button[data-type="primary red"] {
+  --button-background: var(--rgb-color--red);
+  --button-text-color: var(--rgb-fgcolor--red);
+}
+
+.button[data-type="primary black"] {
+  --button-background: var(--rgb-color--black);
+  --button-text-color: var(--rgb-fgcolor--black);
+}
+
+.button[data-type="secondary"] {
+  background: rgb(var(--button-background, var(--rgb-color--white)), 0.2);
+  color: rgb(var(--button-text-color, var(--rgb-fgcolor--white)));
+}
+
+.button[data-type="secondary"]:active,
+.button[data-type="secondary"]:hover,
+.button[data-type="secondary"]:focus {
+  background: rgb(var(--button-background, var(--rgb-color--white)), 0.3);
+  color: rgb(var(--button-text-color, var(--rgb-fgcolor--white)));
+}
+
+.button[data-type="secondary transparent"] {
+  background: rgb(var(--button-background, var(--rgb-color--white)), 0);
+  color: rgb(var(--button-text-color, var(--rgb-fgcolor--white)));
+}
+
+.button[data-type="secondary transparent"]:active,
+.button[data-type="secondary transparent"]:hover,
+.button[data-type="secondary transparent"]:focus {
+  background: rgb(var(--button-background, var(--rgb-color--black)), 0.05);
+  color: rgb(var(--button-text-color, var(--rgb-fgcolor--white)));
+}
+
+.button[data-type="secondary onlight"] {
+  background: rgb(var(--button-background, var(--rgb-color--black)), 0.1);
+  color: rgb(var(--button-text-color, var(--rgb-color--black)));
+}
+
+.button[data-type="secondary onlight"]:active,
+.button[data-type="secondary onlight"]:hover,
+.button[data-type="secondary onlight"]:focus {
+  background: rgb(var(--button-background, var(--rgb-color--black)), 0.2);
+  color: rgb(var(--button-text-color, var(--rgb-color--black)));
+}
+
+.button[data-type="secondary ondark"] {
+  background: rgb(var(--button-background, var(--rgb-color--white)), 0.2);
+  color: rgb(var(--button-text-color, var(--rgb-color--white)));
+}
+
+.button[data-type="secondary ondark"]:active,
+.button[data-type="secondary ondark"]:hover,
+.button[data-type="secondary ondark"]:focus {
+  background: rgb(var(--button-background, var(--rgb-color--white)), 0.3);
+  color: rgb(var(--button-text-color, var(--rgb-color--white)));
 }
