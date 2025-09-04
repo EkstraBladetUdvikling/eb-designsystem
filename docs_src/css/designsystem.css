@@ -985,15 +985,15 @@ a.badge:hover {
   pointer-events: none;
 }
 
-.button[data-redesign] {
+.button[data-type] {
   background: rgb(var(--button-background, var(--rgb-color--red)));
   color: rgb(var(--button-text-color, var(--rgb-fgcolor--red)));
   border: 0;
 }
 
-.button[data-redesign*="primary"]:active,
-.button[data-redesign*="primary"]:hover,
-.button[data-redesign*="primary"]:focus {
+.button[data-type*="primary"]:active,
+.button[data-type*="primary"]:hover,
+.button[data-type*="primary"]:focus {
   background: rgba(var(--button-background, var(--rgb-color--red)), 0.7);
   color: rgb(var(--button-text-color, var(--rgb-fgcolor--red)));
 }
