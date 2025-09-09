@@ -832,7 +832,7 @@ a.badge:hover {
   --button-fs--small: 12px;
   --button-padding: 0 var(--distance-large);
   --button-padding--big: 0 var(--distance-xlarge);
-  --button-padding--small: 0 var(--distance-small);
+  --button-padding--small: 0 var(--distance-medium);
   --button-color: var(--color--section, var(--color--default));
 }
 
