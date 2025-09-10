@@ -36,6 +36,12 @@
   </div>
 
   <div class="flex padding-l--l margin-m--tb">
+    <button class="button" data-type="secondary">
+      Sekundær
+    </button>
+  </div>
+
+  <div class="flex padding-l--l margin-m--tb">
     <button class="button" data-type="secondary transparent">
       Sekundær transparent
     </button>

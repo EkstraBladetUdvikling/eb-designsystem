@@ -171,6 +171,11 @@
   background: rgb(var(--button-background, var(--rgb-color--blue)), 0.7);
 }
 
+.button[data-type*="primary"] {
+  background: rgb(var(--button-background, var(--rgb-color--red)));
+  color: rgb(var(--button-text-color, var(--rgb-fgcolor--red)));
+  border: 0;
+}
 .button[data-type*="primary"]:active,
 .button[data-type*="primary"]:hover,
 .button[data-type*="primary"]:focus {
@@ -186,18 +191,6 @@
 .button[data-type="primary black"] {
   --button-background: var(--rgb-color--black);
   --button-text-color: var(--rgb-fgcolor--black);
-}
-
-.button[data-type="secondary"] {
-  background: rgb(var(--button-background, var(--rgb-color--white)), 0.2);
-  color: rgb(var(--button-text-color, var(--rgb-fgcolor--white)));
-}
-
-.button[data-type="secondary"]:active,
-.button[data-type="secondary"]:hover,
-.button[data-type="secondary"]:focus {
-  background: rgb(var(--button-background, var(--rgb-color--white)), 0.3);
-  color: rgb(var(--button-text-color, var(--rgb-fgcolor--white)));
 }
 
 .button[data-type="secondary transparent"] {
