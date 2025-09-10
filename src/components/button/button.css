@@ -160,9 +160,15 @@
 }
 
 .button[data-type] {
-  background: rgb(var(--button-background, var(--rgb-color--red)));
-  color: rgb(var(--button-text-color, var(--rgb-fgcolor--red)));
+  background: rgb(var(--button-background, var(--rgb-color--blue)));
+  color: rgb(var(--button-text-color, var(--rgb-fgcolor--blue)));
   border: 0;
+}
+
+.button[data-type]:active,
+.button[data-type]:hover,
+.button[data-type]:focus {
+  background: rgb(var(--button-background, var(--rgb-color--blue)), 0.7);
 }
 
 .button[data-type*="primary"]:active,

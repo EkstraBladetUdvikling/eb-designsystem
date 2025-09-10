@@ -12,56 +12,56 @@
 {:else}
   <h3>Knap redesign</h3>
   <div class="flex flex-align--center padding-l--l margin-m--tb" style="gap: var(--distance-large);">
-    <button class="button button--small" data-redesign="primary red">
+    <button class="button button--small" data-type="primary red">
       Primær rød (small)
     </button>
-    <button class="button" data-redesign="primary red">
+    <button class="button" data-type="primary red">
       Primær rød (standard)
     </button>
-    <button class="button button--big" data-redesign="primary red">
+    <button class="button button--big" data-type="primary red">
       Primær rød (stor)
     </button>
   </div>
 
   <Prism language="html">
-    {`<button class="button" data-redesign="primary red"></button>
-<button class="button button--big" data-redesign="primary red"></button>
-<button class="button button--small" data-redesign="primary red"></button>`}
+    {`<button class="button" data-type="primary red"></button>
+<button class="button button--big" data-type="primary red"></button>
+<button class="button button--small" data-type="primary red"></button>`}
   </Prism>
 
   <div class="flex padding-l--l margin-m--tb">
-    <button class="button" data-redesign="primary black">
+    <button class="button" data-type="primary black">
       Primær sort
     </button>
   </div>
 
   <div class="flex padding-l--l margin-m--tb">
-    <button class="button" data-redesign="secondary transparent">
+    <button class="button" data-type="secondary transparent">
       Sekundær transparent
     </button>
   </div>
 
   <div class="flex bg--graa6 padding-l margin-m--tb">
-    <button class="button" data-redesign="secondary onlight">
+    <button class="button" data-type="secondary onlight">
       Sekundær lys
     </button>
   </div>
 
   <div class="flex bg--graa1 padding-l margin-m--tb">
-    <button class="button" data-redesign="secondary ondark">
+    <button class="button" data-type="secondary ondark">
       Sekundær mørk
     </button>
-    <button class="button button--icon" data-redesign="secondary ondark">
+    <button class="button button--icon" data-type="secondary ondark">
       <Icon name="times" width="18" />
     </button>
   </div>
 
   <Prism language="html">
-    {`<button class="button" data-redesign="primary black"></button>
-<button class="button" data-redesign="secondary transparent"></button>
-<button class="button" data-redesign="secondary onlight"></button>
-<button class="button" data-redesign="secondary ondark"></button>
-<button class="button button--icon" data-redesign="secondary ondark">
+    {`<button class="button" data-type="primary black"></button>
+<button class="button" data-type="secondary transparent"></button>
+<button class="button" data-type="secondary onlight"></button>
+<button class="button" data-type="secondary ondark"></button>
+<button class="button button--icon" data-type="secondary ondark">
   <Icon name="times" width="18" />
 </button>`}
   </Prism>
