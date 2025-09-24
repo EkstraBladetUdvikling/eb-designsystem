@@ -26,7 +26,7 @@
   --color-danger-rgb: 200 0 0;
   --color-success-rgb: 0 145 90;
 
-  /* Variant mappings */
+  /* Variants */
   --button-primary-bg-rgb: var(--color-black-rgb);
   --button-primary-fg-rgb: var(--color-white-rgb);
   --button-primary--brand-bg-rgb: var(--color-brand-rgb);
@@ -35,10 +35,10 @@
   --button-secondary--onlight-fg-rgb: var(--color-black-rgb);
   --button-secondary--ondark-bg-rgb: var(--color-white-rgb);
   --button-secondary--ondark-fg-rgb: var(--color-white-rgb);
-  --button-secondary--transparent-onlight-bg-rgb: var(--color-black-rgb);
-  --button-secondary--transparent-onlight-fg-rgb: var(--color-black-rgb);
-  --button-secondary--transparent-ondark-bg-rgb: var(--color-white-rgb);
-  --button-secondary--transparent-ondark-fg-rgb: var(--color-white-rgb);
+  --button-transparent--onlight-bg-rgb: var(--color-black-rgb);
+  --button-transparent--onlight-fg-rgb: var(--color-black-rgb);
+  --button-transparent--ondark-bg-rgb: var(--color-white-rgb);
+  --button-transparent--ondark-fg-rgb: var(--color-white-rgb);
   --button-link-fg-rgb: var(--color-brand-rgb);
   --button-danger-bg-rgb: var(--color-danger-rgb);
   --button-danger-fg-rgb: var(--color-white-rgb);
@@ -107,10 +107,17 @@
   white-space: nowrap;
   text-decoration: none;
   cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
 }
+
 .button:hover   { background-color: rgb(var(--_button-bg-rgb) / var(--_button-hover-alpha)); }
+
 .button:active  { background-color: rgb(var(--_button-bg-rgb) / var(--_button-active-alpha)); }
+
 .button:focus-visible { outline: none; box-shadow: 0 0 0 var(--button-focus-ring-width) var(--button-focus-ring-color); }
+
 .button:disabled { opacity: 0.6; pointer-events: none; cursor: not-allowed; }
 
 /* -- SIZES -- */
@@ -120,6 +127,7 @@
   --_button-padding-block: var(--button-padding-block-sm);
   --_button-gap: var(--button-gap-sm);
 }
+
 .button--lg {
   --_button-font-size: var(--button-font-size-lg);
   --_button-padding-inline: var(--button-padding-inline-lg);
@@ -135,6 +143,7 @@
   --_button-hover-alpha: var(--button-alpha-hover-solid);
   --_button-active-alpha: var(--button-alpha-active-solid);
 }
+
 .button--primary--brand {
   --_button-bg-rgb: var(--button-primary--brand-bg-rgb);
   --_button-fg-rgb: var(--button-primary--brand-fg-rgb);
@@ -142,6 +151,7 @@
   --_button-hover-alpha: var(--button-alpha-hover-solid);
   --_button-active-alpha: var(--button-alpha-active-solid);
 }
+
 .button--secondary--onlight {
   --_button-bg-rgb: var(--button-secondary--onlight-bg-rgb);
   --_button-fg-rgb: var(--button-secondary--onlight-fg-rgb);
@@ -149,6 +159,7 @@
   --_button-hover-alpha: var(--button-alpha-hover-tinted-onlight);
   --_button-active-alpha: var(--button-alpha-active-tinted-onlight);
 }
+
 .button--secondary--ondark {
   --_button-bg-rgb: var(--button-secondary--ondark-bg-rgb);
   --_button-fg-rgb: var(--button-secondary--ondark-fg-rgb);
@@ -156,20 +167,23 @@
   --_button-hover-alpha: var(--button-alpha-hover-tinted-ondark);
   --_button-active-alpha: var(--button-alpha-active-tinted-ondark);
 }
-.button--secondary--transparent {
-  --_button-bg-rgb: var(--button-secondary--transparent-onlight-bg-rgb);
-  --_button-fg-rgb: var(--button-secondary--transparent-onlight-fg-rgb);
+
+.button--transparent--onlight {
+  --_button-bg-rgb: var(--button-transparent--onlight-bg-rgb);
+  --_button-fg-rgb: var(--button-transparent--onlight-fg-rgb);
   --_button-base-alpha: var(--button-alpha-base-transparent);
   --_button-hover-alpha: var(--button-alpha-hover-transparent);
   --_button-active-alpha: var(--button-alpha-active-transparent);
 }
-.button--secondary--transparent--ondark {
-  --_button-bg-rgb: var(--button-secondary--transparent-ondark-bg-rgb);
-  --_button-fg-rgb: var(--button-secondary--transparent-ondark-fg-rgb);
+
+.button--transparent--ondark {
+  --_button-bg-rgb: var(--button-transparent--ondark-bg-rgb);
+  --_button-fg-rgb: var(--button-transparent--ondark-fg-rgb);
   --_button-base-alpha: var(--button-alpha-base-transparent);
   --_button-hover-alpha: var(--button-alpha-hover-transparent-ondark);
   --_button-active-alpha: var(--button-alpha-active-transparent);
 }
+
 .button--link {
   --_button-bg-rgb: 0 0 0;
   --_button-base-alpha: 0;
@@ -179,6 +193,7 @@
   color: rgb(var(--button-link-fg-rgb));
   text-decoration: none;
 }
+
 .button--link:hover,
 .button--link:active { text-decoration: underline; }
 
@@ -189,6 +204,7 @@
   --_button-hover-alpha: var(--button-alpha-hover-solid);
   --_button-active-alpha: var(--button-alpha-active-solid);
 }
+
 .button--success {
   --_button-bg-rgb: var(--button-success-bg-rgb);
   --_button-fg-rgb: var(--button-success-fg-rgb);
@@ -217,11 +233,13 @@
   line-height: 0;
   gap: 0;
 }
+
 .button.button--icon-only.button--sm {
-  inline-size: var(--button-icononly-size-sm);  /* 28px */
+  inline-size: var(--button-icononly-size-sm);
   block-size: var(--button-icononly-size-sm);
 }
+
 .button.button--icon-only.button--lg {
-  inline-size: var(--button-icononly-size-lg);  /* 52px */
+  inline-size: var(--button-icononly-size-lg);
   block-size: var(--button-icononly-size-lg);
 }

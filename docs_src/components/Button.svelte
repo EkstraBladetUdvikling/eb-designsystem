@@ -37,10 +37,10 @@
 
       <div class="flex padding-s" style="gap: var(--distance-large); background:#000; border-radius:9999px;">
         <button class="button button--secondary--ondark">Secondary on dark</button>
-        <button class="button button--secondary--transparent--ondark">Transparent on dark</button>
+        <button class="button button--transparent--ondark">Transparent on dark</button>
       </div>
 
-      <button class="button button--secondary--transparent">Transparent</button>
+      <button class="button button--transparent--onlight">Transparent</button>
       <button class="button button--link">Link</button>
       <button class="button button--danger">Danger</button>
       <button class="button button--success">Success</button>
@@ -51,8 +51,8 @@
 <button class="button button--primary--brand">Primary (brand)</button>
 <button class="button button--secondary--onlight">Secondary on light</button>
 <button class="button button--secondary--ondark">Secondary on dark</button>
-<button class="button button--secondary--transparent--ondark">Transparent on dark</button>
-<button class="button button--secondary--transparent">Transparent</button>
+<button class="button button--transparent--ondark">Transparent on dark</button>
+<button class="button button--transparent--onlight">Transparent</button>
 <button class="button button--link">Link</button>
 <button class="button button--danger">Danger</button>
 <button class="button button--success">Success</button>`}
@@ -67,7 +67,7 @@
       <button class="button button--primary" disabled>Disabled primary</button>
       <button class="button button--primary--brand" disabled>Disabled brand</button>
       <button class="button button--secondary--onlight" disabled>Disabled secondary</button>
-      <button class="button button--secondary--transparent" disabled>Disabled transparent</button>
+      <button class="button button--transparent--onlight" disabled>Disabled transparent</button>
       <button class="button button--link" disabled>Disabled link</button>
     </div>
 
@@ -75,7 +75,7 @@
       {`<button class="button button--primary" disabled>…</button>
 <button class="button button--primary--brand" disabled>…</button>
 <button class="button button--secondary--onlight" disabled>…</button>
-<button class="button button--secondary--transparent" disabled>…</button>
+<button class="button button--transparent--onlight" disabled>…</button>
 <button class="button button--link" disabled>…</button>`}
     </Prism>
   </div>
@@ -86,15 +86,15 @@
   <div class="margin-xxl--tb">
     <div class="flex margin-m--tb" style="gap: var(--distance-large);">
       <button class="button button--primary">
-        <Icon name="angle-left" class="button__icon" />
+        <Icon name="angle-left" className="button__icon" />
         <span>Icon left</span>
       </button>
       <button class="button button--primary">
         <span>Icon right</span>
-        <Icon name="angle-right" class="button__icon" />
+        <Icon name="angle-right" className="button__icon" />
       </button>
       <button class="button button--primary button--icon-only" aria-label="Close">
-        <Icon name="times" class="button__icon" />
+        <Icon name="times" className="button__icon" />
       </button>
     </div>
 
