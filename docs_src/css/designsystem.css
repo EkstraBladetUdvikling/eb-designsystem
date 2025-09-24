@@ -779,7 +779,7 @@ custom media queries is the only allowed media queries
 
 .badge {
   align-items: center;
-  border-radius: var(--border-radius--small);
+  border-radius: var(--border-radius-small);
   display: flex;
   padding: 5px 7px;
   white-space: nowrap;
@@ -793,7 +793,7 @@ custom media queries is the only allowed media queries
 
 a.badge:focus,
 a.badge:hover {
-  opacity: .8; /* DR.Edition 03/02/2020 */
+  opacity: 0.8; /* DR.Edition 03/02/2020 */
 }
 
 .badge.badge--small {
@@ -823,7 +823,7 @@ a.badge:hover {
 :root {
   --button-border-radius: var(--border-radius-full);
   --button-border-radius--big: var(--border-radius-full);
-  --button-border-radius--small: var(--border-radius-full);
+  --button-border-radius-small: var(--border-radius-full);
   --button-height: 36px;
   --button-height--big: 48px;
   --button-height--small: 24px;
@@ -935,7 +935,7 @@ a.badge:hover {
 }
 
 .button.button--small {
-  border-radius: var(--button-border-radius--small);
+  border-radius: var(--button-border-radius-small);
   font-size: var(--button-fs--small);
   padding: var(--button-padding--small);
   height: var(--button-height--small);
@@ -1605,7 +1605,7 @@ a.card-mode:focus .card-inner {
 
 :root {
   --color--focus: var(--color--blue);
-  --form-border-radius: var(--border-radius--small);
+  --form-border-radius: var(--border-radius-small);
 }
 
 :focus {
@@ -2014,7 +2014,7 @@ a.card-mode:focus .card-inner {
   position: relative;
 
   background: var(--tooltip-bgcolor);
-  border-radius: var(--border-radius--small);
+  border-radius: var(--border-radius-small);
   box-shadow: var(--box-shadow--dark);
   box-sizing: border-box;
   color: var(--tooltip-fgcolor);

@@ -1,6 +1,6 @@
 :root {
   --color--focus: var(--color--blue);
-  --form-border-radius: var(--border-radius--small);
+  --form-border-radius: var(--border-radius-small);
 }
 
 :focus {
