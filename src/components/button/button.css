@@ -15,14 +15,13 @@
   --button-gap-md: 8px;
   --button-gap-lg: 12px;
   --button-radius: 32px;
-
+ 
   /* Base colors */
-  --color-black-rgb: var(--rgb-color--black);
-  --color-white-rgb: var(--rgb-color--white);
-  --color-brand-rgb: var(--rgb-color--eb);
-  --color-danger-rgb: var(--rgb-color--red);
-  --color-success-rgb: var(--rgb-color--green);
-  --button-link-fg-rgb: var(--rgb-color--eb);
+  --color-black-rgb: 0 0 0;
+  --color-white-rgb: 255 255 255;
+  --color-brand-rgb: 255 0 0;
+  --color-danger-rgb: 200 0 0;
+  --color-success-rgb: 0 145 90;
 
   /* Variants */
   --button-primary-bg-rgb: var(--color-black-rgb);
