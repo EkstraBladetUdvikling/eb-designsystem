@@ -1,7 +1,7 @@
 :root {
   --button-border-radius: var(--border-radius-full);
   --button-border-radius--big: var(--border-radius-full);
-  --button-border-radius--small: var(--border-radius-full);
+  --button-border-radius-small: var(--border-radius-full);
   --button-height: 36px;
   --button-height--big: 48px;
   --button-height--small: 24px;
@@ -109,7 +109,7 @@
 }
 
 .button.button--small {
-  border-radius: var(--button-border-radius--small);
+  border-radius: var(--button-border-radius-small);
   font-size: var(--button-fs--small);
   padding: var(--button-padding--small);
   height: var(--button-height--small);

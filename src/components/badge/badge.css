@@ -1,6 +1,6 @@
 .badge {
   align-items: center;
-  border-radius: var(--border-radius--small);
+  border-radius: var(--border-radius-small);
   display: flex;
   padding: 5px 7px;
   white-space: nowrap;
@@ -14,7 +14,7 @@
 
 a.badge:focus,
 a.badge:hover {
-  opacity: .8; /* DR.Edition 03/02/2020 */
+  opacity: 0.8; /* DR.Edition 03/02/2020 */
 }
 
 .badge.badge--small {
