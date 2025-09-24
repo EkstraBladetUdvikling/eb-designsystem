@@ -17,11 +17,12 @@
   --button-radius: 32px;
 
   /* Base colors */
-  --color-black-rgb: 0 0 0;
-  --color-white-rgb: 255 255 255;
-  --color-brand-rgb: 220 0 0;
-  --color-danger-rgb: 200 0 0;
-  --color-success-rgb: 0 145 90;
+  --color-black-rgb: var(--rgb-color--black);
+  --color-white-rgb: var(--rgb-color--white);
+  --color-brand-rgb: var(--rgb-color--eb);
+  --color-danger-rgb: var(--rgb-color--red);
+  --color-success-rgb: var(--rgb-color--green);
+  --button-link-fg-rgb: var(--rgb-color--eb);
 
   /* Variants */
   --button-primary-bg-rgb: var(--color-black-rgb);
@@ -57,7 +58,7 @@
   --button-alpha-hover-transparent-ondark: 0.1;
   --button-alpha-active-transparent: 0;
 
-  --button-focus-ring-color: rgb(0 95 204);
+  --button-focus-ring-color: rgb(var(--rgb-color--blue));
   --button-focus-ring-width: 2px;
 
   --button-icon-scale: 1;          
