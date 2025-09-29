@@ -206,7 +206,7 @@
   color: rgb(var(--color--graa3));
   text-decoration: none;
   font-family: var(--fontfamily--secondary);
-  font-weight: 600;
+  font-weight: 300;
 
 }
 .button--link--footer:hover,
