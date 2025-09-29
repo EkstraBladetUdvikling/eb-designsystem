@@ -55,7 +55,6 @@
   --button-alpha-base-transparent: 0;
   --button-alpha-hover-transparent: 0.05;
   --button-alpha-hover-transparent-ondark: 0.1;
-  --button-alpha-active-transparent: 0;
 
   --button-focus-ring-color: rgb(var(--rgb-color--blue));
   --button-focus-ring-width: 2px;
@@ -171,7 +170,7 @@
   --_button-fg-rgb: var(--button-transparent--onlight-fg-rgb);
   --_button-base-alpha: var(--button-alpha-base-transparent);
   --_button-hover-alpha: var(--button-alpha-hover-transparent);
-  --_button-active-alpha: var(--button-alpha-active-transparent);
+  --_button-active-alpha: var(--button-alpha-base-transparent);
 }
 
 .button--transparent--ondark {
@@ -179,7 +178,7 @@
   --_button-fg-rgb: var(--button-transparent--ondark-fg-rgb);
   --_button-base-alpha: var(--button-alpha-base-transparent);
   --_button-hover-alpha: var(--button-alpha-hover-transparent-ondark);
-  --_button-active-alpha: var(--button-alpha-active-transparent);
+  --_button-active-alpha: var(--button-alpha-base-transparent);
 }
 
 .button--link {
@@ -187,11 +186,26 @@
   --_button-base-alpha: 0;
   --_button-hover-alpha: 0;
   --_button-active-alpha: 0;
+  --_button-padding-inline: 0;
+  --_button-padding-block: 0;
   background-color: transparent;
   color: rgb(var(--button-link-fg-rgb));
   text-decoration: none;
 }
 
+.button--link--footer {
+  --_button-bg-rgb: 0 0 0;
+  --_button-base-alpha: 0;
+  --_button-hover-alpha: 0;
+  --_button-active-alpha: 0;
+  --_button-padding-inline: 0;
+  --_button-padding-block: 0;
+  background-color: transparent;
+  color: rgb(var(--color--graa3));
+  text-decoration: none;
+}
+.button--link--footer:hover,
+.button--link--footer:active,
 .button--link:hover,
 .button--link:active { text-decoration: underline; }
 
