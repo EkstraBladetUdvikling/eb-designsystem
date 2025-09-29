@@ -192,7 +192,7 @@
   color: rgb(var(--button-link-fg-rgb));
   text-decoration: none;
   font-family: var(--fontfamily--secondary);
-
+  font-weight: 300;
 }
 
 .button--link--footer {
@@ -206,6 +206,8 @@
   color: rgb(var(--color--graa3));
   text-decoration: none;
   font-family: var(--fontfamily--secondary);
+  font-weight: 600;
+
 }
 .button--link--footer:hover,
 .button--link--footer:active,
