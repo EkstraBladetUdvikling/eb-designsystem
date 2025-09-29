@@ -191,6 +191,8 @@
   background-color: transparent;
   color: rgb(var(--button-link-fg-rgb));
   text-decoration: none;
+  font-family: var(--fontfamily--secondary);
+
 }
 
 .button--link--footer {
@@ -203,6 +205,7 @@
   background-color: transparent;
   color: rgb(var(--color--graa3));
   text-decoration: none;
+  font-family: var(--fontfamily--secondary);
 }
 .button--link--footer:hover,
 .button--link--footer:active,
