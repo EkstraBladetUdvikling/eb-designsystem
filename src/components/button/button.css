@@ -3,8 +3,8 @@
   --button-font-size-sm: 12px;
   --button-font-size-md: 16px;
   --button-font-size-lg: 20px;
-  --button-font-size-xl: 30px;
-  --button-font-size-2xl: 40px;
+  --button-font-size-xl: 26px;
+  --button-font-size-2xl: 32px;
 
   --button-padding-inline-sm: 12px;
   --button-padding-block-sm: 8px;
@@ -12,10 +12,18 @@
   --button-padding-block-md: 12px;
   --button-padding-inline-lg: 24px;
   --button-padding-block-lg: 16px;
+  --button-padding-inline-xl: 30px;
+  --button-padding-block-xl: 20px;
+  --button-padding-inline-2xl: 36px;
+  --button-padding-block-2xl: 24px;
+
 
   --button-gap-sm: 6px;
   --button-gap-md: 8px;
   --button-gap-lg: 12px;
+  --button-gap-xl: 14px;
+  --button-gap-2xl: 16px;
+
   --button-radius: 32px;
 
   /* Base colors */
@@ -66,6 +74,8 @@
   --button-icononly-size-sm: 28px;
   --button-icononly-size-md: 40px;
   --button-icononly-size-lg: 52px;
+  --button-icononly-size-xl: 64px;
+  --button-icononly-size-2xl: 76px;
 }
 
 /* -- COMPONENT -- */
@@ -136,16 +146,16 @@
 
 .button--xl {
   --_button-font-size: var(--button-font-size-xl);
-  --_button-padding-inline: var(--button-padding-inline-lg);
-  --_button-padding-block: var(--button-padding-block-lg);
-  --_button-gap: var(--button-gap-lg);
+  --_button-padding-inline: var(--button-padding-inline-xl);
+  --_button-padding-block: var(--button-padding-block-xl);
+  --_button-gap: var(--button-gap-xl);
 }
 
 .button--2xl {
   --_button-font-size: var(--button-font-size-2xl);
-  --_button-padding-inline: var(--button-padding-inline-lg);
-  --_button-padding-block: var(--button-padding-block-lg);
-  --_button-gap: var(--button-gap-lg);
+  --_button-padding-inline: var(--button-padding-inline-2xl);
+  --_button-padding-block: var(--button-padding-block-2xl);
+  --_button-gap: var(--button-gap-2xl);
 }
 
 /* -- VARIANTS --*/
@@ -276,4 +286,14 @@
 .button.button--icon-only.button--lg {
   inline-size: var(--button-icononly-size-lg);
   block-size: var(--button-icononly-size-lg);
+}
+
+.button.button--icon-only.button--xl {
+  inline-size: var(--button-icononly-size-xl);
+  block-size: var(--button-icononly-size-xl);
+}
+
+.button.button--icon-only.button--2xl {
+  inline-size: var(--button-icononly-size-2xl);
+  block-size: var(--button-icononly-size-2xl);
 }
