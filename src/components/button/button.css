@@ -3,6 +3,8 @@
   --button-font-size-sm: 12px;
   --button-font-size-md: 16px;
   --button-font-size-lg: 20px;
+  --button-font-size-xl: 30px;
+  --button-font-size-2xl: 40px;
 
   --button-padding-inline-sm: 12px;
   --button-padding-block-sm: 8px;
@@ -15,7 +17,7 @@
   --button-gap-md: 8px;
   --button-gap-lg: 12px;
   --button-radius: 32px;
- 
+
   /* Base colors */
   --color-black-rgb: 0 0 0;
   --color-white-rgb: 255 255 255;
@@ -59,11 +61,11 @@
   --button-focus-ring-color: rgb(var(--rgb-color--blue));
   --button-focus-ring-width: 2px;
 
-  --button-icon-scale: 1;          
+  --button-icon-scale: 1;
 
-  --button-icononly-size-sm: 28px;  
-  --button-icononly-size-md: 40px;  
-  --button-icononly-size-lg: 52px; 
+  --button-icononly-size-sm: 28px;
+  --button-icononly-size-md: 40px;
+  --button-icononly-size-lg: 52px;
 }
 
 /* -- COMPONENT -- */
@@ -127,6 +129,20 @@
 
 .button--lg {
   --_button-font-size: var(--button-font-size-lg);
+  --_button-padding-inline: var(--button-padding-inline-lg);
+  --_button-padding-block: var(--button-padding-block-lg);
+  --_button-gap: var(--button-gap-lg);
+}
+
+.button--xl {
+  --_button-font-size: var(--button-font-size-xl);
+  --_button-padding-inline: var(--button-padding-inline-lg);
+  --_button-padding-block: var(--button-padding-block-lg);
+  --_button-gap: var(--button-gap-lg);
+}
+
+.button--2xl {
+  --_button-font-size: var(--button-font-size-2xl);
   --_button-padding-inline: var(--button-padding-inline-lg);
   --_button-padding-block: var(--button-padding-block-lg);
   --_button-gap: var(--button-gap-lg);
