@@ -54,9 +54,9 @@
   /* box-shadow: var(--box-shadow); */
   opacity: 0;
   transform: translateY(-50%);
-  /* background: var(--color--white); */
+  /* background: var(--color--white);
   color: var(--color--black);
-  border-color: var(--color--black);
+  border-color: var(--color--black); */
 }
 
 /* .horizontal-scroll-nav:active,
