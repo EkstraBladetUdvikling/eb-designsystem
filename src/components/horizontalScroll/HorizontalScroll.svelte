@@ -27,13 +27,13 @@
 <div bind:this={scrollContainer} class={cssClass}>
   <button
     on:click={() => horizontalScrollHandler.scrollWithButton(SCROLLDIRECTION.left)}
-    class="button button--icon horizontal-scroll-nav button-prev bg--white"
+    class="button button--secondary--onlight button--icon-only horizontal-scroll-nav button-prev"
   >
     <Icon name="angle-left" width="14" />
   </button>
   <button
     on:click={() => horizontalScrollHandler.scrollWithButton(SCROLLDIRECTION.right)}
-    class="button button--icon horizontal-scroll-nav button-next bg--white"
+    class="button button--secondary--onlight button--icon-only horizontal-scroll-nav button-next"
   >
     <Icon name="angle-right" width="14" />
   </button>

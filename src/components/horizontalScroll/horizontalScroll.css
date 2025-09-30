@@ -54,18 +54,7 @@
   /* box-shadow: var(--box-shadow); */
   opacity: 0;
   transform: translateY(-50%);
-  /* background: var(--color--white);
-  color: var(--color--black);
-  border-color: var(--color--black); */
 }
-
-/* .horizontal-scroll-nav:active,
-.horizontal-scroll-nav:hover,
-.horizontal-scroll-nav:focus {
-  background: var(--color--white);
-  color: var(--color--black);
-  border-color: var(--color--black);
-} */
 
 @media (hover: none) {
   .horizontal-scroll-nav {
