@@ -107,6 +107,10 @@
 
   appearance: none;
   -webkit-appearance: none;
+
+  /* Blur
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px); */
 }
 
 .button:hover   { background-color: rgb(var(--_button-bg-rgb) / var(--_button-hover-alpha)); }
