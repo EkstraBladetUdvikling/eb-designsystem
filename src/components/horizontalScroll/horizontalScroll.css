@@ -54,8 +54,8 @@
   /* box-shadow: var(--box-shadow); */
   opacity: 0;
   transform: translateY(-50%);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
+  /* backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px); */
 }
 
 @media (hover: none) {
