@@ -1,7 +1,6 @@
 <script lang="ts">
   import Prism from 'svelte-prism';
   import { sourceType } from '../stores';
-
   import { Icon } from '../../src';
 </script>
 
@@ -10,180 +9,110 @@
 {#if $sourceType === 'svelte'}
   <p>Only valid as a HTML-standard element</p>
 {:else}
-  <h3>Knap redesign</h3>
-  <div class="flex flex-align--center padding-l--l margin-m--tb" style="gap: var(--distance-large);">
-    <button class="button button--small" data-redesign="primary red">
-      Primær rød (small)
-    </button>
-    <button class="button" data-redesign="primary red">
-      Primær rød (standard)
-    </button>
-    <button class="button button--big" data-redesign="primary red">
-      Primær rød (stor)
-    </button>
+  <!-- Sizes -->
+  <h3>Sizes</h3>
+  <p class="margin-xs--b">Small / default / large using <code>button--sm</code> and <code>button--lg</code>.</p>
+  <div class="margin-xxl--tb">
+    <div class="flex flex-align--center padding-l--l margin-s--tb" style="gap: var(--distance-large);">
+      <button class="button button--primary button--sm">Primary small</button>
+      <button class="button button--primary">Primary default</button>
+      <button class="button button--primary button--lg">Primary large</button>
+    </div>
+
+    <Prism language="html">
+      {`<button class="button button--primary button--sm">Small</button>
+<button class="button button--primary">Default</button>
+<button class="button button--primary button--lg">Large</button>`}
+    </Prism>
   </div>
 
-  <Prism language="html">
-    {`<button class="button" data-redesign="primary red"></button>
-<button class="button button--big" data-redesign="primary red"></button>
-<button class="button button--small" data-redesign="primary red"></button>`}
-  </Prism>
+  <!-- Variants -->
+  <h3>Variants</h3>
+  <p class="margin-xs--b">Primary + brand; Secondary on light/dark; Transparent (light/dark); Link; Status.</p>
+  <div class="margin-xxl--tb">
+    <div class="flex margin-m--tb" style="gap: var(--distance-large);">
+      <button class="button button--primary">Primary</button>
+      <button class="button button--primary--brand">Primary (brand)</button>
+      <button class="button button--secondary--onlight">Secondary on light</button>
 
-  <div class="flex padding-l--l margin-m--tb">
-    <button class="button" data-redesign="primary black">
-      Primær sort
-    </button>
+      <div class="flex padding-s" style="gap: var(--distance-large); background:#000; border-radius:9999px;">
+        <button class="button button--secondary--ondark">Secondary on dark</button>
+        <button class="button button--transparent--ondark">Transparent on dark</button>
+      </div>
+
+      <button class="button button--transparent--onlight">Transparent</button>
+      <button class="button button--link">Link</button>
+      <button class="button button--danger">Danger</button>
+      <button class="button button--success">Success</button>
+    </div>
+
+    <Prism language="html">
+      {`<button class="button button--primary">Primary</button>
+<button class="button button--primary--brand">Primary (brand)</button>
+<button class="button button--secondary--onlight">Secondary on light</button>
+<button class="button button--secondary--ondark">Secondary on dark</button>
+<button class="button button--transparent--ondark">Transparent on dark</button>
+<button class="button button--transparent--onlight">Transparent</button>
+<button class="button button--link">Link</button>
+<button class="button button--danger">Danger</button>
+<button class="button button--success">Success</button>`}
+    </Prism>
   </div>
 
-  <div class="flex padding-l--l margin-m--tb">
-    <button class="button" data-redesign="secondary transparent">
-      Sekundær transparent
-    </button>
+  <!-- Disabled -->
+  <h3>Disabled</h3>
+  <p class="margin-xs--b">Single disabled treatment across variants.</p>
+  <div class="margin-xxl--tb">
+    <div class="flex margin-m--tb" style="gap: var(--distance-large);">
+      <button class="button button--primary" disabled>Disabled primary</button>
+      <button class="button button--primary--brand" disabled>Disabled brand</button>
+      <button class="button button--secondary--onlight" disabled>Disabled secondary</button>
+      <button class="button button--transparent--onlight" disabled>Disabled transparent</button>
+      <button class="button button--link" disabled>Disabled link</button>
+    </div>
+
+    <Prism language="html">
+      {`<button class="button button--primary" disabled>…</button>
+<button class="button button--primary--brand" disabled>…</button>
+<button class="button button--secondary--onlight" disabled>…</button>
+<button class="button button--transparent--onlight" disabled>…</button>
+<button class="button button--link" disabled>…</button>`}
+    </Prism>
   </div>
 
-  <div class="flex bg--graa6 padding-l margin-m--tb">
-    <button class="button" data-redesign="secondary onlight">
-      Sekundær lys
-    </button>
-  </div>
+  <!-- Icons -->
+  <h3>Icons</h3>
+  <p class="margin-xs--b">Icon left/right via markup order. Icon-only: <code>button--icon-only</code></p>
+  <div class="margin-xxl--tb">
+    <div class="flex margin-m--tb" style="gap: var(--distance-large);">
+      <button class="button button--primary">
+        <Icon name="angle-left" className="button__icon" />
+        <span>Icon left</span>
+      </button>
+      <button class="button button--primary">
+        <span>Icon right</span>
+        <Icon name="angle-right" className="button__icon" />
+      </button>
+      <button class="button button--primary button--icon-only" aria-label="Close">
+        <Icon name="times" className="button__icon" />
+      </button>
+    </div>
 
-  <div class="flex bg--graa1 padding-l margin-m--tb">
-    <button class="button" data-redesign="secondary ondark">
-      Sekundær mørk
-    </button>
-    <button class="button button--icon" data-redesign="secondary ondark">
-      <Icon name="times" width="18" />
-    </button>
-  </div>
-
-  <Prism language="html">
-    {`<button class="button" data-redesign="primary black"></button>
-<button class="button" data-redesign="secondary transparent"></button>
-<button class="button" data-redesign="secondary onlight"></button>
-<button class="button" data-redesign="secondary ondark"></button>
-<button class="button button--icon" data-redesign="secondary ondark">
-  <Icon name="times" width="18" />
-</button>`}
-  </Prism>
-
-  <p>
-    Udover standard farverne kan de styres med følgende CSS variabler:
-  </p>
-  <div>
-    <code>--button-background: 255, 255, 255; /** skal være en rgb værdi, da den derefter kan tildelse alpha værdi */</code>
-    <code>--button-text-color: 255, 255, 255; /** skal være en rgb værdi, da den derefter kan tildelse alpha værdi */</code>
-  </div>
-  <hr class="margin-xxl--tb" />
-
-  <h3>Gammel knap design</h3>
-  <div class="flex">
-    <button class="button">Button</button>
-    <button class="button margin-l--l" disabled>Disabled</button>
-  </div>
-
-  <Prism language="html">
-    {`<button class="button"></button>`}
-  </Prism>
-
-  <h3>Extension attribute</h3>
-  <div class="flex">
-    <button class="margin-m button button--solid">Solid</button>
-    <button class="margin-m button button--solid" disabled>Disabled</button>
-  </div>
-  <div class="flex">
-    <button class="margin-m button button--link">Link</button>
-    <button class="margin-m button button--link" disabled>Disabled</button>
-  </div>
-  <div class="flex">
-    <button class="margin-m button button--icon">
-      <span style="font-size: 30px">&times;</span>
-    </button>
-    <button class="margin-m button button--icon" disabled>
-      <span style="font-size: 30px">&times;</span>
-    </button>
-  </div>
-
-  <Prism language="html">
-    {`<button class="button button--solid"></button>
-<button class="button button--link"></button>
-<button class="button button--icon">
-  <span style="font-size: 30px;">&times;</span>
-</button>`}
-  </Prism>
-
-  <h3>Size attribute</h3>
-  <p><b>big</b> and <b>small</b> can be combined with the other three extensions</p>
-
-  <button class="margin-m button button--big">Big</button>
-  <button class="margin-m button button--small">Small</button>
-
-  <Prism language="html">
-    {`<button class="button button--big"></button>
-<button class="button button--small"></button>`}
-  </Prism>
-
-  <h3>Variations</h3>
-
-  <button class="margin-m button button--primary">Primary</button>
-  <button class="margin-m button button--secondary">Secondary</button>
-  <button class="margin-m button button--accept">Accept</button>
-  <button class="margin-m button button--cancel">Cancel</button>
-
-  <Prism language="html">
-    {`<button class="button button--primary"></button>
-<button class="button button--secondary"></button>
-<button class="button button--accept"></button>
-<button class="button button--cancel"></button>`}
-  </Prism>
-
-  <h3>With Icon</h3>
-
-  <button class="margin-m button">
-    <span>Icon to the right</span>
-    <Icon name="angle-right" width="20" />
-  </button>
-  <button class="margin-m button">
-    <Icon name="angle-left" width="20" />
-    <span>Icon to the left</span>
-  </button>
-
-  <Prism language="html">
-    {`<button class="button">
-  <span></span>
-  <svg viewBox="0 0 50 50">
-    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle_right"></use>
-  </svg>
+    <Prism language="html">
+      {`<button class="button button--primary">
+  <svg class="button__icon">…</svg>
+  <span>Icon left</span>
 </button>
-<button class="button">
-  <svg viewBox="0 0 50 50">
-    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle_left"></use>
-  </svg>
-  <span></span>
-</button>`}
-  </Prism>
 
-  <h3>Colors</h3>
+<button class="button button--primary">
+  <span>Icon right</span>
+  <svg class="button__icon">…</svg>
+</button>
 
-  <div class="flex margin-m--b">
-    <button class="button" style="--button-color: var(--color--eb);">Eb</button>
-    <button class="button button--solid margin-m--l" style="--button-color: var(--color--eb);">Eb</button>
+<button class="button button--primary button--icon-only" aria-label="Close">
+  <svg class="button__icon">…</svg>
+</button>
+`}
+    </Prism>
   </div>
-  <div class="flex margin-m--b">
-    <button class="button" style="--button-color: var(--color--blue);">Blue</button>
-    <button class="button button--solid margin-m--l" style="--button-color: var(--color--blue);">Blue</button>
-  </div>
-  <div class="flex margin-m--b">
-    <button class="button" style="--button-color: var(--color--underholdning);">Underholdning</button>
-    <button class="button button--solid margin-m--l" style="--button-color: var(--color--underholdning);">
-      Underholdning
-    </button>
-  </div>
-
-
-
-  <Prism language="html">
-    {`<button class="button" style="--button-color: var(--color--eb);"></button>
-<button class="button" style="--button-color: var(--color--blue);"></button>
-<button class="button" style="--button-color: var(--color--underholdning);"></button>`}
-  </Prism>
 {/if}

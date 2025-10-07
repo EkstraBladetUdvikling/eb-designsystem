@@ -51,20 +51,11 @@
   left: 10px;
   z-index: 100;
 
-  box-shadow: var(--box-shadow);
+  /* box-shadow: var(--box-shadow); */
   opacity: 0;
   transform: translateY(-50%);
-  background: var(--color--white);
-  color: var(--color--black);
-  border-color: var(--color--black);
-}
-
-.horizontal-scroll-nav:active,
-.horizontal-scroll-nav:hover,
-.horizontal-scroll-nav:focus {
-  background: var(--color--white);
-  color: var(--color--black);
-  border-color: var(--color--black);
+  /* backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px); */
 }
 
 @media (hover: none) {
