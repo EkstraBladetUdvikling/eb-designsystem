@@ -87,6 +87,7 @@
   justify-content: center;
   gap: var(--_button-gap);
   block-size: fit-content;
+  box-sizing: border-box;
 
   padding-inline: var(--_button-padding-inline);
   padding-block: var(--_button-padding-block);
