@@ -2,118 +2,33 @@
 @import "table.css";
 @import "build/bundle.css";
 
-/* Font-face for Breaking */
+/* Variable fonts - font-synthesis added to allow synthetic oblique when italic is requested */
+html {
+  font-synthesis: style;
+}
+
+/* Breaking (Variable) */
 @font-face {
   font-family: "Breaking";
-  src: url("/assets/fonts/Breaking-Bold.woff2") format("woff2");
-  font-weight: 700;
+  src:
+    url("/assets/fonts/BreakingVAR-Regular.woff2") format("woff2-variations"),
+    url("/assets/fonts/BreakingVAR-Regular.woff2") format("woff2");
+  font-weight: 400 900;
+  font-stretch: 75% 100%;
   font-style: normal;
+  font-display: swap;
 }
 
-@font-face {
-  font-family: "Breaking";
-  src: url("/assets/fonts/BreakingSemiCondensed-Black.woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-  font-stretch: semi-condensed;
-}
-
-@font-face {
-  font-family: "Breaking";
-  src: url("/assets/fonts/BreakingSemiCondensed-BlackItalic.woff2") format("woff2");
-  font-weight: 900;
-  font-style: italic;
-  font-stretch: semi-condensed;
-}
-
-@font-face {
-  font-family: "Breaking";
-  src: url("/assets/fonts/BreakingSemiCondensed-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-stretch: semi-condensed;
-}
-
-@font-face {
-  font-family: "Breaking";
-  src: url("/assets/fonts/BreakingSemiCondensed-BoldItalic.woff2") format("woff2");
-  font-weight: 700;
-  font-style: italic;
-  font-stretch: semi-condensed;
-}
-
-@font-face {
-  font-family: "Breaking";
-  src: url("/assets/fonts/BreakingSemiCondensed-ExtraBold.woff2") format("woff2");
-  font-weight: 800;
-  font-style: normal;
-  font-stretch: semi-condensed;
-}
-
-@font-face {
-  font-family: "Breaking";
-  src: url("/assets/fonts/BreakingSemiCondensed-ExtraBoldItalic.woff2") format("woff2");
-  font-weight: 800;
-  font-style: italic;
-  font-stretch: semi-condensed;
-}
-
-/****** Font-face for Breaking Text ******/
-
+/* Breaking Text (Variable) */
 @font-face {
   font-family: "Breaking Text";
-  src: url("/assets/fonts/BreakingText-Bold.woff2") format("woff2");
-  font-weight: 700;
+  src:
+    url("/assets/fonts/BreakingTextVARVF.woff2") format("woff2-variations"),
+    url("/assets/fonts/BreakingTextVARVF.woff2") format("woff2");
+  font-weight: 300 700;
+  font-stretch: 100% 112.5%;
   font-style: normal;
-}
-
-@font-face {
-  font-family: "Breaking Text";
-  src: url("/assets/fonts/BreakingText-Italic.woff2") format("woff2");
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Breaking Text";
-  src: url("/assets/fonts/BreakingText-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* Menu */
-
-@font-face {
-  font-family: "Breaking Text";
-  src: url("/assets/fonts/BreakingText-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-}
-
-/* Brødtekst - Artikel */
-
-@font-face {
-  font-family: "Breaking Text";
-  src: url("/assets/fonts/BreakingTextSemiExpanded-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: semi-expanded;
-}
-
-@font-face {
-  font-family: "Breaking Text";
-  src: url("/assets/fonts/BreakingTextSemiExpanded-Italic.woff2") format("woff2");
-  font-weight: 400;
-  font-style: italic;
-  font-stretch: semi-expanded;
-}
-
-@font-face {
-  font-family: "Breaking Text";
-  src: url("/assets/fonts/BreakingTextSemiExpanded-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-stretch: semi-expanded;
+  font-display: swap;
 }
 
 a {
