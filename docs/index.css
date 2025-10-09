@@ -2,7 +2,7 @@
 @import "table.css";
 @import "build/bundle.css";
 
-/* Variable fonts */
+/* Variable fonts - font-synthesis added to allow synthetic oblique when italic is requested */
 html {
   font-synthesis: style;
 }
