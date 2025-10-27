@@ -13,7 +13,7 @@
   <h3>Sizes</h3>
   <p class="margin-xs--b">Small / default / large using <code>button--sm</code> and <code>button--lg</code>.</p>
   <div class="margin-xxl--tb">
-    <div class="flex flex-align--center padding-l--l margin-s--tb" style="gap: var(--distance-large);">
+    <div class="flex flex-align--center padding-l--l margin-s--tb" style="gap: 10px;">
       <button class="button button--primary button--sm">Primary small</button>
       <button class="button button--primary">Primary default</button>
       <button class="button button--primary button--lg">Primary large</button>
