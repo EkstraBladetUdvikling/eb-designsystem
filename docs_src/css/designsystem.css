@@ -1315,8 +1315,8 @@ a.card:focus {
   align-items: center;
   display: flex;
   font-family: inherit;
-  padding-right: var(--distance-medium);
-  padding-bottom: var(--distance-small);
+  padding-right: var(--ds-spacing-xs, 8px);
+  padding-bottom: var(--ds-spacing-2xs, 4px);
   white-space: nowrap;
 }
 
@@ -1775,7 +1775,7 @@ a.card-mode:focus .card-inner {
 }
 
 :root {
-  --horz-gap: var(--distance-medium);
+  --horz-gap: var(--ds-spacing-xs, 8px);
 }
 
 .horizontal-scroll-container {
@@ -2019,7 +2019,7 @@ a.card-mode:focus .card-inner {
   --tooltip-arrow-size: 7px;
   --tooltip-bgcolor: var(--color--white);
   --tooltip-fgcolor: var(--fgcolor--white);
-  --tooltip-padding: var(--distance-standard);
+  --tooltip-padding: var(--ds-spacing-xs, 8px);;
 }
 
 .tooltip-container {

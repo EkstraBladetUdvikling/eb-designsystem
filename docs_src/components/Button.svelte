@@ -63,7 +63,7 @@
   <h3>Disabled</h3>
   <p class="margin-xs--b">Single disabled treatment across variants.</p>
   <div class="margin-xxl--tb">
-    <div class="flex margin-m--tb" style="gap: var(--distance-large);">
+    <div class="flex margin-m--tb" style="gap: 10px;">
       <button class="button button--primary" disabled>Disabled primary</button>
       <button class="button button--primary--brand" disabled>Disabled brand</button>
       <button class="button button--secondary--onlight" disabled>Disabled secondary</button>
@@ -84,7 +84,7 @@
   <h3>Icons</h3>
   <p class="margin-xs--b">Icon left/right via markup order. Icon-only: <code>button--icon-only</code></p>
   <div class="margin-xxl--tb">
-    <div class="flex margin-m--tb" style="gap: var(--distance-large);">
+    <div class="flex margin-m--tb" style="gap: 10px;">
       <button class="button button--primary">
         <Icon name="angle-left" className="button__icon" />
         <span>Icon left</span>
