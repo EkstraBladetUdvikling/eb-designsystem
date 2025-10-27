@@ -1,5 +1,5 @@
 :root {
-  --horz-gap: var(--distance-medium);
+  --horz-gap: var(--ds-spacing-xs, 8px);
 }
 
 .horizontal-scroll-container {
