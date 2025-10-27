@@ -50,42 +50,6 @@
 <div class="vertical-auto"></div>`}
 </Prism>
 
-<h3>Margin & padding</h3>
-<p>
-  For både <strong>margin</strong> og <strong>padding</strong> klassen har vi fem størrelser
-  <em>(s, m, l, xl og xxl)</em>
-  og så
-  <em>none</em> som sættes på med bindesteg.
-</p>
-
-<Prism language="html">
-  {`<div class="margin-none padding-none"></div>
-<div class="margin-s padding-s"></div>
-<div class="margin-m padding-m"></div>
-<div class="margin-l padding-l"></div>
-<div class="margin-xl padding-xl"></div>
-<div class="margin-xxl padding-xxl"></div>`}
-</Prism>
-
-<p>
-  Ønskes der derimod kun at have <strong>margin</strong> og <strong>padding</strong> i en retning tilføjes dette med double
-  bindestreg.
-</p>
-
-<Prism language="html">
-  {`<div class="margin-l--t padding-l--t"></div>
-<div class="margin-l--r padding-l--r"></div>
-<div class="margin-l--b padding-l--b"></div>
-<div class="margin-l--l padding-l--l"></div>`}
-</Prism>
-
-<p>Vi har også to samle klasser for <em>top-bottom</em> og <em>right-left</em>.</p>
-
-<Prism language="html">
-  {`<div class="margin-l--tb padding-l--tb"></div>
-<div class="margin-l--rl padding-l--rl"></div>`}
-</Prism>
-
 <h3>Box-shadow</h3>
 
 <div class="card bg--graa7">
