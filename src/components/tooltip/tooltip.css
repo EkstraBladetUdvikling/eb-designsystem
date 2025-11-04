@@ -2,7 +2,7 @@
   --tooltip-arrow-size: 7px;
   --tooltip-bgcolor: var(--color--white);
   --tooltip-fgcolor: var(--fgcolor--white);
-  --tooltip-padding: var(--distance-standard);
+  --tooltip-padding: var(--ds-spacing-xs, 8px);;
 }
 
 .tooltip-container {

@@ -98,8 +98,8 @@ a.card:focus {
   align-items: center;
   display: flex;
   font-family: inherit;
-  padding-right: var(--distance-medium);
-  padding-bottom: var(--distance-small);
+  padding-right: var(--ds-spacing-xs, 8px);
+  padding-bottom: var(--ds-spacing-2xs, 4px);
   white-space: nowrap;
 }
 
