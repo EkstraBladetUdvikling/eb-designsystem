@@ -6,7 +6,6 @@ import Fonts from '../utilities/Fonts.svelte';
 import Grid from '../utilities/Grid.svelte';
 import Helpers from '../utilities/Helpers.svelte';
 import Separator from '../utilities/Separator.svelte';
-import Sizing from '../utilities/Sizing.svelte';
 import Text from '../utilities/Text.svelte';
 
 export const utilities = {
@@ -20,7 +19,6 @@ export const utilities = {
     { component: Grid, href: '/utilities/grid', title: 'Grid' },
     { component: Helpers, href: '/utilities/helpers', title: 'Helpers' },
     { component: Separator, href: '/utilities/separator', title: 'Separator' },
-    { component: Sizing, href: '/utilities/sizing', title: 'Sizing' },
     { component: Text, href: '/utilities/text', title: 'Text' },
   ],
   title: 'Utilities',

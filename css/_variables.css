@@ -19,21 +19,6 @@
   --color--secondary: var(--color--graa3);
   --fgcolor--secondary: var(--fgcolor--graa3);
 
-  /* distance - desktop & tablet */
-  --distance-xsmall: 2px;
-  --distance-small: 4px;
-  --distance-medium: 8px;
-  --distance-large: 12px;
-  --distance-xlarge: 16px;
-  --distance-xxlarge: 24px;
-  --distance-xxxlarge: 32px;
-  --distance-xxxxlarge: 40px;
-  --distance-xxxxxlarge: 48px;
-  --distance-xxxxxxlarge: 64px;
-  --distance-xxxxxxxlarge: 80px;
-
-  --distance-standard: var(--distance-medium);
-
   --fontfamily--primary: "Breaking", var(--fontfamily--secondary);
   --fontfamily--secondary: "Breaking Text", Arial, Helvetica, sans-serif;
 
