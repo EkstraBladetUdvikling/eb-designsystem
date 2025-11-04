@@ -24,7 +24,7 @@
 }
 
 /* If background is set */
-.card:not(.card--shadow)[class*="bg--"] {
+.card:not(.card--shadow)[class*="bg-"] {
   box-shadow: none; /* Remove box-shadow when filled */
 }
 
@@ -32,7 +32,7 @@
   box-shadow: var(--box-shadow);
 }
 
-.card:not([class*="bg--"]) {
+.card:not([class*="bg-"]) {
   background: var(--color--white);
   color: var(--color--black);
 }
@@ -76,7 +76,7 @@ a.card:focus {
   width: 100%;
 }
 
-.card-header:not([class*="bg--"]) {
+.card-header:not([class*="bg-"]) {
   border-bottom: 1px solid var(--card-border-color);
 }
 
@@ -84,7 +84,7 @@ a.card:focus {
   align-self: flex-end;
 }
 
-.card-footer:not([class*="bg--"]) {
+.card-footer:not([class*="bg-"]) {
   border-top: 1px solid var(--card-border-color);
 }
 
@@ -217,12 +217,12 @@ a.card:focus {
   --fgcolor--list: var(--fgcolor--white);
 }
 
-.card-inner:not([class*="bg--"]) {
+.card-inner:not([class*="bg-"]) {
   background: var(--color--list);
   color: var(--fgcolor--list);
 }
 
-.card-mode:not([class*="bg--"]) {
+.card-mode:not([class*="bg-"]) {
   background: inherit;
 }
 
