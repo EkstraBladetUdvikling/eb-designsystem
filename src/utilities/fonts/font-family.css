@@ -1,20 +1,20 @@
-.ff-primary {
+/* .ff-primary {
   font-family: var(--fontfamily--primary);
 }
 
 .ff-secondary {
   font-family: var(--fontfamily--secondary);
-}
+} */
 
 html,
 button,
 input,
 select,
 textarea {
-  font-family: var(--fontfamily--secondary);
+  /* font-family: var(--fontfamily--secondary); */
   font-variant-ligatures: none;
 }
-
+/*
 h1 {
   font-size: var(--fs-title);
   line-height: normal;
@@ -42,8 +42,8 @@ h5 {
 
 h6 {
   font-size: var(--fs-medium);
-}
+} */
 
 p {
-  font-size: var(--fs-medium);
+  margin: 0;
 }
