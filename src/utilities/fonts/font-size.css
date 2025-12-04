@@ -1,7 +1,7 @@
-/* *
+/*
 * Base font-size in browsers is 16px
 */
-/*
+
 .fontsize-xxsmall {
   font-size: var(--fs-rem-xxsmall);
 }
@@ -48,4 +48,4 @@
 
 .fontsize-larger {
   font-size: 120%;
-} */
+}
