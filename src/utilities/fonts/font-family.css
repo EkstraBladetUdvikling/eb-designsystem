@@ -4,7 +4,7 @@
 
 .ff-secondary {
   font-family: var(--fontfamily--secondary);
-}
+} */
 
 html,
 button,
@@ -43,7 +43,3 @@ h5 {
 h6 {
   font-size: var(--fs-medium);
 }
-
-p {
-  margin: 0;
-} */
