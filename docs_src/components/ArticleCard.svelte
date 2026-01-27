@@ -26,19 +26,19 @@
       <tr>
         <td>className</td>
         <td>string</td>
-        <td />
-        <td />
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td>colorClass</td>
         <td>string</td>
-        <td />
+        <td></td>
         <td>EB color <em>(e.g. sport)</em></td>
       </tr>
       <tr>
         <td>src</td>
         <td>string</td>
-        <td />
+        <td></td>
         <td>Converts the ArticleCard into a clickable link</td>
       </tr>
       <tr>
@@ -57,7 +57,7 @@
         <td>premium</td>
         <td>boolean</td>
         <td>false</td>
-        <td />
+        <td></td>
       </tr>
       <tr>
         <td>videoIcon</td>
@@ -80,7 +80,7 @@
       <tr>
         <td>media</td>
         <td>IMediaOptions</td>
-        <td />
+        <td></td>
         <td>
           Adds a image, see <span class="badge badge--small" data-type="secondary">Media</span> props below for details
         </td>
@@ -88,31 +88,31 @@
       <tr>
         <td>section</td>
         <td>string</td>
-        <td />
+        <td></td>
         <td>Displays the section meta with a tag icon</td>
       </tr>
       <tr>
         <td>style</td>
         <td>string</td>
-        <td />
-        <td />
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td>published</td>
         <td>date string</td>
-        <td />
+        <td></td>
         <td>Displays relative time meta with a icon</td>
       </tr>
       <tr>
         <td>truncateTitle</td>
         <td>boolean</td>
         <td>false</td>
-        <td />
+        <td></td>
       </tr>
       <tr>
         <td>cardType</td>
         <td>'mode' | 'small-media' | 'small-media--reverse'</td>
-        <td />
+        <td></td>
         <td>Display types. See examples below</td>
       </tr>
       <tr>
@@ -121,26 +121,26 @@
       <tr>
         <td>className</td>
         <td>string</td>
-        <td />
-        <td />
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td>height</td>
         <td>string</td>
-        <td />
-        <td /></tr
+        <td></td>
+        <td></td></tr
       >
       <tr>
         <td>src <span class="badge badge--small" data-type="primary">required</span></td>
         <td>string</td>
-        <td />
-        <td /></tr
+        <td></td>
+        <td></td></tr
       >
       <tr>
         <td>width</td>
         <td>string</td>
-        <td />
-        <td />
+        <td></td>
+        <td></td>
       </tr>
     </tbody>
   </table>

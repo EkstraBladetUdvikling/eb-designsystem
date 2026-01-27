@@ -25,7 +25,7 @@
         <td>delay</td>
         <td>number</td>
         <td>150</td>
-        <td />
+        <td></td>
       </tr>
       <tr>
         <td>size</td>
