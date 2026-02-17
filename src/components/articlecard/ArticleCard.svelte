@@ -60,9 +60,9 @@
 
   const titleStyle = maxLines ? `--max-lines: ${maxLines};` : undefined;
 
-  $: styleProp = `${style}; --color--list: var(--color--${
+  $: styleProp = `${style}; --color--list: var(--ds-color-section-${
     breaking ? colorNames.breaking : colorName
-  }); --fgcolor--list: var(--fgcolor--${breaking ? colorNames.breaking : colorName}); --card-width: ${width};`;
+  }); --fgcolor--list: var(--ds-color-on-section-${breaking ? colorNames.breaking : colorName}); --card-width: ${width};`;
 
   $: cssClass = className ? `${className} ${baseClass}` : baseClass;
 
@@ -81,24 +81,24 @@
     <div class={innerClass}>
       {#if premium}
         <div class="premium-dogear {premiumMarkerSize ? `premium-dogear--${premiumMarkerSize}` : ''}">
-          <Icon className="color--white" name="ebplus-white" />
+          <Icon className="text-color-base-white" name="ebplus-white" />
         </div>
       {/if}
       {#if loading}
         <div class="card-media">
-          <div class="card-image bg--graa4" style={loadingStyle}></div>
+          <div class="card-image bg-color-base-grey-4" style={loadingStyle}></div>
         </div>
       {/if}
       {#if media}
         <div class={mediaCssClass}>
           {#if update}
             <span
-              class="badge margin-s position-absolute padding-none padding-s--r card--shadow bg--black fontsize-small"
+              class="badge margin-s position-absolute padding-none padding-s--r card--shadow bg-color-base-black fontsize-small"
               style="bottom: 5px; left: 5px;"
             >
               <Icon
                 name="lightning"
-                className="bg--white color--{colorName} border-radius-s padding-s margin-s--r"
+                className="bg-color-base-white text-color-on-section-{colorName} border-radius-s padding-s margin-s--r"
                 style="margin-left: -1px;"
                 width="15"
               />
@@ -107,7 +107,7 @@
           {/if}
           {#if videoIcon}
             <div class="video-icon">
-              <Icon className="color--white" name="video-graphic" width="25" />
+              <Icon className="text-color-base-white" name="video-graphic" width="25" />
             </div>
           {/if}
           <img
@@ -123,7 +123,7 @@
       <div class="card-content-wrapper">
         <div class="card-content">
           {#if section || published}
-            <div class="card-meta flex flex-wrap--wrap fontsize-xxsmall">
+            <div class="card-meta flex flex-wrap--wrap font-ui-xs-bold">
               {#if section && section !== 'New Articles'}
                 <div class="card-meta-item">
                   <span class="flex flex-justify--center">
@@ -160,11 +160,11 @@
           {/if}
           {#if videoIcon && !media}
             <div class="video-icon">
-              <Icon className="color--white" name="video-graphic" width="20" />
+              <Icon className="text-color-base-white" name="video-graphic" width="20" />
             </div>
           {/if}
           <h2
-            class="card-title"
+            class="card-title font-ui-title-md"
             class:padding-l--r={videoIcon && !media}
             class:card-title--truncate={truncateTitle}
             style={titleStyle}

@@ -42,13 +42,13 @@
       <tr>
         <td>className</td>
         <td>string</td>
-        <td />
+        <td></td>
         <td>Custom class names</td>
       </tr>
       <tr>
         <td>name <span class="badge badge--small" data-type="primary">required</span></td>
         <td>IconTypes</td>
-        <td />
+        <td></td>
         <td>Only names listed beneath are valid</td>
       </tr>
       <tr>
@@ -66,7 +66,7 @@
       <tr>
         <td>style</td>
         <td>string</td>
-        <td />
+        <td></td>
         <td>Custom styling</td>
       </tr>
     </tbody>

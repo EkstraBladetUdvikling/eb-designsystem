@@ -1,4 +1,3 @@
-import ArticleCard from '../components/ArticleCard.svelte';
 import Badge from '../components/Badge.svelte';
 import Button from '../components/Button.svelte';
 import ButtonGroup from '../components/ButtonGroup.svelte';
@@ -10,11 +9,6 @@ import Spinner from '../components/Spinner.svelte';
 export const components = {
   href: '/components',
   routes: [
-    {
-      component: ArticleCard,
-      href: '/components/articlecard',
-      title: 'Article card',
-    },
     {
       component: Badge,
       href: '/components/badge',
