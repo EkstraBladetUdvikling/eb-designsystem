@@ -28,11 +28,6 @@
   <div class="flex grid-width--small">
     <ArticleCard className="animation-fogwave" {...article} />
   </div>
-  <div class="flex grid-width--small">
-    <a href="#/utilities/animation" class="badge margin-s bg--bluedark animation-fogwave">Bandekriminialitet</a>
-    <a href="#/utilities/animation" class="badge margin-s bg--green animation-fogwave">Sport</a>
-    <a href="#/utilities/animation" class="badge margin-s bg--greendark animation-fogwave">Nicklas Bendtner</a>
-  </div>
 
   <Prism
     language="html"
@@ -44,10 +39,6 @@
           timestamp="{article.timestamp}"
           title="{article.title}"
           />`}
-  />
-  <Prism
-    language="html"
-    source={`<a href="#" class="badge badge--primary animation-fogwave margin-s--r">Bandekriminialitet</a>`}
   />
 
   <h3>Overblik over animationer</h3>
