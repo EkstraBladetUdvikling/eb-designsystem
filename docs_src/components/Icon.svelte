@@ -46,7 +46,7 @@
         <td>Custom class names</td>
       </tr>
       <tr>
-        <td>name <span class="badge badge--small" data-type="primary">required</span></td>
+        <td>name*</td>
         <td>IconTypes</td>
         <td></td>
         <td>Only names listed beneath are valid</td>

@@ -16,7 +16,7 @@
       <GithubIcon width={20} />
       <span class="flex flex-align--end padding-s--l">Github</span>
     </a>
-    <div class="buttongroup buttongroup--secondary">
+    <div class="flex">
       <button
         class="button button--small"
         data-selected={$sourceType === 'svelte'}
