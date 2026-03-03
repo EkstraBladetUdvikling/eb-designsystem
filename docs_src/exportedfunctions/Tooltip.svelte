@@ -2,7 +2,6 @@
   import Prism from 'svelte-prism';
 
   import Icon from '../../src/components/icon/Icon.svelte';
-  import Spinner from '../../src/components/spinner/Spinner.svelte';
 
   import { sourceType } from '../stores';
 
@@ -100,7 +99,7 @@
       style="display: inline-block; cursor: pointer;"
       class="margin-none"
       use:tooltip={{
-        content: Spinner,
+        content: "Loader/Spinner",
         props: { isLoading: true },
         tippyOptions: { interactive: true, placement: 'bottom', trigger: 'click' },
       }}
@@ -111,7 +110,7 @@
 
   <Prism language="html">
     {`<p use:tooltip={{
-      content: Spinner,
+      content: "Loader/Spinner",
       props: { isLoading: true },
       tippyOptions: { interactive: true, placement: 'bottom', trigger: 'click' },
     }}>
