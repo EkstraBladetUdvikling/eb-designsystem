@@ -42,7 +42,7 @@
     "fitty": "^2.3.7",
     "glob": "^10.0.4",
     "prismjs": "^1.30.0",
-    "rollup": "^4.24.0",
+    "rollup": "^4.59.0",
     "rollup-plugin-css-only": "^4.5.2",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-svelte": "^7.2.2",
