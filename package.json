@@ -2,7 +2,10 @@
   "name": "@ekstra-bladet/designsystem",
   "version": "8.11.0",
   "main": "svelte/index.js",
-  "repository": "git@github.com:EkstraBladetUdvikling/eb-designsystem.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/EkstraBladetUdvikling/eb-designsystem.git"
+  },
   "author": "tegner <jesper.h.tegner@jppol.dk>",
   "files": [
     "./css",
