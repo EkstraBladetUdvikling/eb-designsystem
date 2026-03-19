@@ -1,6 +1,6 @@
 {
   "name": "@ekstra-bladet/designsystem",
-  "version": "8.11.0",
+  "version": "8.11.1",
   "main": "svelte/index.js",
   "repository": {
     "type": "git",
