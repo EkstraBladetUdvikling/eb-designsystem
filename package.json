@@ -64,7 +64,7 @@
     "globals": "^15.11.0",
     "normalize.css": "^8.0.1",
     "onchange": "^7.1.0",
-    "postcss": "^8.4.47",
+    "postcss": "^8.5.10",
     "postcss-custom-media": "^11.0.3",
     "postcss-custom-properties": "^14.0.2",
     "postcss-discard-duplicates": "^7.0.1",
